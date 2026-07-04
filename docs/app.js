@@ -5,7 +5,7 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 // ─── Client-side caches ──────────────────────────────────────────────────────
-const wikiCache = new Map();      // bioguideId → { summary, title } | null
+const wikiCache = new Map();      // bioguideId -> { summary/extract, title } | null
 const nominateCache = new Map();  // bioguideId → { dim1 } | null
 
 // ─── Application state ───────────────────────────────────────────────────────
@@ -605,12 +605,13 @@ function showPopover(member, wikiData, anchorEl) {
 
   popoverName.textContent = name;
 
-  if (wikiData && wikiData.summary) {
+  const wikiText = wikiData && (wikiData.summary || wikiData.extract);
+  if (wikiText) {
     // Truncate very long summaries
     const maxLen = 280;
-    const text = wikiData.summary.length > maxLen
-      ? wikiData.summary.slice(0, maxLen).trimEnd() + '…'
-      : wikiData.summary;
+    const text = wikiText.length > maxLen
+      ? wikiText.slice(0, maxLen).trimEnd() + '…'
+      : wikiText;
     popoverSummary.textContent = text;
   } else {
     popoverSummary.textContent = 'No biographical summary available.';

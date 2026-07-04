@@ -172,8 +172,26 @@ class CongressMembersCacheTests(unittest.TestCase):
 
         self.assertEqual(first, second)
         self.assertEqual(first["title"], "Jane Example")
+        self.assertEqual(first["summary"], "Jane summary")
+        self.assertEqual(first["extract"], "Jane summary")
         self.assertEqual(third["title"], "John Example")
         self.assertEqual(requests_get.call_count, 4)
+
+    def test_wiki_summary_uses_longer_cache_ttl(self):
+        os.environ["YGN_CACHE_TTL_SECONDS"] = "0"
+        os.environ["YGN_WIKI_CACHE_TTL_SECONDS"] = "86400"
+
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if "/member/A000001" in url:
+                return fake_response({"member": {"directOrderName": "Jane Example"}})
+            return fake_response({"title": "Jane Example", "extract": "Jane summary"})
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request) as requests_get:
+            first = self.module.get_wiki_summary("A000001")
+            second = self.module.get_wiki_summary("A000001")
+
+        self.assertEqual(first, second)
+        self.assertEqual(requests_get.call_count, 2)
 
     def test_nominate_score_allows_blank_geo_mean(self):
         csv_path = Path(self.temp_dir.name) / "HSall_members.csv"

@@ -109,5 +109,8 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 - `CONGRESS_API_KEY`: required for Congress.gov requests. It can live in `.env` for local MVP work or in GitHub Secrets for the static-data workflow.
 - `YGN_CACHE_PATH`: optional SQLite cache path. Defaults to `empty-folder/.cache/ygn_api_cache.sqlite`.
 - `YGN_CACHE_TTL_SECONDS`: optional cache TTL. Defaults to `900`.
+- `YGN_WIKI_CACHE_TTL_SECONDS`: optional SQLite cache TTL for Wikipedia summaries. Defaults to `2592000` seconds, or 30 days.
+- `YGN_WIKI_STATIC_TTL_DAYS`: optional GitHub Pages static-data reuse window for existing `docs/data/wiki` files. Defaults to `30`.
+- `YGN_WIKI_DELAY_SECONDS`: optional delay between new Wikipedia requests in the static-data workflow. Defaults to `0.5`.
 - `YGN_ENABLE_BACKGROUND_REFRESH`: set to `0` to disable startup background refresh.
 - `YGN_CORS_ORIGINS`: comma-separated allowed frontend origins. Defaults to `*` for local MVP work.

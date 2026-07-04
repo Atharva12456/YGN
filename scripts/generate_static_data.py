@@ -4,7 +4,8 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+import time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -26,6 +27,48 @@ def load_backend():
 def write_json(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def parse_generated_at(value):
+    if not value:
+        return None
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+
+    return parsed
+
+
+def reusable_wiki_snapshot(path, generated_at, ttl_days):
+    if ttl_days <= 0 or not path.exists():
+        return None
+
+    try:
+        payload = read_json(path)
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    summary_text = payload.get("summary") or payload.get("extract")
+    if not summary_text:
+        return None
+
+    snapshot_time = parse_generated_at(payload.get("generated_at"))
+    if snapshot_time is None:
+        return None
+
+    if generated_at - snapshot_time > timedelta(days=ttl_days):
+        return None
+
+    return payload
 
 
 def safe_id(value):
@@ -68,6 +111,18 @@ def parse_args():
     parser.add_argument("--skip-wiki", action="store_true")
     parser.add_argument("--skip-nominate", action="store_true")
     parser.add_argument("--skip-recent-bills", action="store_true")
+    parser.add_argument(
+        "--wiki-static-ttl-days",
+        type=int,
+        default=int(os.getenv("YGN_WIKI_STATIC_TTL_DAYS", "30")),
+        help="Reuse existing docs/data/wiki files for this many days.",
+    )
+    parser.add_argument(
+        "--wiki-delay-seconds",
+        type=float,
+        default=float(os.getenv("YGN_WIKI_DELAY_SECONDS", "0.5")),
+        help="Pause after each new Wikipedia request to avoid rate limits.",
+    )
     return parser.parse_args()
 
 
@@ -81,11 +136,13 @@ def main():
 
     output_dir = Path(args.output_dir)
     generated_at = datetime.now(timezone.utc).isoformat()
+    generated_at_dt = datetime.fromisoformat(generated_at)
     report = {
         "generated_at": generated_at,
         "members": 0,
         "details": 0,
         "wiki": 0,
+        "wiki_reused": 0,
         "nominate": 0,
         "recent_bills": False,
         "errors": [],
@@ -151,10 +208,16 @@ def main():
                 )
 
         if not args.skip_wiki:
+            wiki_path = output_dir / "wiki" / f"{bioguide_id}.json"
+            if reusable_wiki_snapshot(wiki_path, generated_at_dt, args.wiki_static_ttl_days):
+                report["wiki"] += 1
+                report["wiki_reused"] += 1
+                continue
+
             try:
                 wiki = backend.get_wiki_summary(bioguide_id)
                 write_json(
-                    output_dir / "wiki" / f"{bioguide_id}.json",
+                    wiki_path,
                     {
                         "generated_at": generated_at,
                         **wiki,
@@ -165,6 +228,9 @@ def main():
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "wiki", "error": str(exc)}
                 )
+            finally:
+                if args.wiki_delay_seconds > 0:
+                    time.sleep(args.wiki_delay_seconds)
 
         if not args.skip_nominate:
             try:

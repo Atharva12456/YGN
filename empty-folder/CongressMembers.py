@@ -16,6 +16,7 @@ BASE_URL = "https://api.congress.gov/v3"
 CSV_PATH = Path(__file__).parent / "HSall_members.csv"
 DEFAULT_CACHE_PATH = Path(__file__).parent / ".cache" / "ygn_api_cache.sqlite"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
+DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 
 LOGGER = logging.getLogger(__name__)
@@ -57,6 +58,21 @@ def _cache_ttl_seconds():
 
     if ttl_seconds < 0:
         raise ValueError("YGN_CACHE_TTL_SECONDS cannot be negative.")
+
+    return ttl_seconds
+
+
+def _wiki_cache_ttl_seconds():
+    raw_value = os.getenv("YGN_WIKI_CACHE_TTL_SECONDS", str(DEFAULT_WIKI_CACHE_TTL_SECONDS))
+    try:
+        ttl_seconds = int(raw_value)
+    except ValueError as exc:
+        raise ValueError(
+            "YGN_WIKI_CACHE_TTL_SECONDS must be an integer number of seconds."
+        ) from exc
+
+    if ttl_seconds < 0:
+        raise ValueError("YGN_WIKI_CACHE_TTL_SECONDS cannot be negative.")
 
     return ttl_seconds
 
@@ -415,14 +431,27 @@ def get_wiki_summary(bioguideId):
         )
         response.raise_for_status()
         data = response.json()
+        extract = data.get("extract")
         return {
             "title": data.get("title"),
-            "extract": data.get("extract"),
+            "summary": extract,
+            "extract": extract,
             "thumbnail": data.get("thumbnail", {}).get("source"),
             "wiki_url": data.get("content_urls", {}).get("desktop", {}).get("page"),
         }
 
-    return _cached_json(cache_key, f"wikipedia:summary:{bioguideId}", fetch_json)
+    wiki_summary = _cached_json(
+        cache_key,
+        f"wikipedia:summary:{bioguideId}",
+        fetch_json,
+        ttl_seconds=_wiki_cache_ttl_seconds(),
+    )
+    if "summary" not in wiki_summary and "extract" in wiki_summary:
+        wiki_summary = {**wiki_summary, "summary": wiki_summary.get("extract")}
+    elif "extract" not in wiki_summary and "summary" in wiki_summary:
+        wiki_summary = {**wiki_summary, "extract": wiki_summary.get("summary")}
+
+    return wiki_summary
 
 
 def get_official_profile(bioguideId, include_wiki=True, include_nominate=True):
