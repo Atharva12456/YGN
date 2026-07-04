@@ -2,6 +2,7 @@ import csv
 import json
 import logging
 import os
+import re
 import sqlite3
 import threading
 import time
@@ -13,11 +14,14 @@ import requests
 
 
 BASE_URL = "https://api.congress.gov/v3"
+WIKIPEDIA_ACTION_API_URL = "https://en.wikipedia.org/w/api.php"
+WIKIPEDIA_SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary"
 CSV_PATH = Path(__file__).parent / "HSall_members.csv"
 DEFAULT_CACHE_PATH = Path(__file__).parent / ".cache" / "ygn_api_cache.sqlite"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
+WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
 
 LOGGER = logging.getLogger(__name__)
 API_KEY = ""
@@ -39,6 +43,10 @@ class MissingCongressApiKey(RuntimeError):
 
 class UpstreamDataError(RuntimeError):
     """Raised when an upstream government data request fails."""
+
+
+class WikipediaRateLimited(RuntimeError):
+    """Raised when Wikipedia asks the generator to slow down."""
 
 
 def _now_seconds():
@@ -323,6 +331,353 @@ def _pagination_total(data):
     return data.get("pagination", {}).get("count", len(members))
 
 
+def _dedupe_strings(values):
+    seen = set()
+    result = []
+    for value in values:
+        normalized = re.sub(r"\s+", " ", str(value or "")).strip()
+        key = normalized.lower()
+        if not normalized or key in seen:
+            continue
+        seen.add(key)
+        result.append(normalized)
+    return result
+
+
+def _member_name_candidates(member):
+    candidates = [
+        member.get("directOrderName"),
+        member.get("officialFullName"),
+    ]
+
+    first_name = member.get("firstName")
+    last_name = member.get("lastName")
+    if first_name and last_name:
+        candidates.append(f"{first_name} {last_name}")
+
+    for previous_name in member.get("previousNames") or []:
+        candidates.append(previous_name.get("directOrderName"))
+        first_name = previous_name.get("firstName")
+        last_name = previous_name.get("lastName")
+        if first_name and last_name:
+            candidates.append(f"{first_name} {last_name}")
+
+    inverted_name = member.get("invertedOrderName")
+    if inverted_name and "," in inverted_name:
+        last, first = inverted_name.split(",", 1)
+        candidates.append(f"{first.strip()} {last.strip()}")
+
+    return _dedupe_strings(candidates)
+
+
+def _latest_member_term(member):
+    terms = member.get("terms", [])
+    if isinstance(terms, dict):
+        terms = terms.get("item", [])
+    if isinstance(terms, dict):
+        terms = [terms]
+    if not terms:
+        return {}
+
+    def start_year(term):
+        try:
+            return int(term.get("startYear") or 0)
+        except (TypeError, ValueError):
+            return 0
+
+    return max(terms, key=start_year)
+
+
+def _current_party_name(member):
+    party_history = member.get("partyHistory") or []
+    if not party_history:
+        return None
+
+    def start_year(party):
+        try:
+            return int(party.get("startYear") or 0)
+        except (TypeError, ValueError):
+            return 0
+
+    latest_party = max(party_history, key=start_year)
+    return latest_party.get("partyName")
+
+
+def _member_display_name(member):
+    names = _member_name_candidates(member)
+    if names:
+        return names[0]
+
+    return member.get("directOrderName") or member.get("invertedOrderName") or "This official"
+
+
+def _build_congress_member_summary(member):
+    name = _member_display_name(member)
+    term = _latest_member_term(member)
+    party = _current_party_name(member)
+    state = member.get("state") or term.get("stateName")
+    district = member.get("district") or term.get("district")
+    chamber = term.get("chamber")
+    member_type = term.get("memberType")
+    start_year = term.get("startYear")
+
+    role_parts = []
+    if party:
+        role_parts.append(party)
+    if member_type:
+        role_parts.append(member_type.lower())
+    else:
+        role_parts.append("member of Congress")
+
+    location = ""
+    if state and district not in (None, ""):
+        location = f" from {state}'s {district} district"
+    elif state:
+        location = f" from {state}"
+
+    chamber_text = f" in the {chamber}" if chamber else ""
+    since_text = f" since {start_year}" if start_year else ""
+    summary = f"{name} is a {' '.join(role_parts)}{location}{chamber_text}{since_text}."
+
+    return {
+        "title": name,
+        "summary": summary,
+        "extract": summary,
+        "thumbnail": member.get("depiction", {}).get("imageUrl"),
+        "wiki_url": None,
+        "source": "congress_fallback",
+    }
+
+
+def _wikipedia_headers():
+    return {"User-Agent": WIKI_USER_AGENT}
+
+
+def _wiki_retry_delay_seconds(response):
+    retry_after = getattr(response, "headers", {}).get("Retry-After")
+    try:
+        return max(0.0, float(retry_after))
+    except (TypeError, ValueError):
+        pass
+
+    raw_value = os.getenv("YGN_WIKI_RETRY_DELAY_SECONDS", "2")
+    try:
+        return max(0.0, float(raw_value))
+    except ValueError:
+        return 2.0
+
+
+def _wiki_max_attempts():
+    raw_value = os.getenv("YGN_WIKI_MAX_ATTEMPTS", "2")
+    try:
+        return max(1, int(raw_value))
+    except ValueError:
+        return 2
+
+
+def _wiki_get(url, *, params=None, max_attempts=None):
+    attempts = _wiki_max_attempts() if max_attempts is None else max_attempts
+    last_response = None
+    for attempt in range(attempts):
+        response = requests.get(
+            url,
+            params=params,
+            headers=_wikipedia_headers(),
+            timeout=REQUEST_TIMEOUT_SECONDS,
+        )
+        last_response = response
+
+        if getattr(response, "status_code", None) == 429:
+            if attempt < attempts - 1:
+                time.sleep(_wiki_retry_delay_seconds(response))
+                continue
+            raise WikipediaRateLimited("Wikipedia returned 429 Too Many Requests.")
+
+        response.raise_for_status()
+        return response
+
+    if getattr(last_response, "status_code", None) == 429:
+        raise WikipediaRateLimited("Wikipedia returned 429 Too Many Requests.")
+
+    last_response.raise_for_status()
+    return last_response
+
+
+def _wiki_summary_from_page_title(page_title):
+    encoded_title = quote(page_title.replace(" ", "_"), safe="")
+    url = f"{WIKIPEDIA_SUMMARY_URL}/{encoded_title}"
+    data = _wiki_get(url).json()
+    extract = data.get("extract")
+    return {
+        "title": data.get("title") or page_title,
+        "summary": extract,
+        "extract": extract,
+        "thumbnail": data.get("thumbnail", {}).get("source"),
+        "wiki_url": data.get("content_urls", {}).get("desktop", {}).get("page"),
+        "source": "wikipedia",
+        "wiki_page_id": data.get("pageid"),
+    }
+
+
+def _wiki_search_titles(query, limit=5):
+    response = _wiki_get(
+        WIKIPEDIA_ACTION_API_URL,
+        params={
+            "action": "query",
+            "format": "json",
+            "list": "search",
+            "srsearch": query,
+            "srlimit": limit,
+        },
+    )
+    results = response.json().get("query", {}).get("search", [])
+    return [item.get("title") for item in results if item.get("title")]
+
+
+def _is_disambiguation_summary(summary):
+    summary_type = str(summary.get("type") or "").lower()
+    text = str(summary.get("summary") or summary.get("extract") or "").lower()
+    title = str(summary.get("title") or "").lower()
+    return (
+        summary_type == "disambiguation"
+        or "may refer to:" in text
+        or title.endswith("(disambiguation)")
+    )
+
+
+def _wiki_match_score(summary, member):
+    if not summary or _is_disambiguation_summary(summary):
+        return -100
+
+    title = str(summary.get("title") or "").lower()
+    text = f"{title} {summary.get('summary') or summary.get('extract') or ''}".lower()
+    title_normalized = re.sub(r"[^a-z0-9]+", " ", title).strip()
+    first_name = str(member.get("firstName") or "").lower()
+    last_name = str(member.get("lastName") or "").lower()
+    state = str(member.get("state") or "").lower()
+    term = _latest_member_term(member)
+    state_name = str(term.get("stateName") or "").lower()
+
+    score = 0
+    for candidate in _member_name_candidates(member):
+        candidate_normalized = re.sub(r"[^a-z0-9]+", " ", candidate.lower()).strip()
+        if candidate_normalized and candidate_normalized == title_normalized:
+            score += 8
+        elif candidate_normalized and candidate_normalized in text:
+            score += 4
+
+    if last_name and last_name in title:
+        score += 4
+    elif last_name and last_name in text:
+        score += 2
+
+    if first_name and first_name in title:
+        score += 3
+    elif first_name and first_name in text:
+        score += 1
+    elif first_name:
+        score -= 5
+
+    if first_name and first_name not in title:
+        score -= 4
+
+    if state and state in text:
+        score += 1
+    if state_name and state_name in text and state_name != state:
+        score += 1
+
+    official_terms = (
+        "american politician",
+        "u.s. representative",
+        "us representative",
+        "united states representative",
+        "united states senator",
+        "member of the united states house",
+        "house of representatives",
+        "member of congress",
+        "resident commissioner",
+        "delegate",
+    )
+    if any(term in text for term in official_terms):
+        score += 4
+
+    return score
+
+
+def _wiki_search_queries(member):
+    term = _latest_member_term(member)
+    state = member.get("state") or term.get("stateName")
+    member_type = term.get("memberType") or "member of Congress"
+    queries = []
+
+    for name in _member_name_candidates(member):
+        queries.extend(
+            [
+                f'"{name}" "{member_type}"',
+                f'"{name}" "United States Congress"',
+                f'"{name}" politician',
+            ]
+        )
+        if state:
+            queries.append(f'"{name}" {state} politician')
+
+    return _dedupe_strings(queries)
+
+
+def _resolve_wikipedia_summary(member):
+    best_summary = None
+    best_score = -100
+    tried_titles = set()
+
+    for title in _member_name_candidates(member):
+        try:
+            summary = _wiki_summary_from_page_title(title)
+        except WikipediaRateLimited:
+            return _build_congress_member_summary(member)
+        except requests.HTTPError:
+            continue
+
+        score = _wiki_match_score(summary, member)
+        if score > best_score:
+            best_summary = summary
+            best_score = score
+        if score >= 7:
+            return summary
+
+    for query in _wiki_search_queries(member):
+        try:
+            titles = _wiki_search_titles(query)
+        except WikipediaRateLimited:
+            return _build_congress_member_summary(member)
+        except requests.HTTPError:
+            continue
+
+        for title in titles:
+            title_key = title.lower()
+            if title_key in tried_titles:
+                continue
+            tried_titles.add(title_key)
+
+            try:
+                summary = _wiki_summary_from_page_title(title)
+            except WikipediaRateLimited:
+                return _build_congress_member_summary(member)
+            except requests.HTTPError:
+                continue
+
+            score = _wiki_match_score(summary, member)
+            if score > best_score:
+                best_summary = summary
+                best_score = score
+            if score >= 7:
+                return summary
+
+    if best_summary is not None and best_score >= 5:
+        return best_summary
+
+    return _build_congress_member_summary(member)
+
+
 def getMemberID(Name, chamber=None, congress=None):
     """
     Look up a member of Congress's bioguideId by name. (last, first) or (last) works.
@@ -425,28 +780,10 @@ def get_wiki_summary(bioguideId):
 
     def fetch_json():
         member = CongressMembersID(bioguideId).get("member", {})
-        name = member.get("directOrderName")
-        if not name:
+        if not _member_name_candidates(member):
             raise ValueError(f"No directOrderName found for bioguideId {bioguideId}.")
 
-        page_title = quote(name.replace(" ", "_"))
-        url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
-        headers = {"User-Agent": "YGN/1.0 (government-officials-cache)"}
-        response = requests.get(
-            url,
-            headers=headers,
-            timeout=REQUEST_TIMEOUT_SECONDS,
-        )
-        response.raise_for_status()
-        data = response.json()
-        extract = data.get("extract")
-        return {
-            "title": data.get("title"),
-            "summary": extract,
-            "extract": extract,
-            "thumbnail": data.get("thumbnail", {}).get("source"),
-            "wiki_url": data.get("content_urls", {}).get("desktop", {}).get("page"),
-        }
+        return _resolve_wikipedia_summary(member)
 
     wiki_summary = _cached_json(
         cache_key,

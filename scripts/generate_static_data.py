@@ -48,7 +48,17 @@ def parse_generated_at(value):
     return parsed
 
 
-def reusable_wiki_snapshot(path, generated_at, ttl_days):
+def is_fallback_description(payload):
+    return payload.get("source") == "congress_fallback"
+
+
+def is_disambiguation_description(payload):
+    title = str(payload.get("title") or "").lower()
+    text = str(payload.get("summary") or payload.get("extract") or "").lower()
+    return "may refer to:" in text or title.endswith("(disambiguation)")
+
+
+def reusable_wiki_snapshot(path, generated_at, ttl_days, fallback_ttl_days):
     if ttl_days <= 0 or not path.exists():
         return None
 
@@ -60,12 +70,18 @@ def reusable_wiki_snapshot(path, generated_at, ttl_days):
     summary_text = payload.get("summary") or payload.get("extract")
     if not summary_text:
         return None
+    if is_disambiguation_description(payload):
+        return None
 
     snapshot_time = parse_generated_at(payload.get("generated_at"))
     if snapshot_time is None:
         return None
 
-    if generated_at - snapshot_time > timedelta(days=ttl_days):
+    effective_ttl_days = fallback_ttl_days if is_fallback_description(payload) else ttl_days
+    if effective_ttl_days <= 0:
+        return None
+
+    if generated_at - snapshot_time > timedelta(days=effective_ttl_days):
         return None
 
     return payload
@@ -175,6 +191,12 @@ def parse_args():
         help="Reuse existing docs/data/wiki files for this many days.",
     )
     parser.add_argument(
+        "--fallback-static-ttl-days",
+        type=int,
+        default=int(os.getenv("YGN_FALLBACK_STATIC_TTL_DAYS", "1")),
+        help="Reuse non-Wikipedia fallback descriptions for this many days.",
+    )
+    parser.add_argument(
         "--wiki-delay-seconds",
         type=float,
         default=float(os.getenv("YGN_WIKI_DELAY_SECONDS", "0.5")),
@@ -200,8 +222,10 @@ def main():
         "current_member": not args.include_former_members,
         "members": 0,
         "details": 0,
+        "descriptions": 0,
         "wiki": 0,
         "wiki_reused": 0,
+        "fallback_descriptions": 0,
         "nominate": 0,
         "recent_bills": False,
         "errors": [],
@@ -274,9 +298,19 @@ def main():
 
         if not args.skip_wiki:
             wiki_path = output_dir / "wiki" / f"{bioguide_id}.json"
-            if reusable_wiki_snapshot(wiki_path, generated_at_dt, args.wiki_static_ttl_days):
-                report["wiki"] += 1
-                report["wiki_reused"] += 1
+            reusable_wiki = reusable_wiki_snapshot(
+                wiki_path,
+                generated_at_dt,
+                args.wiki_static_ttl_days,
+                args.fallback_static_ttl_days,
+            )
+            if reusable_wiki:
+                report["descriptions"] += 1
+                if is_fallback_description(reusable_wiki):
+                    report["fallback_descriptions"] += 1
+                else:
+                    report["wiki"] += 1
+                    report["wiki_reused"] += 1
                 continue
 
             try:
@@ -288,7 +322,11 @@ def main():
                         **wiki,
                     },
                 )
-                report["wiki"] += 1
+                report["descriptions"] += 1
+                if is_fallback_description(wiki):
+                    report["fallback_descriptions"] += 1
+                else:
+                    report["wiki"] += 1
             except Exception as exc:
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "wiki", "error": str(exc)}

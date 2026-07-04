@@ -60,7 +60,7 @@ gh secret set CONGRESS_API_KEY
 
 Then run the `Generate Static Data` workflow from GitHub Actions. It writes public JSON snapshots into `docs/data/` and commits them back to `main`. By default it snapshots all current congressional members for the current Congress; for a smaller test run, pass a number in the `max_members` workflow input.
 
-The backend SQLite cache and the GitHub Pages static JSON serve related but different roles. SQLite is a private server-side cache used when FastAPI is running. `docs/data/` is a public static snapshot used when the site is hosted on GitHub Pages without a backend server.
+The backend SQLite cache and the GitHub Pages static JSON serve related but different roles. SQLite is a private server-side cache used when FastAPI is running. `docs/data/` is a public static snapshot used when the site is hosted on GitHub Pages without a backend server. Member description files under `docs/data/wiki/` prefer Wikipedia summaries and fall back to a Congress.gov-generated blurb when Wikipedia has no resolvable page or rate-limits the request.
 
 ## Frontend
 
@@ -115,6 +115,9 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 - `YGN_CACHE_TTL_SECONDS`: optional cache TTL. Defaults to `900`.
 - `YGN_WIKI_CACHE_TTL_SECONDS`: optional SQLite cache TTL for Wikipedia summaries. Defaults to `2592000` seconds, or 30 days.
 - `YGN_WIKI_STATIC_TTL_DAYS`: optional GitHub Pages static-data reuse window for existing `docs/data/wiki` files. Defaults to `30`.
+- `YGN_FALLBACK_STATIC_TTL_DAYS`: optional GitHub Pages static-data reuse window for non-Wikipedia fallback descriptions. Defaults to `1`.
 - `YGN_WIKI_DELAY_SECONDS`: optional delay between new Wikipedia requests in the static-data workflow. Defaults to `0.5`.
+- `YGN_WIKI_RETRY_DELAY_SECONDS`: optional delay before retrying Wikipedia `429 Too Many Requests` responses. Defaults to `2`.
+- `YGN_WIKI_MAX_ATTEMPTS`: optional number of attempts for each Wikipedia request. Defaults to `2`.
 - `YGN_ENABLE_BACKGROUND_REFRESH`: set to `0` to disable startup background refresh.
 - `YGN_CORS_ORIGINS`: comma-separated allowed frontend origins. Defaults to `*` for local MVP work.

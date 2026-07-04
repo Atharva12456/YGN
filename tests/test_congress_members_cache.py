@@ -11,8 +11,20 @@ from unittest.mock import Mock, patch
 MODULE_PATH = Path(__file__).resolve().parents[1] / "empty-folder" / "CongressMembers.py"
 
 
+class FakeRequestException(Exception):
+    pass
+
+
+class FakeHTTPError(FakeRequestException):
+    pass
+
+
 def load_module():
-    requests_stub = types.SimpleNamespace(get=Mock())
+    requests_stub = types.SimpleNamespace(
+        get=Mock(),
+        HTTPError=FakeHTTPError,
+        RequestException=FakeRequestException,
+    )
     previous_requests = sys.modules.get("requests")
     sys.modules["requests"] = requests_stub
 
@@ -29,10 +41,15 @@ def load_module():
     return module
 
 
-def fake_response(payload):
+def fake_response(payload, status_code=200, raise_for_status=None, headers=None):
     response = Mock()
+    response.status_code = status_code
+    response.headers = headers or {}
     response.json.return_value = payload
-    response.raise_for_status.return_value = None
+    if raise_for_status is None:
+        response.raise_for_status.return_value = None
+    else:
+        response.raise_for_status.side_effect = raise_for_status
     return response
 
 
@@ -185,6 +202,94 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(first["extract"], "Jane summary")
         self.assertEqual(third["title"], "John Example")
         self.assertEqual(requests_get.call_count, 4)
+
+    def test_wiki_summary_searches_when_exact_title_is_missing(self):
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if "/member/A000001" in url:
+                return fake_response(
+                    {
+                        "member": {
+                            "directOrderName": "Eugene Simon Vindman",
+                            "firstName": "Eugene",
+                            "lastName": "Vindman",
+                            "state": "Virginia",
+                            "terms": [
+                                {
+                                    "chamber": "House of Representatives",
+                                    "memberType": "Representative",
+                                    "stateName": "Virginia",
+                                }
+                            ],
+                        }
+                    }
+                )
+            if "Eugene_Simon_Vindman" in url:
+                return fake_response(
+                    {},
+                    status_code=404,
+                    raise_for_status=self.module.requests.HTTPError("missing"),
+                )
+            if "w/api.php" in url:
+                return fake_response(
+                    {"query": {"search": [{"title": "Eugene Vindman"}]}}
+                )
+            if "Eugene_Vindman" in url:
+                return fake_response(
+                    {
+                        "title": "Eugene Vindman",
+                        "extract": "Eugene Vindman is an American politician and U.S. representative from Virginia.",
+                        "content_urls": {
+                            "desktop": {"page": "https://en.wikipedia.org/wiki/Eugene_Vindman"}
+                        },
+                    }
+                )
+            return fake_response({})
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request):
+            summary = self.module.get_wiki_summary("A000001")
+
+        self.assertEqual(summary["source"], "wikipedia")
+        self.assertEqual(summary["title"], "Eugene Vindman")
+        self.assertIn("U.S. representative", summary["summary"])
+
+    def test_wiki_summary_returns_congress_fallback_when_no_wiki_match(self):
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if "/member/A000001" in url:
+                return fake_response(
+                    {
+                        "member": {
+                            "directOrderName": "Jane Example",
+                            "firstName": "Jane",
+                            "lastName": "Example",
+                            "state": "New York",
+                            "district": 1,
+                            "partyHistory": [{"partyName": "Democratic", "startYear": 2025}],
+                            "terms": [
+                                {
+                                    "chamber": "House of Representatives",
+                                    "memberType": "Representative",
+                                    "startYear": 2025,
+                                    "stateName": "New York",
+                                    "district": 1,
+                                }
+                            ],
+                        }
+                    }
+                )
+            if "w/api.php" in url:
+                return fake_response({"query": {"search": []}})
+            return fake_response(
+                {},
+                status_code=404,
+                raise_for_status=self.module.requests.HTTPError("missing"),
+            )
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request):
+            summary = self.module.get_wiki_summary("A000001")
+
+        self.assertEqual(summary["source"], "congress_fallback")
+        self.assertIn("Jane Example", summary["summary"])
+        self.assertIn("Democratic representative", summary["summary"])
 
     def test_wiki_summary_uses_longer_cache_ttl(self):
         os.environ["YGN_CACHE_TTL_SECONDS"] = "0"

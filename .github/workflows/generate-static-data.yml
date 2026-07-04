@@ -24,6 +24,8 @@ jobs:
       CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
       MAX_MEMBERS: ${{ github.event.inputs.max_members || 'all' }}
       YGN_CONGRESS: ${{ github.event.inputs.congress }}
+      YGN_WIKI_MAX_ATTEMPTS: "2"
+      YGN_WIKI_RETRY_DELAY_SECONDS: "1"
 
     steps:
       - name: Check out repository
