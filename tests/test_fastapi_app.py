@@ -17,15 +17,15 @@ class FastApiAppTests(unittest.TestCase):
         self.assertFalse(response["congress_api_key_configured"])
 
     def test_list_officials_uses_cached_backend_function(self):
-        self.app.government.allCongressMembers = Mock(return_value={"members": []})
+        self.app.government.listCongressMembers = Mock(return_value={"members": []})
 
         response = self.app.list_officials()
 
         self.assertEqual(response, {"members": []})
-        self.app.government.allCongressMembers.assert_called_once_with()
+        self.app.government.listCongressMembers.assert_called_once_with(limit=20, offset=0)
 
     def test_missing_api_key_maps_to_http_500(self):
-        self.app.government.allCongressMembers = Mock(
+        self.app.government.listCongressMembers = Mock(
             side_effect=self.app.government.MissingCongressApiKey("missing")
         )
 
@@ -54,6 +54,43 @@ class FastApiAppTests(unittest.TestCase):
             self.app.official_nominate_score("A000001")
 
         self.assertEqual(raised.exception.status_code, 404)
+
+    def test_profile_endpoint_uses_profile_backend(self):
+        self.app.government.get_official_profile = Mock(return_value={"bioguideId": "A000001"})
+
+        response = self.app.official_profile("A000001", include_wiki=False, include_nominate=True)
+
+        self.assertEqual(response, {"bioguideId": "A000001"})
+        self.app.government.get_official_profile.assert_called_once_with(
+            "A000001",
+            include_wiki=False,
+            include_nominate=True,
+        )
+
+    def test_warm_cache_endpoint_returns_report(self):
+        self.app.government.warm_government_officials_cache = Mock(
+            return_value={"members_seen": 2}
+        )
+
+        response = self.app.warm_cache(max_members=2)
+
+        self.assertEqual(response, {"members_seen": 2})
+        self.app.government.warm_government_officials_cache.assert_called_once_with(
+            include_details=True,
+            include_wiki=True,
+            include_nominate=True,
+            include_recent_bills=True,
+            max_members=2,
+            limit=250,
+        )
+
+    def test_cache_stats_endpoint_returns_stats(self):
+        self.app.government.get_cache_stats = Mock(return_value={"total_entries": 3})
+
+        response = self.app.cache_stats()
+
+        self.assertEqual(response, {"total_entries": 3})
+        self.app.government.get_cache_stats.assert_called_once_with()
 
 
 if __name__ == "__main__":
