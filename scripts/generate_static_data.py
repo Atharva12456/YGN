@@ -79,12 +79,53 @@ def member_bioguide_id(member):
     return member.get("bioguideId") or member.get("bioguideID") or member.get("bioguide_id")
 
 
-def collect_members(backend, limit, max_members):
+def parse_max_members(value):
+    if value is None:
+        return None
+
+    normalized = str(value).strip().lower()
+    if normalized in {"", "all", "none", "0"}:
+        return None
+
+    try:
+        max_members = int(normalized)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            "--max-members must be a positive integer or 'all'."
+        ) from exc
+
+    if max_members < 1:
+        raise argparse.ArgumentTypeError("--max-members must be greater than zero or 'all'.")
+
+    return max_members
+
+
+def current_congress_number(now=None):
+    now = now or datetime.now(timezone.utc)
+    effective_year = now.year
+    if effective_year % 2 == 1 and (now.month, now.day) < (1, 3):
+        effective_year -= 1
+    return ((effective_year - 1789) // 2) + 1
+
+
+def default_congress_number():
+    raw_value = os.getenv("YGN_CONGRESS", "").strip()
+    if not raw_value:
+        return current_congress_number()
+    return int(raw_value)
+
+
+def collect_members(backend, limit, max_members, congress, current_member):
     members = []
     offset = 0
 
     while True:
-        page = backend.listCongressMembers(limit=limit, offset=offset)
+        page = backend.listCongressMembers(
+            limit=limit,
+            offset=offset,
+            congress=congress,
+            current_member=current_member,
+        )
         page_members = page.get("members", [])
         if not page_members:
             break
@@ -105,8 +146,24 @@ def collect_members(backend, limit, max_members):
 def parse_args():
     parser = argparse.ArgumentParser(description="Generate static JSON snapshots for GitHub Pages.")
     parser.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR))
-    parser.add_argument("--max-members", type=int, default=250)
+    parser.add_argument(
+        "--max-members",
+        type=parse_max_members,
+        default=parse_max_members(os.getenv("YGN_MAX_MEMBERS", "all")),
+        help="Maximum members to snapshot, or 'all'. Defaults to all.",
+    )
     parser.add_argument("--limit", type=int, default=250)
+    parser.add_argument(
+        "--congress",
+        type=int,
+        default=default_congress_number(),
+        help="Congress number to snapshot. Defaults to the current Congress.",
+    )
+    parser.add_argument(
+        "--include-former-members",
+        action="store_true",
+        help="Include former members who served in the selected Congress.",
+    )
     parser.add_argument("--skip-details", action="store_true")
     parser.add_argument("--skip-wiki", action="store_true")
     parser.add_argument("--skip-nominate", action="store_true")
@@ -139,6 +196,8 @@ def main():
     generated_at_dt = datetime.fromisoformat(generated_at)
     report = {
         "generated_at": generated_at,
+        "congress": args.congress,
+        "current_member": not args.include_former_members,
         "members": 0,
         "details": 0,
         "wiki": 0,
@@ -149,7 +208,13 @@ def main():
     }
 
     try:
-        members = collect_members(backend, limit=args.limit, max_members=args.max_members)
+        members = collect_members(
+            backend,
+            limit=args.limit,
+            max_members=args.max_members,
+            congress=args.congress,
+            current_member=not args.include_former_members,
+        )
     except backend.UpstreamDataError as exc:
         print(str(exc), file=sys.stderr)
         return 3

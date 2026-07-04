@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       max_members:
-        description: "Maximum members to snapshot"
+        description: "Maximum members to snapshot, or all"
         required: false
-        default: "250"
+        default: "all"
+      congress:
+        description: "Congress number to snapshot; blank uses current Congress"
+        required: false
+        default: ""
   schedule:
     - cron: "20 */6 * * *"
 
@@ -18,7 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
-      MAX_MEMBERS: ${{ github.event.inputs.max_members || '250' }}
+      MAX_MEMBERS: ${{ github.event.inputs.max_members || 'all' }}
+      YGN_CONGRESS: ${{ github.event.inputs.congress }}
 
     steps:
       - name: Check out repository

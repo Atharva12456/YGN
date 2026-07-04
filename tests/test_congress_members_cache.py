@@ -61,6 +61,15 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(requests_get.call_count, 1)
 
+    def test_list_congress_members_can_filter_current_congress(self):
+        with patch.object(self.module.requests, "get") as requests_get:
+            requests_get.return_value = fake_response({"members": []})
+
+            self.module.listCongressMembers(limit=250, offset=0, congress=119, current_member=True)
+
+        self.assertTrue(requests_get.call_args.args[0].endswith("/member/congress/119"))
+        self.assertEqual(requests_get.call_args.kwargs["params"]["currentMember"], "true")
+
     def test_stale_cache_refreshes(self):
         os.environ["YGN_CACHE_TTL_SECONDS"] = "0"
         responses = [

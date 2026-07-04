@@ -23,7 +23,12 @@ class FastApiAppTests(unittest.TestCase):
         response = self.app.list_officials()
 
         self.assertEqual(response, {"members": []})
-        self.app.government.listCongressMembers.assert_called_once_with(limit=20, offset=0)
+        self.app.government.listCongressMembers.assert_called_once_with(
+            limit=20,
+            offset=0,
+            congress=None,
+            current_member=None,
+        )
 
     def test_missing_api_key_maps_to_http_500(self):
         self.app.government.listCongressMembers = Mock(

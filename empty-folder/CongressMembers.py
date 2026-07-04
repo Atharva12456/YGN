@@ -257,14 +257,22 @@ def _congress_get(path, params=None, ttl_seconds=None):
     return _cached_json(cache_key, f"congress:{path}", fetch_json, ttl_seconds=ttl_seconds)
 
 
-def listCongressMembers(limit=20, offset=0):
+def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):
+    path = "/member"
+    if congress is not None:
+        path = f"/member/congress/{congress}"
+
+    params = {
+        "limit": limit,
+        "offset": offset,
+        "format": "json",
+    }
+    if current_member is not None:
+        params["currentMember"] = "true" if current_member else "false"
+
     return _congress_get(
-        "/member",
-        params={
-            "limit": limit,
-            "offset": offset,
-            "format": "json",
-        },
+        path,
+        params=params,
     )
 
 

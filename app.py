@@ -122,8 +122,16 @@ def health():
 def list_officials(
     limit: Annotated[int, Query(ge=1, le=250)] = 20,
     offset: Annotated[int, Query(ge=0)] = 0,
+    congress: Annotated[int | None, Query(ge=1)] = None,
+    current_member: bool | None = None,
 ):
-    return _backend_response(government.listCongressMembers, limit=limit, offset=offset)
+    return _backend_response(
+        government.listCongressMembers,
+        limit=limit,
+        offset=offset,
+        congress=congress,
+        current_member=current_member,
+    )
 
 
 @app.get("/officials/search")

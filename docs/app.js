@@ -73,6 +73,33 @@ function clamp(val, min, max) {
   return Math.min(max, Math.max(min, val));
 }
 
+function firstSentences(text, count = 2) {
+  const cleanText = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!cleanText) return '';
+
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
+    const sentences = Array.from(segmenter.segment(cleanText), item => item.segment.trim())
+      .filter(Boolean);
+    return sentences.slice(0, count).join(' ');
+  }
+
+  const sentences = cleanText.match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g) || [cleanText];
+  return sentences.slice(0, count).map(sentence => sentence.trim()).join(' ');
+}
+
+function currentCongressNumber(now = new Date()) {
+  let year = now.getUTCFullYear();
+  const month = now.getUTCMonth() + 1;
+  const day = now.getUTCDate();
+
+  if (year % 2 === 1 && month === 1 && day < 3) {
+    year -= 1;
+  }
+
+  return Math.floor((year - 1789) / 2) + 1;
+}
+
 function trimTrailingSlash(value) {
   return String(value || '').trim().replace(/\/+$/, '');
 }
@@ -156,6 +183,49 @@ async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
     return { data: await res.json(), source: 'api' };
   } catch (apiError) {
     return fetchStaticJson(staticPath, apiError);
+  }
+}
+
+function extractMembersFromPayload(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.items)) return data.items;
+  if (data && Array.isArray(data.members)) return data.members;
+  return [];
+}
+
+async function fetchOfficialsCollection() {
+  if (!configuredApiBaseUrl) {
+    return fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
+  }
+
+  const limit = 250;
+  let offset = 0;
+  let members = [];
+  let generatedAt = null;
+  const congress = currentCongressNumber();
+
+  try {
+    while (true) {
+      const path = `/officials?limit=${limit}&offset=${offset}&congress=${congress}&current_member=true`;
+      const res = await fetch(configuredApiBaseUrl + path);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const page = await res.json();
+      const pageMembers = extractMembersFromPayload(page);
+      members = members.concat(pageMembers);
+      generatedAt = generatedAt || page.generated_at || null;
+
+      const total = page && page.pagination && Number(page.pagination.count);
+      offset += limit;
+
+      if (pageMembers.length === 0 || !Number.isFinite(total) || offset >= total) {
+        break;
+      }
+    }
+
+    return { data: { generated_at: generatedAt, members }, source: 'api' };
+  } catch (apiError) {
+    return fetchStaticJson('officials.json', apiError);
   }
 }
 
@@ -308,20 +378,11 @@ async function loadMembers() {
   renderSkeletons(12);
 
   try {
-    const result = await fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
+    const result = await fetchOfficialsCollection();
     const data = result.data;
 
-    // Handle both array responses and { items: [...] } object responses
-    let items;
-    if (Array.isArray(data)) {
-      items = data;
-    } else if (data && Array.isArray(data.items)) {
-      items = data.items;
-    } else if (data && Array.isArray(data.members)) {
-      items = data.members;
-    } else {
-      items = [];
-    }
+    // Handle both array responses and { items/members: [...] } object responses
+    let items = extractMembersFromPayload(data);
 
     if (items.length === 0) {
       showEmpty();
@@ -607,12 +668,7 @@ function showPopover(member, wikiData, anchorEl) {
 
   const wikiText = wikiData && (wikiData.summary || wikiData.extract);
   if (wikiText) {
-    // Truncate very long summaries
-    const maxLen = 280;
-    const text = wikiText.length > maxLen
-      ? wikiText.slice(0, maxLen).trimEnd() + '…'
-      : wikiText;
-    popoverSummary.textContent = text;
+    popoverSummary.textContent = firstSentences(wikiText, 2);
   } else {
     popoverSummary.textContent = 'No biographical summary available.';
   }

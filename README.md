@@ -58,7 +58,9 @@ Set the repository secret once:
 gh secret set CONGRESS_API_KEY
 ```
 
-Then run the `Generate Static Data` workflow from GitHub Actions. It writes public JSON snapshots into `docs/data/` and commits them back to `main`.
+Then run the `Generate Static Data` workflow from GitHub Actions. It writes public JSON snapshots into `docs/data/` and commits them back to `main`. By default it snapshots all current congressional members for the current Congress; for a smaller test run, pass a number in the `max_members` workflow input.
+
+The backend SQLite cache and the GitHub Pages static JSON serve related but different roles. SQLite is a private server-side cache used when FastAPI is running. `docs/data/` is a public static snapshot used when the site is hosted on GitHub Pages without a backend server.
 
 ## Frontend
 
@@ -107,6 +109,8 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 ## Useful environment variables
 
 - `CONGRESS_API_KEY`: required for Congress.gov requests. It can live in `.env` for local MVP work or in GitHub Secrets for the static-data workflow.
+- `YGN_MAX_MEMBERS`: optional static-data member limit. Defaults to `all` current members in the selected Congress.
+- `YGN_CONGRESS`: optional static-data Congress number. Defaults to the current Congress.
 - `YGN_CACHE_PATH`: optional SQLite cache path. Defaults to `empty-folder/.cache/ygn_api_cache.sqlite`.
 - `YGN_CACHE_TTL_SECONDS`: optional cache TTL. Defaults to `900`.
 - `YGN_WIKI_CACHE_TTL_SECONDS`: optional SQLite cache TTL for Wikipedia summaries. Defaults to `2592000` seconds, or 30 days.
