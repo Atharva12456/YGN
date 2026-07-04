@@ -174,6 +174,50 @@ class CongressMembersCacheTests(unittest.TestCase):
 
         self.assertEqual(score, {"dim1": 0.25, "geo_mean": None})
 
+    def test_warm_cache_fills_member_detail_wiki_nominate_and_recent_bills(self):
+        csv_path = Path(self.temp_dir.name) / "HSall_members.csv"
+        csv_path.write_text(
+            "congress,bioguide_id,nominate_dim1,nominate_geo_mean_probability\n"
+            "117,A000001,0.25,0.99\n"
+            "117,B000001,-0.5,\n",
+            encoding="utf-8",
+        )
+        self.module.CSV_PATH = csv_path
+
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if url.endswith("/bill"):
+                return fake_response({"bills": []})
+            if url.endswith("/member") and params.get("offset") == 0:
+                return fake_response(
+                    {
+                        "members": [
+                            {"name": "Example, Jane", "bioguideId": "A000001"},
+                            {"name": "Example, John", "bioguideId": "B000001"},
+                        ],
+                        "pagination": {"count": 2},
+                    }
+                )
+            if "/member/A000001" in url:
+                return fake_response({"member": {"directOrderName": "Jane Example"}})
+            if "/member/B000001" in url:
+                return fake_response({"member": {"directOrderName": "John Example"}})
+            if "Jane_Example" in url:
+                return fake_response({"title": "Jane Example", "extract": "Jane summary"})
+            return fake_response({"title": "John Example", "extract": "John summary"})
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request):
+            report = self.module.warm_government_officials_cache()
+            stats = self.module.get_cache_stats()
+
+        self.assertEqual(report["member_pages_cached"], 1)
+        self.assertEqual(report["members_seen"], 2)
+        self.assertEqual(report["member_details_cached"], 2)
+        self.assertEqual(report["wiki_summaries_cached"], 2)
+        self.assertEqual(report["nominate_scores_checked"], 2)
+        self.assertTrue(report["recent_bills_cached"])
+        self.assertEqual(report["errors"], [])
+        self.assertGreaterEqual(stats["total_entries"], 6)
+
 
 if __name__ == "__main__":
     unittest.main()

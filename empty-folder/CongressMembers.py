@@ -203,6 +203,17 @@ def _congress_get(path, params=None, ttl_seconds=None):
     return _cached_json(cache_key, f"congress:{path}", fetch_json, ttl_seconds=ttl_seconds)
 
 
+def listCongressMembers(limit=20, offset=0):
+    return _congress_get(
+        "/member",
+        params={
+            "limit": limit,
+            "offset": offset,
+            "format": "json",
+        },
+    )
+
+
 def getRecentBills():
     return _congress_get(
         "/bill",
@@ -214,13 +225,7 @@ def getRecentBills():
 
 
 def allCongressMembers():
-    return _congress_get(
-        "/member",
-        params={
-            "limit": 20,
-            "format": "json",
-        },
-    )
+    return listCongressMembers(limit=20, offset=0)
 
 
 def CongressMembersID(bioGuideID):
@@ -247,6 +252,15 @@ def _optional_float(value):
     return float(value)
 
 
+def _member_bioguide_id(member):
+    return member.get("bioguideId") or member.get("bioguideID")
+
+
+def _pagination_total(data):
+    members = data.get("members", [])
+    return data.get("pagination", {}).get("count", len(members))
+
+
 def getMemberID(Name, chamber=None, congress=None):
     """
     Look up a member of Congress's bioguideId by name. (last, first) or (last) works.
@@ -268,14 +282,7 @@ def getMemberID(Name, chamber=None, congress=None):
     name_lower = Name.lower()
 
     while True:
-        data = _congress_get(
-            "/member",
-            params={
-                "limit": limit,
-                "offset": offset,
-                "format": "json",
-            },
-        )
+        data = listCongressMembers(limit=limit, offset=offset)
 
         members = data.get("members", [])
         if not members:
@@ -380,6 +387,22 @@ def get_wiki_summary(bioguideId):
     return _cached_json(cache_key, f"wikipedia:summary:{bioguideId}", fetch_json)
 
 
+def get_official_profile(bioguideId, include_wiki=True, include_nominate=True):
+    detail = CongressMembersID(bioguideId)
+    profile = {
+        "bioguideId": bioguideId,
+        "detail": detail,
+    }
+
+    if include_wiki:
+        profile["wiki_summary"] = get_wiki_summary(bioguideId)
+
+    if include_nominate:
+        profile["nominate_score"] = get_nominate_score(bioguideId)
+
+    return profile
+
+
 def refresh_government_officials_cache():
     """
     Refresh the core MVP cache entries used by the government officials surface.
@@ -389,8 +412,155 @@ def refresh_government_officials_cache():
     the cached response is stale or missing.
     """
     return {
-        "allCongressMembers": allCongressMembers(),
+        "allCongressMembers": listCongressMembers(limit=250, offset=0),
         "getRecentBills": getRecentBills(),
+    }
+
+
+def warm_government_officials_cache(
+    include_details=True,
+    include_wiki=True,
+    include_nominate=True,
+    include_recent_bills=True,
+    max_members=None,
+    limit=250,
+):
+    """
+    Fill the cache with the data the officials MVP can currently display.
+
+    This intentionally runs only when called directly. It can make hundreds of
+    upstream requests when include_wiki is enabled, so keep it out of the
+    automatic 15-minute background refresh.
+    """
+    if limit < 1 or limit > 250:
+        raise ValueError("limit must be between 1 and 250.")
+
+    if max_members is not None and max_members < 1:
+        raise ValueError("max_members must be greater than zero when provided.")
+
+    report = {
+        "member_pages_cached": 0,
+        "members_seen": 0,
+        "member_details_cached": 0,
+        "wiki_summaries_cached": 0,
+        "nominate_scores_checked": 0,
+        "recent_bills_cached": False,
+        "errors": [],
+    }
+
+    if include_recent_bills:
+        getRecentBills()
+        report["recent_bills_cached"] = True
+
+    offset = 0
+    while True:
+        page = listCongressMembers(limit=limit, offset=offset)
+        report["member_pages_cached"] += 1
+        members = page.get("members", [])
+        if not members:
+            break
+
+        for member in members:
+            if max_members is not None and report["members_seen"] >= max_members:
+                return report
+
+            report["members_seen"] += 1
+            bioguide_id = _member_bioguide_id(member)
+            if not bioguide_id:
+                continue
+
+            if include_details:
+                try:
+                    CongressMembersID(bioguide_id)
+                    report["member_details_cached"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {
+                            "bioguideId": bioguide_id,
+                            "stage": "detail",
+                            "error": str(exc),
+                        }
+                    )
+
+            if include_wiki:
+                try:
+                    get_wiki_summary(bioguide_id)
+                    report["wiki_summaries_cached"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {
+                            "bioguideId": bioguide_id,
+                            "stage": "wiki",
+                            "error": str(exc),
+                        }
+                    )
+
+            if include_nominate:
+                try:
+                    get_nominate_score(bioguide_id)
+                    report["nominate_scores_checked"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {
+                            "bioguideId": bioguide_id,
+                            "stage": "nominate",
+                            "error": str(exc),
+                        }
+                    )
+
+        offset += limit
+        if offset >= _pagination_total(page):
+            break
+
+    return report
+
+
+def get_cache_stats():
+    path = _cache_path()
+    if not path.exists():
+        return {
+            "cache_path": str(path),
+            "total_entries": 0,
+            "fresh_entries": 0,
+            "expired_entries": 0,
+            "sources": [],
+        }
+
+    now = _now_seconds()
+    with _cache_lock:
+        with _cache_connection() as conn:
+            totals = conn.execute(
+                """
+                SELECT
+                    COUNT(*) AS total_entries,
+                    SUM(CASE WHEN expires_at > ? THEN 1 ELSE 0 END) AS fresh_entries,
+                    SUM(CASE WHEN expires_at <= ? THEN 1 ELSE 0 END) AS expired_entries
+                FROM api_cache
+                """,
+                (now, now),
+            ).fetchone()
+            sources = conn.execute(
+                """
+                SELECT source, COUNT(*) AS entries, MIN(expires_at) AS earliest_expires_at
+                FROM api_cache
+                GROUP BY source
+                ORDER BY entries DESC, source
+                """
+            ).fetchall()
+
+    return {
+        "cache_path": str(path),
+        "total_entries": totals["total_entries"] or 0,
+        "fresh_entries": totals["fresh_entries"] or 0,
+        "expired_entries": totals["expired_entries"] or 0,
+        "sources": [
+            {
+                "source": row["source"],
+                "entries": row["entries"],
+                "earliest_expires_at": row["earliest_expires_at"],
+            }
+            for row in sources
+        ],
     }
 
 

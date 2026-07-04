@@ -3,6 +3,7 @@ import logging
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Annotated
 
 import requests
 from fastapi import FastAPI, HTTPException, Query
@@ -115,15 +116,18 @@ def health():
 
 
 @app.get("/officials")
-def list_officials():
-    return _backend_response(government.allCongressMembers)
+def list_officials(
+    limit: Annotated[int, Query(ge=1, le=250)] = 20,
+    offset: Annotated[int, Query(ge=0)] = 0,
+):
+    return _backend_response(government.listCongressMembers, limit=limit, offset=offset)
 
 
 @app.get("/officials/search")
 def search_official(
-    name: str = Query(..., min_length=1),
-    chamber: str | None = Query(default=None, pattern="^(house|senate)$"),
-    congress: int | None = Query(default=None, ge=1),
+    name: Annotated[str, Query(min_length=1)],
+    chamber: Annotated[str | None, Query(pattern="^(house|senate)$")] = None,
+    congress: Annotated[int | None, Query(ge=1)] = None,
 ):
     bioguide_id = _backend_response(
         government.getMemberID,
@@ -155,6 +159,20 @@ def official_nominate_score(bioguide_id: str):
     return score
 
 
+@app.get("/officials/{bioguide_id}/profile")
+def official_profile(
+    bioguide_id: str,
+    include_wiki: bool = True,
+    include_nominate: bool = True,
+):
+    return _backend_response(
+        government.get_official_profile,
+        bioguide_id,
+        include_wiki=include_wiki,
+        include_nominate=include_nominate,
+    )
+
+
 @app.get("/bills/recent")
 def recent_bills():
     return _backend_response(government.getRecentBills)
@@ -163,3 +181,28 @@ def recent_bills():
 @app.post("/cache/refresh")
 def refresh_cache():
     return _backend_response(government.refresh_government_officials_cache)
+
+
+@app.post("/cache/warm")
+def warm_cache(
+    include_details: bool = True,
+    include_wiki: bool = True,
+    include_nominate: bool = True,
+    include_recent_bills: bool = True,
+    max_members: Annotated[int | None, Query(ge=1)] = None,
+    limit: Annotated[int, Query(ge=1, le=250)] = 250,
+):
+    return _backend_response(
+        government.warm_government_officials_cache,
+        include_details=include_details,
+        include_wiki=include_wiki,
+        include_nominate=include_nominate,
+        include_recent_bills=include_recent_bills,
+        max_members=max_members,
+        limit=limit,
+    )
+
+
+@app.get("/cache/stats")
+def cache_stats():
+    return _backend_response(government.get_cache_stats)
