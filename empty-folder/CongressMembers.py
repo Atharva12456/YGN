@@ -475,6 +475,22 @@ def _wiki_max_attempts():
         return 2
 
 
+def _wiki_search_query_limit():
+    raw_value = os.getenv("YGN_WIKI_SEARCH_QUERY_LIMIT", "2")
+    try:
+        return max(1, int(raw_value))
+    except ValueError:
+        return 2
+
+
+def _wiki_search_result_limit():
+    raw_value = os.getenv("YGN_WIKI_SEARCH_RESULT_LIMIT", "3")
+    try:
+        return max(1, int(raw_value))
+    except ValueError:
+        return 3
+
+
 def _wiki_get(url, *, params=None, max_attempts=None):
     attempts = _wiki_max_attempts() if max_attempts is None else max_attempts
     last_response = None
@@ -519,7 +535,8 @@ def _wiki_summary_from_page_title(page_title):
     }
 
 
-def _wiki_search_titles(query, limit=5):
+def _wiki_search_titles(query, limit=None):
+    result_limit = _wiki_search_result_limit() if limit is None else limit
     response = _wiki_get(
         WIKIPEDIA_ACTION_API_URL,
         params={
@@ -527,7 +544,7 @@ def _wiki_search_titles(query, limit=5):
             "format": "json",
             "list": "search",
             "srsearch": query,
-            "srlimit": limit,
+            "srlimit": result_limit,
         },
     )
     results = response.json().get("query", {}).get("search", [])
@@ -644,7 +661,7 @@ def _resolve_wikipedia_summary(member):
         if score >= 7:
             return summary
 
-    for query in _wiki_search_queries(member):
+    for query in _wiki_search_queries(member)[: _wiki_search_query_limit()]:
         try:
             titles = _wiki_search_titles(query)
         except WikipediaRateLimited:

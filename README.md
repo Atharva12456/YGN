@@ -119,5 +119,7 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 - `YGN_WIKI_DELAY_SECONDS`: optional delay between new Wikipedia requests in the static-data workflow. Defaults to `0.5`.
 - `YGN_WIKI_RETRY_DELAY_SECONDS`: optional delay before retrying Wikipedia `429 Too Many Requests` responses. Defaults to `2`.
 - `YGN_WIKI_MAX_ATTEMPTS`: optional number of attempts for each Wikipedia request. Defaults to `2`.
+- `YGN_WIKI_SEARCH_QUERY_LIMIT`: optional maximum Wikipedia search queries per member. Defaults to `2`.
+- `YGN_WIKI_SEARCH_RESULT_LIMIT`: optional maximum Wikipedia search results inspected per query. Defaults to `3`.
 - `YGN_ENABLE_BACKGROUND_REFRESH`: set to `0` to disable startup background refresh.
 - `YGN_CORS_ORIGINS`: comma-separated allowed frontend origins. Defaults to `*` for local MVP work.
