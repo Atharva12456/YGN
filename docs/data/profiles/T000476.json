@@ -1,0 +1,116 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "113 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6342",
+        "zipCode": 20510
+      },
+      "bioguideId": "T000476",
+      "birthYear": "1960",
+      "cosponsoredLegislation": {
+        "count": 2648,
+        "url": "https://api.congress.gov/v3/member/T000476/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/t000476_200.jpg"
+      },
+      "directOrderName": "Thom Tillis",
+      "firstName": "Thomas",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Tillis, Thomas",
+      "lastName": "Tillis",
+      "middleName": "Roland",
+      "officialWebsiteUrl": "https://www.tillis.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2015
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Thom Tillis",
+          "firstName": "Thomas",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Tillis, Thomas",
+          "lastName": "Tillis",
+          "middleName": "Roland",
+          "startDate": "2015-01-06T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 680,
+        "url": "https://api.congress.gov/v3/member/T000476/sponsored-legislation"
+      },
+      "state": "North Carolina",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:51Z"
+    },
+    "request": {
+      "bioguideId": "t000476",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

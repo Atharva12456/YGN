@@ -1,0 +1,124 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "326 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2353",
+        "zipCode": 20515
+      },
+      "bioguideId": "C001095",
+      "birthYear": "1977",
+      "cosponsoredLegislation": {
+        "count": 1948,
+        "url": "https://api.congress.gov/v3/member/C001095/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/c001095_200.jpg"
+      },
+      "directOrderName": "Tom Cotton",
+      "firstName": "Tom",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Cotton, Tom",
+      "lastName": "Cotton",
+      "officialWebsiteUrl": "https://www.cotton.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2013
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Tom Cotton",
+          "firstName": "Tom",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Cotton, Tom",
+          "lastName": "Cotton",
+          "startDate": "2013-01-03T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 573,
+        "url": "https://api.congress.gov/v3/member/C001095/sponsored-legislation"
+      },
+      "state": "Arkansas",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "district": 4,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "AR",
+          "stateName": "Arkansas"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:57Z"
+    },
+    "request": {
+      "bioguideId": "c001095",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

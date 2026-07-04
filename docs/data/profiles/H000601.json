@@ -1,0 +1,96 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "251 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4944",
+        "zipCode": 20510
+      },
+      "bioguideId": "H000601",
+      "birthYear": "1959",
+      "cosponsoredLegislation": {
+        "count": 863,
+        "url": "https://api.congress.gov/v3/member/H000601/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/h000601_200.jpg"
+      },
+      "directOrderName": "Bill Hagerty",
+      "firstName": "Bill",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Hagerty, Bill",
+      "lastName": "Hagerty",
+      "officialWebsiteUrl": "https://www.hagerty.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2021
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Bill Hagerty",
+          "firstName": "Bill",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hagerty, Bill",
+          "lastName": "Hagerty",
+          "startDate": "2023-04-01T06:35:00Z"
+        },
+        {
+          "directOrderName": "Bill Hagerty",
+          "endDate": "2023-04-01T06:34:59Z",
+          "firstName": "Bill",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hagerty, Bill",
+          "lastName": "Hagerty",
+          "startDate": "2021-01-03T17:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 329,
+        "url": "https://api.congress.gov/v3/member/H000601/sponsored-legislation"
+      },
+      "state": "Tennessee",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "TN",
+          "stateName": "Tennessee"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "TN",
+          "stateName": "Tennessee"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "TN",
+          "stateName": "Tennessee"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:20Z"
+    },
+    "request": {
+      "bioguideId": "h000601",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

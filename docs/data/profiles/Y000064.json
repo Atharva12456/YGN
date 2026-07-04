@@ -1,0 +1,145 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "185 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5623",
+        "zipCode": 20515
+      },
+      "bioguideId": "Y000064",
+      "birthYear": "1972",
+      "cosponsoredLegislation": {
+        "count": 2125,
+        "url": "https://api.congress.gov/v3/member/Y000064/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/y000064_200.jpg"
+      },
+      "directOrderName": "Todd Young",
+      "firstName": "Todd",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Young, Todd",
+      "lastName": "Young",
+      "officialWebsiteUrl": "https://www.young.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2011
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Todd Young",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "Todd",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Young, Todd",
+          "lastName": "Young",
+          "middleName": "C.",
+          "startDate": "2011-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Todd Young",
+          "firstName": "Todd",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Young, Todd",
+          "lastName": "Young",
+          "startDate": "2023-01-04T07:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 433,
+        "url": "https://api.congress.gov/v3/member/Y000064/sponsored-legislation"
+      },
+      "state": "Indiana",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 112,
+          "district": 9,
+          "endYear": 2013,
+          "memberType": "Representative",
+          "startYear": 2011,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "district": 9,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 114,
+          "district": 9,
+          "endYear": 2017,
+          "memberType": "Representative",
+          "startYear": 2015,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        }
+      ],
+      "updateDate": "2026-03-08T10:33:08Z"
+    },
+    "request": {
+      "bioguideId": "y000064",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

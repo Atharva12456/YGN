@@ -1,0 +1,113 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "381 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6154",
+        "zipCode": 20510
+      },
+      "bioguideId": "H001089",
+      "birthYear": "1979",
+      "cosponsoredLegislation": {
+        "count": 965,
+        "url": "https://api.congress.gov/v3/member/H001089/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "imageUrl": "https://www.congress.gov/img/member/h001089_200.jpg"
+      },
+      "directOrderName": "Josh Hawley",
+      "firstName": "Josh",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Hawley, Josh",
+      "lastName": "Hawley",
+      "officialWebsiteUrl": "https://www.hawley.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Josh Hawley",
+          "endDate": "2025-04-12T08:44:59Z",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hawley, Josh",
+          "lastName": "Hawley",
+          "startDate": "2019-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Josh Hawley",
+          "endDate": "2025-05-28T08:44:59Z",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hawley, Josh",
+          "lastName": "Hawley",
+          "startDate": "2025-04-12T08:45:00Z"
+        },
+        {
+          "directOrderName": "Josh Hawley",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hawley, Josh",
+          "lastName": "Hawley",
+          "startDate": "2025-05-28T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 346,
+        "url": "https://api.congress.gov/v3/member/H001089/sponsored-legislation"
+      },
+      "state": "Missouri",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "MO",
+          "stateName": "Missouri"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "MO",
+          "stateName": "Missouri"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "MO",
+          "stateName": "Missouri"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "MO",
+          "stateName": "Missouri"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:24Z"
+    },
+    "request": {
+      "bioguideId": "h001089",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

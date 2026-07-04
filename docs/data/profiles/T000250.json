@@ -1,0 +1,215 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "511 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2321",
+        "zipCode": 20515
+      },
+      "bioguideId": "T000250",
+      "birthYear": "1961",
+      "cosponsoredLegislation": {
+        "count": 2801,
+        "url": "https://api.congress.gov/v3/member/T000250/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/t000250_200.jpg"
+      },
+      "directOrderName": "John Thune",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Thune, John",
+      "lastName": "Thune",
+      "leadership": [
+        {
+          "congress": 116,
+          "type": "Majority Whip"
+        },
+        {
+          "congress": 117,
+          "type": "Whip"
+        },
+        {
+          "congress": 118,
+          "type": "Whip"
+        },
+        {
+          "congress": 119,
+          "current": true,
+          "type": "Majority Leader"
+        }
+      ],
+      "officialWebsiteUrl": "https://www.thune.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 1997
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John Thune",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Thune, John",
+          "lastName": "Thune",
+          "middleName": "R.",
+          "startDate": "1997-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "John Thune",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Thune, John",
+          "lastName": "Thune",
+          "startDate": "2023-01-04T07:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 1058,
+        "url": "https://api.congress.gov/v3/member/T000250/sponsored-legislation"
+      },
+      "state": "South Dakota",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 105,
+          "endYear": 1999,
+          "memberType": "Representative",
+          "startYear": 1997,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 106,
+          "endYear": 2001,
+          "memberType": "Representative",
+          "startYear": 1999,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 107,
+          "endYear": 2003,
+          "memberType": "Representative",
+          "startYear": 2001,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 109,
+          "endYear": 2007,
+          "memberType": "Senator",
+          "startYear": 2005,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 110,
+          "endYear": 2009,
+          "memberType": "Senator",
+          "startYear": 2007,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2009,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:49Z"
+    },
+    "request": {
+      "bioguideId": "t000250",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

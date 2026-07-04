@@ -1,0 +1,177 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "115 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4242",
+        "zipCode": 20515
+      },
+      "bioguideId": "W000800",
+      "birthYear": "1947",
+      "cosponsoredLegislation": {
+        "count": 5448,
+        "url": "https://api.congress.gov/v3/member/W000800/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/fd3cb364b8bf93c25834cff750637802_200.jpg"
+      },
+      "directOrderName": "Peter Welch",
+      "firstName": "Peter",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Welch, Peter",
+      "lastName": "Welch",
+      "officialWebsiteUrl": "https://www.welch.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2007
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Peter Welch",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "Peter",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Welch, Peter",
+          "lastName": "Welch",
+          "startDate": "2007-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Peter Welch",
+          "endDate": "2025-05-24T08:44:59Z",
+          "firstName": "Peter",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Welch, Peter",
+          "lastName": "Welch",
+          "startDate": "2023-05-10T06:35:00Z"
+        },
+        {
+          "directOrderName": "Peter Welch",
+          "endDate": "2023-05-10T06:34:59Z",
+          "firstName": "Peter",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Welch, Peter",
+          "lastName": "Welch",
+          "startDate": "2023-01-04T07:35:00Z"
+        },
+        {
+          "directOrderName": "Peter Welch",
+          "firstName": "Peter",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Welch, Peter",
+          "lastName": "Welch",
+          "startDate": "2025-05-24T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 756,
+        "url": "https://api.congress.gov/v3/member/W000800/sponsored-legislation"
+      },
+      "state": "Vermont",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 110,
+          "endYear": 2009,
+          "memberType": "Representative",
+          "startYear": 2007,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Representative",
+          "startYear": 2009,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Representative",
+          "startYear": 2011,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Representative",
+          "startYear": 2015,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Representative",
+          "startYear": 2017,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        }
+      ],
+      "updateDate": "2026-03-08T10:33:01Z"
+    },
+    "request": {
+      "bioguideId": "w000800",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

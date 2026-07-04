@@ -1,0 +1,135 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "354 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3154",
+        "zipCode": 20515
+      },
+      "bioguideId": "B001305",
+      "birthYear": "1971",
+      "cosponsoredLegislation": {
+        "count": 1992,
+        "url": "https://api.congress.gov/v3/member/B001305/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/b001305_200.jpg"
+      },
+      "directOrderName": "Ted Budd",
+      "firstName": "Ted",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Budd, Ted",
+      "lastName": "Budd",
+      "officialWebsiteUrl": "https://www.budd.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2017
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Ted Budd",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "Ted",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Budd, Ted",
+          "lastName": "Budd",
+          "startDate": "2017-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Ted Budd",
+          "endDate": "2023-04-04T06:34:59Z",
+          "firstName": "Ted",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Budd, Ted",
+          "lastName": "Budd",
+          "startDate": "2023-01-04T07:35:00Z"
+        },
+        {
+          "directOrderName": "Ted Budd",
+          "endDate": "2025-03-28T08:44:59Z",
+          "firstName": "Ted",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Budd, Ted",
+          "lastName": "Budd",
+          "startDate": "2023-04-04T06:35:00Z"
+        },
+        {
+          "directOrderName": "Ted Budd",
+          "firstName": "Ted",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Budd, Ted",
+          "lastName": "Budd",
+          "startDate": "2025-03-28T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 269,
+        "url": "https://api.congress.gov/v3/member/B001305/sponsored-legislation"
+      },
+      "state": "North Carolina",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 115,
+          "district": 13,
+          "endYear": 2019,
+          "memberType": "Representative",
+          "startYear": 2017,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 13,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 13,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:42Z"
+    },
+    "request": {
+      "bioguideId": "b001305",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "2265 Rayburn House Office Building",
+        "phoneNumber": "(202) 225-1492",
+        "zipCode": 20515
+      },
+      "bioguideId": "W000831",
+      "birthYear": "1982",
+      "cosponsoredLegislation": {
+        "count": 329,
+        "url": "https://api.congress.gov/v3/member/W000831/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/68c1bd4ca929c5b98220e069_200.jpg"
+      },
+      "directOrderName": "James R. Walkinshaw",
+      "district": 11,
+      "firstName": "James",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Walkinshaw, James R.",
+      "lastName": "Walkinshaw",
+      "middleName": "R.",
+      "officialWebsiteUrl": "https://walkinshaw.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "James R. Walkinshaw",
+          "endDate": "2025-09-12T07:45:26Z",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Walkinshaw, James R.",
+          "lastName": "Walkinshaw",
+          "middleName": "R.",
+          "startDate": "2025-09-10T07:45:28Z"
+        },
+        {
+          "directOrderName": "James R. Walkinshaw",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Walkinshaw, James R.",
+          "lastName": "Walkinshaw",
+          "middleName": "R.",
+          "startDate": "2025-09-12T07:45:27Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 18,
+        "url": "https://api.congress.gov/v3/member/W000831/sponsored-legislation"
+      },
+      "state": "Virginia",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 11,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "VA",
+          "stateName": "Virginia"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:24Z"
+    },
+    "request": {
+      "bioguideId": "w000831",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

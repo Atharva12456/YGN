@@ -1,0 +1,107 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "479A Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4774",
+        "zipCode": 20515
+      },
+      "bioguideId": "M001198",
+      "birthYear": "1960",
+      "cosponsoredLegislation": {
+        "count": 1816,
+        "url": "https://api.congress.gov/v3/member/M001198/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Congressional Pictorial Directory",
+        "imageUrl": "https://www.congress.gov/img/member/m001198_200.jpg"
+      },
+      "directOrderName": "Roger Marshall",
+      "firstName": "Roger",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Marshall, Roger",
+      "lastName": "Marshall",
+      "officialWebsiteUrl": "https://www.marshall.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2017
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Roger Marshall",
+          "firstName": "Roger",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Marshall, Roger",
+          "lastName": "Marshall",
+          "startDate": "2017-01-03T17:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 519,
+        "url": "https://api.congress.gov/v3/member/M001198/sponsored-legislation"
+      },
+      "state": "Kansas",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 115,
+          "district": 1,
+          "endYear": 2019,
+          "memberType": "Representative",
+          "startYear": 2017,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 1,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:55Z"
+    },
+    "request": {
+      "bioguideId": "m001198",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

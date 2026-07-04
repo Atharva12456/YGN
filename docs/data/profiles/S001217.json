@@ -1,0 +1,104 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "110 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5274",
+        "zipCode": 20510
+      },
+      "bioguideId": "S001217",
+      "birthYear": "1952",
+      "cosponsoredLegislation": {
+        "count": 1752,
+        "url": "https://api.congress.gov/v3/member/S001217/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "imageUrl": "https://www.congress.gov/img/member/s001217_200.jpg"
+      },
+      "directOrderName": "Rick Scott",
+      "firstName": "Rick",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Scott, Rick",
+      "lastName": "Scott",
+      "officialWebsiteUrl": "https://www.rickscott.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Rick Scott",
+          "firstName": "Rick",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Scott, Rick",
+          "lastName": "Scott",
+          "startDate": "2023-04-01T06:35:00Z"
+        },
+        {
+          "directOrderName": "Rick Scott",
+          "endDate": "2023-04-01T06:34:59Z",
+          "firstName": "Rick",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Scott, Rick",
+          "lastName": "Scott",
+          "startDate": "2019-01-08T00:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 659,
+        "url": "https://api.congress.gov/v3/member/S001217/sponsored-legislation"
+      },
+      "state": "Florida",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "FL",
+          "stateName": "Florida"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "FL",
+          "stateName": "Florida"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "FL",
+          "stateName": "Florida"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "FL",
+          "stateName": "Florida"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:39Z"
+    },
+    "request": {
+      "bioguideId": "s001217",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

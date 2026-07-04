@@ -1,0 +1,114 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "716 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5842",
+        "zipCode": 20510
+      },
+      "bioguideId": "R000605",
+      "birthYear": "1954",
+      "cosponsoredLegislation": {
+        "count": 1898,
+        "url": "https://api.congress.gov/v3/member/R000605/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/r000605_200.jpg"
+      },
+      "directOrderName": "Mike Rounds",
+      "firstName": "Mike",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Rounds, Mike",
+      "lastName": "Rounds",
+      "officialWebsiteUrl": "https://www.rounds.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2015
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Mike Rounds",
+          "firstName": "Mike",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Rounds, Mike",
+          "lastName": "Rounds",
+          "startDate": "2015-01-06T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 397,
+        "url": "https://api.congress.gov/v3/member/R000605/sponsored-legislation"
+      },
+      "state": "South Dakota",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "SD",
+          "stateName": "South Dakota"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:28Z"
+    },
+    "request": {
+      "bioguideId": "r000605",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

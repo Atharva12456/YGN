@@ -1,0 +1,157 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "307 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6441",
+        "zipCode": 20510
+      },
+      "bioguideId": "B001261",
+      "birthYear": "1952",
+      "cosponsoredLegislation": {
+        "count": 2451,
+        "url": "https://api.congress.gov/v3/member/B001261/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/b001261_200.jpg"
+      },
+      "directOrderName": "John Barrasso",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Barrasso, John",
+      "lastName": "Barrasso",
+      "leadership": [
+        {
+          "congress": 119,
+          "current": true,
+          "type": "Majority Whip"
+        }
+      ],
+      "officialWebsiteUrl": "https://www.barrasso.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2007
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John Barrasso",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Barrasso, John",
+          "lastName": "Barrasso",
+          "startDate": "2007-06-25T00:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 709,
+        "url": "https://api.congress.gov/v3/member/B001261/sponsored-legislation"
+      },
+      "state": "Wyoming",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 110,
+          "endYear": 2009,
+          "memberType": "Senator",
+          "startYear": 2007,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2009,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:29Z"
+    },
+    "request": {
+      "bioguideId": "b001261",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

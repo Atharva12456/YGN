@@ -1,0 +1,105 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "416 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5744",
+        "zipCode": 20510
+      },
+      "bioguideId": "B001319",
+      "birthYear": "1982",
+      "cosponsoredLegislation": {
+        "count": 701,
+        "url": "https://api.congress.gov/v3/member/B001319/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<p>Official U.S. Senate Photo</p>",
+        "imageUrl": "https://www.congress.gov/img/member/b001319_200.jpg"
+      },
+      "directOrderName": "Katie Boyd Britt",
+      "firstName": "Katie",
+      "honorificName": "Mrs.",
+      "invertedOrderName": "Britt, Katie Boyd",
+      "lastName": "Britt",
+      "officialWebsiteUrl": "https://www.britt.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Katie Boyd Britt",
+          "endDate": "2025-04-02T08:44:59Z",
+          "firstName": "Katie",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "Britt, Katie Boyd",
+          "lastName": "Britt",
+          "startDate": "2023-04-18T06:35:00Z"
+        },
+        {
+          "directOrderName": "Katie Britt",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "Katie",
+          "invertedOrderName": "Britt, Katie",
+          "lastName": "Britt",
+          "middleName": "Elizabeth",
+          "startDate": "2023-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Katie Boyd Britt",
+          "endDate": "2023-04-18T06:34:59Z",
+          "firstName": "Katie",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "Britt, Katie Boyd",
+          "lastName": "Britt",
+          "startDate": "2023-01-04T07:35:00Z"
+        },
+        {
+          "directOrderName": "Katie Boyd Britt",
+          "firstName": "Katie",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "Britt, Katie Boyd",
+          "lastName": "Britt",
+          "startDate": "2025-04-02T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 57,
+        "url": "https://api.congress.gov/v3/member/B001319/sponsored-legislation"
+      },
+      "state": "Alabama",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "AL",
+          "stateName": "Alabama"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "AL",
+          "stateName": "Alabama"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:40Z"
+    },
+    "request": {
+      "bioguideId": "b001319",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

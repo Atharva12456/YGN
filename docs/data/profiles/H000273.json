@@ -1,0 +1,99 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "316 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5941",
+        "zipCode": 20510
+      },
+      "bioguideId": "H000273",
+      "birthYear": "1952",
+      "cosponsoredLegislation": {
+        "count": 1087,
+        "url": "https://api.congress.gov/v3/member/H000273/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/h000273_200.jpg"
+      },
+      "directOrderName": "John W. Hickenlooper",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Hickenlooper, John W.",
+      "lastName": "Hickenlooper",
+      "middleName": "W.",
+      "officialWebsiteUrl": "https://www.hickenlooper.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2021
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John W. Hickenlooper",
+          "endDate": "2025-02-22T09:44:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hickenlooper, John W.",
+          "lastName": "Hickenlooper",
+          "middleName": "W.",
+          "startDate": "2021-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "John W. Hickenlooper",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hickenlooper, John W.",
+          "lastName": "Hickenlooper",
+          "middleName": "W.",
+          "startDate": "2025-02-22T09:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 277,
+        "url": "https://api.congress.gov/v3/member/H000273/sponsored-legislation"
+      },
+      "state": "Colorado",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:27Z"
+    },
+    "request": {
+      "bioguideId": "h000273",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

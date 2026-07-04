@@ -1,0 +1,89 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "702 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6324",
+        "zipCode": 20510
+      },
+      "bioguideId": "M001243",
+      "birthYear": "1965",
+      "cosponsoredLegislation": {
+        "count": 287,
+        "url": "https://api.congress.gov/v3/member/M001243/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/677d85e0fdb6cf36bbb649aa_200.jpg"
+      },
+      "directOrderName": "David McCormick",
+      "firstName": "David",
+      "honorificName": "Mr.",
+      "invertedOrderName": "McCormick, David",
+      "lastName": "McCormick",
+      "middleName": "H.",
+      "officialWebsiteUrl": "https://mccormick.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "David McCormick",
+          "endDate": "2025-02-19T09:44:59Z",
+          "firstName": "David",
+          "invertedOrderName": "McCormick, David",
+          "lastName": "McCormick",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "David McCormick",
+          "endDate": "2025-03-22T08:44:59Z",
+          "firstName": "David",
+          "honorificName": "Mr.",
+          "invertedOrderName": "McCormick, David",
+          "lastName": "McCormick",
+          "middleName": "H.",
+          "startDate": "2025-02-19T09:45:00Z"
+        },
+        {
+          "directOrderName": "David McCormick",
+          "firstName": "David",
+          "honorificName": "Mr.",
+          "invertedOrderName": "McCormick, David",
+          "lastName": "McCormick",
+          "middleName": "H.",
+          "startDate": "2025-03-22T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 66,
+        "url": "https://api.congress.gov/v3/member/M001243/sponsored-legislation"
+      },
+      "state": "Pennsylvania",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "PA",
+          "stateName": "Pennsylvania"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:59Z"
+    },
+    "request": {
+      "bioguideId": "m001243",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

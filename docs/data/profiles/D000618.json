@@ -1,0 +1,123 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "320 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2651",
+        "zipCode": 20515
+      },
+      "bioguideId": "D000618",
+      "birthYear": "1962",
+      "cosponsoredLegislation": {
+        "count": 2507,
+        "url": "https://api.congress.gov/v3/member/D000618/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/d000618_200.jpg"
+      },
+      "directOrderName": "Steve Daines",
+      "firstName": "Steve",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Daines, Steve",
+      "lastName": "Daines",
+      "officialWebsiteUrl": "https://www.daines.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2013
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Steve Daines",
+          "firstName": "Steve",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Daines, Steve",
+          "lastName": "Daines",
+          "startDate": "2013-01-03T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 638,
+        "url": "https://api.congress.gov/v3/member/D000618/sponsored-legislation"
+      },
+      "state": "Montana",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:04Z"
+    },
+    "request": {
+      "bioguideId": "d000618",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

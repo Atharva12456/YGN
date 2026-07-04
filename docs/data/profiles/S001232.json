@@ -1,0 +1,86 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "124 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2644",
+        "zipCode": 20510
+      },
+      "bioguideId": "S001232",
+      "birthYear": "1985",
+      "cosponsoredLegislation": {
+        "count": 315,
+        "url": "https://api.congress.gov/v3/member/S001232/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/677d8231fdb6cf36bbb6498b_200.jpg"
+      },
+      "directOrderName": "Tim Sheehy",
+      "firstName": "Tim",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Sheehy, Tim",
+      "lastName": "Sheehy",
+      "officialWebsiteUrl": "https://www.sheehy.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Tim Sheehy",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "Tim",
+          "invertedOrderName": "Sheehy, Tim",
+          "lastName": "Sheehy",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Tim Sheehy",
+          "endDate": "2025-06-07T08:44:59Z",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Sheehy, Tim",
+          "lastName": "Sheehy",
+          "startDate": "2025-02-15T09:45:00Z"
+        },
+        {
+          "directOrderName": "Tim Sheehy",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Sheehy, Tim",
+          "lastName": "Sheehy",
+          "startDate": "2025-06-07T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 82,
+        "url": "https://api.congress.gov/v3/member/S001232/sponsored-legislation"
+      },
+      "state": "Montana",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "MT",
+          "stateName": "Montana"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:44Z"
+    },
+    "request": {
+      "bioguideId": "s001232",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

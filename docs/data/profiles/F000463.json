@@ -1,0 +1,132 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "448 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6551",
+        "zipCode": 20510
+      },
+      "bioguideId": "F000463",
+      "birthYear": "1951",
+      "cosponsoredLegislation": {
+        "count": 1587,
+        "url": "https://api.congress.gov/v3/member/F000463/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/669ec7925d19788d1f2034a1_200.jpg"
+      },
+      "directOrderName": "Deb Fischer",
+      "firstName": "Deb",
+      "honorificName": "Mrs.",
+      "invertedOrderName": "Fischer, Deb",
+      "lastName": "Fischer",
+      "officialWebsiteUrl": "https://www.fischer.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2013
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Deb Fischer",
+          "endDate": "2023-08-24T06:34:59Z",
+          "firstName": "Deb",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "Fischer, Deb",
+          "lastName": "Fischer",
+          "startDate": "2013-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Deb Fischer",
+          "firstName": "Deb",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "Fischer, Deb",
+          "lastName": "Fischer",
+          "startDate": "2023-08-24T06:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 347,
+        "url": "https://api.congress.gov/v3/member/F000463/sponsored-legislation"
+      },
+      "state": "Nebraska",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:12Z"
+    },
+    "request": {
+      "bioguideId": "f000463",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

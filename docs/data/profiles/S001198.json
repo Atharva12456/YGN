@@ -1,0 +1,123 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "706 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3004",
+        "zipCode": 20510
+      },
+      "bioguideId": "S001198",
+      "birthYear": "1964",
+      "cosponsoredLegislation": {
+        "count": 1804,
+        "url": "https://api.congress.gov/v3/member/S001198/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/s001198_200.jpg"
+      },
+      "directOrderName": "Dan Sullivan",
+      "firstName": "Dan",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Sullivan, Dan",
+      "lastName": "Sullivan",
+      "officialWebsiteUrl": "https://www.sullivan.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2015
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Dan Sullivan",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "Dan",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Sullivan, Dan",
+          "lastName": "Sullivan",
+          "startDate": "2015-01-06T05:00:00Z"
+        },
+        {
+          "directOrderName": "Dan Sullivan",
+          "firstName": "Dan",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Sullivan, Dan",
+          "lastName": "Sullivan",
+          "startDate": "2025-02-15T09:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 545,
+        "url": "https://api.congress.gov/v3/member/S001198/sponsored-legislation"
+      },
+      "state": "Alaska",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "AK",
+          "stateName": "Alaska"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:48Z"
+    },
+    "request": {
+      "bioguideId": "s001198",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

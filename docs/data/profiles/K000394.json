@@ -1,0 +1,135 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "520 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4744",
+        "zipCode": 20515
+      },
+      "bioguideId": "K000394",
+      "birthYear": "1982",
+      "cosponsoredLegislation": {
+        "count": 1962,
+        "url": "https://api.congress.gov/v3/member/K000394/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/677d84cbfdb6cf36bbb649a1_200.jpg"
+      },
+      "directOrderName": "Andy Kim",
+      "firstName": "Andy",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Kim, Andy",
+      "lastName": "Kim",
+      "officialWebsiteUrl": "https://www.kim.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Andy Kim",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Andy",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kim, Andy",
+          "lastName": "Kim",
+          "startDate": "2019-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Andy Kim",
+          "endDate": "2024-12-10T09:44:59Z",
+          "firstName": "Andy",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kim, Andy",
+          "lastName": "Kim",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "Andy Kim",
+          "endDate": "2025-03-27T08:44:59Z",
+          "firstName": "Andy",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kim, Andy",
+          "lastName": "Kim",
+          "startDate": "2024-12-10T09:45:00Z"
+        },
+        {
+          "directOrderName": "Andy Kim",
+          "firstName": "Andy",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kim, Andy",
+          "lastName": "Kim",
+          "startDate": "2025-03-27T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 224,
+        "url": "https://api.congress.gov/v3/member/K000394/sponsored-legislation"
+      },
+      "state": "New Jersey",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 3,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 3,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 3,
+          "endYear": 2024,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2024,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:43Z"
+    },
+    "request": {
+      "bioguideId": "k000394",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

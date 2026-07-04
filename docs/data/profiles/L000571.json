@@ -1,0 +1,135 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "127A Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3424",
+        "zipCode": 20515
+      },
+      "bioguideId": "L000571",
+      "birthYear": "1954",
+      "cosponsoredLegislation": {
+        "count": 2242,
+        "url": "https://api.congress.gov/v3/member/L000571/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Collection of the U.S. House of Representatives",
+        "imageUrl": "https://www.congress.gov/img/member/l000571_200.jpg"
+      },
+      "directOrderName": "Cynthia M. Lummis",
+      "firstName": "Cynthia",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Lummis, Cynthia M.",
+      "lastName": "Lummis",
+      "middleName": "M.",
+      "officialWebsiteUrl": "https://www.lummis.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2009
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Cynthia M. Lummis",
+          "firstName": "Cynthia",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Lummis, Cynthia M.",
+          "lastName": "Lummis",
+          "middleName": "M.",
+          "startDate": "2023-04-27T06:35:00Z"
+        },
+        {
+          "directOrderName": "Cynthia M. Lummis",
+          "endDate": "2023-04-27T06:34:59Z",
+          "firstName": "Cynthia",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Lummis, Cynthia M.",
+          "lastName": "Lummis",
+          "middleName": "M.",
+          "startDate": "2009-01-03T17:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 243,
+        "url": "https://api.congress.gov/v3/member/L000571/sponsored-legislation"
+      },
+      "state": "Wyoming",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Representative",
+          "startYear": 2009,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Representative",
+          "startYear": 2011,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Representative",
+          "startYear": 2015,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "WY",
+          "stateName": "Wyoming"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:52Z"
+    },
+    "request": {
+      "bioguideId": "l000571",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

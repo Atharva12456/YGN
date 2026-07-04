@@ -1,0 +1,86 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "284 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2315",
+        "zipCode": 20510
+      },
+      "bioguideId": "M001242",
+      "birthYear": "1967",
+      "cosponsoredLegislation": {
+        "count": 184,
+        "url": "https://api.congress.gov/v3/member/M001242/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/67c8694e6159152e59828afb_200.jpg"
+      },
+      "directOrderName": "Bernie Moreno",
+      "firstName": "Bernie",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Moreno, Bernie",
+      "lastName": "Moreno",
+      "officialWebsiteUrl": "https://www.moreno.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Bernie Moreno",
+          "endDate": "2025-02-19T09:44:59Z",
+          "firstName": "Bernie",
+          "invertedOrderName": "Moreno, Bernie",
+          "lastName": "Moreno",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Bernie Moreno",
+          "endDate": "2025-05-17T08:44:59Z",
+          "firstName": "Bernie",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moreno, Bernie",
+          "lastName": "Moreno",
+          "startDate": "2025-02-19T09:45:00Z"
+        },
+        {
+          "directOrderName": "Bernie Moreno",
+          "firstName": "Bernie",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moreno, Bernie",
+          "lastName": "Moreno",
+          "startDate": "2025-05-17T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 31,
+        "url": "https://api.congress.gov/v3/member/M001242/sponsored-legislation"
+      },
+      "state": "Ohio",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "OH",
+          "stateName": "Ohio"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:06Z"
+    },
+    "request": {
+      "bioguideId": "m001242",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

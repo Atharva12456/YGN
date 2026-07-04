@@ -1,0 +1,124 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "437 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4623",
+        "zipCode": 20510
+      },
+      "bioguideId": "K000393",
+      "birthYear": "1951",
+      "cosponsoredLegislation": {
+        "count": 1153,
+        "url": "https://api.congress.gov/v3/member/K000393/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/k000393_200.jpg"
+      },
+      "directOrderName": "John Kennedy",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Kennedy, John",
+      "lastName": "Kennedy",
+      "officialWebsiteUrl": "https://www.kennedy.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2017
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John Kennedy",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kennedy, John",
+          "lastName": "Kennedy",
+          "startDate": "2023-04-01T06:35:00Z"
+        },
+        {
+          "directOrderName": "John Kennedy",
+          "endDate": "2023-04-01T06:34:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kennedy, John",
+          "lastName": "Kennedy",
+          "startDate": "2023-01-04T07:35:00Z"
+        },
+        {
+          "directOrderName": "John Kennedy",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Kennedy, John",
+          "lastName": "Kennedy",
+          "middleName": "Neely",
+          "startDate": "2017-01-03T17:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 682,
+        "url": "https://api.congress.gov/v3/member/K000393/sponsored-legislation"
+      },
+      "state": "Louisiana",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:41Z"
+    },
+    "request": {
+      "bioguideId": "k000393",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

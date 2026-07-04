@@ -1,0 +1,133 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "104 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6121",
+        "zipCode": 20515
+      },
+      "bioguideId": "S001184",
+      "birthYear": "1965",
+      "cosponsoredLegislation": {
+        "count": 1904,
+        "url": "https://api.congress.gov/v3/member/S001184/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/s001184_200.jpg"
+      },
+      "directOrderName": "Tim Scott",
+      "firstName": "Tim",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Scott, Tim",
+      "lastName": "Scott",
+      "officialWebsiteUrl": "https://www.scott.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2011
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Tim Scott",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Scott, Tim",
+          "lastName": "Scott",
+          "startDate": "2011-01-03T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 463,
+        "url": "https://api.congress.gov/v3/member/S001184/sponsored-legislation"
+      },
+      "state": "South Carolina",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 112,
+          "district": 1,
+          "endYear": 2013,
+          "memberType": "Representative",
+          "startYear": 2011,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "SC",
+          "stateName": "South Carolina"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:38Z"
+    },
+    "request": {
+      "bioguideId": "s001184",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

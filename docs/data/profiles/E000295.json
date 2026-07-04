@@ -1,0 +1,123 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "260 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3254",
+        "zipCode": 20510
+      },
+      "bioguideId": "E000295",
+      "birthYear": "1970",
+      "cosponsoredLegislation": {
+        "count": 1917,
+        "url": "https://api.congress.gov/v3/member/E000295/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/e000295_200.jpg"
+      },
+      "directOrderName": "Joni Ernst",
+      "firstName": "Joni",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Ernst, Joni",
+      "lastName": "Ernst",
+      "officialWebsiteUrl": "https://www.ernst.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2015
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Joni Ernst",
+          "firstName": "Joni",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Ernst, Joni",
+          "lastName": "Ernst",
+          "startDate": "2023-04-01T06:35:00Z"
+        },
+        {
+          "directOrderName": "Joni Ernst",
+          "endDate": "2023-04-01T06:34:59Z",
+          "firstName": "Joni",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Ernst, Joni",
+          "lastName": "Ernst",
+          "startDate": "2015-01-06T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 666,
+        "url": "https://api.congress.gov/v3/member/E000295/sponsored-legislation"
+      },
+      "state": "Iowa",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "IA",
+          "stateName": "Iowa"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:09Z"
+    },
+    "request": {
+      "bioguideId": "e000295",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

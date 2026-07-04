@@ -1,0 +1,148 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "502 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5251",
+        "zipCode": 20515
+      },
+      "bioguideId": "C001114",
+      "birthYear": "1960",
+      "cosponsoredLegislation": {
+        "count": 950,
+        "url": "https://api.congress.gov/v3/member/C001114/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/1b9d1007d6895a37da28a67cd8149803_200.jpg"
+      },
+      "directOrderName": "John R. Curtis",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Curtis, John R.",
+      "lastName": "Curtis",
+      "officialWebsiteUrl": "https://www.curtis.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2017
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John R. Curtis",
+          "endDate": "2023-06-01T03:59:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Curtis, John R.",
+          "lastName": "Curtis",
+          "middleName": "R.",
+          "startDate": "2017-11-13T00:00:00Z"
+        },
+        {
+          "directOrderName": "John R. Curtis",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Curtis, John R.",
+          "lastName": "Curtis",
+          "middleName": "R.",
+          "startDate": "2023-06-01T04:00:00Z"
+        },
+        {
+          "directOrderName": "John R. Curtis",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Curtis, John R.",
+          "lastName": "Curtis",
+          "middleName": "R.",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "John R. Curtis",
+          "endDate": "2025-04-26T08:46:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Curtis, John R.",
+          "lastName": "Curtis",
+          "startDate": "2025-02-15T09:45:00Z"
+        },
+        {
+          "directOrderName": "John R. Curtis",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Curtis, John R.",
+          "lastName": "Curtis",
+          "startDate": "2025-04-26T08:47:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 204,
+        "url": "https://api.congress.gov/v3/member/C001114/sponsored-legislation"
+      },
+      "state": "Utah",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 115,
+          "district": 3,
+          "endYear": 2019,
+          "memberType": "Representative",
+          "startYear": 2017,
+          "stateCode": "UT",
+          "stateName": "Utah"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 3,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "UT",
+          "stateName": "Utah"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 3,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "UT",
+          "stateName": "Utah"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 3,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "UT",
+          "stateName": "Utah"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "UT",
+          "stateName": "Utah"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:03Z"
+    },
+    "request": {
+      "bioguideId": "c001114",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

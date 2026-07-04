@@ -1,0 +1,144 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "291 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4822",
+        "zipCode": 20515
+      },
+      "bioguideId": "S001208",
+      "birthYear": "1976",
+      "cosponsoredLegislation": {
+        "count": 1551,
+        "url": "https://api.congress.gov/v3/member/S001208/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/s001208_200.jpg"
+      },
+      "directOrderName": "Elissa Slotkin",
+      "firstName": "Elissa",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Slotkin, Elissa",
+      "lastName": "Slotkin",
+      "officialWebsiteUrl": "https://www.slotkin.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Elissa Slotkin",
+          "endDate": "2023-06-01T03:59:59Z",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2019-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Elissa Slotkin",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2023-06-01T04:00:00Z"
+        },
+        {
+          "directOrderName": "Elissa Slotkin",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "Elissa Slotkin",
+          "endDate": "2025-03-14T08:44:59Z",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2025-02-15T09:45:00Z"
+        },
+        {
+          "directOrderName": "Elissa Slotkin",
+          "endDate": "2025-03-27T08:44:59Z",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2025-03-14T08:45:00Z"
+        },
+        {
+          "directOrderName": "Elissa Slotkin",
+          "firstName": "Elissa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Slotkin, Elissa",
+          "lastName": "Slotkin",
+          "startDate": "2025-03-27T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 219,
+        "url": "https://api.congress.gov/v3/member/S001208/sponsored-legislation"
+      },
+      "state": "Michigan",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 8,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 8,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 7,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:45Z"
+    },
+    "request": {
+      "bioguideId": "s001208",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

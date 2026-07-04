@@ -1,0 +1,87 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "139 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4224",
+        "zipCode": 20510
+      },
+      "bioguideId": "R000618",
+      "birthYear": "1964",
+      "cosponsoredLegislation": {
+        "count": 740,
+        "url": "https://api.congress.gov/v3/member/R000618/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/r000618_200.jpg"
+      },
+      "directOrderName": "Pete Ricketts",
+      "firstName": "Pete",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Ricketts, Pete",
+      "lastName": "Ricketts",
+      "officialWebsiteUrl": "https://www.ricketts.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Pete Ricketts",
+          "firstName": "Pete",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Ricketts, Pete",
+          "lastName": "Ricketts",
+          "startDate": "2023-04-01T06:35:00Z"
+        },
+        {
+          "directOrderName": "Pete Ricketts",
+          "endDate": "2023-04-01T06:34:59Z",
+          "firstName": "Pete",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Ricketts, Pete",
+          "lastName": "Ricketts",
+          "startDate": "2023-01-23T17:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 137,
+        "url": "https://api.congress.gov/v3/member/R000618/sponsored-legislation"
+      },
+      "state": "Nebraska",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "NE",
+          "stateName": "Nebraska"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:24Z"
+    },
+    "request": {
+      "bioguideId": "r000618",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

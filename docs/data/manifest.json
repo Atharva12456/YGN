@@ -1,5 +1,7 @@
 {
-  "details": 250,
+  "congress": 119,
+  "current_member": true,
+  "details": 536,
   "errors": [
     {
       "bioguideId": "V000138",
@@ -13,67 +15,32 @@
     },
     {
       "bioguideId": "H001103",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Pablo_Jos%C3%A9_Hern%C3%A1ndez",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "G000603",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Brandon_Gill",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Pablo_Jos%C3%A9_Hern%C3%A1ndez",
       "stage": "wiki"
     },
     {
       "bioguideId": "G000601",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Craig_A._Goldman",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Craig_A._Goldman",
       "stage": "wiki"
     },
     {
       "bioguideId": "B001327",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_P._Bresnahan%2C_Jr.",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001325",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sheri_Biggs",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001322",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_Baumgartner",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_P._Bresnahan%2C_Jr.",
       "stage": "wiki"
     },
     {
       "bioguideId": "G000606",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Adelita_S._Grijalva",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Adelita_S._Grijalva",
       "stage": "wiki"
     },
     {
       "bioguideId": "T000490",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/David_J._Taylor",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S001229",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jefferson_Shreve",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S001228",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Derek_Schmidt",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "R000622",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Josh_Riley",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "P000621",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Nellie_Pou",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/David_J._Taylor",
       "stage": "wiki"
     },
     {
       "bioguideId": "O000177",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_F._Onder%2C_Jr.",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_F._Onder%2C_Jr.",
       "stage": "wiki"
     },
     {
@@ -97,11 +64,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "M001236",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tim_Moore",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "M001235",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Riley_M._Moore",
       "stage": "wiki"
@@ -114,11 +76,6 @@
     {
       "bioguideId": "M001233",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_B._Messmer",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001232",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/April_McClain_Delaney",
       "stage": "wiki"
     },
     {
@@ -172,11 +129,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "G000602",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Laura_Gillen",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "F000483",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Laura_Friedman",
       "stage": "wiki"
@@ -189,11 +141,6 @@
     {
       "bioguideId": "F000481",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Shomari_Figures",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "E000301",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sarah_Elfreth",
       "stage": "wiki"
     },
     {
@@ -238,7 +185,7 @@
     },
     {
       "bioguideId": "R000619",
-      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_A._Rulli",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_A._Rulli",
       "stage": "wiki"
     },
     {
@@ -252,68 +199,8 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "D000594",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Monica_De_La_Cruz",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "C001131",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Greg_Casar",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001318",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Becca_Balint",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001212",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Barry_Moore",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "F000472",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Scott_Franklin",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001205",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Carol_D._Miller",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "C001123",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Gilbert_Ray_Cisneros%2C_Jr.",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S001205",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mary_Gay_Scanlon",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "G000581",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Vicente_Gonzalez",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S001201",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Thomas_R._Suozzi",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S001188",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Marlin_A._Stutzman",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "G000553",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Al_Green",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "F000110",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Cleo_Fields",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Gilbert_Ray_Cisneros%2C_Jr.",
       "stage": "wiki"
     },
     {
@@ -384,11 +271,6 @@
     {
       "bioguideId": "M001219",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_C._Moylan",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001217",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jared_Moskowitz",
       "stage": "wiki"
     },
     {
@@ -527,66 +409,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "B001316",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Eric_Burlison",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001315",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Nikki_Budzinski",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001317",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Josh_Brecheen",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B001314",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Aaron_Bean",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "A000379",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_Alford",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "R000579",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Patrick_Ryan",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001215",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mariannette_Miller-Meeks",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "M001136",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Lisa_C._McClain",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "H001091",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ashley_Hinson",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "G000593",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Carlos_A._Gimenez",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "T000481",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Rashida_Tlaib",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "T000478",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Claudia_Tenney",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "M001199",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Brian_J._Mast",
       "stage": "wiki"
@@ -594,11 +416,6 @@
     {
       "bioguideId": "R000609",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_H._Rutherford",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "L000585",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Darin_LaHood",
       "stage": "wiki"
     },
     {
@@ -732,16 +549,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "P000048",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/August_Pfluger",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "O000086",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Burgess_Owens",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "N000026",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Troy_E._Nehls",
       "stage": "wiki"
@@ -762,11 +569,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "M000871",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tracey_Mann",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "M000317",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Nicole_Malliotakis",
       "stage": "wiki"
@@ -774,61 +576,6 @@
     {
       "bioguideId": "L000273",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Teresa_Leger_Fernandez",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "J000305",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sara_Jacobs",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "J000304",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ronny_Jackson",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "H001086",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Diana_Harshbarger",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "G000597",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Andrew_R._Garbarino",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "F000471",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Scott_Fitzgerald",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "F000470",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michelle_Fischbach",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "F000446",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Randy_Feenstra",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "D000032",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Byron_Donalds",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "C001116",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Andrew_S._Clyde",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "C001039",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Kat_Cammack",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "B000740",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Stephanie_I._Bice",
       "stage": "wiki"
     },
     {
@@ -844,11 +591,6 @@
     {
       "bioguideId": "S001211",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Greg_Stanton",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "P000613",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jimmy_Panetta",
       "stage": "wiki"
     },
     {
@@ -907,33 +649,8 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "T000460",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Thompson",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "S000250",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Pete_Sessions",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "C001059",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jim_Costa",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "I000056",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Darrell_Issa",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "C000059",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ken_Calvert",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "L000397",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Zoe_Lofgren",
       "stage": "wiki"
     },
     {
@@ -987,11 +704,6 @@
       "stage": "wiki"
     },
     {
-      "bioguideId": "B001309",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tim_Burchett",
-      "stage": "wiki"
-    },
-    {
       "bioguideId": "J000301",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Dusty_Johnson",
       "stage": "wiki"
@@ -999,11 +711,6 @@
     {
       "bioguideId": "T000480",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/William_R._Timmons_IV",
-      "stage": "wiki"
-    },
-    {
-      "bioguideId": "R000610",
-      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Guy_Reschenthaler",
       "stage": "wiki"
     },
     {
@@ -1025,11 +732,817 @@
       "bioguideId": "O000172",
       "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Alexandria_Ocasio-Cortez",
       "stage": "wiki"
+    },
+    {
+      "bioguideId": "U000040",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Lauren_Underwood",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001117",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sean_Casten",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "G000586",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jes%C3%BAs_G._%22Chuy%22_Garc%C3%ADa",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "F000469",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Russ_Fulcher",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001214",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/W._Gregory_Steube",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001081",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jahana_Hayes",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001121",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jason_Crow",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "N000191",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Joe_Neguse",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000593",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Levin",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001206",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Joseph_D._Morelle",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001306",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Troy_Balderson",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001115",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_Cloud",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "G000585",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jimmy_Gomez",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "E000298",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ron_Estes",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "J000298",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Pramila_Jayapal",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000375",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jodey_C._Arrington",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "F000466",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Brian_K._Fitzpatrick",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "E000297",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Adriano_Espaillat",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "E000296",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Dwight_Evans",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001296",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Brendan_F._Boyle",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001066",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Steven_Horsford",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000376",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Kelly",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000467",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Glenn_Thompson",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M000687",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Kweisi_Mfume",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001055",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ed_Case",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000831",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_R._Walkinshaw",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001241",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Dave_Min",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001100",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jeff_Hurd",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000389",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ro_Khanna",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001108",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_Comer",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000388",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Trent_Kelly",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "G000576",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Glenn_Grothman",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "P000610",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Stacey_E._Plaskett",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001292",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Donald_S._Beyer%2C_Jr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001196",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Elise_M._Stefanik",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000822",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Bonnie_Watson_Coleman",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001196",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Seth_Moulton",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001295",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Bost",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000372",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Rick_W._Allen",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000583",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Barry_Loudermilk",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001103",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Earl_L._%22Buddy%22_Carter",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000474",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Norma_J._Torres",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000821",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Bruce_Westerman",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001072",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/J._French_Hill",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "R000600",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Aumua_Amata_Coleman_Radewagen",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "P000609",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Gary_J._Palmer",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "N000188",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Donald_Norcross",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000370",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Alma_S._Adams",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001101",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Katherine_M._Clark",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "P000607",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_Pocan",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "V000131",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Marc_A._Veasey",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001091",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Joaquin_Castro",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000814",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Randy_K._Weber%2C_Sr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001195",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jason_Smith",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001282",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Andy_Barr",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001190",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Bradley_Scott_Schneider",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000375",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/William_R._Keating",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M000312",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_P._McGovern",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "V000081",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Nydia_M._Vel%C3%A1zquez",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "N000015",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Richard_E._Neal",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000463",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_R._Turner",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000491",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Derek_Tran",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001231",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Lateefah_Simon",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "R000621",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Emily_Randall",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "R000620",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Luz_M._Rivas",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000607",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sam_T._Liccardo",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001098",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Abraham_J._Hamadeh",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "G000605",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Adam_Gray",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001323",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Nicholas_J._Begich_III",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "J000295",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/David_P._Joyce",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "J000294",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Hakeem_S._Jeffries",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001188",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Grace_Meng",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000812",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ann_Wagner",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001285",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Julia_Brownley",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001068",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jared_Huffman",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000617",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Suzan_K._DelBene",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001184",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Thomas_Massie",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001278",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Suzanne_Bonamici",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000369",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_E._Amodei",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000804",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_J._Wittman",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000566",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_E._Latta",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "G000568",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/H._Morgan_Griffith",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000616",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Scott_DesJarlais",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "F000459",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Charles_J._%22Chuck%22_Fleischmann",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001087",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Eric_A._%22Rick%22_Crawford",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "J000288",
+      "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/api/rest_v1/page/summary/Henry_C._%22Hank%22_Johnson%2C_Jr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001176",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Steve_Scalise",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "P000034",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Frank_Pallone%2C_Jr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001148",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_K._Simpson",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001145",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Janice_D._Schakowsky",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000557",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_B._Larson",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S000510",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Adam_Smith",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000197",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Diana_DeGette",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000096",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Danny_K._Davis",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000055",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_B._Aderholt",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000193",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Bennie_G._Thompson",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S000522",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Christopher_H._Smith",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S000185",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Robert_C._%22Bobby%22_Scott",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B000490",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Sanford_D._Bishop%2C_Jr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000491",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Frank_D._Lucas",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001160",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Gwen_Moore",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001063",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Henry_Cuellar",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001157",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_T._McCaul",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "F000450",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Virginia_Foxx",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001061",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Emanuel_Cleaver",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001051",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_R._Carter",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001053",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tom_Cole",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "R000575",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Rogers",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001143",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Betty_McCollum",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C000537",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_E._Clyburn",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000216",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Rosa_L._DeLauro",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000009",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Marcy_Kaptur",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000437",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Roger_F._Wicker",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000800",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Peter_Welch",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000817",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Elizabeth_Warren",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "W000805",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_R._Warner",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000476",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Thom_Tillis",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "T000250",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_Thune",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001198",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Dan_Sullivan",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001208",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Elissa_Slotkin",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001232",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tim_Sheehy",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "S001181",
+      "error": "Congress.gov request failed for /member/S001181.",
+      "stage": "detail"
+    },
+    {
+      "bioguideId": "P000595",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Gary_C._Peters",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "P000145",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Alex_Padilla",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "O000174",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jon_Ossoff",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001169",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Christopher_Murphy",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001244",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ashley_Moody",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001176",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jeff_Merkley",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M001243",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/David_McCormick",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "M000133",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Edward_J._Markey",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000571",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Cynthia_M._Lummis",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000570",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ben_Ray_Luj%C3%A1n",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "L000575",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_Lankford",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000367",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Amy_Klobuchar",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000383",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Angus_S._King_Jr.",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000394",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Andy_Kim",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000393",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_Kennedy",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000377",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mark_Kelly",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "K000384",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tim_Kaine",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "J000312",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/James_C._Justice",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001079",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Cindy_Hyde-Smith",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001104",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jon_Husted",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001061",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_Hoeven",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H001042",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mazie_K._Hirono",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "H000273",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_W._Hickenlooper",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "D000618",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Steve_Daines",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001114",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_R._Curtis",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C000880",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Mike_Crapo",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001096",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Kevin_Cramer",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001113",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Catherine_Cortez_Masto",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001088",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Christopher_A._Coons",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "C001035",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Susan_M._Collins",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001305",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Ted_Budd",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001319",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Katie_Boyd_Britt",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001303",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Lisa_Blunt_Rochester",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001243",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Marsha_Blackburn",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001267",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Michael_F._Bennet",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001261",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/John_Barrasso",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001299",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Jim_Banks",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "B001230",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Tammy_Baldwin",
+      "stage": "wiki"
+    },
+    {
+      "bioguideId": "A000382",
+      "error": "429 Client Error: Too Many Requests for url: https://en.wikipedia.org/api/rest_v1/page/summary/Angela_D._Alsobrooks",
+      "stage": "wiki"
     }
   ],
-  "generated_at": "2026-07-04T16:56:25.146966+00:00",
-  "members": 250,
-  "nominate": 249,
+  "generated_at": "2026-07-04T17:32:47.857966+00:00",
+  "members": 537,
+  "nominate": 492,
   "recent_bills": true,
-  "wiki": 45
+  "wiki": 231,
+  "wiki_reused": 45
 }

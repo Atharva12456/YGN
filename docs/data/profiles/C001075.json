@@ -1,0 +1,153 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "455 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5824",
+        "zipCode": 20515
+      },
+      "bioguideId": "C001075",
+      "birthYear": "1957",
+      "cosponsoredLegislation": {
+        "count": 2502,
+        "url": "https://api.congress.gov/v3/member/C001075/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/c001075_200.jpg"
+      },
+      "directOrderName": "Bill Cassidy",
+      "firstName": "Bill",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Cassidy, Bill",
+      "lastName": "Cassidy",
+      "officialWebsiteUrl": "https://www.cassidy.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2009
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Bill Cassidy",
+          "endDate": "2023-02-01T07:34:59Z",
+          "firstName": "Bill",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Cassidy, Bill",
+          "lastName": "Cassidy",
+          "startDate": "2009-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Bill Cassidy",
+          "firstName": "Bill",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Cassidy, Bill",
+          "lastName": "Cassidy",
+          "startDate": "2023-02-01T07:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 714,
+        "url": "https://api.congress.gov/v3/member/C001075/sponsored-legislation"
+      },
+      "state": "Louisiana",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 111,
+          "district": 6,
+          "endYear": 2011,
+          "memberType": "Representative",
+          "startYear": 2009,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 112,
+          "district": 6,
+          "endYear": 2013,
+          "memberType": "Representative",
+          "startYear": 2011,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 113,
+          "district": 6,
+          "endYear": 2015,
+          "memberType": "Representative",
+          "startYear": 2013,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "LA",
+          "stateName": "Louisiana"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:47Z"
+    },
+    "request": {
+      "bioguideId": "c001075",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

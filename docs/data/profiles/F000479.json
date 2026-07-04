@@ -1,0 +1,99 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "142 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4254",
+        "zipCode": 20510
+      },
+      "bioguideId": "F000479",
+      "birthYear": "1969",
+      "cosponsoredLegislation": {
+        "count": 856,
+        "url": "https://api.congress.gov/v3/member/F000479/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/f000479_200.jpg"
+      },
+      "directOrderName": "John Fetterman",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Fetterman, John",
+      "lastName": "Fetterman",
+      "middleName": "K.",
+      "officialWebsiteUrl": "https://www.fetterman.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John Fetterman",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Fetterman, John",
+          "lastName": "Fetterman",
+          "middleName": "K.",
+          "startDate": "2023-05-06T06:35:00Z"
+        },
+        {
+          "directOrderName": "John Fetterman",
+          "endDate": "2023-01-04T07:34:59Z",
+          "firstName": "John",
+          "invertedOrderName": "Fetterman, John",
+          "lastName": "Fetterman",
+          "middleName": "Karl",
+          "startDate": "2023-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "John Fetterman",
+          "endDate": "2023-05-06T06:34:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Fetterman, John",
+          "lastName": "Fetterman",
+          "middleName": "K.",
+          "startDate": "2023-01-04T07:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 81,
+        "url": "https://api.congress.gov/v3/member/F000479/sponsored-legislation"
+      },
+      "state": "Pennsylvania",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "PA",
+          "stateName": "Pennsylvania"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "PA",
+          "stateName": "Pennsylvania"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:11Z"
+    },
+    "request": {
+      "bioguideId": "f000479",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

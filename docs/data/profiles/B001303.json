@@ -1,0 +1,132 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "513 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2441",
+        "zipCode": 20515
+      },
+      "bioguideId": "B001303",
+      "birthYear": "1962",
+      "cosponsoredLegislation": {
+        "count": 2425,
+        "url": "https://api.congress.gov/v3/member/B001303/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/b001303_200.jpg"
+      },
+      "directOrderName": "Lisa Blunt Rochester",
+      "firstName": "Lisa",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Blunt Rochester, Lisa",
+      "lastName": "Blunt Rochester",
+      "officialWebsiteUrl": "https://www.bluntrochester.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2017
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Lisa Blunt Rochester",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Lisa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Blunt Rochester, Lisa",
+          "lastName": "Blunt Rochester",
+          "startDate": "2017-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Lisa Blunt Rochester",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "Lisa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Blunt Rochester, Lisa",
+          "lastName": "Blunt Rochester",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "Lisa Blunt Rochester",
+          "endDate": "2025-03-01T09:44:59Z",
+          "firstName": "Lisa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Blunt Rochester, Lisa",
+          "lastName": "Blunt Rochester",
+          "startDate": "2025-02-15T09:45:00Z"
+        },
+        {
+          "directOrderName": "Lisa Blunt Rochester",
+          "firstName": "Lisa",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Blunt Rochester, Lisa",
+          "lastName": "Blunt Rochester",
+          "startDate": "2025-03-01T09:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 215,
+        "url": "https://api.congress.gov/v3/member/B001303/sponsored-legislation"
+      },
+      "state": "Delaware",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Representative",
+          "startYear": 2017,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:34Z"
+    },
+    "request": {
+      "bioguideId": "b001303",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

@@ -1,0 +1,105 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "317 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3521",
+        "zipCode": 20510
+      },
+      "bioguideId": "O000174",
+      "birthYear": "1987",
+      "cosponsoredLegislation": {
+        "count": 806,
+        "url": "https://api.congress.gov/v3/member/O000174/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/o000174_200.jpg"
+      },
+      "directOrderName": "Jon Ossoff",
+      "firstName": "Jon",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Ossoff, Jon",
+      "lastName": "Ossoff",
+      "officialWebsiteUrl": "https://www.ossoff.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2021
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Jon Ossoff",
+          "endDate": "2023-04-14T06:34:59Z",
+          "firstName": "Jon",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Ossoff, Jon",
+          "lastName": "Ossoff",
+          "startDate": "2021-01-20T17:00:00Z"
+        },
+        {
+          "directOrderName": "Jon Ossoff",
+          "endDate": "2025-02-20T09:44:59Z",
+          "firstName": "Jon",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Ossoff, Jon",
+          "lastName": "Ossoff",
+          "startDate": "2023-04-14T06:35:00Z"
+        },
+        {
+          "directOrderName": "Jon Ossoff",
+          "firstName": "Jon",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Ossoff, Jon",
+          "lastName": "Ossoff",
+          "startDate": "2025-02-20T09:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 223,
+        "url": "https://api.congress.gov/v3/member/O000174/sponsored-legislation"
+      },
+      "state": "Georgia",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "GA",
+          "stateName": "Georgia"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "GA",
+          "stateName": "Georgia"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "GA",
+          "stateName": "Georgia"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:15Z"
+    },
+    "request": {
+      "bioguideId": "o000174",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

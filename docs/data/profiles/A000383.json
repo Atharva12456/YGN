@@ -1,0 +1,67 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "330 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-4721",
+        "zipCode": 20510
+      },
+      "bioguideId": "A000383",
+      "birthYear": "1962",
+      "cosponsoredLegislation": {
+        "count": 15,
+        "url": "https://api.congress.gov/v3/member/A000383/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "directOrderName": "Alan Armstrong",
+      "firstName": "Alan",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Armstrong, Alan",
+      "lastName": "Armstrong",
+      "middleName": "Stuart",
+      "officialWebsiteUrl": "https://www.armstrong.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2026
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Alan Armstrong",
+          "firstName": "Alan",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Armstrong, Alan",
+          "lastName": "Armstrong",
+          "middleName": "Stuart",
+          "startDate": "2026-03-25T08:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 2,
+        "url": "https://api.congress.gov/v3/member/A000383/sponsored-legislation"
+      },
+      "state": "Oklahoma",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2026,
+          "stateCode": "OK",
+          "stateName": "Oklahoma"
+        }
+      ],
+      "updateDate": "2026-04-28T10:30:22Z"
+    },
+    "request": {
+      "bioguideId": "a000383",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}

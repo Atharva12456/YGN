@@ -1,0 +1,80 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "509 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3954",
+        "zipCode": 20510
+      },
+      "bioguideId": "J000312",
+      "birthYear": "1951",
+      "cosponsoredLegislation": {
+        "count": 278,
+        "url": "https://api.congress.gov/v3/member/J000312/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Official U.S. Senate Photo",
+        "imageUrl": "https://www.congress.gov/img/member/67c86b5e6159152e59828b1a_200.jpg"
+      },
+      "directOrderName": "James C. Justice",
+      "firstName": "James",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Justice, James C.",
+      "lastName": "Justice",
+      "middleName": "C.",
+      "officialWebsiteUrl": "https://www.justice.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "James C. Justice",
+          "endDate": "2025-02-15T09:44:59Z",
+          "firstName": "James",
+          "invertedOrderName": "Justice, James C.",
+          "lastName": "Justice",
+          "middleName": "C.",
+          "startDate": "2025-01-14T17:30:00Z"
+        },
+        {
+          "directOrderName": "James C. Justice",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Justice, James C.",
+          "lastName": "Justice",
+          "middleName": "C.",
+          "startDate": "2025-02-15T09:45:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 14,
+        "url": "https://api.congress.gov/v3/member/J000312/sponsored-legislation"
+      },
+      "state": "West Virginia",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "WV",
+          "stateName": "West Virginia"
+        }
+      ],
+      "updateDate": "2026-03-08T10:31:36Z"
+    },
+    "request": {
+      "bioguideId": "j000312",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T17:32:47.857966+00:00"
+}
