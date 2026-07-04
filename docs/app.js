@@ -73,19 +73,89 @@ function clamp(val, min, max) {
   return Math.min(max, Math.max(min, val));
 }
 
-async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
+function trimTrailingSlash(value) {
+  return String(value || '').trim().replace(/\/+$/, '');
+}
+
+function getStoredApiBaseUrl() {
   try {
-    const res = await fetch(API_BASE_URL + apiPath, { cache: options.cache || 'default' });
+    return trimTrailingSlash(localStorage.getItem('YGN_API_BASE_URL'));
+  } catch {
+    return '';
+  }
+}
+
+function setStoredApiBaseUrl(value) {
+  try {
+    localStorage.setItem('YGN_API_BASE_URL', value);
+  } catch {
+    // The query-string override still works when localStorage is unavailable.
+  }
+}
+
+function clearStoredApiBaseUrl() {
+  try {
+    localStorage.removeItem('YGN_API_BASE_URL');
+  } catch {
+    // Static mode still works when localStorage is unavailable.
+  }
+}
+
+function getConfiguredApiBaseUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const queryApi = trimTrailingSlash(params.get('api'));
+
+  if (params.has('api') && (!queryApi || queryApi.toLowerCase() === 'static')) {
+    clearStoredApiBaseUrl();
+    return '';
+  }
+
+  if (queryApi.toLowerCase() === 'local' && typeof LOCAL_API_BASE_URL === 'string') {
+    const localApi = trimTrailingSlash(LOCAL_API_BASE_URL);
+    setStoredApiBaseUrl(localApi);
+    return localApi;
+  }
+
+  if (queryApi) {
+    setStoredApiBaseUrl(queryApi);
+    return queryApi;
+  }
+
+  const storedApi = getStoredApiBaseUrl();
+  if (storedApi) return storedApi;
+
+  if (typeof API_BASE_URL === 'string') {
+    return trimTrailingSlash(API_BASE_URL);
+  }
+
+  return '';
+}
+
+const configuredApiBaseUrl = getConfiguredApiBaseUrl();
+
+async function fetchStaticJson(staticPath, originalError) {
+  if (!staticPath) {
+    throw originalError || new Error('No API base URL or static fallback configured.');
+  }
+
+  const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
+  if (res.status === 404) return { notFound: true, source: 'static' };
+  if (!res.ok) throw originalError || new Error(`Static HTTP ${res.status}`);
+  return { data: await res.json(), source: 'static' };
+}
+
+async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
+  if (!configuredApiBaseUrl) {
+    return fetchStaticJson(staticPath);
+  }
+
+  try {
+    const res = await fetch(configuredApiBaseUrl + apiPath, { cache: options.cache || 'default' });
     if (res.status === 404) return { notFound: true, source: 'api' };
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return { data: await res.json(), source: 'api' };
   } catch (apiError) {
-    if (!staticPath) throw apiError;
-
-    const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
-    if (res.status === 404) return { notFound: true, source: 'static' };
-    if (!res.ok) throw apiError;
-    return { data: await res.json(), source: 'static' };
+    return fetchStaticJson(staticPath, apiError);
   }
 }
 
