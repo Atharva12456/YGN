@@ -73,6 +73,22 @@ function clamp(val, min, max) {
   return Math.min(max, Math.max(min, val));
 }
 
+async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
+  try {
+    const res = await fetch(API_BASE_URL + apiPath, { cache: options.cache || 'default' });
+    if (res.status === 404) return { notFound: true, source: 'api' };
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return { data: await res.json(), source: 'api' };
+  } catch (apiError) {
+    if (!staticPath) throw apiError;
+
+    const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
+    if (res.status === 404) return { notFound: true, source: 'static' };
+    if (!res.ok) throw apiError;
+    return { data: await res.json(), source: 'static' };
+  }
+}
+
 // ─── Navigation (SPA routing) ────────────────────────────────────────────────
 
 /**
@@ -114,11 +130,15 @@ async function checkHealth() {
   healthIndicator.textContent = 'Checking…';
 
   try {
-    const res = await fetch(API_BASE_URL + '/health', { cache: 'no-store' });
-    if (res.ok) {
+    const result = await fetchJsonWithStaticFallback('/health', 'health.json', { cache: 'no-store' });
+    if (result.data) {
       healthIndicator.className = 'connected';
-      healthIndicator.textContent = 'Connected';
-      updateStatCard('stat-backend', 'Backend Status', 'Connected ✓');
+      healthIndicator.textContent = result.source === 'static' ? 'Static data' : 'Connected';
+      updateStatCard(
+        'stat-backend',
+        'Backend Status',
+        result.source === 'static' ? 'Static data ✓' : 'Connected ✓'
+      );
     } else {
       throw new Error('non-ok status');
     }
@@ -215,10 +235,8 @@ async function loadMembers() {
   renderSkeletons(12);
 
   try {
-    const res = await fetch(`${API_BASE_URL}/officials?limit=250&offset=0`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-    const data = await res.json();
+    const result = await fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
+    const data = result.data;
 
     // Handle both array responses and { items: [...] } object responses
     let items;
@@ -422,15 +440,17 @@ async function fetchNominate(bioguideId, tileEl) {
   }
 
   try {
-    const res = await fetch(`${API_BASE_URL}/officials/${bioguideId}/nominate`);
-    if (res.status === 404) {
+    const result = await fetchJsonWithStaticFallback(
+      `/officials/${bioguideId}/nominate`,
+      `nominate/${bioguideId}.json`
+    );
+    if (result.notFound) {
       nominateCache.set(bioguideId, null);
       applyNominateTint(tileEl, null);
       return;
     }
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const data = await res.json();
+    const data = result.data;
     const dim1 = typeof data.dim1 === 'number' ? data.dim1 : null;
     nominateCache.set(bioguideId, { dim1 });
     applyNominateTint(tileEl, dim1);
@@ -482,15 +502,17 @@ async function triggerPopover(member, tileEl) {
   showPopover(member, { summary: 'Loading…', title: null }, tileEl);
 
   try {
-    const res = await fetch(`${API_BASE_URL}/officials/${bioguideId}/wiki`);
-    if (res.status === 404) {
+    const result = await fetchJsonWithStaticFallback(
+      `/officials/${bioguideId}/wiki`,
+      `wiki/${bioguideId}.json`
+    );
+    if (result.notFound) {
       wikiCache.set(bioguideId, null);
       showPopover(member, null, tileEl);
       return;
     }
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const data = await res.json();
+    const data = result.data;
     wikiCache.set(bioguideId, data);
     showPopover(member, data, tileEl);
   } catch {
