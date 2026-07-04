@@ -1,0 +1,67 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1427 Longworth House Office Building",
+        "phoneNumber": "(202) 225-5034",
+        "zipCode": 20515
+      },
+      "bioguideId": "M001246",
+      "birthYear": "1977",
+      "cosponsoredLegislation": {
+        "count": 70,
+        "url": "https://api.congress.gov/v3/member/M001246/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/69eb9743277642362f6112ce_200.jpg"
+      },
+      "directOrderName": "Analilia Mejia",
+      "district": 11,
+      "firstName": "Analilia",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Mejia, Analilia",
+      "lastName": "Mejia",
+      "officialWebsiteUrl": "https://mejia.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2026
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Analilia Mejia",
+          "firstName": "Analilia",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Mejia, Analilia",
+          "lastName": "Mejia",
+          "startDate": "2026-04-20T04:00:00Z"
+        }
+      ],
+      "state": "New Jersey",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 11,
+          "memberType": "Representative",
+          "startYear": 2026,
+          "stateCode": "NJ",
+          "stateName": "New Jersey"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "m001246",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

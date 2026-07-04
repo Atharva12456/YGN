@@ -1,0 +1,101 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1419 Longworth House Office Building",
+        "phoneNumber": "(202) 225-2615",
+        "zipCode": 20510
+      },
+      "bioguideId": "H001103",
+      "birthYear": "1991",
+      "cosponsoredLegislation": {
+        "count": 201,
+        "url": "https://api.congress.gov/v3/member/H001103/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/67742d980b34857ecc9090e3_200.jpg"
+      },
+      "directOrderName": "Pablo Jos\u00e9 Hern\u00e1ndez",
+      "firstName": "Pablo",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Hern\u00e1ndez, Pablo Jose",
+      "lastName": "Hern\u00e1ndez",
+      "middleName": "Jose",
+      "officialWebsiteUrl": "https://hernandez.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Pablo Hern\u00e1ndez",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Pablo",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hern\u00e1ndez, Pablo",
+          "lastName": "Hern\u00e1ndez",
+          "middleName": "Jos\u00e9",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Pablo Hern\u00e1ndez",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Pablo",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hern\u00e1ndez, Pablo",
+          "lastName": "Hern\u00e1ndez",
+          "middleName": "Jos\u00e9",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Pablo Hern\u00e1ndez",
+          "endDate": "2025-04-28T13:04:24Z",
+          "firstName": "Pablo",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hern\u00e1ndez, Pablo",
+          "lastName": "Hern\u00e1ndez",
+          "middleName": "Jos\u00e9",
+          "startDate": "2025-01-17T05:00:00Z"
+        },
+        {
+          "directOrderName": "Pablo Jos\u00e9 Hern\u00e1ndez",
+          "firstName": "Pablo",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Hern\u00e1ndez, Pablo Jose",
+          "lastName": "Hern\u00e1ndez",
+          "middleName": "Jose",
+          "startDate": "2025-04-28T13:04:25Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 28,
+        "url": "https://api.congress.gov/v3/member/H001103/sponsored-legislation"
+      },
+      "state": "Puerto Rico",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "memberType": "Resident Commissioner",
+          "startYear": 2025,
+          "stateCode": "PR",
+          "stateName": "Puerto Rico"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "h001103",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

@@ -1,0 +1,95 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "425 Cannon House Office Building",
+        "phoneNumber": "(202) 225-2646",
+        "zipCode": 20510
+      },
+      "bioguideId": "K000404",
+      "cosponsoredLegislation": {
+        "count": 133,
+        "url": "https://api.congress.gov/v3/member/K000404/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/67742f0a0b34857ecc9090fb_200.jpg"
+      },
+      "directOrderName": "Kimberlyn King-Hinds",
+      "firstName": "Kimberlyn",
+      "honorificName": "Ms.",
+      "invertedOrderName": "King-Hinds, Kimberlyn",
+      "lastName": "King-Hinds",
+      "officialWebsiteUrl": "https://king-hinds.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Kimberlyn King-Hinds",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Kimberlyn",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "King-Hinds, Kimberlyn",
+          "lastName": "King-Hinds",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Kimberlyn King-Hinds",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Kimberlyn",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "King-Hinds, Kimberlyn",
+          "lastName": "King-Hinds",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Kimberlyn King-Hinds",
+          "endDate": "2025-04-28T13:04:20Z",
+          "firstName": "Kimberlyn",
+          "honorificName": "Mrs.",
+          "invertedOrderName": "King-Hinds, Kimberlyn",
+          "lastName": "King-Hinds",
+          "startDate": "2025-01-17T05:00:00Z"
+        },
+        {
+          "directOrderName": "Kimberlyn King-Hinds",
+          "firstName": "Kimberlyn",
+          "honorificName": "Ms.",
+          "invertedOrderName": "King-Hinds, Kimberlyn",
+          "lastName": "King-Hinds",
+          "startDate": "2025-04-28T13:04:21Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 16,
+        "url": "https://api.congress.gov/v3/member/K000404/sponsored-legislation"
+      },
+      "state": "Northern Mariana Islands",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "memberType": "Delegate",
+          "startYear": 2025,
+          "stateCode": "MP",
+          "stateName": "Northern Mariana Islands"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:28Z"
+    },
+    "request": {
+      "bioguideId": "k000404",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

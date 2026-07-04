@@ -1,0 +1,71 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "2446 Rayburn House Office Building",
+        "phoneNumber": "(202) 225-2811",
+        "zipCode": 20515
+      },
+      "bioguideId": "V000139",
+      "birthYear": "1983",
+      "cosponsoredLegislation": {
+        "count": 62,
+        "url": "https://api.congress.gov/v3/member/V000139/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/6931b7d5f478c0f1228e9abe_200.jpg"
+      },
+      "directOrderName": "Matt Van Epps",
+      "district": 7,
+      "firstName": "Matt",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Van Epps, Matt",
+      "lastName": "Van Epps",
+      "officialWebsiteUrl": "https://vanepps.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Matt Van Epps",
+          "firstName": "Matt",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Van Epps, Matt",
+          "lastName": "Van Epps",
+          "startDate": "2025-12-04T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 6,
+        "url": "https://api.congress.gov/v3/member/V000139/sponsored-legislation"
+      },
+      "state": "Tennessee",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 7,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "TN",
+          "stateName": "Tennessee"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "v000139",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

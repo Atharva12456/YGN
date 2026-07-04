@@ -1,0 +1,109 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "228 Cannon House Office Building",
+        "phoneNumber": "(202) 225-1188",
+        "zipCode": 20510
+      },
+      "bioguideId": "M001219",
+      "birthYear": "1962",
+      "cosponsoredLegislation": {
+        "count": 603,
+        "url": "https://api.congress.gov/v3/member/M001219/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/m001219_200.jpg"
+      },
+      "directOrderName": "James C. Moylan",
+      "firstName": "James",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Moylan, James C.",
+      "lastName": "Moylan",
+      "middleName": "C.",
+      "officialWebsiteUrl": "https://moylan.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "James C. Moylan",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moylan, James C.",
+          "lastName": "Moylan",
+          "middleName": "C.",
+          "startDate": "2024-02-27T13:20:51Z"
+        },
+        {
+          "directOrderName": "James C. Moylan",
+          "endDate": "2024-02-27T13:20:50Z",
+          "firstName": "James",
+          "invertedOrderName": "Moylan, James C.",
+          "lastName": "Moylan",
+          "middleName": "C.",
+          "startDate": "2023-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "James C. Moylan",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moylan, James C.",
+          "lastName": "Moylan",
+          "middleName": "C.",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "James C. Moylan",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moylan, James C.",
+          "lastName": "Moylan",
+          "middleName": "C.",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 58,
+        "url": "https://api.congress.gov/v3/member/M001219/sponsored-legislation"
+      },
+      "state": "Guam",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Delegate",
+          "startYear": 2023,
+          "stateCode": "GU",
+          "stateName": "Guam"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "memberType": "Delegate",
+          "startYear": 2025,
+          "stateCode": "GU",
+          "stateName": "Guam"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:27Z"
+    },
+    "request": {
+      "bioguideId": "m001219",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

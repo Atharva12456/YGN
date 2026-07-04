@@ -1,0 +1,70 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "408 Cannon House Office Building",
+        "phoneNumber": "(202) 225-3076",
+        "zipCode": 20515
+      },
+      "bioguideId": "G000607",
+      "birthYear": "1981",
+      "cosponsoredLegislation": {
+        "count": 7,
+        "url": "https://api.congress.gov/v3/member/G000607/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "imageUrl": "https://www.congress.gov/img/member/6a29d4f81c6ce0de6fbae1f7_200.jpg"
+      },
+      "directOrderName": "James Gallagher",
+      "district": 1,
+      "firstName": "James",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Gallagher, James",
+      "lastName": "Gallagher",
+      "officialWebsiteUrl": "https://gallagher.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2026
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "James Gallagher",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Gallagher, James",
+          "lastName": "Gallagher",
+          "startDate": "2026-06-10T04:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 1,
+        "url": "https://api.congress.gov/v3/member/G000607/sponsored-legislation"
+      },
+      "state": "California",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 1,
+          "memberType": "Representative",
+          "startYear": 2026,
+          "stateCode": "CA",
+          "stateName": "California"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "g000607",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}

@@ -1,0 +1,73 @@
+{
+  "data": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1318 Longworth House Office Building",
+        "phoneNumber": "(202) 225-3816",
+        "zipCode": 20515
+      },
+      "bioguideId": "M001245",
+      "birthYear": "1988",
+      "cosponsoredLegislation": {
+        "count": 75,
+        "url": "https://api.congress.gov/v3/member/M001245/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/698206b2eb30d3271899373e_200.jpg"
+      },
+      "directOrderName": "Christian D. Menefee",
+      "district": 18,
+      "firstName": "Christian",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Menefee, Christian D.",
+      "lastName": "Menefee",
+      "middleName": "D.",
+      "officialWebsiteUrl": "http://menefee.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2026
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Christian D. Menefee",
+          "firstName": "Christian",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Menefee, Christian D.",
+          "lastName": "Menefee",
+          "middleName": "D.",
+          "startDate": "2026-02-02T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 4,
+        "url": "https://api.congress.gov/v3/member/M001245/sponsored-legislation"
+      },
+      "state": "Texas",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 18,
+          "memberType": "Representative",
+          "startYear": 2026,
+          "stateCode": "TX",
+          "stateName": "Texas"
+        }
+      ],
+      "updateDate": "2026-07-04T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "m001245",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "generated_at": "2026-07-04T16:56:25.146966+00:00"
+}
