@@ -19,6 +19,11 @@ DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 
 LOGGER = logging.getLogger(__name__)
+API_KEY = ""
+ENV_PATHS = (
+    Path(__file__).parent.parent / ".env",
+    Path(__file__).parent / ".env",
+)
 
 _cache_lock = threading.RLock()
 _cache_key_locks = {}
@@ -29,6 +34,10 @@ _background_refresh_stop = threading.Event()
 
 class MissingCongressApiKey(RuntimeError):
     """Raised when a Congress.gov request is needed but no API key is configured."""
+
+
+class UpstreamDataError(RuntimeError):
+    """Raised when an upstream government data request fails."""
 
 
 def _now_seconds():
@@ -52,8 +61,33 @@ def _cache_ttl_seconds():
     return ttl_seconds
 
 
+def _load_local_env():
+    if os.getenv("CONGRESS_API_KEY"):
+        return
+
+    for env_path in ENV_PATHS:
+        if not env_path.exists():
+            continue
+
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            stripped = line.strip()
+            if not stripped or stripped.startswith("#") or "=" not in stripped:
+                continue
+
+            key, value = stripped.split("=", 1)
+            if key.strip() == "CONGRESS_API_KEY":
+                os.environ.setdefault("CONGRESS_API_KEY", value.strip().strip('"').strip("'"))
+                return
+
+
+def congress_api_key_available():
+    _load_local_env()
+    return bool(os.getenv("CONGRESS_API_KEY") or API_KEY)
+
+
 def _congress_api_key():
-    api_key = os.getenv("CONGRESS_API_KEY")
+    _load_local_env()
+    api_key = os.getenv("CONGRESS_API_KEY") or API_KEY
     if not api_key:
         raise MissingCongressApiKey(
             "CONGRESS_API_KEY is not set. Add it to the backend environment before "
@@ -192,12 +226,16 @@ def _congress_get(path, params=None, ttl_seconds=None):
         request_params = dict(cache_params)
         request_params["api_key"] = _congress_api_key()
 
-        response = requests.get(
-            url,
-            params=request_params,
-            timeout=REQUEST_TIMEOUT_SECONDS,
-        )
-        response.raise_for_status()
+        try:
+            response = requests.get(
+                url,
+                params=request_params,
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"Congress.gov request failed for {path}.") from None
+
         return response.json()
 
     return _cached_json(cache_key, f"congress:{path}", fetch_json, ttl_seconds=ttl_seconds)
@@ -392,13 +430,32 @@ def get_official_profile(bioguideId, include_wiki=True, include_nominate=True):
     profile = {
         "bioguideId": bioguideId,
         "detail": detail,
+        "errors": [],
     }
 
     if include_wiki:
-        profile["wiki_summary"] = get_wiki_summary(bioguideId)
+        try:
+            profile["wiki_summary"] = get_wiki_summary(bioguideId)
+        except Exception as exc:
+            profile["wiki_summary"] = None
+            profile["errors"].append(
+                {
+                    "stage": "wiki",
+                    "error": str(exc),
+                }
+            )
 
     if include_nominate:
-        profile["nominate_score"] = get_nominate_score(bioguideId)
+        try:
+            profile["nominate_score"] = get_nominate_score(bioguideId)
+        except Exception as exc:
+            profile["nominate_score"] = None
+            profile["errors"].append(
+                {
+                    "stage": "nominate",
+                    "error": str(exc),
+                }
+            )
 
     return profile
 

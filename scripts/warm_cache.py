@@ -47,6 +47,9 @@ def main():
     except backend.MissingCongressApiKey as exc:
         print(str(exc), file=sys.stderr)
         return 2
+    except backend.UpstreamDataError as exc:
+        print(str(exc), file=sys.stderr)
+        return 3
 
     output = {"warm_cache": report}
     if args.stats:

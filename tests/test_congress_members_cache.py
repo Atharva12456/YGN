@@ -44,6 +44,7 @@ class CongressMembersCacheTests(unittest.TestCase):
         os.environ["YGN_CACHE_TTL_SECONDS"] = "900"
         os.environ["CONGRESS_API_KEY"] = "test-key"
         self.module = load_module()
+        self.module.ENV_PATHS = ()
 
     def tearDown(self):
         os.environ.clear()
@@ -83,6 +84,19 @@ class CongressMembersCacheTests(unittest.TestCase):
                 self.module.allCongressMembers()
 
         requests_get.assert_not_called()
+
+    def test_local_dotenv_api_key_is_used(self):
+        os.environ.pop("CONGRESS_API_KEY")
+        env_path = Path(self.temp_dir.name) / ".env"
+        env_path.write_text("CONGRESS_API_KEY=local-test-key\n", encoding="utf-8")
+        self.module.ENV_PATHS = (env_path,)
+
+        with patch.object(self.module.requests, "get") as requests_get:
+            requests_get.return_value = fake_response({"members": []})
+
+            self.module.allCongressMembers()
+
+        self.assertEqual(requests_get.call_args.kwargs["params"]["api_key"], "local-test-key")
 
     def test_get_member_id_paginates_and_caches_pages(self):
         def response_for_request(url, params=None, **kwargs):
@@ -217,6 +231,19 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertTrue(report["recent_bills_cached"])
         self.assertEqual(report["errors"], [])
         self.assertGreaterEqual(stats["total_entries"], 6)
+
+    def test_official_profile_returns_partial_data_when_wiki_is_missing(self):
+        self.module.CongressMembersID = Mock(return_value={"member": {"directOrderName": "Missing Wiki"}})
+        self.module.get_wiki_summary = Mock(side_effect=Exception("wiki missing"))
+        self.module.get_nominate_score = Mock(return_value={"dim1": 0.2, "geo_mean": None})
+
+        profile = self.module.get_official_profile("A000001")
+
+        self.assertEqual(profile["bioguideId"], "A000001")
+        self.assertEqual(profile["detail"], {"member": {"directOrderName": "Missing Wiki"}})
+        self.assertIsNone(profile["wiki_summary"])
+        self.assertEqual(profile["nominate_score"], {"dim1": 0.2, "geo_mean": None})
+        self.assertEqual(profile["errors"][0]["stage"], "wiki")
 
 
 if __name__ == "__main__":
