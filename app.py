@@ -38,7 +38,7 @@ def startup_cache_refresh():
     if not should_refresh:
         return
 
-    if not os.getenv("CONGRESS_API_KEY"):
+    if not government.congress_api_key_available():
         LOGGER.warning("Skipping background cache refresh because CONGRESS_API_KEY is not set.")
         return
 
@@ -84,6 +84,8 @@ def _backend_response(callable_, *args, not_found_message=None, **kwargs):
         ) from exc
     except FileNotFoundError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except government.UpstreamDataError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
     except (requests.HTTPError, requests.RequestException) as exc:
         raise HTTPException(status_code=502, detail="Upstream government data request failed.") from exc
     except ValueError as exc:
@@ -112,6 +114,7 @@ def health():
         "background_refresh_enabled": os.getenv("YGN_ENABLE_BACKGROUND_REFRESH", "1")
         not in {"0", "false", "False"},
         "congress_api_key_configured": bool(os.getenv("CONGRESS_API_KEY")),
+        "congress_api_key_available": government.congress_api_key_available(),
     }
 
 

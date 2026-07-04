@@ -15,6 +15,7 @@ class FastApiAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], "ok")
         self.assertFalse(response["congress_api_key_configured"])
+        self.assertFalse(response["congress_api_key_available"])
 
     def test_list_officials_uses_cached_backend_function(self):
         self.app.government.listCongressMembers = Mock(return_value={"members": []})

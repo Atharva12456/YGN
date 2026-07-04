@@ -4,7 +4,13 @@ Backend cache and API for the YGN government information MVP.
 
 ## Local API
 
-Set the Congress.gov API key in your shell:
+For local MVP work, put your Congress.gov key in an ignored `.env` file:
+
+```powershell
+CONGRESS_API_KEY=your-key-here
+```
+
+Or set it in your shell:
 
 ```powershell
 $env:CONGRESS_API_KEY = "your-key-here"
@@ -42,7 +48,7 @@ The FastAPI server also exposes:
 
 Useful environment variables:
 
-- `CONGRESS_API_KEY`: required for Congress.gov requests.
+- `CONGRESS_API_KEY`: required for Congress.gov requests. It can live in `.env` for local MVP work.
 - `YGN_CACHE_PATH`: optional SQLite cache path. Defaults to `empty-folder/.cache/ygn_api_cache.sqlite`.
 - `YGN_CACHE_TTL_SECONDS`: optional cache TTL. Defaults to `900`.
 - `YGN_ENABLE_BACKGROUND_REFRESH`: set to `0` to disable startup background refresh.
