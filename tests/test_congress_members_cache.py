@@ -291,6 +291,52 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertIn("Jane Example", summary["summary"])
         self.assertIn("Democratic representative", summary["summary"])
 
+    def test_wiki_summary_rejects_ambiguous_name_pages(self):
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if "/member/A000001" in url:
+                return fake_response(
+                    {
+                        "member": {
+                            "directOrderName": "John McGuire",
+                            "firstName": "John",
+                            "lastName": "McGuire",
+                            "state": "Virginia",
+                            "district": 5,
+                            "partyHistory": [{"partyName": "Republican", "startYear": 2025}],
+                            "terms": [
+                                {
+                                    "chamber": "House of Representatives",
+                                    "memberType": "Representative",
+                                    "startYear": 2025,
+                                    "stateName": "Virginia",
+                                    "district": 5,
+                                }
+                            ],
+                        }
+                    }
+                )
+            if "John_McGuire" in url:
+                return fake_response(
+                    {
+                        "title": "John McGuire",
+                        "extract": "John McGuire is the name of:",
+                    }
+                )
+            if "w/api.php" in url:
+                return fake_response({"query": {"search": []}})
+            return fake_response(
+                {},
+                status_code=404,
+                raise_for_status=self.module.requests.HTTPError("missing"),
+            )
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request):
+            summary = self.module.get_wiki_summary("A000001")
+
+        self.assertEqual(summary["source"], "congress_fallback")
+        self.assertIn("John McGuire", summary["summary"])
+        self.assertIn("Republican representative", summary["summary"])
+
     def test_wiki_summary_uses_longer_cache_ttl(self):
         os.environ["YGN_CACHE_TTL_SECONDS"] = "0"
         os.environ["YGN_WIKI_CACHE_TTL_SECONDS"] = "86400"

@@ -526,6 +526,7 @@ def _wiki_summary_from_page_title(page_title):
     extract = data.get("extract")
     return {
         "title": data.get("title") or page_title,
+        "type": data.get("type"),
         "summary": extract,
         "extract": extract,
         "thumbnail": data.get("thumbnail", {}).get("source"),
@@ -558,6 +559,9 @@ def _is_disambiguation_summary(summary):
     return (
         summary_type == "disambiguation"
         or "may refer to:" in text
+        or "may also refer to:" in text
+        or "can refer to:" in text
+        or "is the name of:" in text
         or title.endswith("(disambiguation)")
     )
 
@@ -789,7 +793,7 @@ def get_nominate_score(bioguide_id: str):
 
 def get_wiki_summary(bioguideId):
     cache_key = _build_cache_key(
-        "wikipedia-summary",
+        "wikipedia-summary-v2",
         {
             "bioguideId": bioguideId,
         },

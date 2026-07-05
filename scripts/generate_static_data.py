@@ -53,9 +53,17 @@ def is_fallback_description(payload):
 
 
 def is_disambiguation_description(payload):
+    summary_type = str(payload.get("type") or "").lower()
     title = str(payload.get("title") or "").lower()
     text = str(payload.get("summary") or payload.get("extract") or "").lower()
-    return "may refer to:" in text or title.endswith("(disambiguation)")
+    return (
+        summary_type == "disambiguation"
+        or "may refer to:" in text
+        or "may also refer to:" in text
+        or "can refer to:" in text
+        or "is the name of:" in text
+        or title.endswith("(disambiguation)")
+    )
 
 
 def reusable_wiki_snapshot(path, generated_at, ttl_days, fallback_ttl_days):
