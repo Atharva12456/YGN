@@ -5,7 +5,7 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 // ─── Client-side caches ──────────────────────────────────────────────────────
-const wikiCache = new Map();      // bioguideId -> { summary/extract, title } | null
+const wikiCache = new Map();      // bioguideId → { summary, title } | null
 const nominateCache = new Map();  // bioguideId → { dim1 } | null
 
 // ─── Application state ───────────────────────────────────────────────────────
@@ -73,159 +73,39 @@ function clamp(val, min, max) {
   return Math.min(max, Math.max(min, val));
 }
 
-function firstSentences(text, count = 2) {
-  const cleanText = String(text || '').replace(/\s+/g, ' ').trim();
-  if (!cleanText) return '';
-
-  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
-    const sentences = Array.from(segmenter.segment(cleanText), item => item.segment.trim())
-      .filter(Boolean);
-    return sentences.slice(0, count).join(' ');
+/**
+ * Get ethics color based on score (R2/R4)
+ */
+function getEthicsColor(score) {
+  if (score === null || score === undefined || score === '') return '#94a3b8';
+  const s = Number(score);
+  if (s <= 50) {
+    const ratio = s / 50;
+    const r = Math.round(220 + (245 - 220) * ratio);
+    const g = Math.round(38 + (158 - 38) * ratio);
+    const b = Math.round(38 + (11 - 38) * ratio);
+    return `rgb(${r}, ${g}, ${b})`;
+  } else {
+    const ratio = (s - 50) / 50;
+    const r = Math.round(245 + (21 - 245) * ratio);
+    const g = Math.round(158 + (128 - 158) * ratio);
+    const b = Math.round(11 + (61 - 11) * ratio);
+    return `rgb(${r}, ${g}, ${b})`;
   }
-
-  const sentences = cleanText.match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g) || [cleanText];
-  return sentences.slice(0, count).map(sentence => sentence.trim()).join(' ');
-}
-
-function currentCongressNumber(now = new Date()) {
-  let year = now.getUTCFullYear();
-  const month = now.getUTCMonth() + 1;
-  const day = now.getUTCDate();
-
-  if (year % 2 === 1 && month === 1 && day < 3) {
-    year -= 1;
-  }
-
-  return Math.floor((year - 1789) / 2) + 1;
-}
-
-function trimTrailingSlash(value) {
-  return String(value || '').trim().replace(/\/+$/, '');
-}
-
-function getStoredApiBaseUrl() {
-  try {
-    return trimTrailingSlash(localStorage.getItem('YGN_API_BASE_URL'));
-  } catch {
-    return '';
-  }
-}
-
-function setStoredApiBaseUrl(value) {
-  try {
-    localStorage.setItem('YGN_API_BASE_URL', value);
-  } catch {
-    // The query-string override still works when localStorage is unavailable.
-  }
-}
-
-function clearStoredApiBaseUrl() {
-  try {
-    localStorage.removeItem('YGN_API_BASE_URL');
-  } catch {
-    // Static mode still works when localStorage is unavailable.
-  }
-}
-
-function getConfiguredApiBaseUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const queryApi = trimTrailingSlash(params.get('api'));
-
-  if (params.has('api') && (!queryApi || queryApi.toLowerCase() === 'static')) {
-    clearStoredApiBaseUrl();
-    return '';
-  }
-
-  if (queryApi.toLowerCase() === 'local' && typeof LOCAL_API_BASE_URL === 'string') {
-    const localApi = trimTrailingSlash(LOCAL_API_BASE_URL);
-    setStoredApiBaseUrl(localApi);
-    return localApi;
-  }
-
-  if (queryApi) {
-    setStoredApiBaseUrl(queryApi);
-    return queryApi;
-  }
-
-  const storedApi = getStoredApiBaseUrl();
-  if (storedApi) return storedApi;
-
-  if (typeof API_BASE_URL === 'string') {
-    return trimTrailingSlash(API_BASE_URL);
-  }
-
-  return '';
-}
-
-const configuredApiBaseUrl = getConfiguredApiBaseUrl();
-
-async function fetchStaticJson(staticPath, originalError) {
-  if (!staticPath) {
-    throw originalError || new Error('No API base URL or static fallback configured.');
-  }
-
-  const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
-  if (res.status === 404) return { notFound: true, source: 'static' };
-  if (!res.ok) throw originalError || new Error(`Static HTTP ${res.status}`);
-  return { data: await res.json(), source: 'static' };
 }
 
 async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
-  if (!configuredApiBaseUrl) {
-    return fetchStaticJson(staticPath);
-  }
-
   try {
-    const res = await fetch(configuredApiBaseUrl + apiPath, { cache: options.cache || 'default' });
-    if (res.status === 404) return { notFound: true, source: 'api' };
+    const res = await fetch(API_BASE_URL + apiPath, { cache: options.cache || 'default' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return { data: await res.json(), source: 'api' };
   } catch (apiError) {
-    return fetchStaticJson(staticPath, apiError);
-  }
-}
+    if (!staticPath) throw apiError;
 
-function extractMembersFromPayload(data) {
-  if (Array.isArray(data)) return data;
-  if (data && Array.isArray(data.items)) return data.items;
-  if (data && Array.isArray(data.members)) return data.members;
-  return [];
-}
-
-async function fetchOfficialsCollection() {
-  if (!configuredApiBaseUrl) {
-    return fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
-  }
-
-  const limit = 250;
-  let offset = 0;
-  let members = [];
-  let generatedAt = null;
-  const congress = currentCongressNumber();
-
-  try {
-    while (true) {
-      const path = `/officials?limit=${limit}&offset=${offset}&congress=${congress}&current_member=true`;
-      const res = await fetch(configuredApiBaseUrl + path);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      const page = await res.json();
-      const pageMembers = extractMembersFromPayload(page);
-      members = members.concat(pageMembers);
-      generatedAt = generatedAt || page.generated_at || null;
-
-      const total = page && page.pagination && Number(page.pagination.count);
-      offset += limit;
-
-      if (pageMembers.length === 0 || !Number.isFinite(total) || offset >= total) {
-        break;
-      }
-    }
-
-    return { data: { generated_at: generatedAt, members }, source: 'api' };
-  } catch (apiError) {
-    return fetchStaticJson('officials.json', apiError);
+    const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
+    if (res.status === 404) return { notFound: true, source: 'static' };
+    if (!res.ok) throw apiError;
+    return { data: await res.json(), source: 'static' };
   }
 }
 
@@ -246,12 +126,9 @@ function showSection(sectionId) {
     btn.classList.remove('active');
   });
 
-  // Activate target section (remove 'hidden' so it doesn't override 'active')
+  // Activate target section
   const targetSection = document.getElementById('section-' + sectionId);
-  if (targetSection) {
-    targetSection.classList.remove('hidden');
-    targetSection.classList.add('active');
-  }
+  if (targetSection) targetSection.classList.add('active');
 
   // Activate matching nav button
   const targetBtn = document.querySelector(`.main-nav button[data-section="${sectionId}"]`);
@@ -378,11 +255,20 @@ async function loadMembers() {
   renderSkeletons(12);
 
   try {
-    const result = await fetchOfficialsCollection();
+    const result = await fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
     const data = result.data;
 
-    // Handle both array responses and { items/members: [...] } object responses
-    let items = extractMembersFromPayload(data);
+    // Handle both array responses and { items: [...] } object responses
+    let items;
+    if (Array.isArray(data)) {
+      items = data;
+    } else if (data && Array.isArray(data.items)) {
+      items = data.items;
+    } else if (data && Array.isArray(data.members)) {
+      items = data.members;
+    } else {
+      items = [];
+    }
 
     if (items.length === 0) {
       showEmpty();
@@ -467,6 +353,8 @@ function createMemberTile(member) {
     : null;
 
   const initials = buildInitials(name);
+  const ethicsScore = getMemberField(member, 'ethicsScore');
+  const ethicsColor = getEthicsColor(ethicsScore);
 
   // Build the tile element
   const tile = document.createElement('div');
@@ -476,9 +364,9 @@ function createMemberTile(member) {
   tile.setAttribute('aria-label', name);
 
   // Photo or initials
-  let photoHtml = '';
+  let photoInner = '';
   if (photoUrl) {
-    photoHtml = `
+    photoInner = `
       <img
         class="tile-photo"
         src="${photoUrl}"
@@ -489,17 +377,25 @@ function createMemberTile(member) {
       <div class="tile-initials" style="display:none;" aria-hidden="true">${initials}</div>
     `;
   } else {
-    photoHtml = `<div class="tile-initials" aria-hidden="true">${initials}</div>`;
+    photoInner = `<div class="tile-initials" aria-hidden="true">${initials}</div>`;
   }
+
+  const partyBadgeHtml = `<div class="party-badge ${partyClass}">${partyLabel}</div>`;
+  const ethicsBadgeHtml = `<div class="ethics-badge" style="background-color: ${ethicsColor};"></div>`;
+
+  const photoHtml = `
+    <div class="tile-photo-wrapper">
+      ${photoInner}
+      ${partyBadgeHtml}
+      ${ethicsBadgeHtml}
+    </div>
+  `;
 
   tile.innerHTML = `
     ${photoHtml}
     <div class="tile-name">${name}</div>
     ${locationStr ? `<div class="tile-meta">${locationStr}</div>` : ''}
     ${chamberStr ? `<div class="tile-meta">${chamberStr}</div>` : ''}
-    <div class="tile-badge-row">
-      ${party ? `<span class="tile-party-badge ${partyClass}">${partyLabel}</span>` : ''}
-    </div>
   `;
 
   // Popover events: mouseenter/focus show; mouseleave/blur schedule hide
@@ -537,26 +433,27 @@ function createMemberTile(member) {
  * @param {number|null} dim1  — roughly -1.0 (liberal) to +1.0 (conservative)
  */
 function applyNominateTint(tileEl, dim1) {
-  // Remove any existing tint classes
-  tileEl.classList.remove('tint-blue', 'tint-red', 'tint-neutral', 'tint-gray');
-
   if (dim1 === null || dim1 === undefined) {
-    tileEl.classList.add('tint-gray');
+    tileEl.style.backgroundColor = '#f4f6f9';
+    tileEl.style.borderColor = 'rgba(148, 163, 184, 0.4)';
     return;
   }
 
-  const intensity = Math.min(1, Math.abs(dim1) / 1.0);
+  const baseGray = [176, 176, 176];
+  const targetColor = dim1 < 0 ? [90, 130, 194] : [196, 92, 92];
+  const distance = Math.abs(dim1);
 
-  if (dim1 < -0.3) {
-    tileEl.style.setProperty('--tint-opacity', intensity.toFixed(3));
-    tileEl.classList.add('tint-blue');
-  } else if (dim1 > 0.3) {
-    tileEl.style.setProperty('--tint-opacity', intensity.toFixed(3));
-    tileEl.classList.add('tint-red');
+  if (distance === 0) {
+    tileEl.style.backgroundColor = '#B0B0B0';
   } else {
-    // Near zero — neutral, no tint
-    tileEl.classList.add('tint-neutral');
+    const tintStrength = 0.12 + 0.88 * Math.pow(distance, 0.85);
+    const r = Math.round(baseGray[0] + (targetColor[0] - baseGray[0]) * tintStrength);
+    const g = Math.round(baseGray[1] + (targetColor[1] - baseGray[1]) * tintStrength);
+    const b = Math.round(baseGray[2] + (targetColor[2] - baseGray[2]) * tintStrength);
+    tileEl.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
+  
+  tileEl.style.borderColor = 'transparent';
 }
 
 /**
@@ -666,9 +563,13 @@ function showPopover(member, wikiData, anchorEl) {
 
   popoverName.textContent = name;
 
-  const wikiText = wikiData && (wikiData.summary || wikiData.extract);
-  if (wikiText) {
-    popoverSummary.textContent = firstSentences(wikiText, 2);
+  if (wikiData && wikiData.summary) {
+    // Truncate very long summaries
+    const maxLen = 280;
+    const text = wikiData.summary.length > maxLen
+      ? wikiData.summary.slice(0, maxLen).trimEnd() + '…'
+      : wikiData.summary;
+    popoverSummary.textContent = text;
   } else {
     popoverSummary.textContent = 'No biographical summary available.';
   }

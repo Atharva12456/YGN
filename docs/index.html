@@ -10,6 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1a1f2e">
+
   <link rel="stylesheet" href="styles.css">
   <script src="config.js"></script>
   <script src="app.js" defer></script>
@@ -18,7 +25,15 @@
 
   <!-- ── Site Header ─────────────────────────────────────────────────────── -->
   <header class="site-header">
-    <span class="logo">YGN</span>
+    <a id="brand-home" class="brand" href="#home" aria-label="YGN home">
+      <span class="brand-logo-frame" aria-hidden="true">
+        <img class="brand-logo" src="assets/ygn-logo-icon.png" alt="">
+      </span>
+      <span class="brand-copy">
+        <span class="brand-name">Your Government Now</span>
+        <span class="brand-tagline">Civic data portal</span>
+      </span>
+    </a>
     <span id="health-indicator" class="checking">Checking…</span>
   </header>
 

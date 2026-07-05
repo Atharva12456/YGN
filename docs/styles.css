@@ -90,19 +90,72 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  height: 60px;
+  min-height: 72px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   color: #ffffff;
-  user-select: none;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-logo-frame {
+  width: clamp(46px, 7vw, 56px);
+  height: clamp(46px, 7vw, 56px);
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-nav-text);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
 #health-indicator {
@@ -111,6 +164,7 @@ button {
   font-size: 0.75rem;
   font-weight: 600;
   transition: background var(--transition-med), color var(--transition-med);
+  flex: 0 0 auto;
 }
 
 #health-indicator.connected {
@@ -273,14 +327,14 @@ button {
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 /* ── Member Tile ───────────────────────────────────────────────────────────── */
 .member-tile {
   background: var(--color-surface);
-  border-radius: var(--radius-card);
+  border-radius: 36px;
   padding: 1.25rem;
   box-shadow: var(--shadow-card);
   cursor: pointer;
@@ -301,40 +355,23 @@ button {
   outline-offset: 2px;
 }
 
-/* NOMINATE tinting — proportional via CSS custom property */
-.member-tile.tint-blue {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, calc(var(--tint-opacity, 0.18) * 1)),
-    var(--color-surface)
-  );
-}
-
-.member-tile.tint-red {
-  background: linear-gradient(
-    135deg,
-    rgba(239, 68, 68, calc(var(--tint-opacity, 0.18) * 1)),
-    var(--color-surface)
-  );
-}
-
-.member-tile.tint-neutral {
-  background: var(--color-surface);
-}
-
-.member-tile.tint-gray {
-  background: var(--color-surface);
-  border-color: rgba(148, 163, 184, 0.4);
-}
+/* NOMINATE tinting — directly applied via JS now */
 
 /* Tile photo */
+.tile-photo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  width: 140px;
+}
+
 .tile-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 140px;
+  height: 160px;
+  border-radius: 32px;
   object-fit: cover;
   display: block;
-  margin: 0 auto 0.75rem;
 }
 
 /* Tile initials fallback */
@@ -355,49 +392,57 @@ button {
 }
 
 .tile-name {
+  font-family: var(--font-display);
   font-weight: 600;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-bottom: 0.25rem;
   line-height: 1.3;
 }
 
 .tile-meta {
+  font-family: var(--font-display);
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
 }
 
-.tile-party-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin: 0 auto;
+.party-badge {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  bottom: -10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.ethics-badge {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  bottom: -10px;
+  right: 0;
+  border: 2px solid white;
 }
 
 .party-D {
-  background: rgba(59, 130, 246, 0.15);
-  color: #2563eb;
+  background: #5A82C2;
 }
 
 .party-R {
-  background: rgba(239, 68, 68, 0.15);
-  color: #dc2626;
+  background: #C45C5C;
 }
 
 .party-I {
-  background: rgba(148, 163, 184, 0.15);
-  color: #64748b;
-}
-
-.tile-badge-row {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  flex-wrap: wrap;
+  background: #94A3B8;
 }
 
 /* ── Popover ───────────────────────────────────────────────────────────────── */
@@ -583,13 +628,32 @@ button {
   font-size: 0.95rem;
 }
 
-/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   .site-header {
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
     padding: 0.75rem 1rem;
-    gap: 0.5rem;
+    gap: 1rem;
+  }
+
+  .brand {
+    gap: 0.6rem;
+  }
+
+  .brand-tagline {
+    display: none;
   }
 
   #main-content {
@@ -614,5 +678,19 @@ button {
 
   .coming-soon {
     padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header {
+    min-height: 64px;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+
+  #health-indicator {
+    padding: 4px 10px;
   }
 }
