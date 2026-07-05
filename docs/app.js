@@ -128,7 +128,10 @@ function showSection(sectionId) {
 
   // Activate target section
   const targetSection = document.getElementById('section-' + sectionId);
-  if (targetSection) targetSection.classList.add('active');
+  if (targetSection) {
+    targetSection.classList.remove('hidden');
+    targetSection.classList.add('active');
+  }
 
   // Activate matching nav button
   const targetBtn = document.querySelector(`.main-nav button[data-section="${sectionId}"]`);
