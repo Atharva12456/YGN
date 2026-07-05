@@ -2,10 +2,16 @@
   "congress": 119,
   "current_member": true,
   "descriptions": 537,
-  "details": 537,
-  "errors": [],
+  "details": 536,
+  "errors": [
+    {
+      "bioguideId": "C001123",
+      "error": "Congress.gov request failed for /member/C001123.",
+      "stage": "detail"
+    }
+  ],
   "fallback_descriptions": 217,
-  "generated_at": "2026-07-05T09:24:19.569134+00:00",
+  "generated_at": "2026-07-05T14:12:00.420299+00:00",
   "members": 537,
   "nominate": 536,
   "recent_bills": true,
