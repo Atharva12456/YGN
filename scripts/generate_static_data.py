@@ -319,29 +319,28 @@ def main():
                 else:
                     report["wiki"] += 1
                     report["wiki_reused"] += 1
-                continue
-
-            try:
-                wiki = backend.get_wiki_summary(bioguide_id)
-                write_json(
-                    wiki_path,
-                    {
-                        "generated_at": generated_at,
-                        **wiki,
-                    },
-                )
-                report["descriptions"] += 1
-                if is_fallback_description(wiki):
-                    report["fallback_descriptions"] += 1
-                else:
-                    report["wiki"] += 1
-            except Exception as exc:
-                report["errors"].append(
-                    {"bioguideId": bioguide_id, "stage": "wiki", "error": str(exc)}
-                )
-            finally:
-                if args.wiki_delay_seconds > 0:
-                    time.sleep(args.wiki_delay_seconds)
+            else:
+                try:
+                    wiki = backend.get_wiki_summary(bioguide_id)
+                    write_json(
+                        wiki_path,
+                        {
+                            "generated_at": generated_at,
+                            **wiki,
+                        },
+                    )
+                    report["descriptions"] += 1
+                    if is_fallback_description(wiki):
+                        report["fallback_descriptions"] += 1
+                    else:
+                        report["wiki"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {"bioguideId": bioguide_id, "stage": "wiki", "error": str(exc)}
+                    )
+                finally:
+                    if args.wiki_delay_seconds > 0:
+                        time.sleep(args.wiki_delay_seconds)
 
         if not args.skip_nominate:
             try:
