@@ -2,16 +2,26 @@
   "congress": 119,
   "current_member": true,
   "descriptions": 537,
-  "details": 536,
+  "details": 534,
   "errors": [
     {
-      "bioguideId": "F000468",
-      "error": "Congress.gov request failed for /member/F000468.",
+      "bioguideId": "Y000067",
+      "error": "Congress.gov request failed for /member/Y000067.",
+      "stage": "detail"
+    },
+    {
+      "bioguideId": "R000603",
+      "error": "Congress.gov request failed for /member/R000603.",
+      "stage": "detail"
+    },
+    {
+      "bioguideId": "H000601",
+      "error": "Congress.gov request failed for /member/H000601.",
       "stage": "detail"
     }
   ],
   "fallback_descriptions": 178,
-  "generated_at": "2026-07-06T11:07:11.844721+00:00",
+  "generated_at": "2026-07-06T15:56:22.494227+00:00",
   "members": 537,
   "nominate": 536,
   "recent_bills": true,
