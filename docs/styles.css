@@ -292,23 +292,22 @@ button {
 #members-search::placeholder {
   color: var(--color-text-muted);
 }
-
-#members-search:focus {
+#members-search:focus {
   outline: 2px solid var(--color-accent);
   border-color: var(--color-accent);
 }
 
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
 }
 
 /* ── Member Tile ───────────────────────────────────────────────────────────── */
 .member-tile {
   background: var(--color-surface);
-  border-radius: 36px;
-  padding: 1.25rem;
+  border-radius: 24px;
+  padding: 1rem;
   box-shadow: var(--shadow-card);
   cursor: pointer;
   position: relative;
@@ -336,12 +335,12 @@ button {
   display: flex;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  width: 140px;
+  width: 110px;
 }
 
 .tile-photo {
-  width: 140px;
-  height: 160px;
+  width: 110px;
+  height: 155px;
   border-radius: 32px;
   object-fit: cover;
   display: block;
@@ -601,15 +600,21 @@ button {
   font-size: 0.95rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .members-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .members-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -646,11 +651,17 @@ button {
   }
 
   .members-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .coming-soon {
     padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .members-grid {
+    grid-template-columns: 1fr;
   }
 }
 
