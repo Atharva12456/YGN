@@ -2,13 +2,19 @@
   "congress": 119,
   "current_member": true,
   "descriptions": 537,
-  "details": 537,
-  "errors": [],
+  "details": 536,
+  "errors": [
+    {
+      "bioguideId": "F000468",
+      "error": "Congress.gov request failed for /member/F000468.",
+      "stage": "detail"
+    }
+  ],
   "fallback_descriptions": 178,
-  "generated_at": "2026-07-06T04:43:37.791016+00:00",
+  "generated_at": "2026-07-06T11:07:11.844721+00:00",
   "members": 537,
   "nominate": 536,
   "recent_bills": true,
   "wiki": 359,
-  "wiki_reused": 320
+  "wiki_reused": 359
 }
