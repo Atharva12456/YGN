@@ -73,13 +73,16 @@ cd docs
 python -m http.server 5500
 ```
 
-Then open `http://127.0.0.1:5500`. It will use the generated files in `docs/data/`.
+Then open `http://127.0.0.1:5500` or `http://127.0.0.1:5500/index.html`.
+It will use the generated files in `docs/data/`. The frontend uses separate static
+pages such as `members.html`, `map.html`, and `methodology.html`, so normal browser
+Back and Forward navigation works between sections.
 
 To test against your local FastAPI backend, start the backend and open either:
 
 ```text
-http://127.0.0.1:5500?api=local
-http://127.0.0.1:5500?api=http://127.0.0.1:8000
+http://127.0.0.1:5500/index.html?api=local
+http://127.0.0.1:5500/members.html?api=http://127.0.0.1:8000
 ```
 
 You can also edit `docs/config.js` and set:
@@ -109,6 +112,7 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 ## Useful environment variables
 
 - `CONGRESS_API_KEY`: required for Congress.gov requests. It can live in `.env` for local MVP work or in GitHub Secrets for the static-data workflow.
+- `FEC_API_KEY`, `ECON_API_KEY`, or `YGN_ECON_API_KEY`: optional FEC-compatible key used for live ethics score refreshes. Without one, the backend returns varied static fallback grades.
 - `YGN_MAX_MEMBERS`: optional static-data member limit. Defaults to `all` current members in the selected Congress.
 - `YGN_CONGRESS`: optional static-data Congress number. Defaults to the current Congress.
 - `YGN_CACHE_PATH`: optional SQLite cache path. Defaults to `empty-folder/.cache/ygn_api_cache.sqlite`.

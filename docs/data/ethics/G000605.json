@@ -1,15 +1,47 @@
 {
   "bioguideId": "G000605",
   "candidate": null,
-  "components": {},
+  "components": {
+    "constituency_specificity": {
+      "score": 86.7,
+      "value": 0.8,
+      "weight": 0.18
+    },
+    "disclosure_baseline": {
+      "score": 71.6,
+      "value": 0.4518,
+      "weight": 0.23
+    },
+    "public_accountability_baseline": {
+      "score": 76.5,
+      "value": 0.9701,
+      "weight": 0.24
+    },
+    "public_record_completeness": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.2
+    },
+    "service_context": {
+      "score": 72.3,
+      "value": 0.0333,
+      "weight": 0.1
+    },
+    "static_baseline_variation": {
+      "score": 75.5,
+      "value": 0.6816,
+      "weight": 0.05
+    }
+  },
   "cycle": 2026,
-  "generated_at": "2026-07-06T23:50:23.695788+00:00",
-  "grade": "C-",
-  "method": "campaign_finance_v1",
+  "generated_at": "2026-07-07T04:32:34.361700+00:00",
+  "grade": "B-",
+  "method": "campaign_finance_v2",
   "notes": [
-    "Live FEC finance data was unavailable; using the static fallback grade."
+    "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
+    "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations."
   ],
-  "score": 72.0,
+  "score": 80.6,
   "source": "static_fallback",
-  "updated_at": "2026-07-06T00:00:00+00:00"
+  "updated_at": "2026-07-07T00:00:00+00:00"
 }

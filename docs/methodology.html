@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerrymandering Methodology - YGN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1a1f2e">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-page="map">
+  <header class="site-header">
+    <a id="brand-home" class="brand" href="index.html" aria-label="YGN home">
+      <span class="brand-name">YGN</span>
+      <span class="brand-tagline">Your Government Now</span>
+    </a>
+    <span id="health-indicator" class="checking">Checking...</span>
+  </header>
+
+  <nav class="main-nav" aria-label="Site navigation">
+    <a data-page="home" href="index.html">Home</a>
+    <a data-page="members" href="members.html">Congressional Members</a>
+    <a data-page="map" href="map.html">Map / Districts</a>
+    <a data-page="bills" href="recent-bills.html">Recent Bills</a>
+    <a data-page="foreign" href="foreign-affairs.html">Foreign Affairs</a>
+    <a data-page="economy" href="economy.html">Economy</a>
+  </nav>
+
+  <main id="main-content">
+    <section id="section-methodology" class="active">
+      <div class="methodology-page">
+        <div class="methodology-header">
+          <a id="methodology-back" class="secondary-button" href="map.html">Back to Map</a>
+          <p class="eyebrow">YGN Methodology</p>
+          <h2>Gerrymandering Risk Index</h2>
+        </div>
+
+        <div class="methodology-grid">
+          <div>
+            <h3>How the Score Works</h3>
+            <p>
+              The YGN index is an educational risk score from 0 to 100. It combines six signals:
+              district shape, voting numbers, party control during redistricting, political and court events,
+              social indicators, and individual donation patterns.
+            </p>
+            <p>
+              The current site ships a static state-level fallback so the map works on GitHub Pages.
+              The structure is ready for deeper refresh jobs that replace static component values with
+              district geometry, election returns, Census/ACS measures, redistricting records, and FEC data.
+            </p>
+          </div>
+
+          <div>
+            <h3>Component Weights</h3>
+            <ul class="methodology-list">
+              <li><strong>District shape, 25%:</strong> compactness and boundary complexity signals.</li>
+              <li><strong>Voting numbers, 25%:</strong> seat-vote mismatch and efficiency-gap style signals.</li>
+              <li><strong>Party in power, 15%:</strong> unified or divided redistricting control.</li>
+              <li><strong>Political events, 15%:</strong> recent redraws, litigation, commissions, and remedial maps.</li>
+              <li><strong>Social indicators, 10%:</strong> demographic and education sorting that can affect communities of interest.</li>
+              <li><strong>Individual donations, 10%:</strong> concentration, in-state support, and small-donor balance.</li>
+            </ul>
+          </div>
+
+          <div class="methodology-sources">
+            <h3>Primary Sources Used</h3>
+            <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html" target="_blank" rel="noopener">U.S. Census Cartographic Boundary Files</a>
+            <a href="https://www.census.gov/geographies/reference-maps/2025/geo/cong-dist-119-wall.html" target="_blank" rel="noopener">U.S. Census 119th Congressional District Maps</a>
+            <a href="https://www.ncsl.org/elections-and-campaigns/redistricting-criteria" target="_blank" rel="noopener">NCSL Redistricting Criteria</a>
+            <a href="https://www.fec.gov/data/browse-data/" target="_blank" rel="noopener">Federal Election Commission Data</a>
+            <a href="https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=1946&context=public_law_and_legal_theory" target="_blank" rel="noopener">Efficiency Gap Research Paper</a>
+            <a href="https://data-usdot.opendata.arcgis.com/datasets/usdot::congressional-districts/about" target="_blank" rel="noopener">USDOT/BTS Congressional Districts Feature Layer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

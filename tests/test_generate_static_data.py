@@ -108,6 +108,7 @@ class GenerateStaticDataTests(unittest.TestCase):
                 exit_code = self.module.main()
 
             manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+            score_index = json.loads((output_dir / "member-scores.json").read_text(encoding="utf-8"))
 
         self.assertEqual(exit_code, 0)
         self.assertEqual(backend.wiki_requests, ["B000001"])
@@ -118,6 +119,9 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(manifest["nominate"], 2)
         self.assertEqual(manifest["ethics"], 2)
         self.assertEqual(manifest["ethics_fallback"], 2)
+        self.assertTrue(manifest["member_score_index"])
+        self.assertEqual(set(score_index["nominate"]), {"A000001", "B000001"})
+        self.assertEqual(set(score_index["ethics"]), {"A000001", "B000001"})
 
 
 if __name__ == "__main__":

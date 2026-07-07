@@ -378,8 +378,24 @@ class CongressMembersCacheTests(unittest.TestCase):
         score = self.module.get_ethics_score("A000001")
 
         self.assertEqual(score["source"], "static_fallback")
-        self.assertEqual(score["score"], 72.0)
-        self.assertEqual(score["grade"], "C-")
+        self.assertEqual(score["method"], "campaign_finance_v2")
+        self.assertGreaterEqual(score["score"], 55.0)
+        self.assertLessEqual(score["score"], 96.0)
+        self.assertNotEqual(score["grade"], "N/A")
+        self.assertIn("public_record_completeness", score["components"])
+
+        other_score = self.module._static_ethics_fallback(
+            "B000001",
+            {
+                "bioguideId": "B000001",
+                "directOrderName": "John Example",
+                "state": "CA",
+                "district": 10,
+                "partyName": "Republican",
+                "terms": [{"chamber": "House of Representatives", "district": 10}],
+            },
+        )
+        self.assertNotEqual(score["score"], other_score["score"])
 
     def test_ethics_formula_scores_live_fec_components(self):
         member = {

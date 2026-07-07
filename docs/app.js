@@ -8,6 +8,8 @@
 const wikiCache = new Map();      // bioguideId → { summary, title } | null
 const nominateCache = new Map();  // bioguideId → { dim1 } | null
 const ethicsCache = new Map();    // bioguideId -> { score, grade } | null
+let memberScoreIndex = null;
+let scoreObserver = null;
 
 // ─── Application state ───────────────────────────────────────────────────────
 let allMembers = [];          // full sorted member array after first load
@@ -37,6 +39,15 @@ const STATE_ABBR_TO_NAME = {
 
 const DISTRICTS_FEATURE_QUERY_URL = 'https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_Congressional_Districts/FeatureServer/0/query';
 const STATES_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
+const PAGE_URLS = {
+  home: 'index.html',
+  members: 'members.html',
+  map: 'map.html',
+  methodology: 'methodology.html',
+  bills: 'recent-bills.html',
+  foreign: 'foreign-affairs.html',
+  economy: 'economy.html'
+};
 
 // ─── Popover state ───────────────────────────────────────────────────────────
 let popoverHideTimer = null;
@@ -219,54 +230,72 @@ function getEthicsColor(score) {
 }
 
 async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
-  try {
-    const res = await fetch(API_BASE_URL + apiPath, { cache: options.cache || 'default' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return { data: await res.json(), source: 'api' };
-  } catch (apiError) {
-    if (!staticPath) throw apiError;
+  const apiBaseUrl = typeof API_BASE_URL === 'string' ? API_BASE_URL : '';
 
-    const res = await fetch(`data/${staticPath}`, { cache: 'no-store' });
+  if (apiBaseUrl) {
+    try {
+      const res = await fetch(apiBaseUrl + apiPath, { cache: options.cache || 'default' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return { data: await res.json(), source: 'api' };
+    } catch (apiError) {
+      if (!staticPath) throw apiError;
+    }
+  }
+
+  if (!staticPath) {
+    throw new Error(`No static fallback configured for ${apiPath}`);
+  }
+
+  try {
+    const res = await fetch(`data/${staticPath}`, { cache: options.staticCache || 'default' });
     if (res.status === 404) return { notFound: true, source: 'static' };
-    if (!res.ok) throw apiError;
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return { data: await res.json(), source: 'static' };
+  } catch (staticError) {
+    throw staticError;
   }
 }
 
 // ─── Navigation (SPA routing) ────────────────────────────────────────────────
 
-/**
- * Hide all sections, show the target section, and mark the nav button active.
- * @param {string} sectionId  e.g. 'home', 'members', etc.
- */
+function apiQuerySuffix() {
+  const params = new URLSearchParams(window.location.search);
+  const api = params.get('api');
+  return api ? `?api=${encodeURIComponent(api)}` : '';
+}
+
+function withApiParam(url) {
+  const suffix = apiQuerySuffix();
+  if (!suffix || url.includes('api=')) return url;
+  return url.includes('?') ? `${url}&${suffix.slice(1)}` : `${url}${suffix}`;
+}
+
 function showSection(sectionId) {
-  // Deactivate all sections
-  document.querySelectorAll('#main-content section').forEach(sec => {
-    sec.classList.remove('active');
-  });
+  const url = PAGE_URLS[sectionId] || PAGE_URLS.home;
+  window.location.href = withApiParam(url);
+}
 
-  // Deactivate all nav buttons
-  document.querySelectorAll('.main-nav button').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  // Activate target section
-  const targetSection = document.getElementById('section-' + sectionId);
-  if (targetSection) {
-    targetSection.classList.remove('hidden');
-    targetSection.classList.add('active');
+function initNavLinks() {
+  const activePage = document.body.dataset.page || 'home';
+  const brandHome = document.getElementById('brand-home');
+  if (brandHome) {
+    brandHome.setAttribute('href', withApiParam(brandHome.getAttribute('href') || PAGE_URLS.home));
   }
 
-  // Activate matching nav button
-  const targetBtn = document.querySelector(`.main-nav button[data-section="${sectionId}"]`);
-  if (targetBtn) targetBtn.classList.add('active');
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    if (link.dataset.page === activePage) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
 
-  // Close popover on navigation
-  hidePopover();
-
-  if (sectionId === 'map') {
-    initMap();
-  }
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('http')) {
+      link.setAttribute('href', withApiParam(href));
+    }
+  });
 }
 
 // ─── Health check ────────────────────────────────────────────────────────────
@@ -375,18 +404,54 @@ function showEmpty() {
   `;
 }
 
+async function loadMemberScoreIndex() {
+  if (memberScoreIndex !== null) return memberScoreIndex;
+
+  try {
+    const res = await fetch('data/member-scores.json', { cache: 'default' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    memberScoreIndex = await res.json();
+  } catch {
+    memberScoreIndex = {};
+  }
+
+  return memberScoreIndex;
+}
+
+function hydrateMemberScores(members, scoreIndex) {
+  const nominateScores = (scoreIndex && scoreIndex.nominate) || {};
+  const ethicsScores = (scoreIndex && scoreIndex.ethics) || {};
+
+  return members.map(member => {
+    const bioguideId = getMemberField(member, 'bioguideId', 'bioguide_id');
+    if (!bioguideId) return member;
+
+    const enriched = { ...member };
+    if (!enriched.nominate_score && nominateScores[bioguideId]) {
+      enriched.nominate_score = nominateScores[bioguideId];
+    }
+    if (!enriched.ethics_score && ethicsScores[bioguideId]) {
+      enriched.ethics_score = ethicsScores[bioguideId];
+    }
+    return enriched;
+  });
+}
+
 /**
  * Load the congressional members list from the API.
  * Shows skeletons while loading. On success, sorts and renders.
  * On failure, shows error state.
  */
 async function loadMembers() {
-  if (membersLoaded) return;
+  if (membersLoaded) return allMembers;
 
   renderSkeletons(12);
 
   try {
-    const result = await fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json');
+    const [result, scoreIndex] = await Promise.all([
+      fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json'),
+      loadMemberScoreIndex()
+    ]);
     const data = result.data;
 
     // Handle both array responses and { items: [...] } object responses
@@ -406,8 +471,10 @@ async function loadMembers() {
       return;
     }
 
+    const hydratedItems = hydrateMemberScores(items, scoreIndex);
+
     // Sort alphabetically by last name
-    items.sort((a, b) => {
+    hydratedItems.sort((a, b) => {
       const nameA = getMemberField(a, 'name', 'directOrderName', 'invertedOrderName');
       const nameB = getMemberField(b, 'name', 'directOrderName', 'invertedOrderName');
       const keyA = extractSortKey(nameA);
@@ -415,16 +482,18 @@ async function loadMembers() {
       return keyA.localeCompare(keyB);
     });
 
-    allMembers = items;
+    allMembers = hydratedItems;
     membersLoaded = true;
 
     renderGrid(allMembers);
 
     // Update home stat
     updateStatCard('stat-members', 'Members Loaded', allMembers.length.toString());
+    return allMembers;
 
   } catch (err) {
     showError('Could not load congressional members. Make sure the backend is running.');
+    return [];
   }
 }
 
@@ -502,6 +571,7 @@ function createMemberTile(member) {
         src="${photoUrl}"
         alt="${name}"
         loading="lazy"
+        decoding="async"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
       >
       <div class="tile-initials" style="display:none;" aria-hidden="true">${initials}</div>
@@ -547,10 +617,23 @@ function createMemberTile(member) {
     schedulePopoverHide();
   });
 
-  // Background NOMINATE fetch (fire and forget, no blocking)
   if (bioguideId) {
-    fetchNominate(bioguideId, tile);
-    fetchEthics(bioguideId, tile);
+    const nominateScore = member.nominate_score || member.nominateScore || null;
+    const ethicsScoreData = member.ethics_score || member.ethicsScore || null;
+
+    if (nominateScore && typeof nominateScore.dim1 === 'number') {
+      nominateCache.set(bioguideId, { dim1: nominateScore.dim1 });
+      applyNominateTint(tile, nominateScore.dim1);
+    }
+
+    if (ethicsScoreData && typeof ethicsScoreData.score === 'number') {
+      ethicsCache.set(bioguideId, ethicsScoreData);
+      applyEthicsGrade(tile, ethicsScoreData);
+    }
+
+    if (!nominateCache.has(bioguideId) || !ethicsCache.has(bioguideId)) {
+      scheduleScoreFetch(bioguideId, tile);
+    }
   }
 
   return tile;
@@ -667,6 +750,35 @@ async function fetchEthics(bioguideId, tileEl) {
 /**
  * Cancel any pending hide-popover timer.
  */
+function fetchMissingScores(bioguideId, tileEl) {
+  if (!nominateCache.has(bioguideId)) {
+    fetchNominate(bioguideId, tileEl);
+  }
+  if (!ethicsCache.has(bioguideId)) {
+    fetchEthics(bioguideId, tileEl);
+  }
+}
+
+function scheduleScoreFetch(bioguideId, tileEl) {
+  if (!('IntersectionObserver' in window)) {
+    window.setTimeout(() => fetchMissingScores(bioguideId, tileEl), 0);
+    return;
+  }
+
+  if (!scoreObserver) {
+    scoreObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        scoreObserver.unobserve(entry.target);
+        fetchMissingScores(entry.target.dataset.bioguideId, entry.target);
+      });
+    }, { rootMargin: '240px 0px' });
+  }
+
+  tileEl.dataset.bioguideId = bioguideId;
+  scoreObserver.observe(tileEl);
+}
+
 function cancelPopoverHide() {
   if (popoverHideTimer !== null) {
     clearTimeout(popoverHideTimer);
@@ -776,6 +888,7 @@ function showPopover(member, wikiData, anchorEl) {
  * Hide the popover.
  */
 function hidePopover() {
+  if (!popoverEl) return;
   popoverEl.classList.remove('visible');
   currentAnchor = null;
 }
@@ -837,7 +950,6 @@ function updateStatePanel(stateInfo, mode = 'hover') {
   selectedMapState = stateInfo;
   const score = Number(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.score);
   const safeScore = Number.isFinite(score) ? clamp(score, 0, 100) : 0;
-  const members = getMembersForState(stateInfo.abbreviation);
   const summaryText = Array.isArray(stateInfo.summary)
     ? stateInfo.summary.join(' ')
     : String(stateInfo.summary || '');
@@ -851,7 +963,7 @@ function updateStatePanel(stateInfo, mode = 'hover') {
   gerryMeterFill.style.background = safeScore >= 70 ? '#d95f5f' : safeScore >= 45 ? '#d5a642' : '#3b8f6d';
   gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
   districtStatusEl.textContent = mode === 'click'
-    ? `Zoomed to ${stateInfo.name}. ${members.length || 'Static'} member records are available for search.`
+    ? `Zoomed to ${stateInfo.name}. Use the search shortcut to view its members.`
     : `Hovering ${stateInfo.name}. Click the state to zoom into district outlines.`;
   viewStateMembersBtn.disabled = false;
 
@@ -896,12 +1008,6 @@ async function initMap() {
 
     drawStateMap(us);
     setMapStatus('Hover a state for details, or click to zoom into districts.');
-
-    loadMembers().then(() => {
-      if (selectedMapState) updateStatePanel(selectedMapState);
-    }).catch(() => {
-      setMapStatus('Map loaded. Member search data is using static fallback if available.', 'warn');
-    });
 
   } catch (error) {
     setMapStatus('Could not load the interactive map. Static pages are still available.', 'error');
@@ -1090,16 +1196,16 @@ function renderDistrictList(stateInfo, features) {
 }
 
 async function openStateMembersSearch() {
-  if (!selectedMapState || !membersSearch) return;
-  await loadMembers();
-  showSection('members');
-  membersSearch.value = selectedMapState.name;
-  handleSearch();
-  membersSearch.focus();
+  if (!selectedMapState) return;
+  const params = new URLSearchParams();
+  params.set('q', selectedMapState.name);
+  const api = new URLSearchParams(window.location.search).get('api');
+  if (api) params.set('api', api);
+  window.location.href = `members.html?${params.toString()}`;
 }
 
 function openMethodology() {
-  showSection('methodology');
+  window.location.href = withApiParam('methodology.html');
 }
 
 // ─── Search / Filter ─────────────────────────────────────────────────────────
@@ -1140,6 +1246,16 @@ function handleSearch() {
   }
 }
 
+function applyInitialMemberQuery() {
+  if (!membersSearch) return;
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('q') || params.get('state') || '';
+  if (!query) return;
+
+  membersSearch.value = query;
+  handleSearch();
+}
+
 // ─── Initialisation ──────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1149,8 +1265,8 @@ document.addEventListener('DOMContentLoaded', () => {
   membersSearch   = document.getElementById('members-search');
   homeStats       = document.getElementById('home-stats');
   popoverEl       = document.getElementById('popover');
-  popoverName     = popoverEl.querySelector('.popover-name');
-  popoverSummary  = popoverEl.querySelector('.popover-summary');
+  popoverName     = popoverEl ? popoverEl.querySelector('.popover-name') : null;
+  popoverSummary  = popoverEl ? popoverEl.querySelector('.popover-summary') : null;
   popoverClose    = document.getElementById('popover-close');
   mapSvg           = document.getElementById('us-map');
   mapStatus        = document.getElementById('map-status');
@@ -1172,7 +1288,8 @@ document.addEventListener('DOMContentLoaded', () => {
   gerryInfoBtn     = document.getElementById('gerry-info');
 
   // ── Home stats placeholder
-  initHomeStats();
+  initNavLinks();
+  if (homeStats) initHomeStats();
 
   // ── Navigation
   document.querySelectorAll('.main-nav button').forEach(btn => {
@@ -1188,14 +1305,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Default section
-  showSection('home');
+  if (membersGrid && membersSearch && !membersLoaded) {
+    loadMembers().then(applyInitialMemberQuery);
+  }
+  if (mapSvg) {
+    initMap();
+  }
 
   // ── Health check: immediate + every 30 seconds
   checkHealth();
   setInterval(checkHealth, 30_000);
 
   // ── Search
-  membersSearch.addEventListener('input', handleSearch);
+  if (membersSearch) membersSearch.addEventListener('input', handleSearch);
 
   if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
   if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);
@@ -1204,15 +1326,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (methodologyBackBtn) methodologyBackBtn.addEventListener('click', () => showSection('map'));
 
   // ── Popover: cancel hide when mouse enters popover
-  popoverEl.addEventListener('mouseenter', cancelPopoverHide);
-  popoverEl.addEventListener('mouseleave', schedulePopoverHide);
+  if (popoverEl) {
+    popoverEl.addEventListener('mouseenter', cancelPopoverHide);
+    popoverEl.addEventListener('mouseleave', schedulePopoverHide);
+  }
 
   // ── Popover: close button
-  popoverClose.addEventListener('click', hidePopover);
+  if (popoverClose) popoverClose.addEventListener('click', hidePopover);
 
   // ── Popover: Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popoverEl.classList.contains('visible')) {
+    if (e.key === 'Escape' && popoverEl && popoverEl.classList.contains('visible')) {
       hidePopover();
     }
   });
@@ -1220,6 +1344,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Popover: outside click
   document.addEventListener('click', (e) => {
     if (
+      popoverEl &&
       popoverEl.classList.contains('visible') &&
       !popoverEl.contains(e.target) &&
       !e.target.closest('.member-tile')

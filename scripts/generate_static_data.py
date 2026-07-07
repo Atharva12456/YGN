@@ -238,8 +238,15 @@ def main():
         "nominate": 0,
         "ethics": 0,
         "ethics_fallback": 0,
+        "member_score_index": False,
         "recent_bills": False,
         "errors": [],
+    }
+    member_score_index = {
+        "generated_at": generated_at,
+        "congress": args.congress,
+        "nominate": {},
+        "ethics": {},
     }
 
     try:
@@ -356,6 +363,7 @@ def main():
                             **nominate,
                         },
                     )
+                    member_score_index["nominate"][bioguide_id] = nominate
                     report["nominate"] += 1
             except Exception as exc:
                 report["errors"].append(
@@ -373,6 +381,11 @@ def main():
                             **ethics,
                         },
                     )
+                    member_score_index["ethics"][bioguide_id] = {
+                        key: ethics.get(key)
+                        for key in ("score", "grade", "source", "method", "updated_at", "cycle")
+                        if ethics.get(key) is not None
+                    }
                     report["ethics"] += 1
                     if ethics.get("source") != "fec_live":
                         report["ethics_fallback"] += 1
@@ -380,6 +393,10 @@ def main():
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "ethics", "error": str(exc)}
                 )
+
+    if member_score_index["nominate"] or member_score_index["ethics"]:
+        write_json(output_dir / "member-scores.json", member_score_index)
+        report["member_score_index"] = True
 
     write_json(output_dir / "manifest.json", report)
     print(json.dumps(report, indent=2, sort_keys=True))
