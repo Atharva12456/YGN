@@ -21,6 +21,10 @@ let selectedMapState = null;
 let mapInitialized = false;
 let congressionalDistricts = null;
 let congressionalDistrictsByFips = new Map();
+let congressionalDistrictPromisesByFips = new Map();
+let memberDataLoadPromise = null;
+let districtPrefetchTimer = null;
+let populationTicker = null;
 
 const STATE_ABBR_TO_NAME = {
   AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
@@ -38,16 +42,47 @@ const STATE_ABBR_TO_NAME = {
 };
 
 const DISTRICTS_FEATURE_QUERY_URL = 'https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_Congressional_Districts/FeatureServer/0/query';
-const STATES_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
+const STATES_TOPOJSON_URL = 'data/states-10m.json';
 const PAGE_URLS = {
   home: 'index.html',
   members: 'members.html',
-  map: 'map.html',
+  map: 'index.html#district-map',
   methodology: 'methodology.html',
   bills: 'recent-bills.html',
   foreign: 'foreign-affairs.html',
   economy: 'economy.html'
 };
+
+const DAILY_QUOTES = [
+  {
+    text: 'The advancement and diffusion of knowledge is the only guardian of true liberty.',
+    author: 'James Madison'
+  },
+  {
+    text: 'The ballot is stronger than the bullet.',
+    author: 'Abraham Lincoln'
+  },
+  {
+    text: 'Let us never forget that government is ourselves and not an alien power over us.',
+    author: 'Franklin D. Roosevelt'
+  },
+  {
+    text: 'If there is no struggle, there is no progress.',
+    author: 'Frederick Douglass'
+  },
+  {
+    text: 'Democracy is not a state. It is an act.',
+    author: 'John Lewis'
+  },
+  {
+    text: 'The greatness of a community is most accurately measured by the compassionate actions of its members.',
+    author: 'Coretta Scott King'
+  },
+  {
+    text: 'Public service must be more than doing a job efficiently and honestly. It must be a complete dedication to the people.',
+    author: 'Margaret Chase Smith'
+  }
+];
 
 // ─── Popover state ───────────────────────────────────────────────────────────
 let popoverHideTimer = null;
@@ -59,6 +94,8 @@ let healthIndicator;
 let membersGrid;
 let membersSearch;
 let homeStats;
+let dailyQuoteEl;
+let dailyQuoteAuthorEl;
 let popoverEl;
 let popoverName;
 let popoverSummary;
@@ -156,6 +193,27 @@ function formatNumber(value) {
   const number = Number(value);
   if (!Number.isFinite(number)) return '-';
   return number.toLocaleString('en-US');
+}
+
+function formatCurrencyCompact(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return '-';
+  if (Math.abs(number) >= 1_000_000_000_000) return `$${(number / 1_000_000_000_000).toFixed(2)}T`;
+  if (Math.abs(number) >= 1_000_000_000) return `$${(number / 1_000_000_000).toFixed(1)}B`;
+  if (Math.abs(number) >= 1_000_000) return `$${(number / 1_000_000).toFixed(1)}M`;
+  return `$${formatNumber(number)}`;
+}
+
+function formatCompact(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return '-';
+  if (Math.abs(number) >= 1_000_000) {
+    return new Intl.NumberFormat('en-US', {
+      notation: 'compact',
+      maximumFractionDigits: 1
+    }).format(number);
+  }
+  return formatNumber(number);
 }
 
 function getStateNameFromAbbr(abbr) {
@@ -267,7 +325,10 @@ function apiQuerySuffix() {
 function withApiParam(url) {
   const suffix = apiQuerySuffix();
   if (!suffix || url.includes('api=')) return url;
-  return url.includes('?') ? `${url}&${suffix.slice(1)}` : `${url}${suffix}`;
+  const hashIndex = url.indexOf('#');
+  const base = hashIndex >= 0 ? url.slice(0, hashIndex) : url;
+  const hash = hashIndex >= 0 ? url.slice(hashIndex) : '';
+  return base.includes('?') ? `${base}&${suffix.slice(1)}${hash}` : `${base}${suffix}${hash}`;
 }
 
 function showSection(sectionId) {
@@ -317,7 +378,8 @@ async function checkHealth() {
       updateStatCard(
         'stat-backend',
         'Backend Status',
-        result.source === 'static' ? 'Static data OK' : 'Connected OK'
+        result.source === 'static' ? 'Static data OK' : 'Connected OK',
+        result.source === 'static' ? 'Static fallback health' : 'Live API health'
       );
     } else {
       throw new Error('non-ok status');
@@ -325,7 +387,7 @@ async function checkHealth() {
   } catch {
     healthIndicator.className = 'disconnected';
     healthIndicator.textContent = 'Disconnected';
-    updateStatCard('stat-backend', 'Backend Status', 'Disconnected');
+    updateStatCard('stat-backend', 'Backend Status', 'Disconnected', 'YGN API health');
   }
 }
 
@@ -335,7 +397,7 @@ async function checkHealth() {
  * Ensure a stat card with the given id exists in #home-stats.
  * If it doesn't, create it. Then update value + label.
  */
-function updateStatCard(id, label, value) {
+function updateStatCard(id, label, value, source = '') {
   if (!homeStats) return;
 
   let card = homeStats.querySelector('#' + id);
@@ -343,20 +405,155 @@ function updateStatCard(id, label, value) {
     card = document.createElement('div');
     card.className = 'stat-card';
     card.id = id;
-    card.innerHTML = `<div class="stat-label"></div><div class="stat-value"></div>`;
+    card.innerHTML = `<div class="stat-label"></div><div class="stat-value"></div><div class="stat-source"></div>`;
     homeStats.appendChild(card);
+  } else if (!card.querySelector('.stat-source')) {
+    const sourceEl = document.createElement('div');
+    sourceEl.className = 'stat-source';
+    card.appendChild(sourceEl);
   }
 
   card.querySelector('.stat-label').textContent = label;
   card.querySelector('.stat-value').textContent = value;
+  card.querySelector('.stat-source').textContent = source;
 }
 
 /**
  * Initialize home stat cards with placeholder data.
  */
 function initHomeStats() {
-  updateStatCard('stat-members', 'Members Loaded', '-');
-  updateStatCard('stat-backend', 'Backend Status', 'Checking...');
+  updateStatCard('stat-debt', 'National Debt', '-', 'Treasury Fiscal Data');
+  updateStatCard('stat-population', 'U.S. Population', '-', 'World Bank estimate');
+  updateStatCard('stat-register', 'Federal Register', '-', 'Last 7 days');
+  updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'USAspending.gov');
+  updateStatCard('stat-members', 'Members Tracked', '-', 'YGN static/API data');
+  updateStatCard('stat-backend', 'Backend Status', 'Checking...', 'YGN API health');
+}
+
+function initDailyQuote() {
+  if (!dailyQuoteEl || !dailyQuoteAuthorEl) return;
+  const dayIndex = Math.floor(Date.now() / 86_400_000);
+  const quote = DAILY_QUOTES[dayIndex % DAILY_QUOTES.length];
+  dailyQuoteEl.textContent = quote.text;
+  dailyQuoteAuthorEl.textContent = quote.author;
+}
+
+async function fetchJson(url, options = {}) {
+  const controller = new AbortController();
+  const timeoutMs = options.timeoutMs || 8_000;
+  const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      cache: options.cache || 'default',
+      signal: controller.signal,
+      method: options.method || 'GET',
+      headers: options.headers || undefined,
+      body: options.body || undefined
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+
+function dateOffset(days) {
+  const date = new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+async function loadDebtMetric() {
+  try {
+    const result = await fetchJsonWithStaticFallback(
+      '/metrics/debt',
+      'metrics/debt.json',
+      { cache: 'no-store', staticCache: 'no-store' }
+    );
+    const metric = result.data || {};
+    const amount = Number(metric.amount);
+    const sourceLabel = result.source === 'api' ? 'Treasury' : 'Static debt snapshot';
+    updateStatCard('stat-debt', 'National Debt', formatCurrencyCompact(amount), metric.record_date ? `${sourceLabel}, ${metric.record_date}` : sourceLabel);
+  } catch {
+    updateStatCard('stat-debt', 'National Debt', '$39.38T', 'Static fallback');
+  }
+}
+
+function estimatePopulationNow(latestValue, annualChange, baselineDate) {
+  const yearMs = 365.2425 * 24 * 60 * 60 * 1000;
+  const elapsedYears = Math.max(0, (Date.now() - baselineDate.getTime()) / yearMs);
+  return Math.round(latestValue + annualChange * elapsedYears);
+}
+
+function startPopulationTicker(latestValue, annualChange, baselineDate, sourceText) {
+  if (populationTicker) window.clearInterval(populationTicker);
+  const render = () => {
+    updateStatCard(
+      'stat-population',
+      'U.S. Population',
+      formatNumber(estimatePopulationNow(latestValue, annualChange, baselineDate)),
+      sourceText
+    );
+  };
+  render();
+  populationTicker = window.setInterval(render, 1_000);
+}
+
+async function loadPopulationMetric() {
+  try {
+    const payload = await fetchJson(
+      'https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?format=json&per_page=2&MRV=2',
+      { cache: 'no-store' }
+    );
+    const rows = Array.isArray(payload && payload[1]) ? payload[1] : [];
+    const latest = rows[0] || {};
+    const previous = rows[1] || {};
+    const latestValue = Number(latest.value);
+    const previousValue = Number(previous.value);
+    const annualChange = Number.isFinite(previousValue) ? latestValue - previousValue : 1_600_000;
+    const baselineYear = Number(latest.date) + 1;
+    const baselineDate = new Date(Date.UTC(baselineYear, 0, 1));
+    startPopulationTicker(latestValue, annualChange, baselineDate, `World Bank ${latest.date}, live est.`);
+  } catch {
+    startPopulationTicker(341_784_857, 1_650_000, new Date(Date.UTC(2026, 0, 1)), 'Static live estimate');
+  }
+}
+
+async function loadFederalRegisterMetric() {
+  const since = dateOffset(-7);
+  try {
+    const payload = await fetchJson(
+      `https://www.federalregister.gov/api/v1/documents.json?per_page=1&conditions[publication_date][gte]=${since}`,
+      { cache: 'no-store' }
+    );
+    updateStatCard('stat-register', 'Federal Register', formatNumber(payload.count), 'Documents, last 7 days');
+  } catch {
+    updateStatCard('stat-register', 'Federal Register', '-', 'Live feed unavailable');
+  }
+}
+
+async function loadAgencyMetric() {
+  try {
+    const payload = await fetchJson(
+      'https://api.usaspending.gov/api/v2/references/toptier_agencies/',
+      { cache: 'no-store' }
+    );
+    const agencies = Array.isArray(payload.results) ? payload.results : [];
+    updateStatCard('stat-agencies', 'Reporting Agencies', formatNumber(agencies.length), 'USAspending.gov');
+  } catch {
+    updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'Live feed unavailable');
+  }
+}
+
+async function refreshHomeMetrics() {
+  if (!homeStats) return;
+  loadDebtMetric();
+  loadPopulationMetric();
+  loadFederalRegisterMetric();
+  loadAgencyMetric();
+  loadMemberDataOnly().catch(() => {
+    updateStatCard('stat-members', 'Members Tracked', '-', 'Static data unavailable');
+  });
 }
 
 // ─── Congressional Members ───────────────────────────────────────────────────
@@ -438,16 +635,13 @@ function hydrateMemberScores(members, scoreIndex) {
 }
 
 /**
- * Load the congressional members list from the API.
- * Shows skeletons while loading. On success, sorts and renders.
- * On failure, shows error state.
+ * Load congressional member data without rendering tiles.
  */
-async function loadMembers() {
+async function loadMemberDataOnly() {
   if (membersLoaded) return allMembers;
+  if (memberDataLoadPromise) return memberDataLoadPromise;
 
-  renderSkeletons(12);
-
-  try {
+  memberDataLoadPromise = (async () => {
     const [result, scoreIndex] = await Promise.all([
       fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json'),
       loadMemberScoreIndex()
@@ -466,11 +660,6 @@ async function loadMembers() {
       items = [];
     }
 
-    if (items.length === 0) {
-      showEmpty();
-      return;
-    }
-
     const hydratedItems = hydrateMemberScores(items, scoreIndex);
 
     // Sort alphabetically by last name
@@ -484,14 +673,42 @@ async function loadMembers() {
 
     allMembers = hydratedItems;
     membersLoaded = true;
+    memberDataLoadPromise = null;
 
-    renderGrid(allMembers);
-
-    // Update home stat
-    updateStatCard('stat-members', 'Members Loaded', allMembers.length.toString());
+    updateStatCard('stat-members', 'Members Tracked', allMembers.length.toString(), 'YGN static/API data');
     return allMembers;
+  })();
+
+  try {
+    return await memberDataLoadPromise;
+  } catch (err) {
+    memberDataLoadPromise = null;
+    throw err;
+  }
+}
+
+/**
+ * Load the congressional members list from the API.
+ * Shows skeletons while loading. On success, sorts and renders.
+ * On failure, shows error state.
+ */
+async function loadMembers() {
+  if (membersGrid && !membersLoaded) renderSkeletons(12);
+
+  try {
+    const members = await loadMemberDataOnly();
+    if (!membersGrid) return members;
+
+    if (members.length === 0) {
+      showEmpty();
+      return members;
+    }
+
+    renderGrid(members);
+    return members;
 
   } catch (err) {
+    if (!membersGrid) return [];
     showError('Could not load congressional members. Make sure the backend is running.');
     return [];
   }
@@ -912,9 +1129,54 @@ async function loadStateData() {
   return stateData;
 }
 
-function getMembersForState(abbreviation) {
-  const target = String(abbreviation || '').toUpperCase();
-  return allMembers.filter(member => getMemberField(member, 'state').toUpperCase() === target);
+function getMembersForState(stateInfoOrAbbreviation) {
+  const stateAbbr = typeof stateInfoOrAbbreviation === 'object'
+    ? String(stateInfoOrAbbreviation.abbreviation || '').toUpperCase()
+    : String(stateInfoOrAbbreviation || '').toUpperCase();
+  const stateName = typeof stateInfoOrAbbreviation === 'object'
+    ? String(stateInfoOrAbbreviation.name || '').toLowerCase()
+    : String(getStateNameFromAbbr(stateAbbr) || '').toLowerCase();
+
+  return allMembers.filter(member => {
+    const memberStateRaw = getMemberField(member, 'state');
+    const memberState = memberStateRaw.toUpperCase();
+    const memberStateName = getStateNameFromAbbr(memberState) || memberStateRaw;
+    if (memberState === stateAbbr) return true;
+    if (memberState.toLowerCase() === stateName) return true;
+    return memberStateName.toLowerCase() === stateName;
+  });
+}
+
+function memberPartyLabel(member) {
+  const party = getMemberField(member, 'party', 'partyName').toLowerCase();
+  if (party.includes('democrat') || party === 'd') return 'D';
+  if (party.includes('republican') || party === 'r') return 'R';
+  if (party.includes('independent') || party === 'i') return 'I';
+  return getMemberField(member, 'party', 'partyName') || '';
+}
+
+function formatMemberDisplayName(member) {
+  const directName = getMemberField(member, 'directOrderName');
+  if (directName) return directName;
+
+  const name = getMemberField(member, 'name', 'invertedOrderName');
+  const commaIndex = name.indexOf(',');
+  if (commaIndex > 0) {
+    const last = name.slice(0, commaIndex).trim();
+    const first = name.slice(commaIndex + 1).trim();
+    if (first && last) return `${first} ${last}`;
+  }
+  return name;
+}
+
+function memberSortForState(member) {
+  const chamber = getMemberChamber(member).toLowerCase();
+  if (chamber.includes('senate')) {
+    const key = extractSortKey(getMemberField(member, 'name', 'directOrderName', 'invertedOrderName'));
+    return 10_000 + (key ? key.charCodeAt(0) : 0);
+  }
+  const district = getMemberDistrict(member);
+  return Number.isFinite(Number(district)) ? Number(district) : 9_000;
 }
 
 function getStateFill(stateInfo) {
@@ -947,7 +1209,9 @@ function topGerrymanderComponent(components) {
 function updateStatePanel(stateInfo, mode = 'hover') {
   if (!stateInfo || !statePanel) return;
 
+  const previousFips = selectedMapState && normalizeFips(selectedMapState.fips);
   selectedMapState = stateInfo;
+  const nextFips = normalizeFips(stateInfo.fips);
   const score = Number(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.score);
   const safeScore = Number.isFinite(score) ? clamp(score, 0, 100) : 0;
   const summaryText = Array.isArray(stateInfo.summary)
@@ -963,13 +1227,101 @@ function updateStatePanel(stateInfo, mode = 'hover') {
   gerryMeterFill.style.background = safeScore >= 70 ? '#d95f5f' : safeScore >= 45 ? '#d5a642' : '#3b8f6d';
   gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
   districtStatusEl.textContent = mode === 'click'
-    ? `Zoomed to ${stateInfo.name}. Use the search shortcut to view its members.`
-    : `Hovering ${stateInfo.name}. Click the state to zoom into district outlines.`;
+    ? `Zoomed to ${stateInfo.name}. District outlines are loading or cached.`
+    : `Delegation shown below. Click ${stateInfo.abbreviation} to load district outlines.`;
   viewStateMembersBtn.disabled = false;
 
-  statePanel.classList.remove('panel-animate');
-  void statePanel.offsetWidth;
-  statePanel.classList.add('panel-animate');
+  if (mode === 'click' || previousFips !== nextFips) {
+    statePanel.classList.remove('panel-animate');
+    void statePanel.offsetWidth;
+    statePanel.classList.add('panel-animate');
+  }
+}
+
+function renderMemberListForState(stateInfo) {
+  if (!districtListEl || !stateInfo) return;
+
+  if (!membersLoaded) {
+    districtListEl.innerHTML = `
+      <div class="district-row">
+        <span>${stateInfo.abbreviation}</span>
+        <strong>Loading delegation...</strong>
+      </div>
+    `;
+    loadMemberDataOnly()
+      .then(() => {
+        if (selectedMapState && normalizeFips(selectedMapState.fips) === normalizeFips(stateInfo.fips)) {
+          renderMemberListForState(stateInfo);
+        }
+      })
+      .catch(() => {
+        if (selectedMapState && normalizeFips(selectedMapState.fips) === normalizeFips(stateInfo.fips)) {
+          districtListEl.innerHTML = `
+            <div class="district-row">
+              <span>${stateInfo.abbreviation}</span>
+              <strong>Delegation data unavailable</strong>
+            </div>
+          `;
+        }
+      });
+    return;
+  }
+
+  const members = getMembersForState(stateInfo)
+    .slice()
+    .sort((a, b) => {
+      const rankA = memberSortForState(a);
+      const rankB = memberSortForState(b);
+      if (rankA !== rankB) return rankA - rankB;
+      const nameA = getMemberField(a, 'name', 'directOrderName', 'invertedOrderName');
+      const nameB = getMemberField(b, 'name', 'directOrderName', 'invertedOrderName');
+      return nameA.localeCompare(nameB);
+    });
+
+  if (members.length === 0) {
+    districtListEl.innerHTML = `
+      <div class="district-row">
+        <span>${stateInfo.abbreviation}</span>
+        <strong>No delegation data loaded</strong>
+      </div>
+    `;
+    return;
+  }
+
+  const visibleMembers = members.slice(0, 9);
+  const rows = visibleMembers.map(member => {
+    const name = formatMemberDisplayName(member) || 'Unknown member';
+    const label = formatDistrictLabel(member) || getMemberChamber(member) || stateInfo.abbreviation;
+    const party = memberPartyLabel(member);
+    return `
+      <div class="district-row">
+        <span>${label}${party ? ` - ${party}` : ''}</span>
+        <strong>${name}</strong>
+      </div>
+    `;
+  });
+
+  if (members.length > visibleMembers.length) {
+    rows.push(`
+      <div class="district-row district-row-more">
+        <span>${stateInfo.abbreviation}</span>
+        <strong>${members.length - visibleMembers.length} more members in search</strong>
+      </div>
+    `);
+  }
+
+  districtListEl.innerHTML = rows.join('');
+}
+
+function scheduleDistrictPrefetch(stateInfo) {
+  if (!stateInfo || !stateInfo.fips) return;
+  const normalizedFips = normalizeFips(stateInfo.fips);
+  if (congressionalDistrictsByFips.has(normalizedFips)) return;
+  if (districtPrefetchTimer) window.clearTimeout(districtPrefetchTimer);
+  districtPrefetchTimer = window.setTimeout(() => {
+    ensureDistrictData(normalizedFips).catch(() => {});
+    districtPrefetchTimer = null;
+  }, 220);
 }
 
 function showMapTooltip(html, event) {
@@ -1008,6 +1360,11 @@ async function initMap() {
 
     drawStateMap(us);
     setMapStatus('Hover a state for details, or click to zoom into districts.');
+    loadMemberDataOnly()
+      .then(() => {
+        if (selectedMapState) renderMemberListForState(selectedMapState);
+      })
+      .catch(() => {});
 
   } catch (error) {
     setMapStatus('Could not load the interactive map. Static pages are still available.', 'error');
@@ -1055,11 +1412,17 @@ function drawStateMap(us) {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
       updateStatePanel(stateInfo);
+      renderMemberListForState(stateInfo);
+      scheduleDistrictPrefetch(stateInfo);
       showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
     })
     .on('focus', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
-      if (stateInfo) updateStatePanel(stateInfo);
+      if (stateInfo) {
+        updateStatePanel(stateInfo);
+        renderMemberListForState(stateInfo);
+        scheduleDistrictPrefetch(stateInfo);
+      }
     })
     .on('mousemove', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
@@ -1074,6 +1437,7 @@ function drawStateMap(us) {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
       updateStatePanel(stateInfo, 'click');
+      renderMemberListForState(stateInfo);
       zoomToFeature(feature);
       renderDistrictsForState(stateInfo);
     });
@@ -1086,7 +1450,16 @@ function resetMapView() {
   const { svg, zoom, districtLayer } = mapSvg.__ygnMap;
   districtLayer.selectAll('*').remove();
   districtListEl.innerHTML = '';
-  districtStatusEl.textContent = 'Click a state to zoom into 119th congressional districts.';
+  selectedMapState = null;
+  if (stateNameEl) stateNameEl.textContent = 'Hover a State';
+  if (stateSummaryEl) stateSummaryEl.textContent = 'Move over a state to see population, political lean, district notes, and the YGN gerrymandering risk index.';
+  if (statePopulationEl) statePopulationEl.textContent = '-';
+  if (stateLeanEl) stateLeanEl.textContent = '-';
+  if (gerryScoreEl) gerryScoreEl.textContent = '-';
+  if (gerryMeterFill) gerryMeterFill.style.width = '0';
+  if (gerryNoteEl) gerryNoteEl.textContent = 'Educational risk signal, not a legal finding.';
+  districtStatusEl.textContent = 'Hover a state to see its delegation. Click to load district outlines.';
+  if (viewStateMembersBtn) viewStateMembersBtn.disabled = true;
   svg.transition().duration(650).call(zoom.transform, d3.zoomIdentity);
 }
 
@@ -1121,12 +1494,28 @@ async function ensureDistrictData(fips) {
   if (congressionalDistrictsByFips.has(normalizedFips)) {
     return congressionalDistrictsByFips.get(normalizedFips);
   }
+  if (congressionalDistrictPromisesByFips.has(normalizedFips)) {
+    return congressionalDistrictPromisesByFips.get(normalizedFips);
+  }
 
-  const response = await fetch(districtQueryUrl(normalizedFips), { cache: 'force-cache' });
-  if (!response.ok) throw new Error(`Could not load districts (${response.status})`);
-  congressionalDistricts = await response.json();
-  congressionalDistrictsByFips.set(normalizedFips, congressionalDistricts);
-  return congressionalDistricts;
+  const request = fetch(districtQueryUrl(normalizedFips), { cache: 'force-cache' })
+    .then(response => {
+      if (!response.ok) throw new Error(`Could not load districts (${response.status})`);
+      return response.json();
+    })
+    .then(geojson => {
+      congressionalDistricts = geojson;
+      congressionalDistrictsByFips.set(normalizedFips, geojson);
+      congressionalDistrictPromisesByFips.delete(normalizedFips);
+      return geojson;
+    })
+    .catch(error => {
+      congressionalDistrictPromisesByFips.delete(normalizedFips);
+      throw error;
+    });
+
+  congressionalDistrictPromisesByFips.set(normalizedFips, request);
+  return request;
 }
 
 function districtDisplayName(feature) {
@@ -1208,6 +1597,16 @@ function openMethodology() {
   window.location.href = withApiParam('methodology.html');
 }
 
+function scrollToHashTarget() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  window.setTimeout(() => {
+    target.scrollIntoView({ block: 'start' });
+  }, 180);
+}
+
 // ─── Search / Filter ─────────────────────────────────────────────────────────
 
 /**
@@ -1264,6 +1663,8 @@ document.addEventListener('DOMContentLoaded', () => {
   membersGrid     = document.getElementById('members-grid');
   membersSearch   = document.getElementById('members-search');
   homeStats       = document.getElementById('home-stats');
+  dailyQuoteEl    = document.getElementById('daily-quote');
+  dailyQuoteAuthorEl = document.getElementById('daily-quote-author');
   popoverEl       = document.getElementById('popover');
   popoverName     = popoverEl ? popoverEl.querySelector('.popover-name') : null;
   popoverSummary  = popoverEl ? popoverEl.querySelector('.popover-summary') : null;
@@ -1289,7 +1690,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Home stats placeholder
   initNavLinks();
-  if (homeStats) initHomeStats();
+  if (homeStats) {
+    initHomeStats();
+    initDailyQuote();
+    refreshHomeMetrics();
+    setInterval(refreshHomeMetrics, 900_000);
+  }
 
   // ── Navigation
   document.querySelectorAll('.main-nav button').forEach(btn => {
@@ -1311,6 +1717,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mapSvg) {
     initMap();
   }
+  scrollToHashTarget();
 
   // ── Health check: immediate + every 30 seconds
   checkHealth();
@@ -1321,9 +1728,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
   if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);
-  if (methodologyOpenBtn) methodologyOpenBtn.addEventListener('click', openMethodology);
-  if (gerryInfoBtn) gerryInfoBtn.addEventListener('click', openMethodology);
-  if (methodologyBackBtn) methodologyBackBtn.addEventListener('click', () => showSection('map'));
+  if (methodologyOpenBtn) methodologyOpenBtn.addEventListener('click', event => {
+    event.preventDefault();
+    openMethodology();
+  });
+  if (gerryInfoBtn) gerryInfoBtn.addEventListener('click', event => {
+    event.preventDefault();
+    openMethodology();
+  });
+  if (methodologyBackBtn) methodologyBackBtn.addEventListener('click', event => {
+    event.preventDefault();
+    showSection('map');
+  });
 
   // ── Popover: cancel hide when mouse enters popover
   if (popoverEl) {

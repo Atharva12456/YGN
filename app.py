@@ -197,6 +197,11 @@ def recent_bills():
     return _backend_response(government.getRecentBills)
 
 
+@app.get("/metrics/debt")
+def national_debt_metric():
+    return _backend_response(government.get_national_debt_metric)
+
+
 @app.post("/cache/refresh")
 def refresh_cache():
     return _backend_response(government.refresh_government_officials_cache)

@@ -82,6 +82,16 @@ class FastApiAppTests(unittest.TestCase):
         self.assertEqual(response, {"score": 72.0, "grade": "C"})
         self.app.government.get_ethics_score.assert_called_once_with("A000001")
 
+    def test_debt_metric_endpoint_uses_backend(self):
+        self.app.government.get_national_debt_metric = Mock(
+            return_value={"amount": "39375989952866.26"}
+        )
+
+        response = self.app.national_debt_metric()
+
+        self.assertEqual(response, {"amount": "39375989952866.26"})
+        self.app.government.get_national_debt_metric.assert_called_once_with()
+
     def test_warm_cache_endpoint_returns_report(self):
         self.app.government.warm_government_officials_cache = Mock(
             return_value={"members_seen": 2}

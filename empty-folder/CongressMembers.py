@@ -17,6 +17,10 @@ import requests
 
 BASE_URL = "https://api.congress.gov/v3"
 FEC_BASE_URL = "https://api.open.fec.gov/v1"
+TREASURY_DEBT_URL = (
+    "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/"
+    "accounting/od/debt_to_penny"
+)
 WIKIPEDIA_ACTION_API_URL = "https://en.wikipedia.org/w/api.php"
 WIKIPEDIA_SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary"
 CSV_PATH = Path(__file__).parent / "HSall_members.csv"
@@ -350,6 +354,42 @@ def _fec_get(path, params=None, ttl_seconds=None):
         return response.json()
 
     return _cached_json(cache_key, f"fec:{path}", fetch_json, ttl_seconds=ttl_seconds)
+
+
+def get_national_debt_metric():
+    cache_key = _build_cache_key(
+        "treasury",
+        {
+            "metric": "debt_to_penny",
+            "sort": "-record_date",
+            "page_size": 1,
+        },
+    )
+
+    def fetch_json():
+        try:
+            response = requests.get(
+                TREASURY_DEBT_URL,
+                params={"sort": "-record_date", "page[size]": "1"},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError("Treasury Fiscal Data request failed.") from None
+
+        payload = response.json()
+        latest = (payload.get("data") or [None])[0]
+        if not latest or latest.get("tot_pub_debt_out_amt") is None:
+            raise UpstreamDataError("Treasury Fiscal Data did not include debt data.")
+
+        return {
+            "amount": str(latest.get("tot_pub_debt_out_amt")),
+            "record_date": latest.get("record_date"),
+            "source": "treasury_fiscal_data",
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+        }
+
+    return _cached_json(cache_key, "treasury:debt_to_penny", fetch_json)
 
 
 def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):

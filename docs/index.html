@@ -15,6 +15,8 @@
   <meta name="theme-color" content="#1a1f2e">
   <link rel="stylesheet" href="styles.css">
   <script src="config.js"></script>
+  <script src="vendor/d3.min.js" defer></script>
+  <script src="vendor/topojson-client.min.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body data-page="home">
@@ -29,7 +31,6 @@
   <nav class="main-nav" aria-label="Site navigation">
     <a data-page="home" href="index.html">Home</a>
     <a data-page="members" href="members.html">Congressional Members</a>
-    <a data-page="map" href="map.html">Map / Districts</a>
     <a data-page="bills" href="recent-bills.html">Recent Bills</a>
     <a data-page="foreign" href="foreign-affairs.html">Foreign Affairs</a>
     <a data-page="economy" href="economy.html">Economy</a>
@@ -37,15 +38,104 @@
 
   <main id="main-content">
     <section id="section-home" class="active">
-      <div class="home-hero">
-        <h1>Your Government, At a Glance</h1>
-        <p class="hero-subtitle">
-          YGN is a civic data portal that surfaces Congressional membership,
-          voting ideology scores, district maps, recent legislation, and more -
-          all in one place, powered by open government data.
-        </p>
+      <div class="home-dashboard">
+        <div class="home-copy">
+          <p class="eyebrow">Your Government Now</p>
+          <h1>YGN</h1>
+          <p class="hero-subtitle">
+            A civic dashboard for Congress, district maps, ethics grades, legislation, and the public numbers that shape the country.
+          </p>
+          <figure class="daily-quote" aria-label="Daily political quote">
+            <blockquote id="daily-quote">Loading today's quote...</blockquote>
+            <figcaption id="daily-quote-author"></figcaption>
+          </figure>
+        </div>
+        <div id="home-stats" class="home-stats civic-metrics" aria-label="Live civic metrics">
+          <div id="stat-debt" class="stat-card">
+            <div class="stat-label">National Debt</div>
+            <div class="stat-value">-</div>
+            <div class="stat-source">Treasury Fiscal Data</div>
+          </div>
+          <div id="stat-population" class="stat-card">
+            <div class="stat-label">U.S. Population</div>
+            <div class="stat-value">-</div>
+            <div class="stat-source">World Bank estimate</div>
+          </div>
+          <div id="stat-register" class="stat-card">
+            <div class="stat-label">Federal Register</div>
+            <div class="stat-value">-</div>
+            <div class="stat-source">Last 7 days</div>
+          </div>
+          <div id="stat-agencies" class="stat-card">
+            <div class="stat-label">Reporting Agencies</div>
+            <div class="stat-value">-</div>
+            <div class="stat-source">USAspending.gov</div>
+          </div>
+          <div id="stat-members" class="stat-card">
+            <div class="stat-label">Members Tracked</div>
+            <div class="stat-value">-</div>
+            <div class="stat-source">YGN static/API data</div>
+          </div>
+          <div id="stat-backend" class="stat-card">
+            <div class="stat-label">Backend Status</div>
+            <div class="stat-value">Checking...</div>
+            <div class="stat-source">YGN API health</div>
+          </div>
+        </div>
       </div>
-      <div id="home-stats" class="home-stats"></div>
+
+      <div id="district-map" class="home-map-section">
+        <div class="map-page">
+          <div class="map-heading">
+            <div>
+              <p class="eyebrow">119th Congress</p>
+              <h2>Interactive District Map</h2>
+            </div>
+            <div class="map-actions">
+              <button id="map-reset" class="secondary-button" type="button">Reset View</button>
+              <a id="methodology-open" class="secondary-button icon-button" href="methodology.html" aria-label="Open gerrymandering methodology" title="Open gerrymandering methodology">i</a>
+            </div>
+          </div>
+
+          <div class="map-shell">
+            <div class="map-stage" aria-label="United States congressional district map">
+              <svg id="us-map" viewBox="0 0 960 600" role="img" aria-label="Interactive United States map"></svg>
+              <div id="map-tooltip" class="map-tooltip" role="tooltip"></div>
+              <div id="map-status" class="map-status">Loading map...</div>
+            </div>
+
+            <aside id="state-panel" class="state-panel" aria-live="polite">
+              <p class="eyebrow">State Snapshot</p>
+              <h3 id="state-name">Hover a State</h3>
+              <p id="state-summary" class="state-summary">Move over a state to see population, political lean, district notes, and the YGN gerrymandering risk index.</p>
+
+              <div class="state-metrics">
+                <div>
+                  <span class="metric-label">Population</span>
+                  <strong id="state-population">-</strong>
+                </div>
+                <div>
+                  <span class="metric-label">Historical Lean</span>
+                  <strong id="state-lean">-</strong>
+                </div>
+                <div class="gerry-metric">
+                  <span class="metric-label">
+                    Gerrymandering Index
+                    <button id="gerry-info" class="inline-info" type="button" aria-label="Show gerrymandering index methodology" title="District shape, vote-seat mismatch, redistricting control, political events, social indicators, and donations.">i</button>
+                  </span>
+                  <strong id="gerry-score">-</strong>
+                  <div class="gerry-meter" aria-hidden="true"><span id="gerry-meter-fill"></span></div>
+                  <p id="gerry-note" class="metric-note">Educational risk signal, not a legal finding.</p>
+                </div>
+              </div>
+
+              <button id="view-state-members" class="primary-button" type="button" disabled>View Members in Search</button>
+              <div id="district-status" class="district-status">Hover a state to see its delegation. Click to load district outlines.</div>
+              <div id="district-list" class="district-list" aria-label="District members"></div>
+            </aside>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>
