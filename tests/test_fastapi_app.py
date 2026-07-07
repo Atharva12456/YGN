@@ -92,6 +92,14 @@ class FastApiAppTests(unittest.TestCase):
         self.assertEqual(response, {"amount": "39375989952866.26"})
         self.app.government.get_national_debt_metric.assert_called_once_with()
 
+    def test_recent_bill_digest_endpoint_uses_backend(self):
+        self.app.government.getRecentBillDigest = Mock(return_value={"bills": []})
+
+        response = self.app.recent_bill_digest(limit=5)
+
+        self.assertEqual(response, {"bills": []})
+        self.app.government.getRecentBillDigest.assert_called_once_with(limit=5)
+
     def test_warm_cache_endpoint_returns_report(self):
         self.app.government.warm_government_officials_cache = Mock(
             return_value={"members_seen": 2}

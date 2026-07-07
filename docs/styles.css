@@ -319,6 +319,192 @@ button {
   scroll-margin-top: 120px;
 }
 
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.section-status {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+}
+
+.recent-bills-section {
+  margin-top: 2.5rem;
+  scroll-margin-top: 120px;
+}
+
+.standalone-bills {
+  margin-top: 0;
+}
+
+.civic-pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.pulse-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  padding: 0.85rem;
+  box-shadow: var(--shadow-card);
+}
+
+.pulse-card .stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.pulse-card .stat-value {
+  color: #2f7d66;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 0.25rem;
+}
+
+.recent-bills-grid {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.bill-row {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 0.9fr)
+    minmax(300px, 1.25fr)
+    minmax(220px, 0.85fr)
+    minmax(270px, 1fr)
+    minmax(270px, 1fr);
+  min-width: 1280px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bill-row:first-child {
+  border-top: 0;
+}
+
+.bill-row-header {
+  background: #edf4f1;
+  color: var(--color-text);
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.bill-cell,
+.bill-row-header > div {
+  padding: 0.85rem;
+  border-left: 1px solid var(--color-border);
+  min-width: 0;
+}
+
+.bill-cell:first-child,
+.bill-row-header > div:first-child {
+  border-left: 0;
+}
+
+.bill-kicker,
+.bill-meta,
+.bill-member-role {
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.bill-kicker,
+.bill-member-role {
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.bill-title {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0.25rem 0 0.45rem;
+  overflow-wrap: anywhere;
+}
+
+.bill-description {
+  color: var(--color-text);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.bill-cell a,
+.bill-source-links a {
+  color: var(--color-accent);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.bill-cell a:hover,
+.bill-source-links a:hover {
+  text-decoration: underline;
+}
+
+.bill-member-pill {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fbfcff;
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.45rem 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.bill-member-pill strong {
+  color: var(--color-text);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.bill-impact-status {
+  color: #8a5f00;
+  display: block;
+  font-size: 0.84rem;
+  margin-bottom: 0.35rem;
+}
+
+.bill-source-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-empty-state {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
 /* ── Members Section ───────────────────────────────────────────────────────── */
 .members-controls {
   display: flex;
@@ -467,6 +653,14 @@ button {
   font-size: 0.72rem;
   font-weight: 800;
   line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ethics-badge:hover,
+.ethics-badge:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 2px rgba(26, 31, 46, 0.16);
 }
 
 .party-D {
@@ -511,6 +705,8 @@ button {
   color: var(--color-text-muted);
   font-size: 0.82rem;
   line-height: 1.6;
+  max-height: 14rem;
+  overflow: auto;
 }
 
 .popover-close {
@@ -847,12 +1043,12 @@ button {
   background: var(--color-surface);
   padding: 1rem;
   box-shadow: var(--shadow-card);
-  height: 560px;
+  height: auto;
   min-height: 560px;
   transform: translateX(0);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .state-panel.panel-animate {
@@ -883,10 +1079,8 @@ button {
   margin-bottom: 1rem;
   min-height: 5.95rem;
   max-height: 5.95rem;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  overflow: auto;
+  display: block;
 }
 
 .state-metrics {
@@ -953,9 +1147,9 @@ button {
 .district-list {
   display: grid;
   gap: 0.45rem;
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
-  max-height: none;
+  max-height: 220px;
   overflow: auto;
   padding-right: 0.25rem;
 }
@@ -1078,6 +1272,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .civic-pulse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .state-panel {
     height: auto;
     min-height: 560px;
@@ -1135,7 +1333,8 @@ button {
   }
 
   .map-heading,
-  .methodology-header {
+  .methodology-header,
+  .section-heading {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -1164,6 +1363,14 @@ button {
 
   .coming-soon {
     padding: 2rem 1rem;
+  }
+
+  .civic-pulse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bill-row {
+    min-width: 1120px;
   }
 }
 

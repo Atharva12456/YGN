@@ -25,7 +25,7 @@
       <span class="brand-name">YGN</span>
       <span class="brand-tagline">Your Government Now</span>
     </a>
-    <span id="health-indicator" class="checking">Checking...</span>
+    <span id="health-indicator" class="checking">Checking</span>
   </header>
 
   <nav class="main-nav" aria-label="Site navigation">
@@ -46,7 +46,7 @@
             A civic dashboard for Congress, district maps, ethics grades, legislation, and the public numbers that shape the country.
           </p>
           <figure class="daily-quote" aria-label="Daily political quote">
-            <blockquote id="daily-quote">Loading today's quote...</blockquote>
+            <blockquote id="daily-quote">Loading today's quote</blockquote>
             <figcaption id="daily-quote-author"></figcaption>
           </figure>
         </div>
@@ -78,7 +78,7 @@
           </div>
           <div id="stat-backend" class="stat-card">
             <div class="stat-label">Backend Status</div>
-            <div class="stat-value">Checking...</div>
+            <div class="stat-value">Checking</div>
             <div class="stat-source">YGN API health</div>
           </div>
         </div>
@@ -101,7 +101,7 @@
             <div class="map-stage" aria-label="United States congressional district map">
               <svg id="us-map" viewBox="0 0 960 600" role="img" aria-label="Interactive United States map"></svg>
               <div id="map-tooltip" class="map-tooltip" role="tooltip"></div>
-              <div id="map-status" class="map-status">Loading map...</div>
+              <div id="map-status" class="map-status">Loading map</div>
             </div>
 
             <aside id="state-panel" class="state-panel" aria-live="polite">
@@ -135,6 +135,20 @@
             </aside>
           </div>
         </div>
+      </div>
+
+      <div id="home-recent-bills" class="recent-bills-section" aria-labelledby="home-recent-bills-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Congress.gov Feed</p>
+            <h2 id="home-recent-bills-title">Top 5 Recent Bills</h2>
+          </div>
+          <a class="secondary-button" href="recent-bills.html">Open Bills Page</a>
+        </div>
+
+        <div id="civic-pulse-grid" class="civic-pulse-grid" aria-label="Recent bill civic pulse"></div>
+        <p id="recent-bills-status" class="section-status">Loading recent bills</p>
+        <div id="recent-bills-grid" class="recent-bills-grid" data-limit="5" aria-live="polite"></div>
       </div>
     </section>
   </main>

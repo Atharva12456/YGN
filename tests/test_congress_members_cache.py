@@ -436,6 +436,73 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(score["score"], 67.2)
         self.assertEqual(score["grade"], "D+")
 
+    def test_recent_bill_digest_enriches_and_caches_top_bills(self):
+        def response_for_request(url, params=None, headers=None, **kwargs):
+            if url == f"{self.module.BASE_URL}/bill":
+                return fake_response(
+                    {
+                        "bills": [
+                            {
+                                "congress": 119,
+                                "type": "HR",
+                                "number": "1",
+                                "title": "List title",
+                                "originChamber": "House",
+                                "latestAction": {
+                                    "actionDate": "2026-01-02",
+                                    "text": "Introduced in House.",
+                                },
+                                "updateDate": "2026-01-02",
+                                "url": "https://api.congress.gov/v3/bill/119/hr/1?format=json",
+                            }
+                        ]
+                    }
+                )
+            if url.endswith("/bill/119/hr/1/summaries"):
+                return fake_response(
+                    {
+                        "summaries": [
+                            {
+                                "text": "<p>Summary from Congress.gov.</p>",
+                                "updateDate": "2026-01-03",
+                            }
+                        ]
+                    }
+                )
+            if url.endswith("/bill/119/hr/1"):
+                return fake_response(
+                    {
+                        "bill": {
+                            "title": "Detailed title",
+                            "sponsors": [
+                                {
+                                    "fullName": "Jane Example",
+                                    "state": "NY",
+                                    "party": "D",
+                                    "bioguideId": "E000001",
+                                }
+                            ],
+                            "policyArea": {"name": "Education"},
+                            "committees": [{"name": "House Education and Workforce"}],
+                        }
+                    }
+                )
+            return fake_response({})
+
+        with patch.object(self.module.requests, "get", side_effect=response_for_request) as requests_get:
+            first = self.module.getRecentBillDigest(limit=5)
+            second = self.module.getRecentBillDigest(limit=5)
+
+        self.assertEqual(first, second)
+        self.assertEqual(requests_get.call_count, 3)
+        bill = first["bills"][0]
+        self.assertEqual(bill["identifier"], "HR 1")
+        self.assertEqual(bill["title"], "Detailed title")
+        self.assertEqual(bill["description"]["text"], "Summary from Congress.gov.")
+        self.assertEqual(bill["members"][0]["name"], "Jane Example")
+        self.assertEqual(bill["committees"], ["House Education and Workforce"])
+        self.assertEqual(bill["impact"]["status"], "Pending AI impact analysis")
+
     def test_warm_cache_fills_member_detail_wiki_nominate_and_recent_bills(self):
         csv_path = Path(self.temp_dir.name) / "HSall_members.csv"
         csv_path.write_text(
@@ -478,6 +545,7 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(report["nominate_scores_checked"], 2)
         self.assertEqual(report["ethics_scores_cached"], 2)
         self.assertTrue(report["recent_bills_cached"])
+        self.assertTrue(report["recent_bill_digest_cached"])
         self.assertEqual(report["errors"], [])
         self.assertGreaterEqual(stats["total_entries"], 6)
 

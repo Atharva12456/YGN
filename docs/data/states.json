@@ -95,16 +95,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -114,8 +114,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     },
     {
       "fips": "04",
@@ -329,16 +330,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -348,8 +349,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     },
     {
       "fips": "11",
@@ -1382,16 +1384,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -1401,8 +1403,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     },
     {
       "fips": "39",
@@ -1655,16 +1658,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -1674,8 +1677,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     },
     {
       "fips": "47",
@@ -1811,16 +1815,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -1830,8 +1834,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     },
     {
       "fips": "51",
@@ -2006,16 +2011,16 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
+        "score": 0,
+        "label": "No district-splitting risk",
         "scale": "0 lower risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "shape": 0,
+          "voting": 0,
+          "control": 0,
+          "events": 0,
+          "social": 0,
+          "donations": 0
         },
         "weights": {
           "shape": 0.25,
@@ -2025,8 +2030,9 @@
           "social": 0.1,
           "donations": 0.1
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
-      }
+        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+      },
+      "districtCount": 1
     }
   ]
 }

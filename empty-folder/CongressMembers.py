@@ -1,5 +1,6 @@
 import csv
 import hashlib
+import html
 import json
 import logging
 import os
@@ -35,6 +36,17 @@ DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
 ETHICS_METHOD_VERSION = "campaign_finance_v2"
+
+BILL_TYPE_SLUGS = {
+    "hr": "house-bill",
+    "s": "senate-bill",
+    "hres": "house-resolution",
+    "sres": "senate-resolution",
+    "hjres": "house-joint-resolution",
+    "sjres": "senate-joint-resolution",
+    "hconres": "house-concurrent-resolution",
+    "sconres": "senate-concurrent-resolution",
+}
 
 LOGGER = logging.getLogger(__name__)
 API_KEY = ""
@@ -419,6 +431,256 @@ def getRecentBills():
             "limit": 20,
             "format": "json",
         },
+    )
+
+
+def _bill_type_code(bill):
+    return str(bill.get("type") or bill.get("billType") or "").lower()
+
+
+def _bill_number(bill):
+    value = bill.get("number")
+    return "" if value is None else str(value)
+
+
+def _bill_congress(bill):
+    value = bill.get("congress")
+    return "" if value is None else str(value)
+
+
+def _bill_api_path(bill):
+    congress = _bill_congress(bill)
+    bill_type = _bill_type_code(bill)
+    number = _bill_number(bill)
+    if not congress or not bill_type or not number:
+        return None
+    return f"/bill/{congress}/{bill_type}/{number}"
+
+
+def _bill_identifier(bill):
+    bill_type = str(bill.get("type") or bill.get("billType") or "").upper()
+    number = _bill_number(bill)
+    return " ".join(part for part in (bill_type, number) if part)
+
+
+def _bill_web_url(bill):
+    congress = _bill_congress(bill)
+    bill_type = _bill_type_code(bill)
+    number = _bill_number(bill)
+    slug = BILL_TYPE_SLUGS.get(bill_type)
+    if not congress or not slug or not number:
+        return bill.get("url")
+    return f"https://www.congress.gov/bill/{congress}th-congress/{slug}/{number}"
+
+
+def _strip_markup(value):
+    text = html.unescape(str(value or ""))
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _first_nonempty(*values):
+    for value in values:
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+        if value not in (None, "", [], {}):
+            return value
+    return None
+
+
+def _bill_detail_payload(bill):
+    path = _bill_api_path(bill)
+    if not path:
+        return {}
+    try:
+        return _congress_get(path, params={"format": "json"}).get("bill", {})
+    except Exception:
+        return {}
+
+
+def _bill_summaries_payload(bill):
+    path = _bill_api_path(bill)
+    if not path:
+        return []
+    try:
+        payload = _congress_get(f"{path}/summaries", params={"format": "json", "limit": 5})
+    except Exception:
+        return []
+    return payload.get("summaries") or []
+
+
+def _bill_committee_names(detail):
+    committees = detail.get("committees") or []
+    if isinstance(committees, dict):
+        committees = committees.get("items") or committees.get("committees") or []
+    names = []
+    for committee in committees:
+        if not isinstance(committee, dict):
+            continue
+        name = committee.get("name") or committee.get("systemCode")
+        if name:
+            names.append(str(name))
+    return _dedupe_strings(names)
+
+
+def _bill_member_items(bill, detail):
+    people = []
+    for role, collection in (
+        ("Sponsor", detail.get("sponsors") or bill.get("sponsors") or []),
+        ("Cosponsor", detail.get("cosponsors") or []),
+    ):
+        if isinstance(collection, dict):
+            collection = collection.get("items") or collection.get("cosponsors") or []
+        for person in collection:
+            if not isinstance(person, dict):
+                continue
+            name = _first_nonempty(
+                person.get("fullName"),
+                person.get("directOrderName"),
+                person.get("name"),
+            )
+            if not name:
+                continue
+            people.append(
+                {
+                    "role": role,
+                    "name": name,
+                    "state": person.get("state"),
+                    "party": person.get("party"),
+                    "bioguideId": person.get("bioguideId"),
+                }
+            )
+
+    if not people:
+        people.append(
+            {
+                "role": "Live detail",
+                "name": "Sponsor and cosponsor names load from Congress.gov when available",
+            }
+        )
+
+    return people[:8]
+
+
+def _bill_description(bill, detail, summaries):
+    for summary in summaries:
+        if not isinstance(summary, dict):
+            continue
+        text = _strip_markup(summary.get("text") or summary.get("summary"))
+        if text:
+            return {
+                "text": text,
+                "source": "Congress.gov bill summary",
+                "updated_at": summary.get("updateDate"),
+            }
+
+    text = _strip_markup(
+        _first_nonempty(
+            detail.get("summary"),
+            detail.get("title"),
+            bill.get("title"),
+            (bill.get("latestAction") or {}).get("text"),
+        )
+    )
+    if text:
+        return {
+            "text": text,
+            "source": "Congress.gov bill detail",
+            "updated_at": detail.get("updateDate") or bill.get("updateDate"),
+        }
+
+    return {
+        "text": "Congress.gov has not published a bill summary for this item yet.",
+        "source": "YGN fallback",
+        "updated_at": bill.get("updateDate"),
+    }
+
+
+def _bill_digest_item(bill):
+    detail = _bill_detail_payload(bill)
+    summaries = _bill_summaries_payload(bill)
+    latest_action = bill.get("latestAction") or detail.get("latestAction") or {}
+    policy_area = detail.get("policyArea")
+    if isinstance(policy_area, dict):
+        policy_area = policy_area.get("name")
+
+    api_url = bill.get("url") or (
+        f"{BASE_URL}{_bill_api_path(bill)}?format=json" if _bill_api_path(bill) else None
+    )
+    web_url = _bill_web_url(bill)
+    committees = _bill_committee_names(detail)
+
+    return {
+        "identifier": _bill_identifier(bill),
+        "title": _first_nonempty(detail.get("title"), bill.get("title"), "Untitled bill"),
+        "congress": bill.get("congress") or detail.get("congress"),
+        "type": bill.get("type") or detail.get("type"),
+        "number": bill.get("number") or detail.get("number"),
+        "originChamber": bill.get("originChamber") or detail.get("originChamber"),
+        "description": _bill_description(bill, detail, summaries),
+        "members": _bill_member_items(bill, detail),
+        "impact": {
+            "status": "Pending AI impact analysis",
+            "summary": (
+                "Impact analysis will be generated after a ChatGPT API key is configured. "
+                "For now, YGN links to the official bill record and Congress.gov data used for the digest."
+            ),
+            "sources": [
+                source
+                for source in (
+                    {"label": "Congress.gov bill page", "url": web_url} if web_url else None,
+                    {"label": "Congress.gov API record", "url": api_url} if api_url else None,
+                )
+                if source
+            ],
+        },
+        "latestAction": {
+            "date": latest_action.get("actionDate"),
+            "text": latest_action.get("text"),
+        },
+        "policyArea": policy_area,
+        "committees": committees[:4],
+        "updatedAt": detail.get("updateDate") or bill.get("updateDate"),
+        "url": web_url,
+        "apiUrl": api_url,
+    }
+
+
+def _recent_bill_list(payload):
+    if not isinstance(payload, dict):
+        return []
+    if isinstance(payload.get("bills"), list):
+        return payload.get("bills") or []
+    data = payload.get("data")
+    if isinstance(data, dict) and isinstance(data.get("bills"), list):
+        return data.get("bills") or []
+    return []
+
+
+def getRecentBillDigest(limit=5):
+    limit = max(1, min(int(limit), 20))
+    cache_key = _build_cache_key(
+        "recent-bill-digest-v1",
+        {
+            "limit": limit,
+        },
+    )
+
+    def fetch_json():
+        bills = _recent_bill_list(getRecentBills())[:limit]
+        return {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "source": "congress_api",
+            "cache_ttl_seconds": _cache_ttl_seconds(),
+            "impact_status": "placeholder_until_chatgpt_api_key",
+            "bills": [_bill_digest_item(bill) for bill in bills],
+        }
+
+    return _cached_json(
+        cache_key,
+        f"congress:recent-bill-digest:{limit}",
+        fetch_json,
+        ttl_seconds=_cache_ttl_seconds(),
     )
 
 
@@ -1744,6 +2006,7 @@ def refresh_government_officials_cache(include_ethics=True):
     result = {
         "allCongressMembers": members_page,
         "getRecentBills": getRecentBills(),
+        "getRecentBillDigest": getRecentBillDigest(limit=5),
         "ethicsScoresRefreshed": 0,
         "ethicsErrors": [],
     }
@@ -1799,12 +2062,15 @@ def warm_government_officials_cache(
         "nominate_scores_checked": 0,
         "ethics_scores_cached": 0,
         "recent_bills_cached": False,
+        "recent_bill_digest_cached": False,
         "errors": [],
     }
 
     if include_recent_bills:
         getRecentBills()
+        getRecentBillDigest(limit=5)
         report["recent_bills_cached"] = True
+        report["recent_bill_digest_cached"] = True
 
     offset = 0
     while True:

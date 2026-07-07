@@ -197,6 +197,11 @@ def recent_bills():
     return _backend_response(government.getRecentBills)
 
 
+@app.get("/bills/recent/digest")
+def recent_bill_digest(limit: Annotated[int, Query(ge=1, le=20)] = 5):
+    return _backend_response(government.getRecentBillDigest, limit=limit)
+
+
 @app.get("/metrics/debt")
 def national_debt_metric():
     return _backend_response(government.get_national_debt_metric)

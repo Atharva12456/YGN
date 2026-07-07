@@ -289,6 +289,14 @@ def main():
                     "data": recent_bills,
                 },
             )
+            recent_bill_digest = backend.getRecentBillDigest(limit=5)
+            write_json(
+                output_dir / "recent-bills-digest.json",
+                {
+                    "generated_at": generated_at,
+                    **recent_bill_digest,
+                },
+            )
             report["recent_bills"] = True
         except Exception as exc:
             report["errors"].append({"stage": "recent-bills", "error": str(exc)})

@@ -18,7 +18,7 @@
       <span class="brand-name">YGN</span>
       <span class="brand-tagline">Your Government Now</span>
     </a>
-    <span id="health-indicator" class="checking">Checking...</span>
+    <span id="health-indicator" class="checking">Checking</span>
   </header>
   <nav class="main-nav" aria-label="Site navigation">
     <a data-page="home" href="index.html">Home</a>
@@ -29,9 +29,18 @@
   </nav>
   <main id="main-content">
     <section class="active">
-      <div class="coming-soon">
-        <h2>Recent Bills</h2>
-        <p>This section is coming soon.</p>
+      <div class="recent-bills-section standalone-bills">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Congress.gov Feed</p>
+            <h2>Recent Bills</h2>
+          </div>
+          <a class="secondary-button" href="index.html#home-recent-bills">Back to Homepage View</a>
+        </div>
+
+        <div id="civic-pulse-grid" class="civic-pulse-grid" aria-label="Recent bill civic pulse"></div>
+        <p id="recent-bills-status" class="section-status">Loading recent bills</p>
+        <div id="recent-bills-grid" class="recent-bills-grid" data-limit="5" aria-live="polite"></div>
       </div>
     </section>
   </main>

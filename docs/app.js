@@ -18,6 +18,7 @@ let stateData = [];
 let stateDataByFips = new Map();
 let stateDataByAbbr = new Map();
 let selectedMapState = null;
+let lockedMapState = null;
 let mapInitialized = false;
 let congressionalDistricts = null;
 let congressionalDistrictsByFips = new Map();
@@ -48,6 +49,7 @@ const PAGE_URLS = {
   members: 'members.html',
   map: 'index.html#district-map',
   methodology: 'methodology.html',
+  ethics: 'ethics-methodology.html',
   bills: 'recent-bills.html',
   foreign: 'foreign-affairs.html',
   economy: 'economy.html'
@@ -118,6 +120,9 @@ let mapResetBtn;
 let methodologyOpenBtn;
 let methodologyBackBtn;
 let gerryInfoBtn;
+let recentBillsGrid;
+let recentBillsStatus;
+let civicPulseGrid;
 
 // ─── Utility helpers ─────────────────────────────────────────────────────────
 
@@ -368,7 +373,7 @@ async function checkHealth() {
   if (!healthIndicator) return;
 
   healthIndicator.className = 'checking';
-  healthIndicator.textContent = 'Checking...';
+  healthIndicator.textContent = 'Checking';
 
   try {
     const result = await fetchJsonWithStaticFallback('/health', 'health.json', { cache: 'no-store' });
@@ -427,7 +432,7 @@ function initHomeStats() {
   updateStatCard('stat-register', 'Federal Register', '-', 'Last 7 days');
   updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'USAspending.gov');
   updateStatCard('stat-members', 'Members Tracked', '-', 'YGN static/API data');
-  updateStatCard('stat-backend', 'Backend Status', 'Checking...', 'YGN API health');
+  updateStatCard('stat-backend', 'Backend Status', 'Checking', 'YGN API health');
 }
 
 function initDailyQuote() {
@@ -554,6 +559,185 @@ async function refreshHomeMetrics() {
   loadMemberDataOnly().catch(() => {
     updateStatCard('stat-members', 'Members Tracked', '-', 'Static data unavailable');
   });
+}
+
+// Recent bills
+
+function normalizeBillDigest(payload) {
+  if (!payload || typeof payload !== 'object') return { bills: [] };
+  const data = payload.data && typeof payload.data === 'object' ? payload.data : payload;
+  return {
+    ...data,
+    bills: Array.isArray(data.bills) ? data.bills : []
+  };
+}
+
+function formatShortDate(value) {
+  if (!value) return '';
+  const normalized = /^\d{4}-\d{2}-\d{2}$/.test(String(value)) ? `${value}T12:00:00` : value;
+  const date = new Date(normalized);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+}
+
+function appendText(parent, className, text, tagName = 'p') {
+  const el = document.createElement(tagName);
+  if (className) el.className = className;
+  el.textContent = text || '-';
+  parent.appendChild(el);
+  return el;
+}
+
+function appendLink(parent, label, href) {
+  if (!href) return null;
+  const link = document.createElement('a');
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.textContent = label;
+  parent.appendChild(link);
+  return link;
+}
+
+function billMemberLabel(member) {
+  const partyState = [member.party, member.state].filter(Boolean).join('-');
+  return [member.name, partyState].filter(Boolean).join(' ');
+}
+
+function renderCivicPulse(bills, digest) {
+  if (!civicPulseGrid) return;
+  civicPulseGrid.innerHTML = '';
+
+  const chamberCounts = bills.reduce((acc, bill) => {
+    const chamber = bill.originChamber || 'Unknown';
+    acc[chamber] = (acc[chamber] || 0) + 1;
+    return acc;
+  }, {});
+  const topChamber = Object.entries(chamberCounts).sort((a, b) => b[1] - a[1])[0];
+  const newestDate = bills
+    .map(bill => bill.updatedAt || (bill.latestAction && bill.latestAction.date))
+    .filter(Boolean)
+    .sort()
+    .pop();
+
+  const cards = [
+    ['Bills Tracked', String(bills.length), digest.source === 'congress_api' ? 'Congress.gov digest' : 'Static fallback'],
+    ['Newest Update', formatShortDate(newestDate) || '-', 'From top recent bills'],
+    ['Top Chamber', topChamber ? `${topChamber[0]} (${topChamber[1]})` : '-', 'Within this digest'],
+    ['Impact Status', 'Queued', 'Awaiting ChatGPT API key']
+  ];
+
+  cards.forEach(([label, value, source]) => {
+    const card = document.createElement('div');
+    card.className = 'pulse-card';
+    appendText(card, 'stat-label', label, 'div');
+    appendText(card, 'stat-value', value, 'div');
+    appendText(card, 'stat-source', source, 'div');
+    civicPulseGrid.appendChild(card);
+  });
+}
+
+function renderRecentBills(digest, source) {
+  if (!recentBillsGrid) return;
+  const bills = digest.bills.slice(0, Number(recentBillsGrid.dataset.limit || 5));
+  recentBillsGrid.innerHTML = '';
+
+  if (recentBillsStatus) {
+    const generatedAt = digest.generated_at ? ` Updated ${formatShortDate(digest.generated_at)}.` : '';
+    recentBillsStatus.textContent = `${source === 'api' ? 'Live Congress.gov data' : 'Static fallback data'}.${generatedAt}`;
+  }
+
+  renderCivicPulse(bills, digest);
+
+  if (bills.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'bill-empty-state';
+    empty.textContent = 'No recent bills are available right now.';
+    recentBillsGrid.appendChild(empty);
+    return;
+  }
+
+  const header = document.createElement('div');
+  header.className = 'bill-row bill-row-header';
+  ['Bill', 'Description', 'Members', 'Impacts', 'Other Info'].forEach(label => {
+    appendText(header, '', label, 'div');
+  });
+  recentBillsGrid.appendChild(header);
+
+  bills.forEach(bill => {
+    const row = document.createElement('article');
+    row.className = 'bill-row';
+
+    const titleCell = document.createElement('div');
+    appendText(titleCell, 'bill-kicker', bill.identifier || `${bill.type || ''} ${bill.number || ''}`.trim(), 'div');
+    appendText(titleCell, 'bill-title', bill.title || 'Untitled bill', 'h3');
+    appendText(titleCell, 'bill-meta', [bill.congress ? `${bill.congress}th Congress` : '', bill.originChamber].filter(Boolean).join(' - '), 'p');
+    if (bill.url) appendLink(titleCell, 'Open bill record', bill.url);
+
+    const descriptionCell = document.createElement('div');
+    const description = bill.description || {};
+    appendText(descriptionCell, 'bill-description', description.text || 'Congress.gov has not published a summary for this bill yet.');
+    appendText(descriptionCell, 'bill-meta', [description.source, formatShortDate(description.updated_at)].filter(Boolean).join(' - '), 'p');
+
+    const membersCell = document.createElement('div');
+    const members = Array.isArray(bill.members) ? bill.members : [];
+    members.slice(0, 6).forEach(member => {
+      const item = document.createElement('div');
+      item.className = 'bill-member-pill';
+      appendText(item, 'bill-member-role', member.role || 'Member', 'span');
+      appendText(item, '', billMemberLabel(member), 'strong');
+      membersCell.appendChild(item);
+    });
+
+    const impactCell = document.createElement('div');
+    const impact = bill.impact || {};
+    appendText(impactCell, 'bill-impact-status', impact.status || 'Pending AI impact analysis', 'strong');
+    appendText(impactCell, 'bill-description', impact.summary || 'Impact analysis will be generated after a ChatGPT API key is configured.');
+    const sources = document.createElement('div');
+    sources.className = 'bill-source-links';
+    (impact.sources || []).forEach(sourceItem => {
+      appendLink(sources, sourceItem.label || 'Source', sourceItem.url);
+    });
+    impactCell.appendChild(sources);
+
+    const infoCell = document.createElement('div');
+    const latestAction = bill.latestAction || {};
+    appendText(infoCell, 'bill-kicker', 'Latest Action', 'div');
+    appendText(infoCell, 'bill-description', latestAction.text || 'No latest action text available.');
+    appendText(infoCell, 'bill-meta', [formatShortDate(latestAction.date), bill.policyArea].filter(Boolean).join(' - '), 'p');
+    if (Array.isArray(bill.committees) && bill.committees.length) {
+      appendText(infoCell, 'bill-kicker', 'Committees', 'div');
+      appendText(infoCell, 'bill-meta', bill.committees.join(', '), 'p');
+    }
+
+    [titleCell, descriptionCell, membersCell, impactCell, infoCell].forEach(cell => {
+      cell.className = cell.className ? `${cell.className} bill-cell` : 'bill-cell';
+      row.appendChild(cell);
+    });
+    recentBillsGrid.appendChild(row);
+  });
+}
+
+async function initRecentBills() {
+  if (!recentBillsGrid) return;
+  const limit = Number(recentBillsGrid.dataset.limit || 5);
+  recentBillsGrid.innerHTML = '<div class="bill-empty-state">Loading recent bills</div>';
+
+  try {
+    const result = await fetchJsonWithStaticFallback(
+      `/bills/recent/digest?limit=${encodeURIComponent(limit)}`,
+      'recent-bills-digest.json',
+      { cache: 'no-store', staticCache: 'no-store' }
+    );
+    renderRecentBills(normalizeBillDigest(result.data), result.source);
+  } catch {
+    if (recentBillsStatus) recentBillsStatus.textContent = 'Recent bills unavailable.';
+    recentBillsGrid.innerHTML = '<div class="bill-empty-state">Recent bill data could not be loaded.</div>';
+  }
 }
 
 // ─── Congressional Members ───────────────────────────────────────────────────
@@ -798,7 +982,7 @@ function createMemberTile(member) {
   }
 
   const partyBadgeHtml = `<div class="party-badge ${partyClass}">${partyLabel}</div>`;
-  const ethicsBadgeHtml = `<div class="ethics-badge" title="Ethics grade" style="background-color: ${ethicsColor};">${ethicsGrade}</div>`;
+  const ethicsBadgeHtml = `<a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" title="Open ethics score methodology" aria-label="Open ethics score methodology for ${name}" style="background-color: ${ethicsColor};">${ethicsGrade}</a>`;
 
   const photoHtml = `
     <div class="tile-photo-wrapper">
@@ -814,6 +998,16 @@ function createMemberTile(member) {
     ${locationStr ? `<div class="tile-meta">${locationStr}</div>` : ''}
     ${chamberStr ? `<div class="tile-meta">${chamberStr}</div>` : ''}
   `;
+
+  const ethicsBadge = tile.querySelector('.ethics-badge');
+  if (ethicsBadge) {
+    ethicsBadge.addEventListener('click', event => {
+      event.stopPropagation();
+    });
+    ethicsBadge.addEventListener('mouseenter', event => {
+      event.stopPropagation();
+    });
+  }
 
   // Popover events: mouseenter/focus show; mouseleave/blur schedule hide
   tile.addEventListener('mouseenter', () => {
@@ -933,8 +1127,8 @@ function applyEthicsGrade(tileEl, ethics) {
   badge.textContent = grade;
   badge.style.backgroundColor = getEthicsColor(score);
   badge.title = score === null
-    ? 'Ethics grade unavailable'
-    : `Ethics grade ${grade} (${score})`;
+    ? 'Ethics grade unavailable. Open methodology.'
+    : `Ethics grade ${grade} (${score}). Open methodology.`;
 }
 
 async function fetchEthics(bioguideId, tileEl) {
@@ -1029,7 +1223,7 @@ async function triggerPopover(member, tileEl) {
   }
 
   // Show a loading state while we fetch
-  showPopover(member, { summary: 'Loading...', title: null }, tileEl);
+  showPopover(member, { summary: 'Loading biography', title: null }, tileEl);
 
   try {
     const result = await fetchJsonWithStaticFallback(
@@ -1063,12 +1257,7 @@ function showPopover(member, wikiData, anchorEl) {
   popoverName.textContent = name;
 
   if (wikiData && wikiData.summary) {
-    // Truncate very long summaries
-    const maxLen = 280;
-    const text = wikiData.summary.length > maxLen
-      ? wikiData.summary.slice(0, maxLen).trimEnd() + '...'
-      : wikiData.summary;
-    popoverSummary.textContent = text;
+    popoverSummary.textContent = wikiData.summary;
   } else {
     popoverSummary.textContent = 'No biographical summary available.';
   }
@@ -1194,6 +1383,7 @@ function topGerrymanderComponent(components) {
     .sort((a, b) => Number(b[1]) - Number(a[1]));
 
   if (entries.length === 0) return 'mixed signals';
+  if (Number(entries[0][1]) <= 0) return 'no district-line signal';
 
   const labels = {
     shape: 'district shape',
@@ -1204,6 +1394,26 @@ function topGerrymanderComponent(components) {
     donations: 'donation patterns'
   };
   return labels[entries[0][0]] || entries[0][0];
+}
+
+function isPanelLockedAwayFrom(stateInfo) {
+  return (
+    lockedMapState &&
+    stateInfo &&
+    normalizeFips(lockedMapState.fips) !== normalizeFips(stateInfo.fips)
+  );
+}
+
+function previewStateFromMap(stateInfo) {
+  if (!stateInfo) return;
+  if (isPanelLockedAwayFrom(stateInfo)) {
+    scheduleDistrictPrefetch(stateInfo);
+    return;
+  }
+
+  updateStatePanel(stateInfo);
+  renderMemberListForState(stateInfo);
+  scheduleDistrictPrefetch(stateInfo);
 }
 
 function updateStatePanel(stateInfo, mode = 'hover') {
@@ -1227,7 +1437,7 @@ function updateStatePanel(stateInfo, mode = 'hover') {
   gerryMeterFill.style.background = safeScore >= 70 ? '#d95f5f' : safeScore >= 45 ? '#d5a642' : '#3b8f6d';
   gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
   districtStatusEl.textContent = mode === 'click'
-    ? `Zoomed to ${stateInfo.name}. District outlines are loading or cached.`
+    ? `Locked on ${stateInfo.name}. Reset View clears the selection. District outlines are loading or cached.`
     : `Delegation shown below. Click ${stateInfo.abbreviation} to load district outlines.`;
   viewStateMembersBtn.disabled = false;
 
@@ -1245,7 +1455,7 @@ function renderMemberListForState(stateInfo) {
     districtListEl.innerHTML = `
       <div class="district-row">
         <span>${stateInfo.abbreviation}</span>
-        <strong>Loading delegation...</strong>
+        <strong>Loading delegation</strong>
       </div>
     `;
     loadMemberDataOnly()
@@ -1351,7 +1561,7 @@ async function initMap() {
   }
 
   try {
-    setMapStatus('Loading map data...');
+    setMapStatus('Loading map data');
     await loadStateData();
 
     const response = await fetch(STATES_TOPOJSON_URL, { cache: 'force-cache' });
@@ -1411,17 +1621,13 @@ function drawStateMap(us) {
     .on('mouseenter', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
-      updateStatePanel(stateInfo);
-      renderMemberListForState(stateInfo);
-      scheduleDistrictPrefetch(stateInfo);
+      previewStateFromMap(stateInfo);
       showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
     })
     .on('focus', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (stateInfo) {
-        updateStatePanel(stateInfo);
-        renderMemberListForState(stateInfo);
-        scheduleDistrictPrefetch(stateInfo);
+        previewStateFromMap(stateInfo);
       }
     })
     .on('mousemove', (event, feature) => {
@@ -1436,6 +1642,7 @@ function drawStateMap(us) {
       event.preventDefault();
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
+      lockedMapState = stateInfo;
       updateStatePanel(stateInfo, 'click');
       renderMemberListForState(stateInfo);
       zoomToFeature(feature);
@@ -1451,6 +1658,7 @@ function resetMapView() {
   districtLayer.selectAll('*').remove();
   districtListEl.innerHTML = '';
   selectedMapState = null;
+  lockedMapState = null;
   if (stateNameEl) stateNameEl.textContent = 'Hover a State';
   if (stateSummaryEl) stateSummaryEl.textContent = 'Move over a state to see population, political lean, district notes, and the YGN gerrymandering risk index.';
   if (statePopulationEl) statePopulationEl.textContent = '-';
@@ -1533,7 +1741,7 @@ async function renderDistrictsForState(stateInfo) {
   if (!mapSvg || !mapSvg.__ygnMap || !stateInfo) return;
   const { districtLayer, path } = mapSvg.__ygnMap;
 
-  districtStatusEl.textContent = `Loading ${stateInfo.name} districts...`;
+  districtStatusEl.textContent = `Loading ${stateInfo.name} districts`;
 
   try {
     const geojson = await ensureDistrictData(stateInfo.fips);
@@ -1687,6 +1895,9 @@ document.addEventListener('DOMContentLoaded', () => {
   methodologyOpenBtn = document.getElementById('methodology-open');
   methodologyBackBtn = document.getElementById('methodology-back');
   gerryInfoBtn     = document.getElementById('gerry-info');
+  recentBillsGrid  = document.getElementById('recent-bills-grid');
+  recentBillsStatus = document.getElementById('recent-bills-status');
+  civicPulseGrid   = document.getElementById('civic-pulse-grid');
 
   // ── Home stats placeholder
   initNavLinks();
@@ -1696,6 +1907,7 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshHomeMetrics();
     setInterval(refreshHomeMetrics, 900_000);
   }
+  initRecentBills();
 
   // ── Navigation
   document.querySelectorAll('.main-nav button').forEach(btn => {
