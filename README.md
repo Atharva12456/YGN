@@ -99,6 +99,42 @@ To switch a browser back to static mode after using an API override, open:
 http://127.0.0.1:5500?api=static
 ```
 
+## Deploying to Heroku
+
+The repo includes a root `Procfile` and `.python-version` so Heroku can run the FastAPI app directly:
+
+```text
+web: uvicorn app:app --host 0.0.0.0 --port $PORT
+```
+
+On Heroku, FastAPI serves the frontend from `docs/` at `/`, while the API stays available on routes such as `/health`, `/officials`, `/bills/recent`, and `/metrics/debt`. The Heroku-served `config.js` uses the same origin by default, so the deployed frontend calls the deployed backend without needing a separate frontend URL setting.
+
+Dashboard setup:
+
+1. Create a Heroku app.
+2. In the Deploy tab, connect this GitHub repository and deploy the `main` branch.
+3. In Settings > Config Vars, add the keys your deployment should use:
+
+```text
+CONGRESS_API_KEY=your-congress-key
+FEC_API_KEY=your-fec-or-econ-key
+YGN_ENABLE_BACKGROUND_REFRESH=1
+YGN_CACHE_TTL_SECONDS=900
+YGN_CORS_ORIGINS=*
+```
+
+If the key Vihaan sent is the FEC-compatible econ key, set it as `FEC_API_KEY`. The backend also recognizes `ECON_API_KEY` and `YGN_ECON_API_KEY` for the ethics score refresh.
+
+If you install the Heroku CLI later, the equivalent deployment flow is:
+
+```powershell
+heroku create your-ygn-app-name
+heroku config:set CONGRESS_API_KEY=your-congress-key FEC_API_KEY=your-fec-or-econ-key YGN_ENABLE_BACKGROUND_REFRESH=1 YGN_CACHE_TTL_SECONDS=900 YGN_CORS_ORIGINS=*
+git push heroku main
+```
+
+The app uses SQLite as a short-lived server-side API cache. Heroku dyno filesystems reset on deploy/restart, so this is fine for the 15-minute refresh cache, but long-term persistent data should move to Heroku Postgres, Redis, or another managed store.
+
 ## Deploying to GitHub Pages
 
 1. Push the repository to GitHub.

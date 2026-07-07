@@ -8,10 +8,25 @@ from typing import Annotated
 import requests
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, Response
+from fastapi.staticfiles import StaticFiles
 
 
 LOGGER = logging.getLogger(__name__)
 BACKEND_PATH = Path(__file__).parent / "empty-folder" / "CongressMembers.py"
+DOCS_PATH = Path(__file__).parent / "docs"
+STATIC_FILE_SUFFIXES = {
+    ".css",
+    ".html",
+    ".ico",
+    ".jpeg",
+    ".jpg",
+    ".js",
+    ".json",
+    ".png",
+    ".svg",
+    ".webmanifest",
+}
 
 
 def _load_government_backend():
@@ -73,6 +88,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+if DOCS_PATH.exists():
+    for mount_name in ("assets", "data", "vendor"):
+        mount_path = DOCS_PATH / mount_name
+        if mount_path.exists():
+            app.mount(
+                f"/{mount_name}",
+                StaticFiles(directory=mount_path),
+                name=f"frontend-{mount_name}",
+            )
+
 
 def _backend_response(callable_, *args, not_found_message=None, **kwargs):
     try:
@@ -97,13 +122,41 @@ def _backend_response(callable_, *args, not_found_message=None, **kwargs):
     return result
 
 
-@app.get("/")
-def root():
+@app.get("/api")
+def api_root():
     return {
         "name": "YGN Government API",
         "docs": "/docs",
         "health": "/health",
     }
+
+
+@app.get("/", include_in_schema=False)
+def frontend_index():
+    return FileResponse(DOCS_PATH / "index.html")
+
+
+@app.get("/config.js", include_in_schema=False)
+def frontend_config():
+    content = """// YGN API configuration served by FastAPI.
+const DEFAULT_API_BASE_URL = window.location.origin;
+const LOCAL_API_BASE_URL = 'http://127.0.0.1:8000';
+
+function resolveApiBaseUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const override = (params.get('api') || '').trim();
+
+  if (override === 'local') return LOCAL_API_BASE_URL;
+  if (override === 'static') return '';
+  if (override === 'origin') return window.location.origin;
+  if (/^https?:\\/\\//i.test(override)) return override.replace(/\\/+$/, '');
+
+  return DEFAULT_API_BASE_URL.replace(/\\/+$/, '');
+}
+
+const API_BASE_URL = resolveApiBaseUrl();
+"""
+    return Response(content=content, media_type="application/javascript")
 
 
 @app.get("/health")
@@ -237,3 +290,17 @@ def warm_cache(
 @app.get("/cache/stats")
 def cache_stats():
     return _backend_response(government.get_cache_stats)
+
+
+@app.get("/{filename}", include_in_schema=False)
+def frontend_file(filename: str):
+    requested = (DOCS_PATH / filename).resolve()
+    docs_root = DOCS_PATH.resolve()
+    if (
+        docs_root not in requested.parents
+        or requested.suffix not in STATIC_FILE_SUFFIXES
+        or not requested.is_file()
+    ):
+        raise HTTPException(status_code=404, detail="Static file not found.")
+
+    return FileResponse(requested)

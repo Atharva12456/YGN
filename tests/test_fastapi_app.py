@@ -1,5 +1,6 @@
 import importlib
 import unittest
+from pathlib import Path
 from unittest.mock import Mock, patch
 
 import app as fastapi_app
@@ -16,6 +17,33 @@ class FastApiAppTests(unittest.TestCase):
         self.assertEqual(response["status"], "ok")
         self.assertFalse(response["congress_api_key_configured"])
         self.assertFalse(response["congress_api_key_available"])
+
+    def test_api_root_keeps_api_metadata(self):
+        response = self.app.api_root()
+
+        self.assertEqual(response["health"], "/health")
+        self.assertEqual(response["docs"], "/docs")
+
+    def test_frontend_index_serves_static_home(self):
+        response = self.app.frontend_index()
+
+        self.assertEqual(Path(response.path).name, "index.html")
+
+    def test_frontend_config_uses_same_origin_api_by_default(self):
+        response = self.app.frontend_config()
+
+        self.assertIn("window.location.origin", response.body.decode())
+
+    def test_frontend_file_serves_known_pages(self):
+        response = self.app.frontend_file("recent-bills.html")
+
+        self.assertEqual(Path(response.path).name, "recent-bills.html")
+
+    def test_frontend_file_rejects_paths_outside_docs(self):
+        with self.assertRaises(self.app.HTTPException) as raised:
+            self.app.frontend_file("../app.py")
+
+        self.assertEqual(raised.exception.status_code, 404)
 
     def test_list_officials_uses_cached_backend_function(self):
         self.app.government.listCongressMembers = Mock(return_value={"members": []})
