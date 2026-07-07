@@ -366,6 +366,60 @@ class CongressMembersCacheTests(unittest.TestCase):
 
         self.assertEqual(score, {"dim1": 0.25, "geo_mean": None})
 
+    def test_ethics_score_falls_back_to_static_without_fec_key(self):
+        os.environ.pop("FEC_API_KEY", None)
+        os.environ.pop("ECON_API_KEY", None)
+        os.environ.pop("YGN_ECON_API_KEY", None)
+        self.module._legacy_fec_api_key = Mock(return_value="")
+        self.module.CongressMembersID = Mock(
+            return_value={"member": {"bioguideId": "A000001", "directOrderName": "Jane Example"}}
+        )
+
+        score = self.module.get_ethics_score("A000001")
+
+        self.assertEqual(score["source"], "static_fallback")
+        self.assertEqual(score["score"], 72.0)
+        self.assertEqual(score["grade"], "C-")
+
+    def test_ethics_formula_scores_live_fec_components(self):
+        member = {
+            "bioguideId": "A000001",
+            "directOrderName": "Jane Example",
+            "state": "NY",
+            "district": 1,
+            "partyHistory": [{"partyName": "Democratic", "startYear": 2025}],
+            "terms": [{"chamber": "House of Representatives", "district": 1}],
+        }
+        candidate = {
+            "candidate_id": "H0NY00001",
+            "name": "EXAMPLE, JANE",
+            "office": "H",
+            "state": "NY",
+            "district": "01",
+            "party": "DEM",
+        }
+        totals = {
+            "cycle": 2026,
+            "individual_contributions": 1000,
+            "individual_itemized_contributions": 600,
+            "individual_unitemized_contributions": 400,
+            "contributions": 1200,
+            "receipts": 1500,
+            "other_political_committee_contributions": 120,
+            "political_party_committee_contributions": 0,
+            "candidate_contribution": 0,
+            "loans_made_by_candidate": 0,
+            "loan_repayments_candidate_loans": 0,
+        }
+        by_size = [{"size": 2000, "total": 120}]
+        by_state = [{"state": "NY", "total": 450}, {"state": "CA", "total": 550}]
+
+        score = self.module._score_ethics_from_fec(member, candidate, totals, by_size, by_state)
+
+        self.assertEqual(score["source"], "fec_live")
+        self.assertEqual(score["score"], 67.2)
+        self.assertEqual(score["grade"], "D+")
+
     def test_warm_cache_fills_member_detail_wiki_nominate_and_recent_bills(self):
         csv_path = Path(self.temp_dir.name) / "HSall_members.csv"
         csv_path.write_text(
@@ -406,6 +460,7 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(report["member_details_cached"], 2)
         self.assertEqual(report["wiki_summaries_cached"], 2)
         self.assertEqual(report["nominate_scores_checked"], 2)
+        self.assertEqual(report["ethics_scores_cached"], 2)
         self.assertTrue(report["recent_bills_cached"])
         self.assertEqual(report["errors"], [])
         self.assertGreaterEqual(stats["total_entries"], 6)
@@ -414,6 +469,7 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.module.CongressMembersID = Mock(return_value={"member": {"directOrderName": "Missing Wiki"}})
         self.module.get_wiki_summary = Mock(side_effect=Exception("wiki missing"))
         self.module.get_nominate_score = Mock(return_value={"dim1": 0.2, "geo_mean": None})
+        self.module.get_ethics_score = Mock(return_value={"score": 72.0, "grade": "C"})
 
         profile = self.module.get_official_profile("A000001")
 
@@ -421,6 +477,7 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(profile["detail"], {"member": {"directOrderName": "Missing Wiki"}})
         self.assertIsNone(profile["wiki_summary"])
         self.assertEqual(profile["nominate_score"], {"dim1": 0.2, "geo_mean": None})
+        self.assertEqual(profile["ethics_score"], {"score": 72.0, "grade": "C"})
         self.assertEqual(profile["errors"][0]["stage"], "wiki")
 
 

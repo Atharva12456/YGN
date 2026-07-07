@@ -7,6 +7,7 @@ import sqlite3
 import threading
 import time
 from contextlib import contextmanager
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
@@ -14,14 +15,19 @@ import requests
 
 
 BASE_URL = "https://api.congress.gov/v3"
+FEC_BASE_URL = "https://api.open.fec.gov/v1"
 WIKIPEDIA_ACTION_API_URL = "https://en.wikipedia.org/w/api.php"
 WIKIPEDIA_SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary"
 CSV_PATH = Path(__file__).parent / "HSall_members.csv"
 DEFAULT_CACHE_PATH = Path(__file__).parent / ".cache" / "ygn_api_cache.sqlite"
+STATIC_ETHICS_PATH = Path(__file__).parent / "static_ethics_scores.json"
+STATIC_MEMBER_OVERRIDES_PATH = Path(__file__).parent / "static_member_overrides.json"
+STATIC_WIKI_DIR = Path(__file__).parent.parent / "docs" / "data" / "wiki"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
+ETHICS_METHOD_VERSION = "campaign_finance_v1"
 
 LOGGER = logging.getLogger(__name__)
 API_KEY = ""
@@ -39,6 +45,10 @@ _background_refresh_stop = threading.Event()
 
 class MissingCongressApiKey(RuntimeError):
     """Raised when a Congress.gov request is needed but no API key is configured."""
+
+
+class MissingFecApiKey(RuntimeError):
+    """Raised when a live FEC request is needed but no API key is configured."""
 
 
 class UpstreamDataError(RuntimeError):
@@ -86,9 +96,12 @@ def _wiki_cache_ttl_seconds():
 
 
 def _load_local_env():
-    if os.getenv("CONGRESS_API_KEY"):
-        return
-
+    env_keys = {
+        "CONGRESS_API_KEY",
+        "FEC_API_KEY",
+        "ECON_API_KEY",
+        "YGN_ECON_API_KEY",
+    }
     for env_path in ENV_PATHS:
         if not env_path.exists():
             continue
@@ -99,14 +112,38 @@ def _load_local_env():
                 continue
 
             key, value = stripped.split("=", 1)
-            if key.strip() == "CONGRESS_API_KEY":
-                os.environ.setdefault("CONGRESS_API_KEY", value.strip().strip('"').strip("'"))
-                return
+            normalized_key = key.strip()
+            if normalized_key in env_keys and not os.getenv(normalized_key):
+                os.environ[normalized_key] = value.strip().strip('"').strip("'")
 
 
 def congress_api_key_available():
     _load_local_env()
     return bool(os.getenv("CONGRESS_API_KEY") or API_KEY)
+
+
+def _legacy_fec_api_key():
+    legacy_path = Path(__file__).parent / "memberFinances.py"
+    if not legacy_path.exists():
+        return ""
+
+    try:
+        text = legacy_path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+    match = re.search(r"\bAPI_key\s*=\s*['\"]([^'\"]+)['\"]", text)
+    return match.group(1) if match else ""
+
+
+def fec_api_key_available():
+    _load_local_env()
+    return bool(
+        os.getenv("FEC_API_KEY")
+        or os.getenv("ECON_API_KEY")
+        or os.getenv("YGN_ECON_API_KEY")
+        or _legacy_fec_api_key()
+    )
 
 
 def _congress_api_key():
@@ -116,6 +153,23 @@ def _congress_api_key():
         raise MissingCongressApiKey(
             "CONGRESS_API_KEY is not set. Add it to the backend environment before "
             "calling Congress.gov."
+        )
+
+    return api_key
+
+
+def _fec_api_key():
+    _load_local_env()
+    api_key = (
+        os.getenv("FEC_API_KEY")
+        or os.getenv("ECON_API_KEY")
+        or os.getenv("YGN_ECON_API_KEY")
+        or _legacy_fec_api_key()
+    )
+    if not api_key:
+        raise MissingFecApiKey(
+            "FEC_API_KEY, ECON_API_KEY, or YGN_ECON_API_KEY is not set. Add it to "
+            "the backend environment before refreshing live ethics grades."
         )
 
     return api_key
@@ -265,6 +319,36 @@ def _congress_get(path, params=None, ttl_seconds=None):
     return _cached_json(cache_key, f"congress:{path}", fetch_json, ttl_seconds=ttl_seconds)
 
 
+def _fec_get(path, params=None, ttl_seconds=None):
+    cache_params = dict(params or {})
+    cache_key = _build_cache_key(
+        "fec",
+        {
+            "path": path,
+            "params": cache_params,
+        },
+    )
+    url = f"{FEC_BASE_URL}{path}"
+
+    def fetch_json():
+        request_params = dict(cache_params)
+        request_params["api_key"] = _fec_api_key()
+
+        try:
+            response = requests.get(
+                url,
+                params=request_params,
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"FEC request failed for {path}.") from None
+
+        return response.json()
+
+    return _cached_json(cache_key, f"fec:{path}", fetch_json, ttl_seconds=ttl_seconds)
+
+
 def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):
     path = "/member"
     if congress is not None:
@@ -278,10 +362,11 @@ def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):
     if current_member is not None:
         params["currentMember"] = "true" if current_member else "false"
 
-    return _congress_get(
+    data = _congress_get(
         path,
         params=params,
     )
+    return _apply_member_enrichment_to_payload(data)
 
 
 def getRecentBills():
@@ -299,7 +384,7 @@ def allCongressMembers():
 
 
 def CongressMembersID(bioGuideID):
-    return _congress_get(
+    data = _congress_get(
         f"/member/{bioGuideID}",
         params={
             "limit": 20,
@@ -307,6 +392,7 @@ def CongressMembersID(bioGuideID):
             "format": "json",
         },
     )
+    return _apply_member_enrichment_to_payload(data)
 
 
 def _member_terms(member):
@@ -320,6 +406,15 @@ def _optional_float(value):
     if value in (None, ""):
         return None
     return float(value)
+
+
+def _safe_amount(value):
+    if value in (None, ""):
+        return 0.0
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return 0.0
 
 
 def _member_bioguide_id(member):
@@ -342,6 +437,125 @@ def _dedupe_strings(values):
         seen.add(key)
         result.append(normalized)
     return result
+
+
+def _read_json_file(path, default):
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return default
+
+
+def _static_member_overrides():
+    return _read_json_file(STATIC_MEMBER_OVERRIDES_PATH, {})
+
+
+def _static_member_override(bioguide_id):
+    overrides = _static_member_overrides().get("members", {})
+    return overrides.get(bioguide_id) or {}
+
+
+def _static_wiki_override(bioguide_id):
+    inline_overrides = _static_member_overrides().get("wiki", {})
+    if bioguide_id in inline_overrides:
+        return inline_overrides[bioguide_id]
+
+    wiki_path = STATIC_WIKI_DIR / f"{bioguide_id}.json"
+    payload = _read_json_file(wiki_path, None)
+    if not payload:
+        return None
+
+    summary = payload.get("summary") or payload.get("extract")
+    if not summary:
+        return None
+
+    return payload
+
+
+def _deep_merge_dict(base, updates):
+    merged = dict(base or {})
+    for key, value in (updates or {}).items():
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key] = _deep_merge_dict(merged[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
+def _term_items_from_member(member):
+    terms = member.get("terms", [])
+    if isinstance(terms, dict):
+        terms = terms.get("item", [])
+    if isinstance(terms, dict):
+        return [terms]
+    return terms or []
+
+
+def _member_chamber(member):
+    chamber = member.get("chamber")
+    if chamber:
+        return chamber
+
+    term = _latest_member_term(member)
+    return term.get("chamber")
+
+
+def _member_district(member):
+    if member.get("district") not in (None, ""):
+        return member.get("district")
+
+    term = _latest_member_term(member)
+    return term.get("district")
+
+
+def _district_label(member):
+    chamber = str(_member_chamber(member) or "").lower()
+    district = _member_district(member)
+
+    if "senate" in chamber:
+        return "Statewide"
+    if district in (None, ""):
+        return None
+    if str(district) == "0":
+        return "At-large"
+    return f"District {district}"
+
+
+def _apply_member_enrichment(member):
+    if not isinstance(member, dict):
+        return member
+
+    bioguide_id = _member_bioguide_id(member)
+    enriched = dict(member)
+    term = _latest_member_term(enriched)
+
+    if "chamber" not in enriched or not enriched.get("chamber"):
+        chamber = term.get("chamber")
+        if chamber:
+            enriched["chamber"] = chamber
+
+    label = _district_label(enriched)
+    if label:
+        enriched["districtLabel"] = label
+
+    if bioguide_id:
+        override = _static_member_override(bioguide_id)
+        if override:
+            enriched = _deep_merge_dict(enriched, override)
+
+    return enriched
+
+
+def _apply_member_enrichment_to_payload(payload):
+    if not isinstance(payload, dict):
+        return payload
+
+    enriched = dict(payload)
+    if isinstance(enriched.get("members"), list):
+        enriched["members"] = [_apply_member_enrichment(member) for member in enriched["members"]]
+    if isinstance(enriched.get("member"), dict):
+        enriched["member"] = _apply_member_enrichment(enriched["member"])
+    return enriched
 
 
 def _member_name_candidates(member):
@@ -411,12 +625,73 @@ def _member_display_name(member):
     return member.get("directOrderName") or member.get("invertedOrderName") or "This official"
 
 
+def _first_sentences(text, sentence_count=2):
+    normalized = re.sub(r"\s+", " ", str(text or "")).strip()
+    if not normalized:
+        return normalized
+
+    abbreviations = {
+        "mr.",
+        "mrs.",
+        "ms.",
+        "dr.",
+        "jr.",
+        "sr.",
+        "sen.",
+        "rep.",
+        "gov.",
+        "u.s.",
+        "d.c.",
+    }
+    sentences = []
+    start = 0
+    index = 0
+    while index < len(normalized):
+        char = normalized[index]
+        if char not in ".!?":
+            index += 1
+            continue
+
+        token_start = normalized.rfind(" ", 0, index) + 1
+        token = normalized[token_start : index + 1].lower()
+        if token in abbreviations or re.fullmatch(r"(?:[a-z]\.){1,4}", token):
+            index += 1
+            continue
+
+        next_index = index + 1
+        while next_index < len(normalized) and normalized[next_index] in "\"')]}":
+            next_index += 1
+        if next_index < len(normalized) and not normalized[next_index].isspace():
+            index += 1
+            continue
+
+        sentence = normalized[start : next_index].strip()
+        if sentence:
+            sentences.append(sentence)
+        if len(sentences) >= sentence_count:
+            return " ".join(sentences)
+
+        while next_index < len(normalized) and normalized[next_index].isspace():
+            next_index += 1
+        start = next_index
+        index = next_index
+
+    if not sentences:
+        return normalized
+
+    trailing = normalized[start:].strip()
+    if trailing and len(sentences) < sentence_count:
+        sentences.append(trailing)
+    return " ".join(sentences[:sentence_count])
+
+
 def _build_congress_member_summary(member):
     name = _member_display_name(member)
     term = _latest_member_term(member)
     party = _current_party_name(member)
     state = member.get("state") or term.get("stateName")
-    district = member.get("district") or term.get("district")
+    district = _member_district(member)
+    district_label = _district_label(member)
     chamber = term.get("chamber")
     member_type = term.get("memberType")
     start_year = term.get("startYear")
@@ -430,7 +705,11 @@ def _build_congress_member_summary(member):
         role_parts.append("member of Congress")
 
     location = ""
-    if state and district not in (None, ""):
+    if state and district_label == "Statewide":
+        location = f" from {state}"
+    elif state and district_label == "At-large":
+        location = f" from {state}'s at-large district"
+    elif state and district not in (None, ""):
         location = f" from {state}'s {district} district"
     elif state:
         location = f" from {state}"
@@ -476,7 +755,7 @@ def _wiki_max_attempts():
 
 
 def _wiki_search_query_limit():
-    raw_value = os.getenv("YGN_WIKI_SEARCH_QUERY_LIMIT", "2")
+    raw_value = os.getenv("YGN_WIKI_SEARCH_QUERY_LIMIT", "8")
     try:
         return max(1, int(raw_value))
     except ValueError:
@@ -523,7 +802,7 @@ def _wiki_summary_from_page_title(page_title):
     encoded_title = quote(page_title.replace(" ", "_"), safe="")
     url = f"{WIKIPEDIA_SUMMARY_URL}/{encoded_title}"
     data = _wiki_get(url).json()
-    extract = data.get("extract")
+    extract = _first_sentences(data.get("extract"))
     return {
         "title": data.get("title") or page_title,
         "type": data.get("type"),
@@ -628,19 +907,27 @@ def _wiki_match_score(summary, member):
 def _wiki_search_queries(member):
     term = _latest_member_term(member)
     state = member.get("state") or term.get("stateName")
+    state_name = term.get("stateName") or state
+    district = _member_district(member)
     member_type = term.get("memberType") or "member of Congress"
     queries = []
 
     for name in _member_name_candidates(member):
+        if state:
+            queries.append(f'"{name}" "{state}" politician')
+        if state_name and state_name != state:
+            queries.append(f'"{name}" "{state_name}" politician')
+        if state_name and district not in (None, ""):
+            queries.append(f'"{name}" "{state_name}" "{district}"')
         queries.extend(
             [
                 f'"{name}" "{member_type}"',
                 f'"{name}" "United States Congress"',
+                f'"{name}" "U.S. representative"',
+                f'"{name}" "United States senator"',
                 f'"{name}" politician',
             ]
         )
-        if state:
-            queries.append(f'"{name}" {state} politician')
 
     return _dedupe_strings(queries)
 
@@ -791,20 +1078,405 @@ def get_nominate_score(bioguide_id: str):
     }
 
 
-def get_wiki_summary(bioguideId):
+def _current_election_cycle(now=None):
+    now = now or datetime.now(timezone.utc)
+    return now.year if now.year % 2 == 0 else now.year + 1
+
+
+def _ethics_updated_at():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _party_abbreviation(member):
+    party = (
+        member.get("party")
+        or member.get("partyName")
+        or _current_party_name(member)
+        or ""
+    )
+    party_lower = party.lower()
+    if party_lower.startswith("democrat") or party_lower == "d":
+        return "DEM"
+    if party_lower.startswith("republican") or party_lower == "r":
+        return "REP"
+    if party_lower.startswith("independent") or party_lower == "i":
+        return "IND"
+    return party[:3].upper() if party else None
+
+
+def _member_fec_office(member):
+    chamber = str(_member_chamber(member) or "").lower()
+    if "senate" in chamber:
+        return "S"
+    if "house" in chamber or "representative" in chamber:
+        return "H"
+    return None
+
+
+def _normalize_name_for_match(value):
+    value = re.sub(r"[^a-z0-9, ]+", " ", str(value or "").lower())
+    if "," in value:
+        last, first = value.split(",", 1)
+        value = f"{first} {last}"
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _name_tokens(value):
+    suffixes = {"jr", "sr", "ii", "iii", "iv", "v"}
+    return {
+        token
+        for token in _normalize_name_for_match(value).split()
+        if len(token) > 1 and token not in suffixes
+    }
+
+
+def _fec_candidate_match_score(candidate, member):
+    score = 0
+    candidate_name_tokens = _name_tokens(candidate.get("name"))
+    member_name_tokens = set()
+    for name in _member_name_candidates(member):
+        member_name_tokens.update(_name_tokens(name))
+
+    if member_name_tokens and candidate_name_tokens:
+        overlap = len(member_name_tokens & candidate_name_tokens)
+        score += overlap * 3
+        if overlap == len(member_name_tokens):
+            score += 4
+
+    if candidate.get("state") == (member.get("stateCode") or member.get("state")):
+        score += 4
+    if candidate.get("office") == _member_fec_office(member):
+        score += 4
+
+    member_district = _member_district(member)
+    candidate_district = candidate.get("district")
+    if member_district not in (None, "") and candidate_district not in (None, ""):
+        if str(member_district).zfill(2) == str(candidate_district).zfill(2):
+            score += 3
+
+    party = _party_abbreviation(member)
+    if party and candidate.get("party") == party:
+        score += 1
+
+    return score
+
+
+def _fec_search_candidates(member):
+    names = _member_name_candidates(member)
+    if not names:
+        return []
+
+    params = {
+        "q": names[0],
+        "per_page": 20,
+        "has_raised_funds": "true",
+    }
+    state = member.get("stateCode") or member.get("state")
+    office = _member_fec_office(member)
+    party = _party_abbreviation(member)
+    if state:
+        params["state"] = state
+    if office:
+        params["office"] = office
+    if party:
+        params["party"] = party
+
+    data = _fec_get("/candidates/search/", params=params)
+    candidates = data.get("results", [])
+    return sorted(candidates, key=lambda candidate: _fec_candidate_match_score(candidate, member), reverse=True)
+
+
+def _fec_best_candidate(member):
+    candidates = _fec_search_candidates(member)
+    if not candidates:
+        return None
+
+    best = candidates[0]
+    if _fec_candidate_match_score(best, member) < 7:
+        return None
+    return best
+
+
+def _latest_candidate_total(candidate_id):
+    data = _fec_get(
+        f"/candidate/{candidate_id}/totals/",
+        params={
+            "per_page": 20,
+            "sort": "-cycle",
+        },
+    )
+    totals = data.get("results", [])
+    if not totals:
+        return None
+
+    current_cycle = _current_election_cycle()
+    eligible = [row for row in totals if int(row.get("cycle") or 0) <= current_cycle]
+    return (eligible or totals)[0]
+
+
+def _fec_candidate_rows(path, candidate_id, cycle):
+    data = _fec_get(
+        path,
+        params={
+            "candidate_id": candidate_id,
+            "cycle": cycle,
+            "per_page": 100,
+        },
+    )
+    return data.get("results", [])
+
+
+def _ratio(numerator, denominator):
+    numerator = _safe_amount(numerator)
+    denominator = _safe_amount(denominator)
+    if denominator <= 0:
+        return None
+    return max(0.0, min(1.0, numerator / denominator))
+
+
+def _component(value, score, weight):
+    if value is None or score is None:
+        return {
+            "value": None,
+            "score": None,
+            "weight": weight,
+        }
+
+    return {
+        "value": round(value, 4),
+        "score": round(max(0.0, min(100.0, score)), 1),
+        "weight": weight,
+    }
+
+
+def _ethics_letter_grade(score):
+    if score is None:
+        return "N/A"
+    if score >= 93:
+        return "A"
+    if score >= 90:
+        return "A-"
+    if score >= 87:
+        return "B+"
+    if score >= 83:
+        return "B"
+    if score >= 80:
+        return "B-"
+    if score >= 77:
+        return "C+"
+    if score >= 73:
+        return "C"
+    if score >= 70:
+        return "C-"
+    if score >= 67:
+        return "D+"
+    if score >= 63:
+        return "D"
+    if score >= 60:
+        return "D-"
+    return "F"
+
+
+def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
+    individual = _safe_amount(totals.get("individual_contributions"))
+    itemized = _safe_amount(totals.get("individual_itemized_contributions"))
+    unitemized = _safe_amount(totals.get("individual_unitemized_contributions"))
+    contributions = _safe_amount(totals.get("contributions")) or _safe_amount(
+        totals.get("net_contributions")
+    )
+    receipts = _safe_amount(totals.get("receipts")) or contributions
+    pac = _safe_amount(totals.get("other_political_committee_contributions"))
+    party = _safe_amount(totals.get("political_party_committee_contributions"))
+    candidate_funding = (
+        _safe_amount(totals.get("candidate_contribution"))
+        + _safe_amount(totals.get("loans_made_by_candidate"))
+        + _safe_amount(totals.get("loan_repayments_candidate_loans"))
+    )
+
+    small_donor_share = _ratio(unitemized, individual)
+    pac_dependence = _ratio(pac + party, contributions)
+    self_party_share = _ratio(candidate_funding + party, receipts)
+
+    large_donor_total = sum(
+        _safe_amount(row.get("total"))
+        for row in by_size
+        if _safe_amount(row.get("size")) >= 2000
+    )
+    donor_concentration = _ratio(large_donor_total, itemized or individual)
+
+    state = member.get("stateCode") or member.get("state")
+    state_total = sum(
+        _safe_amount(row.get("total"))
+        for row in by_state
+        if str(row.get("state") or "").upper() == str(state or "").upper()
+    )
+    all_state_total = sum(_safe_amount(row.get("total")) for row in by_state)
+    in_state_share = _ratio(state_total, all_state_total)
+
+    components = {
+        "small_donor": _component(small_donor_share, (small_donor_share or 0) * 100, 0.30),
+        "pac_independence": _component(
+            pac_dependence,
+            None if pac_dependence is None else (1 - pac_dependence) * 100,
+            0.25,
+        ),
+        "donor_concentration": _component(
+            donor_concentration,
+            None if donor_concentration is None else (1 - donor_concentration) * 100,
+            0.20,
+        ),
+        "in_state_support": _component(in_state_share, (in_state_share or 0) * 100, 0.15),
+        "self_party_independence": _component(
+            self_party_share,
+            None if self_party_share is None else (1 - self_party_share) * 100,
+            0.10,
+        ),
+    }
+
+    weighted_total = 0.0
+    active_weight = 0.0
+    for item in components.values():
+        if item["score"] is None:
+            continue
+        weighted_total += item["score"] * item["weight"]
+        active_weight += item["weight"]
+
+    if active_weight == 0:
+        raise UpstreamDataError("FEC totals did not include enough data to score ethics.")
+
+    score = round(weighted_total / active_weight, 1)
+    return {
+        "bioguideId": _member_bioguide_id(member),
+        "score": score,
+        "grade": _ethics_letter_grade(score),
+        "source": "fec_live",
+        "method": ETHICS_METHOD_VERSION,
+        "updated_at": _ethics_updated_at(),
+        "cycle": totals.get("cycle"),
+        "candidate": {
+            "candidate_id": candidate.get("candidate_id"),
+            "name": candidate.get("name"),
+            "office": candidate.get("office"),
+            "state": candidate.get("state"),
+            "district": candidate.get("district"),
+            "party": candidate.get("party"),
+        },
+        "components": components,
+        "notes": [],
+    }
+
+
+def _static_ethics_scores():
+    return _read_json_file(STATIC_ETHICS_PATH, {})
+
+
+def _static_ethics_fallback(bioguide_id):
+    docs_path = Path(__file__).parent.parent / "docs" / "data" / "ethics" / f"{bioguide_id}.json"
+    docs_score = _read_json_file(docs_path, None)
+    if docs_score and docs_score.get("score") is not None:
+        return {**docs_score, "source": docs_score.get("source") or "static_fallback"}
+
+    static_scores = _static_ethics_scores()
+    score = (static_scores.get("members", {}) or {}).get(bioguide_id)
+    if score is None:
+        score = static_scores.get("default_score", 72.0)
+
+    score = round(float(score), 1)
+    return {
+        "bioguideId": bioguide_id,
+        "score": score,
+        "grade": _ethics_letter_grade(score),
+        "source": "static_fallback",
+        "method": ETHICS_METHOD_VERSION,
+        "updated_at": static_scores.get("generated_at"),
+        "cycle": static_scores.get("cycle"),
+        "candidate": None,
+        "components": {},
+        "notes": [
+            "Live FEC finance data was unavailable; using the static fallback grade."
+        ],
+    }
+
+
+def _live_ethics_score(member):
+    candidate = _fec_best_candidate(member)
+    if candidate is None:
+        raise UpstreamDataError("No matching FEC candidate was found for ethics scoring.")
+
+    candidate_id = candidate.get("candidate_id")
+    totals = _latest_candidate_total(candidate_id)
+    if totals is None:
+        raise UpstreamDataError("No FEC candidate totals were found for ethics scoring.")
+
+    cycle = totals.get("cycle")
+    by_size = _fec_candidate_rows(
+        "/schedules/schedule_a/by_size/by_candidate/",
+        candidate_id,
+        cycle,
+    )
+    by_state = _fec_candidate_rows(
+        "/schedules/schedule_a/by_state/by_candidate/",
+        candidate_id,
+        cycle,
+    )
+    return _score_ethics_from_fec(member, candidate, totals, by_size, by_state)
+
+
+def get_ethics_score(bioguide_id: str):
     cache_key = _build_cache_key(
-        "wikipedia-summary-v2",
+        "ethics-score-v1",
+        {
+            "bioguideId": bioguide_id,
+        },
+    )
+
+    def fetch_json():
+        try:
+            member = CongressMembersID(bioguide_id).get("member", {})
+            if not member:
+                raise ValueError(f"No member found for bioguideId {bioguide_id}.")
+            return _live_ethics_score(member)
+        except (MissingCongressApiKey, MissingFecApiKey, UpstreamDataError, requests.RequestException):
+            return _static_ethics_fallback(bioguide_id)
+
+    return _cached_json(
+        cache_key,
+        f"ethics:score:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=_cache_ttl_seconds(),
+    )
+
+
+def get_wiki_summary(bioguideId):
+    static_summary = _static_wiki_override(bioguideId)
+    cache_key = _build_cache_key(
+        "wikipedia-summary-v3",
         {
             "bioguideId": bioguideId,
         },
     )
 
     def fetch_json():
-        member = CongressMembersID(bioguideId).get("member", {})
+        try:
+            member = CongressMembersID(bioguideId).get("member", {})
+        except (MissingCongressApiKey, UpstreamDataError):
+            if static_summary:
+                return static_summary
+            raise
+
         if not _member_name_candidates(member):
+            if static_summary:
+                return static_summary
             raise ValueError(f"No directOrderName found for bioguideId {bioguideId}.")
 
-        return _resolve_wikipedia_summary(member)
+        resolved = _resolve_wikipedia_summary(member)
+        if (
+            resolved.get("source") == "congress_fallback"
+            and static_summary
+            and static_summary.get("source") != "congress_fallback"
+        ):
+            return static_summary
+        return resolved
 
     wiki_summary = _cached_json(
         cache_key,
@@ -817,10 +1489,14 @@ def get_wiki_summary(bioguideId):
     elif "extract" not in wiki_summary and "summary" in wiki_summary:
         wiki_summary = {**wiki_summary, "extract": wiki_summary.get("summary")}
 
+    if wiki_summary.get("summary"):
+        summary = _first_sentences(wiki_summary.get("summary"))
+        wiki_summary = {**wiki_summary, "summary": summary, "extract": summary}
+
     return wiki_summary
 
 
-def get_official_profile(bioguideId, include_wiki=True, include_nominate=True):
+def get_official_profile(bioguideId, include_wiki=True, include_nominate=True, include_ethics=True):
     detail = CongressMembersID(bioguideId)
     profile = {
         "bioguideId": bioguideId,
@@ -852,10 +1528,30 @@ def get_official_profile(bioguideId, include_wiki=True, include_nominate=True):
                 }
             )
 
+    if include_ethics:
+        try:
+            profile["ethics_score"] = get_ethics_score(bioguideId)
+        except Exception as exc:
+            profile["ethics_score"] = None
+            profile["errors"].append(
+                {
+                    "stage": "ethics",
+                    "error": str(exc),
+                }
+            )
+
     return profile
 
 
-def refresh_government_officials_cache():
+def _background_ethics_refresh_limit():
+    raw_value = os.getenv("YGN_BACKGROUND_ETHICS_REFRESH_LIMIT", "25")
+    try:
+        return max(0, int(raw_value))
+    except ValueError:
+        return 25
+
+
+def refresh_government_officials_cache(include_ethics=True):
     """
     Refresh the core MVP cache entries used by the government officials surface.
 
@@ -863,16 +1559,40 @@ def refresh_government_officials_cache():
     function still respects the 15-minute TTL and only calls upstream APIs when
     the cached response is stale or missing.
     """
-    return {
-        "allCongressMembers": listCongressMembers(limit=250, offset=0),
+    members_page = listCongressMembers(limit=250, offset=0)
+    result = {
+        "allCongressMembers": members_page,
         "getRecentBills": getRecentBills(),
+        "ethicsScoresRefreshed": 0,
+        "ethicsErrors": [],
     }
+
+    if include_ethics and fec_api_key_available():
+        refresh_limit = _background_ethics_refresh_limit()
+        for member in members_page.get("members", [])[:refresh_limit]:
+            bioguide_id = _member_bioguide_id(member)
+            if not bioguide_id:
+                continue
+            try:
+                get_ethics_score(bioguide_id)
+                result["ethicsScoresRefreshed"] += 1
+            except Exception as exc:
+                result["ethicsErrors"].append(
+                    {
+                        "bioguideId": bioguide_id,
+                        "stage": "ethics",
+                        "error": str(exc),
+                    }
+                )
+
+    return result
 
 
 def warm_government_officials_cache(
     include_details=True,
     include_wiki=True,
     include_nominate=True,
+    include_ethics=True,
     include_recent_bills=True,
     max_members=None,
     limit=250,
@@ -896,6 +1616,7 @@ def warm_government_officials_cache(
         "member_details_cached": 0,
         "wiki_summaries_cached": 0,
         "nominate_scores_checked": 0,
+        "ethics_scores_cached": 0,
         "recent_bills_cached": False,
         "errors": [],
     }
@@ -956,6 +1677,19 @@ def warm_government_officials_cache(
                         {
                             "bioguideId": bioguide_id,
                             "stage": "nominate",
+                            "error": str(exc),
+                        }
+                    )
+
+            if include_ethics:
+                try:
+                    get_ethics_score(bioguide_id)
+                    report["ethics_scores_cached"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {
+                            "bioguideId": bioguide_id,
+                            "stage": "ethics",
                             "error": str(exc),
                         }
                     )

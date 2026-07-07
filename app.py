@@ -115,6 +115,7 @@ def health():
         not in {"0", "false", "False"},
         "congress_api_key_configured": bool(os.getenv("CONGRESS_API_KEY")),
         "congress_api_key_available": government.congress_api_key_available(),
+        "fec_api_key_available": government.fec_api_key_available(),
     }
 
 
@@ -170,17 +171,24 @@ def official_nominate_score(bioguide_id: str):
     return score
 
 
+@app.get("/officials/{bioguide_id}/ethics")
+def official_ethics_score(bioguide_id: str):
+    return _backend_response(government.get_ethics_score, bioguide_id)
+
+
 @app.get("/officials/{bioguide_id}/profile")
 def official_profile(
     bioguide_id: str,
     include_wiki: bool = True,
     include_nominate: bool = True,
+    include_ethics: bool = True,
 ):
     return _backend_response(
         government.get_official_profile,
         bioguide_id,
         include_wiki=include_wiki,
         include_nominate=include_nominate,
+        include_ethics=include_ethics,
     )
 
 
@@ -199,6 +207,7 @@ def warm_cache(
     include_details: bool = True,
     include_wiki: bool = True,
     include_nominate: bool = True,
+    include_ethics: bool = True,
     include_recent_bills: bool = True,
     max_members: Annotated[int | None, Query(ge=1)] = None,
     limit: Annotated[int, Query(ge=1, le=250)] = 250,
@@ -208,6 +217,7 @@ def warm_cache(
         include_details=include_details,
         include_wiki=include_wiki,
         include_nominate=include_nominate,
+        include_ethics=include_ethics,
         include_recent_bills=include_recent_bills,
         max_members=max_members,
         limit=limit,

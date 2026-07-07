@@ -1,0 +1,2032 @@
+{
+  "generated_at": "2026-07-07T00:00:00Z",
+  "methodology": {
+    "version": "ygn-gerrymander-static-v1",
+    "disclaimer": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated.",
+    "weights": {
+      "district_shape": 0.25,
+      "voting_numbers": 0.25,
+      "party_in_power_at_redistricting": 0.15,
+      "political_events": 0.15,
+      "social_indicators": 0.1,
+      "individual_donations": 0.1
+    },
+    "sources": [
+      {
+        "label": "U.S. Census Cartographic Boundary Files",
+        "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+      },
+      {
+        "label": "U.S. Census 119th Congressional District Maps",
+        "url": "https://www.census.gov/geographies/reference-maps/2025/geo/cong-dist-119-wall.html"
+      },
+      {
+        "label": "NCSL Redistricting Criteria",
+        "url": "https://www.ncsl.org/elections-and-campaigns/redistricting-criteria"
+      },
+      {
+        "label": "Federal Election Commission Data",
+        "url": "https://www.fec.gov/data/browse-data/"
+      },
+      {
+        "label": "Efficiency Gap Research Paper",
+        "url": "https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=1946&context=public_law_and_legal_theory"
+      },
+      {
+        "label": "USDOT/BTS Congressional Districts Feature Layer",
+        "url": "https://data-usdot.opendata.arcgis.com/datasets/usdot::congressional-districts/about"
+      }
+    ]
+  },
+  "states": [
+    {
+      "fips": "01",
+      "abbreviation": "AL",
+      "name": "Alabama",
+      "population": 5024279,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican in most statewide federal races",
+      "redistrictingContext": "court-supervised map changes and Voting Rights Act litigation",
+      "districtContext": "seven House districts and two statewide Senate seats, with one majority-Black opportunity district after recent litigation",
+      "summary": [
+        "In federal politics, Alabama is strong Republican in most statewide federal races; Black Belt, Birmingham, Huntsville, Mobile, and rural north-south divides are central to its federal elections.",
+        "Its congressional representation is shaped by seven House districts and two statewide Senate seats, with one majority-Black opportunity district after recent litigation.",
+        "The YGN index treats court-supervised map changes and Voting Rights Act litigation as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 71,
+          "voting": 69,
+          "control": 73,
+          "events": 79,
+          "social": 58,
+          "donations": 53
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "02",
+      "abbreviation": "AK",
+      "name": "Alaska",
+      "population": 733391,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive Republican-leaning",
+      "historicalLean": "Republican-leaning with a strong independent streak",
+      "redistrictingContext": "ranked-choice voting and statewide coalition politics",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Alaska is republican-leaning with a strong independent streak; Anchorage, the Mat-Su, Fairbanks, rural Alaska Native communities, and resource politics are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats ranked-choice voting and statewide coalition politics as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "04",
+      "abbreviation": "AZ",
+      "name": "Arizona",
+      "population": 7151502,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Highly competitive, with growing Democratic strength in Maricopa and Pima counties",
+      "redistrictingContext": "rapid population growth and commission-led redistricting",
+      "districtContext": "nine House districts drawn through an independent redistricting commission",
+      "summary": [
+        "In federal politics, Arizona is highly competitive, with growing Democratic strength in Maricopa and Pima counties; Phoenix suburbs, Tucson, border communities, tribal nations, and fast-growing exurbs are central to its federal elections.",
+        "Its congressional representation is shaped by nine House districts drawn through an independent redistricting commission.",
+        "The YGN index treats rapid population growth and commission-led redistricting as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 34,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 36,
+          "voting": 41,
+          "control": 23,
+          "events": 29,
+          "social": 38,
+          "donations": 33
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "05",
+      "abbreviation": "AR",
+      "name": "Arkansas",
+      "population": 3011524,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican in federal races",
+      "redistrictingContext": "legislature-led redistricting with limited statewide competitiveness",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Arkansas is strong Republican in federal races; Little Rock, northwest Arkansas growth, Delta communities, and rural Ozark counties are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting with limited statewide competitiveness as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 52,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 47,
+          "voting": 60,
+          "control": 64,
+          "events": 40,
+          "social": 49,
+          "donations": 44
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "06",
+      "abbreviation": "CA",
+      "name": "California",
+      "population": 39538223,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide with Republican pockets inland and in parts of the Central Valley",
+      "redistrictingContext": "commission-led maps, large population shifts, and many competitive suburban districts",
+      "districtContext": "fifty-two House districts drawn by an independent citizens commission",
+      "summary": [
+        "In federal politics, California is strong Democratic statewide with Republican pockets inland and in parts of the Central Valley; Los Angeles, the Bay Area, San Diego, the Central Valley, and Inland Empire suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by fifty-two House districts drawn by an independent citizens commission.",
+        "The YGN index treats commission-led maps, large population shifts, and many competitive suburban districts as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 23,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 23,
+          "voting": 36,
+          "control": 12,
+          "events": 16,
+          "social": 25,
+          "donations": 20
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "08",
+      "abbreviation": "CO",
+      "name": "Colorado",
+      "population": 5773714,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide, especially along the Front Range",
+      "redistrictingContext": "commission-led redistricting and a new 8th district after reapportionment",
+      "districtContext": "eight House districts drawn through an independent commission",
+      "summary": [
+        "In federal politics, Colorado is democratic-leaning statewide, especially along the Front Range; Denver, Boulder, Colorado Springs, Pueblo, the Western Slope, and fast-growing Front Range suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by eight House districts drawn through an independent commission.",
+        "The YGN index treats commission-led redistricting and a new 8th district after reapportionment as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 18,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 19,
+          "voting": 24,
+          "control": 12,
+          "events": 12,
+          "social": 21,
+          "donations": 16
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "09",
+      "abbreviation": "CT",
+      "name": "Connecticut",
+      "population": 3605944,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with competitive pockets in the suburbs",
+      "redistrictingContext": "stable district lines and suburban realignment",
+      "districtContext": "five House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Connecticut is democratic-leaning statewide with competitive pockets in the suburbs; Hartford, New Haven, Bridgeport, affluent suburbs, and small industrial cities are central to its federal elections.",
+        "Its congressional representation is shaped by five House districts and two statewide Senate seats.",
+        "The YGN index treats stable district lines and suburban realignment as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 32,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 29,
+          "voting": 34,
+          "control": 46,
+          "events": 22,
+          "social": 31,
+          "donations": 26
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "10",
+      "abbreviation": "DE",
+      "name": "Delaware",
+      "population": 989948,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide",
+      "redistrictingContext": "single-district representation and urban-suburban-rural divides",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Delaware is democratic-leaning statewide; New Castle County, Dover, coastal Sussex County, and Wilmington-area politics are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats single-district representation and urban-suburban-rural divides as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "11",
+      "abbreviation": "DC",
+      "name": "District of Columbia",
+      "population": 689545,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Overwhelmingly Democratic in federal politics",
+      "redistrictingContext": "non-state status and citywide representation",
+      "districtContext": "one non-voting House delegate and no voting Senate delegation",
+      "summary": [
+        "In federal politics, District of Columbia is overwhelmingly Democratic in federal politics; urban neighborhoods, federal workforce issues, and home-rule politics are central to its federal elections.",
+        "Its congressional representation is shaped by one non-voting House delegate and no voting Senate delegation.",
+        "The YGN index treats non-state status and citywide representation as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "12",
+      "abbreviation": "FL",
+      "name": "Florida",
+      "population": 21538187,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning in recent statewide federal elections after years as a swing state",
+      "redistrictingContext": "legislature-led redistricting and litigation over minority opportunity districts",
+      "districtContext": "twenty-eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Florida is republican-leaning in recent statewide federal elections after years as a swing state; Miami-Dade, Tampa Bay, Orlando, Jacksonville, the Panhandle, and fast-growing retiree communities are central to its federal elections.",
+        "Its congressional representation is shaped by twenty-eight House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and litigation over minority opportunity districts as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 80,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 84,
+          "voting": 74,
+          "control": 86,
+          "events": 92,
+          "social": 71,
+          "donations": 66
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "13",
+      "abbreviation": "GA",
+      "name": "Georgia",
+      "population": 10711908,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Competitive statewide with a close Democratic-Republican balance",
+      "redistrictingContext": "court challenges, suburban change, and remedial map activity",
+      "districtContext": "fourteen House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Georgia is competitive statewide with a close Democratic-Republican balance; metro Atlanta, Black Belt counties, Savannah, Augusta, north Georgia, and fast-growing suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by fourteen House districts and two statewide Senate seats.",
+        "The YGN index treats court challenges, suburban change, and remedial map activity as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 60,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 53,
+          "voting": 58,
+          "control": 70,
+          "events": 76,
+          "social": 55,
+          "donations": 50
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "15",
+      "abbreviation": "HI",
+      "name": "Hawaii",
+      "population": 1455271,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide",
+      "redistrictingContext": "compact island geography and commission-style line drawing",
+      "districtContext": "two House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Hawaii is strong Democratic statewide; Oahu, neighbor islands, Native Hawaiian communities, tourism, and military presence are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts and two statewide Senate seats.",
+        "The YGN index treats compact island geography and commission-style line drawing as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 18,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 15,
+          "voting": 24,
+          "control": 28,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "16",
+      "abbreviation": "ID",
+      "name": "Idaho",
+      "population": 1839106,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "commission involvement and lopsided statewide partisanship",
+      "districtContext": "two House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Idaho is strong Republican statewide; Boise growth, eastern Idaho, northern panhandle counties, and rural agricultural communities are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts and two statewide Senate seats.",
+        "The YGN index treats commission involvement and lopsided statewide partisanship as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 31,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 31,
+          "voting": 44,
+          "control": 18,
+          "events": 24,
+          "social": 33,
+          "donations": 28
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "17",
+      "abbreviation": "IL",
+      "name": "Illinois",
+      "population": 12812508,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic statewide, anchored by Chicago and Cook County",
+      "redistrictingContext": "legislature-led redistricting and sharp Chicago-downstate partisan geography",
+      "districtContext": "seventeen House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Illinois is democratic statewide, anchored by Chicago and Cook County; Chicago, collar counties, downstate cities, university towns, and rural southern Illinois are central to its federal elections.",
+        "Its congressional representation is shaped by seventeen House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and sharp Chicago-downstate partisan geography as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 73,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 82,
+          "voting": 72,
+          "control": 84,
+          "events": 60,
+          "social": 69,
+          "donations": 64
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "18",
+      "abbreviation": "IN",
+      "name": "Indiana",
+      "population": 6785528,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide",
+      "redistrictingContext": "legislature-led redistricting and limited statewide competition",
+      "districtContext": "nine House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Indiana is republican-leaning statewide; Indianapolis, northwest Indiana, Fort Wayne, college towns, and rural manufacturing counties are central to its federal elections.",
+        "Its congressional representation is shaped by nine House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and limited statewide competition as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 57,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 54,
+          "voting": 59,
+          "control": 71,
+          "events": 47,
+          "social": 56,
+          "donations": 51
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "19",
+      "abbreviation": "IA",
+      "name": "Iowa",
+      "population": 3190369,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning recently after a long competitive history",
+      "redistrictingContext": "nonpartisan redistricting norms and rural realignment",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Iowa is republican-leaning recently after a long competitive history; Des Moines, Cedar Rapids, college towns, river cities, and rural counties are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats nonpartisan redistricting norms and rural realignment as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 22,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 19,
+          "voting": 24,
+          "control": 36,
+          "events": 12,
+          "social": 21,
+          "donations": 16
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "20",
+      "abbreviation": "KS",
+      "name": "Kansas",
+      "population": 2937880,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide with Democratic strength in parts of Kansas City suburbs and Lawrence",
+      "redistrictingContext": "legislature-led redistricting and litigation over the Kansas City-area district",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Kansas is republican-leaning statewide with Democratic strength in parts of Kansas City suburbs and Lawrence; Wichita, Johnson County, Topeka, Lawrence, and rural western counties are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and litigation over the Kansas City-area district as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 48,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 45,
+          "voting": 50,
+          "control": 62,
+          "events": 38,
+          "social": 47,
+          "donations": 42
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "21",
+      "abbreviation": "KY",
+      "name": "Kentucky",
+      "population": 4505836,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican federally with Democratic pockets in Louisville and Lexington",
+      "redistrictingContext": "legislature-led maps and strong geographic sorting",
+      "districtContext": "six House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Kentucky is strong Republican federally with Democratic pockets in Louisville and Lexington; Louisville, Lexington, coal country, northern Kentucky, and rural Appalachian counties are central to its federal elections.",
+        "Its congressional representation is shaped by six House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led maps and strong geographic sorting as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 63,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 70,
+          "voting": 68,
+          "control": 72,
+          "events": 48,
+          "social": 57,
+          "donations": 52
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "22",
+      "abbreviation": "LA",
+      "name": "Louisiana",
+      "population": 4657757,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide with a large Democratic base in New Orleans and Baton Rouge",
+      "redistrictingContext": "Voting Rights Act litigation and remedial district debates",
+      "districtContext": "six House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Louisiana is republican-leaning statewide with a large Democratic base in New Orleans and Baton Rouge; New Orleans, Baton Rouge, Acadiana, north Louisiana, river parishes, and Black Belt communities are central to its federal elections.",
+        "Its congressional representation is shaped by six House districts and two statewide Senate seats.",
+        "The YGN index treats Voting Rights Act litigation and remedial district debates as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 74,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 78,
+          "voting": 68,
+          "control": 80,
+          "events": 86,
+          "social": 65,
+          "donations": 60
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "23",
+      "abbreviation": "ME",
+      "name": "Maine",
+      "population": 1362359,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with a competitive rural 2nd district",
+      "redistrictingContext": "ranked-choice voting and district-level electoral-vote allocation",
+      "districtContext": "two House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Maine is democratic-leaning statewide with a competitive rural 2nd district; Portland, coastal communities, Lewiston-Auburn, Bangor, and rural northern counties are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts and two statewide Senate seats.",
+        "The YGN index treats ranked-choice voting and district-level electoral-vote allocation as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 17,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 15,
+          "voting": 18,
+          "control": 30,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "24",
+      "abbreviation": "MD",
+      "name": "Maryland",
+      "population": 6177224,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide",
+      "redistrictingContext": "redistricting litigation and revised congressional lines",
+      "districtContext": "eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Maryland is strong Democratic statewide; Baltimore, Montgomery and Prince George's counties, the Eastern Shore, western Maryland, and D.C. suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by eight House districts and two statewide Senate seats.",
+        "The YGN index treats redistricting litigation and revised congressional lines as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 71,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 73,
+          "voting": 71,
+          "control": 75,
+          "events": 81,
+          "social": 60,
+          "donations": 55
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "25",
+      "abbreviation": "MA",
+      "name": "Massachusetts",
+      "population": 7029917,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide",
+      "redistrictingContext": "stable Democratic dominance and compact regional communities",
+      "districtContext": "nine House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Massachusetts is strong Democratic statewide; Boston, inner suburbs, Gateway Cities, western Massachusetts, Cape Cod, and university communities are central to its federal elections.",
+        "Its congressional representation is shaped by nine House districts and two statewide Senate seats.",
+        "The YGN index treats stable Democratic dominance and compact regional communities as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 35,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 30,
+          "voting": 43,
+          "control": 47,
+          "events": 23,
+          "social": 32,
+          "donations": 27
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "26",
+      "abbreviation": "MI",
+      "name": "Michigan",
+      "population": 10077331,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Competitive statewide with Democratic strength in metro Detroit and college towns",
+      "redistrictingContext": "commission-led redistricting and major suburban realignment",
+      "districtContext": "thirteen House districts drawn by an independent citizens commission",
+      "summary": [
+        "In federal politics, Michigan is competitive statewide with Democratic strength in metro Detroit and college towns; Detroit, Oakland and Kent suburbs, Flint, Lansing, Ann Arbor, the Thumb, and the Upper Peninsula are central to its federal elections.",
+        "Its congressional representation is shaped by thirteen House districts drawn by an independent citizens commission.",
+        "The YGN index treats commission-led redistricting and major suburban realignment as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 20,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 21,
+          "voting": 26,
+          "control": 12,
+          "events": 14,
+          "social": 23,
+          "donations": 18
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "27",
+      "abbreviation": "MN",
+      "name": "Minnesota",
+      "population": 5706494,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide but competitive in rural and exurban areas",
+      "redistrictingContext": "court-drawn or panel-influenced continuity and urban-rural polarization",
+      "districtContext": "eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Minnesota is democratic-leaning statewide but competitive in rural and exurban areas; Twin Cities, Duluth, Rochester, college towns, Iron Range communities, and farm counties are central to its federal elections.",
+        "Its congressional representation is shaped by eight House districts and two statewide Senate seats.",
+        "The YGN index treats court-drawn or panel-influenced continuity and urban-rural polarization as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 28,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 25,
+          "voting": 30,
+          "control": 42,
+          "events": 18,
+          "social": 27,
+          "donations": 22
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "28",
+      "abbreviation": "MS",
+      "name": "Mississippi",
+      "population": 2961279,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide with a large Democratic Black electorate",
+      "redistrictingContext": "majority-Black district protection and legislature-led redistricting",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Mississippi is strong Republican statewide with a large Democratic Black electorate; Jackson, Gulf Coast counties, the Delta, college towns, and rural communities are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats majority-Black district protection and legislature-led redistricting as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 56,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 51,
+          "voting": 64,
+          "control": 68,
+          "events": 44,
+          "social": 53,
+          "donations": 48
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "29",
+      "abbreviation": "MO",
+      "name": "Missouri",
+      "population": 6154913,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide",
+      "redistrictingContext": "legislature-led maps and strong metro-rural divides",
+      "districtContext": "eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Missouri is republican-leaning statewide; St. Louis, Kansas City, Columbia, Springfield, the Bootheel, and rural northern counties are central to its federal elections.",
+        "Its congressional representation is shaped by eight House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led maps and strong metro-rural divides as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 56,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 53,
+          "voting": 58,
+          "control": 70,
+          "events": 46,
+          "social": 55,
+          "donations": 50
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "30",
+      "abbreviation": "MT",
+      "name": "Montana",
+      "population": 1084225,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide with competitive pockets around college towns and tribal communities",
+      "redistrictingContext": "a restored second House district and commission-influenced boundaries",
+      "districtContext": "two House districts after reapportionment and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Montana is republican-leaning statewide with competitive pockets around college towns and tribal communities; Billings, Missoula, Bozeman, Great Falls, rural ranching counties, and tribal nations are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts after reapportionment and two statewide Senate seats.",
+        "The YGN index treats a restored second House district and commission-influenced boundaries as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 21,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 23,
+          "voting": 28,
+          "control": 12,
+          "events": 16,
+          "social": 25,
+          "donations": 20
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "31",
+      "abbreviation": "NE",
+      "name": "Nebraska",
+      "population": 1961504,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide with a competitive Omaha-area district",
+      "redistrictingContext": "district-level electoral-vote allocation and Omaha-area competitiveness",
+      "districtContext": "three House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Nebraska is republican-leaning statewide with a competitive Omaha-area district; Omaha, Lincoln, rural plains counties, and agricultural communities are central to its federal elections.",
+        "Its congressional representation is shaped by three House districts and two statewide Senate seats.",
+        "The YGN index treats district-level electoral-vote allocation and Omaha-area competitiveness as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 32,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 29,
+          "voting": 34,
+          "control": 46,
+          "events": 22,
+          "social": 31,
+          "donations": 26
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "32",
+      "abbreviation": "NV",
+      "name": "Nevada",
+      "population": 3104614,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Highly competitive statewide",
+      "redistrictingContext": "legislature-led maps and rapid population growth",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Nevada is highly competitive statewide; Las Vegas, Reno, mining communities, rural counties, and fast-growing suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led maps and rapid population growth as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 37,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 34,
+          "voting": 39,
+          "control": 51,
+          "events": 27,
+          "social": 36,
+          "donations": 31
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "33",
+      "abbreviation": "NH",
+      "name": "New Hampshire",
+      "population": 1377529,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Competitive statewide with a Democratic federal lean in recent cycles",
+      "redistrictingContext": "split-ticket voting and compact two-district geography",
+      "districtContext": "two House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, New Hampshire is competitive statewide with a Democratic federal lean in recent cycles; Manchester, Nashua, the Seacoast, college towns, and rural northern counties are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts and two statewide Senate seats.",
+        "The YGN index treats split-ticket voting and compact two-district geography as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 17,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 15,
+          "voting": 18,
+          "control": 30,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "34",
+      "abbreviation": "NJ",
+      "name": "New Jersey",
+      "population": 9288994,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with competitive suburbs and shore communities",
+      "redistrictingContext": "commission-backed redistricting and dense municipal boundaries",
+      "districtContext": "twelve House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, New Jersey is democratic-leaning statewide with competitive suburbs and shore communities; Newark, Jersey City, south Jersey, shore counties, and New York and Philadelphia suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by twelve House districts and two statewide Senate seats.",
+        "The YGN index treats commission-backed redistricting and dense municipal boundaries as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 42,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 44,
+          "voting": 49,
+          "control": 31,
+          "events": 37,
+          "social": 46,
+          "donations": 41
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "35",
+      "abbreviation": "NM",
+      "name": "New Mexico",
+      "population": 2117522,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with strong regional variation",
+      "redistrictingContext": "legislature-led maps that spread urban Democratic voters across districts",
+      "districtContext": "three House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, New Mexico is democratic-leaning statewide with strong regional variation; Albuquerque, Santa Fe, Las Cruces, tribal nations, oil and gas counties, and border communities are central to its federal elections.",
+        "Its congressional representation is shaped by three House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led maps that spread urban Democratic voters across districts as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 45,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 42,
+          "voting": 47,
+          "control": 59,
+          "events": 35,
+          "social": 44,
+          "donations": 39
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "36",
+      "abbreviation": "NY",
+      "name": "New York",
+      "population": 20201249,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide with competitive suburbs and upstate regions",
+      "redistrictingContext": "court fights, commission disputes, and a recent congressional redraw",
+      "districtContext": "twenty-six House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, New York is strong Democratic statewide with competitive suburbs and upstate regions; New York City, Long Island, the Hudson Valley, Buffalo, Rochester, Syracuse, and rural upstate counties are central to its federal elections.",
+        "Its congressional representation is shaped by twenty-six House districts and two statewide Senate seats.",
+        "The YGN index treats court fights, commission disputes, and a recent congressional redraw as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 71,
+          "voting": 69,
+          "control": 73,
+          "events": 79,
+          "social": 58,
+          "donations": 53
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "37",
+      "abbreviation": "NC",
+      "name": "North Carolina",
+      "population": 10439388,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive Republican-leaning",
+      "historicalLean": "Competitive statewide but Republican-leaning in federal races",
+      "redistrictingContext": "recurring litigation and legislature-led congressional maps",
+      "districtContext": "fourteen House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, North Carolina is competitive statewide but Republican-leaning in federal races; Charlotte, the Research Triangle, Greensboro, eastern Black Belt counties, Appalachia, and fast-growing suburbs are central to its federal elections.",
+        "Its congressional representation is shaped by fourteen House districts and two statewide Senate seats.",
+        "The YGN index treats recurring litigation and legislature-led congressional maps as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 90,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 95,
+          "voting": 86,
+          "control": 95,
+          "events": 95,
+          "social": 83,
+          "donations": 78
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "38",
+      "abbreviation": "ND",
+      "name": "North Dakota",
+      "population": 779094,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "single-district representation and energy-region politics",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, North Dakota is strong Republican statewide; Fargo, Bismarck, Grand Forks, energy-producing western counties, and tribal nations are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats single-district representation and energy-region politics as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "39",
+      "abbreviation": "OH",
+      "name": "Ohio",
+      "population": 11799448,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide after decades as a bellwether",
+      "redistrictingContext": "constitutional redistricting fights and repeated court disputes",
+      "districtContext": "fifteen House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Ohio is republican-leaning statewide after decades as a bellwether; Cleveland, Columbus, Cincinnati, Toledo, Dayton, Appalachia, and exurban counties are central to its federal elections.",
+        "Its congressional representation is shaped by fifteen House districts and two statewide Senate seats.",
+        "The YGN index treats constitutional redistricting fights and repeated court disputes as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 87,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 92,
+          "voting": 82,
+          "control": 94,
+          "events": 95,
+          "social": 79,
+          "donations": 74
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "40",
+      "abbreviation": "OK",
+      "name": "Oklahoma",
+      "population": 3959353,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "legislature-led redistricting and lopsided statewide partisanship",
+      "districtContext": "five House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Oklahoma is strong Republican statewide; Oklahoma City, Tulsa, tribal nations, energy communities, and rural western counties are central to its federal elections.",
+        "Its congressional representation is shaped by five House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and lopsided statewide partisanship as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 49,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 44,
+          "voting": 57,
+          "control": 61,
+          "events": 37,
+          "social": 46,
+          "donations": 41
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "41",
+      "abbreviation": "OR",
+      "name": "Oregon",
+      "population": 4237256,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with Republican strength east of the Cascades",
+      "redistrictingContext": "new-district growth and legislature-led redistricting",
+      "districtContext": "six House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Oregon is democratic-leaning statewide with Republican strength east of the Cascades; Portland, Eugene, Salem, Bend, coastal counties, and rural eastern Oregon are central to its federal elections.",
+        "Its congressional representation is shaped by six House districts and two statewide Senate seats.",
+        "The YGN index treats new-district growth and legislature-led redistricting as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 42,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 39,
+          "voting": 44,
+          "control": 56,
+          "events": 32,
+          "social": 41,
+          "donations": 36
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "42",
+      "abbreviation": "PA",
+      "name": "Pennsylvania",
+      "population": 13002700,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Highly competitive statewide",
+      "redistrictingContext": "court-selected congressional maps and close statewide elections",
+      "districtContext": "seventeen House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Pennsylvania is highly competitive statewide; Philadelphia, Pittsburgh, Scranton-Wilkes-Barre, Harrisburg, Lehigh Valley, suburbs, and rural counties are central to its federal elections.",
+        "Its congressional representation is shaped by seventeen House districts and two statewide Senate seats.",
+        "The YGN index treats court-selected congressional maps and close statewide elections as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 34,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 31,
+          "voting": 36,
+          "control": 48,
+          "events": 24,
+          "social": 33,
+          "donations": 28
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "44",
+      "abbreviation": "RI",
+      "name": "Rhode Island",
+      "population": 1097379,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic statewide",
+      "redistrictingContext": "small-state geography and stable Democratic federal voting",
+      "districtContext": "two House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Rhode Island is strong Democratic statewide; Providence, coastal communities, older industrial cities, and suburban towns are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts and two statewide Senate seats.",
+        "The YGN index treats small-state geography and stable Democratic federal voting as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 20,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 15,
+          "voting": 28,
+          "control": 32,
+          "events": 10,
+          "social": 17,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "45",
+      "abbreviation": "SC",
+      "name": "South Carolina",
+      "population": 5118425,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide",
+      "redistrictingContext": "litigation over coastal district boundaries and legislature-led maps",
+      "districtContext": "seven House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, South Carolina is republican-leaning statewide; Charleston, Columbia, Greenville-Spartanburg, the Lowcountry, Black Belt counties, and coastal growth are central to its federal elections.",
+        "Its congressional representation is shaped by seven House districts and two statewide Senate seats.",
+        "The YGN index treats litigation over coastal district boundaries and legislature-led maps as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 68,
+        "label": "Elevated risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 72,
+          "voting": 62,
+          "control": 74,
+          "events": 80,
+          "social": 59,
+          "donations": 54
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "46",
+      "abbreviation": "SD",
+      "name": "South Dakota",
+      "population": 886667,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "single-district representation and rural-tribal divides",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, South Dakota is strong Republican statewide; Sioux Falls, Rapid City, rural plains counties, and tribal nations are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats single-district representation and rural-tribal divides as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "47",
+      "abbreviation": "TN",
+      "name": "Tennessee",
+      "population": 6910840,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "legislature-led redistricting and the division of Nashville-area voters",
+      "districtContext": "nine House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Tennessee is strong Republican statewide; Nashville, Memphis, Knoxville, Chattanooga, fast-growing suburbs, and rural Appalachian counties are central to its federal elections.",
+        "Its congressional representation is shaped by nine House districts and two statewide Senate seats.",
+        "The YGN index treats legislature-led redistricting and the division of Nashville-area voters as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 82,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 84,
+          "voting": 82,
+          "control": 86,
+          "events": 92,
+          "social": 71,
+          "donations": 66
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "48",
+      "abbreviation": "TX",
+      "name": "Texas",
+      "population": 29145505,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Republican-leaning statewide but increasingly competitive in major metros",
+      "redistrictingContext": "rapid growth, legislature-led maps, and minority representation litigation",
+      "districtContext": "thirty-eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Texas is republican-leaning statewide but increasingly competitive in major metros; Houston, Dallas-Fort Worth, Austin, San Antonio, border counties, suburbs, and rural energy regions are central to its federal elections.",
+        "Its congressional representation is shaped by thirty-eight House districts and two statewide Senate seats.",
+        "The YGN index treats rapid growth, legislature-led maps, and minority representation litigation as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 84,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 88,
+          "voting": 78,
+          "control": 90,
+          "events": 95,
+          "social": 75,
+          "donations": 70
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "49",
+      "abbreviation": "UT",
+      "name": "Utah",
+      "population": 3271616,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "commission recommendations, legislature-drawn maps, and Salt Lake County division",
+      "districtContext": "four House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Utah is strong Republican statewide; Salt Lake County, Utah County, Ogden, St. George, rural counties, and Latter-day Saint political networks are central to its federal elections.",
+        "Its congressional representation is shaped by four House districts and two statewide Senate seats.",
+        "The YGN index treats commission recommendations, legislature-drawn maps, and Salt Lake County division as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 73,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 75,
+          "voting": 73,
+          "control": 77,
+          "events": 83,
+          "social": 62,
+          "donations": 57
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "50",
+      "abbreviation": "VT",
+      "name": "Vermont",
+      "population": 643077,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Strong Democratic and progressive statewide",
+      "redistrictingContext": "single-district representation and progressive statewide politics",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Vermont is strong Democratic and progressive statewide; Burlington, small towns, rural mountain communities, and college areas are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats single-district representation and progressive statewide politics as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "51",
+      "abbreviation": "VA",
+      "name": "Virginia",
+      "population": 8631393,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide, especially in Northern Virginia and Richmond suburbs",
+      "redistrictingContext": "court and special-master influence after commission deadlock",
+      "districtContext": "eleven House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Virginia is democratic-leaning statewide, especially in Northern Virginia and Richmond suburbs; Northern Virginia, Richmond, Hampton Roads, college towns, Appalachia, and military communities are central to its federal elections.",
+        "Its congressional representation is shaped by eleven House districts and two statewide Senate seats.",
+        "The YGN index treats court and special-master influence after commission deadlock as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 28,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 25,
+          "voting": 30,
+          "control": 42,
+          "events": 18,
+          "social": 27,
+          "donations": 22
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "53",
+      "abbreviation": "WA",
+      "name": "Washington",
+      "population": 7705281,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Democratic-leaning",
+      "historicalLean": "Democratic-leaning statewide with Republican strength east of the Cascades",
+      "redistrictingContext": "commission redistricting and sharp west-east political differences",
+      "districtContext": "ten House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Washington is democratic-leaning statewide with Republican strength east of the Cascades; Seattle, Tacoma, Spokane, Vancouver, Yakima Valley, coastal communities, and eastern rural counties are central to its federal elections.",
+        "Its congressional representation is shaped by ten House districts and two statewide Senate seats.",
+        "The YGN index treats commission redistricting and sharp west-east political differences as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 22,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 24,
+          "voting": 29,
+          "control": 12,
+          "events": 17,
+          "social": 26,
+          "donations": 21
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "54",
+      "abbreviation": "WV",
+      "name": "West Virginia",
+      "population": 1793716,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "population loss and district consolidation",
+      "districtContext": "two House districts after reapportionment and two statewide Senate seats",
+      "summary": [
+        "In federal politics, West Virginia is strong Republican statewide; Charleston, northern panhandle towns, coalfield counties, and rural Appalachian communities are central to its federal elections.",
+        "Its congressional representation is shaped by two House districts after reapportionment and two statewide Senate seats.",
+        "The YGN index treats population loss and district consolidation as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 43,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 38,
+          "voting": 51,
+          "control": 55,
+          "events": 31,
+          "social": 40,
+          "donations": 35
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "55",
+      "abbreviation": "WI",
+      "name": "Wisconsin",
+      "population": 5893718,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Competitive",
+      "historicalLean": "Highly competitive statewide",
+      "redistrictingContext": "state court intervention, legislative maps, and intense statewide competition",
+      "districtContext": "eight House districts and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Wisconsin is highly competitive statewide; Milwaukee, Madison, Green Bay, Fox Valley, western college towns, and rural northern counties are central to its federal elections.",
+        "Its congressional representation is shaped by eight House districts and two statewide Senate seats.",
+        "The YGN index treats state court intervention, legislative maps, and intense statewide competition as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 85,
+        "label": "High risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 90,
+          "voting": 80,
+          "control": 92,
+          "events": 95,
+          "social": 77,
+          "donations": 72
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    },
+    {
+      "fips": "56",
+      "abbreviation": "WY",
+      "name": "Wyoming",
+      "population": 576851,
+      "populationSource": "2020 Census apportionment population baseline; District of Columbia uses 2020 resident population.",
+      "leanCategory": "Republican-leaning",
+      "historicalLean": "Strong Republican statewide",
+      "redistrictingContext": "single-district representation and energy-sector politics",
+      "districtContext": "one at-large House district and two statewide Senate seats",
+      "summary": [
+        "In federal politics, Wyoming is strong Republican statewide; Cheyenne, Casper, energy counties, ranching communities, and mountain resort areas are central to its federal elections.",
+        "Its congressional representation is shaped by one at-large House district and two statewide Senate seats.",
+        "The YGN index treats single-district representation and energy-sector politics as important redistricting context for this state.",
+        "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
+      ],
+      "gerrymanderingIndex": {
+        "score": 10,
+        "label": "Lower risk",
+        "scale": "0 lower risk, 100 higher risk",
+        "components": {
+          "shape": 5,
+          "voting": 10,
+          "control": 10,
+          "events": 10,
+          "social": 15,
+          "donations": 15
+        },
+        "weights": {
+          "shape": 0.25,
+          "voting": 0.25,
+          "control": 0.15,
+          "events": 0.15,
+          "social": 0.1,
+          "donations": 0.1
+        },
+        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+      }
+    }
+  ]
+}

@@ -26,6 +26,7 @@ class FakeBackend:
     def __init__(self):
         self.wiki_requests = []
         self.nominate_requests = []
+        self.ethics_requests = []
 
     def congress_api_key_available(self):
         return True
@@ -56,6 +57,15 @@ class FakeBackend:
     def get_nominate_score(self, bioguide_id):
         self.nominate_requests.append(bioguide_id)
         return {"dim1": 0.25, "geo_mean": None}
+
+    def get_ethics_score(self, bioguide_id):
+        self.ethics_requests.append(bioguide_id)
+        return {
+            "bioguideId": bioguide_id,
+            "score": 72.0,
+            "grade": "C-",
+            "source": "static_fallback",
+        }
 
 
 class GenerateStaticDataTests(unittest.TestCase):
@@ -102,9 +112,12 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(exit_code, 0)
         self.assertEqual(backend.wiki_requests, ["B000001"])
         self.assertEqual(backend.nominate_requests, ["A000001", "B000001"])
+        self.assertEqual(backend.ethics_requests, ["A000001", "B000001"])
         self.assertEqual(manifest["descriptions"], 2)
         self.assertEqual(manifest["wiki_reused"], 1)
         self.assertEqual(manifest["nominate"], 2)
+        self.assertEqual(manifest["ethics"], 2)
+        self.assertEqual(manifest["ethics_fallback"], 2)
 
 
 if __name__ == "__main__":

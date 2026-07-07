@@ -7,10 +7,36 @@
 // ─── Client-side caches ──────────────────────────────────────────────────────
 const wikiCache = new Map();      // bioguideId → { summary, title } | null
 const nominateCache = new Map();  // bioguideId → { dim1 } | null
+const ethicsCache = new Map();    // bioguideId -> { score, grade } | null
 
 // ─── Application state ───────────────────────────────────────────────────────
 let allMembers = [];          // full sorted member array after first load
 let membersLoaded = false;    // flag to avoid re-fetching
+let stateData = [];
+let stateDataByFips = new Map();
+let stateDataByAbbr = new Map();
+let selectedMapState = null;
+let mapInitialized = false;
+let congressionalDistricts = null;
+let congressionalDistrictsByFips = new Map();
+
+const STATE_ABBR_TO_NAME = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+  CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia',
+  FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois',
+  IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana',
+  ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan',
+  MN: 'Minnesota', MS: 'Mississippi', MO: 'Missouri', MT: 'Montana',
+  NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+  NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota',
+  OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania',
+  RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota',
+  TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia',
+  WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming'
+};
+
+const DISTRICTS_FEATURE_QUERY_URL = 'https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_Congressional_Districts/FeatureServer/0/query';
+const STATES_TOPOJSON_URL = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 
 // ─── Popover state ───────────────────────────────────────────────────────────
 let popoverHideTimer = null;
@@ -26,6 +52,24 @@ let popoverEl;
 let popoverName;
 let popoverSummary;
 let popoverClose;
+let mapSvg;
+let mapStatus;
+let mapTooltip;
+let statePanel;
+let stateNameEl;
+let stateSummaryEl;
+let statePopulationEl;
+let stateLeanEl;
+let gerryScoreEl;
+let gerryMeterFill;
+let gerryNoteEl;
+let districtStatusEl;
+let districtListEl;
+let viewStateMembersBtn;
+let mapResetBtn;
+let methodologyOpenBtn;
+let methodologyBackBtn;
+let gerryInfoBtn;
 
 // ─── Utility helpers ─────────────────────────────────────────────────────────
 
@@ -38,6 +82,85 @@ function getMemberField(member, ...keys) {
     if (member[key] != null && member[key] !== '') return String(member[key]);
   }
   return '';
+}
+
+function getLatestTerm(member) {
+  const rawTerms = member.terms && Array.isArray(member.terms.item)
+    ? member.terms.item
+    : Array.isArray(member.terms)
+      ? member.terms
+      : member.terms && typeof member.terms === 'object'
+        ? [member.terms]
+        : [];
+
+  if (rawTerms.length === 0) return {};
+  return rawTerms.slice().sort((a, b) => Number(b.startYear || 0) - Number(a.startYear || 0))[0] || {};
+}
+
+function getMemberChamber(member) {
+  return getMemberField(member, 'chamber') || getMemberField(getLatestTerm(member), 'chamber');
+}
+
+function getMemberDistrict(member) {
+  if (member.district !== null && member.district !== undefined && member.district !== '') {
+    return String(member.district);
+  }
+
+  const term = getLatestTerm(member);
+  if (term.district !== null && term.district !== undefined && term.district !== '') {
+    return String(term.district);
+  }
+
+  return '';
+}
+
+function formatDistrictLabel(member) {
+  const explicitLabel = getMemberField(member, 'districtLabel');
+  if (explicitLabel) return explicitLabel;
+
+  const chamber = getMemberChamber(member).toLowerCase();
+  const district = getMemberDistrict(member);
+  if (chamber.includes('senate')) return 'Statewide';
+  if (!district) return '';
+  if (district === '0') return 'At-large';
+  return `District ${district}`;
+}
+
+function getMemberPhotoUrl(member, bioguideId) {
+  const depiction = member.depiction && typeof member.depiction === 'object' ? member.depiction : {};
+  return (
+    depiction.imageUrl ||
+    member.photoUrl ||
+    member.thumbnail ||
+    (bioguideId ? `https://bioguide.congress.gov/bioguide/photo/${bioguideId[0]}/${bioguideId}.jpg` : '')
+  );
+}
+
+function normalizeFips(value) {
+  if (value === null || value === undefined) return '';
+  return String(value).padStart(2, '0');
+}
+
+function formatNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return '-';
+  return number.toLocaleString('en-US');
+}
+
+function getStateNameFromAbbr(abbr) {
+  const key = String(abbr || '').toUpperCase();
+  return (stateDataByAbbr.get(key) && stateDataByAbbr.get(key).name) || STATE_ABBR_TO_NAME[key] || '';
+}
+
+function stateSearchMatches(member, query) {
+  const stateAbbr = getMemberField(member, 'state').toUpperCase();
+  const stateName = getStateNameFromAbbr(stateAbbr).toLowerCase();
+  const normalizedQuery = query.trim().toLowerCase();
+
+  return (
+    stateAbbr.toLowerCase().includes(normalizedQuery) ||
+    stateName.includes(normalizedQuery)
+  );
 }
 
 /**
@@ -79,6 +202,7 @@ function clamp(val, min, max) {
 function getEthicsColor(score) {
   if (score === null || score === undefined || score === '') return '#94a3b8';
   const s = Number(score);
+  if (!Number.isFinite(s)) return '#94a3b8';
   if (s <= 50) {
     const ratio = s / 50;
     const r = Math.round(220 + (245 - 220) * ratio);
@@ -139,6 +263,10 @@ function showSection(sectionId) {
 
   // Close popover on navigation
   hidePopover();
+
+  if (sectionId === 'map') {
+    initMap();
+  }
 }
 
 // ─── Health check ────────────────────────────────────────────────────────────
@@ -150,7 +278,7 @@ async function checkHealth() {
   if (!healthIndicator) return;
 
   healthIndicator.className = 'checking';
-  healthIndicator.textContent = 'Checking…';
+  healthIndicator.textContent = 'Checking...';
 
   try {
     const result = await fetchJsonWithStaticFallback('/health', 'health.json', { cache: 'no-store' });
@@ -160,7 +288,7 @@ async function checkHealth() {
       updateStatCard(
         'stat-backend',
         'Backend Status',
-        result.source === 'static' ? 'Static data ✓' : 'Connected ✓'
+        result.source === 'static' ? 'Static data OK' : 'Connected OK'
       );
     } else {
       throw new Error('non-ok status');
@@ -198,8 +326,8 @@ function updateStatCard(id, label, value) {
  * Initialize home stat cards with placeholder data.
  */
 function initHomeStats() {
-  updateStatCard('stat-members', 'Members Loaded', '—');
-  updateStatCard('stat-backend', 'Backend Status', 'Checking…');
+  updateStatCard('stat-members', 'Members Loaded', '-');
+  updateStatCard('stat-backend', 'Backend Status', 'Checking...');
 }
 
 // ─── Congressional Members ───────────────────────────────────────────────────
@@ -229,7 +357,7 @@ function renderSkeletons(n) {
 function showError(msg) {
   membersGrid.innerHTML = `
     <div class="error-state">
-      <span class="state-icon" aria-hidden="true">⚠️</span>
+      <span class="state-icon" aria-hidden="true">!</span>
       <p>${msg}</p>
     </div>
   `;
@@ -241,7 +369,7 @@ function showError(msg) {
 function showEmpty() {
   membersGrid.innerHTML = `
     <div class="empty-state">
-      <span class="state-icon" aria-hidden="true">🔍</span>
+      <span class="state-icon" aria-hidden="true">?</span>
       <p>No members match your search.</p>
     </div>
   `;
@@ -330,12 +458,12 @@ function createMemberTile(member) {
   const bioguideId = getMemberField(member, 'bioguideId', 'bioguide_id');
   const name = getMemberField(member, 'name', 'directOrderName', 'invertedOrderName') || 'Unknown';
   const state = getMemberField(member, 'state');
-  const district = getMemberField(member, 'district');
   const party = getMemberField(member, 'party', 'partyName');
-  const chamber = getMemberField(member, 'chamber');
+  const chamber = getMemberChamber(member);
+  const districtLabel = formatDistrictLabel(member);
 
   // Build display strings
-  const locationStr = [state, district].filter(Boolean).join(' – ');
+  const locationStr = [state, districtLabel].filter(Boolean).join(' - ');
   const chamberStr = chamber ? chamber : '';
 
   // Party class mapping
@@ -351,12 +479,11 @@ function createMemberTile(member) {
   else if (partyLabel.length > 3) partyLabel = partyLabel.slice(0, 1);
 
   // Photo URL
-  const photoUrl = bioguideId
-    ? `https://bioguide.congress.gov/bioguide/photo/${bioguideId[0]}/${bioguideId}.jpg`
-    : null;
+  const photoUrl = getMemberPhotoUrl(member, bioguideId);
 
   const initials = buildInitials(name);
-  const ethicsScore = getMemberField(member, 'ethicsScore');
+  const ethicsScore = member.ethicsScore ?? member.ethics_score?.score ?? null;
+  const ethicsGrade = member.ethicsGrade || member.ethics_score?.grade || 'Ethics';
   const ethicsColor = getEthicsColor(ethicsScore);
 
   // Build the tile element
@@ -384,7 +511,7 @@ function createMemberTile(member) {
   }
 
   const partyBadgeHtml = `<div class="party-badge ${partyClass}">${partyLabel}</div>`;
-  const ethicsBadgeHtml = `<div class="ethics-badge" style="background-color: ${ethicsColor};"></div>`;
+  const ethicsBadgeHtml = `<div class="ethics-badge" title="Ethics grade" style="background-color: ${ethicsColor};">${ethicsGrade}</div>`;
 
   const photoHtml = `
     <div class="tile-photo-wrapper">
@@ -423,6 +550,7 @@ function createMemberTile(member) {
   // Background NOMINATE fetch (fire and forget, no blocking)
   if (bioguideId) {
     fetchNominate(bioguideId, tile);
+    fetchEthics(bioguideId, tile);
   }
 
   return tile;
@@ -495,6 +623,45 @@ async function fetchNominate(bioguideId, tileEl) {
   }
 }
 
+
+function applyEthicsGrade(tileEl, ethics) {
+  const badge = tileEl.querySelector('.ethics-badge');
+  if (!badge) return;
+
+  const score = ethics && typeof ethics.score === 'number' ? ethics.score : null;
+  const grade = ethics && ethics.grade ? ethics.grade : 'N/A';
+  badge.textContent = grade;
+  badge.style.backgroundColor = getEthicsColor(score);
+  badge.title = score === null
+    ? 'Ethics grade unavailable'
+    : `Ethics grade ${grade} (${score})`;
+}
+
+async function fetchEthics(bioguideId, tileEl) {
+  if (ethicsCache.has(bioguideId)) {
+    applyEthicsGrade(tileEl, ethicsCache.get(bioguideId));
+    return;
+  }
+
+  try {
+    const result = await fetchJsonWithStaticFallback(
+      `/officials/${bioguideId}/ethics`,
+      `ethics/${bioguideId}.json`
+    );
+    if (result.notFound) {
+      ethicsCache.set(bioguideId, null);
+      applyEthicsGrade(tileEl, null);
+      return;
+    }
+
+    ethicsCache.set(bioguideId, result.data);
+    applyEthicsGrade(tileEl, result.data);
+  } catch {
+    ethicsCache.set(bioguideId, null);
+    applyEthicsGrade(tileEl, null);
+  }
+}
+
 // ─── Wiki Popover ────────────────────────────────────────────────────────────
 
 /**
@@ -533,7 +700,7 @@ async function triggerPopover(member, tileEl) {
   }
 
   // Show a loading state while we fetch
-  showPopover(member, { summary: 'Loading…', title: null }, tileEl);
+  showPopover(member, { summary: 'Loading...', title: null }, tileEl);
 
   try {
     const result = await fetchJsonWithStaticFallback(
@@ -570,7 +737,7 @@ function showPopover(member, wikiData, anchorEl) {
     // Truncate very long summaries
     const maxLen = 280;
     const text = wikiData.summary.length > maxLen
-      ? wikiData.summary.slice(0, maxLen).trimEnd() + '…'
+      ? wikiData.summary.slice(0, maxLen).trimEnd() + '...'
       : wikiData.summary;
     popoverSummary.textContent = text;
   } else {
@@ -613,6 +780,328 @@ function hidePopover() {
   currentAnchor = null;
 }
 
+function setMapStatus(message, tone = '') {
+  if (!mapStatus) return;
+  mapStatus.textContent = message;
+  mapStatus.className = tone ? `map-status ${tone}` : 'map-status';
+}
+
+async function loadStateData() {
+  if (stateData.length > 0) return stateData;
+
+  const response = await fetch('data/states.json', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`Could not load state data (${response.status})`);
+
+  const payload = await response.json();
+  stateData = Array.isArray(payload.states) ? payload.states : [];
+  stateDataByFips = new Map(stateData.map(state => [normalizeFips(state.fips), state]));
+  stateDataByAbbr = new Map(stateData.map(state => [String(state.abbreviation).toUpperCase(), state]));
+  return stateData;
+}
+
+function getMembersForState(abbreviation) {
+  const target = String(abbreviation || '').toUpperCase();
+  return allMembers.filter(member => getMemberField(member, 'state').toUpperCase() === target);
+}
+
+function getStateFill(stateInfo) {
+  const lean = String(stateInfo && stateInfo.leanCategory || '').toLowerCase();
+  if (lean.includes('democratic')) return '#8fb3e7';
+  if (lean.includes('republican')) return '#eaa09a';
+  if (lean.includes('competitive')) return '#d7c78f';
+  return '#a8c7b1';
+}
+
+function topGerrymanderComponent(components) {
+  if (!components || typeof components !== 'object') return 'mixed signals';
+  const entries = Object.entries(components)
+    .filter(([, value]) => Number.isFinite(Number(value)))
+    .sort((a, b) => Number(b[1]) - Number(a[1]));
+
+  if (entries.length === 0) return 'mixed signals';
+
+  const labels = {
+    shape: 'district shape',
+    voting: 'seat-vote mismatch',
+    control: 'redistricting control',
+    events: 'recent political events',
+    social: 'social sorting',
+    donations: 'donation patterns'
+  };
+  return labels[entries[0][0]] || entries[0][0];
+}
+
+function updateStatePanel(stateInfo, mode = 'hover') {
+  if (!stateInfo || !statePanel) return;
+
+  selectedMapState = stateInfo;
+  const score = Number(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.score);
+  const safeScore = Number.isFinite(score) ? clamp(score, 0, 100) : 0;
+  const members = getMembersForState(stateInfo.abbreviation);
+  const summaryText = Array.isArray(stateInfo.summary)
+    ? stateInfo.summary.join(' ')
+    : String(stateInfo.summary || '');
+
+  stateNameEl.textContent = `${stateInfo.name} (${stateInfo.abbreviation})`;
+  stateSummaryEl.textContent = summaryText || 'No state summary is available yet.';
+  statePopulationEl.textContent = formatNumber(stateInfo.population);
+  stateLeanEl.textContent = stateInfo.historicalLean || stateInfo.leanCategory || '-';
+  gerryScoreEl.textContent = Number.isFinite(score) ? `${safeScore}/100` : '-';
+  gerryMeterFill.style.width = `${safeScore}%`;
+  gerryMeterFill.style.background = safeScore >= 70 ? '#d95f5f' : safeScore >= 45 ? '#d5a642' : '#3b8f6d';
+  gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
+  districtStatusEl.textContent = mode === 'click'
+    ? `Zoomed to ${stateInfo.name}. ${members.length || 'Static'} member records are available for search.`
+    : `Hovering ${stateInfo.name}. Click the state to zoom into district outlines.`;
+  viewStateMembersBtn.disabled = false;
+
+  statePanel.classList.remove('panel-animate');
+  void statePanel.offsetWidth;
+  statePanel.classList.add('panel-animate');
+}
+
+function showMapTooltip(html, event) {
+  if (!mapTooltip) return;
+  mapTooltip.innerHTML = html;
+  mapTooltip.classList.add('visible');
+
+  const stageRect = mapTooltip.parentElement.getBoundingClientRect();
+  const left = clamp(event.clientX - stageRect.left + 14, 8, stageRect.width - 220);
+  const top = clamp(event.clientY - stageRect.top + 14, 8, stageRect.height - 110);
+  mapTooltip.style.left = `${left}px`;
+  mapTooltip.style.top = `${top}px`;
+}
+
+function hideMapTooltip() {
+  if (mapTooltip) mapTooltip.classList.remove('visible');
+}
+
+async function initMap() {
+  if (mapInitialized) return;
+  mapInitialized = true;
+
+  if (!mapSvg) return;
+  if (!window.d3 || !window.topojson) {
+    setMapStatus('Map libraries did not load. Check the network connection and refresh.', 'error');
+    return;
+  }
+
+  try {
+    setMapStatus('Loading map data...');
+    await loadStateData();
+
+    const response = await fetch(STATES_TOPOJSON_URL, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`Could not load state shapes (${response.status})`);
+    const us = await response.json();
+
+    drawStateMap(us);
+    setMapStatus('Hover a state for details, or click to zoom into districts.');
+
+    loadMembers().then(() => {
+      if (selectedMapState) updateStatePanel(selectedMapState);
+    }).catch(() => {
+      setMapStatus('Map loaded. Member search data is using static fallback if available.', 'warn');
+    });
+
+  } catch (error) {
+    setMapStatus('Could not load the interactive map. Static pages are still available.', 'error');
+  }
+}
+
+function drawStateMap(us) {
+  const width = 960;
+  const height = 600;
+  const svg = d3.select(mapSvg);
+  svg.selectAll('*').remove();
+
+  const projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale(1250);
+  const path = d3.geoPath(projection);
+  const states = topojson.feature(us, us.objects.states).features;
+
+  const root = svg.append('g').attr('class', 'map-root');
+  const stateLayer = root.append('g').attr('class', 'state-layer');
+  const districtLayer = root.append('g').attr('class', 'district-layer');
+
+  const zoom = d3.zoom()
+    .scaleExtent([1, 8])
+    .on('zoom', event => {
+      root.attr('transform', event.transform);
+    });
+
+  svg.call(zoom);
+
+  stateLayer.selectAll('path')
+    .data(states)
+    .join('path')
+    .attr('class', 'state-shape')
+    .attr('d', path)
+    .attr('fill', feature => {
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      return getStateFill(stateInfo);
+    })
+    .attr('tabindex', 0)
+    .attr('role', 'button')
+    .attr('aria-label', feature => {
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      return stateInfo ? `${stateInfo.name} state map` : 'State map';
+    })
+    .on('mouseenter', (event, feature) => {
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      if (!stateInfo) return;
+      updateStatePanel(stateInfo);
+      showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
+    })
+    .on('focus', (event, feature) => {
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      if (stateInfo) updateStatePanel(stateInfo);
+    })
+    .on('mousemove', (event, feature) => {
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      if (!stateInfo) return;
+      showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
+    })
+    .on('mouseleave', hideMapTooltip)
+    .on('blur', hideMapTooltip)
+    .on('click keydown', (event, feature) => {
+      if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
+      if (!stateInfo) return;
+      updateStatePanel(stateInfo, 'click');
+      zoomToFeature(feature);
+      renderDistrictsForState(stateInfo);
+    });
+
+  mapSvg.__ygnMap = { svg, root, districtLayer, path, zoom, width, height };
+}
+
+function resetMapView() {
+  if (!mapSvg || !mapSvg.__ygnMap) return;
+  const { svg, zoom, districtLayer } = mapSvg.__ygnMap;
+  districtLayer.selectAll('*').remove();
+  districtListEl.innerHTML = '';
+  districtStatusEl.textContent = 'Click a state to zoom into 119th congressional districts.';
+  svg.transition().duration(650).call(zoom.transform, d3.zoomIdentity);
+}
+
+function zoomToFeature(feature) {
+  if (!mapSvg || !mapSvg.__ygnMap) return;
+  const { svg, path, zoom, width, height } = mapSvg.__ygnMap;
+  const bounds = path.bounds(feature);
+  const dx = bounds[1][0] - bounds[0][0];
+  const dy = bounds[1][1] - bounds[0][1];
+  const x = (bounds[0][0] + bounds[1][0]) / 2;
+  const y = (bounds[0][1] + bounds[1][1]) / 2;
+  const scale = Math.max(1, Math.min(7, 0.82 / Math.max(dx / width, dy / height)));
+  const translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+  svg.transition()
+    .duration(750)
+    .call(zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
+}
+
+function districtQueryUrl(fips) {
+  const params = new URLSearchParams({
+    where: `STATEFP='${normalizeFips(fips)}'`,
+    outFields: 'STATEFP,CD119FP,GEOID,NAMELSAD,BIOGUIDE_ID,FIRSTNAME,LASTNAME,PARTY',
+    outSR: '4326',
+    f: 'geojson'
+  });
+  return `${DISTRICTS_FEATURE_QUERY_URL}?${params.toString()}`;
+}
+
+async function ensureDistrictData(fips) {
+  const normalizedFips = normalizeFips(fips);
+  if (congressionalDistrictsByFips.has(normalizedFips)) {
+    return congressionalDistrictsByFips.get(normalizedFips);
+  }
+
+  const response = await fetch(districtQueryUrl(normalizedFips), { cache: 'force-cache' });
+  if (!response.ok) throw new Error(`Could not load districts (${response.status})`);
+  congressionalDistricts = await response.json();
+  congressionalDistrictsByFips.set(normalizedFips, congressionalDistricts);
+  return congressionalDistricts;
+}
+
+function districtDisplayName(feature) {
+  const props = feature.properties || {};
+  const district = String(props.CD119FP || '').replace(/^0+/, '') || props.NAMELSAD || 'At-large';
+  const districtLabel = props.NAMELSAD || (district === '98' ? 'At-large' : `District ${district}`);
+  const first = props.FIRSTNAME || '';
+  const last = props.LASTNAME || '';
+  const memberName = `${first} ${last}`.trim() || 'Member TBD';
+  const party = props.PARTY ? ` (${props.PARTY})` : '';
+  return { districtLabel, memberName, party };
+}
+
+async function renderDistrictsForState(stateInfo) {
+  if (!mapSvg || !mapSvg.__ygnMap || !stateInfo) return;
+  const { districtLayer, path } = mapSvg.__ygnMap;
+
+  districtStatusEl.textContent = `Loading ${stateInfo.name} districts...`;
+
+  try {
+    const geojson = await ensureDistrictData(stateInfo.fips);
+    const features = (geojson.features || [])
+      .filter(feature => normalizeFips(feature.properties && feature.properties.STATEFP) === normalizeFips(stateInfo.fips))
+      .sort((a, b) => String(a.properties && a.properties.CD119FP).localeCompare(String(b.properties && b.properties.CD119FP)));
+
+    districtLayer.selectAll('*').remove();
+    districtLayer.selectAll('path')
+      .data(features)
+      .join('path')
+      .attr('class', 'district-shape')
+      .attr('d', path)
+      .on('mouseenter', (event, feature) => {
+        const info = districtDisplayName(feature);
+        showMapTooltip(`<strong>${info.districtLabel}</strong><span>${info.memberName}${info.party}</span>`, event);
+      })
+      .on('mousemove', (event, feature) => {
+        const info = districtDisplayName(feature);
+        showMapTooltip(`<strong>${info.districtLabel}</strong><span>${info.memberName}${info.party}</span>`, event);
+      })
+      .on('mouseleave', hideMapTooltip);
+
+    renderDistrictList(stateInfo, features);
+    districtStatusEl.textContent = features.length
+      ? `${features.length} district outline${features.length === 1 ? '' : 's'} loaded for ${stateInfo.name}.`
+      : `No 119th district outlines are available for ${stateInfo.name}.`;
+  } catch {
+    districtStatusEl.textContent = 'District outlines could not be loaded from the public feature layer.';
+  }
+}
+
+function renderDistrictList(stateInfo, features) {
+  if (!districtListEl) return;
+  if (!features || features.length === 0) {
+    districtListEl.innerHTML = `<div class="district-row"><span>${stateInfo.name}</span><strong>No districts loaded</strong></div>`;
+    return;
+  }
+
+  districtListEl.innerHTML = features.map(feature => {
+    const info = districtDisplayName(feature);
+    return `
+      <div class="district-row">
+        <span>${info.districtLabel}</span>
+        <strong>${info.memberName}${info.party}</strong>
+      </div>
+    `;
+  }).join('');
+}
+
+async function openStateMembersSearch() {
+  if (!selectedMapState || !membersSearch) return;
+  await loadMembers();
+  showSection('members');
+  membersSearch.value = selectedMapState.name;
+  handleSearch();
+  membersSearch.focus();
+}
+
+function openMethodology() {
+  showSection('methodology');
+}
+
 // ─── Search / Filter ─────────────────────────────────────────────────────────
 
 /**
@@ -631,13 +1120,16 @@ function handleSearch() {
     const name = getMemberField(member, 'name', 'directOrderName', 'invertedOrderName').toLowerCase();
     const state = getMemberField(member, 'state').toLowerCase();
     const party = getMemberField(member, 'party', 'partyName').toLowerCase();
-    const chamber = getMemberField(member, 'chamber').toLowerCase();
+    const chamber = getMemberChamber(member).toLowerCase();
+    const district = formatDistrictLabel(member).toLowerCase();
 
     return (
       name.includes(query) ||
       state.includes(query) ||
+      stateSearchMatches(member, query) ||
       party.includes(query) ||
-      chamber.includes(query)
+      chamber.includes(query) ||
+      district.includes(query)
     );
   });
 
@@ -660,6 +1152,24 @@ document.addEventListener('DOMContentLoaded', () => {
   popoverName     = popoverEl.querySelector('.popover-name');
   popoverSummary  = popoverEl.querySelector('.popover-summary');
   popoverClose    = document.getElementById('popover-close');
+  mapSvg           = document.getElementById('us-map');
+  mapStatus        = document.getElementById('map-status');
+  mapTooltip       = document.getElementById('map-tooltip');
+  statePanel       = document.getElementById('state-panel');
+  stateNameEl      = document.getElementById('state-name');
+  stateSummaryEl   = document.getElementById('state-summary');
+  statePopulationEl = document.getElementById('state-population');
+  stateLeanEl      = document.getElementById('state-lean');
+  gerryScoreEl     = document.getElementById('gerry-score');
+  gerryMeterFill   = document.getElementById('gerry-meter-fill');
+  gerryNoteEl      = document.getElementById('gerry-note');
+  districtStatusEl = document.getElementById('district-status');
+  districtListEl   = document.getElementById('district-list');
+  viewStateMembersBtn = document.getElementById('view-state-members');
+  mapResetBtn      = document.getElementById('map-reset');
+  methodologyOpenBtn = document.getElementById('methodology-open');
+  methodologyBackBtn = document.getElementById('methodology-back');
+  gerryInfoBtn     = document.getElementById('gerry-info');
 
   // ── Home stats placeholder
   initHomeStats();
@@ -686,6 +1196,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Search
   membersSearch.addEventListener('input', handleSearch);
+
+  if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
+  if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);
+  if (methodologyOpenBtn) methodologyOpenBtn.addEventListener('click', openMethodology);
+  if (gerryInfoBtn) gerryInfoBtn.addEventListener('click', openMethodology);
+  if (methodologyBackBtn) methodologyBackBtn.addEventListener('click', () => showSection('map'));
 
   // ── Popover: cancel hide when mouse enters popover
   popoverEl.addEventListener('mouseenter', cancelPopoverHide);

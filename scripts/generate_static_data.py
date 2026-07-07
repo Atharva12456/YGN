@@ -191,6 +191,7 @@ def parse_args():
     parser.add_argument("--skip-details", action="store_true")
     parser.add_argument("--skip-wiki", action="store_true")
     parser.add_argument("--skip-nominate", action="store_true")
+    parser.add_argument("--skip-ethics", action="store_true")
     parser.add_argument("--skip-recent-bills", action="store_true")
     parser.add_argument(
         "--wiki-static-ttl-days",
@@ -235,6 +236,8 @@ def main():
         "wiki_reused": 0,
         "fallback_descriptions": 0,
         "nominate": 0,
+        "ethics": 0,
+        "ethics_fallback": 0,
         "recent_bills": False,
         "errors": [],
     }
@@ -357,6 +360,25 @@ def main():
             except Exception as exc:
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "nominate", "error": str(exc)}
+                )
+
+        if not args.skip_ethics:
+            try:
+                ethics = backend.get_ethics_score(bioguide_id)
+                if ethics is not None:
+                    write_json(
+                        output_dir / "ethics" / f"{bioguide_id}.json",
+                        {
+                            "generated_at": generated_at,
+                            **ethics,
+                        },
+                    )
+                    report["ethics"] += 1
+                    if ethics.get("source") != "fec_live":
+                        report["ethics_fallback"] += 1
+            except Exception as exc:
+                report["errors"].append(
+                    {"bioguideId": bioguide_id, "stage": "ethics", "error": str(exc)}
                 )
 
     write_json(output_dir / "manifest.json", report)

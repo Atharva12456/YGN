@@ -71,7 +71,16 @@ class FastApiAppTests(unittest.TestCase):
             "A000001",
             include_wiki=False,
             include_nominate=True,
+            include_ethics=True,
         )
+
+    def test_ethics_endpoint_uses_backend(self):
+        self.app.government.get_ethics_score = Mock(return_value={"score": 72.0, "grade": "C"})
+
+        response = self.app.official_ethics_score("A000001")
+
+        self.assertEqual(response, {"score": 72.0, "grade": "C"})
+        self.app.government.get_ethics_score.assert_called_once_with("A000001")
 
     def test_warm_cache_endpoint_returns_report(self):
         self.app.government.warm_government_officials_cache = Mock(
@@ -85,6 +94,7 @@ class FastApiAppTests(unittest.TestCase):
             include_details=True,
             include_wiki=True,
             include_nominate=True,
+            include_ethics=True,
             include_recent_bills=True,
             max_members=2,
             limit=250,

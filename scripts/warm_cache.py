@@ -26,6 +26,7 @@ def parse_args():
     parser.add_argument("--skip-details", action="store_true")
     parser.add_argument("--skip-wiki", action="store_true")
     parser.add_argument("--skip-nominate", action="store_true")
+    parser.add_argument("--skip-ethics", action="store_true")
     parser.add_argument("--skip-recent-bills", action="store_true")
     parser.add_argument("--stats", action="store_true", help="Print cache stats after warming.")
     return parser.parse_args()
@@ -40,6 +41,7 @@ def main():
             include_details=not args.skip_details,
             include_wiki=not args.skip_wiki,
             include_nominate=not args.skip_nominate,
+            include_ethics=not args.skip_ethics,
             include_recent_bills=not args.skip_recent_bills,
             max_members=args.max_members,
             limit=args.limit,
