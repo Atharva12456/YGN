@@ -28,11 +28,297 @@
     <a data-page="economy" href="economy.html">Economy</a>
   </nav>
   <main id="main-content">
-    <section class="active">
-      <div class="coming-soon">
-        <h2>Foreign Affairs</h2>
-        <p>This section is coming soon.</p>
-      </div>
+    <section id="section-foreign" class="active foreign-page">
+      <header class="foreign-hero" aria-labelledby="foreign-title">
+        <div class="foreign-hero-copy">
+          <p class="eyebrow">Foreign Affairs</p>
+          <h1 id="foreign-title">Wars, treaties, and diplomacy in one civic view</h1>
+          <p class="foreign-lede">
+            Track the foreign-policy questions Congress can actually touch: active conflicts, older war authorities, treaty status, recent public meetings, and where national opinion is closest to consensus.
+          </p>
+          <p class="foreign-updated">Last reviewed July 8, 2026</p>
+        </div>
+        <div class="foreign-signal-board" aria-label="Foreign affairs signal snapshot">
+          <div>
+            <span>Active conflict lanes</span>
+            <strong>4</strong>
+          </div>
+          <div>
+            <span>Treaty and pact checks</span>
+            <strong>5</strong>
+          </div>
+          <div>
+            <span>Recent meetings logged</span>
+            <strong>4</strong>
+          </div>
+          <div>
+            <span>Consensus signals</span>
+            <strong>5</strong>
+          </div>
+        </div>
+      </header>
+
+      <nav class="foreign-jump-nav" aria-label="Foreign affairs sections">
+        <a href="#conflict-watch">Conflict Watch</a>
+        <a href="#treaty-tracker">Treaties</a>
+        <a href="#diplomacy-ledger">Meetings</a>
+        <a href="#consensus-compass">Consensus</a>
+        <a href="#congress-watch">Congress Watch</a>
+      </nav>
+
+      <section id="conflict-watch" class="foreign-section" aria-labelledby="conflict-watch-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">Current and older wars</p>
+            <h2 id="conflict-watch-title">Conflict Watch</h2>
+          </div>
+          <a class="secondary-button" href="https://www.cfr.org/global-conflict-tracker" target="_blank" rel="noopener">CFR Tracker</a>
+        </div>
+
+        <div class="conflict-grid">
+          <article class="conflict-card priority-high">
+            <div class="conflict-card-top">
+              <span class="status-pill danger">Active war</span>
+              <span>Europe</span>
+            </div>
+            <h3>Russia and Ukraine</h3>
+            <p>Congressional pressure points are security assistance, sanctions enforcement, peacekeeping limits, and intelligence oversight.</p>
+            <dl>
+              <div><dt>U.S. lever</dt><dd>Aid, sanctions, NATO posture</dd></div>
+              <div><dt>Public read</dt><dd>Support exists, but terms and duration are debated.</dd></div>
+            </dl>
+          </article>
+
+          <article class="conflict-card priority-medium">
+            <div class="conflict-card-top">
+              <span class="status-pill caution">Transition risk</span>
+              <span>Middle East</span>
+            </div>
+            <h3>Gaza and regional spillover</h3>
+            <p>The public question has moved from emergency war response to reconstruction, stabilization forces, aid delivery, and conditions on support.</p>
+            <dl>
+              <div><dt>U.S. lever</dt><dd>Humanitarian funding, arms conditions, diplomacy</dd></div>
+              <div><dt>Public read</dt><dd>Consensus is weak and sharply partisan.</dd></div>
+            </dl>
+          </article>
+
+          <article class="conflict-card priority-high">
+            <div class="conflict-card-top">
+              <span class="status-pill danger">Civil war</span>
+              <span>Africa</span>
+            </div>
+            <h3>Sudan</h3>
+            <p>Watch refugee flows, humanitarian access, sanctions, and whether U.S. diplomacy can coordinate regional pressure.</p>
+            <dl>
+              <div><dt>U.S. lever</dt><dd>Aid, sanctions, diplomatic pressure</dd></div>
+              <div><dt>Public read</dt><dd>Lower salience, high humanitarian stakes.</dd></div>
+            </dl>
+          </article>
+
+          <article class="conflict-card priority-medium">
+            <div class="conflict-card-top">
+              <span class="status-pill caution">Maritime security</span>
+              <span>Red Sea</span>
+            </div>
+            <h3>Yemen and Red Sea attacks</h3>
+            <p>Commercial shipping, U.S. naval operations, and regional escalation make this a war-powers and appropriations issue.</p>
+            <dl>
+              <div><dt>U.S. lever</dt><dd>War powers, naval funding, sanctions</dd></div>
+              <div><dt>Public read</dt><dd>Security consensus is stronger than appetite for open-ended operations.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="legacy-war-list" aria-label="Older war and legacy authorities">
+          <article class="legacy-war-item">
+            <span>Korean War armistice</span>
+            <strong>No final peace treaty</strong>
+            <p>Still shapes U.S. troop posture, North Korea deterrence, and alliance commitments.</p>
+          </article>
+          <article class="legacy-war-item">
+            <span>1991 Gulf War and Iraq era</span>
+            <strong>Authorization legacy</strong>
+            <p>Old authorizations remain a recurring congressional question for war-powers cleanup.</p>
+          </article>
+          <article class="legacy-war-item">
+            <span>Afghanistan</span>
+            <strong>Post-withdrawal oversight</strong>
+            <p>Oversight now centers on counterterrorism, evacuation promises, aid, and regional diplomacy.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="treaty-tracker" class="foreign-section" aria-labelledby="treaty-tracker-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">Senate role</p>
+            <h2 id="treaty-tracker-title">Treaty Tracker</h2>
+          </div>
+          <a class="secondary-button" href="https://www.senate.gov/legislative/treaties_new.htm" target="_blank" rel="noopener">Senate Treaties</a>
+        </div>
+
+        <div class="treaty-grid">
+          <article class="treaty-card">
+            <span class="status-pill stable">In force</span>
+            <h3>North Atlantic Treaty</h3>
+            <p>Core NATO commitment; current debate is burden sharing, force posture, and how Article 5 credibility is signaled.</p>
+          </article>
+          <article class="treaty-card">
+            <span class="status-pill caution">Expired</span>
+            <h3>New START</h3>
+            <p>The treaty expired in 2026, leaving Congress to decide how much nuclear-force reporting and oversight to require next.</p>
+          </article>
+          <article class="treaty-card">
+            <span class="status-pill stable">In force</span>
+            <h3>Nuclear Non-Proliferation Treaty</h3>
+            <p>Still the backbone for U.S. nonproliferation policy, export controls, and nuclear diplomacy.</p>
+          </article>
+          <article class="treaty-card">
+            <span class="status-pill watch">Senate queue</span>
+            <h3>Pending treaty documents</h3>
+            <p>The Senate tracker is the public source for documents received, approved, or awaiting floor action.</p>
+          </article>
+          <article class="treaty-card">
+            <span class="status-pill watch">Executive agreements</span>
+            <h3>Non-treaty commitments</h3>
+            <p>Many modern foreign commitments are not Article II treaties, so oversight often moves through reports, funding, and hearings.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="diplomacy-ledger" class="foreign-section" aria-labelledby="diplomacy-ledger-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">Recent governmental meetings</p>
+            <h2 id="diplomacy-ledger-title">Diplomacy Ledger</h2>
+          </div>
+          <a class="secondary-button" href="https://www.whitehouse.gov/videos/" target="_blank" rel="noopener">White House Videos</a>
+        </div>
+
+        <div class="meeting-list">
+          <article class="meeting-row">
+            <time datetime="2026-07-07">Jul 7, 2026</time>
+            <div>
+              <h3>U.S. and Turkey bilateral at NATO summit</h3>
+              <p>Watch defense spending, alliance cohesion, Ukraine support, Black Sea security, and Middle East mediation.</p>
+            </div>
+            <span class="consensus-chip mixed">Mixed consensus</span>
+          </article>
+          <article class="meeting-row">
+            <time datetime="2026-06-24">Jun 24, 2026</time>
+            <div>
+              <h3>President Trump and NATO Secretary General Mark Rutte</h3>
+              <p>Public readouts point to the continuing debate over U.S. commitment levels and allied burden sharing.</p>
+            </div>
+            <span class="consensus-chip strong">Security consensus</span>
+          </article>
+          <article class="meeting-row">
+            <time datetime="2026-01-22">Jan 22, 2026</time>
+            <div>
+              <h3>Board of Peace charter ceremony for Gaza</h3>
+              <p>The meeting lane is reconstruction, international stabilization, governance capacity, and accountability.</p>
+            </div>
+            <span class="consensus-chip weak">Polarized</span>
+          </article>
+          <article class="meeting-row">
+            <time datetime="2025-08-18">Aug 18, 2025</time>
+            <div>
+              <h3>U.S., Ukraine, and European leaders at the White House</h3>
+              <p>This remains a useful baseline for Ukraine peace talks, guarantees, and European burden sharing.</p>
+            </div>
+            <span class="consensus-chip mixed">Conditional support</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="consensus-compass" class="foreign-section" aria-labelledby="consensus-compass-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">Public consensus</p>
+            <h2 id="consensus-compass-title">Consensus Compass</h2>
+          </div>
+        </div>
+
+        <div class="consensus-grid">
+          <article class="consensus-card">
+            <span>Prevent terrorism</span>
+            <strong>83%</strong>
+            <div class="consensus-meter" style="--score: 83%"><span></span></div>
+            <p>Very important foreign-policy goal in Gallup polling.</p>
+          </article>
+          <article class="consensus-card">
+            <span>Prevent nuclear spread</span>
+            <strong>80%</strong>
+            <div class="consensus-meter" style="--score: 80%"><span></span></div>
+            <p>One of the strongest cross-party foreign-policy priorities.</p>
+          </article>
+          <article class="consensus-card">
+            <span>Maintain or increase NATO commitment</span>
+            <strong>77%</strong>
+            <div class="consensus-meter" style="--score: 77%"><span></span></div>
+            <p>49% wanted the U.S. commitment steady; 28% wanted it increased.</p>
+          </article>
+          <article class="consensus-card">
+            <span>Continue Ukraine military aid</span>
+            <strong>57%</strong>
+            <div class="consensus-meter" style="--score: 57%"><span></span></div>
+            <p>Chicago Council found majority support while the war continues.</p>
+          </article>
+          <article class="consensus-card">
+            <span>Confidence in Netanyahu</span>
+            <strong>27%</strong>
+            <div class="consensus-meter low" style="--score: 27%"><span></span></div>
+            <p>Pew found more negative than positive views in March 2026.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="congress-watch" class="foreign-section" aria-labelledby="congress-watch-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">What to watch next</p>
+            <h2 id="congress-watch-title">Congress Watchlist</h2>
+          </div>
+        </div>
+
+        <div class="watch-grid">
+          <article class="watch-card">
+            <h3>Aid and arms</h3>
+            <p>Track whether foreign assistance comes as grants, loans, weapons transfers, sanctions relief, or humanitarian accounts.</p>
+          </article>
+          <article class="watch-card">
+            <h3>War powers</h3>
+            <p>Look for resolutions, reporting requirements, and repeal efforts tied to old authorizations.</p>
+          </article>
+          <article class="watch-card">
+            <h3>Treaty oversight</h3>
+            <p>Watch Senate Foreign Relations hearings, executive calendar activity, and reporting mandates attached to defense bills.</p>
+          </article>
+          <article class="watch-card">
+            <h3>Public split points</h3>
+            <p>Ukraine terms, Gaza aid conditions, NATO burden sharing, and China deterrence are the highest-friction issues.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="foreign-section source-panel" aria-labelledby="foreign-sources-title">
+        <div class="foreign-section-heading">
+          <div>
+            <p class="eyebrow">Source links</p>
+            <h2 id="foreign-sources-title">Primary and Public Data</h2>
+          </div>
+        </div>
+        <div class="source-links">
+          <a href="https://www.cfr.org/global-conflict-tracker" target="_blank" rel="noopener">CFR Global Conflict Tracker</a>
+          <a href="https://acleddata.com/series/conflict-watchlist-2026" target="_blank" rel="noopener">ACLED Conflict Watchlist 2026</a>
+          <a href="https://www.senate.gov/legislative/treaties_new.htm" target="_blank" rel="noopener">U.S. Senate Treaty Action</a>
+          <a href="https://www.state.gov/treaties-in-force" target="_blank" rel="noopener">State Department Treaties in Force</a>
+          <a href="https://www.whitehouse.gov/videos/" target="_blank" rel="noopener">White House Video Library</a>
+          <a href="https://news.gallup.com/poll/702764/top-foreign-policy-priority-security.aspx" target="_blank" rel="noopener">Gallup Foreign Policy Priorities</a>
+          <a href="https://www.pewresearch.org/politics/2026/06/10/how-foreign-policy-values-and-issues-cut-across-the-political-typology-groups/" target="_blank" rel="noopener">Pew Foreign Policy Typology</a>
+          <a href="https://globalaffairs.org/research/public-opinion-survey/americans-oppose-ceding-donbas-russia-amid-push-peace-deal" target="_blank" rel="noopener">Chicago Council Ukraine Poll</a>
+        </div>
+      </section>
     </section>
   </main>
 </body>

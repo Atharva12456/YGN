@@ -1222,6 +1222,390 @@ button {
   text-decoration: underline;
 }
 
+/* Foreign Affairs */
+.foreign-page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+#main-content section.active.foreign-page {
+  display: grid;
+}
+
+#main-content .foreign-page .foreign-section {
+  display: grid;
+}
+
+.foreign-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: stretch;
+  margin-bottom: 0.25rem;
+}
+
+.foreign-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.foreign-hero h1 {
+  color: var(--color-text);
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  max-width: 12ch;
+  margin-bottom: 0.9rem;
+}
+
+.foreign-lede {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 62ch;
+}
+
+.foreign-updated {
+  color: #2f7d66;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.foreign-signal-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-content: center;
+}
+
+.foreign-signal-board > div {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  min-height: 116px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.foreign-signal-board span,
+.conflict-card-top,
+.legacy-war-item span,
+.consensus-card span {
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.foreign-signal-board strong {
+  color: #315c9f;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.foreign-jump-nav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: none;
+}
+
+.foreign-jump-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.foreign-jump-nav a {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 800;
+  min-height: 36px;
+  padding: 0.45rem 0.8rem;
+  text-decoration: none;
+}
+
+.foreign-jump-nav a:hover,
+.foreign-jump-nav a:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.foreign-section {
+  gap: 0.9rem;
+  scroll-margin-top: 120px;
+}
+
+.foreign-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.foreign-section-heading h2 {
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+}
+
+.conflict-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.conflict-card,
+.treaty-card,
+.watch-card,
+.consensus-card,
+.legacy-war-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+.conflict-card {
+  border-top: 4px solid #315c9f;
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.95rem;
+}
+
+.conflict-card.priority-high {
+  border-top-color: #9f1239;
+}
+
+.conflict-card.priority-medium {
+  border-top-color: #b45309;
+}
+
+.conflict-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.conflict-card h3,
+.treaty-card h3,
+.meeting-row h3,
+.watch-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.conflict-card p,
+.treaty-card p,
+.meeting-row p,
+.watch-card p,
+.legacy-war-item p,
+.consensus-card p {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.conflict-card dl {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.conflict-card dl > div {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.55rem;
+}
+
+.conflict-card dt {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.conflict-card dd {
+  color: var(--color-text);
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.status-pill,
+.consensus-chip {
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  min-height: 24px;
+  padding: 0 0.55rem;
+  white-space: nowrap;
+}
+
+.status-pill.danger,
+.consensus-chip.weak {
+  background: rgba(159, 18, 57, 0.12);
+  color: #9f1239;
+}
+
+.status-pill.caution,
+.consensus-chip.mixed {
+  background: rgba(180, 83, 9, 0.13);
+  color: #92400e;
+}
+
+.status-pill.stable,
+.consensus-chip.strong {
+  background: rgba(47, 125, 102, 0.13);
+  color: #2f7d66;
+}
+
+.status-pill.watch {
+  background: rgba(49, 92, 159, 0.12);
+  color: #315c9f;
+}
+
+.legacy-war-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.legacy-war-item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem;
+}
+
+.legacy-war-item strong {
+  color: var(--color-text);
+  font-size: 0.98rem;
+}
+
+.treaty-grid,
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.treaty-card,
+.watch-card,
+.consensus-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.95rem;
+}
+
+.meeting-list {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.meeting-row {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding: 0.95rem;
+}
+
+.meeting-row:first-child {
+  border-top: 0;
+}
+
+.meeting-row time {
+  color: #315c9f;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.meeting-row div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.consensus-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.consensus-card strong {
+  color: #2f7d66;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.consensus-meter {
+  background: #e2e8f0;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.consensus-meter span {
+  background: linear-gradient(90deg, #315c9f, #2f7d66);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  width: var(--score, 50%);
+}
+
+.consensus-meter.low span {
+  background: linear-gradient(90deg, #b45309, #9f1239);
+}
+
+.source-panel {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.1rem;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.source-links a {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.source-links a::after {
+  color: var(--color-text-muted);
+  content: "/";
+  margin-left: 0.45rem;
+}
+
+.source-links a:last-child::after {
+  content: "";
+  margin-left: 0;
+}
+
+.source-links a:hover {
+  text-decoration: underline;
+}
+
 /* ── Coming Soon Sections ──────────────────────────────────────────────────── */
 .coming-soon {
   display: flex;
@@ -1273,6 +1657,15 @@ button {
   }
 
   .civic-pulse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .foreign-hero,
+  .conflict-grid,
+  .legacy-war-list,
+  .treaty-grid,
+  .watch-grid,
+  .consensus-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1371,6 +1764,35 @@ button {
 
   .bill-row {
     min-width: 1120px;
+  }
+
+  .foreign-hero,
+  .conflict-grid,
+  .legacy-war-list,
+  .treaty-grid,
+  .watch-grid,
+  .consensus-grid,
+  .foreign-signal-board {
+    grid-template-columns: 1fr;
+  }
+
+  .foreign-hero-copy {
+    min-height: auto;
+  }
+
+  .foreign-hero h1 {
+    font-size: 2.35rem;
+    max-width: none;
+  }
+
+  .foreign-section-heading,
+  .meeting-row {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+  }
+
+  .meeting-row {
+    gap: 0.55rem;
   }
 }
 
