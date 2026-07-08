@@ -2,18 +2,23 @@
   "congress": 119,
   "current_member": true,
   "descriptions": 537,
-  "details": 536,
+  "details": 535,
   "errors": [
     {
-      "bioguideId": "G000585",
-      "error": "Congress.gov request failed for /member/G000585.",
+      "bioguideId": "T000474",
+      "error": "Congress.gov request failed for /member/T000474.",
+      "stage": "detail"
+    },
+    {
+      "bioguideId": "G000546",
+      "error": "Congress.gov request failed for /member/G000546.",
       "stage": "detail"
     }
   ],
   "ethics": 537,
   "ethics_fallback": 537,
   "fallback_descriptions": 3,
-  "generated_at": "2026-07-07T15:18:36.107118+00:00",
+  "generated_at": "2026-07-08T03:48:38.087990+00:00",
   "member_score_index": true,
   "members": 537,
   "nominate": 536,

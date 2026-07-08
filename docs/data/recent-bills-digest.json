@@ -1,30 +1,16 @@
 {
-  "generated_at": "2026-07-07T07:52:59.271004+00:00",
-  "source": "static_fallback",
-  "cache_ttl_seconds": 900,
-  "impact_status": "placeholder_until_chatgpt_api_key",
   "bills": [
     {
-      "identifier": "HCONRES 11",
-      "title": "Entitled the \"English Plus Resolution\".",
+      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/11?format=json",
+      "committees": [],
       "congress": 110,
-      "type": "HCONRES",
-      "number": "11",
-      "originChamber": "House",
       "description": {
-        "text": "Entitled the \"English Plus Resolution\".",
-        "source": "Congress.gov bill detail",
-        "updated_at": "2025-07-21"
+        "source": "Congress.gov bill summary",
+        "text": "Declares that the U.S. Government should pursue English-plus policies that: (1) encourage all residents of this country to become fully proficient in English by expanding educational opportunities and access to information technologies; (2) conserve and develop the Nation's linguistic resources by encouraging all residents of this country to learn or maintain skills in languages other than English; (3) assist Native Americans, Native Alaskans, Native Hawaiians, and other peoples indigenous to the United States in their efforts to prevent the extinction of their languages and cultures; (4) continue to provide services in languages other than English as needed to facilitate access to essential functions of government, promote public health and safety, ensure due process, promote equal educational opportunity, and protect fundamental rights; and (5) recognize the importance of multilingualism to vital American interests and individual rights, and oppose English-only measures and other restrictionist language measures.",
+        "updated_at": "2007-01-08T17:26:20Z"
       },
-      "members": [
-        {
-          "role": "Congress.gov detail",
-          "name": "Sponsor and cosponsor names refresh when the backend has a Congress API key"
-        }
-      ],
+      "identifier": "HCONRES 11",
       "impact": {
-        "status": "Pending AI impact analysis",
-        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest.",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -34,39 +20,42 @@
             "label": "Congress.gov API record",
             "url": "https://api.congress.gov/v3/bill/110/hconres/11?format=json"
           }
-        ]
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest."
       },
       "latestAction": {
         "date": "2007-01-04",
         "text": "Referred to the House Committee on Education and Labor."
       },
-      "policyArea": null,
-      "committees": [],
-      "updatedAt": "2025-07-21",
-      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/11",
-      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/11?format=json"
-    },
-    {
-      "identifier": "HCONRES 12",
-      "title": "Requiring the display of the Ten Commandments in the United States Capitol.",
-      "congress": 110,
-      "type": "HCONRES",
-      "number": "12",
-      "originChamber": "House",
-      "description": {
-        "text": "Requiring the display of the Ten Commandments in the United States Capitol.",
-        "source": "Congress.gov bill detail",
-        "updated_at": "2024-02-07"
-      },
       "members": [
         {
-          "role": "Congress.gov detail",
-          "name": "Sponsor and cosponsor names refresh when the backend has a Congress API key"
+          "bioguideId": "S000248",
+          "name": "Rep. Serrano, Jose E. [D-NY-16]",
+          "party": "D",
+          "role": "Sponsor",
+          "state": "NY"
         }
       ],
+      "number": "11",
+      "originChamber": "House",
+      "policyArea": "Government Operations and Politics",
+      "title": "Entitled the \"English Plus Resolution\".",
+      "type": "HCONRES",
+      "updatedAt": "2025-07-21T19:44:15Z",
+      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/11"
+    },
+    {
+      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/12?format=json",
+      "committees": [],
+      "congress": 110,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "States that the Ten Commandments are a declaration of the fundamental principles that are the cornerstone of a fair and just society. Requires a copy of them to be prominently displayed in the U.S. Capitol at such place and in such manner as the Architect of the Capitol shall designate.",
+        "updated_at": "2007-01-08T20:35:27Z"
+      },
+      "identifier": "HCONRES 12",
       "impact": {
-        "status": "Pending AI impact analysis",
-        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest.",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -76,39 +65,42 @@
             "label": "Congress.gov API record",
             "url": "https://api.congress.gov/v3/bill/110/hconres/12?format=json"
           }
-        ]
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest."
       },
       "latestAction": {
         "date": "2007-01-05",
         "text": "Sponsor introductory remarks on measure. (CR E22-23)"
       },
-      "policyArea": null,
-      "committees": [],
-      "updatedAt": "2024-02-07",
-      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/12",
-      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/12?format=json"
-    },
-    {
-      "identifier": "HCONRES 1",
-      "title": "Regarding consent to assemble outside the seat of government.",
-      "congress": 110,
-      "type": "HCONRES",
-      "number": "1",
-      "originChamber": "House",
-      "description": {
-        "text": "Regarding consent to assemble outside the seat of government.",
-        "source": "Congress.gov bill detail",
-        "updated_at": "2025-01-14"
-      },
       "members": [
         {
-          "role": "Congress.gov detail",
-          "name": "Sponsor and cosponsor names refresh when the backend has a Congress API key"
+          "bioguideId": "S000822",
+          "name": "Rep. Stearns, Cliff [R-FL-6]",
+          "party": "R",
+          "role": "Sponsor",
+          "state": "FL"
         }
       ],
+      "number": "12",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "title": "Requiring the display of the Ten Commandments in the United States Capitol.",
+      "type": "HCONRES",
+      "updatedAt": "2024-02-07T11:39:48Z",
+      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/12"
+    },
+    {
+      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/1?format=json",
+      "committees": [],
+      "congress": 110,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "Authorizes the Speaker of the House and the Majority Leader of the Senate, or their respective designees, to notify the Members of the House and the Senate, respectively, to assemble at a place outside the District of Columbia whenever, in their opinion, the public interest shall warrant it.",
+        "updated_at": "2007-01-08T18:44:00Z"
+      },
+      "identifier": "HCONRES 1",
       "impact": {
-        "status": "Pending AI impact analysis",
-        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest.",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -118,39 +110,42 @@
             "label": "Congress.gov API record",
             "url": "https://api.congress.gov/v3/bill/110/hconres/1?format=json"
           }
-        ]
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest."
       },
       "latestAction": {
         "date": "2007-01-08",
         "text": "Received in the Senate and referred to the Committee on Rules and Administration."
       },
-      "policyArea": null,
-      "committees": [],
-      "updatedAt": "2025-01-14",
-      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/1",
-      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/1?format=json"
-    },
-    {
-      "identifier": "HCONRES 22",
-      "title": "Expressing the sense of Congress that the President should provide notice of withdrawal of the United States from the North American Free Trade Agreement (NAFTA).",
-      "congress": 110,
-      "type": "HCONRES",
-      "number": "22",
-      "originChamber": "House",
-      "description": {
-        "text": "Expressing the sense of Congress that the President should provide notice of withdrawal of the United States from the North American Free Trade Agreement (NAFTA).",
-        "source": "Congress.gov bill detail",
-        "updated_at": "2024-02-07"
-      },
       "members": [
         {
-          "role": "Congress.gov detail",
-          "name": "Sponsor and cosponsor names refresh when the backend has a Congress API key"
+          "bioguideId": "S000480",
+          "name": "Rep. Slaughter, Louise McIntosh [D-NY-28]",
+          "party": "D",
+          "role": "Sponsor",
+          "state": "NY"
         }
       ],
+      "number": "1",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "title": "Regarding consent to assemble outside the seat of government.",
+      "type": "HCONRES",
+      "updatedAt": "2025-01-14T17:21:40Z",
+      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/1"
+    },
+    {
+      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/22?format=json",
+      "committees": [],
+      "congress": 110,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "Expresses the sense of Congress that the President should provide notice of the withdrawal of the United States from the North American Free Trade Agreement (NAFTA).",
+        "updated_at": "2007-03-05T21:59:26Z"
+      },
+      "identifier": "HCONRES 22",
       "impact": {
-        "status": "Pending AI impact analysis",
-        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest.",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -160,39 +155,42 @@
             "label": "Congress.gov API record",
             "url": "https://api.congress.gov/v3/bill/110/hconres/22?format=json"
           }
-        ]
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest."
       },
       "latestAction": {
         "date": "2007-01-11",
         "text": "Referred to the Subcommittee on Trade."
       },
-      "policyArea": null,
-      "committees": [],
-      "updatedAt": "2024-02-07",
-      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/22",
-      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/22?format=json"
-    },
-    {
-      "identifier": "HCONRES 31",
-      "title": "Honoring the Mare Island Original 21ers for their efforts to remedy racial discrimination in employment at Mare Island Naval Shipyard.",
-      "congress": 110,
-      "type": "HCONRES",
-      "number": "31",
-      "originChamber": "House",
-      "description": {
-        "text": "Honoring the Mare Island Original 21ers for their efforts to remedy racial discrimination in employment at Mare Island Naval Shipyard.",
-        "source": "Congress.gov bill detail",
-        "updated_at": "2025-07-21"
-      },
       "members": [
         {
-          "role": "Congress.gov detail",
-          "name": "Sponsor and cosponsor names refresh when the backend has a Congress API key"
+          "bioguideId": "G000280",
+          "name": "Rep. Goode, Virgil H., Jr. [R-VA-5]",
+          "party": "R",
+          "role": "Sponsor",
+          "state": "VA"
         }
       ],
+      "number": "22",
+      "originChamber": "House",
+      "policyArea": "Foreign Trade and International Finance",
+      "title": "Expressing the sense of Congress that the President should provide notice of withdrawal of the United States from the North American Free Trade Agreement (NAFTA).",
+      "type": "HCONRES",
+      "updatedAt": "2024-02-07T16:32:33Z",
+      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/22"
+    },
+    {
+      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/31?format=json",
+      "committees": [],
+      "congress": 110,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "Recognizes: (1) the historic accomplishments of the Mare Island Original 21ers in combating employment discrimination against African-American shipyard workers; (2) the importance of the Committee on Equal Employment Opportunity as a forerunner to the Equal Employment Opportunity Commission (EEOC); and (3) the importance of title VII of the Civil Rights Act of 1964.",
+        "updated_at": "2007-01-17T16:56:37Z"
+      },
+      "identifier": "HCONRES 31",
       "impact": {
-        "status": "Pending AI impact analysis",
-        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest.",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -202,17 +200,34 @@
             "label": "Congress.gov API record",
             "url": "https://api.congress.gov/v3/bill/110/hconres/31?format=json"
           }
-        ]
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "Impact analysis will be generated after a ChatGPT API key is configured. For now, YGN links to the official bill record and Congress.gov data used for the digest."
       },
       "latestAction": {
         "date": "2007-01-18",
         "text": "Received in the Senate and referred to the Committee on Health, Education, Labor, and Pensions."
       },
-      "policyArea": null,
-      "committees": [],
-      "updatedAt": "2025-07-21",
-      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/31",
-      "apiUrl": "https://api.congress.gov/v3/bill/110/hconres/31?format=json"
+      "members": [
+        {
+          "bioguideId": "M000725",
+          "name": "Rep. Miller, George [D-CA-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "state": "CA"
+        }
+      ],
+      "number": "31",
+      "originChamber": "House",
+      "policyArea": "Commemorations",
+      "title": "Honoring the Mare Island Original 21ers for their efforts to remedy racial discrimination in employment at Mare Island Naval Shipyard.",
+      "type": "HCONRES",
+      "updatedAt": "2025-07-21T19:44:15Z",
+      "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/31"
     }
-  ]
+  ],
+  "cache_ttl_seconds": 900,
+  "generated_at": "2026-07-08T03:48:39.586765+00:00",
+  "impact_status": "placeholder_until_chatgpt_api_key",
+  "source": "congress_api"
 }
