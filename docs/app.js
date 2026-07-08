@@ -24,7 +24,6 @@ let congressionalDistricts = null;
 let congressionalDistrictsByFips = new Map();
 let congressionalDistrictPromisesByFips = new Map();
 let memberDataLoadPromise = null;
-let districtPrefetchTimer = null;
 let populationTicker = null;
 
 const STATE_ABBR_TO_NAME = {
@@ -1396,27 +1395,7 @@ function topGerrymanderComponent(components) {
   return labels[entries[0][0]] || entries[0][0];
 }
 
-function isPanelLockedAwayFrom(stateInfo) {
-  return (
-    lockedMapState &&
-    stateInfo &&
-    normalizeFips(lockedMapState.fips) !== normalizeFips(stateInfo.fips)
-  );
-}
-
-function previewStateFromMap(stateInfo) {
-  if (!stateInfo) return;
-  if (isPanelLockedAwayFrom(stateInfo)) {
-    scheduleDistrictPrefetch(stateInfo);
-    return;
-  }
-
-  updateStatePanel(stateInfo);
-  renderMemberListForState(stateInfo);
-  scheduleDistrictPrefetch(stateInfo);
-}
-
-function updateStatePanel(stateInfo, mode = 'hover') {
+function updateStatePanel(stateInfo, mode = 'select') {
   if (!stateInfo || !statePanel) return;
 
   const previousFips = selectedMapState && normalizeFips(selectedMapState.fips);
@@ -1438,7 +1417,7 @@ function updateStatePanel(stateInfo, mode = 'hover') {
   gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
   districtStatusEl.textContent = mode === 'click'
     ? `Locked on ${stateInfo.name}. Reset View clears the selection. District outlines are loading or cached.`
-    : `Delegation shown below. Click ${stateInfo.abbreviation} to load district outlines.`;
+    : `Selected ${stateInfo.name}. Click the state again to load district outlines.`;
   viewStateMembersBtn.disabled = false;
 
   if (mode === 'click' || previousFips !== nextFips) {
@@ -1523,17 +1502,6 @@ function renderMemberListForState(stateInfo) {
   districtListEl.innerHTML = rows.join('');
 }
 
-function scheduleDistrictPrefetch(stateInfo) {
-  if (!stateInfo || !stateInfo.fips) return;
-  const normalizedFips = normalizeFips(stateInfo.fips);
-  if (congressionalDistrictsByFips.has(normalizedFips)) return;
-  if (districtPrefetchTimer) window.clearTimeout(districtPrefetchTimer);
-  districtPrefetchTimer = window.setTimeout(() => {
-    ensureDistrictData(normalizedFips).catch(() => {});
-    districtPrefetchTimer = null;
-  }, 220);
-}
-
 function showMapTooltip(html, event) {
   if (!mapTooltip) return;
   mapTooltip.innerHTML = html;
@@ -1569,7 +1537,7 @@ async function initMap() {
     const us = await response.json();
 
     drawStateMap(us);
-    setMapStatus('Hover a state for details, or click to zoom into districts.');
+    setMapStatus('Hover for state names. Select a state to open its snapshot and districts.');
     loadMemberDataOnly()
       .then(() => {
         if (selectedMapState) renderMemberListForState(selectedMapState);
@@ -1614,6 +1582,7 @@ function drawStateMap(us) {
     })
     .attr('tabindex', 0)
     .attr('role', 'button')
+    .attr('aria-pressed', 'false')
     .attr('aria-label', feature => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       return stateInfo ? `${stateInfo.name} state map` : 'State map';
@@ -1621,14 +1590,7 @@ function drawStateMap(us) {
     .on('mouseenter', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
-      previewStateFromMap(stateInfo);
       showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
-    })
-    .on('focus', (event, feature) => {
-      const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
-      if (stateInfo) {
-        previewStateFromMap(stateInfo);
-      }
     })
     .on('mousemove', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
@@ -1643,6 +1605,9 @@ function drawStateMap(us) {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
       lockedMapState = stateInfo;
+      stateLayer.selectAll('.state-shape')
+        .classed('state-shape-selected', stateFeature => normalizeFips(stateFeature.id) === normalizeFips(feature.id))
+        .attr('aria-pressed', stateFeature => normalizeFips(stateFeature.id) === normalizeFips(feature.id) ? 'true' : 'false');
       updateStatePanel(stateInfo, 'click');
       renderMemberListForState(stateInfo);
       zoomToFeature(feature);
@@ -1656,17 +1621,20 @@ function resetMapView() {
   if (!mapSvg || !mapSvg.__ygnMap) return;
   const { svg, zoom, districtLayer } = mapSvg.__ygnMap;
   districtLayer.selectAll('*').remove();
+  svg.selectAll('.state-shape')
+    .classed('state-shape-selected', false)
+    .attr('aria-pressed', 'false');
   districtListEl.innerHTML = '';
   selectedMapState = null;
   lockedMapState = null;
-  if (stateNameEl) stateNameEl.textContent = 'Hover a State';
-  if (stateSummaryEl) stateSummaryEl.textContent = 'Move over a state to see population, political lean, district notes, and the YGN gerrymandering risk index.';
+  if (stateNameEl) stateNameEl.textContent = 'Select a State';
+  if (stateSummaryEl) stateSummaryEl.textContent = 'Select a state to see population, political lean, district notes, and the YGN gerrymandering risk index.';
   if (statePopulationEl) statePopulationEl.textContent = '-';
   if (stateLeanEl) stateLeanEl.textContent = '-';
   if (gerryScoreEl) gerryScoreEl.textContent = '-';
   if (gerryMeterFill) gerryMeterFill.style.width = '0';
   if (gerryNoteEl) gerryNoteEl.textContent = 'Educational risk signal, not a legal finding.';
-  districtStatusEl.textContent = 'Hover a state to see its delegation. Click to load district outlines.';
+  districtStatusEl.textContent = 'Select a state to load its delegation and district outlines.';
   if (viewStateMembersBtn) viewStateMembersBtn.disabled = true;
   svg.transition().duration(650).call(zoom.transform, d3.zoomIdentity);
 }

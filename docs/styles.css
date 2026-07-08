@@ -969,6 +969,12 @@ button {
   outline: none;
 }
 
+.state-shape-selected {
+  filter: brightness(1.08);
+  stroke: #1a1f2e;
+  stroke-width: 1.35;
+}
+
 .district-shape {
   fill: rgba(255, 255, 255, 0.16);
   stroke: #1a1f2e;
