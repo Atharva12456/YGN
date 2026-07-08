@@ -2,12 +2,18 @@
   "congress": 119,
   "current_member": true,
   "descriptions": 537,
-  "details": 537,
-  "errors": [],
+  "details": 536,
+  "errors": [
+    {
+      "bioguideId": "B001230",
+      "error": "Congress.gov request failed for /member/B001230.",
+      "stage": "detail"
+    }
+  ],
   "ethics": 537,
   "ethics_fallback": 537,
   "fallback_descriptions": 3,
-  "generated_at": "2026-07-08T14:42:57.804631+00:00",
+  "generated_at": "2026-07-08T19:57:51.527829+00:00",
   "member_score_index": true,
   "members": 537,
   "nominate": 536,
