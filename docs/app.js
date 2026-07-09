@@ -746,6 +746,65 @@ function renderRecentBills(digest, source) {
   });
 }
 
+// ─── Economy dashboard ───────────────────────────────────────────────────────
+
+function econCard(label, value, context, feature) {
+  return `<div class="econ-card${feature ? ' econ-card--feature' : ''}">
+    <div class="econ-card-label">${esc(label)}</div>
+    <div class="econ-card-value">${esc(value)}</div>
+    <div class="econ-card-context">${esc(context)}</div>
+  </div>`;
+}
+
+function renderEconomy(grid, sourcesEl, data) {
+  const m = (data && data.metrics) || {};
+  const debt = m.debt;
+  const infl = m.inflation;
+  const cards = [
+    econCard('National Debt',
+      debt ? formatCurrencyCompact(Number(debt.amount)) : '—',
+      debt ? `U.S. Treasury · ${formatShortDate(debt.record_date)}` : 'Unavailable', true),
+    econCard('Debt-to-GDP',
+      m.debt_to_gdp ? `${m.debt_to_gdp.value}%` : '—', 'Total debt ÷ annual GDP'),
+    econCard('Debt per Person',
+      m.debt_per_capita ? `$${formatNumber(m.debt_per_capita.value)}` : '—', "Each resident's share"),
+    econCard('GDP',
+      m.gdp ? formatCurrencyCompact(m.gdp.value) : '—',
+      m.gdp ? `World Bank · ${esc(m.gdp.date)}` : 'Unavailable'),
+    econCard('Unemployment',
+      m.unemployment ? `${m.unemployment.value}%` : '—',
+      m.unemployment ? `BLS · ${m.unemployment.period} ${m.unemployment.year}` : 'Unavailable'),
+    econCard('Inflation (CPI, yr/yr)',
+      (infl && infl.value != null) ? `${infl.value}%` : '—',
+      infl ? `BLS CPI-U · ${infl.period} ${infl.year}` : 'Unavailable'),
+    econCard('U.S. Population',
+      m.population ? formatCompact(m.population.value) : '—',
+      m.population ? `World Bank · ${esc(m.population.date)}` : 'Unavailable'),
+  ];
+  grid.innerHTML = cards.join('');
+  if (sourcesEl) {
+    sourcesEl.textContent = 'Sources: U.S. Treasury Fiscal Data, U.S. Bureau of Labor Statistics, World Bank. Figures update as each agency publishes.';
+  }
+}
+
+async function initEconomy() {
+  const grid = document.getElementById('econ-grid');
+  if (!grid) return;
+  const sourcesEl = document.getElementById('econ-sources');
+  grid.innerHTML = Array.from({ length: 7 }, () =>
+    '<div class="econ-card"><div class="skeleton-line medium"></div><div class="skeleton-line wide" style="height:1.5rem;"></div><div class="skeleton-line narrow"></div></div>').join('');
+  try {
+    const result = await fetchJsonWithStaticFallback('/metrics/economy', 'economy.json', { cache: 'no-store' });
+    if (result.notFound) {
+      grid.innerHTML = '<p class="muted-text">Live economic data is available on the hosted site.</p>';
+      return;
+    }
+    renderEconomy(grid, sourcesEl, result.data);
+  } catch (_) {
+    grid.innerHTML = '<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load economic data right now.</p></div>';
+  }
+}
+
 async function initRecentBills() {
   if (!recentBillsGrid) return;
   const limit = Number(recentBillsGrid.dataset.limit || 5);
@@ -1600,6 +1659,42 @@ function showMapTooltip(html, event) {
 
 function hideMapTooltip() {
   if (mapTooltip) mapTooltip.classList.remove('visible');
+}
+
+// Load the map libraries on demand. index.html omits the d3/topojson script
+// tags (they're ~290KB), so inject them the first time the map is needed.
+function ensureMapLibs(callback) {
+  if (window.d3 && window.topojson) { callback(); return; }
+  let loaded = 0;
+  const done = () => { if (++loaded === 2 && window.d3 && window.topojson) callback(); };
+  const add = (src) => {
+    let el = document.querySelector(`script[src="${src}"]`);
+    if (el) { el.addEventListener('load', done); if (el.dataset.loaded) done(); return; }
+    el = document.createElement('script');
+    el.src = src;
+    el.addEventListener('load', () => { el.dataset.loaded = '1'; done(); });
+    document.head.appendChild(el);
+  };
+  add('vendor/d3.min.js');
+  add('vendor/topojson-client.min.js');
+}
+
+function initMapWhenReady() {
+  // Dedicated map page loads the libs eagerly — start immediately.
+  if (window.d3 && window.topojson) { initMap(); return; }
+  // Home page: defer until the map scrolls near the viewport.
+  const target = document.getElementById('district-map') || mapSvg;
+  if (!('IntersectionObserver' in window) || !target) {
+    ensureMapLibs(initMap);
+    return;
+  }
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (entries.some(e => e.isIntersecting)) {
+      obs.disconnect();
+      ensureMapLibs(initMap);
+    }
+  }, { rootMargin: '300px' });
+  observer.observe(target);
 }
 
 async function initMap() {
@@ -2645,8 +2740,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.body.dataset.page === 'member') {
     initMemberPage();
   }
+  if (document.body.dataset.page === 'economy') {
+    initEconomy();
+  }
   if (mapSvg) {
-    initMap();
+    initMapWhenReady();
   }
   scrollToHashTarget();
 

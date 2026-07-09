@@ -339,6 +339,38 @@ class AiInsightsTests(unittest.TestCase):
         self.assertEqual(digest["bills"][0]["impact"]["status"], "AI impact analysis")
 
 
+class EconomySnapshotTests(unittest.TestCase):
+    def setUp(self):
+        self.gov = fastapi_app.government
+
+    def test_snapshot_aggregates_and_derives(self):
+        with patch.object(self.gov, "get_national_debt_metric",
+                          return_value={"amount": "1000", "record_date": "2026-01-01"}), patch.object(
+            self.gov, "_worldbank_indicator",
+            side_effect=lambda ind: {"NY.GDP.MKTP.CD": {"value": 500.0, "date": "2025"},
+                                     "SP.POP.TOTL": {"value": 100.0, "date": "2025"}}[ind]
+        ), patch.object(self.gov, "_bls_latest_value", return_value={"value": 4.2}), patch.object(
+            self.gov, "_bls_inflation", return_value={"value": 3.9}
+        ):
+            snap = self.gov.get_economy_snapshot()
+        m = snap["metrics"]
+        self.assertEqual(snap["errors"], [])
+        self.assertEqual(m["debt_to_gdp"]["value"], 200.0)   # 1000/500*100
+        self.assertEqual(m["debt_per_capita"]["value"], 10.0)  # 1000/100
+
+    def test_snapshot_degrades_per_metric(self):
+        with patch.object(self.gov, "get_national_debt_metric", side_effect=RuntimeError("treasury down")), patch.object(
+            self.gov, "_worldbank_indicator", return_value={"value": 500.0, "date": "2025"}
+        ), patch.object(self.gov, "_bls_latest_value", return_value={"value": 4.2}), patch.object(
+            self.gov, "_bls_inflation", return_value={"value": 3.9}
+        ):
+            snap = self.gov.get_economy_snapshot()
+        self.assertIsNone(snap["metrics"]["debt"])
+        self.assertTrue(any(e["metric"] == "debt" for e in snap["errors"]))
+        self.assertIsNotNone(snap["metrics"]["gdp"])  # other metrics still populate
+        self.assertNotIn("debt_to_gdp", snap["metrics"])  # derived skipped when debt missing
+
+
 class MemberDossierRouteTests(unittest.TestCase):
     def setUp(self):
         self.app = fastapi_app

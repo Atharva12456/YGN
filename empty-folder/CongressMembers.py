@@ -530,6 +530,133 @@ def get_national_debt_metric():
     return _cached_json(cache_key, "treasury:debt_to_penny", fetch_json)
 
 
+# =========================================================================
+# Economy dashboard: no-key public macro indicators (World Bank, BLS, Treasury).
+# Each metric is cached and the snapshot degrades per-metric (a failed source
+# becomes null with an entry in `errors`, never breaking the page).
+# =========================================================================
+
+ECONOMY_CACHE_TTL_SECONDS = 6 * 60 * 60
+
+
+def _worldbank_indicator(indicator):
+    cache_key = _build_cache_key("worldbank", {"indicator": indicator})
+
+    def fetch_json():
+        try:
+            resp = requests.get(
+                f"https://api.worldbank.org/v2/country/USA/indicator/{indicator}",
+                params={"format": "json", "MRV": 3},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"World Bank request failed for {indicator}.") from None
+
+        payload = resp.json()
+        rows = (
+            payload[1]
+            if isinstance(payload, list) and len(payload) > 1 and isinstance(payload[1], list)
+            else []
+        )
+        for row in rows:
+            if row.get("value") is not None:
+                return {"value": float(row["value"]), "date": row.get("date"), "source": "world_bank"}
+        raise UpstreamDataError(f"World Bank returned no value for {indicator}.")
+
+    return _cached_json(
+        cache_key, f"worldbank:{indicator}", fetch_json, ttl_seconds=ECONOMY_CACHE_TTL_SECONDS
+    )
+
+
+def _bls_series(series_id):
+    cache_key = _build_cache_key("bls", {"series": series_id})
+
+    def fetch_json():
+        try:
+            resp = requests.get(
+                f"https://api.bls.gov/publicAPI/v1/timeseries/data/{series_id}",
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"BLS request failed for {series_id}.") from None
+
+        series = (resp.json().get("Results") or {}).get("series") or []
+        data = series[0].get("data") if series else []
+        if not data:
+            raise UpstreamDataError(f"BLS returned no data for {series_id}.")
+        return {"data": data, "source": "bls"}
+
+    return _cached_json(
+        cache_key, f"bls:{series_id}", fetch_json, ttl_seconds=ECONOMY_CACHE_TTL_SECONDS
+    )
+
+
+def _bls_latest_value(series_id):
+    latest = (_bls_series(series_id).get("data") or [{}])[0]
+    return {
+        "value": float(latest["value"]),
+        "period": latest.get("periodName"),
+        "year": latest.get("year"),
+        "source": "bls",
+    }
+
+
+def _bls_inflation(series_id):
+    data = _bls_series(series_id).get("data") or []
+    latest = data[0]
+    result = {
+        "value": None,
+        "index": float(latest["value"]),
+        "period": latest.get("periodName"),
+        "year": latest.get("year"),
+        "source": "bls",
+    }
+    if len(data) >= 13:
+        prior = float(data[12]["value"])
+        if prior:
+            result["value"] = round((float(latest["value"]) - prior) / prior * 100, 1)
+    return result
+
+
+def get_economy_snapshot():
+    snapshot = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "metrics": {},
+        "errors": [],
+    }
+
+    def add(key, fetcher):
+        try:
+            snapshot["metrics"][key] = fetcher()
+        except Exception as exc:  # noqa: BLE001 - per-metric degradation
+            snapshot["metrics"][key] = None
+            snapshot["errors"].append({"metric": key, "error": str(exc)})
+
+    add("debt", get_national_debt_metric)
+    add("gdp", lambda: _worldbank_indicator("NY.GDP.MKTP.CD"))
+    add("population", lambda: _worldbank_indicator("SP.POP.TOTL"))
+    add("unemployment", lambda: _bls_latest_value("LNS14000000"))
+    add("inflation", lambda: _bls_inflation("CUUR0000SA0"))
+
+    metrics = snapshot["metrics"]
+    debt = metrics.get("debt")
+    gdp = metrics.get("gdp")
+    population = metrics.get("population")
+    try:
+        debt_amount = float(debt["amount"]) if debt else None
+    except (TypeError, ValueError):
+        debt_amount = None
+
+    if debt_amount and gdp and gdp.get("value"):
+        metrics["debt_to_gdp"] = {"value": round(debt_amount / gdp["value"] * 100, 1), "unit": "percent"}
+    if debt_amount and population and population.get("value"):
+        metrics["debt_per_capita"] = {"value": round(debt_amount / population["value"], 0)}
+
+    return snapshot
+
+
 def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):
     path = "/member"
     if congress is not None:
