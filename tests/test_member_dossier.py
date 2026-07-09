@@ -274,6 +274,71 @@ class MemberDossierBackendTests(unittest.TestCase):
         self.assertTrue(any(e["stage"] == "funding" for e in result["errors"]))
 
 
+class AiInsightsTests(unittest.TestCase):
+    def setUp(self):
+        self.gov = fastapi_app.government
+        self._tmp = tempfile.mkdtemp()
+        os.environ["YGN_CACHE_PATH"] = os.path.join(self._tmp, "cache.sqlite")
+
+    def tearDown(self):
+        os.environ.pop("YGN_CACHE_PATH", None)
+        shutil.rmtree(self._tmp, ignore_errors=True)
+
+    def test_provider_config_prefers_azure(self):
+        env = {
+            "AZURE_OPENAI_ENDPOINT": "https://myres.openai.azure.com",
+            "AZURE_OPENAI_API_KEY": "k",
+            "AZURE_OPENAI_DEPLOYMENT": "gpt-4o-mini",
+        }
+        with patch.dict(os.environ, env, clear=False):
+            cfg = self.gov._ai_provider_config()
+        self.assertEqual(cfg["kind"], "azure")
+        self.assertIn("/openai/deployments/gpt-4o-mini/chat/completions", cfg["url"])
+
+    def test_provider_config_openai_fallback(self):
+        env = {"OPENAI_API_KEY": "sk-x", "OPENAI_MODEL": "gpt-4o-mini"}
+        # Ensure Azure vars are absent so the OpenAI branch is taken.
+        with patch.dict(os.environ, env, clear=False):
+            os.environ.pop("AZURE_OPENAI_ENDPOINT", None)
+            os.environ.pop("AZURE_OPENAI_API_KEY", None)
+            cfg = self.gov._ai_provider_config()
+        self.assertEqual(cfg["kind"], "openai")
+
+    def test_bill_impact_none_and_unavailable_without_provider(self):
+        with patch.object(self.gov, "_ai_provider_config", return_value=None):
+            self.assertFalse(self.gov.ai_insights_available())
+            self.assertIsNone(self.gov.generate_bill_impact({"identifier": "x"}))
+
+    def test_generate_bill_impact_uses_llm(self):
+        cfg = {"kind": "azure", "url": "http://x", "key": "k", "model": "gpt-4o-mini", "api_version": "v"}
+        with patch.object(self.gov, "_ai_provider_config", return_value=cfg), patch.object(
+            self.gov, "_llm_chat", return_value="This bill funds X and affects Y."
+        ):
+            result = self.gov.generate_bill_impact(
+                {"identifier": "hr-1-119", "title": "A bill",
+                 "description": {"text": "..."}, "policyArea": "Health",
+                 "committees": ["Ways and Means"], "latestAction": {"text": "Referred"}}
+            )
+        self.assertEqual(result["summary"], "This bill funds X and affects Y.")
+        self.assertEqual(result["provider"], "azure")
+
+    def test_digest_enriches_impact_when_ai_available(self):
+        with patch.object(self.gov, "getRecentBills", return_value={"bills": [{"x": 1}]}), patch.object(
+            self.gov, "_bill_digest_item",
+            side_effect=lambda b: {"identifier": "hr-1",
+                                   "impact": {"status": "Pending AI impact analysis",
+                                              "summary": "placeholder", "sources": []}},
+        ), patch.object(self.gov, "ai_insights_available", return_value=True), patch.object(
+            self.gov, "generate_bill_impact",
+            return_value={"status": "AI impact analysis", "summary": "Affects taxpayers.",
+                          "model": "gpt-4o-mini", "generated_at": "now"},
+        ):
+            digest = self.gov.getRecentBillDigest(limit=1)
+        self.assertEqual(digest["impact_status"], "ai")
+        self.assertEqual(digest["bills"][0]["impact"]["summary"], "Affects taxpayers.")
+        self.assertEqual(digest["bills"][0]["impact"]["status"], "AI impact analysis")
+
+
 class MemberDossierRouteTests(unittest.TestCase):
     def setUp(self):
         self.app = fastapi_app

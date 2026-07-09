@@ -783,6 +783,157 @@ def _recent_bill_list(payload):
     return []
 
 
+# =========================================================================
+# AI insights (optional): plain-language "impact" analysis for bills.
+#
+# Provider-agnostic and OFF by default. Configure ONE of:
+#   - Azure OpenAI: AZURE_OPENAI_ENDPOINT + AZURE_OPENAI_API_KEY
+#       (optional AZURE_OPENAI_DEPLOYMENT [default gpt-4o-mini],
+#        AZURE_OPENAI_API_VERSION [default 2024-08-01-preview])
+#   - Any OpenAI-compatible API: OPENAI_API_KEY
+#       (optional OPENAI_BASE_URL, OPENAI_MODEL)
+# Called with `requests` (no extra dependency). Without config, bill impact
+# degrades to its existing "pending" placeholder. Each impact is cached for
+# 30 days (bill text is static once published), so live/API usage is tiny.
+# =========================================================================
+
+AI_IMPACT_TTL_SECONDS = 30 * 24 * 60 * 60
+DEFAULT_AI_MODEL = "gpt-4o-mini"
+BILL_IMPACT_SYSTEM_PROMPT = (
+    "You are a nonpartisan civic analyst for a U.S. government information site. "
+    "Explain federal legislation in plain, neutral language for a general audience. "
+    "Be factual and concise. Do not use partisan framing, do not predict whether a "
+    "bill will pass, and do not invent details beyond what you are given."
+)
+
+
+def _ai_provider_config():
+    _load_local_env()
+    endpoint = (os.getenv("AZURE_OPENAI_ENDPOINT") or "").strip().rstrip("/")
+    azure_key = (os.getenv("AZURE_OPENAI_API_KEY") or "").strip()
+    if endpoint and azure_key:
+        deployment = (os.getenv("AZURE_OPENAI_DEPLOYMENT") or DEFAULT_AI_MODEL).strip()
+        return {
+            "kind": "azure",
+            "url": f"{endpoint}/openai/deployments/{deployment}/chat/completions",
+            "api_version": (os.getenv("AZURE_OPENAI_API_VERSION") or "2024-08-01-preview").strip(),
+            "key": azure_key,
+            "model": deployment,
+        }
+    openai_key = (os.getenv("OPENAI_API_KEY") or "").strip()
+    if openai_key:
+        base = (os.getenv("OPENAI_BASE_URL") or "https://api.openai.com/v1").strip().rstrip("/")
+        return {
+            "kind": "openai",
+            "url": f"{base}/chat/completions",
+            "key": openai_key,
+            "model": (os.getenv("OPENAI_MODEL") or DEFAULT_AI_MODEL).strip(),
+        }
+    return None
+
+
+def ai_insights_available():
+    return _ai_provider_config() is not None
+
+
+def ai_provider_name():
+    config = _ai_provider_config()
+    return config["kind"] if config else None
+
+
+def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
+    config = _ai_provider_config()
+    if not config:
+        raise UpstreamDataError("No AI provider is configured.")
+
+    body = {
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+    }
+    params = None
+    if config["kind"] == "azure":
+        headers = {"api-key": config["key"], "Content-Type": "application/json"}
+        params = {"api-version": config["api_version"]}
+    else:
+        headers = {"Authorization": f"Bearer {config['key']}", "Content-Type": "application/json"}
+        body["model"] = config["model"]
+
+    try:
+        response = requests.post(
+            config["url"],
+            params=params,
+            headers=headers,
+            json=body,
+            timeout=REQUEST_TIMEOUT_SECONDS,
+        )
+        response.raise_for_status()
+    except requests.RequestException:
+        raise UpstreamDataError("AI provider request failed.") from None
+
+    choices = response.json().get("choices") or []
+    if not choices:
+        raise UpstreamDataError("AI provider returned no choices.")
+    return (choices[0].get("message") or {}).get("content", "").strip()
+
+
+def generate_bill_impact(bill_item):
+    """Plain-language AI impact analysis for a digest bill item, cached 30 days.
+
+    Returns {status, summary, model, provider, generated_at} or None when no AI
+    provider is configured (callers keep the existing placeholder in that case).
+    """
+    config = _ai_provider_config()
+    if not config:
+        return None
+
+    identifier = (
+        bill_item.get("identifier")
+        or bill_item.get("url")
+        or bill_item.get("title")
+        or "unknown"
+    )
+    cache_key = _build_cache_key(
+        "bill-impact-v1", {"id": identifier, "model": config["model"]}
+    )
+
+    def fetch_json():
+        title = bill_item.get("title") or "Untitled bill"
+        description = (bill_item.get("description") or {}).get("text") or ""
+        policy_area = bill_item.get("policyArea") or "Unspecified"
+        committees = ", ".join(bill_item.get("committees") or []) or "Not yet referred"
+        latest = (bill_item.get("latestAction") or {}).get("text") or "No action recorded"
+        user_prompt = (
+            f"Bill: {title}\n"
+            f"Policy area: {policy_area}\n"
+            f"Committees: {committees}\n"
+            f"Latest action: {latest}\n"
+            f"Official summary: {description or 'No official summary published yet.'}\n\n"
+            "In 2-3 sentences, explain in plain language what this bill would do and "
+            "who or what it would affect if enacted (which groups, sectors, agencies, "
+            "or people). If the available summary is too thin to assess impact, say "
+            "that plainly instead of guessing."
+        )
+        summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=220)
+        return {
+            "status": "AI impact analysis",
+            "summary": summary,
+            "model": config["model"],
+            "provider": config["kind"],
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+
+    return _cached_json(
+        cache_key,
+        f"bill-impact:{identifier}",
+        fetch_json,
+        ttl_seconds=AI_IMPACT_TTL_SECONDS,
+    )
+
+
 def getRecentBillDigest(limit=5):
     limit = max(1, min(int(limit), 20))
     cache_key = _build_cache_key(
@@ -794,12 +945,28 @@ def getRecentBillDigest(limit=5):
 
     def fetch_json():
         bills = _recent_bill_list(getRecentBills())[:limit]
+        items = [_bill_digest_item(bill) for bill in bills]
+        ai_on = ai_insights_available()
+        if ai_on:
+            for item in items:
+                try:
+                    impact = generate_bill_impact(item)
+                    if impact and impact.get("summary"):
+                        item["impact"] = {
+                            **item["impact"],
+                            "status": impact["status"],
+                            "summary": impact["summary"],
+                            "model": impact.get("model"),
+                            "generated_at": impact.get("generated_at"),
+                        }
+                except Exception as exc:  # noqa: BLE001 - keep the placeholder on failure
+                    LOGGER.warning("Bill impact generation failed: %s", exc)
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "congress_api",
             "cache_ttl_seconds": _cache_ttl_seconds(),
-            "impact_status": "placeholder_until_chatgpt_api_key",
-            "bills": [_bill_digest_item(bill) for bill in bills],
+            "impact_status": "ai" if ai_on else "placeholder_until_ai_key",
+            "bills": items,
         }
 
     return _cached_json(

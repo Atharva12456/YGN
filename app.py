@@ -211,6 +211,8 @@ def health():
         "fec_api_key_available": government.fec_api_key_available(),
         "fec_api_key_source": government._fec_api_key_source(),
         "stock_api_key_available": government.stock_api_key_available(),
+        "ai_insights_available": government.ai_insights_available(),
+        "ai_provider": government.ai_provider_name(),
     }
 
 
