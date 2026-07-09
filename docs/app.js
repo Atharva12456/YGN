@@ -1048,19 +1048,29 @@ function createMemberTile(member) {
     });
   }
 
-  // Popover events: mouseenter/focus show; mouseleave/blur schedule hide
+  // Popover events: mouseenter/focus show; mouseleave/blur schedule hide.
+  // A short hover dwell also prefetches the member's dossier so the detail page
+  // paints instantly on click.
+  let prefetchTimer = null;
   tile.addEventListener('mouseenter', () => {
     cancelPopoverHide();
-    if (bioguideId) triggerPopover(member, tile);
+    if (bioguideId) {
+      triggerPopover(member, tile);
+      prefetchTimer = setTimeout(() => prefetchDossier(bioguideId), 250);
+    }
   });
 
   tile.addEventListener('mouseleave', () => {
     schedulePopoverHide();
+    clearTimeout(prefetchTimer);
   });
 
   tile.addEventListener('focus', () => {
     cancelPopoverHide();
-    if (bioguideId) triggerPopover(member, tile);
+    if (bioguideId) {
+      triggerPopover(member, tile);
+      prefetchDossier(bioguideId); // keyboard focus is deliberate — prefetch now
+    }
   });
 
   tile.addEventListener('blur', () => {
@@ -1948,6 +1958,29 @@ function sessionSet(key, value) {
   }
 }
 
+// Warm a member's dossier on hover/focus so clicking into them is instant.
+// Only the fast (non-FEC) sections are prefetched, so this never adds load to
+// the rate-limited FEC key; funding/ethics still load on the detail page itself.
+const _prefetchedMembers = new Set();
+function prefetchDossier(bioguideId) {
+  if (!bioguideId || _prefetchedMembers.has(bioguideId)) return;
+  if (sessionGet('ygn_dossier_' + bioguideId) || sessionGet('ygn_fast_' + bioguideId)) {
+    _prefetchedMembers.add(bioguideId);
+    return;
+  }
+  _prefetchedMembers.add(bioguideId);
+  fetchJsonWithStaticFallback(
+    `/officials/${bioguideId}/dossier?sections=${DOSSIER_FAST_SECTIONS}`,
+    `dossier/${bioguideId}.json`
+  )
+    .then(res => {
+      if (res && res.data && !res.notFound) {
+        sessionSet('ygn_fast_' + bioguideId, res.data);
+      }
+    })
+    .catch(() => { _prefetchedMembers.delete(bioguideId); });
+}
+
 function computeAge(birthday) {
   const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(birthday || ''));
   if (!match) return null;
@@ -2385,11 +2418,20 @@ async function initMemberPage() {
     return;
   }
 
-  // Instant identity from the tile the user clicked, then stream the rest in.
+  // Instant identity from the tile the user clicked; and if we prefetched this
+  // member's fast sections on hover, paint them immediately (no network wait).
   const handoff = sessionGet('ygn_handoff_' + id);
-  renderDossier(container, null, { id, handoff, fundingPending: true });
+  const prefetchedFast = sessionGet('ygn_fast_' + id);
+  renderDossier(container, prefetchedFast || null, {
+    id,
+    handoff,
+    fundingPending: !prefetchedFast || prefetchedFast.funding === undefined,
+  });
 
-  const fastPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_FAST_SECTIONS}`, `dossier/${id}.json`);
+  // Reuse the hover prefetch when present; otherwise fetch the fast sections now.
+  const fastPromise = prefetchedFast
+    ? Promise.resolve({ data: prefetchedFast, source: 'prefetch' })
+    : fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_FAST_SECTIONS}`, `dossier/${id}.json`);
   // Pre-attach a catch so an early return (e.g. static notFound) below never
   // leaves this as an unhandled promise rejection.
   const slowPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_SLOW_SECTIONS}`, `dossier/${id}.json`).catch(() => null);
