@@ -2396,5 +2396,7 @@ button {
 }
 .econ-card--feature .econ-card-value { color: var(--color-text); }
 .econ-card-context { font-size: 0.82rem; color: var(--color-text-muted); margin-top: auto; }
+.econ-card--wide { grid-column: 1 / -1; }
+.econ-spark { width: 100%; height: 120px; display: block; margin: 0.5rem 0; }
 .econ-sources { margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; }
 @media (max-width: 600px) { .econ-title { font-size: 1.9rem; } }

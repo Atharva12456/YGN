@@ -620,6 +620,44 @@ def _bls_inflation(series_id):
     return result
 
 
+def _treasury_debt_history():
+    cache_key = _build_cache_key("treasury", {"metric": "debt_history_monthly"})
+
+    def fetch_json():
+        try:
+            resp = requests.get(
+                TREASURY_DEBT_URL,
+                params={
+                    "sort": "-record_date",
+                    "fields": "record_date,tot_pub_debt_out_amt",
+                    "page[size]": "400",
+                },
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError("Treasury debt-history request failed.") from None
+
+        rows = resp.json().get("data") or []
+        seen_months = set()
+        points = []
+        for row in rows:  # daily rows, most recent first
+            record_date = row.get("record_date") or ""
+            month = record_date[:7]
+            amount = row.get("tot_pub_debt_out_amt")
+            if month and month not in seen_months and amount:
+                seen_months.add(month)
+                points.append({"date": record_date, "amount": float(amount)})
+        points = points[:13][::-1]  # oldest -> newest for charting
+        if len(points) < 2:
+            raise UpstreamDataError("Treasury debt-history returned too few points.")
+        return {"points": points, "source": "treasury_fiscal_data"}
+
+    return _cached_json(
+        cache_key, "treasury:debt_history", fetch_json, ttl_seconds=ECONOMY_CACHE_TTL_SECONDS
+    )
+
+
 def get_economy_snapshot():
     snapshot = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -635,6 +673,7 @@ def get_economy_snapshot():
             snapshot["errors"].append({"metric": key, "error": str(exc)})
 
     add("debt", get_national_debt_metric)
+    add("debt_trend", _treasury_debt_history)
     add("gdp", lambda: _worldbank_indicator("NY.GDP.MKTP.CD"))
     add("population", lambda: _worldbank_indicator("SP.POP.TOTL"))
     add("unemployment", lambda: _bls_latest_value("LNS14000000"))

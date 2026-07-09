@@ -756,6 +756,35 @@ function econCard(label, value, context, feature) {
   </div>`;
 }
 
+function econSparkline(points, label) {
+  if (!points || points.length < 2) return '';
+  const w = 640, h = 120, pad = 10;
+  const vals = points.map(p => p.amount);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = (max - min) || 1;
+  const x = i => pad + (i / (points.length - 1)) * (w - 2 * pad);
+  const y = v => h - pad - ((v - min) / range) * (h - 2 * pad);
+  const line = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)},${y(p.amount).toFixed(1)}`).join(' ');
+  const area = `${line} L${x(points.length - 1).toFixed(1)},${h - pad} L${x(0).toFixed(1)},${h - pad} Z`;
+  return `<svg viewBox="0 0 ${w} ${h}" class="econ-spark" preserveAspectRatio="none" role="img" aria-label="${esc(label)}">
+    <path d="${area}" fill="rgba(79,142,247,0.12)"></path>
+    <path d="${line}" fill="none" stroke="var(--color-accent)" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>
+  </svg>`;
+}
+
+function econTrendCard(trend) {
+  if (!trend || !Array.isArray(trend.points) || trend.points.length < 2) return '';
+  const pts = trend.points;
+  const first = pts[0], last = pts[pts.length - 1];
+  const change = first.amount ? ((last.amount - first.amount) / first.amount) * 100 : 0;
+  const label = `National debt over the last ${pts.length} months`;
+  return `<div class="econ-card econ-card--wide">
+    <div class="econ-card-label">National Debt — last ${pts.length} months</div>
+    ${econSparkline(pts, label)}
+    <div class="econ-card-context">${formatCurrencyCompact(first.amount)} (${esc(first.date.slice(0, 7))}) → ${formatCurrencyCompact(last.amount)} (${esc(last.date.slice(0, 7))}) · ${change >= 0 ? '+' : ''}${change.toFixed(1)}%</div>
+  </div>`;
+}
+
 function renderEconomy(grid, sourcesEl, data) {
   const m = (data && data.metrics) || {};
   const debt = m.debt;
@@ -781,7 +810,7 @@ function renderEconomy(grid, sourcesEl, data) {
       m.population ? formatCompact(m.population.value) : '—',
       m.population ? `World Bank · ${esc(m.population.date)}` : 'Unavailable'),
   ];
-  grid.innerHTML = cards.join('');
+  grid.innerHTML = cards.join('') + econTrendCard(m.debt_trend);
   if (sourcesEl) {
     sourcesEl.textContent = 'Sources: U.S. Treasury Fiscal Data, U.S. Bureau of Labor Statistics, World Bank. Figures update as each agency publishes.';
   }

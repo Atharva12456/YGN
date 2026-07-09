@@ -346,6 +346,8 @@ class EconomySnapshotTests(unittest.TestCase):
     def test_snapshot_aggregates_and_derives(self):
         with patch.object(self.gov, "get_national_debt_metric",
                           return_value={"amount": "1000", "record_date": "2026-01-01"}), patch.object(
+            self.gov, "_treasury_debt_history", return_value={"points": []}
+        ), patch.object(
             self.gov, "_worldbank_indicator",
             side_effect=lambda ind: {"NY.GDP.MKTP.CD": {"value": 500.0, "date": "2025"},
                                      "SP.POP.TOTL": {"value": 100.0, "date": "2025"}}[ind]
@@ -360,6 +362,8 @@ class EconomySnapshotTests(unittest.TestCase):
 
     def test_snapshot_degrades_per_metric(self):
         with patch.object(self.gov, "get_national_debt_metric", side_effect=RuntimeError("treasury down")), patch.object(
+            self.gov, "_treasury_debt_history", return_value={"points": []}
+        ), patch.object(
             self.gov, "_worldbank_indicator", return_value={"value": 500.0, "date": "2025"}
         ), patch.object(self.gov, "_bls_latest_value", return_value={"value": 4.2}), patch.object(
             self.gov, "_bls_inflation", return_value={"value": 3.9}
