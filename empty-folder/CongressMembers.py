@@ -256,24 +256,40 @@ def _fec_api_key():
     return api_key
 
 
+_initialized_cache_paths = set()
+_cache_init_lock = threading.Lock()
+
+
 def _connect_cache():
     path = _cache_path()
     path.parent.mkdir(parents=True, exist_ok=True)
 
     conn = sqlite3.connect(path, timeout=30)
     conn.row_factory = sqlite3.Row
-    conn.execute(
-        """
-        CREATE TABLE IF NOT EXISTS api_cache (
-            cache_key TEXT PRIMARY KEY,
-            response_json TEXT NOT NULL,
-            created_at INTEGER NOT NULL,
-            expires_at INTEGER NOT NULL,
-            source TEXT NOT NULL
-        )
-        """
-    )
-    conn.commit()
+
+    # Create the schema (and switch to WAL for concurrent readers) once per cache
+    # file rather than on every read/write — this ran on the hot path before.
+    path_key = str(path)
+    if path_key not in _initialized_cache_paths:
+        with _cache_init_lock:
+            if path_key not in _initialized_cache_paths:
+                try:
+                    conn.execute("PRAGMA journal_mode=WAL")
+                except sqlite3.Error:
+                    pass
+                conn.execute(
+                    """
+                    CREATE TABLE IF NOT EXISTS api_cache (
+                        cache_key TEXT PRIMARY KEY,
+                        response_json TEXT NOT NULL,
+                        created_at INTEGER NOT NULL,
+                        expires_at INTEGER NOT NULL,
+                        source TEXT NOT NULL
+                    )
+                    """
+                )
+                conn.commit()
+                _initialized_cache_paths.add(path_key)
     return conn
 
 
@@ -292,16 +308,18 @@ def _build_cache_key(namespace, payload):
 
 
 def _read_cache(cache_key, allow_stale=False):
-    with _cache_lock:
-        with _cache_connection() as conn:
-            row = conn.execute(
-                """
-                SELECT response_json, expires_at
-                FROM api_cache
-                WHERE cache_key = ?
-                """,
-                (cache_key,),
-            ).fetchone()
+    # No global lock: WAL mode + a fresh connection per read means concurrent
+    # readers don't block each other (this is what lets the parallel dossier
+    # sections actually overlap on warm-cache hits).
+    with _cache_connection() as conn:
+        row = conn.execute(
+            """
+            SELECT response_json, expires_at
+            FROM api_cache
+            WHERE cache_key = ?
+            """,
+            (cache_key,),
+        ).fetchone()
 
     if row is None:
         return None
@@ -316,6 +334,9 @@ def _write_cache(cache_key, response_json, source, ttl_seconds=None):
     created_at = _now_seconds()
     ttl = _cache_ttl_seconds() if ttl_seconds is None else ttl_seconds
     expires_at = created_at + ttl
+    # Serialize (potentially multi-MB) payload OUTSIDE the write lock so it does
+    # not block other writers while json.dumps runs.
+    payload = json.dumps(response_json)
 
     with _cache_lock:
         with _cache_connection() as conn:
@@ -325,13 +346,7 @@ def _write_cache(cache_key, response_json, source, ttl_seconds=None):
                     (cache_key, response_json, created_at, expires_at, source)
                 VALUES (?, ?, ?, ?, ?)
                 """,
-                (
-                    cache_key,
-                    json.dumps(response_json),
-                    created_at,
-                    expires_at,
-                    source,
-                ),
+                (cache_key, payload, created_at, expires_at, source),
             )
             conn.commit()
 
@@ -340,6 +355,11 @@ def _cache_lock_for_key(cache_key):
     with _cache_key_locks_guard:
         lock = _cache_key_locks.get(cache_key)
         if lock is None:
+            # Bound growth: bill/FEC/etc. keys are unbounded over a long-lived
+            # server. Clearing is safe — in-flight locks stay alive via the
+            # caller's reference; a brand-new key just mints a fresh lock.
+            if len(_cache_key_locks) > 10000:
+                _cache_key_locks.clear()
             lock = threading.Lock()
             _cache_key_locks[cache_key] = lock
         return lock
@@ -400,6 +420,28 @@ def _congress_get(path, params=None, ttl_seconds=None):
     return _cached_json(cache_key, f"congress:{path}", fetch_json, ttl_seconds=ttl_seconds)
 
 
+def _fec_api_key_source():
+    """Which FEC key is in play: 'env' (real key), 'legacy_demo' (hardcoded
+    fallback, ~60 req/hr), or None. Surfaced in /health for debugging."""
+    _load_local_env()
+    if (
+        os.getenv("FEC_API_KEY")
+        or os.getenv("ECON_API_KEY")
+        or os.getenv("YGN_ECON_API_KEY")
+    ):
+        return "env"
+    if _legacy_fec_api_key():
+        return "legacy_demo"
+    return None
+
+
+def _fec_retry_delay(response, attempt):
+    retry_after = (response.headers.get("Retry-After") or "").strip()
+    if retry_after.isdigit():
+        return min(float(retry_after), 3.0)
+    return min(0.5 * (attempt + 1), 3.0)
+
+
 def _fec_get(path, params=None, ttl_seconds=None):
     cache_params = dict(params or {})
     cache_key = _build_cache_key(
@@ -415,17 +457,39 @@ def _fec_get(path, params=None, ttl_seconds=None):
         request_params = dict(cache_params)
         request_params["api_key"] = _fec_api_key()
 
-        try:
-            response = requests.get(
-                url,
-                params=request_params,
-                timeout=REQUEST_TIMEOUT_SECONDS,
-            )
-            response.raise_for_status()
-        except requests.RequestException:
-            raise UpstreamDataError(f"FEC request failed for {path}.") from None
+        attempts = 3
+        for attempt in range(attempts):
+            try:
+                response = requests.get(
+                    url,
+                    params=request_params,
+                    timeout=REQUEST_TIMEOUT_SECONDS,
+                )
+            except requests.RequestException:
+                raise UpstreamDataError(f"FEC request failed for {path}.") from None
 
-        return response.json()
+            # Rate limited: back off and retry (helps burst limits, e.g. the
+            # parallel dossier firing ethics + funding at once).
+            if response.status_code == 429 and attempt + 1 < attempts:
+                time.sleep(_fec_retry_delay(response, attempt))
+                continue
+
+            if response.status_code == 429:
+                raise UpstreamDataError(
+                    f"FEC rate limit exceeded for {path}. The FEC_API_KEY is "
+                    "throttled (the demo key allows only ~60 requests/hour)."
+                )
+
+            try:
+                response.raise_for_status()
+            except requests.HTTPError:
+                raise UpstreamDataError(
+                    f"FEC request failed for {path} (HTTP {response.status_code})."
+                ) from None
+
+            return response.json()
+
+        raise UpstreamDataError(f"FEC request failed for {path}.")
 
     return _cached_json(cache_key, f"fec:{path}", fetch_json, ttl_seconds=ttl_seconds)
 
@@ -813,8 +877,34 @@ def _read_json_file(path, default):
         return default
 
 
+_json_file_memo = {}
+_json_file_memo_lock = threading.Lock()
+
+
+def _read_json_file_cached(path, default):
+    """Memoized (by mtime) read for small config files that sit on hot paths —
+    member enrichment reads the overrides file once per member on every list call.
+    Callers must treat the returned value as read-only."""
+    path = Path(path)
+    try:
+        mtime = path.stat().st_mtime
+    except OSError:
+        return default
+    key = str(path)
+    entry = _json_file_memo.get(key)
+    if entry is not None and entry[0] == mtime:
+        return entry[1]
+    with _json_file_memo_lock:
+        entry = _json_file_memo.get(key)
+        if entry is not None and entry[0] == mtime:
+            return entry[1]
+        value = _read_json_file(path, default)
+        _json_file_memo[key] = (mtime, value)
+        return value
+
+
 def _static_member_overrides():
-    return _read_json_file(STATIC_MEMBER_OVERRIDES_PATH, {})
+    return _read_json_file_cached(STATIC_MEMBER_OVERRIDES_PATH, {})
 
 
 def _static_member_override(bioguide_id):
@@ -1311,6 +1401,8 @@ def _resolve_wikipedia_summary(member):
             return _build_congress_member_summary(member)
         except requests.HTTPError:
             continue
+        except requests.RequestException:
+            return _build_congress_member_summary(member)
 
         score = _wiki_match_score(summary, member)
         if score > best_score:
@@ -1326,6 +1418,8 @@ def _resolve_wikipedia_summary(member):
             return _build_congress_member_summary(member)
         except requests.HTTPError:
             continue
+        except requests.RequestException:
+            return _build_congress_member_summary(member)
 
         for title in titles:
             title_key = title.lower()
@@ -1339,6 +1433,8 @@ def _resolve_wikipedia_summary(member):
                 return _build_congress_member_summary(member)
             except requests.HTTPError:
                 continue
+            except requests.RequestException:
+                return _build_congress_member_summary(member)
 
             score = _wiki_match_score(summary, member)
             if score > best_score:
@@ -1414,28 +1510,63 @@ def getMemberID(Name, chamber=None, congress=None):
     return matches[0].get("bioguideId")
 
 
-def get_nominate_score(bioguide_id: str):
-    """
-    Returns a member's most recent NOMINATE dim1 score and geo mean probability
-    by scanning the CSV directly. No database needed.
+_nominate_index = None
+_nominate_index_mtime = None
+_nominate_index_lock = threading.Lock()
 
-    Returns {"dim1": float, "geo_mean": float} or None if not found.
+
+def _load_nominate_index():
+    """Build a {bioguide_id -> latest-congress row} index once, rebuilt on file change.
+
+    The NOMINATE CSV is 6+ MB / 50k+ rows; scanning it per call (once per member
+    in static generation and inside every cold dossier) is the single largest
+    avoidable cost. Index once and look up O(1).
     """
+    global _nominate_index, _nominate_index_mtime
     if not CSV_PATH.exists():
         raise FileNotFoundError(
             f"Missing NOMINATE CSV at {CSV_PATH}. Add HSall_members.csv next to "
             "CongressMembers.py before calling get_nominate_score."
         )
 
-    best_row = None
+    mtime = CSV_PATH.stat().st_mtime
+    if _nominate_index is not None and _nominate_index_mtime == mtime:
+        return _nominate_index
 
-    with open(CSV_PATH, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            if row["bioguide_id"] != bioguide_id:
-                continue
-            if best_row is None or int(row["congress"]) > int(best_row["congress"]):
-                best_row = row
+    with _nominate_index_lock:
+        if _nominate_index is not None and _nominate_index_mtime == mtime:
+            return _nominate_index
+        index = {}
+        with open(CSV_PATH, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                bioguide_id = row.get("bioguide_id")
+                if not bioguide_id:
+                    continue
+                try:
+                    congress = int(row["congress"])
+                except (TypeError, ValueError, KeyError):
+                    continue
+                existing = index.get(bioguide_id)
+                if existing is None or congress > existing["congress"]:
+                    index[bioguide_id] = {
+                        "congress": congress,
+                        "nominate_dim1": row.get("nominate_dim1"),
+                        "nominate_geo_mean_probability": row.get(
+                            "nominate_geo_mean_probability"
+                        ),
+                    }
+        _nominate_index = index
+        _nominate_index_mtime = mtime
+        return index
 
+
+def get_nominate_score(bioguide_id: str):
+    """
+    Returns a member's most recent NOMINATE dim1 score and geo mean probability.
+
+    Returns {"dim1": float, "geo_mean": float} or None if not found.
+    """
+    best_row = _load_nominate_index().get(bioguide_id)
     if best_row is None or not best_row["nominate_dim1"]:
         return None
 
@@ -1555,13 +1686,13 @@ def _fec_search_candidates(member):
     }
     state = _member_state_code(member)
     office = _member_fec_office(member)
-    party = _party_abbreviation(member)
     if state:
         params["state"] = state
     if office:
         params["office"] = office
-    if party:
-        params["party"] = party
+    # Party is intentionally NOT a hard filter: FEC's party codes don't always
+    # match ours (independents, minor parties, caucus mismatches), which would
+    # drop a real candidate to zero results. It stays a +1 signal in scoring.
 
     data = _fec_get("/candidates/search/", params=params)
     candidates = data.get("results", [])
@@ -1749,7 +1880,7 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
 
 
 def _static_ethics_scores():
-    return _read_json_file(STATIC_ETHICS_PATH, {})
+    return _read_json_file_cached(STATIC_ETHICS_PATH, {})
 
 
 def _stable_fraction(*values):
@@ -2126,14 +2257,39 @@ def _unitedstates_dataset(filename, ttl_seconds=UNITEDSTATES_CACHE_TTL_SECONDS):
     )
 
 
-def _legislators_index():
-    """bioguide id -> full congress-legislators record for current members."""
+_index_memo = {}
+_index_memo_lock = threading.Lock()
+INDEX_MEMO_TTL_SECONDS = 3600
+
+
+def _memoized_index(key, builder):
+    """In-process memo for built indexes so the ~1 MB unitedstates blobs are
+    parsed/indexed once per TTL window instead of on every dossier section."""
+    now = time.monotonic()
+    entry = _index_memo.get(key)
+    if entry is not None and (now - entry[0]) < INDEX_MEMO_TTL_SECONDS:
+        return entry[1]
+    with _index_memo_lock:
+        entry = _index_memo.get(key)
+        if entry is not None and (now - entry[0]) < INDEX_MEMO_TTL_SECONDS:
+            return entry[1]
+        value = builder()
+        _index_memo[key] = (time.monotonic(), value)
+        return value
+
+
+def _build_legislators_index():
     index = {}
     for record in _unitedstates_dataset("legislators-current.yaml") or []:
         bioguide_id = (record.get("id") or {}).get("bioguide")
         if bioguide_id:
             index[bioguide_id] = record
     return index
+
+
+def _legislators_index():
+    """bioguide id -> full congress-legislators record for current members."""
+    return _memoized_index("legislators", _build_legislators_index)
 
 
 def _legislator_record(bioguide_id):
@@ -2144,14 +2300,18 @@ def _legislator_record(bioguide_id):
         return {}
 
 
-def _social_media_index():
-    """bioguide id -> {twitter, facebook, youtube, instagram, ...}."""
+def _build_social_media_index():
     index = {}
     for record in _unitedstates_dataset("legislators-social-media.yaml") or []:
         bioguide_id = (record.get("id") or {}).get("bioguide")
         if bioguide_id:
             index[bioguide_id] = record.get("social") or {}
     return index
+
+
+def _social_media_index():
+    """bioguide id -> {twitter, facebook, youtube, instagram, ...}."""
+    return _memoized_index("social", _build_social_media_index)
 
 
 def _social_media_record(bioguide_id):
@@ -2162,8 +2322,7 @@ def _social_media_record(bioguide_id):
         return {}
 
 
-def _committee_name_lookup():
-    """Return (full_committees, subcommittees) name lookups keyed by thomas id."""
+def _build_committee_name_lookup():
     full = {}
     sub = {}
     for committee in _unitedstates_dataset("committees-current.yaml") or []:
@@ -2180,6 +2339,11 @@ def _committee_name_lookup():
             if sub_id:
                 sub[thomas_id + sub_id] = subcommittee.get("name")
     return full, sub
+
+
+def _committee_name_lookup():
+    """Return (full_committees, subcommittees) name lookups keyed by thomas id."""
+    return _memoized_index("committees", _build_committee_name_lookup)
 
 
 # --- Committee assignments (extra feature) -------------------------------
@@ -2621,11 +2785,11 @@ def _house_disclosure_index(year):
             ) from None
 
         try:
-            archive = zipfile.ZipFile(io.BytesIO(response.content))
-            xml_name = next(
-                name for name in archive.namelist() if name.lower().endswith(".xml")
-            )
-            root = ET.fromstring(archive.read(xml_name))
+            with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+                xml_name = next(
+                    name for name in archive.namelist() if name.lower().endswith(".xml")
+                )
+                root = ET.fromstring(archive.read(xml_name))
         except (zipfile.BadZipFile, StopIteration, ET.ParseError) as exc:
             raise UpstreamDataError(
                 f"House financial-disclosure index for {year} was not parseable."
@@ -2644,12 +2808,13 @@ def _house_disclosure_index(year):
     )
 
 
-def _house_disclosure_filings(last_name, first_name):
+def _house_disclosure_filings(last_name, first_name, state_code=None):
     if not last_name:
         return []
 
     last_name = last_name.strip().lower()
     first_initial = (first_name or "").strip().lower()[:1]
+    state_code = (state_code or "").strip().upper() or None
     filings = []
     for year in (_current_year(), _current_year() - 1):
         try:
@@ -2660,6 +2825,9 @@ def _house_disclosure_filings(last_name, first_name):
             if (row.get("Last") or "").strip().lower() != last_name:
                 continue
             if first_initial and (row.get("First") or "").strip().lower()[:1] != first_initial:
+                continue
+            # Disambiguate same-name reps in different states (StateDst is e.g. "CA11").
+            if state_code and (row.get("StateDst") or "").strip().upper()[:2] != state_code:
                 continue
             filing_type = (row.get("FilingType") or "").strip().upper()
             doc_id = (row.get("DocID") or "").strip()
@@ -2754,7 +2922,9 @@ def get_member_stock_activity(bioguide_id):
         # No-key fallback: official House Clerk financial-disclosure filings.
         if not is_senate:
             filings = _house_disclosure_filings(
-                member.get("lastName"), member.get("firstName")
+                member.get("lastName"),
+                member.get("firstName"),
+                _member_state_code(member),
             )
             result["filings"] = filings
             result["available"] = bool(filings)

@@ -216,6 +216,29 @@ class MemberDossierBackendTests(unittest.TestCase):
         self.assertTrue(result["filings"][0]["isStockReport"])
         self.assertIn("ptr-pdfs", result["filings"][0]["pdfUrl"])
 
+    def test_house_disclosure_filings_filter_by_state(self):
+        # Two different reps named "Smith" in different states; only CA should match.
+        rows = [
+            {"Last": "Smith", "First": "Jo", "FilingType": "P", "DocID": "1",
+             "Year": "2026", "FilingDate": "6/1/2026", "StateDst": "CA11"},
+            {"Last": "Smith", "First": "Jo", "FilingType": "P", "DocID": "2",
+             "Year": "2026", "FilingDate": "6/2/2026", "StateDst": "TX05"},
+        ]
+        with patch.object(
+            self.gov, "_house_disclosure_index",
+            side_effect=lambda y: rows if y == self.gov._current_year() else [],
+        ):
+            filings = self.gov._house_disclosure_filings("Smith", "Jo", "CA")
+        self.assertEqual(len(filings), 1)
+        self.assertEqual(filings[0]["stateDistrict"], "CA11")
+
+    def test_nominate_index_is_used_for_lookup(self):
+        fake_index = {"X0001": {"congress": 118, "nominate_dim1": "-0.42",
+                                "nominate_geo_mean_probability": "0.9"}}
+        with patch.object(self.gov, "_load_nominate_index", return_value=fake_index):
+            self.assertEqual(self.gov.get_nominate_score("X0001")["dim1"], -0.42)
+            self.assertIsNone(self.gov.get_nominate_score("NOPE"))
+
     def test_stocks_senate_links_to_efd_search(self):
         member = {
             "member": {

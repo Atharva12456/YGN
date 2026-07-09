@@ -257,6 +257,7 @@ function extractSortKey(name) {
 function buildInitials(name) {
   if (!name) return '?';
   const words = name.trim().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return '?';
   if (words.length === 1) return words[0][0].toUpperCase();
   // Use first letter of first word and first letter of last word
   return (words[0][0] + words[words.length - 1][0]).toUpperCase();
@@ -514,8 +515,12 @@ async function loadPopulationMetric() {
     const previous = rows[1] || {};
     const latestValue = Number(latest.value);
     const previousValue = Number(previous.value);
-    const annualChange = Number.isFinite(previousValue) ? latestValue - previousValue : 1_600_000;
     const baselineYear = Number(latest.date) + 1;
+    // A 200-OK-but-empty response would yield NaN and freeze the ticker on '-'.
+    if (!Number.isFinite(latestValue) || !Number.isFinite(baselineYear)) {
+      throw new Error('World Bank returned no usable population figure');
+    }
+    const annualChange = Number.isFinite(previousValue) ? latestValue - previousValue : 1_600_000;
     const baselineDate = new Date(Date.UTC(baselineYear, 0, 1));
     startPopulationTicker(latestValue, annualChange, baselineDate, `World Bank ${latest.date}, live est.`);
   } catch {
@@ -549,15 +554,31 @@ async function loadAgencyMetric() {
   }
 }
 
+async function loadMemberCount() {
+  // The member count lives in the 0.5 KB manifest — no need to pull the ~390 KB
+  // officials.json (+157 KB scores) on the home page just to render a number.
+  try {
+    const res = await fetch('data/manifest.json', { cache: 'force-cache' });
+    if (res.ok) {
+      const manifest = await res.json();
+      if (manifest && manifest.members) {
+        updateStatCard('stat-members', 'Members Tracked', String(manifest.members), 'YGN generated data');
+        return;
+      }
+    }
+  } catch (_) { /* fall through to the full load */ }
+  loadMemberDataOnly().catch(() => {
+    updateStatCard('stat-members', 'Members Tracked', '-', 'Static data unavailable');
+  });
+}
+
 async function refreshHomeMetrics() {
   if (!homeStats) return;
   loadDebtMetric();
   loadPopulationMetric();
   loadFederalRegisterMetric();
   loadAgencyMetric();
-  loadMemberDataOnly().catch(() => {
-    updateStatCard('stat-members', 'Members Tracked', '-', 'Static data unavailable');
-  });
+  loadMemberCount();
 }
 
 // Recent bills
@@ -594,7 +615,7 @@ function appendText(parent, className, text, tagName = 'p') {
 function appendLink(parent, label, href) {
   if (!href) return null;
   const link = document.createElement('a');
-  link.href = href;
+  link.href = safeUrl(href);
   link.target = '_blank';
   link.rel = 'noopener';
   link.textContent = label;
@@ -820,13 +841,28 @@ function hydrateMemberScores(members, scoreIndex) {
 /**
  * Load congressional member data without rendering tiles.
  */
+async function loadRoster() {
+  // The complete current roster (all ~537 members) lives in the static snapshot.
+  // The live API is paginated at 250 and is NOT current-member filtered (it draws
+  // from the ~2,700 all-time member pool), so using it would hide hundreds of
+  // current members and mix in historical ones. Use the snapshot for the grid;
+  // detail pages still hit the live API.
+  try {
+    const res = await fetch('data/officials.json', { cache: 'force-cache' });
+    if (res.ok) {
+      return { data: await res.json(), source: 'static' };
+    }
+  } catch (_) { /* fall through to the API */ }
+  return fetchJsonWithStaticFallback('/officials?limit=250&offset=0&current_member=true', 'officials.json');
+}
+
 async function loadMemberDataOnly() {
   if (membersLoaded) return allMembers;
   if (memberDataLoadPromise) return memberDataLoadPromise;
 
   memberDataLoadPromise = (async () => {
     const [result, scoreIndex] = await Promise.all([
-      fetchJsonWithStaticFallback('/officials?limit=250&offset=0', 'officials.json'),
+      loadRoster(),
       loadMemberScoreIndex()
     ]);
     const data = result.data;
@@ -962,26 +998,30 @@ function createMemberTile(member) {
   tile.setAttribute('role', 'listitem');
   tile.setAttribute('aria-label', name);
 
-  // Photo or initials
+  // Photo or initials. All values below are API-derived, so escape them before
+  // interpolating into innerHTML (prevents stored/reflected XSS via member data).
+  const safeName = esc(name);
+  const safeInitials = esc(initials);
+  const safePhotoUrl = /^https?:\/\//i.test(photoUrl || '') ? esc(photoUrl) : '';
   let photoInner = '';
-  if (photoUrl) {
+  if (safePhotoUrl) {
     photoInner = `
       <img
         class="tile-photo"
-        src="${photoUrl}"
-        alt="${name}"
+        src="${safePhotoUrl}"
+        alt="${safeName}"
         loading="lazy"
         decoding="async"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
       >
-      <div class="tile-initials" style="display:none;" aria-hidden="true">${initials}</div>
+      <div class="tile-initials" style="display:none;" aria-hidden="true">${safeInitials}</div>
     `;
   } else {
-    photoInner = `<div class="tile-initials" aria-hidden="true">${initials}</div>`;
+    photoInner = `<div class="tile-initials" aria-hidden="true">${safeInitials}</div>`;
   }
 
-  const partyBadgeHtml = `<div class="party-badge ${partyClass}">${partyLabel}</div>`;
-  const ethicsBadgeHtml = `<a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" title="Open ethics score methodology" aria-label="Open ethics score methodology for ${name}" style="background-color: ${ethicsColor};">${ethicsGrade}</a>`;
+  const partyBadgeHtml = `<div class="party-badge ${partyClass}">${esc(partyLabel)}</div>`;
+  const ethicsBadgeHtml = `<a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" title="Open ethics score methodology" aria-label="Open ethics score methodology for ${safeName}" style="background-color: ${ethicsColor};">${esc(ethicsGrade)}</a>`;
 
   const photoHtml = `
     <div class="tile-photo-wrapper">
@@ -993,9 +1033,9 @@ function createMemberTile(member) {
 
   tile.innerHTML = `
     ${photoHtml}
-    <div class="tile-name">${name}</div>
-    ${locationStr ? `<div class="tile-meta">${locationStr}</div>` : ''}
-    ${chamberStr ? `<div class="tile-meta">${chamberStr}</div>` : ''}
+    <div class="tile-name">${safeName}</div>
+    ${locationStr ? `<div class="tile-meta">${esc(locationStr)}</div>` : ''}
+    ${chamberStr ? `<div class="tile-meta">${esc(chamberStr)}</div>` : ''}
   `;
 
   const ethicsBadge = tile.querySelector('.ethics-badge');
@@ -1056,11 +1096,19 @@ function createMemberTile(member) {
     if (nominateScore && typeof nominateScore.dim1 === 'number') {
       nominateCache.set(bioguideId, { dim1: nominateScore.dim1 });
       applyNominateTint(tile, nominateScore.dim1);
+    } else if (nominateCache.has(bioguideId)) {
+      // Re-render (e.g. after a search): reapply the previously fetched tint so
+      // the tile doesn't revert to un-tinted default.
+      const cached = nominateCache.get(bioguideId);
+      if (cached && typeof cached.dim1 === 'number') applyNominateTint(tile, cached.dim1);
     }
 
     if (ethicsScoreData && typeof ethicsScoreData.score === 'number') {
       ethicsCache.set(bioguideId, ethicsScoreData);
       applyEthicsGrade(tile, ethicsScoreData);
+    } else if (ethicsCache.has(bioguideId)) {
+      const cached = ethicsCache.get(bioguideId);
+      if (cached) applyEthicsGrade(tile, cached);
     }
 
     if (!nominateCache.has(bioguideId) || !ethicsCache.has(bioguideId)) {
@@ -1329,7 +1377,7 @@ function setMapStatus(message, tone = '') {
 async function loadStateData() {
   if (stateData.length > 0) return stateData;
 
-  const response = await fetch('data/states.json', { cache: 'no-store' });
+  const response = await fetch('data/states.json', { cache: 'force-cache' });
   if (!response.ok) throw new Error(`Could not load state data (${response.status})`);
 
   const payload = await response.json();
@@ -1501,9 +1549,9 @@ function renderMemberListForState(stateInfo) {
 
   const visibleMembers = members.slice(0, 9);
   const rows = visibleMembers.map(member => {
-    const name = formatMemberDisplayName(member) || 'Unknown member';
-    const label = formatDistrictLabel(member) || getMemberChamber(member) || stateInfo.abbreviation;
-    const party = memberPartyLabel(member);
+    const name = esc(formatMemberDisplayName(member) || 'Unknown member');
+    const label = esc(formatDistrictLabel(member) || getMemberChamber(member) || stateInfo.abbreviation);
+    const party = esc(memberPartyLabel(member));
     return `
       <div class="district-row">
         <span>${label}${party ? ` - ${party}` : ''}</span>
@@ -1560,11 +1608,9 @@ async function initMap() {
 
     drawStateMap(us);
     setMapStatus('Hover for state names. Select a state to open its snapshot and districts.');
-    loadMemberDataOnly()
-      .then(() => {
-        if (selectedMapState) renderMemberListForState(selectedMapState);
-      })
-      .catch(() => {});
+    // Member/delegation data is loaded lazily when a state is actually selected
+    // (see updateStatePanel), so the home page no longer eagerly downloads the
+    // ~390 KB officials.json + scores on initial render.
 
   } catch (error) {
     setMapStatus('Could not load the interactive map. Static pages are still available.', 'error');
@@ -1724,7 +1770,13 @@ function districtDisplayName(feature) {
   const last = props.LASTNAME || '';
   const memberName = `${first} ${last}`.trim() || 'Member TBD';
   const party = props.PARTY ? ` (${props.PARTY})` : '';
-  return { districtLabel, memberName, party };
+  // Values come from a third-party ArcGIS feature service and are injected into
+  // innerHTML (tooltip + district list), so escape them here at the source.
+  return {
+    districtLabel: esc(districtLabel),
+    memberName: esc(memberName),
+    party: esc(party),
+  };
 }
 
 async function renderDistrictsForState(stateInfo) {
@@ -1864,6 +1916,19 @@ function esc(value) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// Neutralize dangerous URL schemes (javascript:, data:, vbscript:) from any
+// API-derived href. Allows http(s), mailto, and scheme-less (relative) URLs.
+function safeUrl(url) {
+  const s = String(url == null ? '' : url).trim();
+  if (!s) return '#';
+  const scheme = s.match(/^([a-z][a-z0-9+.-]*):/i);
+  if (scheme) {
+    const proto = scheme[1].toLowerCase();
+    if (proto !== 'http' && proto !== 'https' && proto !== 'mailto') return '#';
+  }
+  return s;
 }
 
 function sessionGet(key) {
@@ -2037,7 +2102,7 @@ function aboutHtml(wiki) {
     ? `<p class="muted-text" style="margin-top:.75rem;clear:both;">Generated summary — no Wikipedia article resolved.</p>` : '';
   const text = esc(wiki.extract || wiki.summary || 'No biography available.');
   const more = wiki.wiki_url
-    ? `<a class="wiki-more" href="${esc(wiki.wiki_url)}" target="_blank" rel="noopener">Read more on Wikipedia →</a>` : '';
+    ? `<a class="wiki-more" href="${esc(safeUrl(wiki.wiki_url))}" target="_blank" rel="noopener">Read more on Wikipedia →</a>` : '';
   return `<section class="dossier-card" id="about">
     <h3><span><span class="card-icon">📖</span>About</span></h3>
     ${thumb}<div class="wiki-body">${text}</div>${more}${note}
@@ -2135,11 +2200,11 @@ function stocksHtml(stocks) {
     const items = stocks.filings.map(f => `
       <li class="dossier-list-item">
         <div class="dossier-list-item-title">${esc(f.label || 'Filing')} ${f.isStockReport ? '<span class="badge badge--report">Stock report</span>' : ''}</div>
-        <div class="dossier-list-item-meta">${esc(f.filingDate || '')} ${f.pdfUrl ? `· <a href="${esc(f.pdfUrl)}" target="_blank" rel="noopener">View official PDF →</a>` : ''}</div>
+        <div class="dossier-list-item-meta">${esc(f.filingDate || '')} ${f.pdfUrl ? `· <a href="${esc(safeUrl(f.pdfUrl))}" target="_blank" rel="noopener">View official PDF →</a>` : ''}</div>
       </li>`).join('');
     content = `<ul class="dossier-list">${items}</ul>`;
   } else if (stocks.senateSearchUrl) {
-    content = `<p><a class="contact-link" href="${esc(stocks.senateSearchUrl)}" target="_blank" rel="noopener">Search this senator's disclosures on the Senate eFD system →</a></p>`;
+    content = `<p><a class="contact-link" href="${esc(safeUrl(stocks.senateSearchUrl))}" target="_blank" rel="noopener">Search this senator's disclosures on the Senate eFD system →</a></p>`;
   } else {
     content = `<p class="muted-text">${esc(stocks.note || 'No financial disclosures found.')}</p>`;
   }
@@ -2193,13 +2258,13 @@ function contactHtml(contact) {
   const soc = contact.social || {};
   const prof = contact.profiles || {};
   const offLines = [];
-  if (off.website) offLines.push(`<div class="contact-line">🌐 <a href="${esc(off.website)}" target="_blank" rel="noopener">Official website</a></div>`);
+  if (off.website) offLines.push(`<div class="contact-line">🌐 <a href="${esc(safeUrl(off.website))}" target="_blank" rel="noopener">Official website</a></div>`);
   if (off.phone) offLines.push(`<div class="contact-line">📞 ${esc(off.phone)}</div>`);
   if (off.office) offLines.push(`<div class="contact-line">🏢 ${esc(off.office)}</div>`);
   const socLinks = Object.entries(soc).filter(([, d]) => d && d.url).map(([net, d]) =>
-    `<a class="contact-link" href="${esc(d.url)}" target="_blank" rel="noopener">${esc(net.charAt(0).toUpperCase() + net.slice(1))}</a>`).join('');
+    `<a class="contact-link" href="${esc(safeUrl(d.url))}" target="_blank" rel="noopener">${esc(net.charAt(0).toUpperCase() + net.slice(1))}</a>`).join('');
   const profLinks = Object.entries(prof).filter(([, url]) => url).map(([site, url]) =>
-    `<a class="contact-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(site.charAt(0).toUpperCase() + site.slice(1))}</a>`).join('');
+    `<a class="contact-link" href="${esc(safeUrl(url))}" target="_blank" rel="noopener">${esc(site.charAt(0).toUpperCase() + site.slice(1))}</a>`).join('');
   const groups = [
     offLines.length ? `<div><div class="contact-group-title">Official</div>${offLines.join('')}</div>` : '',
     socLinks ? `<div><div class="contact-group-title">Social media</div><div class="contact-links">${socLinks}</div></div>` : '',
@@ -2225,7 +2290,7 @@ function billListHtml(bills) {
   return `<ul class="dossier-list">${bills.map(b => `
     <li class="dossier-list-item">
       <div class="dossier-list-item-title">
-        <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.type)}${esc(b.number)}</a>
+        <a href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener">${esc(b.type)}${esc(b.number)}</a>
         ${b.becameLaw ? '<span class="badge badge--enacted">Enacted</span>' : ''}
       </div>
       <div style="font-size:.95rem;margin:.25rem 0 .4rem;">${esc(b.title)}</div>
@@ -2325,7 +2390,9 @@ async function initMemberPage() {
   renderDossier(container, null, { id, handoff, fundingPending: true });
 
   const fastPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_FAST_SECTIONS}`, `dossier/${id}.json`);
-  const slowPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_SLOW_SECTIONS}`, `dossier/${id}.json`);
+  // Pre-attach a catch so an early return (e.g. static notFound) below never
+  // leaves this as an unhandled promise rejection.
+  const slowPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_SLOW_SECTIONS}`, `dossier/${id}.json`).catch(() => null);
 
   let merged = null;
   try {
@@ -2439,7 +2506,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(checkHealth, 30_000);
 
   // ── Search
-  if (membersSearch) membersSearch.addEventListener('input', handleSearch);
+  if (membersSearch) {
+    // Debounce: filtering rebuilds the whole grid, so run it once the user
+    // pauses typing rather than on every keystroke.
+    let searchTimer = null;
+    membersSearch.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(handleSearch, 150);
+    });
+  }
 
   if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
   if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);

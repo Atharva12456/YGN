@@ -8,6 +8,7 @@ from typing import Annotated
 import requests
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 
@@ -88,6 +89,37 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Compress text responses (JS/CSS/JSON/HTML). Heroku does not gzip for us, and
+# the JSON snapshots + app bundle are large, so this is the biggest transfer win.
+app.add_middleware(GZipMiddleware, minimum_size=500)
+
+
+# Cache-Control for static assets so repeat visits and internal navigation hit
+# the browser cache instead of re-fetching app.js/styles.css/vendor/JSON.
+STATIC_CACHE_RULES = (
+    ("/vendor/", "public, max-age=604800"),   # third-party libs — effectively immutable
+    ("/data/", "public, max-age=900"),         # generated JSON — matches the 15-min cache TTL
+    ("/assets/", "public, max-age=86400"),     # icons/images
+)
+
+
+@app.middleware("http")
+async def add_static_cache_headers(request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    if "cache-control" not in (key.lower() for key in response.headers):
+        for prefix, value in STATIC_CACHE_RULES:
+            if path.startswith(prefix):
+                response.headers["Cache-Control"] = value
+                break
+        else:
+            if path == "/config.js":
+                response.headers["Cache-Control"] = "public, max-age=60"
+            elif path.endswith((".css", ".js")):
+                response.headers["Cache-Control"] = "public, max-age=600"
+    return response
+
+
 if DOCS_PATH.exists():
     for mount_name in ("assets", "data", "vendor"):
         mount_path = DOCS_PATH / mount_name
@@ -149,7 +181,15 @@ function resolveApiBaseUrl() {
   if (override === 'local') return LOCAL_API_BASE_URL;
   if (override === 'static') return '';
   if (override === 'origin') return window.location.origin;
-  if (/^https?:\\/\\//i.test(override)) return override.replace(/\\/+$/, '');
+  if (/^https?:\\/\\//i.test(override)) {
+    // Only allow same-origin or localhost overrides — never an arbitrary host.
+    try {
+      const u = new URL(override);
+      if (u.hostname === 'localhost' || u.hostname === '127.0.0.1' || u.origin === window.location.origin) {
+        return override.replace(/\\/+$/, '');
+      }
+    } catch (e) {}
+  }
 
   return DEFAULT_API_BASE_URL.replace(/\\/+$/, '');
 }
@@ -169,6 +209,7 @@ def health():
         "congress_api_key_configured": bool(os.getenv("CONGRESS_API_KEY")),
         "congress_api_key_available": government.congress_api_key_available(),
         "fec_api_key_available": government.fec_api_key_available(),
+        "fec_api_key_source": government._fec_api_key_source(),
         "stock_api_key_available": government.stock_api_key_available(),
     }
 

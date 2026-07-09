@@ -9,7 +9,17 @@ function resolveApiBaseUrl() {
 
   if (override === 'local') return LOCAL_API_BASE_URL;
   if (override === 'static') return '';
-  if (/^https?:\/\//i.test(override)) return override.replace(/\/+$/, '');
+  if (override === 'origin') return window.location.origin;
+  if (/^https?:\/\//i.test(override)) {
+    // Only allow same-origin or localhost overrides — never point the app at an
+    // arbitrary external host supplied via the URL.
+    try {
+      const u = new URL(override);
+      if (u.hostname === 'localhost' || u.hostname === '127.0.0.1' || u.origin === window.location.origin) {
+        return override.replace(/\/+$/, '');
+      }
+    } catch (_) { /* fall through to default */ }
+  }
 
   return DEFAULT_API_BASE_URL.replace(/\/+$/, '');
 }
