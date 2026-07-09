@@ -11,6 +11,7 @@ import threading
 import time
 import xml.etree.ElementTree as ET
 import zipfile
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -2401,7 +2402,42 @@ def _bill_web_url_from_item(item):
     return item.get("url")
 
 
+def _amendment_legislation_item(item):
+    """Amendments appear in the sponsored/cosponsored feeds without a title."""
+    latest_action = item.get("latestAction") or {}
+    action_text = latest_action.get("text") or ""
+    number = item.get("amendmentNumber")
+    congress = item.get("congress")
+    api_url = str(item.get("url") or "").lower()
+    if "samdt" in api_url:
+        type_label, slug, chamber = "S.Amdt.", "senate-amendment", "Senate"
+    elif "hamdt" in api_url:
+        type_label, slug, chamber = "H.Amdt.", "house-amendment", "House"
+    else:
+        type_label, slug, chamber = "Amdt.", None, ""
+    web_url = (
+        f"https://www.congress.gov/amendment/{congress}th-congress/{slug}/{number}"
+        if slug and congress and number
+        else item.get("url")
+    )
+    return {
+        "congress": congress,
+        "type": type_label,
+        "number": number,
+        "title": f"{chamber} Amendment {number}".strip(),
+        "introducedDate": item.get("introducedDate"),
+        "policyArea": (item.get("policyArea") or {}).get("name"),
+        "latestAction": action_text or None,
+        "latestActionDate": latest_action.get("actionDate"),
+        "becameLaw": False,
+        "isAmendment": True,
+        "url": web_url,
+    }
+
+
 def _legislation_item(item):
+    if item.get("amendmentNumber") and not item.get("number"):
+        return _amendment_legislation_item(item)
     latest_action = item.get("latestAction") or {}
     action_text = latest_action.get("text") or ""
     return {
@@ -2414,6 +2450,7 @@ def _legislation_item(item):
         "latestAction": action_text or None,
         "latestActionDate": latest_action.get("actionDate"),
         "becameLaw": "became public law" in action_text.lower(),
+        "isAmendment": False,
         "url": _bill_web_url_from_item(item),
     }
 
@@ -2748,8 +2785,11 @@ def get_member_stock_activity(bioguide_id):
 def get_member_dossier(bioguide_id, sections=None):
     """Assemble the full member detail payload.
 
-    Each section is captured independently: a failing section is set to ``None``
-    and recorded in ``errors`` rather than failing the whole request.
+    Sections are fetched **concurrently** (each does its own upstream request and
+    caching), so cold-cache wall-clock time is bounded by the slowest single
+    section rather than the sum of all of them. Each section is captured
+    independently: a failing section is set to ``None`` and recorded in
+    ``errors`` rather than failing the whole request.
     """
     detail = CongressMembersID(bioguide_id)
     dossier = {
@@ -2772,17 +2812,47 @@ def get_member_dossier(bioguide_id, sections=None):
     }
 
     requested = sections or list(section_fetchers.keys())
-    for stage in requested:
-        fetcher = section_fetchers.get(stage)
-        if fetcher is None:
-            continue
-        try:
-            dossier[stage] = fetcher()
-        except Exception as exc:  # noqa: BLE001 - collect, never blank the page
-            dossier[stage] = None
-            dossier["errors"].append({"stage": stage, "error": str(exc)})
+    valid = [(stage, section_fetchers[stage]) for stage in requested if stage in section_fetchers]
+    if not valid:
+        return dossier
+
+    with ThreadPoolExecutor(max_workers=min(len(valid), 9)) as executor:
+        future_to_stage = {executor.submit(fetcher): stage for stage, fetcher in valid}
+        for future in as_completed(future_to_stage):
+            stage = future_to_stage[future]
+            try:
+                dossier[stage] = future.result()
+            except Exception as exc:  # noqa: BLE001 - collect, never blank the page
+                dossier[stage] = None
+                dossier["errors"].append({"stage": stage, "error": str(exc)})
 
     return dossier
+
+
+def prewarm_dossier_datasets():
+    """Warm the expensive shared, no-key datasets used by the member dossier.
+
+    The unitedstates YAML files (~1.3 MB combined) and the House disclosure ZIP
+    are shared across every member and cached for many hours, but the first cold
+    fetch is slow. Warming them off the request path (from the background refresh
+    loop) keeps the first user's dossier fast. Failures are swallowed so a flaky
+    GitHub/House response never breaks the refresh cycle.
+    """
+    warmers = (
+        ("legislators", _legislators_index),
+        ("committees", _committee_name_lookup),
+        ("committee-membership", lambda: _unitedstates_dataset("committee-membership-current.yaml")),
+        ("social-media", _social_media_index),
+        ("house-disclosures", lambda: _house_disclosure_index(_current_year())),
+    )
+    warmed = []
+    for label, warmer in warmers:
+        try:
+            warmer()
+            warmed.append(label)
+        except Exception:  # noqa: BLE001 - best-effort, off the request path
+            LOGGER.warning("Dossier dataset prewarm failed for %s.", label, exc_info=True)
+    return warmed
 
 
 def _background_ethics_refresh_limit():
@@ -2806,6 +2876,7 @@ def refresh_government_officials_cache(include_ethics=True):
         "allCongressMembers": members_page,
         "getRecentBills": getRecentBills(),
         "getRecentBillDigest": getRecentBillDigest(limit=5),
+        "dossierDatasetsWarmed": prewarm_dossier_datasets(),
         "ethicsScoresRefreshed": 0,
         "ethicsErrors": [],
     }

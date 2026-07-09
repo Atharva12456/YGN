@@ -1027,14 +1027,26 @@ function createMemberTile(member) {
     schedulePopoverHide();
   });
 
-  tile.addEventListener('click', () => {
-    if (bioguideId) window.location.href = withApiParam('member.html?id=' + bioguideId);
-  });
+  const goToDetail = () => {
+    if (!bioguideId) return;
+    // Hand the detail page everything we already know so its header paints instantly.
+    try {
+      const nom = nominateCache.get(bioguideId);
+      const eth = ethicsCache.get(bioguideId);
+      sessionStorage.setItem('ygn_handoff_' + bioguideId, JSON.stringify({
+        bioguideId, name, party, state, chamber, districtLabel, photoUrl,
+        dim1: nom && typeof nom.dim1 === 'number' ? nom.dim1 : null,
+        ethicsScore: eth && typeof eth.score === 'number' ? eth.score : null,
+        ethicsGrade: eth && eth.grade ? eth.grade : null,
+      }));
+    } catch (_) { /* sessionStorage unavailable — non-fatal */ }
+    window.location.href = withApiParam('member.html?id=' + bioguideId);
+  };
+
+  tile.addEventListener('click', goToDetail);
 
   tile.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' && bioguideId) {
-      window.location.href = withApiParam('member.html?id=' + bioguideId);
-    }
+    if (event.key === 'Enter' && bioguideId) goToDetail();
   });
 
   if (bioguideId) {
@@ -1843,377 +1855,447 @@ function applyInitialMemberQuery() {
 
 // ─── Member Detail Page ──────────────────────────────────────────────────────
 
-window.switchLegislationTab = function(tabId) {
+const DOSSIER_FAST_SECTIONS = 'wiki,nominate,history,committees,contact,legislation,stocks';
+const DOSSIER_SLOW_SECTIONS = 'ethics,funding';
+
+function esc(value) {
+  return String(value == null ? '' : value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function sessionGet(key) {
+  try {
+    const raw = sessionStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function sessionSet(key, value) {
+  try {
+    sessionStorage.setItem(key, JSON.stringify(value));
+  } catch (_) {
+    /* storage full or unavailable — non-fatal */
+  }
+}
+
+function computeAge(birthday) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(birthday || ''));
+  if (!match) return null;
+  const now = new Date();
+  let age = now.getFullYear() - Number(match[1]);
+  const m = now.getMonth() + 1 - Number(match[2]);
+  if (m < 0 || (m === 0 && now.getDate() < Number(match[3]))) age -= 1;
+  return age >= 0 && age < 130 ? age : null;
+}
+
+window.switchLegislationTab = function (tabId) {
   document.querySelectorAll('.dossier-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
   document.querySelectorAll('.dossier-tab-content').forEach(c => c.classList.remove('active'));
-  document.querySelector(`[data-tab="${tabId}"]`).setAttribute('aria-selected', 'true');
-  document.getElementById(`tab-${tabId}`).classList.add('active');
+  const btn = document.querySelector(`[data-tab="${tabId}"]`);
+  const panel = document.getElementById(`tab-${tabId}`);
+  if (btn) btn.setAttribute('aria-selected', 'true');
+  if (panel) panel.classList.add('active');
 };
 
-function renderDossierUI(container, dossier) {
-  if (!dossier || !dossier.member) {
-    container.innerHTML = '<div class="error-state"><p>Dossier data is incomplete.</p></div>';
-    return;
+// ── Hero ──────────────────────────────────────────────────────────────────────
+
+function partyChipClass(party) {
+  const p = String(party || '').toLowerCase();
+  if (p.includes('democrat')) return 'chip chip--dem';
+  if (p.includes('republican')) return 'chip chip--rep';
+  if (p.includes('independent')) return 'chip chip--ind';
+  return 'chip';
+}
+
+function ideologyBlock(dim1) {
+  if (dim1 === null || dim1 === undefined || typeof dim1 !== 'number') return '';
+  const pct = Math.max(2, Math.min(98, ((dim1 + 1) / 2) * 100));
+  const lean = dim1 < -0.15 ? 'Leans liberal' : dim1 > 0.15 ? 'Leans conservative' : 'Centrist';
+  return `
+    <div class="ideology-meter" role="img" aria-label="Ideology score ${dim1.toFixed(2)}, ${lean}">
+      <div class="ideology-labels"><span>Liberal</span><span>Moderate</span><span>Conservative</span></div>
+      <div class="ideology-track"><span class="ideology-marker" style="left:${pct}%"></span></div>
+      <div class="ideology-caption">DW-NOMINATE: ${dim1.toFixed(2)} · ${lean}</div>
+    </div>`;
+}
+
+function heroGradeHtml(ethics) {
+  if (ethics === undefined) {
+    return `<span class="grade-badge" id="hero-grade" style="--grade-color:#cbd5e1" title="Loading ethics grade">…<span>Ethics</span></span>`;
+  }
+  const grade = ethics && ethics.grade ? ethics.grade : 'N/A';
+  const score = ethics ? ethics.score : null;
+  return `<a class="grade-badge" id="hero-grade" href="${withApiParam('ethics-methodology.html')}" style="--grade-color:${getEthicsColor(score)}" title="Campaign-finance transparency grade — click for methodology">${esc(grade)}<span>Ethics</span></a>`;
+}
+
+function normalizeHero(data, handoff, id) {
+  if (data && data.member) {
+    const m = data.member;
+    return {
+      id,
+      name: formatMemberDisplayName(m) || (handoff && handoff.name) || 'Member',
+      party: getMemberField(m, 'party', 'partyName') || (handoff && handoff.party) || '',
+      state: getMemberField(m, 'state') || (handoff && handoff.state) || '',
+      chamber: getMemberChamber(m) || (handoff && handoff.chamber) || '',
+      districtLabel: formatDistrictLabel(m) || '',
+      photoUrl: getMemberPhotoUrl(m, id) || (handoff && handoff.photoUrl) || '',
+      dim1: (data.nominate && typeof data.nominate.dim1 === 'number')
+        ? data.nominate.dim1
+        : (handoff && typeof handoff.dim1 === 'number' ? handoff.dim1 : null),
+      ethics: data.ethics !== undefined
+        ? data.ethics
+        : (handoff && handoff.ethicsGrade ? { grade: handoff.ethicsGrade, score: handoff.ethicsScore } : undefined),
+    };
+  }
+  const h = handoff || {};
+  return {
+    id,
+    name: h.name || 'Loading…',
+    party: h.party || '',
+    state: h.state || '',
+    chamber: h.chamber || '',
+    districtLabel: h.districtLabel || '',
+    photoUrl: h.photoUrl || '',
+    dim1: typeof h.dim1 === 'number' ? h.dim1 : null,
+    ethics: h.ethicsGrade ? { grade: h.ethicsGrade, score: h.ethicsScore } : undefined,
+  };
+}
+
+function heroHtml(hero) {
+  const initials = buildInitials(hero.name);
+  const photoInner = hero.photoUrl
+    ? `<img class="dossier-hero-photo" src="${esc(hero.photoUrl)}" alt="${esc(hero.name)}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="dossier-hero-initials" style="display:none;" aria-hidden="true">${esc(initials)}</div>`
+    : `<div class="dossier-hero-initials" aria-hidden="true">${esc(initials)}</div>`;
+
+  const isSenate = String(hero.chamber || '').toLowerCase().includes('senate');
+  const chips = [
+    hero.party ? `<span class="${partyChipClass(hero.party)}">${esc(hero.party)}</span>` : '',
+    hero.state ? `<span class="chip">${esc(hero.state)}</span>` : '',
+    hero.chamber ? `<span class="chip">${esc(hero.chamber)}</span>` : '',
+    (hero.districtLabel && !isSenate) ? `<span class="chip">${esc(hero.districtLabel)}</span>` : '',
+  ].filter(Boolean).join('');
+
+  let tint = 'var(--color-surface)';
+  if (typeof hero.dim1 === 'number') {
+    tint = hero.dim1 < 0 ? 'rgba(59,111,212,0.10)' : 'rgba(209,67,47,0.10)';
   }
 
-  const { member, bioguideId, wiki, history, funding, stocks, legislation, committees, contact, nominate, ethics } = dossier;
-
-  const name = formatMemberDisplayName(member) || 'Unknown Member';
-  const party = getMemberField(member, 'party', 'partyName') || '';
-  const state = getMemberField(member, 'state') || '';
-  const chamber = getMemberChamber(member) || '';
-  const districtLabel = formatDistrictLabel(member) || '';
-  
-  const initials = buildInitials(name);
-  const photoUrl = getMemberPhotoUrl(member, bioguideId);
-  const dim1 = nominate?.dim1 ?? null;
-  const ethicsScore = ethics?.score ?? null;
-  const ethicsGrade = ethics?.grade ?? 'N/A';
-
-  let photoInner = photoUrl
-    ? `<img class="dossier-photo" src="${photoUrl}" alt="${name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="dossier-initials" style="display:none;" aria-hidden="true">${initials}</div>`
-    : `<div class="dossier-initials" aria-hidden="true">${initials}</div>`;
-
-  // 1. Identity
-  const identityHtml = `
-    <div class="dossier-header" id="dossier-identity">
-      <div class="dossier-photo-wrapper">
-        ${photoInner}
+  return `
+    <div class="dossier-hero" style="--dossier-tint:${tint}">
+      <div class="dossier-hero-photo-wrap">${photoInner}</div>
+      <div class="dossier-hero-body">
+        <div class="dossier-hero-eyebrow">Member of Congress</div>
+        <h1 class="dossier-hero-name">${esc(hero.name)}</h1>
+        <div class="dossier-chips">${chips}</div>
+        ${ideologyBlock(hero.dim1)}
       </div>
-      <div class="dossier-info">
-        <h1 class="dossier-name">${name}</h1>
-        <div class="dossier-chips">
-          ${party ? `<span class="dossier-chip">${party}</span>` : ''}
-          ${state ? `<span class="dossier-chip">${state}</span>` : ''}
-          ${chamber ? `<span class="dossier-chip">${chamber}</span>` : ''}
-          ${districtLabel && !chamber.toLowerCase().includes('senate') ? `<span class="dossier-chip">${districtLabel}</span>` : ''}
-        </div>
-        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-          <a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" style="background-color: ${getEthicsColor(ethicsScore)}; padding: 0.25rem 0.5rem; border-radius: 4px; color: white; text-decoration: none; font-weight: 700; font-size: 0.875rem;">Ethics Grade: ${ethicsGrade}</a>
-        </div>
+      <div class="dossier-hero-side">
+        ${heroGradeHtml(hero.ethics)}
+        <button class="ghost-btn" id="dossier-share" type="button" title="Copy link to this profile">🔗 Share</button>
       </div>
+    </div>`;
+}
+
+// ── Stat row + section nav ──────────────────────────────────────────────────────
+
+function statRowHtml(data) {
+  const cell = (v, l) => `<div class="dossier-stat"><span class="dossier-stat-value">${v == null ? '—' : formatNumber(v)}</span><span class="dossier-stat-label">${l}</span></div>`;
+  return `<div class="dossier-statrow">
+    ${cell(data && data.history ? data.history.yearsOfService : null, 'Years in office')}
+    ${cell(data && data.legislation ? data.legislation.sponsoredCount : null, 'Bills sponsored')}
+    ${cell(data && data.legislation ? data.legislation.cosponsoredCount : null, 'Bills cosponsored')}
+    ${cell(data && data.committees ? data.committees.count : null, 'Committees')}
+  </div>`;
+}
+
+function sectionNavHtml(data) {
+  const items = [
+    ['about', 'About', !!(data && data.wiki)],
+    ['career', 'Career', !!(data && data.history)],
+    ['funding', 'Funding', true],
+    ['disclosures', 'Disclosures', !!(data && data.stocks)],
+    ['committees', 'Committees', !!(data && data.committees)],
+    ['legislation', 'Legislation', !!(data && data.legislation)],
+    ['contact', 'Contact', !!(data && data.contact)],
+  ].filter(x => x[2]);
+  if (!items.length) return '';
+  return `<nav class="dossier-nav" aria-label="Jump to section">${items.map(([id, label]) => `<a href="#${id}">${label}</a>`).join('')}</nav>`;
+}
+
+// ── Section cards ────────────────────────────────────────────────────────────
+
+function aboutHtml(wiki) {
+  if (!wiki) return '';
+  const thumb = wiki.thumbnail && wiki.thumbnail.source
+    ? `<img class="wiki-thumb" src="${esc(wiki.thumbnail.source)}" alt="" loading="lazy">` : '';
+  const note = wiki.source === 'congress_fallback'
+    ? `<p class="muted-text" style="margin-top:.75rem;clear:both;">Generated summary — no Wikipedia article resolved.</p>` : '';
+  const text = esc(wiki.extract || wiki.summary || 'No biography available.');
+  const more = wiki.wiki_url
+    ? `<a class="wiki-more" href="${esc(wiki.wiki_url)}" target="_blank" rel="noopener">Read more on Wikipedia →</a>` : '';
+  return `<section class="dossier-card" id="about">
+    <h3><span><span class="card-icon">📖</span>About</span></h3>
+    ${thumb}<div class="wiki-body">${text}</div>${more}${note}
+  </section>`;
+}
+
+function careerHtml(history) {
+  if (!history) return '';
+  const terms = Array.isArray(history.terms) ? history.terms.slice().reverse() : [];
+  const timeline = terms.map(t => `
+    <li class="timeline-item">
+      <strong>${esc(t.congress)}th Congress · ${esc(t.startYear || '?')}–${esc(t.endYear || 'present')}</strong>
+      <span>${esc(t.chamber || '')}${t.state ? ` · ${esc(t.state)}` : ''}${t.district ? ` · District ${esc(t.district)}` : ''}${t.party ? ` · ${esc(t.party)}` : ''}</span>
+    </li>`).join('');
+  const age = computeAge(history.birthday);
+  const born = history.birthday
+    ? `${esc(history.birthday)}${age ? ` (age ${age})` : ''}`
+    : (history.birthYear ? esc(history.birthYear) : '—');
+  return `<section class="dossier-card" id="career">
+    <h3><span><span class="card-icon">🏛️</span>Career History</span></h3>
+    <div class="funding-totals" style="margin-bottom:1.25rem;">
+      <div class="funding-stat"><span class="funding-stat-label">First elected</span><span class="funding-stat-value">${esc(history.firstElectedYear || '—')}</span></div>
+      <div class="funding-stat"><span class="funding-stat-label">Years served</span><span class="funding-stat-value">${esc(history.yearsOfService || '—')}</span></div>
+      <div class="funding-stat"><span class="funding-stat-label">Terms</span><span class="funding-stat-value">${esc(history.termCount || '—')}</span></div>
+      <div class="funding-stat"><span class="funding-stat-label">Born</span><span class="funding-stat-value" style="font-size:1rem;">${born}</span></div>
     </div>
-  `;
+    ${timeline ? `<ul class="timeline">${timeline}</ul>` : ''}
+  </section>`;
+}
 
-  // 2. About
-  let aboutHtml = '';
-  if (wiki) {
-    let thumbHtml = (wiki.thumbnail && wiki.thumbnail.source) 
-      ? `<img src="${wiki.thumbnail.source}" alt="${name}" style="float: right; margin-left: 1rem; margin-bottom: 0.5rem; max-width: 100px; border-radius: 4px; object-fit: cover;">` 
-      : '';
-    let fallbackNote = wiki.source === "congress_fallback" ? '<p class="muted-text" style="margin-top: 1rem; clear: both;">Note: This biography is a generated summary (no Wikipedia page resolved).</p>' : '';
-    aboutHtml = `
-      <div class="dossier-card" style="overflow: hidden;">
-        <h3>About</h3>
-        ${thumbHtml}
-        <p>${wiki.extract || wiki.summary || 'No biography available.'}</p>
-        ${wiki.wiki_url ? `<div style="clear: both; padding-top: 0.5rem;"><a href="${wiki.wiki_url}" target="_blank" rel="noopener" style="color: var(--color-accent); font-weight: 600;">Read more on Wikipedia</a></div>` : ''}
-        ${fallbackNote}
-      </div>
-    `;
+const FUNDING_COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+
+function fundingInnerHtml(funding, pending) {
+  if (pending) {
+    return `<h3><span><span class="card-icon">💵</span>Campaign Funding</span></h3>
+      <div class="card-loading"><span class="card-spinner"></span>Loading campaign finance…</div>`;
   }
-
-  // 3. Career
-  let careerHtml = '';
-  if (history) {
-    const terms = Array.isArray(history.terms) ? history.terms : [];
-    const timelineHtml = terms.map(t => `
-      <li class="timeline-item">
-        <strong>${t.congress}th Congress (${t.startYear || '?'} - ${t.endYear || 'Present'})</strong>
-        <span>${t.chamber}, ${t.state} ${t.district ? `District ${t.district}` : ''} ${t.party ? `(${t.party})` : ''}</span>
-      </li>
-    `).join('');
-
-    careerHtml = `
-      <div class="dossier-card">
-        <h3>Career History</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-          <div><span class="muted-text">First Elected:</span><br><strong>${history.firstElectedYear || '-'}</strong></div>
-          <div><span class="muted-text">Years Served:</span><br><strong>${history.yearsOfService || '-'}</strong></div>
-          <div><span class="muted-text">Terms:</span><br><strong>${history.termCount || '-'}</strong></div>
-          <div><span class="muted-text">Born:</span><br><strong>${history.birthYear || '-'}</strong></div>
-        </div>
-        ${timelineHtml ? `<ul class="timeline">${timelineHtml}</ul>` : ''}
-      </div>
-    `;
+  let gradeChip = '';
+  if (funding && funding.grade && funding.grade.grade) {
+    gradeChip = `<span class="grade-badge" style="--grade-color:${getEthicsColor(funding.grade.score)};min-width:auto;padding:.25rem .6rem;font-size:1rem;flex-direction:row;gap:.35rem;">${esc(funding.grade.grade)}<span>Grade</span></span>`;
   }
-
-  // 4. Funding
-  let fundingHtml = '';
-  if (funding) {
-    if (funding.available && funding.totals) {
-      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
-      const breakdown = Array.isArray(funding.breakdown) ? funding.breakdown : [];
-      let barSegments = '';
-      let legendItems = '';
-      
-      breakdown.forEach((item, i) => {
-        const share = item.share || 0;
-        if (share > 0) {
-          barSegments += `<div class="funding-bar-segment" style="width: ${share * 100}%; background-color: ${colors[i % colors.length]};" title="${item.label}: ${(share * 100).toFixed(1)}%"></div>`;
-        }
-        legendItems += `
-          <div class="funding-legend-item">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div class="funding-legend-color" style="background-color: ${colors[i % colors.length]};"></div>
-              <span>${item.label}</span>
-            </div>
-            <strong>${formatCurrencyCompact(item.amount)} (${(share * 100).toFixed(1)}%)</strong>
-          </div>
-        `;
-      });
-
-      let fundingGradeHtml = '';
-      if (funding.grade && funding.grade.grade) {
-        fundingGradeHtml = `<span style="background-color: ${getEthicsColor(funding.grade.score)}; padding: 0.2rem 0.5rem; border-radius: 4px; color: white; font-weight: bold; font-size: 0.8rem; vertical-align: middle; margin-left: 0.5rem;">Ethics Grade: ${funding.grade.grade}</span>`;
-      }
-
-      fundingHtml = `
-        <div class="dossier-card">
-          <h3 style="display: flex; align-items: center; justify-content: space-between;">
-            Campaign Funding
-            ${fundingGradeHtml}
-          </h3>
-          <div class="funding-totals">
-            <div class="funding-stat">
-              <span class="funding-stat-label">Receipts</span>
-              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.receipts)}</span>
-            </div>
-            <div class="funding-stat">
-              <span class="funding-stat-label">Disbursements</span>
-              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.disbursements)}</span>
-            </div>
-            <div class="funding-stat">
-              <span class="funding-stat-label">Cash on Hand</span>
-              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.cashOnHand)}</span>
-            </div>
-            <div class="funding-stat">
-              <span class="funding-stat-label">Debts</span>
-              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.debts)}</span>
-            </div>
-          </div>
-          ${breakdown.length ? `
-            <div style="margin-bottom: 0.5rem; font-weight: 600;">Receipts Breakdown</div>
-            <div class="funding-bar-container">${barSegments}</div>
-            <div class="funding-legend">${legendItems}</div>
-          ` : ''}
-          <p class="muted-text" style="margin-top: 1rem;">Source: FEC. ${funding.cycle ? `Cycle: ${funding.cycle}` : 'Cycle: All available cycles.'}</p>
-        </div>
-      `;
-    } else {
-      fundingHtml = `
-        <div class="dossier-card">
-          <h3>Campaign Funding</h3>
-          <p class="muted-text">${funding.note || 'No matching FEC campaign committee was found.'}</p>
-        </div>
-      `;
-    }
-  }
-
-  // 5. Stocks
-  let stocksHtml = '';
-  if (stocks) {
-    let stocksContent = '';
-    if (stocks.trades && stocks.trades.length > 0) {
-      stocksContent = `
-        <div style="overflow-x: auto; margin-bottom: 1rem;">
-          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-            <thead>
-              <tr style="border-bottom: 1px solid var(--color-border);">
-                <th style="padding: 0.5rem;">Date</th>
-                <th style="padding: 0.5rem;">Ticker</th>
-                <th style="padding: 0.5rem;">Asset</th>
-                <th style="padding: 0.5rem;">Type</th>
-                <th style="padding: 0.5rem;">Amount</th>
-                <th style="padding: 0.5rem;">Owner</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${stocks.trades.map(t => `
-                <tr style="border-bottom: 1px solid var(--color-border-light);">
-                  <td style="padding: 0.5rem;">${t.transactionDate || '-'}</td>
-                  <td style="padding: 0.5rem;"><strong>${t.ticker || '-'}</strong></td>
-                  <td style="padding: 0.5rem; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${t.assetDescription || ''}">${t.assetDescription || '-'}</td>
-                  <td style="padding: 0.5rem;">${t.type || '-'}</td>
-                  <td style="padding: 0.5rem;">${t.amountRange || '-'}</td>
-                  <td style="padding: 0.5rem;">${t.owner || '-'}</td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      `;
-      const self = stocks.ownerBreakdown?.self || 0;
-      const spouse = stocks.ownerBreakdown?.spouse || 0;
-      const child = stocks.ownerBreakdown?.dependent || stocks.ownerBreakdown?.child || 0;
-      stocksContent += `<p class="muted-text">Trades by owner: Self (${self}), Spouse (${spouse}), Child (${child}).</p>`;
-    } else if (stocks.filings && stocks.filings.length > 0) {
-      stocksContent = '<ul class="dossier-list">';
-      stocks.filings.forEach(f => {
-        stocksContent += `
-          <li class="dossier-list-item">
-            <div class="dossier-list-item-title">${f.label || 'Filing'} ${f.isStockReport ? '<span class="enacted-badge">Stock Report</span>' : ''}</div>
-            <div class="dossier-list-item-meta">${f.filingDate || ''} • <a href="${f.pdfUrl}" target="_blank" style="color: var(--color-accent);">View official PDF</a></div>
-          </li>
-        `;
-      });
-      stocksContent += '</ul>';
-    } else if (stocks.senateSearchUrl) {
-      stocksContent = `<p><a href="${stocks.senateSearchUrl}" target="_blank" style="color: var(--color-accent); font-weight: 600;">Search this senator's disclosures on the Senate eFD system</a></p>`;
-    } else {
-      stocksContent = `<p class="muted-text">${stocks.note || 'No financial disclosures found.'}</p>`;
-    }
-
-    stocksHtml = `
-      <div class="dossier-card">
-        <h3>Financial Disclosures</h3>
-        ${stocksContent}
-        ${stocks.familyMembersNote ? `<p class="muted-text" style="margin-top: 1rem; font-size: 0.8rem;">${stocks.familyMembersNote}</p>` : ''}
-      </div>
-    `;
-  }
-
-  // 6. Legislation
-  let legislationHtml = '';
-  if (legislation) {
-    const sp = Array.isArray(legislation.sponsored) ? legislation.sponsored : [];
-    const co = Array.isArray(legislation.cosponsored) ? legislation.cosponsored : [];
-    
-    const renderBillList = (bills) => bills.length ? '<ul class="dossier-list">' + bills.map(b => `
-      <li class="dossier-list-item">
-        <div class="dossier-list-item-title" style="margin-bottom: 0.5rem;">
-          <a href="${b.url}" target="_blank" style="color: var(--color-accent); text-decoration: none;">${b.type}${b.number}</a>
-          ${b.becameLaw ? '<span class="enacted-badge">Enacted</span>' : ''}
-        </div>
-        <div style="font-size: 0.95rem; margin-bottom: 0.5rem;">${b.title}</div>
-        <div class="dossier-list-item-meta">
-          ${b.introducedDate} • ${b.policyArea || 'Unknown Policy Area'}<br>
-          <span style="display:inline-block; margin-top:0.25rem;">Latest: ${b.latestAction}</span>
-        </div>
-      </li>
-    `).join('') + '</ul>' : '<p class="muted-text">None found.</p>';
-
-    legislationHtml = `
-      <div class="dossier-card full-width">
-        <h3>Legislation</h3>
-        <div class="dossier-tabs">
-          <button class="dossier-tab" aria-selected="true" data-tab="sponsored" onclick="window.switchLegislationTab('sponsored')">Sponsored (${legislation.sponsoredCount || 0})</button>
-          <button class="dossier-tab" aria-selected="false" data-tab="cosponsored" onclick="window.switchLegislationTab('cosponsored')">Cosponsored (${legislation.cosponsoredCount || 0})</button>
-        </div>
-        <div class="dossier-tab-content active" id="tab-sponsored">
-          ${renderBillList(sp)}
-        </div>
-        <div class="dossier-tab-content" id="tab-cosponsored">
-          ${renderBillList(co)}
-        </div>
-      </div>
-    `;
-  }
-
-  // 7. Committees
-  let committeesHtml = '';
-  if (committees) {
-    const assignments = Array.isArray(committees.assignments) ? committees.assignments : [];
-    const grouped = {};
-    assignments.forEach(a => {
-      if (!a?.isSubcommittee) {
-        const code = a?.code || 'UNKNOWN';
-        if (!grouped[code]) grouped[code] = { ...a, subcommittees: [] };
-      }
+  let body;
+  if (funding && funding.available && funding.totals) {
+    const t = funding.totals;
+    const breakdown = Array.isArray(funding.breakdown) ? funding.breakdown : [];
+    let bar = '';
+    let legend = '';
+    breakdown.forEach((item, i) => {
+      const share = item.share || 0;
+      const color = FUNDING_COLORS[i % FUNDING_COLORS.length];
+      if (share > 0) bar += `<div class="funding-bar-segment" style="width:${(share * 100).toFixed(1)}%;background:${color};" title="${esc(item.label)}: ${(share * 100).toFixed(1)}%"></div>`;
+      legend += `<div class="funding-legend-item"><span class="funding-legend-label"><span class="funding-legend-color" style="background:${color};"></span>${esc(item.label)}</span><strong>${formatCurrencyCompact(item.amount)} · ${(share * 100).toFixed(1)}%</strong></div>`;
     });
-    assignments.forEach(a => {
-      if (a?.isSubcommittee) {
-        const parentCode = Object.keys(grouped).find(k => k !== 'UNKNOWN' && a?.code?.startsWith(k));
-        if (parentCode) grouped[parentCode].subcommittees.push(a);
-        else {
-          if (!grouped['MISC']) grouped['MISC'] = { committee: 'Other Subcommittees', subcommittees: [], isSubcommittee: false };
-          grouped['MISC'].subcommittees.push(a);
-        }
-      }
-    });
-
-    const commListHtml = Object.values(grouped).map(c => `
-      <li class="dossier-list-item">
-        <div class="dossier-list-item-title">
-          ${c.committeeUrl ? `<a href="${c.committeeUrl}" target="_blank" style="color: var(--color-accent);">${c.committee}</a>` : c.committee}
-          ${c.role ? `<span class="enacted-badge" style="background:#e0e7ff; color:#3730a3;">${c.role}</span>` : ''}
-        </div>
-        ${c.subcommittees && c.subcommittees.length ? `
-          <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem; color: var(--color-text-muted);">
-            ${c.subcommittees.map(sub => `<li>${sub.subcommittee || sub.committee} ${sub.role ? `(<strong>${sub.role}</strong>)` : ''}</li>`).join('')}
-          </ul>
-        ` : ''}
-      </li>
-    `).join('');
-
-    committeesHtml = `
-      <div class="dossier-card">
-        <h3>Committees</h3>
-        ${commListHtml ? `<ul class="dossier-list">${commListHtml}</ul>` : '<p class="muted-text">No committee assignments found.</p>'}
+    body = `
+      <div class="funding-totals">
+        <div class="funding-stat"><span class="funding-stat-label">Receipts</span><span class="funding-stat-value">${formatCurrencyCompact(t.receipts)}</span></div>
+        <div class="funding-stat"><span class="funding-stat-label">Disbursements</span><span class="funding-stat-value">${formatCurrencyCompact(t.disbursements)}</span></div>
+        <div class="funding-stat"><span class="funding-stat-label">Cash on hand</span><span class="funding-stat-value">${formatCurrencyCompact(t.cashOnHand)}</span></div>
+        <div class="funding-stat"><span class="funding-stat-label">Debts</span><span class="funding-stat-value">${formatCurrencyCompact(t.debts)}</span></div>
       </div>
-    `;
-  }
-
-  // 8. Contact & Links
-  let contactHtml = '';
-  if (contact) {
-    const off = contact?.official || {};
-    const soc = contact?.social || {};
-    const prof = contact?.profiles || {};
-    
-    let offLines = [];
-    if (off.website) offLines.push(`<div><a href="${off.website}" target="_blank" style="color: var(--color-accent);">Official Website</a></div>`);
-    if (off.phone) offLines.push(`<div>📞 ${off.phone}</div>`);
-    if (off.office) offLines.push(`<div>🏢 ${off.office}</div>`);
-
-    let socLines = Object.entries(soc).map(([net, data]) => {
-      if (!data) return '';
-      return `<div><a href="${data.url}" target="_blank" style="color: var(--color-accent);">${net.charAt(0).toUpperCase() + net.slice(1)} (@${data.handle})</a></div>`;
-    }).filter(Boolean);
-    let profLines = Object.entries(prof).map(([site, url]) => `<div><a href="${url}" target="_blank" style="color: var(--color-accent);">${site.charAt(0).toUpperCase() + site.slice(1)}</a></div>`);
-
-    contactHtml = `
-      <div class="dossier-card">
-        <h3>Contact & Links</h3>
-        <div style="display:flex; flex-direction:column; gap:1.5rem;">
-          ${offLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">Official</div>${offLines.join('')}</div>` : ''}
-          ${socLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">Social Media</div>${socLines.join('')}</div>` : ''}
-          ${profLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">External Profiles</div>${profLines.join('')}</div>` : ''}
-        </div>
-      </div>
-    `;
-  }
-
-  let bgStyle = '';
-  if (dim1 !== null) {
-    const baseGray = [255, 255, 255]; 
-    const targetColor = dim1 < 0 ? [235, 240, 250] : [250, 235, 235];
-    const distance = Math.abs(dim1);
-    const tintStrength = 0.5 + 0.5 * Math.pow(distance, 0.85);
-    const r = Math.round(baseGray[0] + (targetColor[0] - baseGray[0]) * tintStrength);
-    const g = Math.round(baseGray[1] + (targetColor[1] - baseGray[1]) * tintStrength);
-    const b = Math.round(baseGray[2] + (targetColor[2] - baseGray[2]) * tintStrength);
-    bgStyle = `background: rgb(${r}, ${g}, ${b}); border: 1px solid rgba(0,0,0,0.05);`;
+      ${breakdown.length ? `<div class="funding-subhead">Where the money comes from</div><div class="funding-bar-container">${bar}</div><div class="funding-legend">${legend}</div>` : ''}
+      <p class="dossier-source">Source: FEC · ${funding.cycle ? `Cycle ${esc(funding.cycle)}` : 'Aggregate across available cycles'}</p>`;
   } else {
-    bgStyle = 'background: var(--color-surface); border: 1px solid var(--color-border);';
+    body = `<p class="muted-text">${esc((funding && funding.note) || 'No matching FEC campaign committee was found.')}</p>`;
   }
+  return `<h3><span><span class="card-icon">💵</span>Campaign Funding</span>${gradeChip}</h3>${body}`;
+}
 
-  container.innerHTML = `
-    <div class="dossier-layout">
-      <div style="${bgStyle} border-radius: 12px; margin-bottom: 1rem;">
-        ${identityHtml}
+function fundingSectionHtml(funding, pending) {
+  return `<section class="dossier-card" id="funding">${fundingInnerHtml(funding, pending)}</section>`;
+}
+
+function stocksHtml(stocks) {
+  if (!stocks) return '';
+  let content;
+  if (stocks.trades && stocks.trades.length) {
+    const rows = stocks.trades.map(t => `
+      <tr>
+        <td>${esc(t.transactionDate || '-')}</td>
+        <td><strong>${esc(t.ticker || '-')}</strong></td>
+        <td class="stock-asset" title="${esc(t.assetDescription || '')}">${esc(t.assetDescription || '-')}</td>
+        <td>${esc(t.type || '-')}</td>
+        <td>${esc(t.amountRange || '-')}</td>
+        <td>${esc(t.owner || '-')}</td>
+      </tr>`).join('');
+    const ob = stocks.ownerBreakdown || {};
+    const self = ob.self || 0;
+    const spouse = ob.spouse || 0;
+    const child = ob.dependent || ob.child || 0;
+    content = `<div style="overflow-x:auto;">
+      <table class="stock-table"><thead><tr><th>Date</th><th>Ticker</th><th>Asset</th><th>Type</th><th>Amount</th><th>Owner</th></tr></thead><tbody>${rows}</tbody></table>
       </div>
-      <div class="dossier-grid">
-        ${aboutHtml}
-        ${careerHtml}
-        ${fundingHtml}
-        ${stocksHtml}
-        ${committeesHtml}
-        ${contactHtml}
-        ${legislationHtml}
+      <p class="muted-text" style="margin-top:.75rem;">Trades by owner — self: ${self}, spouse: ${spouse}, child: ${child}.</p>`;
+  } else if (stocks.filings && stocks.filings.length) {
+    const items = stocks.filings.map(f => `
+      <li class="dossier-list-item">
+        <div class="dossier-list-item-title">${esc(f.label || 'Filing')} ${f.isStockReport ? '<span class="badge badge--report">Stock report</span>' : ''}</div>
+        <div class="dossier-list-item-meta">${esc(f.filingDate || '')} ${f.pdfUrl ? `· <a href="${esc(f.pdfUrl)}" target="_blank" rel="noopener">View official PDF →</a>` : ''}</div>
+      </li>`).join('');
+    content = `<ul class="dossier-list">${items}</ul>`;
+  } else if (stocks.senateSearchUrl) {
+    content = `<p><a class="contact-link" href="${esc(stocks.senateSearchUrl)}" target="_blank" rel="noopener">Search this senator's disclosures on the Senate eFD system →</a></p>`;
+  } else {
+    content = `<p class="muted-text">${esc(stocks.note || 'No financial disclosures found.')}</p>`;
+  }
+  const familyNote = stocks.familyMembersNote
+    ? `<p class="muted-text" style="margin-top:1rem;font-size:.78rem;">${esc(stocks.familyMembersNote)}</p>` : '';
+  return `<section class="dossier-card" id="disclosures">
+    <h3><span><span class="card-icon">📈</span>Financial Disclosures</span></h3>
+    ${content}${familyNote}
+  </section>`;
+}
+
+function committeesHtml(committees) {
+  if (!committees) return '';
+  const assignments = Array.isArray(committees.assignments) ? committees.assignments : [];
+  const grouped = {};
+  assignments.forEach(a => {
+    if (a && !a.isSubcommittee) {
+      const code = a.code || 'UNKNOWN';
+      if (!grouped[code]) grouped[code] = Object.assign({}, a, { subcommittees: [] });
+    }
+  });
+  assignments.forEach(a => {
+    if (a && a.isSubcommittee) {
+      const parent = Object.keys(grouped).find(k => k !== 'UNKNOWN' && a.code && a.code.startsWith(k));
+      if (parent) grouped[parent].subcommittees.push(a);
+      else {
+        if (!grouped.MISC) grouped.MISC = { committee: 'Other subcommittees', subcommittees: [], isSubcommittee: false };
+        grouped.MISC.subcommittees.push(a);
+      }
+    }
+  });
+  const list = Object.values(grouped).map(c => {
+    const title = c.committeeUrl
+      ? `<a href="${esc(c.committeeUrl)}" target="_blank" rel="noopener">${esc(c.committee)}</a>`
+      : esc(c.committee);
+    const role = c.role ? `<span class="badge badge--role">${esc(c.role)}</span>` : '';
+    const subs = (c.subcommittees && c.subcommittees.length)
+      ? `<ul class="committee-sub">${c.subcommittees.map(s => `<li>${esc(s.subcommittee || s.committee)}${s.role ? ` <span class="badge badge--role">${esc(s.role)}</span>` : ''}</li>`).join('')}</ul>`
+      : '';
+    return `<li class="dossier-list-item"><div class="dossier-list-item-title">${title}${role}</div>${subs}</li>`;
+  }).join('');
+  return `<section class="dossier-card" id="committees">
+    <h3><span><span class="card-icon">👥</span>Committees</span></h3>
+    ${list ? `<ul class="dossier-list">${list}</ul>` : '<p class="muted-text">No committee assignments found.</p>'}
+  </section>`;
+}
+
+function contactHtml(contact) {
+  if (!contact) return '';
+  const off = contact.official || {};
+  const soc = contact.social || {};
+  const prof = contact.profiles || {};
+  const offLines = [];
+  if (off.website) offLines.push(`<div class="contact-line">🌐 <a href="${esc(off.website)}" target="_blank" rel="noopener">Official website</a></div>`);
+  if (off.phone) offLines.push(`<div class="contact-line">📞 ${esc(off.phone)}</div>`);
+  if (off.office) offLines.push(`<div class="contact-line">🏢 ${esc(off.office)}</div>`);
+  const socLinks = Object.entries(soc).filter(([, d]) => d && d.url).map(([net, d]) =>
+    `<a class="contact-link" href="${esc(d.url)}" target="_blank" rel="noopener">${esc(net.charAt(0).toUpperCase() + net.slice(1))}</a>`).join('');
+  const profLinks = Object.entries(prof).filter(([, url]) => url).map(([site, url]) =>
+    `<a class="contact-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(site.charAt(0).toUpperCase() + site.slice(1))}</a>`).join('');
+  const groups = [
+    offLines.length ? `<div><div class="contact-group-title">Official</div>${offLines.join('')}</div>` : '',
+    socLinks ? `<div><div class="contact-group-title">Social media</div><div class="contact-links">${socLinks}</div></div>` : '',
+    profLinks ? `<div><div class="contact-group-title">External profiles</div><div class="contact-links">${profLinks}</div></div>` : '',
+  ].filter(Boolean).join('');
+  if (!groups) return '';
+  return `<section class="dossier-card" id="contact">
+    <h3><span><span class="card-icon">✉️</span>Contact &amp; Links</span></h3>
+    <div class="contact-cols">${groups}</div>
+  </section>`;
+}
+
+function policyTagsHtml(bills) {
+  const counts = {};
+  (bills || []).forEach(b => { if (b.policyArea) counts[b.policyArea] = (counts[b.policyArea] || 0) + 1; });
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  if (!top.length) return '';
+  return `<div class="policy-tags">${top.map(([area, n]) => `<span class="policy-tag">${esc(area)}<span>${n}</span></span>`).join('')}</div>`;
+}
+
+function billListHtml(bills) {
+  if (!bills || !bills.length) return '<p class="muted-text">None found.</p>';
+  return `<ul class="dossier-list">${bills.map(b => `
+    <li class="dossier-list-item">
+      <div class="dossier-list-item-title">
+        <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.type)}${esc(b.number)}</a>
+        ${b.becameLaw ? '<span class="badge badge--enacted">Enacted</span>' : ''}
       </div>
+      <div style="font-size:.95rem;margin:.25rem 0 .4rem;">${esc(b.title)}</div>
+      <div class="dossier-list-item-meta">${esc(b.introducedDate || '')}${b.policyArea ? ` · ${esc(b.policyArea)}` : ''}${b.latestAction ? `<br>Latest: ${esc(b.latestAction)}` : ''}</div>
+    </li>`).join('')}</ul>`;
+}
+
+function legislationHtml(legislation) {
+  if (!legislation) return '';
+  const sp = Array.isArray(legislation.sponsored) ? legislation.sponsored : [];
+  const co = Array.isArray(legislation.cosponsored) ? legislation.cosponsored : [];
+  return `<section class="dossier-card dossier-card--wide" id="legislation">
+    <h3><span><span class="card-icon">📜</span>Legislation</span></h3>
+    ${policyTagsHtml(sp.length ? sp : co)}
+    <div class="dossier-tabs" role="tablist" style="margin-top:.75rem;">
+      <button class="dossier-tab" role="tab" aria-selected="true" data-tab="sponsored" onclick="window.switchLegislationTab('sponsored')">Sponsored (${formatNumber(legislation.sponsoredCount || 0)})</button>
+      <button class="dossier-tab" role="tab" aria-selected="false" data-tab="cosponsored" onclick="window.switchLegislationTab('cosponsored')">Cosponsored (${formatNumber(legislation.cosponsoredCount || 0)})</button>
     </div>
-  `;
+    <div class="dossier-tab-content active" id="tab-sponsored" role="tabpanel">${billListHtml(sp)}</div>
+    <div class="dossier-tab-content" id="tab-cosponsored" role="tabpanel">${billListHtml(co)}</div>
+  </section>`;
+}
+
+// ── Assembly + progressive rendering ────────────────────────────────────────────
+
+function renderDossier(container, data, opts) {
+  opts = opts || {};
+  const hero = normalizeHero(data, opts.handoff, opts.id);
+  container.innerHTML = `
+    <div class="dossier">
+      ${heroHtml(hero)}
+      ${statRowHtml(data)}
+      ${sectionNavHtml(data)}
+      <div class="dossier-grid">
+        ${aboutHtml(data && data.wiki)}
+        ${careerHtml(data && data.history)}
+        ${fundingSectionHtml(data && data.funding, !!opts.fundingPending)}
+        ${stocksHtml(data && data.stocks)}
+        ${committeesHtml(data && data.committees)}
+        ${contactHtml(data && data.contact)}
+        ${legislationHtml(data && data.legislation)}
+      </div>
+    </div>`;
+  attachDossierInteractions(container);
+}
+
+function attachDossierInteractions(container) {
+  const share = container.querySelector('#dossier-share');
+  if (share) {
+    share.addEventListener('click', async () => {
+      const url = window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        share.textContent = '✓ Copied';
+        setTimeout(() => { share.innerHTML = '🔗 Share'; }, 1600);
+      } catch (_) {
+        window.prompt('Copy this link:', url);
+      }
+    });
+  }
+}
+
+function patchFunding(container, funding) {
+  const card = container.querySelector('#funding');
+  if (card) card.innerHTML = fundingInnerHtml(funding, false);
+}
+
+function patchGrade(container, ethics) {
+  const el = container.querySelector('#hero-grade');
+  if (el) el.outerHTML = heroGradeHtml(ethics === undefined ? null : ethics);
 }
 
 async function initMemberPage() {
@@ -2227,48 +2309,57 @@ async function initMemberPage() {
   const id = params.get('id');
 
   if (!id) {
-    container.innerHTML = `
-      <div class="error-state">
-        <span class="state-icon" aria-hidden="true">!</span>
-        <p>No member ID provided. <a href="${withApiParam('members.html')}">Return to Members</a></p>
-      </div>
-    `;
+    container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>No member ID provided. <a href="${withApiParam('members.html')}">Return to Members</a></p></div>`;
     return;
   }
 
-  container.innerHTML = `
-    <div class="skeleton-tile" style="max-width: 800px; margin: 0 auto; min-height: 400px; padding: 2rem;">
-      <div class="skeleton-circle" style="width: 120px; height: 120px; margin-bottom: 2rem;"></div>
-      <div class="skeleton-line wide"></div>
-      <div class="skeleton-line medium"></div>
-      <div class="skeleton-line narrow"></div>
-      <div class="skeleton-line wide" style="margin-top: 2rem;"></div>
-      <div class="skeleton-line wide"></div>
-    </div>
-  `;
+  // Instant path: a full dossier cached this session (e.g. from Back navigation).
+  const cachedFull = sessionGet('ygn_dossier_' + id);
+  if (cachedFull) {
+    renderDossier(container, cachedFull, { id });
+    return;
+  }
 
+  // Instant identity from the tile the user clicked, then stream the rest in.
+  const handoff = sessionGet('ygn_handoff_' + id);
+  renderDossier(container, null, { id, handoff, fundingPending: true });
+
+  const fastPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_FAST_SECTIONS}`, `dossier/${id}.json`);
+  const slowPromise = fetchJsonWithStaticFallback(`/officials/${id}/dossier?sections=${DOSSIER_SLOW_SECTIONS}`, `dossier/${id}.json`);
+
+  let merged = null;
   try {
-    const result = await fetchJsonWithStaticFallback('/officials/' + id + '/dossier', 'dossier/' + id + '.json');
-    if (result.notFound) {
-      container.innerHTML = `
-        <div class="error-state">
-          <span class="state-icon" aria-hidden="true">?</span>
-          <p>Detail unavailable in static mode — view on the live site</p>
-          <p><a href="${withApiParam('members.html')}">Return to Members</a></p>
-        </div>
-      `;
+    const fast = await fastPromise;
+    if (fast.notFound) {
+      container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">?</span><p>Detail unavailable in static mode — view on the live site.</p><p><a href="${withApiParam('members.html')}">Return to Members</a></p></div>`;
       return;
     }
-    
-    renderDossierUI(container, result.data);
+    merged = fast.data || {};
+    const fundingPending = merged.funding === undefined;
+    renderDossier(container, merged, { id, handoff, fundingPending });
+  } catch (_) {
+    container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load member data. <a href="${withApiParam('members.html')}">Return to Members</a></p></div>`;
+    return;
+  }
 
-  } catch (err) {
-    container.innerHTML = `
-      <div class="error-state">
-        <span class="state-icon" aria-hidden="true">!</span>
-        <p>Could not load dossier data. <a href="${withApiParam('members.html')}">Return to Members</a></p>
-      </div>
-    `;
+  try {
+    const slow = await slowPromise;
+    if (slow && !slow.notFound && slow.data) {
+      merged.funding = slow.data.funding;
+      merged.ethics = slow.data.ethics;
+      patchFunding(container, merged.funding);
+      patchGrade(container, merged.ethics);
+    } else {
+      patchFunding(container, merged.funding || null);
+      patchGrade(container, merged.ethics || null);
+    }
+  } catch (_) {
+    patchFunding(container, null);
+    patchGrade(container, null);
+  }
+
+  if (merged && !(merged.errors && merged.errors.length)) {
+    sessionSet('ygn_dossier_' + id, merged);
   }
 }
 

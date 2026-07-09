@@ -223,6 +223,10 @@ button {
   display: none;
 }
 
+/* Member-detail cards are <section> elements but are NOT SPA page sections,
+   so they must stay visible (override the display:none rule above). */
+#main-content .dossier-card { display: block; }
+
 /* ── Home Section ──────────────────────────────────────────────────────────── */
 .home-dashboard {
   display: grid;
@@ -1829,258 +1833,446 @@ button {
 .back-link:hover {
   text-decoration: underline;
 }
-/ *   D o s s i e r   S t y l e s   * / 
- . d o s s i e r - l a y o u t   { 
-     d i s p l a y :   f l e x ; 
-     f l e x - d i r e c t i o n :   c o l u m n ; 
-     g a p :   2 r e m ; 
-     m a x - w i d t h :   1 0 0 0 p x ; 
-     m a r g i n :   0   a u t o ; 
- } 
- 
- . d o s s i e r - h e a d e r   { 
-     d i s p l a y :   f l e x ; 
-     g a p :   2 r e m ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     b a c k g r o u n d :   v a r ( - - c o l o r - s u r f a c e ) ; 
-     p a d d i n g :   2 r e m ; 
-     b o r d e r - r a d i u s :   1 2 p x ; 
-     b o x - s h a d o w :   v a r ( - - s h a d o w - c a r d ) ; 
-     b o r d e r :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
- } 
- 
- . d o s s i e r - p h o t o - w r a p p e r   { 
-     p o s i t i o n :   r e l a t i v e ; 
-     w i d t h :   1 2 0 p x ; 
-     h e i g h t :   1 2 0 p x ; 
-     f l e x - s h r i n k :   0 ; 
-     b o r d e r - r a d i u s :   5 0 % ; 
-     o v e r f l o w :   h i d d e n ; 
-     b a c k g r o u n d :   # e 2 e 8 f 0 ; 
-     d i s p l a y :   f l e x ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     j u s t i f y - c o n t e n t :   c e n t e r ; 
- } 
- 
- . d o s s i e r - p h o t o   { 
-     w i d t h :   1 0 0 % ; 
-     h e i g h t :   1 0 0 % ; 
-     o b j e c t - f i t :   c o v e r ; 
- } 
- 
- . d o s s i e r - i n i t i a l s   { 
-     f o n t - f a m i l y :   v a r ( - - f o n t - d i s p l a y ) ; 
-     f o n t - s i z e :   2 . 5 r e m ; 
-     c o l o r :   # 6 4 7 4 8 b ; 
-     f o n t - w e i g h t :   7 0 0 ; 
- } 
- 
- . d o s s i e r - i n f o   { 
-     f l e x - g r o w :   1 ; 
- } 
- 
- . d o s s i e r - n a m e   { 
-     f o n t - f a m i l y :   v a r ( - - f o n t - d i s p l a y ) ; 
-     f o n t - s i z e :   2 . 2 r e m ; 
-     m a r g i n :   0   0   0 . 5 r e m   0 ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t ) ; 
-     l i n e - h e i g h t :   1 . 2 ; 
- } 
- 
- . d o s s i e r - c h i p s   { 
-     d i s p l a y :   f l e x ; 
-     f l e x - w r a p :   w r a p ; 
-     g a p :   0 . 5 r e m ; 
-     m a r g i n - b o t t o m :   1 r e m ; 
- } 
- 
- . d o s s i e r - c h i p   { 
-     b a c k g r o u n d :   # f 1 f 5 f 9 ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t ) ; 
-     p a d d i n g :   0 . 2 5 r e m   0 . 7 5 r e m ; 
-     b o r d e r - r a d i u s :   1 6 p x ; 
-     f o n t - s i z e :   0 . 8 7 5 r e m ; 
-     f o n t - w e i g h t :   6 0 0 ; 
-     b o r d e r :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
- } 
- 
- . d o s s i e r - g r i d   { 
-     d i s p l a y :   g r i d ; 
-     g r i d - t e m p l a t e - c o l u m n s :   r e p e a t ( a u t o - f i t ,   m i n m a x ( 3 2 0 p x ,   1 f r ) ) ; 
-     g a p :   1 . 5 r e m ; 
- } 
- 
- . d o s s i e r - c a r d   { 
-     b a c k g r o u n d :   v a r ( - - c o l o r - s u r f a c e ) ; 
-     b o r d e r - r a d i u s :   1 2 p x ; 
-     p a d d i n g :   1 . 5 r e m ; 
-     b o x - s h a d o w :   v a r ( - - s h a d o w - c a r d ) ; 
-     b o r d e r :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
-     d i s p l a y :   f l e x ; 
-     f l e x - d i r e c t i o n :   c o l u m n ; 
- } 
- 
- . d o s s i e r - c a r d . f u l l - w i d t h   { 
-     g r i d - c o l u m n :   1   /   - 1 ; 
- } 
- 
- . d o s s i e r - c a r d   h 3   { 
-     f o n t - f a m i l y :   v a r ( - - f o n t - d i s p l a y ) ; 
-     f o n t - s i z e :   1 . 2 5 r e m ; 
-     m a r g i n :   0   0   1 r e m   0 ; 
-     p a d d i n g - b o t t o m :   0 . 5 r e m ; 
-     b o r d e r - b o t t o m :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
- } 
- 
- / *   T i m e l i n e   * / 
- . t i m e l i n e   { 
-     l i s t - s t y l e :   n o n e ; 
-     p a d d i n g :   0 ; 
-     m a r g i n :   0 ; 
- } 
- . t i m e l i n e - i t e m   { 
-     p a d d i n g - b o t t o m :   1 r e m ; 
-     b o r d e r - l e f t :   2 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
-     p a d d i n g - l e f t :   1 r e m ; 
-     p o s i t i o n :   r e l a t i v e ; 
- } 
- . t i m e l i n e - i t e m : : b e f o r e   { 
-     c o n t e n t :   " " ; 
-     p o s i t i o n :   a b s o l u t e ; 
-     l e f t :   - 6 p x ; 
-     t o p :   0 ; 
-     w i d t h :   1 0 p x ; 
-     h e i g h t :   1 0 p x ; 
-     b o r d e r - r a d i u s :   5 0 % ; 
-     b a c k g r o u n d :   v a r ( - - c o l o r - b o r d e r ) ; 
- } 
- . t i m e l i n e - i t e m : l a s t - c h i l d   { 
-     b o r d e r - l e f t - c o l o r :   t r a n s p a r e n t ; 
-     p a d d i n g - b o t t o m :   0 ; 
- } 
- . t i m e l i n e - i t e m   s t r o n g   { 
-     d i s p l a y :   b l o c k ; 
- } 
- . t i m e l i n e - i t e m   s p a n   { 
-     f o n t - s i z e :   0 . 8 7 5 r e m ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t - m u t e d ) ; 
- } 
- 
- / *   F u n d i n g   * / 
- . f u n d i n g - t o t a l s   { 
-     d i s p l a y :   g r i d ; 
-     g r i d - t e m p l a t e - c o l u m n s :   1 f r   1 f r ; 
-     g a p :   1 r e m ; 
-     m a r g i n - b o t t o m :   1 . 5 r e m ; 
- } 
- . f u n d i n g - s t a t   { 
-     d i s p l a y :   f l e x ; 
-     f l e x - d i r e c t i o n :   c o l u m n ; 
- } 
- . f u n d i n g - s t a t - l a b e l   { 
-     f o n t - s i z e :   0 . 7 5 r e m ; 
-     t e x t - t r a n s f o r m :   u p p e r c a s e ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t - m u t e d ) ; 
-     f o n t - w e i g h t :   7 0 0 ; 
- } 
- . f u n d i n g - s t a t - v a l u e   { 
-     f o n t - s i z e :   1 . 2 5 r e m ; 
-     f o n t - w e i g h t :   7 0 0 ; 
-     c o l o r :   v a r ( - - c o l o r - a c c e n t ) ; 
- } 
- . f u n d i n g - b a r - c o n t a i n e r   { 
-     d i s p l a y :   f l e x ; 
-     h e i g h t :   2 4 p x ; 
-     b o r d e r - r a d i u s :   4 p x ; 
-     o v e r f l o w :   h i d d e n ; 
-     m a r g i n - b o t t o m :   1 r e m ; 
-     b a c k g r o u n d :   # f 1 f 5 f 9 ; 
- } 
- . f u n d i n g - b a r - s e g m e n t   { 
-     h e i g h t :   1 0 0 % ; 
- } 
- . f u n d i n g - l e g e n d   { 
-     f o n t - s i z e :   0 . 8 7 5 r e m ; 
-     l i n e - h e i g h t :   1 . 5 ; 
- } 
- . f u n d i n g - l e g e n d - i t e m   { 
-     d i s p l a y :   f l e x ; 
-     a l i g n - i t e m s :   c e n t e r ; 
-     g a p :   0 . 5 r e m ; 
-     m a r g i n - b o t t o m :   0 . 2 5 r e m ; 
-     j u s t i f y - c o n t e n t :   s p a c e - b e t w e e n ; 
- } 
- . f u n d i n g - l e g e n d - c o l o r   { 
-     w i d t h :   1 2 p x ; 
-     h e i g h t :   1 2 p x ; 
-     b o r d e r - r a d i u s :   2 p x ; 
-     f l e x - s h r i n k :   0 ; 
- } 
- 
- / *   T a b s   * / 
- . d o s s i e r - t a b s   { 
-     d i s p l a y :   f l e x ; 
-     g a p :   1 r e m ; 
-     b o r d e r - b o t t o m :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
-     m a r g i n - b o t t o m :   1 r e m ; 
- } 
- . d o s s i e r - t a b   { 
-     b a c k g r o u n d :   n o n e ; 
-     b o r d e r :   n o n e ; 
-     b o r d e r - b o t t o m :   2 p x   s o l i d   t r a n s p a r e n t ; 
-     p a d d i n g :   0 . 5 r e m   0 ; 
-     f o n t - w e i g h t :   6 0 0 ; 
-     c u r s o r :   p o i n t e r ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t - m u t e d ) ; 
- } 
- . d o s s i e r - t a b [ a r i a - s e l e c t e d = " t r u e " ]   { 
-     c o l o r :   v a r ( - - c o l o r - a c c e n t ) ; 
-     b o r d e r - b o t t o m - c o l o r :   v a r ( - - c o l o r - a c c e n t ) ; 
- } 
- . d o s s i e r - t a b - c o n t e n t   { 
-     d i s p l a y :   n o n e ; 
- } 
- . d o s s i e r - t a b - c o n t e n t . a c t i v e   { 
-     d i s p l a y :   b l o c k ; 
- } 
- 
- / *   L i s t s   * / 
- . d o s s i e r - l i s t   { 
-     l i s t - s t y l e :   n o n e ; 
-     p a d d i n g :   0 ; 
-     m a r g i n :   0 ; 
-     d i s p l a y :   f l e x ; 
-     f l e x - d i r e c t i o n :   c o l u m n ; 
-     g a p :   1 r e m ; 
- } 
- . d o s s i e r - l i s t - i t e m   { 
-     b o r d e r :   1 p x   s o l i d   v a r ( - - c o l o r - b o r d e r ) ; 
-     b o r d e r - r a d i u s :   8 p x ; 
-     p a d d i n g :   1 r e m ; 
- } 
- . d o s s i e r - l i s t - i t e m - t i t l e   { 
-     f o n t - w e i g h t :   7 0 0 ; 
-     m a r g i n - b o t t o m :   0 . 2 5 r e m ; 
- } 
- . d o s s i e r - l i s t - i t e m - m e t a   { 
-     f o n t - s i z e :   0 . 8 7 5 r e m ; 
-     c o l o r :   v a r ( - - c o l o r - t e x t - m u t e d ) ; 
- } 
- 
- . e n a c t e d - b a d g e   { 
-     d i s p l a y :   i n l i n e - b l o c k ; 
-     b a c k g r o u n d :   # d c f c e 7 ; 
-     c o l o r :   # 1 6 6 5 3 4 ; 
-     p a d d i n g :   0 . 1 r e m   0 . 5 r e m ; 
-     b o r d e r - r a d i u s :   4 p x ; 
-     f o n t - s i z e :   0 . 7 5 r e m ; 
-     f o n t - w e i g h t :   7 0 0 ; 
-     m a r g i n - l e f t :   0 . 5 r e m ; 
- } 
- 
- . m u t e d - t e x t   { 
-     c o l o r :   v a r ( - - c o l o r - t e x t - m u t e d ) ; 
-     f o n t - s i z e :   0 . 9 r e m ; 
-     f o n t - s t y l e :   i t a l i c ; 
- }  
- 
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Member Detail (Dossier) — clean UTF-8 rewrite
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dossier {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
+/* ── Hero / identity ──────────────────────────────────────────────────────── */
+.dossier-hero {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)),
+    var(--dossier-tint, var(--color-surface));
+  margin-bottom: 1.25rem;
+}
+
+.dossier-hero-photo-wrap {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e2e8f0;
+  box-shadow: 0 0 0 4px #fff, 0 4px 14px rgba(26, 31, 46, 0.18);
+}
+.dossier-hero-photo { width: 100%; height: 100%; object-fit: cover; }
+.dossier-hero-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.dossier-hero-body { flex-grow: 1; min-width: 0; }
+.dossier-hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+.dossier-hero-name {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+  word-break: break-word;
+}
+
+.dossier-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #eef1f7;
+  color: var(--color-text);
+  padding: 0.24rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+}
+.chip--dem { background: #e8f0fe; color: #1a56db; border-color: #c9dcfb; }
+.chip--rep { background: #fdeaea; color: #c0392b; border-color: #f5c9c4; }
+.chip--ind { background: #eef2e9; color: #4d7c0f; border-color: #d7e3c6; }
+
+/* ── Ideology meter ───────────────────────────────────────────────────────── */
+.ideology-meter { max-width: 460px; }
+.ideology-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+.ideology-track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3b6fd4 0%, #dfe3ea 50%, #d1432f 100%);
+}
+.ideology-marker {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--color-text);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.ideology-caption { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.4rem; }
+
+/* ── Hero side actions ────────────────────────────────────────────────────── */
+.dossier-hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.grade-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 74px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  background: var(--grade-color, #94a3b8);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.grade-badge span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  opacity: 0.95;
+}
+.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.ghost-btn:hover { background: #f4f6f9; border-color: var(--color-accent); }
+
+/* ── At-a-glance stat row ─────────────────────────────────────────────────── */
+.dossier-statrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.dossier-stat {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+.dossier-stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+.dossier-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+}
+
+/* ── Sticky in-page section nav ───────────────────────────────────────────── */
+.dossier-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.6rem 0.4rem;
+  margin-bottom: 1.25rem;
+  background: rgba(244, 246, 249, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+.dossier-nav a {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.dossier-nav a:hover { background: #e8eef7; color: var(--color-accent); }
+
+/* ── Card grid ────────────────────────────────────────────────────────────── */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.dossier-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  scroll-margin-top: 4.5rem;
+}
+.dossier-card--wide { grid-column: 1 / -1; }
+.dossier-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #eef1f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.dossier-card h3 .card-icon { margin-right: 0.5rem; opacity: 0.8; }
+
+/* Loading placeholder inside a card */
+.card-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+.card-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #dbe2ee;
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: dossier-spin 0.7s linear infinite;
+}
+@keyframes dossier-spin { to { transform: rotate(360deg); } }
+
+/* ── Wikipedia / about ────────────────────────────────────────────────────── */
+.wiki-body { line-height: 1.65; color: #2b3240; }
+.wiki-thumb {
+  float: right;
+  margin: 0 0 0.75rem 1rem;
+  width: 110px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+.wiki-more { display: inline-block; margin-top: 0.85rem; font-weight: 600; color: var(--color-accent); }
+
+/* ── Career timeline ──────────────────────────────────────────────────────── */
+.timeline { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.timeline-item {
+  position: relative;
+  padding: 0 0 1.1rem 1.35rem;
+  border-left: 2px solid var(--color-border);
+}
+.timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px #fff;
+}
+.timeline-item strong { display: block; font-size: 0.92rem; }
+.timeline-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+
+/* ── Funding ──────────────────────────────────────────────────────────────── */
+.funding-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.funding-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.funding-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+.funding-stat-value { font-size: 1.25rem; font-weight: 700; color: var(--color-text); }
+.funding-subhead { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; }
+.funding-bar-container {
+  display: flex;
+  height: 26px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  background: #eef1f7;
+}
+.funding-bar-segment { height: 100%; transition: width var(--transition-med); }
+.funding-legend { font-size: 0.85rem; line-height: 1.5; }
+.funding-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+}
+.funding-legend-label { display: flex; align-items: center; gap: 0.5rem; }
+.funding-legend-color { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── Financial disclosures & generic lists ────────────────────────────────── */
+.dossier-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.dossier-list-item {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.dossier-list-item:hover { border-color: #c7d2e6; box-shadow: 0 2px 8px rgba(26, 31, 46, 0.06); }
+.dossier-list-item-title { font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.dossier-list-item-meta { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.45; }
+.dossier-list-item-meta a { color: var(--color-accent); font-weight: 600; }
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #eef1f7;
+  color: var(--color-text-muted);
+}
+.enacted-badge, .badge--enacted { background: #dcfce7; color: #166534; }
+.badge--report { background: #e0e7ff; color: #3730a3; }
+.badge--role { background: #fef3c7; color: #92400e; }
+
+.stock-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.stock-table th, .stock-table td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+.stock-table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); }
+.stock-asset { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Legislation tabs ─────────────────────────────────────────────────────── */
+.dossier-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--color-border); margin-bottom: 1rem; }
+.dossier-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.dossier-tab:hover { color: var(--color-text); }
+.dossier-tab[aria-selected="true"] { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.dossier-tab-content { display: none; }
+.dossier-tab-content.active { display: block; }
+
+/* ── Policy-area tags ─────────────────────────────────────────────────────── */
+.policy-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+.policy-tag {
+  background: #eef1f7;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  color: var(--color-text);
+}
+.policy-tag span { color: var(--color-text-muted); font-weight: 700; margin-left: 0.25rem; }
+
+/* ── Committees ───────────────────────────────────────────────────────────── */
+.committee-sub { margin: 0.5rem 0 0 0; padding-left: 1.35rem; font-size: 0.88rem; color: var(--color-text-muted); }
+.committee-sub li { margin-bottom: 0.2rem; }
+
+/* ── Contact & links ──────────────────────────────────────────────────────── */
+.contact-cols { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-group-title { font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.contact-link:hover { background: #eef4ff; border-color: var(--color-accent); }
+.contact-line { font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.3rem; }
+
+.muted-text { color: var(--color-text-muted); font-size: 0.9rem; }
+.dossier-source { margin-top: 1rem; font-size: 0.78rem; color: var(--color-text-muted); }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .dossier-grid { grid-template-columns: 1fr; }
+  .dossier-hero { flex-wrap: wrap; justify-content: center; text-align: center; }
+  .dossier-hero-body { flex-basis: 100%; }
+  .ideology-meter { margin: 0 auto; }
+  .dossier-chips { justify-content: center; }
+  .dossier-hero-side { flex-direction: row; align-items: center; width: 100%; justify-content: center; }
+}
+@media (max-width: 600px) {
+  .dossier-hero { padding: 1.25rem; }
+  .dossier-hero-name { font-size: 1.7rem; }
+  .dossier-hero-photo-wrap { width: 104px; height: 104px; }
+  .dossier-card { padding: 1.1rem 1.15rem; }
+  .dossier-nav { overflow-x: auto; flex-wrap: nowrap; }
+}

@@ -116,6 +116,23 @@ class MemberDossierBackendTests(unittest.TestCase):
             item["url"], "https://www.congress.gov/bill/118th-congress/house-bill/1"
         )
 
+    def test_legislation_labels_amendments(self):
+        item = self.gov._legislation_item(
+            {
+                "amendmentNumber": "6349",
+                "congress": 119,
+                "introducedDate": "2026-06-24",
+                "latestAction": None,
+                "type": None,
+                "url": "https://api.congress.gov/v3/amendment/119/samdt/6349?format=json",
+            }
+        )
+        self.assertTrue(item["isAmendment"])
+        self.assertEqual(item["type"], "S.Amdt.")
+        self.assertEqual(item["number"], "6349")
+        self.assertIn("Senate Amendment 6349", item["title"])
+        self.assertIn("senate-amendment/6349", item["url"])
+
     # --- funding ----------------------------------------------------------
 
     def test_funding_reports_unavailable_when_no_candidate(self):

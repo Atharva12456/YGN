@@ -284,8 +284,13 @@ def official_stocks(bioguide_id: str):
 
 
 @app.get("/officials/{bioguide_id}/dossier")
-def official_dossier(bioguide_id: str):
-    return _backend_response(government.get_member_dossier, bioguide_id)
+def official_dossier(bioguide_id: str, sections: str | None = None):
+    section_list = (
+        [s.strip() for s in sections.split(",") if s.strip()] if sections else None
+    )
+    return _backend_response(
+        government.get_member_dossier, bioguide_id, sections=section_list
+    )
 
 
 @app.get("/bills/recent")
