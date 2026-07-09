@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from contextlib import contextmanager
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote
 
@@ -550,14 +550,35 @@ def listCongressMembers(limit=20, offset=0, congress=None, current_member=None):
     return _apply_member_enrichment_to_payload(data)
 
 
+def _current_congress_number(now=None):
+    now = now or datetime.now(timezone.utc)
+    return (now.year - 1789) // 2 + 1
+
+
 def getRecentBills():
-    return _congress_get(
+    # The bare /bill endpoint's default ordering returns decades-old bills, so
+    # restrict to bills whose record was updated recently (fromDateTime), then
+    # re-sort by latest ACTION date so the digest shows genuinely recent
+    # legislative activity (updateDate is a record refresh, not an action).
+    now = datetime.now(timezone.utc)
+    from_dt = (now - timedelta(days=90)).strftime("%Y-%m-%dT00:00:00Z")
+    data = _congress_get(
         "/bill",
         params={
-            "limit": 20,
+            "limit": 40,
+            "sort": "updateDate+desc",
+            "fromDateTime": from_dt,
             "format": "json",
         },
     )
+
+    bills = data.get("bills")
+    if isinstance(bills, list):
+        def _action_date(bill):
+            return (bill.get("latestAction") or {}).get("actionDate") or ""
+
+        data = {**data, "bills": sorted(bills, key=_action_date, reverse=True)}
+    return data
 
 
 def _bill_type_code(bill):

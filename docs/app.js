@@ -94,6 +94,10 @@ let currentAnchor = null;
 let healthIndicator;
 let membersGrid;
 let membersSearch;
+let membersPartyFilter;
+let membersChamberFilter;
+let membersSort;
+let membersCount;
 let homeStats;
 let dailyQuoteEl;
 let dailyQuoteAuthorEl;
@@ -923,7 +927,7 @@ async function loadMembers() {
       return members;
     }
 
-    renderGrid(members);
+    applyFilters();
     return members;
 
   } catch (err) {
@@ -1873,36 +1877,91 @@ function scrollToHashTarget() {
  * Filter allMembers by query string (name, state, party, chamber).
  * Called on every input event on #members-search.
  */
-function handleSearch() {
-  const query = membersSearch.value.trim().toLowerCase();
+function memberPartyCode(member) {
+  const p = getMemberField(member, 'party', 'partyName').toLowerCase();
+  if (p.includes('democrat')) return 'D';
+  if (p.includes('republican')) return 'R';
+  return 'I';
+}
 
-  if (!query) {
-    renderGrid(allMembers);
-    return;
+function memberDim1(member) {
+  const n = member.nominate_score || member.nominateScore;
+  return n && typeof n.dim1 === 'number' ? n.dim1 : null;
+}
+
+function memberEthicsScore(member) {
+  const e = member.ethics_score || member.ethicsScore;
+  return e && typeof e.score === 'number' ? e.score : null;
+}
+
+function sortMembers(list, sortBy) {
+  const arr = list.slice();
+  if (sortBy === 'ideology' || sortBy === 'ethics') {
+    const value = sortBy === 'ideology' ? memberDim1 : memberEthicsScore;
+    // ethics: high score first (desc); ideology: liberal (low) first (asc). Unknowns last.
+    const dir = sortBy === 'ethics' ? -1 : 1;
+    arr.sort((a, b) => {
+      const va = value(a);
+      const vb = value(b);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      return (va - vb) * dir;
+    });
   }
+  // 'name' keeps allMembers' existing alphabetical order.
+  return arr;
+}
 
-  const filtered = allMembers.filter(member => {
-    const name = getMemberField(member, 'name', 'directOrderName', 'invertedOrderName').toLowerCase();
-    const state = getMemberField(member, 'state').toLowerCase();
-    const party = getMemberField(member, 'party', 'partyName').toLowerCase();
-    const chamber = getMemberChamber(member).toLowerCase();
-    const district = formatDistrictLabel(member).toLowerCase();
+function applyFilters() {
+  if (!membersGrid) return;
+  const query = (membersSearch ? membersSearch.value : '').trim().toLowerCase();
+  const partyFilter = membersPartyFilter ? membersPartyFilter.value : '';
+  const chamberFilter = membersChamberFilter ? membersChamberFilter.value : '';
+  const sortBy = membersSort ? membersSort.value : 'name';
 
-    return (
-      name.includes(query) ||
-      state.includes(query) ||
-      stateSearchMatches(member, query) ||
-      party.includes(query) ||
-      chamber.includes(query) ||
-      district.includes(query)
-    );
+  let list = allMembers.filter(member => {
+    if (partyFilter && memberPartyCode(member) !== partyFilter) return false;
+    if (chamberFilter && !getMemberChamber(member).toLowerCase().includes(chamberFilter)) return false;
+    if (query) {
+      const name = getMemberField(member, 'name', 'directOrderName', 'invertedOrderName').toLowerCase();
+      const state = getMemberField(member, 'state').toLowerCase();
+      const party = getMemberField(member, 'party', 'partyName').toLowerCase();
+      const chamber = getMemberChamber(member).toLowerCase();
+      const district = formatDistrictLabel(member).toLowerCase();
+      const matched =
+        name.includes(query) ||
+        state.includes(query) ||
+        stateSearchMatches(member, query) ||
+        party.includes(query) ||
+        chamber.includes(query) ||
+        district.includes(query);
+      if (!matched) return false;
+    }
+    return true;
   });
 
-  if (filtered.length === 0) {
+  list = sortMembers(list, sortBy);
+  updateMembersCount(list.length);
+
+  if (list.length === 0) {
     showEmpty();
   } else {
-    renderGrid(filtered);
+    renderGrid(list);
   }
+}
+
+function updateMembersCount(shown) {
+  if (!membersCount) return;
+  const total = allMembers.length;
+  membersCount.textContent = shown === total
+    ? `${total} members`
+    : `${shown} of ${total} members`;
+}
+
+// Back-compat alias: the search input listener calls handleSearch.
+function handleSearch() {
+  applyFilters();
 }
 
 function applyInitialMemberQuery() {
@@ -2142,27 +2201,63 @@ function aboutHtml(wiki) {
   </section>`;
 }
 
+function chamberLabel(chamber) {
+  const c = String(chamber || '').toLowerCase();
+  if (c.includes('senate')) return 'U.S. Senate';
+  if (c.includes('house') || c.includes('representative')) return 'U.S. House';
+  return chamber || 'Congress';
+}
+
+// Collapse a member's per-Congress terms into compact tenure blocks so that a
+// 30-year veteran doesn't bury the rest of the page under 18 rows.
+function summarizeTenure(terms) {
+  const groups = [];
+  terms.forEach(t => {
+    const chamber = chamberLabel(t.chamber);
+    const state = t.state || '';
+    const last = groups[groups.length - 1];
+    if (last && last.chamber === chamber && last.state === state) {
+      last.endYear = t.endYear || 'present';
+      last.count += 1;
+    } else {
+      groups.push({ chamber, state, startYear: t.startYear || '?', endYear: t.endYear || 'present', count: 1 });
+    }
+  });
+  return groups.reverse(); // most recent first
+}
+
 function careerHtml(history) {
   if (!history) return '';
-  const terms = Array.isArray(history.terms) ? history.terms.slice().reverse() : [];
-  const timeline = terms.map(t => `
+  const chrono = Array.isArray(history.terms) ? history.terms : [];
+  const termCount = history.termCount || chrono.length;
+
+  const tenureHtml = summarizeTenure(chrono).map(g => `
+    <li class="tenure-item">
+      <strong>${esc(g.chamber)}</strong>
+      <span>${g.state ? `${esc(g.state)} · ` : ''}${esc(g.startYear)}–${esc(g.endYear)} · ${g.count} term${g.count === 1 ? '' : 's'}</span>
+    </li>`).join('');
+
+  const timeline = chrono.slice().reverse().map(t => `
     <li class="timeline-item">
       <strong>${esc(t.congress)}th Congress · ${esc(t.startYear || '?')}–${esc(t.endYear || 'present')}</strong>
       <span>${esc(t.chamber || '')}${t.state ? ` · ${esc(t.state)}` : ''}${t.district ? ` · District ${esc(t.district)}` : ''}${t.party ? ` · ${esc(t.party)}` : ''}</span>
     </li>`).join('');
+
   const age = computeAge(history.birthday);
   const born = history.birthday
     ? `${esc(history.birthday)}${age ? ` (age ${age})` : ''}`
     : (history.birthYear ? esc(history.birthYear) : '—');
+
   return `<section class="dossier-card" id="career">
     <h3><span><span class="card-icon">🏛️</span>Career History</span></h3>
     <div class="funding-totals" style="margin-bottom:1.25rem;">
       <div class="funding-stat"><span class="funding-stat-label">First elected</span><span class="funding-stat-value">${esc(history.firstElectedYear || '—')}</span></div>
       <div class="funding-stat"><span class="funding-stat-label">Years served</span><span class="funding-stat-value">${esc(history.yearsOfService || '—')}</span></div>
-      <div class="funding-stat"><span class="funding-stat-label">Terms</span><span class="funding-stat-value">${esc(history.termCount || '—')}</span></div>
+      <div class="funding-stat"><span class="funding-stat-label">Terms</span><span class="funding-stat-value">${esc(termCount)}</span></div>
       <div class="funding-stat"><span class="funding-stat-label">Born</span><span class="funding-stat-value" style="font-size:1rem;">${born}</span></div>
     </div>
-    ${timeline ? `<ul class="timeline">${timeline}</ul>` : ''}
+    ${tenureHtml ? `<ul class="tenure-list">${tenureHtml}</ul>` : ''}
+    ${timeline ? `<details class="timeline-details"><summary>Show all ${esc(termCount)} terms by Congress</summary><ul class="timeline">${timeline}</ul></details>` : ''}
   </section>`;
 }
 
@@ -2320,15 +2415,23 @@ function policyTagsHtml(bills) {
 
 function billListHtml(bills) {
   if (!bills || !bills.length) return '<p class="muted-text">None found.</p>';
-  return `<ul class="dossier-list">${bills.map(b => `
-    <li class="dossier-list-item">
-      <div class="dossier-list-item-title">
-        <a href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener">${esc(b.type)}${esc(b.number)}</a>
-        ${b.becameLaw ? '<span class="badge badge--enacted">Enacted</span>' : ''}
-      </div>
-      <div style="font-size:.95rem;margin:.25rem 0 .4rem;">${esc(b.title)}</div>
+  return `<ul class="dossier-list bill-list">${bills.map(b => {
+    const label = `${esc(b.type)}${esc(b.number)}`;
+    const link = `<a href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener">${label}</a>`;
+    // Amendments carry no title/action — render them as a compact single line so
+    // they don't bury the actual bills.
+    if (b.isAmendment) {
+      return `<li class="dossier-list-item bill-item bill-item--amendment">
+        <div class="dossier-list-item-title">${link} <span class="badge">Amendment</span></div>
+        <div class="dossier-list-item-meta">${esc(b.introducedDate || '')}</div>
+      </li>`;
+    }
+    return `<li class="dossier-list-item bill-item">
+      <div class="dossier-list-item-title">${link}${b.becameLaw ? ' <span class="badge badge--enacted">Enacted</span>' : ''}</div>
+      <div class="bill-title-text">${esc(b.title)}</div>
       <div class="dossier-list-item-meta">${esc(b.introducedDate || '')}${b.policyArea ? ` · ${esc(b.policyArea)}` : ''}${b.latestAction ? `<br>Latest: ${esc(b.latestAction)}` : ''}</div>
-    </li>`).join('')}</ul>`;
+    </li>`;
+  }).join('')}</ul>`;
 }
 
 function legislationHtml(legislation) {
@@ -2479,6 +2582,10 @@ document.addEventListener('DOMContentLoaded', () => {
   healthIndicator = document.getElementById('health-indicator');
   membersGrid     = document.getElementById('members-grid');
   membersSearch   = document.getElementById('members-search');
+  membersPartyFilter   = document.getElementById('members-party');
+  membersChamberFilter = document.getElementById('members-chamber');
+  membersSort          = document.getElementById('members-sort');
+  membersCount         = document.getElementById('members-count');
   homeStats       = document.getElementById('home-stats');
   dailyQuoteEl    = document.getElementById('daily-quote');
   dailyQuoteAuthorEl = document.getElementById('daily-quote-author');
@@ -2554,9 +2661,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let searchTimer = null;
     membersSearch.addEventListener('input', () => {
       clearTimeout(searchTimer);
-      searchTimer = setTimeout(handleSearch, 150);
+      searchTimer = setTimeout(applyFilters, 150);
     });
   }
+  [membersPartyFilter, membersChamberFilter, membersSort].forEach(control => {
+    if (control) control.addEventListener('change', applyFilters);
+  });
 
   if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
   if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);

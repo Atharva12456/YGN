@@ -40,9 +40,37 @@
         <input
           id="members-search"
           type="search"
-          placeholder="Filter by name, state, party"
+          placeholder="Search by name, state, party…"
           aria-label="Search members"
         >
+        <div class="members-filters">
+          <label class="filter-field">
+            <span>Party</span>
+            <select id="members-party" aria-label="Filter by party">
+              <option value="">All parties</option>
+              <option value="D">Democratic</option>
+              <option value="R">Republican</option>
+              <option value="I">Independent</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span>Chamber</span>
+            <select id="members-chamber" aria-label="Filter by chamber">
+              <option value="">All chambers</option>
+              <option value="house">House</option>
+              <option value="senate">Senate</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span>Sort</span>
+            <select id="members-sort" aria-label="Sort members">
+              <option value="name">Name (A–Z)</option>
+              <option value="ideology">Ideology (L→R)</option>
+              <option value="ethics">Ethics grade</option>
+            </select>
+          </label>
+        </div>
+        <div id="members-count" class="members-count" aria-live="polite"></div>
       </div>
       <div id="members-grid" class="members-grid" role="list" aria-label="Congressional members"></div>
     </section>

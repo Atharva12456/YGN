@@ -456,6 +456,13 @@ button {
   font-size: 0.84rem;
   line-height: 1.55;
   overflow-wrap: anywhere;
+  /* Clamp long official summaries so a single verbose bill doesn't create a
+     giant row; the full text is one click away on the linked bill page. */
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .bill-cell a,
@@ -513,12 +520,15 @@ button {
 .members-controls {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
   margin-bottom: 1.5rem;
 }
 
 #members-search {
-  width: 100%;
+  flex: 1 1 240px;
+  min-width: 200px;
   padding: 0.6rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -527,6 +537,33 @@ button {
   color: var(--color-text);
   background: var(--color-surface);
   transition: border-color var(--transition-fast), outline var(--transition-fast);
+}
+
+.members-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.filter-field { display: flex; flex-direction: column; gap: 0.15rem; }
+.filter-field > span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+.filter-field select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+.filter-field select:focus { outline: 2px solid var(--color-accent); border-color: var(--color-accent); }
+.members-count {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
 }
 
 #members-search::placeholder {
@@ -2114,6 +2151,31 @@ button {
 }
 .wiki-more { display: inline-block; margin-top: 0.85rem; font-weight: 600; color: var(--color-accent); }
 
+/* ── Career: tenure summary + collapsible timeline ────────────────────────── */
+.tenure-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.tenure-item {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 8px;
+  background: #fafbfd;
+}
+.tenure-item strong { display: block; font-size: 0.95rem; }
+.tenure-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+
+.timeline-details { margin-top: 0.85rem; }
+.timeline-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  padding: 0.35rem 0;
+  user-select: none;
+}
+.timeline-details > summary:hover { text-decoration: underline; }
+.timeline-details[open] > summary { margin-bottom: 0.6rem; }
+.timeline-details .timeline { max-height: 320px; overflow-y: auto; padding-right: 0.5rem; }
+
 /* ── Career timeline ──────────────────────────────────────────────────────── */
 .timeline { list-style: none; padding: 0; margin: 0.5rem 0 0; }
 .timeline-item {
@@ -2185,6 +2247,12 @@ button {
 .dossier-list-item-title { font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
 .dossier-list-item-meta { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.45; }
 .dossier-list-item-meta a { color: var(--color-accent); font-weight: 600; }
+
+/* Legislation: 2-column bill grid (the card is full-width) + compact amendments */
+.bill-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
+.bill-title-text { font-size: 0.95rem; margin: 0.25rem 0 0.4rem; }
+.bill-item--amendment { align-self: start; background: #fafbfd; }
+.bill-item--amendment .dossier-list-item-title { font-weight: 600; }
 
 .badge {
   display: inline-block;
