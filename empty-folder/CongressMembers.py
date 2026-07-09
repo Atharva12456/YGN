@@ -1,6 +1,7 @@
 import csv
 import hashlib
 import html
+import io
 import json
 import logging
 import os
@@ -8,12 +9,15 @@ import re
 import sqlite3
 import threading
 import time
+import xml.etree.ElementTree as ET
+import zipfile
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
 import requests
+import yaml
 
 
 BASE_URL = "https://api.congress.gov/v3"
@@ -36,6 +40,61 @@ DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
 ETHICS_METHOD_VERSION = "campaign_finance_v2"
+
+# --- Member dossier data sources -----------------------------------------
+# unitedstates/congress-legislators: canonical, free, no-key crosswalk of
+# every current member (bio, terms, committee assignments, social media, and
+# IDs for Wikipedia/Ballotpedia/GovTrack/OpenSecrets/C-SPAN/FEC). Served as
+# YAML from GitHub raw; parsed once and cached.
+UNITEDSTATES_BASE_URL = (
+    "https://raw.githubusercontent.com/unitedstates/congress-legislators/main"
+)
+UNITEDSTATES_CACHE_TTL_SECONDS = 24 * 60 * 60
+# U.S. House Clerk financial-disclosure index (no key). Each {year}FD.zip holds
+# a {year}FD.xml listing every filing (incl. "P" = periodic transaction report,
+# i.e. a stock trade report) with the DocID needed to build the official PDF URL.
+HOUSE_DISCLOSURE_ZIP_URL = (
+    "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}FD.zip"
+)
+HOUSE_PTR_PDF_URL = (
+    "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/{year}/{doc_id}.pdf"
+)
+HOUSE_ANNUAL_PDF_URL = (
+    "https://disclosures-clerk.house.gov/public_disc/financial-pdfs/{year}/{doc_id}.pdf"
+)
+SENATE_EFD_SEARCH_URL = "https://efdsearch.senate.gov/search/"
+DISCLOSURE_CACHE_TTL_SECONDS = 6 * 60 * 60
+LEGISLATION_CACHE_TTL_SECONDS = 60 * 60
+DOSSIER_CACHE_TTL_SECONDS = 15 * 60
+HOUSE_FILING_TYPE_LABELS = {
+    "P": "Periodic Transaction Report (stock/asset trade)",
+    "O": "Annual Report",
+    "A": "Annual Report (amendment)",
+    "C": "Candidate Report",
+    "D": "Financial Disclosure Report",
+    "W": "Withdrawal",
+    "X": "Filing Extension",
+    "T": "Transaction Report",
+}
+
+# Congress.gov member payloads carry the full state name (e.g. "Vermont") but
+# the FEC and NOMINATE datasets key on the two-letter USPS code (e.g. "VT").
+STATE_NAME_TO_USPS = {
+    "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR",
+    "california": "CA", "colorado": "CO", "connecticut": "CT", "delaware": "DE",
+    "district of columbia": "DC", "florida": "FL", "georgia": "GA", "hawaii": "HI",
+    "idaho": "ID", "illinois": "IL", "indiana": "IN", "iowa": "IA", "kansas": "KS",
+    "kentucky": "KY", "louisiana": "LA", "maine": "ME", "maryland": "MD",
+    "massachusetts": "MA", "michigan": "MI", "minnesota": "MN", "mississippi": "MS",
+    "missouri": "MO", "montana": "MT", "nebraska": "NE", "nevada": "NV",
+    "new hampshire": "NH", "new jersey": "NJ", "new mexico": "NM", "new york": "NY",
+    "north carolina": "NC", "north dakota": "ND", "ohio": "OH", "oklahoma": "OK",
+    "oregon": "OR", "pennsylvania": "PA", "rhode island": "RI", "south carolina": "SC",
+    "south dakota": "SD", "tennessee": "TN", "texas": "TX", "utah": "UT",
+    "vermont": "VT", "virginia": "VA", "washington": "WA", "west virginia": "WV",
+    "wisconsin": "WI", "wyoming": "WY", "american samoa": "AS", "guam": "GU",
+    "northern mariana islands": "MP", "puerto rico": "PR", "virgin islands": "VI",
+}
 
 BILL_TYPE_SLUGS = {
     "hr": "house-bill",
@@ -120,6 +179,8 @@ def _load_local_env():
         "FEC_API_KEY",
         "ECON_API_KEY",
         "YGN_ECON_API_KEY",
+        "FMP_API_KEY",
+        "YGN_STOCK_API_KEY",
     }
     for env_path in ENV_PATHS:
         if not env_path.exists():
@@ -1418,6 +1479,21 @@ def _member_fec_office(member):
     return None
 
 
+def _member_state_code(member):
+    """Two-letter USPS state code, converting from a full state name if needed."""
+    raw = (
+        member.get("stateCode")
+        or member.get("state")
+        or _latest_member_term(member).get("stateCode")
+        or _latest_member_term(member).get("stateName")
+        or ""
+    )
+    raw = str(raw).strip()
+    if len(raw) == 2:
+        return raw.upper()
+    return STATE_NAME_TO_USPS.get(raw.lower())
+
+
 def _normalize_name_for_match(value):
     value = re.sub(r"[^a-z0-9, ]+", " ", str(value or "").lower())
     if "," in value:
@@ -1448,7 +1524,7 @@ def _fec_candidate_match_score(candidate, member):
         if overlap == len(member_name_tokens):
             score += 4
 
-    if candidate.get("state") == (member.get("stateCode") or member.get("state")):
+    if candidate.get("state") == _member_state_code(member):
         score += 4
     if candidate.get("office") == _member_fec_office(member):
         score += 4
@@ -1476,7 +1552,7 @@ def _fec_search_candidates(member):
         "per_page": 20,
         "has_raised_funds": "true",
     }
-    state = member.get("stateCode") or member.get("state")
+    state = _member_state_code(member)
     office = _member_fec_office(member)
     party = _party_abbreviation(member)
     if state:
@@ -1609,7 +1685,7 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
     )
     donor_concentration = _ratio(large_donor_total, itemized or individual)
 
-    state = member.get("stateCode") or member.get("state")
+    state = _member_state_code(member)
     state_total = sum(
         _safe_amount(row.get("total"))
         for row in by_state
@@ -1890,7 +1966,8 @@ def get_ethics_score(bioguide_id: str):
     )
 
 
-def get_wiki_summary(bioguideId):
+def _wiki_summary_payload(bioguideId):
+    """Resolve and cache the full Wikipedia summary payload (before trimming)."""
     static_summary = _static_wiki_override(bioguideId)
     cache_key = _build_cache_key(
         "wikipedia-summary-v3",
@@ -1932,11 +2009,27 @@ def get_wiki_summary(bioguideId):
     elif "extract" not in wiki_summary and "summary" in wiki_summary:
         wiki_summary = {**wiki_summary, "extract": wiki_summary.get("summary")}
 
+    return wiki_summary
+
+
+def get_wiki_summary(bioguideId):
+    """Two-sentence Wikipedia teaser (used by member tiles and hover popovers)."""
+    wiki_summary = _wiki_summary_payload(bioguideId)
+
     if wiki_summary.get("summary"):
         summary = _first_sentences(wiki_summary.get("summary"))
         wiki_summary = {**wiki_summary, "summary": summary, "extract": summary}
 
     return wiki_summary
+
+
+def get_member_wiki_full(bioguideId):
+    """Full, untrimmed Wikipedia summary for the member detail page.
+
+    Shares the same cache and resolution as ``get_wiki_summary`` but returns the
+    complete extract (all sentences) plus thumbnail and canonical wiki URL.
+    """
+    return _wiki_summary_payload(bioguideId)
 
 
 def get_official_profile(bioguideId, include_wiki=True, include_nominate=True, include_ethics=True):
@@ -1984,6 +2077,712 @@ def get_official_profile(bioguideId, include_wiki=True, include_nominate=True, i
             )
 
     return profile
+
+
+# =========================================================================
+# Member detail dossier
+#
+# The functions below power a Wikipedia-style member detail page. Each one is
+# independently cached and degrades gracefully (missing data returns a well
+# formed "unavailable" payload rather than raising), so a single failing
+# section never blanks the page. `get_member_dossier` fans out across all of
+# them and captures per-section errors, mirroring `get_official_profile`.
+# =========================================================================
+
+
+def _current_year():
+    return datetime.now(timezone.utc).year
+
+
+def _jsonable(value):
+    """Coerce YAML/date values into JSON-serializable primitives for the cache."""
+    return json.loads(json.dumps(value, default=str))
+
+
+# --- unitedstates/congress-legislators (free, no key) --------------------
+
+
+def _unitedstates_dataset(filename, ttl_seconds=UNITEDSTATES_CACHE_TTL_SECONDS):
+    cache_key = _build_cache_key("unitedstates", {"file": filename})
+    url = f"{UNITEDSTATES_BASE_URL}/{filename}"
+
+    def fetch_json():
+        try:
+            response = requests.get(
+                url,
+                headers={"User-Agent": WIKI_USER_AGENT},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(
+                f"congress-legislators dataset request failed for {filename}."
+            ) from None
+        return _jsonable(yaml.safe_load(response.text) or [])
+
+    return _cached_json(
+        cache_key, f"unitedstates:{filename}", fetch_json, ttl_seconds=ttl_seconds
+    )
+
+
+def _legislators_index():
+    """bioguide id -> full congress-legislators record for current members."""
+    index = {}
+    for record in _unitedstates_dataset("legislators-current.yaml") or []:
+        bioguide_id = (record.get("id") or {}).get("bioguide")
+        if bioguide_id:
+            index[bioguide_id] = record
+    return index
+
+
+def _legislator_record(bioguide_id):
+    """Single legislator record; {} if the dataset is unavailable (best-effort)."""
+    try:
+        return _legislators_index().get(bioguide_id, {})
+    except UpstreamDataError:
+        return {}
+
+
+def _social_media_index():
+    """bioguide id -> {twitter, facebook, youtube, instagram, ...}."""
+    index = {}
+    for record in _unitedstates_dataset("legislators-social-media.yaml") or []:
+        bioguide_id = (record.get("id") or {}).get("bioguide")
+        if bioguide_id:
+            index[bioguide_id] = record.get("social") or {}
+    return index
+
+
+def _social_media_record(bioguide_id):
+    """Single member's social handles; {} if the dataset is unavailable."""
+    try:
+        return _social_media_index().get(bioguide_id, {})
+    except UpstreamDataError:
+        return {}
+
+
+def _committee_name_lookup():
+    """Return (full_committees, subcommittees) name lookups keyed by thomas id."""
+    full = {}
+    sub = {}
+    for committee in _unitedstates_dataset("committees-current.yaml") or []:
+        thomas_id = committee.get("thomas_id")
+        if not thomas_id:
+            continue
+        full[thomas_id] = {
+            "name": committee.get("name"),
+            "chamber": committee.get("type"),
+            "url": committee.get("url"),
+        }
+        for subcommittee in committee.get("subcommittees") or []:
+            sub_id = subcommittee.get("thomas_id")
+            if sub_id:
+                sub[thomas_id + sub_id] = subcommittee.get("name")
+    return full, sub
+
+
+# --- Committee assignments (extra feature) -------------------------------
+
+
+def get_member_committees(bioguide_id):
+    cache_key = _build_cache_key("member-committees-v1", {"bioguideId": bioguide_id})
+
+    def fetch_json():
+        membership = _unitedstates_dataset("committee-membership-current.yaml") or {}
+        full, sub = _committee_name_lookup()
+        assignments = []
+        for code, members in membership.items():
+            if not isinstance(members, list):
+                continue
+            for member in members:
+                if member.get("bioguide") != bioguide_id:
+                    continue
+                is_subcommittee = len(code) > 4
+                parent_code = code[:4] if is_subcommittee else code
+                committee_info = full.get(parent_code, {})
+                assignments.append(
+                    {
+                        "code": code,
+                        "committee": committee_info.get("name"),
+                        "chamber": committee_info.get("chamber"),
+                        "committeeUrl": committee_info.get("url"),
+                        "subcommittee": sub.get(code) if is_subcommittee else None,
+                        "isSubcommittee": is_subcommittee,
+                        "role": member.get("title"),
+                        "rank": member.get("rank"),
+                        "party": member.get("party"),
+                    }
+                )
+                break
+
+        # Full committees before their subcommittees; leadership (low rank) first.
+        assignments.sort(
+            key=lambda a: (a["isSubcommittee"], a.get("rank") or 999)
+        )
+        leadership = [
+            a for a in assignments if (a.get("role") or "").strip()
+        ]
+        return {
+            "bioguideId": bioguide_id,
+            "count": len(assignments),
+            "leadershipCount": len(leadership),
+            "assignments": assignments,
+            "source": "unitedstates/congress-legislators",
+        }
+
+    return _cached_json(
+        cache_key,
+        f"committees:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=UNITEDSTATES_CACHE_TTL_SECONDS,
+    )
+
+
+# --- Contact & official presence (extra feature) -------------------------
+
+
+def _social_url(platform, handle):
+    if not handle:
+        return None
+    handle = str(handle).lstrip("@")
+    templates = {
+        "twitter": "https://twitter.com/{}",
+        "facebook": "https://facebook.com/{}",
+        "instagram": "https://instagram.com/{}",
+        "youtube": "https://youtube.com/user/{}",
+        "youtube_id": "https://youtube.com/channel/{}",
+    }
+    template = templates.get(platform)
+    return template.format(handle) if template else None
+
+
+def get_member_contact(bioguide_id):
+    cache_key = _build_cache_key("member-contact-v1", {"bioguideId": bioguide_id})
+
+    def fetch_json():
+        detail = CongressMembersID(bioguide_id).get("member", {})
+        legislator = _legislator_record(bioguide_id)
+        social = _social_media_record(bioguide_id)
+        ids = legislator.get("id") or {}
+        terms = legislator.get("terms") or []
+        latest_term = terms[-1] if terms else {}
+        address_info = detail.get("addressInformation") or {}
+
+        official = {
+            "website": detail.get("officialWebsiteUrl") or latest_term.get("url"),
+            "contactForm": latest_term.get("contact_form"),
+            "phone": latest_term.get("phone") or address_info.get("phoneNumber"),
+            "office": latest_term.get("office") or address_info.get("officeAddress"),
+        }
+
+        social_links = {}
+        for platform in ("twitter", "facebook", "instagram", "youtube", "youtube_id"):
+            handle = social.get(platform)
+            if handle:
+                key = "youtube" if platform == "youtube_id" else platform
+                social_links.setdefault(
+                    key, {"handle": handle, "url": _social_url(platform, handle)}
+                )
+
+        profiles = {}
+        if ids.get("wikipedia"):
+            profiles["wikipedia"] = (
+                f"https://en.wikipedia.org/wiki/{quote(ids['wikipedia'].replace(' ', '_'))}"
+            )
+        if ids.get("ballotpedia"):
+            profiles["ballotpedia"] = (
+                f"https://ballotpedia.org/{quote(ids['ballotpedia'].replace(' ', '_'))}"
+            )
+        if ids.get("govtrack"):
+            profiles["govtrack"] = (
+                f"https://www.govtrack.us/congress/members/{ids['govtrack']}"
+            )
+        if ids.get("opensecrets"):
+            profiles["opensecrets"] = (
+                "https://www.opensecrets.org/members-of-congress/summary"
+                f"?cid={ids['opensecrets']}"
+            )
+        if ids.get("cspan"):
+            profiles["cspan"] = f"https://www.c-span.org/person/?{ids['cspan']}"
+        if ids.get("votesmart"):
+            profiles["votesmart"] = (
+                f"https://justfacts.votesmart.org/candidate/{ids['votesmart']}"
+            )
+
+        return {
+            "bioguideId": bioguide_id,
+            "official": official,
+            "social": social_links,
+            "profiles": profiles,
+            "sources": ["congress.gov", "unitedstates/congress-legislators"],
+        }
+
+    return _cached_json(
+        cache_key,
+        f"contact:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=UNITEDSTATES_CACHE_TTL_SECONDS,
+    )
+
+
+# --- Career history ------------------------------------------------------
+
+
+def get_member_history(bioguide_id):
+    cache_key = _build_cache_key("member-history-v1", {"bioguideId": bioguide_id})
+
+    def fetch_json():
+        detail = CongressMembersID(bioguide_id).get("member", {})
+        legislator = _legislator_record(bioguide_id)
+        bio = legislator.get("bio") or {}
+        terms = _term_items_from_member(detail)
+
+        def start_year(term):
+            try:
+                return int(term.get("startYear") or 0)
+            except (TypeError, ValueError):
+                return 0
+
+        timeline = []
+        chambers = []
+        for term in sorted(terms, key=start_year):
+            chamber = term.get("chamber")
+            if chamber:
+                chambers.append(chamber)
+            timeline.append(
+                {
+                    "congress": term.get("congress"),
+                    "chamber": chamber,
+                    "startYear": term.get("startYear"),
+                    "endYear": term.get("endYear"),
+                    "state": term.get("stateName") or term.get("stateCode"),
+                    "district": term.get("district"),
+                    "party": term.get("partyName"),
+                }
+            )
+
+        start_years = [start_year(t) for t in terms if start_year(t)]
+        first_year = min(start_years) if start_years else None
+
+        return {
+            "bioguideId": bioguide_id,
+            "fullName": detail.get("directOrderName"),
+            "birthYear": detail.get("birthYear"),
+            "birthday": bio.get("birthday"),
+            "gender": bio.get("gender"),
+            "firstElectedYear": first_year,
+            "yearsOfService": (_current_year() - first_year) if first_year else None,
+            "chambersServed": _dedupe_strings(chambers),
+            "termCount": len(terms),
+            "partyHistory": detail.get("partyHistory") or [],
+            "leadership": detail.get("leadership") or [],
+            "terms": timeline,
+            "sources": ["congress.gov", "unitedstates/congress-legislators"],
+        }
+
+    return _cached_json(
+        cache_key,
+        f"history:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
+    )
+
+
+# --- Legislation the member participated on ------------------------------
+
+
+def _bill_web_url_from_item(item):
+    bill_type = str(item.get("type") or "").lower()
+    number = item.get("number")
+    congress = item.get("congress")
+    slug = BILL_TYPE_SLUGS.get(bill_type)
+    if slug and congress and number:
+        return f"https://www.congress.gov/bill/{congress}th-congress/{slug}/{number}"
+    return item.get("url")
+
+
+def _legislation_item(item):
+    latest_action = item.get("latestAction") or {}
+    action_text = latest_action.get("text") or ""
+    return {
+        "congress": item.get("congress"),
+        "type": item.get("type"),
+        "number": item.get("number"),
+        "title": item.get("title"),
+        "introducedDate": item.get("introducedDate"),
+        "policyArea": (item.get("policyArea") or {}).get("name"),
+        "latestAction": action_text or None,
+        "latestActionDate": latest_action.get("actionDate"),
+        "becameLaw": "became public law" in action_text.lower(),
+        "url": _bill_web_url_from_item(item),
+    }
+
+
+def get_member_legislation(bioguide_id, limit=15):
+    limit = max(1, min(int(limit or 15), 50))
+    sponsored = _congress_get(
+        f"/member/{bioguide_id}/sponsored-legislation",
+        params={"limit": limit},
+        ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
+    )
+    cosponsored = _congress_get(
+        f"/member/{bioguide_id}/cosponsored-legislation",
+        params={"limit": limit},
+        ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
+    )
+
+    sponsored_items = sponsored.get("sponsoredLegislation") or []
+    cosponsored_items = cosponsored.get("cosponsoredLegislation") or []
+    sponsored_parsed = [_legislation_item(x) for x in sponsored_items if x]
+
+    return {
+        "bioguideId": bioguide_id,
+        "sponsoredCount": (sponsored.get("pagination") or {}).get("count"),
+        "cosponsoredCount": (cosponsored.get("pagination") or {}).get("count"),
+        "enactedShown": sum(1 for x in sponsored_parsed if x["becameLaw"]),
+        "sponsored": sponsored_parsed,
+        "cosponsored": [_legislation_item(x) for x in cosponsored_items if x],
+        "source": "congress.gov",
+    }
+
+
+# --- Campaign funding: numbers, breakdown, and grade ---------------------
+
+
+def _funding_line(label, amount, denominator):
+    return {
+        "label": label,
+        "amount": round(_safe_amount(amount), 2),
+        "share": _ratio(amount, denominator),
+    }
+
+
+def get_funding_summary(bioguide_id):
+    cache_key = _build_cache_key("member-funding-v1", {"bioguideId": bioguide_id})
+
+    def fetch_json():
+        base = {
+            "bioguideId": bioguide_id,
+            "available": False,
+            "source": "fec",
+            "note": None,
+            "candidate": None,
+            "cycle": None,
+            "totals": None,
+            "breakdown": [],
+            "grade": None,
+        }
+
+        member = CongressMembersID(bioguide_id).get("member", {})
+
+        try:
+            candidate = _fec_best_candidate(member)
+            if not candidate:
+                base["note"] = (
+                    "No matching FEC campaign committee was found for this member."
+                )
+                return base
+
+            candidate_id = candidate.get("candidate_id")
+            totals = _latest_candidate_total(candidate_id) or {}
+        except (MissingFecApiKey, MissingCongressApiKey, UpstreamDataError, requests.RequestException):
+            base["note"] = "FEC campaign-finance data was temporarily unavailable."
+            return base
+
+        cycle = totals.get("cycle")
+        receipts = _safe_amount(totals.get("receipts"))
+        contributions = _safe_amount(totals.get("contributions")) or _safe_amount(
+            totals.get("net_contributions")
+        )
+        individual = _safe_amount(totals.get("individual_contributions"))
+        itemized = _safe_amount(totals.get("individual_itemized_contributions"))
+        unitemized = _safe_amount(totals.get("individual_unitemized_contributions"))
+        pac = _safe_amount(totals.get("other_political_committee_contributions"))
+        party = _safe_amount(totals.get("political_party_committee_contributions"))
+        self_funding = (
+            _safe_amount(totals.get("candidate_contribution"))
+            + _safe_amount(totals.get("loans_made_by_candidate"))
+        )
+
+        denominator = contributions or receipts or None
+        breakdown = [
+            _funding_line("Small individual (unitemized)", unitemized, denominator),
+            _funding_line("Large individual (itemized)", itemized, denominator),
+            _funding_line("PAC / other committees", pac, denominator),
+            _funding_line("Political party committees", party, denominator),
+            _funding_line("Self-funding & candidate loans", self_funding, denominator),
+        ]
+
+        # Reuse the campaign-finance grade already computed for the ethics score.
+        try:
+            grade = get_ethics_score(bioguide_id)
+        except Exception:  # noqa: BLE001 - grade is optional context
+            grade = None
+
+        base.update(
+            {
+                "available": True,
+                "candidate": {
+                    "candidateId": candidate_id,
+                    "name": candidate.get("name"),
+                    "office": candidate.get("office"),
+                    "state": candidate.get("state"),
+                    "district": candidate.get("district"),
+                    "party": candidate.get("party"),
+                },
+                "cycle": cycle,
+                "totals": {
+                    "receipts": round(receipts, 2),
+                    "disbursements": round(_safe_amount(totals.get("disbursements")), 2),
+                    "cashOnHand": round(
+                        _safe_amount(totals.get("last_cash_on_hand_end_period")), 2
+                    ),
+                    "debts": round(_safe_amount(totals.get("last_debts_owed_by_committee")), 2),
+                    "individualContributions": round(individual, 2),
+                },
+                "breakdown": breakdown,
+                "grade": grade,
+            }
+        )
+        return base
+
+    return _cached_json(
+        cache_key,
+        f"funding:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=_cache_ttl_seconds(),
+    )
+
+
+# --- Stock trades & financial disclosures --------------------------------
+
+
+def _stock_api_key():
+    _load_local_env()
+    return (os.getenv("YGN_STOCK_API_KEY") or os.getenv("FMP_API_KEY") or "").strip() or None
+
+
+def stock_api_key_available():
+    return bool(_stock_api_key())
+
+
+def _house_disclosure_index(year):
+    cache_key = _build_cache_key("house-fd-index", {"year": year})
+
+    def fetch_json():
+        url = HOUSE_DISCLOSURE_ZIP_URL.format(year=year)
+        try:
+            response = requests.get(
+                url,
+                headers={"User-Agent": WIKI_USER_AGENT},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(
+                f"House financial-disclosure index request failed for {year}."
+            ) from None
+
+        try:
+            archive = zipfile.ZipFile(io.BytesIO(response.content))
+            xml_name = next(
+                name for name in archive.namelist() if name.lower().endswith(".xml")
+            )
+            root = ET.fromstring(archive.read(xml_name))
+        except (zipfile.BadZipFile, StopIteration, ET.ParseError) as exc:
+            raise UpstreamDataError(
+                f"House financial-disclosure index for {year} was not parseable."
+            ) from exc
+
+        rows = []
+        for member in root.findall(".//Member"):
+            rows.append({child.tag: (child.text or "").strip() for child in member})
+        return rows
+
+    return _cached_json(
+        cache_key,
+        f"house-fd:{year}",
+        fetch_json,
+        ttl_seconds=DISCLOSURE_CACHE_TTL_SECONDS,
+    )
+
+
+def _house_disclosure_filings(last_name, first_name):
+    if not last_name:
+        return []
+
+    last_name = last_name.strip().lower()
+    first_initial = (first_name or "").strip().lower()[:1]
+    filings = []
+    for year in (_current_year(), _current_year() - 1):
+        try:
+            rows = _house_disclosure_index(year)
+        except UpstreamDataError:
+            continue
+        for row in rows:
+            if (row.get("Last") or "").strip().lower() != last_name:
+                continue
+            if first_initial and (row.get("First") or "").strip().lower()[:1] != first_initial:
+                continue
+            filing_type = (row.get("FilingType") or "").strip().upper()
+            doc_id = (row.get("DocID") or "").strip()
+            filing_year = (row.get("Year") or str(year)).strip()
+            if filing_type == "P":
+                pdf_url = HOUSE_PTR_PDF_URL.format(year=filing_year, doc_id=doc_id)
+            else:
+                pdf_url = HOUSE_ANNUAL_PDF_URL.format(year=filing_year, doc_id=doc_id)
+            filings.append(
+                {
+                    "year": filing_year,
+                    "filingType": filing_type,
+                    "label": HOUSE_FILING_TYPE_LABELS.get(filing_type, "Disclosure Filing"),
+                    "isStockReport": filing_type == "P",
+                    "filingDate": row.get("FilingDate"),
+                    "stateDistrict": row.get("StateDst"),
+                    "docId": doc_id,
+                    "pdfUrl": pdf_url if doc_id else None,
+                }
+            )
+
+    def sort_key(filing):
+        try:
+            month, day, yr = (filing.get("filingDate") or "0/0/0").split("/")
+            return (int(yr), int(month), int(day))
+        except (ValueError, AttributeError):
+            return (0, 0, 0)
+
+    filings.sort(key=sort_key, reverse=True)
+    return filings
+
+
+def _external_stock_trades(member):
+    """Machine-readable trades from a configured provider (optional).
+
+    Congress stock-trade data with a parsed ``owner`` field (self / spouse /
+    dependent child), which is what enables a "family members" breakdown, is
+    only available from commercial providers (e.g. Quiver Quantitative, Finnhub,
+    Financial Modeling Prep). Set ``YGN_STOCK_API_KEY`` (or ``FMP_API_KEY``) and
+    implement the provider call here to populate parsed trades. Without a key we
+    fall back to the official House Clerk disclosure filings below.
+    """
+    if not _stock_api_key():
+        return []
+    # Extension point: call the configured provider, normalize to
+    # {transactionDate, ticker, assetDescription, type, amountRange, owner}.
+    return []
+
+
+def get_member_stock_activity(bioguide_id):
+    cache_key = _build_cache_key("member-stocks-v1", {"bioguideId": bioguide_id})
+
+    def fetch_json():
+        member = CongressMembersID(bioguide_id).get("member", {})
+        chamber = str(_member_chamber(member) or "").lower()
+        is_senate = "senate" in chamber
+
+        result = {
+            "bioguideId": bioguide_id,
+            "available": False,
+            "provider": "none",
+            "chamber": "senate" if is_senate else "house",
+            "trades": [],
+            "ownerBreakdown": {},
+            "filings": [],
+            "senateSearchUrl": SENATE_EFD_SEARCH_URL if is_senate else None,
+            "familyMembersNote": (
+                "Periodic Transaction Reports label each trade's owner "
+                "(self, spouse 'SP', dependent child 'DC', or joint 'JT'). "
+                "Parsed owner/family data requires a stock-trade provider API "
+                "key (set YGN_STOCK_API_KEY); official PDFs below include it."
+            ),
+            "note": None,
+        }
+
+        provider_trades = _external_stock_trades(member)
+        if provider_trades:
+            owner_breakdown = {}
+            for trade in provider_trades:
+                owner = (trade.get("owner") or "self").lower()
+                owner_breakdown[owner] = owner_breakdown.get(owner, 0) + 1
+            result.update(
+                {
+                    "available": True,
+                    "provider": "external",
+                    "trades": provider_trades,
+                    "ownerBreakdown": owner_breakdown,
+                }
+            )
+            return result
+
+        # No-key fallback: official House Clerk financial-disclosure filings.
+        if not is_senate:
+            filings = _house_disclosure_filings(
+                member.get("lastName"), member.get("firstName")
+            )
+            result["filings"] = filings
+            result["available"] = bool(filings)
+            result["provider"] = "house_clerk" if filings else "none"
+            if not filings:
+                result["note"] = (
+                    "No recent House financial-disclosure filings matched this member."
+                )
+        else:
+            result["note"] = (
+                "Senate financial disclosures are filed through the Senate eFD "
+                "system; use the linked search. Parsed trades require a provider key."
+            )
+
+        return result
+
+    return _cached_json(
+        cache_key,
+        f"stocks:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=DISCLOSURE_CACHE_TTL_SECONDS,
+    )
+
+
+# --- Aggregated dossier for the detail page ------------------------------
+
+
+def get_member_dossier(bioguide_id, sections=None):
+    """Assemble the full member detail payload.
+
+    Each section is captured independently: a failing section is set to ``None``
+    and recorded in ``errors`` rather than failing the whole request.
+    """
+    detail = CongressMembersID(bioguide_id)
+    dossier = {
+        "bioguideId": bioguide_id,
+        "member": detail.get("member"),
+        "detail": detail,
+        "errors": [],
+    }
+
+    section_fetchers = {
+        "wiki": lambda: get_member_wiki_full(bioguide_id),
+        "nominate": lambda: get_nominate_score(bioguide_id),
+        "ethics": lambda: get_ethics_score(bioguide_id),
+        "funding": lambda: get_funding_summary(bioguide_id),
+        "committees": lambda: get_member_committees(bioguide_id),
+        "contact": lambda: get_member_contact(bioguide_id),
+        "history": lambda: get_member_history(bioguide_id),
+        "legislation": lambda: get_member_legislation(bioguide_id),
+        "stocks": lambda: get_member_stock_activity(bioguide_id),
+    }
+
+    requested = sections or list(section_fetchers.keys())
+    for stage in requested:
+        fetcher = section_fetchers.get(stage)
+        if fetcher is None:
+            continue
+        try:
+            dossier[stage] = fetcher()
+        except Exception as exc:  # noqa: BLE001 - collect, never blank the page
+            dossier[stage] = None
+            dossier["errors"].append({"stage": stage, "error": str(exc)})
+
+    return dossier
 
 
 def _background_ethics_refresh_limit():

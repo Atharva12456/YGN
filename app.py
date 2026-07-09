@@ -169,6 +169,7 @@ def health():
         "congress_api_key_configured": bool(os.getenv("CONGRESS_API_KEY")),
         "congress_api_key_available": government.congress_api_key_available(),
         "fec_api_key_available": government.fec_api_key_available(),
+        "stock_api_key_available": government.stock_api_key_available(),
     }
 
 
@@ -210,7 +211,9 @@ def official_detail(bioguide_id: str):
 
 
 @app.get("/officials/{bioguide_id}/wiki")
-def official_wiki_summary(bioguide_id: str):
+def official_wiki_summary(bioguide_id: str, full: bool = False):
+    if full:
+        return _backend_response(government.get_member_wiki_full, bioguide_id)
     return _backend_response(government.get_wiki_summary, bioguide_id)
 
 
@@ -243,6 +246,46 @@ def official_profile(
         include_nominate=include_nominate,
         include_ethics=include_ethics,
     )
+
+
+@app.get("/officials/{bioguide_id}/legislation")
+def official_legislation(
+    bioguide_id: str,
+    limit: Annotated[int, Query(ge=1, le=50)] = 15,
+):
+    return _backend_response(
+        government.get_member_legislation, bioguide_id, limit=limit
+    )
+
+
+@app.get("/officials/{bioguide_id}/funding")
+def official_funding(bioguide_id: str):
+    return _backend_response(government.get_funding_summary, bioguide_id)
+
+
+@app.get("/officials/{bioguide_id}/committees")
+def official_committees(bioguide_id: str):
+    return _backend_response(government.get_member_committees, bioguide_id)
+
+
+@app.get("/officials/{bioguide_id}/contact")
+def official_contact(bioguide_id: str):
+    return _backend_response(government.get_member_contact, bioguide_id)
+
+
+@app.get("/officials/{bioguide_id}/history")
+def official_history(bioguide_id: str):
+    return _backend_response(government.get_member_history, bioguide_id)
+
+
+@app.get("/officials/{bioguide_id}/stocks")
+def official_stocks(bioguide_id: str):
+    return _backend_response(government.get_member_stock_activity, bioguide_id)
+
+
+@app.get("/officials/{bioguide_id}/dossier")
+def official_dossier(bioguide_id: str):
+    return _backend_response(government.get_member_dossier, bioguide_id)
 
 
 @app.get("/bills/recent")

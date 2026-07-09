@@ -1027,6 +1027,16 @@ function createMemberTile(member) {
     schedulePopoverHide();
   });
 
+  tile.addEventListener('click', () => {
+    if (bioguideId) window.location.href = withApiParam('member.html?id=' + bioguideId);
+  });
+
+  tile.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && bioguideId) {
+      window.location.href = withApiParam('member.html?id=' + bioguideId);
+    }
+  });
+
   if (bioguideId) {
     const nominateScore = member.nominate_score || member.nominateScore || null;
     const ethicsScoreData = member.ethics_score || member.ethicsScore || null;
@@ -1831,6 +1841,437 @@ function applyInitialMemberQuery() {
   handleSearch();
 }
 
+// ─── Member Detail Page ──────────────────────────────────────────────────────
+
+window.switchLegislationTab = function(tabId) {
+  document.querySelectorAll('.dossier-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
+  document.querySelectorAll('.dossier-tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-tab="${tabId}"]`).setAttribute('aria-selected', 'true');
+  document.getElementById(`tab-${tabId}`).classList.add('active');
+};
+
+function renderDossierUI(container, dossier) {
+  if (!dossier || !dossier.member) {
+    container.innerHTML = '<div class="error-state"><p>Dossier data is incomplete.</p></div>';
+    return;
+  }
+
+  const { member, bioguideId, wiki, history, funding, stocks, legislation, committees, contact, nominate, ethics } = dossier;
+
+  const name = formatMemberDisplayName(member) || 'Unknown Member';
+  const party = getMemberField(member, 'party', 'partyName') || '';
+  const state = getMemberField(member, 'state') || '';
+  const chamber = getMemberChamber(member) || '';
+  const districtLabel = formatDistrictLabel(member) || '';
+  
+  const initials = buildInitials(name);
+  const photoUrl = getMemberPhotoUrl(member, bioguideId);
+  const dim1 = nominate?.dim1 ?? null;
+  const ethicsScore = ethics?.score ?? null;
+  const ethicsGrade = ethics?.grade ?? 'N/A';
+
+  let photoInner = photoUrl
+    ? `<img class="dossier-photo" src="${photoUrl}" alt="${name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="dossier-initials" style="display:none;" aria-hidden="true">${initials}</div>`
+    : `<div class="dossier-initials" aria-hidden="true">${initials}</div>`;
+
+  // 1. Identity
+  const identityHtml = `
+    <div class="dossier-header" id="dossier-identity">
+      <div class="dossier-photo-wrapper">
+        ${photoInner}
+      </div>
+      <div class="dossier-info">
+        <h1 class="dossier-name">${name}</h1>
+        <div class="dossier-chips">
+          ${party ? `<span class="dossier-chip">${party}</span>` : ''}
+          ${state ? `<span class="dossier-chip">${state}</span>` : ''}
+          ${chamber ? `<span class="dossier-chip">${chamber}</span>` : ''}
+          ${districtLabel && !chamber.toLowerCase().includes('senate') ? `<span class="dossier-chip">${districtLabel}</span>` : ''}
+        </div>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+          <a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" style="background-color: ${getEthicsColor(ethicsScore)}; padding: 0.25rem 0.5rem; border-radius: 4px; color: white; text-decoration: none; font-weight: 700; font-size: 0.875rem;">Ethics Grade: ${ethicsGrade}</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 2. About
+  let aboutHtml = '';
+  if (wiki) {
+    let thumbHtml = (wiki.thumbnail && wiki.thumbnail.source) 
+      ? `<img src="${wiki.thumbnail.source}" alt="${name}" style="float: right; margin-left: 1rem; margin-bottom: 0.5rem; max-width: 100px; border-radius: 4px; object-fit: cover;">` 
+      : '';
+    let fallbackNote = wiki.source === "congress_fallback" ? '<p class="muted-text" style="margin-top: 1rem; clear: both;">Note: This biography is a generated summary (no Wikipedia page resolved).</p>' : '';
+    aboutHtml = `
+      <div class="dossier-card" style="overflow: hidden;">
+        <h3>About</h3>
+        ${thumbHtml}
+        <p>${wiki.extract || wiki.summary || 'No biography available.'}</p>
+        ${wiki.wiki_url ? `<div style="clear: both; padding-top: 0.5rem;"><a href="${wiki.wiki_url}" target="_blank" rel="noopener" style="color: var(--color-accent); font-weight: 600;">Read more on Wikipedia</a></div>` : ''}
+        ${fallbackNote}
+      </div>
+    `;
+  }
+
+  // 3. Career
+  let careerHtml = '';
+  if (history) {
+    const terms = Array.isArray(history.terms) ? history.terms : [];
+    const timelineHtml = terms.map(t => `
+      <li class="timeline-item">
+        <strong>${t.congress}th Congress (${t.startYear || '?'} - ${t.endYear || 'Present'})</strong>
+        <span>${t.chamber}, ${t.state} ${t.district ? `District ${t.district}` : ''} ${t.party ? `(${t.party})` : ''}</span>
+      </li>
+    `).join('');
+
+    careerHtml = `
+      <div class="dossier-card">
+        <h3>Career History</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div><span class="muted-text">First Elected:</span><br><strong>${history.firstElectedYear || '-'}</strong></div>
+          <div><span class="muted-text">Years Served:</span><br><strong>${history.yearsOfService || '-'}</strong></div>
+          <div><span class="muted-text">Terms:</span><br><strong>${history.termCount || '-'}</strong></div>
+          <div><span class="muted-text">Born:</span><br><strong>${history.birthYear || '-'}</strong></div>
+        </div>
+        ${timelineHtml ? `<ul class="timeline">${timelineHtml}</ul>` : ''}
+      </div>
+    `;
+  }
+
+  // 4. Funding
+  let fundingHtml = '';
+  if (funding) {
+    if (funding.available && funding.totals) {
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+      const breakdown = Array.isArray(funding.breakdown) ? funding.breakdown : [];
+      let barSegments = '';
+      let legendItems = '';
+      
+      breakdown.forEach((item, i) => {
+        const share = item.share || 0;
+        if (share > 0) {
+          barSegments += `<div class="funding-bar-segment" style="width: ${share * 100}%; background-color: ${colors[i % colors.length]};" title="${item.label}: ${(share * 100).toFixed(1)}%"></div>`;
+        }
+        legendItems += `
+          <div class="funding-legend-item">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div class="funding-legend-color" style="background-color: ${colors[i % colors.length]};"></div>
+              <span>${item.label}</span>
+            </div>
+            <strong>${formatCurrencyCompact(item.amount)} (${(share * 100).toFixed(1)}%)</strong>
+          </div>
+        `;
+      });
+
+      let fundingGradeHtml = '';
+      if (funding.grade && funding.grade.grade) {
+        fundingGradeHtml = `<span style="background-color: ${getEthicsColor(funding.grade.score)}; padding: 0.2rem 0.5rem; border-radius: 4px; color: white; font-weight: bold; font-size: 0.8rem; vertical-align: middle; margin-left: 0.5rem;">Ethics Grade: ${funding.grade.grade}</span>`;
+      }
+
+      fundingHtml = `
+        <div class="dossier-card">
+          <h3 style="display: flex; align-items: center; justify-content: space-between;">
+            Campaign Funding
+            ${fundingGradeHtml}
+          </h3>
+          <div class="funding-totals">
+            <div class="funding-stat">
+              <span class="funding-stat-label">Receipts</span>
+              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.receipts)}</span>
+            </div>
+            <div class="funding-stat">
+              <span class="funding-stat-label">Disbursements</span>
+              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.disbursements)}</span>
+            </div>
+            <div class="funding-stat">
+              <span class="funding-stat-label">Cash on Hand</span>
+              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.cashOnHand)}</span>
+            </div>
+            <div class="funding-stat">
+              <span class="funding-stat-label">Debts</span>
+              <span class="funding-stat-value">${formatCurrencyCompact(funding.totals.debts)}</span>
+            </div>
+          </div>
+          ${breakdown.length ? `
+            <div style="margin-bottom: 0.5rem; font-weight: 600;">Receipts Breakdown</div>
+            <div class="funding-bar-container">${barSegments}</div>
+            <div class="funding-legend">${legendItems}</div>
+          ` : ''}
+          <p class="muted-text" style="margin-top: 1rem;">Source: FEC. ${funding.cycle ? `Cycle: ${funding.cycle}` : 'Cycle: All available cycles.'}</p>
+        </div>
+      `;
+    } else {
+      fundingHtml = `
+        <div class="dossier-card">
+          <h3>Campaign Funding</h3>
+          <p class="muted-text">${funding.note || 'No matching FEC campaign committee was found.'}</p>
+        </div>
+      `;
+    }
+  }
+
+  // 5. Stocks
+  let stocksHtml = '';
+  if (stocks) {
+    let stocksContent = '';
+    if (stocks.trades && stocks.trades.length > 0) {
+      stocksContent = `
+        <div style="overflow-x: auto; margin-bottom: 1rem;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <th style="padding: 0.5rem;">Date</th>
+                <th style="padding: 0.5rem;">Ticker</th>
+                <th style="padding: 0.5rem;">Asset</th>
+                <th style="padding: 0.5rem;">Type</th>
+                <th style="padding: 0.5rem;">Amount</th>
+                <th style="padding: 0.5rem;">Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${stocks.trades.map(t => `
+                <tr style="border-bottom: 1px solid var(--color-border-light);">
+                  <td style="padding: 0.5rem;">${t.transactionDate || '-'}</td>
+                  <td style="padding: 0.5rem;"><strong>${t.ticker || '-'}</strong></td>
+                  <td style="padding: 0.5rem; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${t.assetDescription || ''}">${t.assetDescription || '-'}</td>
+                  <td style="padding: 0.5rem;">${t.type || '-'}</td>
+                  <td style="padding: 0.5rem;">${t.amountRange || '-'}</td>
+                  <td style="padding: 0.5rem;">${t.owner || '-'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      const self = stocks.ownerBreakdown?.self || 0;
+      const spouse = stocks.ownerBreakdown?.spouse || 0;
+      const child = stocks.ownerBreakdown?.dependent || stocks.ownerBreakdown?.child || 0;
+      stocksContent += `<p class="muted-text">Trades by owner: Self (${self}), Spouse (${spouse}), Child (${child}).</p>`;
+    } else if (stocks.filings && stocks.filings.length > 0) {
+      stocksContent = '<ul class="dossier-list">';
+      stocks.filings.forEach(f => {
+        stocksContent += `
+          <li class="dossier-list-item">
+            <div class="dossier-list-item-title">${f.label || 'Filing'} ${f.isStockReport ? '<span class="enacted-badge">Stock Report</span>' : ''}</div>
+            <div class="dossier-list-item-meta">${f.filingDate || ''} • <a href="${f.pdfUrl}" target="_blank" style="color: var(--color-accent);">View official PDF</a></div>
+          </li>
+        `;
+      });
+      stocksContent += '</ul>';
+    } else if (stocks.senateSearchUrl) {
+      stocksContent = `<p><a href="${stocks.senateSearchUrl}" target="_blank" style="color: var(--color-accent); font-weight: 600;">Search this senator's disclosures on the Senate eFD system</a></p>`;
+    } else {
+      stocksContent = `<p class="muted-text">${stocks.note || 'No financial disclosures found.'}</p>`;
+    }
+
+    stocksHtml = `
+      <div class="dossier-card">
+        <h3>Financial Disclosures</h3>
+        ${stocksContent}
+        ${stocks.familyMembersNote ? `<p class="muted-text" style="margin-top: 1rem; font-size: 0.8rem;">${stocks.familyMembersNote}</p>` : ''}
+      </div>
+    `;
+  }
+
+  // 6. Legislation
+  let legislationHtml = '';
+  if (legislation) {
+    const sp = Array.isArray(legislation.sponsored) ? legislation.sponsored : [];
+    const co = Array.isArray(legislation.cosponsored) ? legislation.cosponsored : [];
+    
+    const renderBillList = (bills) => bills.length ? '<ul class="dossier-list">' + bills.map(b => `
+      <li class="dossier-list-item">
+        <div class="dossier-list-item-title" style="margin-bottom: 0.5rem;">
+          <a href="${b.url}" target="_blank" style="color: var(--color-accent); text-decoration: none;">${b.type}${b.number}</a>
+          ${b.becameLaw ? '<span class="enacted-badge">Enacted</span>' : ''}
+        </div>
+        <div style="font-size: 0.95rem; margin-bottom: 0.5rem;">${b.title}</div>
+        <div class="dossier-list-item-meta">
+          ${b.introducedDate} • ${b.policyArea || 'Unknown Policy Area'}<br>
+          <span style="display:inline-block; margin-top:0.25rem;">Latest: ${b.latestAction}</span>
+        </div>
+      </li>
+    `).join('') + '</ul>' : '<p class="muted-text">None found.</p>';
+
+    legislationHtml = `
+      <div class="dossier-card full-width">
+        <h3>Legislation</h3>
+        <div class="dossier-tabs">
+          <button class="dossier-tab" aria-selected="true" data-tab="sponsored" onclick="window.switchLegislationTab('sponsored')">Sponsored (${legislation.sponsoredCount || 0})</button>
+          <button class="dossier-tab" aria-selected="false" data-tab="cosponsored" onclick="window.switchLegislationTab('cosponsored')">Cosponsored (${legislation.cosponsoredCount || 0})</button>
+        </div>
+        <div class="dossier-tab-content active" id="tab-sponsored">
+          ${renderBillList(sp)}
+        </div>
+        <div class="dossier-tab-content" id="tab-cosponsored">
+          ${renderBillList(co)}
+        </div>
+      </div>
+    `;
+  }
+
+  // 7. Committees
+  let committeesHtml = '';
+  if (committees) {
+    const assignments = Array.isArray(committees.assignments) ? committees.assignments : [];
+    const grouped = {};
+    assignments.forEach(a => {
+      if (!a?.isSubcommittee) {
+        const code = a?.code || 'UNKNOWN';
+        if (!grouped[code]) grouped[code] = { ...a, subcommittees: [] };
+      }
+    });
+    assignments.forEach(a => {
+      if (a?.isSubcommittee) {
+        const parentCode = Object.keys(grouped).find(k => k !== 'UNKNOWN' && a?.code?.startsWith(k));
+        if (parentCode) grouped[parentCode].subcommittees.push(a);
+        else {
+          if (!grouped['MISC']) grouped['MISC'] = { committee: 'Other Subcommittees', subcommittees: [], isSubcommittee: false };
+          grouped['MISC'].subcommittees.push(a);
+        }
+      }
+    });
+
+    const commListHtml = Object.values(grouped).map(c => `
+      <li class="dossier-list-item">
+        <div class="dossier-list-item-title">
+          ${c.committeeUrl ? `<a href="${c.committeeUrl}" target="_blank" style="color: var(--color-accent);">${c.committee}</a>` : c.committee}
+          ${c.role ? `<span class="enacted-badge" style="background:#e0e7ff; color:#3730a3;">${c.role}</span>` : ''}
+        </div>
+        ${c.subcommittees && c.subcommittees.length ? `
+          <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem; color: var(--color-text-muted);">
+            ${c.subcommittees.map(sub => `<li>${sub.subcommittee || sub.committee} ${sub.role ? `(<strong>${sub.role}</strong>)` : ''}</li>`).join('')}
+          </ul>
+        ` : ''}
+      </li>
+    `).join('');
+
+    committeesHtml = `
+      <div class="dossier-card">
+        <h3>Committees</h3>
+        ${commListHtml ? `<ul class="dossier-list">${commListHtml}</ul>` : '<p class="muted-text">No committee assignments found.</p>'}
+      </div>
+    `;
+  }
+
+  // 8. Contact & Links
+  let contactHtml = '';
+  if (contact) {
+    const off = contact?.official || {};
+    const soc = contact?.social || {};
+    const prof = contact?.profiles || {};
+    
+    let offLines = [];
+    if (off.website) offLines.push(`<div><a href="${off.website}" target="_blank" style="color: var(--color-accent);">Official Website</a></div>`);
+    if (off.phone) offLines.push(`<div>📞 ${off.phone}</div>`);
+    if (off.office) offLines.push(`<div>🏢 ${off.office}</div>`);
+
+    let socLines = Object.entries(soc).map(([net, data]) => {
+      if (!data) return '';
+      return `<div><a href="${data.url}" target="_blank" style="color: var(--color-accent);">${net.charAt(0).toUpperCase() + net.slice(1)} (@${data.handle})</a></div>`;
+    }).filter(Boolean);
+    let profLines = Object.entries(prof).map(([site, url]) => `<div><a href="${url}" target="_blank" style="color: var(--color-accent);">${site.charAt(0).toUpperCase() + site.slice(1)}</a></div>`);
+
+    contactHtml = `
+      <div class="dossier-card">
+        <h3>Contact & Links</h3>
+        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+          ${offLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">Official</div>${offLines.join('')}</div>` : ''}
+          ${socLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">Social Media</div>${socLines.join('')}</div>` : ''}
+          ${profLines.length ? `<div><div style="font-weight:600; margin-bottom:0.25rem;">External Profiles</div>${profLines.join('')}</div>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  let bgStyle = '';
+  if (dim1 !== null) {
+    const baseGray = [255, 255, 255]; 
+    const targetColor = dim1 < 0 ? [235, 240, 250] : [250, 235, 235];
+    const distance = Math.abs(dim1);
+    const tintStrength = 0.5 + 0.5 * Math.pow(distance, 0.85);
+    const r = Math.round(baseGray[0] + (targetColor[0] - baseGray[0]) * tintStrength);
+    const g = Math.round(baseGray[1] + (targetColor[1] - baseGray[1]) * tintStrength);
+    const b = Math.round(baseGray[2] + (targetColor[2] - baseGray[2]) * tintStrength);
+    bgStyle = `background: rgb(${r}, ${g}, ${b}); border: 1px solid rgba(0,0,0,0.05);`;
+  } else {
+    bgStyle = 'background: var(--color-surface); border: 1px solid var(--color-border);';
+  }
+
+  container.innerHTML = `
+    <div class="dossier-layout">
+      <div style="${bgStyle} border-radius: 12px; margin-bottom: 1rem;">
+        ${identityHtml}
+      </div>
+      <div class="dossier-grid">
+        ${aboutHtml}
+        ${careerHtml}
+        ${fundingHtml}
+        ${stocksHtml}
+        ${committeesHtml}
+        ${contactHtml}
+        ${legislationHtml}
+      </div>
+    </div>
+  `;
+}
+
+async function initMemberPage() {
+  const backLink = document.querySelector('.back-link');
+  if (backLink) backLink.href = withApiParam('members.html');
+
+  const container = document.getElementById('dossier-container');
+  if (!container) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id) {
+    container.innerHTML = `
+      <div class="error-state">
+        <span class="state-icon" aria-hidden="true">!</span>
+        <p>No member ID provided. <a href="${withApiParam('members.html')}">Return to Members</a></p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="skeleton-tile" style="max-width: 800px; margin: 0 auto; min-height: 400px; padding: 2rem;">
+      <div class="skeleton-circle" style="width: 120px; height: 120px; margin-bottom: 2rem;"></div>
+      <div class="skeleton-line wide"></div>
+      <div class="skeleton-line medium"></div>
+      <div class="skeleton-line narrow"></div>
+      <div class="skeleton-line wide" style="margin-top: 2rem;"></div>
+      <div class="skeleton-line wide"></div>
+    </div>
+  `;
+
+  try {
+    const result = await fetchJsonWithStaticFallback('/officials/' + id + '/dossier', 'dossier/' + id + '.json');
+    if (result.notFound) {
+      container.innerHTML = `
+        <div class="error-state">
+          <span class="state-icon" aria-hidden="true">?</span>
+          <p>Detail unavailable in static mode — view on the live site</p>
+          <p><a href="${withApiParam('members.html')}">Return to Members</a></p>
+        </div>
+      `;
+      return;
+    }
+    
+    renderDossierUI(container, result.data);
+
+  } catch (err) {
+    container.innerHTML = `
+      <div class="error-state">
+        <span class="state-icon" aria-hidden="true">!</span>
+        <p>Could not load dossier data. <a href="${withApiParam('members.html')}">Return to Members</a></p>
+      </div>
+    `;
+  }
+}
+
 // ─── Initialisation ──────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1891,8 +2332,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Default section
-  if (membersGrid && membersSearch && !membersLoaded) {
+  if (document.body.dataset.page === 'members' && membersGrid && membersSearch && !membersLoaded) {
     loadMembers().then(applyInitialMemberQuery);
+  }
+  if (document.body.dataset.page === 'member') {
+    initMemberPage();
   }
   if (mapSvg) {
     initMap();
