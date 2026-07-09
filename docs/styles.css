@@ -1762,11 +1762,16 @@ button {
 
   .members-controls {
     flex-direction: column;
+    align-items: stretch;
   }
 
   #members-search {
     width: 100%;
+    /* Reset the flex-basis so it doesn't grow to 240px tall in a column flex. */
+    flex: none;
   }
+
+  .members-filters { width: 100%; }
 
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
