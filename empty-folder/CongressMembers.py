@@ -2580,11 +2580,33 @@ def ethics_fallback_only(bioguide_id):
     return _static_ethics_fallback(bioguide_id, member)
 
 
+def _ethics_live_on_request():
+    """Whether the live API may spend FEC quota computing ethics per request.
+
+    Default OFF: with a rate-limited key, per-request scoring would starve the
+    build-time generator of quota, so the site serves committed snapshots (or a
+    cached no-FEC fallback) and lets the workflow be the sole FEC consumer. Set
+    YGN_ETHICS_LIVE_ON_REQUEST=1 if your key has ample headroom (e.g. 1000+/hr).
+    """
+    _load_local_env()
+    return os.getenv("YGN_ETHICS_LIVE_ON_REQUEST", "0") not in {"0", "false", "False", ""}
+
+
 def get_ethics_score(bioguide_id: str):
     precomputed = _precomputed_fec_ethics(bioguide_id)
     if precomputed is not None:
         return precomputed
-    return compute_ethics_score(bioguide_id)
+    if _ethics_live_on_request():
+        return compute_ethics_score(bioguide_id)
+    # Reserve FEC quota for the build-time generator: serve a cached, no-FEC
+    # fallback until the workflow commits a live grade for this member.
+    cache_key = _build_cache_key("ethics-score-v2", {"bioguideId": bioguide_id})
+    return _cached_json_dynamic(
+        cache_key,
+        f"ethics:score:{bioguide_id}",
+        lambda: ethics_fallback_only(bioguide_id),
+        lambda result: _cache_ttl_seconds(),
+    )
 
 
 def _wiki_summary_payload(bioguideId):
@@ -3162,6 +3184,18 @@ def get_funding_summary(bioguide_id):
             "breakdown": [],
             "grade": None,
         }
+
+        # Reserve FEC quota for the build-time generator unless live compute is on.
+        if not _ethics_live_on_request():
+            try:
+                base["grade"] = get_ethics_score(bioguide_id)
+            except Exception:  # noqa: BLE001
+                base["grade"] = None
+            base["note"] = (
+                "Campaign-finance detail is computed at build time; the grade above "
+                "reflects the latest snapshot."
+            )
+            return base
 
         member = CongressMembersID(bioguide_id).get("member", {})
 

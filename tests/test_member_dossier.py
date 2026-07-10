@@ -62,11 +62,22 @@ class MemberDossierBackendTests(unittest.TestCase):
         ):
             self.assertEqual(self.gov.get_ethics_score("X0001")["grade"], "A")
 
-    def test_get_ethics_computes_when_no_snapshot(self):
-        with patch.object(self.gov, "_precomputed_fec_ethics", return_value=None), patch.object(
+    def test_get_ethics_computes_when_live_enabled(self):
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=True), patch.object(
+            self.gov, "_precomputed_fec_ethics", return_value=None), patch.object(
             self.gov, "compute_ethics_score", return_value={"grade": "B", "source": "fec_live"}
         ):
             self.assertEqual(self.gov.get_ethics_score("X0001")["grade"], "B")
+
+    def test_get_ethics_serves_fallback_when_live_disabled(self):
+        # Default: don't spend FEC quota per request — serve a no-FEC fallback.
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=False), patch.object(
+            self.gov, "_precomputed_fec_ethics", return_value=None), patch.object(
+            self.gov, "compute_ethics_score", side_effect=AssertionError("must not compute live")
+        ), patch.object(
+            self.gov, "ethics_fallback_only", return_value={"grade": "C", "source": "static_fallback"}
+        ):
+            self.assertEqual(self.gov.get_ethics_score("X0001")["grade"], "C")
 
     def test_cached_json_dynamic_ttl_depends_on_result(self):
         captured = {}
@@ -170,7 +181,8 @@ class MemberDossierBackendTests(unittest.TestCase):
     # --- funding ----------------------------------------------------------
 
     def test_funding_reports_unavailable_when_no_candidate(self):
-        with patch.object(self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=True), patch.object(
+            self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
             self.gov, "_fec_best_candidate", return_value=None
         ):
             result = self.gov.get_funding_summary("X0001")
@@ -179,13 +191,23 @@ class MemberDossierBackendTests(unittest.TestCase):
         self.assertIn("No matching FEC", result["note"])
 
     def test_funding_degrades_gracefully_on_fec_error(self):
-        with patch.object(self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=True), patch.object(
+            self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
             self.gov, "_fec_best_candidate", side_effect=self.gov.UpstreamDataError("boom")
         ):
             result = self.gov.get_funding_summary("X0001")
 
         self.assertFalse(result["available"])
         self.assertIn("temporarily unavailable", result["note"])
+
+    def test_funding_serves_grade_only_when_live_disabled(self):
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=False), patch.object(
+            self.gov, "get_ethics_score", return_value={"grade": "B", "source": "fec_live"}
+        ), patch.object(self.gov, "_fec_best_candidate", side_effect=AssertionError("no FEC")):
+            result = self.gov.get_funding_summary("X0001")
+        self.assertFalse(result["available"])
+        self.assertEqual(result["grade"]["grade"], "B")
+        self.assertIn("build time", result["note"])
 
     def test_funding_builds_breakdown_and_reuses_grade(self):
         totals = {
@@ -200,7 +222,8 @@ class MemberDossierBackendTests(unittest.TestCase):
             "cycle": 2024,
         }
         candidate = {"candidate_id": "S1", "name": "X", "office": "S", "state": "VT"}
-        with patch.object(self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=True), patch.object(
+            self.gov, "CongressMembersID", return_value={"member": {}}), patch.object(
             self.gov, "_fec_best_candidate", return_value=candidate
         ), patch.object(self.gov, "_latest_candidate_total", return_value=totals), patch.object(
             self.gov, "get_ethics_score", return_value={"grade": "A", "score": 95}
