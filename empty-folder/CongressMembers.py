@@ -36,6 +36,10 @@ STATIC_MEMBER_OVERRIDES_PATH = Path(__file__).parent / "static_member_overrides.
 STATIC_WIKI_DIR = Path(__file__).parent.parent / "docs" / "data" / "wiki"
 STATIC_OFFICIALS_PATH = Path(__file__).parent.parent / "docs" / "data" / "officials.json"
 STATIC_PROFILES_DIR = Path(__file__).parent.parent / "docs" / "data" / "profiles"
+# Build-time-computed live FEC ethics grades (written by generate_static_data.py,
+# committed under docs/data/ethics/). The live API prefers these so it doesn't
+# spend per-request FEC quota — see get_ethics_score.
+STATIC_PRECOMPUTED_ETHICS_DIR = Path(__file__).parent.parent / "docs" / "data" / "ethics"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
@@ -2525,7 +2529,19 @@ def _live_ethics_score(member):
     return _score_ethics_from_fec(member, candidate, totals, by_size, by_state)
 
 
-def get_ethics_score(bioguide_id: str):
+def _precomputed_fec_ethics(bioguide_id):
+    """A committed build-time live FEC ethics grade (docs/data/ethics/<id>.json),
+    if present — served by the live API so it doesn't spend per-request FEC quota."""
+    payload = _read_json_file(STATIC_PRECOMPUTED_ETHICS_DIR / f"{bioguide_id}.json", None)
+    if payload and payload.get("source") == "fec_live" and payload.get("grade"):
+        return payload
+    return None
+
+
+def compute_ethics_score(bioguide_id: str):
+    """Compute the ethics score live (FEC) with static fallback, cached. The static
+    generator calls this to (re)build the committed snapshot; the public getter
+    below prefers that snapshot to avoid per-request FEC quota."""
     cache_key = _build_cache_key(
         "ethics-score-v2",
         {
@@ -2551,6 +2567,24 @@ def get_ethics_score(bioguide_id: str):
         if (result or {}).get("source") == "fec_live"
         else _cache_ttl_seconds(),
     )
+
+
+def ethics_fallback_only(bioguide_id):
+    """Static ethics fallback with NO FEC call — used by the generator once its
+    per-run FEC budget is spent."""
+    member = None
+    try:
+        member = CongressMembersID(bioguide_id).get("member", {})
+    except (MissingCongressApiKey, UpstreamDataError, requests.RequestException):
+        member = None
+    return _static_ethics_fallback(bioguide_id, member)
+
+
+def get_ethics_score(bioguide_id: str):
+    precomputed = _precomputed_fec_ethics(bioguide_id)
+    if precomputed is not None:
+        return precomputed
+    return compute_ethics_score(bioguide_id)
 
 
 def _wiki_summary_payload(bioguideId):

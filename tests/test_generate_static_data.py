@@ -58,8 +58,16 @@ class FakeBackend:
         self.nominate_requests.append(bioguide_id)
         return {"dim1": 0.25, "geo_mean": None}
 
-    def get_ethics_score(self, bioguide_id):
+    def compute_ethics_score(self, bioguide_id):
         self.ethics_requests.append(bioguide_id)
+        return {
+            "bioguideId": bioguide_id,
+            "score": 72.0,
+            "grade": "C-",
+            "source": "static_fallback",
+        }
+
+    def ethics_fallback_only(self, bioguide_id):
         return {
             "bioguideId": bioguide_id,
             "score": 72.0,
@@ -122,6 +130,46 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertTrue(manifest["member_score_index"])
         self.assertEqual(set(score_index["nominate"]), {"A000001", "B000001"})
         self.assertEqual(set(score_index["ethics"]), {"A000001", "B000001"})
+
+    def _run_ethics_only(self, output_dir, extra_argv, backend):
+        argv = [
+            "generate_static_data.py", "--output-dir", str(output_dir),
+            "--max-members", "all", "--skip-details", "--skip-wiki",
+            "--skip-nominate", "--skip-recent-bills",
+        ] + extra_argv
+        with patch.object(sys, "argv", argv), patch.object(
+            self.module, "load_backend", return_value=backend
+        ), redirect_stdout(io.StringIO()):
+            self.module.main()
+
+    def test_fresh_fec_live_grade_is_reused_not_rescored(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            eth_path = output_dir / "ethics" / "A000001.json"
+            eth_path.parent.mkdir(parents=True, exist_ok=True)
+            eth_path.write_text(json.dumps({
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "source": "fec_live", "grade": "A", "score": 95.0,
+            }), encoding="utf-8")
+            self._run_ethics_only(output_dir, [], backend)
+            score_index = json.loads((output_dir / "member-scores.json").read_text(encoding="utf-8"))
+        # A000001 already fec_live + fresh → kept for free; only B000001 is scored.
+        self.assertEqual(backend.ethics_requests, ["B000001"])
+        self.assertEqual(score_index["ethics"]["A000001"]["grade"], "A")
+        self.assertEqual(score_index["ethics"]["A000001"]["source"], "fec_live")
+
+    def test_fec_score_limit_caps_live_scoring_per_run(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            self._run_ethics_only(output_dir, ["--fec-score-limit", "1"], backend)
+            manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+        # Budget of 1 → only the first member hits compute_ethics_score; the second
+        # falls back without a live call. Both still get written.
+        self.assertEqual(backend.ethics_requests, ["A000001"])
+        self.assertEqual(manifest["ethics"], 2)
+        self.assertEqual(manifest["fec_scored_this_run"], 1)
 
 
 if __name__ == "__main__":

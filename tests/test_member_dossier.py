@@ -47,6 +47,27 @@ class MemberDossierBackendTests(unittest.TestCase):
 
         self.assertEqual(captured["params"]["state"], "VT")
 
+    def test_precomputed_ethics_only_accepts_fec_live(self):
+        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "fec_live"}):
+            self.assertIsNotNone(self.gov._precomputed_fec_ethics("X"))
+        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "static_fallback"}):
+            self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
+        with patch.object(self.gov, "_read_json_file", return_value=None):
+            self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
+
+    def test_get_ethics_prefers_precomputed_snapshot(self):
+        with patch.object(self.gov, "_precomputed_fec_ethics",
+                          return_value={"grade": "A", "source": "fec_live"}), patch.object(
+            self.gov, "compute_ethics_score", side_effect=AssertionError("must not recompute")
+        ):
+            self.assertEqual(self.gov.get_ethics_score("X0001")["grade"], "A")
+
+    def test_get_ethics_computes_when_no_snapshot(self):
+        with patch.object(self.gov, "_precomputed_fec_ethics", return_value=None), patch.object(
+            self.gov, "compute_ethics_score", return_value={"grade": "B", "source": "fec_live"}
+        ):
+            self.assertEqual(self.gov.get_ethics_score("X0001")["grade"], "B")
+
     def test_cached_json_dynamic_ttl_depends_on_result(self):
         captured = {}
         with patch.object(self.gov, "_read_cache", return_value=None), patch.object(

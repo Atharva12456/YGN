@@ -29,6 +29,11 @@ jobs:
       YGN_WIKI_RETRY_DELAY_SECONDS: "1"
       YGN_WIKI_SEARCH_QUERY_LIMIT: "2"
       YGN_WIKI_SEARCH_RESULT_LIMIT: "3"
+      # Live FEC ethics scoring per run: 12 members x ~4 calls stays under a
+      # ~60/hr key. Already-scored members are kept for free, so the roster fills
+      # in over successive runs. Raise YGN_FEC_SCORE_LIMIT if you get a bigger key.
+      YGN_FEC_SCORE_LIMIT: "12"
+      YGN_FEC_DELAY_SECONDS: "2"
 
     steps:
       - name: Check out repository

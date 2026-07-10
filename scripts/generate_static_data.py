@@ -95,6 +95,30 @@ def reusable_wiki_snapshot(path, generated_at, ttl_days, fallback_ttl_days):
     return payload
 
 
+def read_existing_snapshot(path):
+    if not path.exists():
+        return None
+    try:
+        return read_json(path)
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def reusable_ethics_snapshot(path, generated_at, ttl_days):
+    """Reuse a committed live (fec_live) ethics grade if it is still fresh, so a
+    run doesn't re-spend FEC quota on members already scored. Returns the payload
+    (minus generated_at, which is re-stamped on write) or None."""
+    if ttl_days <= 0:
+        return None
+    payload = read_existing_snapshot(path)
+    if not payload or payload.get("source") != "fec_live" or not payload.get("grade"):
+        return None
+    snapshot_time = parse_generated_at(payload.get("generated_at"))
+    if snapshot_time is None or generated_at - snapshot_time > timedelta(days=ttl_days):
+        return None
+    return {k: v for k, v in payload.items() if k != "generated_at"}
+
+
 def safe_id(value):
     return re.sub(r"[^A-Za-z0-9_-]", "", value or "")
 
@@ -211,6 +235,27 @@ def parse_args():
         default=float(os.getenv("YGN_WIKI_DELAY_SECONDS", "0.5")),
         help="Pause after each new Wikipedia request to avoid rate limits.",
     )
+    parser.add_argument(
+        "--fec-score-limit",
+        type=int,
+        default=int(os.getenv("YGN_FEC_SCORE_LIMIT", "12")),
+        help="Max members to score against live FEC per run (fits a ~60/hr key). "
+        "Members with a fresh committed fec_live grade are kept for free; the rest "
+        "fill in over subsequent runs. Raise this if you have a higher-limit key.",
+    )
+    parser.add_argument(
+        "--fec-delay-seconds",
+        type=float,
+        default=float(os.getenv("YGN_FEC_DELAY_SECONDS", "0")),
+        help="Pause after each live FEC-scored member to spread the calls out.",
+    )
+    parser.add_argument(
+        "--ethics-static-ttl-days",
+        type=int,
+        default=int(os.getenv("YGN_ETHICS_STATIC_TTL_DAYS", "25")),
+        help="Reuse a committed fec_live ethics grade for this many days before "
+        "re-scoring it against FEC.",
+    )
     return parser.parse_args()
 
 
@@ -301,6 +346,8 @@ def main():
         except Exception as exc:
             report["errors"].append({"stage": "recent-bills", "error": str(exc)})
 
+    fec_scored = 0  # members scored against live FEC this run (budget-limited)
+
     for member in members:
         bioguide_id = safe_id(member_bioguide_id(member))
         if not bioguide_id:
@@ -379,16 +426,37 @@ def main():
                 )
 
         if not args.skip_ethics:
+            ethics_path = output_dir / "ethics" / f"{bioguide_id}.json"
             try:
-                ethics = backend.get_ethics_score(bioguide_id)
+                reused = reusable_ethics_snapshot(
+                    ethics_path, generated_at_dt, args.ethics_static_ttl_days
+                )
+                if reused is not None:
+                    # Already have a fresh live grade committed — keep it, no FEC call.
+                    ethics = reused
+                elif fec_scored < args.fec_score_limit:
+                    # Spend this run's FEC budget trying to score this member live.
+                    fec_scored += 1
+                    ethics = backend.compute_ethics_score(bioguide_id)
+                    if (ethics or {}).get("source") != "fec_live":
+                        # Rate-limited / no FEC match: prefer an older committed live
+                        # grade over a fresh fallback so we never regress a real grade.
+                        prior = read_existing_snapshot(ethics_path)
+                        if prior and prior.get("source") == "fec_live" and prior.get("grade"):
+                            ethics = {k: v for k, v in prior.items() if k != "generated_at"}
+                    if args.fec_delay_seconds > 0:
+                        time.sleep(args.fec_delay_seconds)
+                else:
+                    # Budget spent this run: keep the existing snapshot if any, else a
+                    # no-FEC static fallback (subsequent runs will score it live).
+                    prior = read_existing_snapshot(ethics_path)
+                    if prior and prior.get("grade"):
+                        ethics = {k: v for k, v in prior.items() if k != "generated_at"}
+                    else:
+                        ethics = backend.ethics_fallback_only(bioguide_id)
+
                 if ethics is not None:
-                    write_json(
-                        output_dir / "ethics" / f"{bioguide_id}.json",
-                        {
-                            "generated_at": generated_at,
-                            **ethics,
-                        },
-                    )
+                    write_json(ethics_path, {"generated_at": generated_at, **ethics})
                     member_score_index["ethics"][bioguide_id] = {
                         key: ethics.get(key)
                         for key in ("score", "grade", "source", "method", "updated_at", "cycle")
@@ -401,6 +469,8 @@ def main():
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "ethics", "error": str(exc)}
                 )
+
+    report["fec_scored_this_run"] = fec_scored
 
     if member_score_index["nominate"] or member_score_index["ethics"]:
         write_json(output_dir / "member-scores.json", member_score_index)
