@@ -1,47 +1,49 @@
 {
   "bioguideId": "S000033",
-  "candidate": null,
+  "score": 97.4,
+  "grade": "A",
+  "source": "fec_live",
+  "method": "campaign_finance_v3",
+  "updated_at": "2026-07-10T18:43:24.809032+00:00",
+  "cycle": 2026,
+  "candidate": {
+    "candidate_id": "S4VT00033",
+    "name": "SANDERS, BERNARD",
+    "office": "S",
+    "state": "VT",
+    "district": "00",
+    "party": "IND"
+  },
   "components": {
-    "constituency_specificity": {
-      "score": 84.0,
+    "small_donor": {
+      "value": 0.7452,
+      "score": 99.5,
+      "weight": 0.3
+    },
+    "pac_independence": {
       "value": 1.0,
-      "weight": 0.18
+      "score": 96.4,
+      "weight": 0.25
     },
-    "disclosure_baseline": {
-      "score": 69.8,
-      "value": 0.2832,
-      "weight": 0.23
-    },
-    "public_accountability_baseline": {
-      "score": 86.5,
-      "value": 0.9966,
-      "weight": 0.24
-    },
-    "public_record_completeness": {
-      "score": 96.0,
+    "donor_diversity": {
       "value": 1.0,
+      "score": 96.7,
       "weight": 0.2
     },
-    "service_context": {
-      "score": 84.9,
-      "value": 0.6333,
-      "weight": 0.1
+    "self_party_independence": {
+      "value": 1.0,
+      "score": 96.0,
+      "weight": 0.15
     },
-    "static_baseline_variation": {
-      "score": 79.0,
-      "value": 0.4964,
-      "weight": 0.05
+    "in_state_support": {
+      "value": null,
+      "score": null,
+      "weight": 0.1
     }
   },
-  "cycle": 2026,
-  "generated_at": "2026-07-07T04:32:34.361700+00:00",
-  "grade": "B",
-  "method": "campaign_finance_v2",
   "notes": [
-    "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
-    "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations."
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
-  "score": 83.6,
-  "source": "static_fallback",
-  "updated_at": "2026-07-07T00:00:00+00:00"
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "generated_at": "2026-07-10T18:43:24.825230+00:00"
 }

@@ -47,13 +47,54 @@ class MemberDossierBackendTests(unittest.TestCase):
 
         self.assertEqual(captured["params"]["state"], "VT")
 
+    def test_latest_candidate_total_prefers_recent_funded_cycle(self):
+        # Regression: an ancient record with cycle=None must not shadow the recent
+        # funded cycle (this bug sent cycle=None downstream -> FEC HTTP 422).
+        rows = {
+            "results": [
+                {"cycle": None, "coverage_end_date": "1992-12-31T00:00:00", "receipts": 417254.0},
+                {"cycle": 2026, "coverage_end_date": "2026-06-30T00:00:00", "receipts": 2433666.0},
+                {"cycle": 2024, "coverage_end_date": "2024-12-31T00:00:00", "receipts": 1500000.0},
+            ]
+        }
+        with patch.object(self.gov, "_fec_get", return_value=rows), patch.object(
+            self.gov, "_current_election_cycle", return_value=2026
+        ):
+            total = self.gov._latest_candidate_total("H8CA05035")
+        self.assertEqual(total["cycle"], 2026)
+        self.assertEqual(total["receipts"], 2433666.0)
+
+    def test_effective_totals_cycle_derives_from_coverage_date(self):
+        eff = self.gov._effective_totals_cycle
+        self.assertEqual(eff({"cycle": 2024}), 2024)
+        self.assertEqual(eff({"cycle": None, "coverage_end_date": "2023-06-30"}), 2024)  # round up to even
+        self.assertEqual(eff({"cycle": None, "last_report_year": 2022}), 2022)
+        self.assertIsNone(eff({"cycle": None}))
+
+    def test_fec_candidate_rows_skips_null_cycle(self):
+        # A null cycle must not be sent to FEC (it 422s); return [] instead.
+        with patch.object(self.gov, "_fec_get", side_effect=AssertionError("must not call FEC")):
+            self.assertEqual(self.gov._fec_candidate_rows("/x/", "H1", None), [])
+
     def test_precomputed_ethics_only_accepts_fec_live(self):
-        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "fec_live"}):
+        method = self.gov.ETHICS_METHOD_VERSION
+        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "fec_live", "method": method}):
             self.assertIsNotNone(self.gov._precomputed_fec_ethics("X"))
-        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "static_fallback"}):
+        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "static_fallback", "method": method}):
+            self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
+        # A snapshot from an older scoring method must be ignored so it gets recomputed.
+        with patch.object(self.gov, "_read_json_file", return_value={"grade": "A", "source": "fec_live", "method": "campaign_finance_v2"}):
             self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
         with patch.object(self.gov, "_read_json_file", return_value=None):
             self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
+
+    def test_ethics_bench_calibration_spreads_grades(self):
+        # A grassroots profile should clearly outrank a big-money one, and neither
+        # should collapse to the old "everyone is a C" band.
+        bench = self.gov._ethics_bench
+        self.assertGreater(bench(0.40, 0.05, 0.18, 0.40), bench(0.10, 0.05, 0.18, 0.40))
+        self.assertGreaterEqual(bench(0.40, 0.05, 0.18, 0.40), 95)
+        self.assertLessEqual(bench(0.0, 0.05, 0.18, 0.40), 40)
 
     def test_get_ethics_prefers_precomputed_snapshot(self):
         with patch.object(self.gov, "_precomputed_fec_ethics",

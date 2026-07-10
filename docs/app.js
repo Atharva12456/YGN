@@ -696,10 +696,29 @@ function renderRecentBills(digest, source) {
     const row = document.createElement('article');
     row.className = 'bill-row';
 
+    const detailHref = bill.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(bill.detailPath)}`) : null;
+
     const titleCell = document.createElement('div');
     appendText(titleCell, 'bill-kicker', bill.identifier || `${bill.type || ''} ${bill.number || ''}`.trim(), 'div');
-    appendText(titleCell, 'bill-title', bill.title || 'Untitled bill', 'h3');
+    if (detailHref) {
+      const titleLink = document.createElement('a');
+      titleLink.className = 'bill-title bill-title-link';
+      titleLink.href = detailHref;
+      titleLink.textContent = bill.title || 'Untitled bill';
+      const titleWrap = document.createElement('h3');
+      titleWrap.appendChild(titleLink);
+      titleCell.appendChild(titleWrap);
+    } else {
+      appendText(titleCell, 'bill-title', bill.title || 'Untitled bill', 'h3');
+    }
     appendText(titleCell, 'bill-meta', [bill.congress ? `${bill.congress}th Congress` : '', bill.originChamber].filter(Boolean).join(' - '), 'p');
+    if (detailHref) {
+      const detailLink = document.createElement('a');
+      detailLink.className = 'bill-detail-link';
+      detailLink.href = detailHref;
+      detailLink.textContent = 'Full detail, cosponsors & votes →';
+      titleCell.appendChild(detailLink);
+    }
     if (bill.url) appendLink(titleCell, 'Open bill record', bill.url);
 
     const descriptionCell = document.createElement('div');
@@ -716,6 +735,20 @@ function renderRecentBills(digest, source) {
       appendText(item, '', billMemberLabel(member), 'strong');
       membersCell.appendChild(item);
     });
+    if (typeof bill.cosponsorCount === 'number' && bill.cosponsorCount > 0) {
+      const coLine = document.createElement('div');
+      coLine.className = 'bill-cosponsor-count';
+      coLine.textContent = `${bill.cosponsorCount} cosponsor${bill.cosponsorCount === 1 ? '' : 's'}`;
+      if (detailHref) {
+        const seeAll = document.createElement('a');
+        seeAll.href = detailHref;
+        seeAll.textContent = ' — see all';
+        coLine.appendChild(seeAll);
+      }
+      membersCell.appendChild(coLine);
+    } else if (members.length === 0) {
+      appendText(membersCell, 'bill-meta', 'Sponsor data loads from Congress.gov.', 'p');
+    }
 
     const impactCell = document.createElement('div');
     const impact = bill.impact || {};
@@ -745,6 +778,293 @@ function renderRecentBills(digest, source) {
     recentBillsGrid.appendChild(row);
   });
 }
+
+// ─── Bill detail page (clickable bill w/ cosponsors + roll-call votes) ────────
+
+const VOTE_ORDER = ['Yea', 'Nay', 'Present', 'Not Voting'];
+const VOTE_CLASS = { 'Yea': 'yea', 'Nay': 'nay', 'Present': 'present', 'Not Voting': 'notvoting' };
+
+function partyClass(party) {
+  const p = String(party || '').trim().toUpperCase();
+  if (p.startsWith('D')) return 'party-d';
+  if (p.startsWith('R')) return 'party-r';
+  return 'party-i';
+}
+
+function personLinkHtml(person, roleLabel) {
+  const partyState = [person.party, person.state, person.district]
+    .filter(v => v !== null && v !== undefined && v !== '')
+    .join('-');
+  const label = esc(person.name || 'Unknown');
+  const meta = partyState ? ` <span class="bill-person-meta">(${esc(partyState)})</span>` : '';
+  const role = roleLabel ? `<span class="bill-person-role">${esc(roleLabel)}</span>` : '';
+  const inner = `${role}<span class="bill-person-name">${label}</span>${meta}`;
+  if (person.bioguideId) {
+    const href = withApiParam(`member.html?id=${encodeURIComponent(person.bioguideId)}`);
+    return `<a class="bill-person ${partyClass(person.party)}" href="${href}">${inner}</a>`;
+  }
+  return `<span class="bill-person ${partyClass(person.party)}">${inner}</span>`;
+}
+
+function billVoteHtml(vote, index) {
+  const totals = vote.totals || {};
+  const counted = VOTE_ORDER.reduce((sum, k) => sum + (Number(totals[k]) || 0), 0) || 1;
+  const positions = Array.isArray(vote.positions) ? vote.positions : [];
+
+  const bar = VOTE_ORDER.map(k => {
+    const n = Number(totals[k]) || 0;
+    if (n === 0) return '';
+    const pct = (n / counted) * 100;
+    return `<span class="vote-bar-seg vote-${VOTE_CLASS[k]}" style="width:${pct}%" title="${esc(k)}: ${n}"></span>`;
+  }).join('');
+
+  const legend = VOTE_ORDER.map(k => {
+    const n = Number(totals[k]) || 0;
+    return `<span class="vote-legend-item"><span class="vote-dot vote-${VOTE_CLASS[k]}"></span>${esc(k)} <strong>${n}</strong></span>`;
+  }).join('');
+
+  const groups = VOTE_ORDER.map(k => {
+    const members = positions
+      .filter(p => p.vote === k)
+      .sort((a, b) => {
+        const pa = partyClass(a.party), pb = partyClass(b.party);
+        if (pa !== pb) return pa.localeCompare(pb);
+        return String(a.name || '').localeCompare(String(b.name || ''));
+      });
+    if (members.length === 0) return '';
+    const chips = members.map(m => personLinkHtml(m)).join('');
+    return `<details class="vote-group">
+      <summary><span class="vote-dot vote-${VOTE_CLASS[k]}"></span>${esc(k)} <strong>${members.length}</strong></summary>
+      <div class="vote-group-members">${chips}</div>
+    </details>`;
+  }).join('');
+
+  const meta = [
+    vote.chamber,
+    vote.rollNumber != null ? `Roll ${esc(String(vote.rollNumber))}` : '',
+    vote.result ? esc(vote.result) : '',
+    vote.date ? formatShortDate(vote.date) : ''
+  ].filter(Boolean).join(' · ');
+
+  return `<div class="bill-vote-card">
+    <div class="bill-vote-head">
+      <h4>${esc(vote.question || vote.description || 'Recorded vote')}</h4>
+      <p class="bill-vote-meta">${meta}</p>
+    </div>
+    <div class="vote-bar">${bar}</div>
+    <div class="vote-legend">${legend}</div>
+    <div class="vote-groups">${groups}</div>
+    ${vote.url ? `<a class="bill-vote-source" href="${safeUrl(vote.url)}" target="_blank" rel="noopener">Official roll-call record →</a>` : ''}
+  </div>`;
+}
+
+function billPeopleListHtml(people, roleLabel) {
+  if (!Array.isArray(people) || people.length === 0) return '';
+  return `<div class="bill-people">${people.map(p => personLinkHtml(p, roleLabel)).join('')}</div>`;
+}
+
+function renderBillDetail(container, data) {
+  const bill = (data && data.bill) || {};
+  const desc = bill.description || {};
+  const votes = Array.isArray(bill.votes) ? bill.votes : [];
+  const cosponsors = Array.isArray(bill.cosponsors) ? bill.cosponsors : [];
+  const cosponsorCount = typeof bill.cosponsorCount === 'number' ? bill.cosponsorCount : cosponsors.length;
+
+  const congressLabel = bill.congress ? `${bill.congress}th Congress` : '';
+  const chamberLabel = bill.originChamber || '';
+  const headMeta = [congressLabel, chamberLabel, bill.policyArea].filter(Boolean).map(esc).join(' · ');
+
+  const aiDesc = bill.aiDescription && bill.aiDescription.summary
+    ? `<div class="bill-ai-block">
+         <div class="bill-ai-label">Plain-language description <span class="ai-badge">AI</span></div>
+         <p>${esc(bill.aiDescription.summary)}</p>
+       </div>` : '';
+
+  const impact = bill.impact && bill.impact.summary
+    ? `<div class="bill-ai-block">
+         <div class="bill-ai-label">Who this affects — impact analysis <span class="ai-badge">AI</span></div>
+         <p>${esc(bill.impact.summary)}</p>
+       </div>`
+    : `<div class="bill-ai-block bill-ai-block--pending">
+         <div class="bill-ai-label">Impact analysis</div>
+         <p>AI impact analysis appears here once an AI provider (Azure/OpenAI) is configured on the server.</p>
+       </div>`;
+
+  const votesHtml = votes.length
+    ? votes.map((v, i) => billVoteHtml(v, i)).join('')
+    : `<p class="bill-empty-note">No recorded roll-call votes are associated with this bill yet. Most bills are referred to committee without a floor vote.</p>`;
+
+  const sponsorsHtml = billPeopleListHtml(bill.sponsors, 'Sponsor')
+    || '<p class="bill-empty-note">Sponsor information is unavailable.</p>';
+
+  const cosponsorsHtml = cosponsors.length
+    ? billPeopleListHtml(cosponsors)
+    : `<p class="bill-empty-note">${cosponsorCount > 0 ? 'Cosponsor names are loading from Congress.gov.' : 'This bill has no cosponsors.'}</p>`;
+
+  const latest = bill.latestAction || {};
+
+  container.innerHTML = `
+    <article class="bill-detail">
+      <header class="bill-detail-head">
+        <div class="bill-detail-kicker">${esc(bill.identifier || '')}</div>
+        <h1>${esc(bill.title || 'Untitled bill')}</h1>
+        <p class="bill-detail-meta">${headMeta}</p>
+        <div class="bill-detail-links">
+          ${bill.url ? `<a class="secondary-button" href="${safeUrl(bill.url)}" target="_blank" rel="noopener">Open on Congress.gov</a>` : ''}
+        </div>
+      </header>
+
+      <section class="bill-detail-card">
+        <h2>Summary</h2>
+        <p class="bill-detail-summary">${esc(desc.text || 'Congress.gov has not published a summary for this bill yet.')}</p>
+        ${desc.source ? `<p class="bill-meta">${esc(desc.source)}${desc.updated_at ? ` · ${esc(formatShortDate(desc.updated_at))}` : ''}</p>` : ''}
+        ${aiDesc}
+        ${impact}
+      </section>
+
+      <div class="bill-detail-grid">
+        <section class="bill-detail-card">
+          <h2>Sponsor</h2>
+          ${sponsorsHtml}
+        </section>
+        <section class="bill-detail-card">
+          <h2>Cosponsors <span class="bill-count-badge">${cosponsorCount}</span></h2>
+          ${cosponsorsHtml}
+        </section>
+      </div>
+
+      <section class="bill-detail-card">
+        <h2>Roll-call votes</h2>
+        <p class="bill-detail-subnote">Who voted yea, nay, present, or did not vote. Click a category to see the members.</p>
+        ${votesHtml}
+      </section>
+
+      <section class="bill-detail-card">
+        <h2>Latest action</h2>
+        <p>${esc(latest.text || 'No latest action recorded.')}</p>
+        <p class="bill-meta">${latest.date ? esc(formatShortDate(latest.date)) : ''}</p>
+        ${Array.isArray(bill.committees) && bill.committees.length ? `<h3 class="bill-subhead">Committees</h3><p class="bill-meta">${esc(bill.committees.join(', '))}</p>` : ''}
+      </section>
+    </article>`;
+}
+
+async function initBillPage() {
+  const backLink = document.querySelector('.back-link');
+  if (backLink) backLink.href = withApiParam('recent-bills.html');
+
+  const container = document.getElementById('bill-container');
+  if (!container) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = (params.get('id') || '').trim();
+  const parts = id.split('/').filter(Boolean);
+
+  if (parts.length !== 3) {
+    container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>No bill was specified. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
+    return;
+  }
+
+  const [congress, billType, number] = parts;
+  container.innerHTML = '<div class="bill-empty-state">Loading bill detail…</div>';
+
+  try {
+    const result = await fetchJsonWithStaticFallback(
+      `/bills/${encodeURIComponent(congress)}/${encodeURIComponent(billType)}/${encodeURIComponent(number)}`,
+      `bills/${congress}-${billType}-${number}.json`
+    );
+    if (result.notFound || !result.data) {
+      container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">?</span><p>Bill detail is only available on the live site. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
+      return;
+    }
+    renderBillDetail(container, result.data);
+  } catch (_) {
+    container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load this bill. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
+  }
+}
+
+// ─── AI public-confidence estimator (events + candidates) ────────────────────
+
+function confidenceGaugeHtml(data) {
+  const conf = Number(data.confidence);
+  const pct = Number.isFinite(conf) ? clamp(conf, 0, 100) : null;
+  const label = data.label || (pct === null ? 'Unknown' : pct >= 66 ? 'High' : pct >= 40 ? 'Moderate' : 'Low');
+  const fillColor = pct === null ? '#9aa4b2' : pct >= 66 ? '#3b8f6d' : pct >= 40 ? '#d5a642' : '#d95f5f';
+  const support = Array.isArray(data.support_factors) ? data.support_factors : [];
+  const concern = Array.isArray(data.concern_factors) ? data.concern_factors : [];
+
+  const factorList = (title, items, cls) => items.length
+    ? `<div class="confidence-factors ${cls}"><h4>${esc(title)}</h4><ul>${items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`
+    : '';
+
+  const certainty = data.confidence_in_estimate
+    ? `<span class="confidence-certainty">Estimate certainty: ${esc(data.confidence_in_estimate)}</span>` : '';
+
+  return `<div class="confidence-card">
+    <div class="confidence-subject">${esc(data.subject || '')}</div>
+    <div class="confidence-gauge-row">
+      <div class="confidence-gauge">
+        <div class="confidence-gauge-fill" style="width:${pct === null ? 0 : pct}%;background:${fillColor}"></div>
+      </div>
+      <div class="confidence-score">${pct === null ? '—' : pct + '%'}<span>${esc(label)}</span></div>
+    </div>
+    ${data.summary ? `<p class="confidence-summary">${esc(data.summary)}</p>` : ''}
+    <div class="confidence-factor-grid">
+      ${factorList('Reasons for confidence', support, 'positive')}
+      ${factorList('Reasons for concern', concern, 'negative')}
+    </div>
+    <p class="confidence-disclaimer">${esc(data.disclaimer || 'AI-generated estimate, not a scientific poll.')}${certainty ? ' · ' : ''}${certainty}</p>
+  </div>`;
+}
+
+function initEventConfidence() {
+  const form = document.getElementById('event-confidence-form');
+  const input = document.getElementById('event-confidence-input');
+  const resultEl = document.getElementById('event-confidence-result');
+  if (!form || !input || !resultEl) return;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const topic = input.value.trim();
+    if (!topic) return;
+    resultEl.innerHTML = '<div class="confidence-loading">Estimating public confidence…</div>';
+    try {
+      const res = await fetchJsonWithStaticFallback(
+        `/ai/confidence/event?topic=${encodeURIComponent(topic)}`,
+        null
+      );
+      const data = res.data || {};
+      if (!data.available) {
+        resultEl.innerHTML = `<div class="confidence-unavailable">${esc(data.reason || 'AI estimates are not available right now.')}${data.note ? ` ${esc(data.note)}` : ''}</div>`;
+        return;
+      }
+      resultEl.innerHTML = confidenceGaugeHtml(data);
+    } catch (_) {
+      resultEl.innerHTML = '<div class="confidence-unavailable">Could not generate an estimate right now. The AI service may be unavailable.</div>';
+    }
+  });
+}
+
+// Lazy candidate-confidence loader used on the member detail page.
+async function loadCandidateConfidence(bioguideId, mountEl) {
+  if (!mountEl) return;
+  mountEl.innerHTML = '<div class="confidence-loading">Estimating public confidence…</div>';
+  try {
+    const res = await fetchJsonWithStaticFallback(
+      `/officials/${encodeURIComponent(bioguideId)}/confidence`,
+      null
+    );
+    const data = res.data || {};
+    if (!data.available) {
+      mountEl.innerHTML = `<div class="confidence-unavailable">${esc(data.reason || 'AI estimate unavailable.')}${data.note ? ` ${esc(data.note)}` : ''}</div>`;
+      return;
+    }
+    mountEl.innerHTML = confidenceGaugeHtml(data);
+  } catch (_) {
+    mountEl.innerHTML = '<div class="confidence-unavailable">Could not generate an estimate right now.</div>';
+  }
+}
+
+window.loadCandidateConfidence = loadCandidateConfidence;
 
 // ─── Economy dashboard ───────────────────────────────────────────────────────
 
@@ -834,22 +1154,56 @@ async function initEconomy() {
   }
 }
 
-async function initRecentBills() {
+async function loadRecentBills(limit) {
   if (!recentBillsGrid) return;
-  const limit = Number(recentBillsGrid.dataset.limit || 5);
-  recentBillsGrid.innerHTML = '<div class="bill-empty-state">Loading recent bills</div>';
-
+  const loadMoreBtn = document.getElementById('load-more-bills');
   try {
     const result = await fetchJsonWithStaticFallback(
       `/bills/recent/digest?limit=${encodeURIComponent(limit)}`,
       'recent-bills-digest.json',
       { cache: 'no-store', staticCache: 'no-store' }
     );
-    renderRecentBills(normalizeBillDigest(result.data), result.source);
+    const digest = normalizeBillDigest(result.data);
+    // Show up to `limit` bills (static fallback may hold fewer than requested).
+    recentBillsGrid.dataset.limit = String(limit);
+    renderRecentBills(digest, result.source);
+    if (loadMoreBtn) {
+      const available = Array.isArray(digest.bills) ? digest.bills.length : 0;
+      const max = Number(recentBillsGrid.dataset.max || 40);
+      // Hide "load more" once we've reached the max or the feed has no more to give.
+      const exhausted = limit >= max || available < limit;
+      loadMoreBtn.hidden = exhausted;
+      loadMoreBtn.disabled = false;
+      loadMoreBtn.textContent = 'Load more bills';
+    }
   } catch {
     if (recentBillsStatus) recentBillsStatus.textContent = 'Recent bills unavailable.';
-    recentBillsGrid.innerHTML = '<div class="bill-empty-state">Recent bill data could not be loaded.</div>';
+    if (!recentBillsGrid.querySelector('.bill-row')) {
+      recentBillsGrid.innerHTML = '<div class="bill-empty-state">Recent bill data could not be loaded.</div>';
+    }
+    if (loadMoreBtn) { loadMoreBtn.disabled = false; loadMoreBtn.textContent = 'Load more bills'; }
   }
+}
+
+async function initRecentBills() {
+  if (!recentBillsGrid) return;
+  const initialLimit = Number(recentBillsGrid.dataset.limit || 5);
+  recentBillsGrid.innerHTML = '<div class="bill-empty-state">Loading recent bills</div>';
+
+  const loadMoreBtn = document.getElementById('load-more-bills');
+  if (loadMoreBtn) {
+    const step = Number(recentBillsGrid.dataset.step || 10);
+    const max = Number(recentBillsGrid.dataset.max || 40);
+    loadMoreBtn.addEventListener('click', () => {
+      const current = Number(recentBillsGrid.dataset.limit || initialLimit);
+      const next = Math.min(current + step, max);
+      loadMoreBtn.disabled = true;
+      loadMoreBtn.textContent = 'Loading…';
+      loadRecentBills(next);
+    });
+  }
+
+  await loadRecentBills(initialLimit);
 }
 
 // ─── Congressional Members ───────────────────────────────────────────────────
@@ -1557,7 +1911,10 @@ function topGerrymanderComponent(components) {
   if (Number(entries[0][1]) <= 0) return 'no district-line signal';
 
   const labels = {
+    process: 'redistricting control',
+    partisan_skew: 'partisan skew (seat-vote gap)',
     shape: 'district shape',
+    // legacy keys (older snapshots)
     voting: 'seat-vote mismatch',
     control: 'redistricting control',
     events: 'recent political events',
@@ -1586,7 +1943,12 @@ function updateStatePanel(stateInfo, mode = 'select') {
   gerryScoreEl.textContent = Number.isFinite(score) ? `${safeScore}/100` : '-';
   gerryMeterFill.style.width = `${safeScore}%`;
   gerryMeterFill.style.background = safeScore >= 70 ? '#d95f5f' : safeScore >= 45 ? '#d5a642' : '#3b8f6d';
-  gerryNoteEl.textContent = `${stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.label || 'Risk'} - strongest signal: ${topGerrymanderComponent(stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.components)}.`;
+  const gi = stateInfo.gerrymanderingIndex || {};
+  const control = gi.inputs && gi.inputs.redistricting_control;
+  const signal = topGerrymanderComponent(gi.components);
+  gerryNoteEl.textContent = control
+    ? `${gi.label || 'Risk'} - ${control}; strongest signal: ${signal}.`
+    : `${gi.label || 'Risk'} - strongest signal: ${signal}.`;
   districtStatusEl.textContent = mode === 'click'
     ? `Locked on ${stateInfo.name}. Reset View clears the selection. District outlines are loading or cached.`
     : `Selected ${stateInfo.name}. Click the state again to load district outlines.`;
@@ -1765,8 +2127,30 @@ function drawStateMap(us) {
   const path = d3.geoPath(projection);
   const states = topojson.feature(us, us.objects.states).features;
 
+  // Gaussian smoothing filter: a small blur softens the jagged boundary lines of
+  // the topojson state shapes, then a contrast pass keeps them crisp so the map
+  // reads as smooth outlines rather than a fuzzy image.
+  const defs = svg.append('defs');
+  const smooth = defs.append('filter')
+    .attr('id', 'ygn-map-smooth')
+    .attr('x', '-5%').attr('y', '-5%')
+    .attr('width', '110%').attr('height', '110%')
+    .attr('color-interpolation-filters', 'sRGB');
+  smooth.append('feGaussianBlur')
+    .attr('in', 'SourceGraphic')
+    .attr('stdDeviation', 0.6)
+    .attr('result', 'blur');
+  // Re-sharpen the alpha edge so fills stay solid while corners are rounded off.
+  const transfer = smooth.append('feComponentTransfer').attr('in', 'blur');
+  transfer.append('feFuncA')
+    .attr('type', 'linear')
+    .attr('slope', 1.6)
+    .attr('intercept', -0.3);
+
   const root = svg.append('g').attr('class', 'map-root');
-  const stateLayer = root.append('g').attr('class', 'state-layer');
+  const stateLayer = root.append('g')
+    .attr('class', 'state-layer')
+    .attr('filter', 'url(#ygn-map-smooth)');
   const districtLayer = root.append('g').attr('class', 'district-layer');
 
   const zoom = d3.zoom()
@@ -2576,6 +2960,17 @@ function legislationHtml(legislation) {
 
 // ── Assembly + progressive rendering ────────────────────────────────────────────
 
+function confidenceSectionHtml(id) {
+  if (!id) return '';
+  return `<section class="dossier-card" id="confidence">
+    <h2 class="dossier-card-title">Public Confidence <span class="ai-badge">AI</span></h2>
+    <p class="dossier-card-note">An AI-generated estimate of public confidence in this member, drawn from general historical patterns — not a live or scientific poll.</p>
+    <div id="confidence-mount" class="confidence-mount">
+      <button class="secondary-button" id="confidence-load-btn" type="button" data-bioguide="${esc(id)}">Estimate public confidence</button>
+    </div>
+  </section>`;
+}
+
 function renderDossier(container, data, opts) {
   opts = opts || {};
   const hero = normalizeHero(data, opts.handoff, opts.id);
@@ -2591,6 +2986,7 @@ function renderDossier(container, data, opts) {
         ${stocksHtml(data && data.stocks)}
         ${committeesHtml(data && data.committees)}
         ${contactHtml(data && data.contact)}
+        ${confidenceSectionHtml(opts.id)}
         ${legislationHtml(data && data.legislation)}
       </div>
     </div>`;
@@ -2609,6 +3005,15 @@ function attachDossierInteractions(container) {
       } catch (_) {
         window.prompt('Copy this link:', url);
       }
+    });
+  }
+
+  const confidenceBtn = container.querySelector('#confidence-load-btn');
+  if (confidenceBtn) {
+    confidenceBtn.addEventListener('click', () => {
+      const id = confidenceBtn.dataset.bioguide;
+      const mount = container.querySelector('#confidence-mount');
+      if (id && mount) loadCandidateConfidence(id, mount);
     });
   }
 }
@@ -2769,9 +3174,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.body.dataset.page === 'member') {
     initMemberPage();
   }
+  if (document.body.dataset.page === 'bill') {
+    initBillPage();
+  }
   if (document.body.dataset.page === 'economy') {
     initEconomy();
   }
+  initEventConfidence();
   if (mapSvg) {
     initMapWhenReady();
   }

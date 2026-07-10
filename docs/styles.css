@@ -999,6 +999,7 @@ button {
   stroke: #ffffff;
   stroke-width: 0.75;
   cursor: pointer;
+  shape-rendering: geometricPrecision;
   transition: fill var(--transition-fast), filter var(--transition-fast), stroke-width var(--transition-fast);
 }
 
@@ -1120,12 +1121,12 @@ button {
 }
 
 .state-summary {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.6;
   margin-bottom: 1rem;
-  min-height: 5.95rem;
-  max-height: 5.95rem;
+  min-height: 6.5rem;
+  max-height: 11rem;
   overflow: auto;
   display: block;
 }
@@ -1802,8 +1803,9 @@ button {
   }
 
   .state-summary {
-    min-height: 6.5rem;
-    max-height: 6.5rem;
+    font-size: 1rem;
+    min-height: 7rem;
+    max-height: 13rem;
   }
 
   .coming-soon {
@@ -2405,3 +2407,176 @@ button {
 .econ-spark { width: 100%; height: 120px; display: block; margin: 0.5rem 0; }
 .econ-sources { margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; }
 @media (max-width: 600px) { .econ-title { font-size: 1.9rem; } }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Bill detail page, cosponsors, roll-call votes, AI confidence
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Bill list tweaks (clickable titles, cosponsor counts, load more) */
+.bill-title-link { color: var(--color-text); text-decoration: none; }
+.bill-title-link:hover { color: var(--color-accent); text-decoration: underline; }
+.bill-detail-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.bill-detail-link:hover { text-decoration: underline; }
+.bill-cosponsor-count { margin-top: 0.5rem; font-size: 0.82rem; color: var(--color-text-muted); }
+.bill-cosponsor-count a { color: var(--color-accent); text-decoration: none; }
+.bill-cosponsor-count a:hover { text-decoration: underline; }
+.bills-load-more-wrap { display: flex; justify-content: center; margin: 1.5rem 0 0.5rem; }
+#load-more-bills[hidden] { display: none; }
+
+/* Bill detail layout */
+.bill-detail { max-width: 1000px; margin: 0 auto; }
+.bill-detail-head { margin-bottom: 1.25rem; }
+.bill-detail-kicker {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.4rem;
+}
+.bill-detail-head h1 {
+  font-family: var(--font-display); font-size: 1.9rem; line-height: 1.2;
+  color: var(--color-text); margin-bottom: 0.5rem;
+}
+.bill-detail-meta { color: var(--color-text-muted); font-size: 0.95rem; }
+.bill-detail-links { margin-top: 0.85rem; }
+.bill-detail-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.1rem;
+}
+.bill-detail-card h2 {
+  font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-text);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.bill-subhead { font-size: 0.95rem; margin: 0.9rem 0 0.3rem; }
+.bill-detail-summary { line-height: 1.7; color: var(--color-text); }
+.bill-detail-subnote { color: var(--color-text-muted); font-size: 0.88rem; margin-bottom: 1rem; }
+.bill-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.bill-count-badge {
+  background: var(--color-tint-blue); color: var(--color-accent-hover);
+  border-radius: 999px; padding: 0.1rem 0.6rem; font-size: 0.85rem; font-weight: 600;
+}
+.bill-empty-note { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; }
+
+/* AI blocks */
+.ai-badge {
+  background: linear-gradient(135deg, #6a4ff7, #4f8ef7); color: #fff;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.05em;
+  padding: 0.12rem 0.42rem; border-radius: 999px; vertical-align: middle;
+}
+.bill-ai-block {
+  margin-top: 1rem; padding: 0.9rem 1rem;
+  background: linear-gradient(180deg, rgba(79,142,247,0.06), rgba(106,79,247,0.04));
+  border: 1px solid rgba(79,142,247,0.25); border-radius: var(--radius-sm);
+}
+.bill-ai-block--pending { background: var(--color-bg); border-style: dashed; }
+.bill-ai-label {
+  font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--color-text-muted); margin-bottom: 0.4rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.bill-ai-block p { line-height: 1.65; }
+
+/* People (sponsor/cosponsor) chips */
+.bill-people { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.bill-person {
+  display: inline-flex; align-items: baseline; gap: 0.35rem;
+  padding: 0.35rem 0.65rem; border-radius: 999px; text-decoration: none;
+  font-size: 0.85rem; border: 1px solid var(--color-border);
+  background: var(--color-surface); color: var(--color-text);
+  border-left-width: 4px;
+}
+a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shadow-card); }
+.bill-person.party-d { border-left-color: #3b6fd4; }
+.bill-person.party-r { border-left-color: #d0453f; }
+.bill-person.party-i { border-left-color: #7a5bd0; }
+.bill-person-role { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted); }
+.bill-person-name { font-weight: 600; }
+.bill-person-meta { color: var(--color-text-muted); font-size: 0.78rem; }
+
+/* Roll-call vote cards */
+.bill-vote-card {
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem; margin-bottom: 1rem; background: #fbfcff;
+}
+.bill-vote-head h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+.bill-vote-meta { color: var(--color-text-muted); font-size: 0.82rem; margin-bottom: 0.7rem; }
+.vote-bar {
+  display: flex; height: 14px; border-radius: 7px; overflow: hidden;
+  background: var(--color-tint-gray); margin-bottom: 0.6rem;
+}
+.vote-bar-seg { height: 100%; }
+.vote-yea { background: #3b8f6d; }
+.vote-nay { background: #d95f5f; }
+.vote-present { background: #d5a642; }
+.vote-notvoting { background: #9aa4b2; }
+.vote-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.85rem; }
+.vote-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.vote-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.vote-dot.vote-yea { background: #3b8f6d; }
+.vote-dot.vote-nay { background: #d95f5f; }
+.vote-dot.vote-present { background: #d5a642; }
+.vote-dot.vote-notvoting { background: #9aa4b2; }
+.vote-groups { display: grid; gap: 0.5rem; }
+.vote-group > summary {
+  cursor: pointer; font-size: 0.9rem; padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm); background: var(--color-surface);
+  border: 1px solid var(--color-border); list-style: none;
+  display: flex; align-items: center; gap: 0.45rem;
+}
+.vote-group > summary::-webkit-details-marker { display: none; }
+.vote-group[open] > summary { border-color: var(--color-accent); }
+.vote-group-members { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.7rem 0.2rem 0.3rem; }
+.vote-group-members .bill-person { font-size: 0.8rem; padding: 0.25rem 0.5rem; }
+.bill-vote-source { display: inline-block; margin-top: 0.7rem; font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
+.bill-vote-source:hover { text-decoration: underline; }
+
+/* AI confidence estimator */
+.ai-confidence-panel {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+  padding: 1.5rem; margin-top: 1.5rem;
+}
+.ai-confidence-panel h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
+.ai-confidence-intro { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; max-width: 65ch; }
+.ai-confidence-form { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.ai-confidence-form input {
+  flex: 1 1 320px; padding: 0.6rem 0.8rem; font-size: 0.95rem;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  font-family: var(--font-body); color: var(--color-text); background: var(--color-bg);
+}
+.ai-confidence-form input:focus { outline: 2px solid var(--color-accent); border-color: var(--color-accent); }
+
+.confidence-mount { margin-top: 0.5rem; }
+.confidence-card { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.1rem; background: #fbfcff; }
+.confidence-subject { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.7rem; }
+.confidence-gauge-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+.confidence-gauge { flex: 1; height: 16px; border-radius: 8px; background: var(--color-tint-gray); overflow: hidden; }
+.confidence-gauge-fill { height: 100%; border-radius: 8px; transition: width 0.5s ease; }
+.confidence-score { font-size: 1.4rem; font-weight: 700; line-height: 1; text-align: right; }
+.confidence-score span { display: block; font-size: 0.72rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; margin-top: 0.2rem; }
+.confidence-summary { line-height: 1.6; margin-bottom: 0.9rem; }
+.confidence-factor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.8rem; }
+.confidence-factors h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
+.confidence-factors.positive h4 { color: #2f7d5c; }
+.confidence-factors.negative h4 { color: #c04a44; }
+.confidence-factors ul { list-style: none; display: grid; gap: 0.3rem; }
+.confidence-factors li { font-size: 0.85rem; padding-left: 0.9rem; position: relative; color: var(--color-text); }
+.confidence-factors li::before { content: "\2022"; position: absolute; left: 0; color: var(--color-text-muted); }
+.confidence-disclaimer { font-size: 0.76rem; color: var(--color-text-muted); font-style: italic; border-top: 1px solid var(--color-border); padding-top: 0.6rem; }
+.confidence-certainty { font-style: normal; font-weight: 600; }
+.confidence-loading, .confidence-unavailable { color: var(--color-text-muted); font-size: 0.9rem; padding: 0.6rem 0; }
+.confidence-unavailable { color: #b06a1f; }
+
+@media (max-width: 700px) {
+  .bill-detail-grid { grid-template-columns: 1fr; }
+  .confidence-factor-grid { grid-template-columns: 1fr; }
+  .bill-detail-head h1 { font-size: 1.5rem; }
+}

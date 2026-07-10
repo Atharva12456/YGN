@@ -1,47 +1,49 @@
 {
   "bioguideId": "B001288",
-  "candidate": null,
+  "score": 81.6,
+  "grade": "B-",
+  "source": "fec_live",
+  "method": "campaign_finance_v3",
+  "updated_at": "2026-07-10T18:44:16.798367+00:00",
+  "cycle": 2026,
+  "candidate": {
+    "candidate_id": "S4NJ00185",
+    "name": "BOOKER, CORY A.",
+    "office": "S",
+    "state": "NJ",
+    "district": "00",
+    "party": "DEM"
+  },
   "components": {
-    "constituency_specificity": {
-      "score": 81.2,
-      "value": 1.0,
-      "weight": 0.18
+    "small_donor": {
+      "value": 0.6012,
+      "score": 98.0,
+      "weight": 0.3
     },
-    "disclosure_baseline": {
-      "score": 78.3,
-      "value": 0.3129,
-      "weight": 0.23
+    "pac_independence": {
+      "value": 0.9755,
+      "score": 96.3,
+      "weight": 0.25
     },
-    "public_accountability_baseline": {
-      "score": 65.5,
-      "value": 0.4164,
-      "weight": 0.24
-    },
-    "public_record_completeness": {
-      "score": 96.0,
-      "value": 1.0,
+    "donor_diversity": {
+      "value": 0.0,
+      "score": 35.0,
       "weight": 0.2
     },
-    "service_context": {
-      "score": 81.7,
-      "value": 0.4333,
-      "weight": 0.1
+    "self_party_independence": {
+      "value": 1.0,
+      "score": 96.0,
+      "weight": 0.15
     },
-    "static_baseline_variation": {
-      "score": 78.3,
-      "value": 0.5633,
-      "weight": 0.05
+    "in_state_support": {
+      "value": 0.1761,
+      "score": 67.1,
+      "weight": 0.1
     }
   },
-  "cycle": 2026,
-  "generated_at": "2026-07-07T04:32:34.361700+00:00",
-  "grade": "C+",
-  "method": "campaign_finance_v2",
   "notes": [
-    "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
-    "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations."
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
-  "score": 79.6,
-  "source": "static_fallback",
-  "updated_at": "2026-07-07T00:00:00+00:00"
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "generated_at": "2026-07-10T18:44:16.817328+00:00"
 }

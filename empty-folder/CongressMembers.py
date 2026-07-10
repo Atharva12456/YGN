@@ -44,7 +44,7 @@ DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
-ETHICS_METHOD_VERSION = "campaign_finance_v2"
+ETHICS_METHOD_VERSION = "campaign_finance_v3"
 
 # --- Member dossier data sources -----------------------------------------
 # unitedstates/congress-legislators: canonical, free, no-key crosswalk of
@@ -939,33 +939,12 @@ def _bill_committee_names(detail):
     return _dedupe_strings(names)
 
 
-def _bill_member_items(bill, detail):
-    people = []
-    for role, collection in (
-        ("Sponsor", detail.get("sponsors") or bill.get("sponsors") or []),
-        ("Cosponsor", detail.get("cosponsors") or []),
-    ):
-        if isinstance(collection, dict):
-            collection = collection.get("items") or collection.get("cosponsors") or []
-        for person in collection:
-            if not isinstance(person, dict):
-                continue
-            name = _first_nonempty(
-                person.get("fullName"),
-                person.get("directOrderName"),
-                person.get("name"),
-            )
-            if not name:
-                continue
-            people.append(
-                {
-                    "role": role,
-                    "name": name,
-                    "state": person.get("state"),
-                    "party": person.get("party"),
-                    "bioguideId": person.get("bioguideId"),
-                }
-            )
+def _bill_member_items(bill, detail, cosponsor_preview=None):
+    """Sponsor(s) + a short cosponsor preview for the digest tile. Cosponsors are
+    NOT inline in the /bill payload (only a {count,url} reference), so callers pass
+    a preview fetched from the /cosponsors sub-resource."""
+    people = list(_bill_sponsor_items(bill, detail))
+    people.extend(cosponsor_preview or [])
 
     if not people:
         people.append(
@@ -1012,6 +991,15 @@ def _bill_description(bill, detail, summaries):
     }
 
 
+def _bill_detail_path(bill):
+    congress = _bill_congress(bill)
+    bill_type = _bill_type_code(bill)
+    number = _bill_number(bill)
+    if not congress or not bill_type or not number:
+        return None
+    return f"{congress}/{bill_type}/{number}"
+
+
 def _bill_digest_item(bill):
     detail = _bill_detail_payload(bill)
     summaries = _bill_summaries_payload(bill)
@@ -1025,6 +1013,11 @@ def _bill_digest_item(bill):
     )
     web_url = _bill_web_url(bill)
     committees = _bill_committee_names(detail)
+    sponsors = _bill_sponsor_items(bill, detail)
+    # The cosponsor COUNT is already in the detail payload; the full cosponsor
+    # list requires a separate /cosponsors call, so we defer that to the bill
+    # detail page and keep the digest tile to sponsors + count (fast).
+    cosponsor_count = _bill_cosponsor_count(bill, detail) or 0
 
     return {
         "identifier": _bill_identifier(bill),
@@ -1035,6 +1028,9 @@ def _bill_digest_item(bill):
         "originChamber": bill.get("originChamber") or detail.get("originChamber"),
         "description": _bill_description(bill, detail, summaries),
         "members": _bill_member_items(bill, detail),
+        "sponsors": sponsors,
+        "cosponsorCount": cosponsor_count,
+        "detailPath": _bill_detail_path(bill),
         "impact": {
             "status": "Pending AI impact analysis",
             "summary": (
@@ -1074,6 +1070,349 @@ def _recent_bill_list(payload):
 
 
 # =========================================================================
+# Cosponsors + roll-call votes (bill detail page)
+#
+# The /bill detail payload returns cosponsors as a {count, url} REFERENCE, not
+# an inline list -- which is why the digest showed "no cosponsors". The real
+# list lives at the /cosponsors sub-resource. Recorded (roll-call) votes are
+# referenced from a bill's actions and published as XML by the House Clerk and
+# the Senate (no API key needed); we fetch + parse those into a member-by-member
+# yea/nay/present/not-voting breakdown for the bill detail page.
+# =========================================================================
+
+RECORDED_VOTE_TTL_SECONDS = 30 * 24 * 60 * 60  # roll-call results never change
+BILL_DETAIL_TTL_SECONDS = 6 * 60 * 60
+VOTE_USER_AGENT = "YGN/1.0 (+https://yourgovtnow.dev) civic-education"
+
+
+def _person_item(person, role):
+    if not isinstance(person, dict):
+        return None
+    name = _first_nonempty(
+        person.get("fullName"),
+        person.get("directOrderName"),
+        person.get("name"),
+    )
+    if not name:
+        return None
+    return {
+        "role": role,
+        "name": name,
+        "state": person.get("state"),
+        "party": person.get("party"),
+        "bioguideId": person.get("bioguideId"),
+        "district": person.get("district"),
+        "sponsorshipDate": person.get("sponsorshipDate"),
+        "isOriginalCosponsor": person.get("isOriginalCosponsor"),
+    }
+
+
+def _bill_sponsor_items(bill, detail):
+    sponsors = detail.get("sponsors") or bill.get("sponsors") or []
+    if isinstance(sponsors, dict):
+        sponsors = sponsors.get("items") or []
+    items = [_person_item(person, "Sponsor") for person in sponsors]
+    return [item for item in items if item]
+
+
+def _bill_cosponsor_items(bill, limit=250):
+    """Fetch the actual cosponsor list from the /cosponsors sub-resource."""
+    path = _bill_api_path(bill)
+    if not path:
+        return []
+    try:
+        payload = _congress_get(
+            f"{path}/cosponsors",
+            params={"format": "json", "limit": max(1, min(int(limit), 250))},
+        )
+    except Exception:  # noqa: BLE001 - cosponsors are best-effort enrichment
+        return []
+    people = payload.get("cosponsors") or []
+    if isinstance(people, dict):
+        people = people.get("items") or []
+    items = [_person_item(person, "Cosponsor") for person in people]
+    return [item for item in items if item]
+
+
+def _bill_cosponsor_count(bill, detail):
+    cosponsors = detail.get("cosponsors")
+    if isinstance(cosponsors, dict):
+        count = cosponsors.get("count")
+        if count is not None:
+            try:
+                return int(count)
+            except (TypeError, ValueError):
+                return None
+    return None
+
+
+def _normalize_vote_position(raw):
+    text = str(raw or "").strip()
+    lowered = text.lower()
+    if lowered in {"yea", "yes", "aye", "guilty"}:
+        return "Yea"
+    if lowered in {"nay", "no", "not guilty"}:
+        return "Nay"
+    if lowered.startswith("present"):
+        return "Present"
+    if lowered in {"not voting", "not_voting", "absent", ""}:
+        return "Not Voting"
+    return text or "Not Voting"
+
+
+def _tally_positions(positions):
+    tally = {"Yea": 0, "Nay": 0, "Present": 0, "Not Voting": 0}
+    for entry in positions:
+        bucket = entry.get("vote")
+        tally[bucket] = tally.get(bucket, 0) + 1
+    return tally
+
+
+def _parse_house_vote_xml(content):
+    root = ET.fromstring(content)
+    meta = root.find(".//vote-metadata")
+    question = result = description = date = None
+    if meta is not None:
+        question = (meta.findtext("vote-question") or "").strip() or None
+        result = (meta.findtext("vote-result") or "").strip() or None
+        description = (meta.findtext("vote-desc") or "").strip() or None
+        action_date = (meta.findtext("action-date") or "").strip()
+        action_time = (meta.findtext("action-time") or "").strip()
+        date = " ".join(part for part in (action_date, action_time) if part) or None
+
+    positions = []
+    for rv in root.findall(".//recorded-vote"):
+        legislator = rv.find("legislator")
+        vote_el = rv.find("vote")
+        if legislator is None or vote_el is None:
+            continue
+        name = (
+            legislator.get("unaccented-name")
+            or legislator.get("sort-field")
+            or (legislator.text or "").strip()
+        )
+        positions.append(
+            {
+                "name": name,
+                "party": legislator.get("party"),
+                "state": legislator.get("state"),
+                "bioguideId": legislator.get("name-id") or None,
+                "vote": _normalize_vote_position(vote_el.text),
+            }
+        )
+    return question, result, description, date, positions
+
+
+def _parse_senate_vote_xml(content):
+    root = ET.fromstring(content)
+    question = (root.findtext("vote_question_text") or root.findtext("question") or "").strip() or None
+    result = (root.findtext("vote_result") or "").strip() or None
+    description = (root.findtext("vote_title") or root.findtext("vote_document_text") or "").strip() or None
+    date = (root.findtext("vote_date") or "").strip() or None
+
+    positions = []
+    for member in root.findall(".//member"):
+        name = (member.findtext("member_full") or "").strip()
+        if not name:
+            first = (member.findtext("first_name") or "").strip()
+            last = (member.findtext("last_name") or "").strip()
+            name = " ".join(part for part in (first, last) if part)
+        positions.append(
+            {
+                "name": name,
+                "party": (member.findtext("party") or "").strip() or None,
+                "state": (member.findtext("state") or "").strip() or None,
+                "bioguideId": None,  # Senate XML exposes lis_member_id, not bioguide
+                "vote": _normalize_vote_position(member.findtext("vote_cast")),
+            }
+        )
+    return question, result, description, date, positions
+
+
+def _fetch_recorded_vote(recorded_vote):
+    """Fetch + parse one recorded vote (House Clerk or Senate XML) into a
+    normalized member-by-member breakdown. Cached long-term (results are final)."""
+    url = recorded_vote.get("url")
+    chamber = str(recorded_vote.get("chamber") or "").strip()
+    if not url:
+        return None
+    if url.startswith("http://"):
+        url = "https://" + url[len("http://") :]
+
+    cache_key = _build_cache_key("recorded-vote-v1", {"url": url})
+
+    def fetch_json():
+        try:
+            response = requests.get(
+                url,
+                headers={"User-Agent": VOTE_USER_AGENT},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"Recorded-vote fetch failed for {url}.") from None
+
+        try:
+            if chamber.lower().startswith("s"):
+                question, result, description, date, positions = _parse_senate_vote_xml(response.content)
+            else:
+                question, result, description, date, positions = _parse_house_vote_xml(response.content)
+        except ET.ParseError:
+            raise UpstreamDataError(f"Recorded-vote XML was unparseable for {url}.") from None
+
+        return {
+            "chamber": chamber or None,
+            "rollNumber": recorded_vote.get("rollNumber"),
+            "congress": recorded_vote.get("congress"),
+            "sessionNumber": recorded_vote.get("sessionNumber"),
+            "date": recorded_vote.get("date") or date,
+            "question": question,
+            "result": result,
+            "description": description,
+            "url": url,
+            "totals": _tally_positions(positions),
+            "positions": positions,
+        }
+
+    try:
+        return _cached_json(
+            cache_key,
+            f"recorded-vote:{url}",
+            fetch_json,
+            ttl_seconds=RECORDED_VOTE_TTL_SECONDS,
+        )
+    except UpstreamDataError:
+        return None
+
+
+def _bill_recorded_votes(bill, max_votes=4):
+    """Collect recorded votes referenced in a bill's actions, most recent first."""
+    path = _bill_api_path(bill)
+    if not path:
+        return []
+    try:
+        payload = _congress_get(f"{path}/actions", params={"format": "json", "limit": 250})
+    except Exception:  # noqa: BLE001
+        return []
+
+    seen = set()
+    recorded = []
+    for action in payload.get("actions") or []:
+        for rv in action.get("recordedVotes") or []:
+            key = (rv.get("chamber"), rv.get("rollNumber"), rv.get("congress"), rv.get("sessionNumber"))
+            if key in seen:
+                continue
+            seen.add(key)
+            recorded.append(rv)
+
+    def _rv_date(rv):
+        return rv.get("date") or ""
+
+    recorded.sort(key=_rv_date, reverse=True)
+
+    votes = []
+    for rv in recorded[:max_votes]:
+        parsed = _fetch_recorded_vote(rv)
+        if parsed:
+            votes.append(parsed)
+    return votes
+
+
+def get_bill_detail(congress, bill_type, number, include_votes=True):
+    """Full bill detail for the clickable bill page: sponsor, full cosponsor
+    list, official + AI description, AI impact, committees, actions timeline, and
+    roll-call vote breakdowns (who voted yea/nay/present/not voting)."""
+    bill_type = str(bill_type or "").lower()
+    congress = str(congress or "").strip()
+    number = str(number or "").strip()
+    cache_key = _build_cache_key(
+        "bill-detail-v1",
+        {"congress": congress, "type": bill_type, "number": number, "votes": bool(include_votes)},
+    )
+
+    def fetch_json():
+        bill_ref = {"congress": congress, "type": bill_type, "number": number}
+        detail = _bill_detail_payload(bill_ref)
+        if not detail:
+            raise UpstreamDataError(
+                f"No Congress.gov record for {bill_type.upper()} {number} ({congress})."
+            )
+
+        summaries = _bill_summaries_payload(bill_ref)
+        sponsors = _bill_sponsor_items(bill_ref, detail)
+        cosponsors = _bill_cosponsor_items(bill_ref)
+        latest_action = detail.get("latestAction") or {}
+        policy_area = detail.get("policyArea")
+        if isinstance(policy_area, dict):
+            policy_area = policy_area.get("name")
+
+        digest_seed = {
+            "identifier": _bill_identifier(bill_ref),
+            "title": _first_nonempty(detail.get("title"), "Untitled bill"),
+            "description": _bill_description(bill_ref, detail, summaries),
+            "policyArea": policy_area,
+            "committees": _bill_committee_names(detail),
+            "latestAction": {
+                "date": latest_action.get("actionDate"),
+                "text": latest_action.get("text"),
+            },
+        }
+
+        item = {
+            "identifier": digest_seed["identifier"],
+            "title": digest_seed["title"],
+            "congress": detail.get("congress") or congress,
+            "type": detail.get("type") or bill_type.upper(),
+            "number": detail.get("number") or number,
+            "originChamber": detail.get("originChamber"),
+            "introducedDate": detail.get("introducedDate"),
+            "policyArea": policy_area,
+            "description": digest_seed["description"],
+            "sponsors": sponsors,
+            "cosponsors": cosponsors,
+            "cosponsorCount": _bill_cosponsor_count(bill_ref, detail) or len(cosponsors),
+            "committees": _bill_committee_names(detail),
+            "latestAction": digest_seed["latestAction"],
+            "updatedAt": detail.get("updateDate"),
+            "url": _bill_web_url(bill_ref),
+            "detailPath": f"{congress}/{bill_type}/{number}",
+        }
+
+        # AI enrichment (no-ops to None when no provider is configured).
+        try:
+            ai_desc = generate_bill_description(digest_seed)
+            if ai_desc and ai_desc.get("summary"):
+                item["aiDescription"] = ai_desc
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("Bill AI description failed: %s", exc)
+        try:
+            impact = generate_bill_impact(digest_seed)
+            if impact and impact.get("summary"):
+                item["impact"] = impact
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("Bill AI impact failed: %s", exc)
+
+        if include_votes:
+            item["votes"] = _bill_recorded_votes(bill_ref)
+        else:
+            item["votes"] = []
+
+        return {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "source": "congress_api",
+            "ai_enabled": ai_insights_available(),
+            "bill": item,
+        }
+
+    return _cached_json(
+        cache_key,
+        f"bill-detail:{congress}:{bill_type}:{number}",
+        fetch_json,
+        ttl_seconds=BILL_DETAIL_TTL_SECONDS,
+    )
+
+
+# =========================================================================
 # AI insights (optional): plain-language "impact" analysis for bills.
 #
 # Provider-agnostic and OFF by default. Configure ONE of:
@@ -1088,12 +1427,36 @@ def _recent_bill_list(payload):
 # =========================================================================
 
 AI_IMPACT_TTL_SECONDS = 30 * 24 * 60 * 60
+AI_DESCRIPTION_TTL_SECONDS = 30 * 24 * 60 * 60
+AI_CONFIDENCE_TTL_SECONDS = 12 * 60 * 60
 DEFAULT_AI_MODEL = "gpt-4o-mini"
 BILL_IMPACT_SYSTEM_PROMPT = (
     "You are a nonpartisan civic analyst for a U.S. government information site. "
     "Explain federal legislation in plain, neutral language for a general audience. "
     "Be factual and concise. Do not use partisan framing, do not predict whether a "
     "bill will pass, and do not invent details beyond what you are given."
+)
+BILL_DESCRIPTION_SYSTEM_PROMPT = (
+    "You are a nonpartisan civic explainer for a U.S. government information site. "
+    "Describe what a bill IS in plain, neutral language for a general audience: its "
+    "subject, what it proposes to change, and its scope. Be factual and concise. Do "
+    "not use partisan framing and do not invent provisions beyond what you are given."
+)
+# The "public confidence" prompts return a calibrated ESTIMATE with reasoning, not
+# a real poll. The system prompt forces a clearly-labeled estimate + JSON so the
+# UI can render a gauge while making the "not a poll" nature unmistakable.
+CONFIDENCE_SYSTEM_PROMPT = (
+    "You are a nonpartisan public-opinion analyst for a civic education site. Given a "
+    "political subject, produce a CALIBRATED ESTIMATE of U.S. public confidence/support "
+    "based on general historical patterns and publicly known context up to your training "
+    "data. You do not have live polling. Be explicitly balanced, name the main reasons "
+    "people are for and against, avoid partisanship, and never state your estimate as a "
+    "measured fact. Respond ONLY with a compact JSON object and no other text, using keys: "
+    '"confidence" (integer 0-100, estimated share expressing confidence/support), '
+    '"label" (one of "Very low","Low","Mixed","Moderate","High","Very high"), '
+    '"summary" (2-3 neutral sentences), "support_factors" (array of up to 3 short strings), '
+    '"concern_factors" (array of up to 3 short strings), "confidence_in_estimate" (one of '
+    '"low","medium","high" reflecting how certain YOU are given no live data).'
 )
 
 
@@ -1224,6 +1587,163 @@ def generate_bill_impact(bill_item):
     )
 
 
+def generate_bill_description(bill_item):
+    """Plain-language AI description of what a bill IS (distinct from its impact),
+    cached 30 days. Returns {summary, model, provider, generated_at} or None."""
+    config = _ai_provider_config()
+    if not config:
+        return None
+
+    identifier = (
+        bill_item.get("identifier")
+        or bill_item.get("url")
+        or bill_item.get("title")
+        or "unknown"
+    )
+    cache_key = _build_cache_key(
+        "bill-description-v1", {"id": identifier, "model": config["model"]}
+    )
+
+    def fetch_json():
+        title = bill_item.get("title") or "Untitled bill"
+        official = (bill_item.get("description") or {}).get("text") or ""
+        policy_area = bill_item.get("policyArea") or "Unspecified"
+        user_prompt = (
+            f"Bill: {title}\n"
+            f"Policy area: {policy_area}\n"
+            f"Official summary: {official or 'No official summary published yet.'}\n\n"
+            "In 2-3 sentences, describe in plain language what this bill is and what it "
+            "proposes to do. Focus on the subject and the change it would make, not on "
+            "predicting passage. If the available text is too thin, say so plainly."
+        )
+        summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=200)
+        return {
+            "summary": summary,
+            "model": config["model"],
+            "provider": config["kind"],
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+
+    return _cached_json(
+        cache_key,
+        f"bill-description:{identifier}",
+        fetch_json,
+        ttl_seconds=AI_DESCRIPTION_TTL_SECONDS,
+    )
+
+
+def _parse_confidence_json(raw):
+    """Parse the confidence model's JSON reply, tolerating code fences / stray text."""
+    text = str(raw or "").strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
+        text = re.sub(r"\n?```$", "", text).strip()
+    try:
+        data = json.loads(text)
+    except (ValueError, TypeError):
+        match = re.search(r"\{.*\}", text, re.DOTALL)
+        if not match:
+            raise UpstreamDataError("Confidence model did not return JSON.")
+        data = json.loads(match.group(0))
+
+    try:
+        confidence = int(round(float(data.get("confidence"))))
+    except (TypeError, ValueError):
+        confidence = None
+    confidence = None if confidence is None else max(0, min(100, confidence))
+
+    def _clean_list(values):
+        return [str(v).strip() for v in (values or []) if str(v).strip()][:3]
+
+    return {
+        "confidence": confidence,
+        "label": str(data.get("label") or "").strip() or None,
+        "summary": str(data.get("summary") or "").strip() or None,
+        "support_factors": _clean_list(data.get("support_factors")),
+        "concern_factors": _clean_list(data.get("concern_factors")),
+        "confidence_in_estimate": str(data.get("confidence_in_estimate") or "").strip().lower() or None,
+    }
+
+
+def _generate_confidence(kind, subject, context, cache_id):
+    """Shared AI 'public confidence' estimator (events + candidates). Returns a
+    labeled ESTIMATE (not a poll) or None when no AI provider is configured."""
+    config = _ai_provider_config()
+    if not config:
+        return None
+
+    cache_key = _build_cache_key(
+        "public-confidence-v1", {"kind": kind, "id": cache_id, "model": config["model"]}
+    )
+
+    def fetch_json():
+        user_prompt = (
+            f"Subject type: {kind}\n"
+            f"Subject: {subject}\n"
+            f"Context: {context or 'No additional context provided.'}\n\n"
+            "Estimate current U.S. public confidence/support for this subject. Return the "
+            "JSON object exactly as specified in your instructions."
+        )
+        raw = _llm_chat(CONFIDENCE_SYSTEM_PROMPT, user_prompt, max_tokens=380, temperature=0.3)
+        parsed = _parse_confidence_json(raw)
+        parsed.update(
+            {
+                "kind": kind,
+                "subject": subject,
+                "model": config["model"],
+                "provider": config["kind"],
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "disclaimer": (
+                    "AI-generated estimate based on general historical patterns, not a "
+                    "live or scientific poll. For informational and educational use only."
+                ),
+            }
+        )
+        return parsed
+
+    return _cached_json(
+        cache_key,
+        f"public-confidence:{kind}:{cache_id}",
+        fetch_json,
+        ttl_seconds=AI_CONFIDENCE_TTL_SECONDS,
+    )
+
+
+def generate_event_confidence(topic, context=None):
+    """AI estimate of public confidence in a political event/topic (war, bill, policy)."""
+    topic = (topic or "").strip()
+    if not topic:
+        raise UpstreamDataError("A topic is required for event confidence.")
+    cache_id = hashlib.sha256(f"{topic}|{context or ''}".encode("utf-8")).hexdigest()[:16]
+    return _generate_confidence("political_event", topic, context, cache_id)
+
+
+def generate_candidate_confidence(bioguide_id):
+    """AI estimate of public confidence in a specific member of Congress."""
+    bioguide_id = (bioguide_id or "").strip()
+    if not bioguide_id:
+        raise UpstreamDataError("A bioguideId is required for candidate confidence.")
+
+    subject = bioguide_id
+    context = None
+    try:
+        member = CongressMembersID(bioguide_id).get("member", {})
+        if member:
+            name = _member_display_name(member) or bioguide_id
+            party = member.get("partyName") or _current_party_name(member) or ""
+            state = member.get("state") or _latest_member_term(member).get("stateName") or ""
+            chamber = _member_chamber(member) or ""
+            subject = name
+            context = ", ".join(part for part in (chamber, party, state) if part)
+    except (MissingCongressApiKey, UpstreamDataError, requests.RequestException):
+        pass
+
+    result = _generate_confidence("candidate", subject, context, bioguide_id)
+    if result is not None:
+        result["bioguideId"] = bioguide_id
+    return result
+
+
 def getRecentBillDigest(limit=5):
     limit = max(1, min(int(limit), 20))
     cache_key = _build_cache_key(
@@ -1235,7 +1755,21 @@ def getRecentBillDigest(limit=5):
 
     def fetch_json():
         bills = _recent_bill_list(getRecentBills())[:limit]
-        items = [_bill_digest_item(bill) for bill in bills]
+        # Each digest item makes several sequential Congress.gov calls (detail,
+        # summaries, cosponsors); build them concurrently so a 12-40 bill digest
+        # doesn't serialize into a 30s+ cold load. Order is preserved by index.
+        items = [None] * len(bills)
+        if bills:
+            workers = min(8, len(bills))
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                futures = {pool.submit(_bill_digest_item, bill): idx for idx, bill in enumerate(bills)}
+                for future in as_completed(futures):
+                    idx = futures[future]
+                    try:
+                        items[idx] = future.result()
+                    except Exception as exc:  # noqa: BLE001
+                        LOGGER.warning("Bill digest item failed: %s", exc)
+            items = [item for item in items if item]
         ai_on = ai_insights_available()
         if ai_on:
             for item in items:
@@ -2167,6 +2701,37 @@ def _fec_best_candidate(member):
     return best
 
 
+def _effective_totals_cycle(row):
+    """Resolve a usable 2-year cycle for a totals record. Old FEC records can have
+    a null `cycle`, so fall back to coverage/report year fields, rounding up to the
+    next even (election) year. Returns None only if nothing is derivable."""
+    cycle = row.get("cycle")
+    try:
+        if cycle not in (None, ""):
+            return int(cycle)
+    except (TypeError, ValueError):
+        pass
+
+    for key in ("last_report_year", "candidate_election_year"):
+        value = row.get(key)
+        try:
+            if value not in (None, ""):
+                year = int(value)
+                return year if year % 2 == 0 else year + 1
+        except (TypeError, ValueError):
+            continue
+
+    for key in ("coverage_end_date", "coverage_start_date"):
+        value = row.get(key)
+        if value:
+            try:
+                year = int(str(value)[:4])
+                return year if year % 2 == 0 else year + 1
+            except (TypeError, ValueError):
+                continue
+    return None
+
+
 def _latest_candidate_total(candidate_id):
     data = _fec_get(
         f"/candidate/{candidate_id}/totals/",
@@ -2180,11 +2745,30 @@ def _latest_candidate_total(candidate_id):
         return None
 
     current_cycle = _current_election_cycle()
-    eligible = [row for row in totals if int(row.get("cycle") or 0) <= current_cycle]
-    return (eligible or totals)[0]
+    # Attach a resolved cycle to each row (some historical rows have cycle=None),
+    # then pick the most RECENT cycle within range that actually has money -- an
+    # ancient empty record must not shadow a real recent one.
+    annotated = []
+    for row in totals:
+        eff = _effective_totals_cycle(row)
+        if eff is None or eff > current_cycle:
+            continue
+        annotated.append((eff, _safe_amount(row.get("receipts")), row))
+
+    if not annotated:
+        return totals[0]
+
+    funded = [item for item in annotated if item[1] > 0]
+    pool = funded or annotated
+    eff_cycle, _receipts, best = max(pool, key=lambda item: item[0])
+    # Ensure downstream by_size / by_state calls get a valid cycle.
+    best = {**best, "cycle": best.get("cycle") or eff_cycle}
+    return best
 
 
 def _fec_candidate_rows(path, candidate_id, cycle):
+    if cycle in (None, ""):
+        return []
     data = _fec_get(
         path,
         params={
@@ -2247,7 +2831,37 @@ def _ethics_letter_grade(score):
     return "F"
 
 
+def _ethics_bench(value, lo, mid, hi):
+    """Map a raw 0-1 campaign-finance ratio onto a 0-100 sub-score against real
+    FEC benchmarks: `lo` (poor) -> 45, `mid` (typical member) -> 75, `hi`
+    (strong) -> 95, clamped to [25, 100]. This is the calibration the old
+    `share * 100` mapping lacked: a typical ~15% small-donor share used to score
+    15/100 and crater every grade into the C/D band regardless of merit; now the
+    median member lands near B- and grades actually spread across A-F.
+    """
+    if value is None:
+        return None
+    value = max(0.0, float(value))
+    if value <= lo:
+        frac = value / lo if lo > 0 else 0.0
+        return round(35 + 23 * max(0.0, min(1.0, frac)), 1)
+    if value <= mid:
+        return round(58 + 24 * (value - lo) / (mid - lo), 1)
+    if value <= hi:
+        return round(82 + 14 * (value - mid) / (hi - mid), 1)
+    span = max(hi, 1e-9)
+    return round(min(100.0, 96 + 4 * (value - hi) / span), 1)
+
+
 def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
+    """Grade a member's *campaign-finance independence* from FEC totals.
+
+    This is a funding-transparency measure (small-donor reliance, PAC/self/party
+    independence, donor diversity, local support) -- not an allegation of personal
+    misconduct. Each axis is normalized against real congressional-fundraising
+    benchmarks (see `_ethics_bench`) so leadership-tier fundraisers who take large
+    and PAC money land mid-pack rather than being unfairly floored.
+    """
     individual = _safe_amount(totals.get("individual_contributions"))
     itemized = _safe_amount(totals.get("individual_itemized_contributions"))
     unitemized = _safe_amount(totals.get("individual_unitemized_contributions"))
@@ -2263,16 +2877,25 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
         + _safe_amount(totals.get("loan_repayments_candidate_loans"))
     )
 
+    # Small-donor reliance: unitemized (<=$200) share of individual money.
     small_donor_share = _ratio(unitemized, individual)
+    # PAC independence: how little of contributions come from PAC + party money.
     pac_dependence = _ratio(pac + party, contributions)
+    pac_independence = None if pac_dependence is None else 1 - pac_dependence
+    # Self/party independence: how little comes from the candidate's own wallet
+    # and party transfers (a cleaner "not bankrolled" signal than PAC alone).
     self_party_share = _ratio(candidate_funding + party, receipts)
+    self_party_independence = None if self_party_share is None else 1 - self_party_share
 
+    # Donor diversity: how little of itemized money comes from $2,000+ (near-max)
+    # donors. High concentration -> more beholden to a narrow big-donor base.
     large_donor_total = sum(
         _safe_amount(row.get("total"))
         for row in by_size
         if _safe_amount(row.get("size")) >= 2000
     )
     donor_concentration = _ratio(large_donor_total, itemized or individual)
+    donor_diversity = None if donor_concentration is None else 1 - donor_concentration
 
     state = _member_state_code(member)
     state_total = sum(
@@ -2283,22 +2906,34 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
     all_state_total = sum(_safe_amount(row.get("total")) for row in by_state)
     in_state_share = _ratio(state_total, all_state_total)
 
+    # Benchmarks (lo=poor, mid=typical incumbent, hi=strong) drawn from the shape
+    # of real congressional fundraising: small-donor share is usually 5-20%;
+    # incumbents take 30-45% PAC money; near-max donors are a large slice of
+    # itemized receipts; out-of-state fundraising is common for leadership.
     components = {
-        "small_donor": _component(small_donor_share, (small_donor_share or 0) * 100, 0.30),
+        "small_donor": _component(
+            small_donor_share,
+            _ethics_bench(small_donor_share, 0.05, 0.18, 0.40),
+            0.30,
+        ),
         "pac_independence": _component(
-            pac_dependence,
-            None if pac_dependence is None else (1 - pac_dependence) * 100,
+            pac_independence,
+            _ethics_bench(pac_independence, 0.45, 0.65, 0.90),
             0.25,
         ),
-        "donor_concentration": _component(
-            donor_concentration,
-            None if donor_concentration is None else (1 - donor_concentration) * 100,
+        "donor_diversity": _component(
+            donor_diversity,
+            _ethics_bench(donor_diversity, 0.35, 0.60, 0.85),
             0.20,
         ),
-        "in_state_support": _component(in_state_share, (in_state_share or 0) * 100, 0.15),
         "self_party_independence": _component(
-            self_party_share,
-            None if self_party_share is None else (1 - self_party_share) * 100,
+            self_party_independence,
+            _ethics_bench(self_party_independence, 0.70, 0.90, 0.99),
+            0.15,
+        ),
+        "in_state_support": _component(
+            in_state_share,
+            _ethics_bench(in_state_share, 0.10, 0.30, 0.60),
             0.10,
         ),
     }
@@ -2332,7 +2967,12 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
             "party": candidate.get("party"),
         },
         "components": components,
-        "notes": [],
+        "notes": [
+            "This grade measures campaign-finance independence (small-donor reliance, "
+            "PAC/self/party independence, donor diversity) from FEC filings. It is not a "
+            "finding of personal misconduct or a legal ethics ruling.",
+        ],
+        "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     }
 
 
@@ -2533,7 +3173,12 @@ def _precomputed_fec_ethics(bioguide_id):
     """A committed build-time live FEC ethics grade (docs/data/ethics/<id>.json),
     if present — served by the live API so it doesn't spend per-request FEC quota."""
     payload = _read_json_file(STATIC_PRECOMPUTED_ETHICS_DIR / f"{bioguide_id}.json", None)
-    if payload and payload.get("source") == "fec_live" and payload.get("grade"):
+    if (
+        payload
+        and payload.get("source") == "fec_live"
+        and payload.get("grade")
+        and payload.get("method") == ETHICS_METHOD_VERSION
+    ):
         return payload
     return None
 

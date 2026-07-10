@@ -1,40 +1,34 @@
 {
-  "generated_at": "2026-07-07T00:00:00Z",
+  "generated_at": "2026-07-10T18:30:12.516688+00:00",
   "methodology": {
-    "version": "ygn-gerrymander-static-v1",
-    "disclaimer": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated.",
+    "version": "ygn-gerrymander-research-v2",
+    "summary": "Per-state congressional gerrymandering risk from a weighted blend of redistricting control (0.45), documented partisan skew (0.40), and a district-shape proxy (0.15). Process is weighted highest so a lopsided map drawn by a neutral body scores lower than a deliberately rigged single-party map. Single-district (at-large) states cannot be gerrymandered and score minimal.",
     "weights": {
-      "district_shape": 0.25,
-      "voting_numbers": 0.25,
-      "party_in_power_at_redistricting": 0.15,
-      "political_events": 0.15,
-      "social_indicators": 0.1,
-      "individual_donations": 0.1
+      "process": 0.45,
+      "partisan_skew": 0.4,
+      "shape": 0.15
     },
+    "disclaimer": "Educational model for civic context. It is not a court finding or a legal determination that any map is an unlawful gerrymander.",
     "sources": [
       {
-        "label": "U.S. Census Cartographic Boundary Files",
-        "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+        "label": "Princeton Gerrymandering Project - Redistricting Report Card",
+        "url": "https://gerrymander.princeton.edu/redistricting-report-card/"
       },
       {
-        "label": "U.S. Census 119th Congressional District Maps",
-        "url": "https://www.census.gov/geographies/reference-maps/2025/geo/cong-dist-119-wall.html"
+        "label": "PlanScore - efficiency gap and partisan bias metrics",
+        "url": "https://planscore.org/metrics/"
       },
       {
-        "label": "NCSL Redistricting Criteria",
-        "url": "https://www.ncsl.org/elections-and-campaigns/redistricting-criteria"
+        "label": "Brennan Center - Who Controlled Redistricting in Every State",
+        "url": "https://www.brennancenter.org/our-work/research-reports/who-controlled-redistricting-every-state"
       },
       {
-        "label": "Federal Election Commission Data",
-        "url": "https://www.fec.gov/data/browse-data/"
+        "label": "Loyola Law School - All About Redistricting",
+        "url": "https://redistricting.lls.edu/national-overview/"
       },
       {
-        "label": "Efficiency Gap Research Paper",
+        "label": "Stephanopoulos & McGhee - Partisan Gerrymandering and the Efficiency Gap",
         "url": "https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=1946&context=public_law_and_legal_theory"
-      },
-      {
-        "label": "USDOT/BTS Congressional Districts Feature Layer",
-        "url": "https://data-usdot.opendata.arcgis.com/datasets/usdot::congressional-districts/about"
       }
     ]
   },
@@ -56,26 +50,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 69,
-        "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 45,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 71,
-          "voting": 69,
-          "control": 73,
-          "events": 79,
-          "social": 58,
-          "donations": 53
+          "process": 40,
+          "partisan_skew": 52,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -95,26 +87,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     },
@@ -135,26 +125,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 34,
+        "score": 22,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 36,
-          "voting": 41,
-          "control": 23,
-          "events": 29,
-          "social": 38,
-          "donations": 33
+          "process": 16,
+          "partisan_skew": 24,
+          "shape": 32
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Independent citizen commission",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -174,26 +162,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 52,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 47,
-          "voting": 60,
-          "control": 64,
-          "events": 40,
-          "social": 49,
-          "donations": 44
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -213,26 +199,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 23,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 33,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 23,
-          "voting": 36,
-          "control": 12,
-          "events": 16,
-          "social": 25,
-          "donations": 20
+          "process": 16,
+          "partisan_skew": 52,
+          "shape": 32
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Independent citizen commission",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -252,26 +236,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 18,
+        "score": 22,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 19,
-          "voting": 24,
-          "control": 12,
-          "events": 12,
-          "social": 21,
-          "donations": 16
+          "process": 16,
+          "partisan_skew": 24,
+          "shape": 32
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Independent citizen commission",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -291,26 +273,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 32,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 57,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 29,
-          "voting": 34,
-          "control": 46,
-          "events": 22,
-          "social": 31,
-          "donations": 26
+          "process": 72,
+          "partisan_skew": 38,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -330,26 +310,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     },
@@ -370,26 +348,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 10,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 5,
-          "voting": 10,
-          "control": 10,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -409,26 +385,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 80,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 84,
-          "voting": 74,
-          "control": 86,
-          "events": 92,
-          "social": 71,
-          "donations": 66
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -448,26 +422,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 60,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 53,
-          "voting": 58,
-          "control": 70,
-          "events": 76,
-          "social": 55,
-          "donations": 50
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -487,26 +459,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 18,
+        "score": 29,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 15,
-          "voting": 24,
-          "control": 28,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "process": 30,
+          "partisan_skew": 24,
+          "shape": 38
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Backup / political commission",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -526,26 +496,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 31,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 34,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 31,
-          "voting": 44,
-          "control": 18,
-          "events": 24,
-          "social": 33,
-          "donations": 28
+          "process": 30,
+          "partisan_skew": 38,
+          "shape": 38
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Backup / political commission",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -565,26 +533,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 73,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 82,
-          "voting": 72,
-          "control": 84,
-          "events": 60,
-          "social": 69,
-          "donations": 64
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -604,26 +570,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 57,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 54,
-          "voting": 59,
-          "control": 71,
-          "events": 47,
-          "social": 56,
-          "donations": 51
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -645,24 +609,22 @@
       "gerrymanderingIndex": {
         "score": 22,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 19,
-          "voting": 24,
-          "control": 36,
-          "events": 12,
-          "social": 21,
-          "donations": 16
+          "process": 18,
+          "partisan_skew": 24,
+          "shape": 28
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Nonpartisan legislative agency",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -682,26 +644,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 48,
+        "score": 62,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 45,
-          "voting": 50,
-          "control": 62,
-          "events": 38,
-          "social": 47,
-          "donations": 42
+          "process": 72,
+          "partisan_skew": 52,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -721,26 +681,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 63,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 70,
-          "voting": 68,
-          "control": 72,
-          "events": 48,
-          "social": 57,
-          "donations": 52
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -760,26 +718,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 74,
-        "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 45,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 78,
-          "voting": 68,
-          "control": 80,
-          "events": 86,
-          "social": 65,
-          "donations": 60
+          "process": 40,
+          "partisan_skew": 52,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -799,26 +755,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 17,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 36,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 15,
-          "voting": 18,
-          "control": 30,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "process": 34,
+          "partisan_skew": 38,
+          "shape": 40
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Bipartisan / split control",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -838,26 +792,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 71,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 73,
-          "voting": 71,
-          "control": 75,
-          "events": 81,
-          "social": 60,
-          "donations": 55
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -877,26 +829,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 35,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 57,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 30,
-          "voting": 43,
-          "control": 47,
-          "events": 23,
-          "social": 32,
-          "donations": 27
+          "process": 72,
+          "partisan_skew": 38,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -916,26 +866,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 20,
+        "score": 22,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 21,
-          "voting": 26,
-          "control": 12,
-          "events": 14,
-          "social": 23,
-          "donations": 18
+          "process": 16,
+          "partisan_skew": 24,
+          "shape": 32
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Independent citizen commission",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -955,26 +903,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 28,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 40,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 25,
-          "voting": 30,
-          "control": 42,
-          "events": 18,
-          "social": 27,
-          "donations": 22
+          "process": 40,
+          "partisan_skew": 38,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -994,26 +940,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 56,
+        "score": 62,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 51,
-          "voting": 64,
-          "control": 68,
-          "events": 44,
-          "social": 53,
-          "donations": 48
+          "process": 72,
+          "partisan_skew": 52,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1033,26 +977,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 56,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 53,
-          "voting": 58,
-          "control": 70,
-          "events": 46,
-          "social": 55,
-          "donations": 50
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1072,26 +1014,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 21,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 34,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 23,
-          "voting": 28,
-          "control": 12,
-          "events": 16,
-          "social": 25,
-          "donations": 20
+          "process": 30,
+          "partisan_skew": 38,
+          "shape": 38
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Backup / political commission",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1111,26 +1051,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 32,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 62,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 29,
-          "voting": 34,
-          "control": 46,
-          "events": 22,
-          "social": 31,
-          "donations": 26
+          "process": 72,
+          "partisan_skew": 52,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1150,26 +1088,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 37,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 34,
-          "voting": 39,
-          "control": 51,
-          "events": 27,
-          "social": 36,
-          "donations": 31
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1189,26 +1125,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 17,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 42,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 15,
-          "voting": 18,
-          "control": 30,
-          "events": 10,
-          "social": 15,
-          "donations": 15
+          "process": 34,
+          "partisan_skew": 52,
+          "shape": 40
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Bipartisan / split control",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1228,26 +1162,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 42,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 34,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 44,
-          "voting": 49,
-          "control": 31,
-          "events": 37,
-          "social": 46,
-          "donations": 41
+          "process": 30,
+          "partisan_skew": 38,
+          "shape": 38
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Backup / political commission",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1267,26 +1199,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 45,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 42,
-          "voting": 47,
-          "control": 59,
-          "events": 35,
-          "social": 44,
-          "donations": 39
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1308,24 +1238,22 @@
       "gerrymanderingIndex": {
         "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 71,
-          "voting": 69,
-          "control": 73,
-          "events": 79,
-          "social": 58,
-          "donations": 53
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1345,26 +1273,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 90,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 95,
-          "voting": 86,
-          "control": 95,
-          "events": 95,
-          "social": 83,
-          "donations": 78
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1384,26 +1310,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     },
@@ -1424,26 +1348,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 87,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 92,
-          "voting": 82,
-          "control": 94,
-          "events": 95,
-          "social": 79,
-          "donations": 74
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1463,26 +1385,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 49,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 44,
-          "voting": 57,
-          "control": 61,
-          "events": 37,
-          "social": 46,
-          "donations": 41
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1502,26 +1422,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 42,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 39,
-          "voting": 44,
-          "control": 56,
-          "events": 32,
-          "social": 41,
-          "donations": 36
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1541,26 +1459,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 34,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 40,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 31,
-          "voting": 36,
-          "control": 48,
-          "events": 24,
-          "social": 33,
-          "donations": 28
+          "process": 40,
+          "partisan_skew": 38,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1580,26 +1496,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 20,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 57,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 15,
-          "voting": 28,
-          "control": 32,
-          "events": 10,
-          "social": 17,
-          "donations": 15
+          "process": 72,
+          "partisan_skew": 38,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1619,26 +1533,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 68,
+        "score": 69,
         "label": "Elevated risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 72,
-          "voting": 62,
-          "control": 74,
-          "events": 80,
-          "social": 59,
-          "donations": 54
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1658,26 +1570,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     },
@@ -1698,26 +1608,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 82,
-        "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 84,
-          "voting": 82,
-          "control": 86,
-          "events": 92,
-          "social": 71,
-          "donations": 66
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1737,26 +1645,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 84,
+        "score": 76,
         "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 88,
-          "voting": 78,
-          "control": 90,
-          "events": 95,
-          "social": 75,
-          "donations": 70
+          "process": 72,
+          "partisan_skew": 86,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "severe"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1776,26 +1682,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 73,
-        "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 69,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 75,
-          "voting": 73,
-          "control": 77,
-          "events": 83,
-          "social": 62,
-          "donations": 57
+          "process": 72,
+          "partisan_skew": 70,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "high"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1815,26 +1719,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     },
@@ -1855,26 +1757,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 28,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 34,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 25,
-          "voting": 30,
-          "control": 42,
-          "events": 18,
-          "social": 27,
-          "donations": 22
+          "process": 40,
+          "partisan_skew": 24,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1894,26 +1794,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 22,
+        "score": 29,
         "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 24,
-          "voting": 29,
-          "control": 12,
-          "events": 17,
-          "social": 26,
-          "donations": 21
+          "process": 30,
+          "partisan_skew": 24,
+          "shape": 38
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Backup / political commission",
+          "partisan_skew_tier": "very_low"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1933,26 +1831,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 43,
-        "label": "Lower risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 62,
+        "label": "Elevated risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 38,
-          "voting": 51,
-          "control": 55,
-          "events": 31,
-          "social": 40,
-          "donations": 35
+          "process": 72,
+          "partisan_skew": 52,
+          "shape": 60
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Single-party (trifecta) control",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -1972,26 +1868,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 85,
-        "label": "High risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 45,
+        "label": "Moderate risk",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 90,
-          "voting": 80,
-          "control": 92,
-          "events": 95,
-          "social": 77,
-          "donations": 72
+          "process": 40,
+          "partisan_skew": 52,
+          "shape": 44
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "YGN educational static fallback. It is not a court finding and should be replaced by jurisdiction-specific geometry, election, Census/ACS, redistricting-control, litigation, and FEC refresh jobs as those feeds are automated."
+        "inputs": {
+          "redistricting_control": "Court-drawn or court-modified",
+          "partisan_skew_tier": "moderate"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       }
     },
     {
@@ -2011,26 +1905,24 @@
         "Population distribution, education, race, urbanization, and individual donation geography can make district politics differ sharply from statewide voting patterns."
       ],
       "gerrymanderingIndex": {
-        "score": 0,
-        "label": "No district-splitting risk",
-        "scale": "0 lower risk, 100 higher risk",
+        "score": 7,
+        "label": "Minimal (single district)",
+        "scale": "0 lower gerrymandering risk, 100 higher risk",
         "components": {
-          "shape": 0,
-          "voting": 0,
-          "control": 0,
-          "events": 0,
-          "social": 0,
-          "donations": 0
+          "process": 6,
+          "partisan_skew": 8,
+          "shape": 8
         },
         "weights": {
-          "shape": 0.25,
-          "voting": 0.25,
-          "control": 0.15,
-          "events": 0.15,
-          "social": 0.1,
-          "donations": 0.1
+          "process": 0.45,
+          "partisan_skew": 0.4,
+          "shape": 0.15
         },
-        "note": "Single at-large House district; district-line gerrymandering cannot occur inside a state with only one U.S. House district. The index still shows broader political context elsewhere, but the gerrymandering risk score is zero for district-line splitting."
+        "inputs": {
+          "redistricting_control": "Single at-large district",
+          "partisan_skew_tier": "minimal"
+        },
+        "note": "YGN research-grounded model blending redistricting control, documented partisan skew (efficiency gap / seats-vs-votes), and a district-shape proxy. Educational, not a court finding."
       },
       "districtCount": 1
     }

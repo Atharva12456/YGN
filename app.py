@@ -342,8 +342,51 @@ def recent_bills():
 
 
 @app.get("/bills/recent/digest")
-def recent_bill_digest(limit: Annotated[int, Query(ge=1, le=20)] = 5):
+def recent_bill_digest(limit: Annotated[int, Query(ge=1, le=40)] = 5):
     return _backend_response(government.getRecentBillDigest, limit=limit)
+
+
+@app.get("/bills/{congress}/{bill_type}/{number}")
+def bill_detail(
+    congress: str,
+    bill_type: str,
+    number: str,
+    include_votes: bool = True,
+):
+    return _backend_response(
+        government.get_bill_detail,
+        congress,
+        bill_type,
+        number,
+        include_votes=include_votes,
+        not_found_message=f"No Congress.gov record for {bill_type.upper()} {number}.",
+    )
+
+
+def _confidence_response(callable_, *args, **kwargs):
+    if not government.ai_insights_available():
+        return {
+            "available": False,
+            "reason": "AI insights are not configured on the server.",
+            "note": "Set AZURE_OPENAI_* (or OPENAI_*) environment variables to enable estimates.",
+        }
+    result = _backend_response(callable_, *args, **kwargs)
+    if result is None:
+        return {"available": False, "reason": "No estimate could be generated."}
+    return {"available": True, **result}
+
+
+@app.get("/ai/confidence/event")
+def event_confidence(
+    topic: Annotated[str, Query(min_length=2, max_length=200)],
+    context: Annotated[str | None, Query(max_length=500)] = None,
+):
+    return _confidence_response(government.generate_event_confidence, topic, context=context)
+
+
+@app.get("/officials/{bioguide_id}/confidence")
+def candidate_confidence(bioguide_id: str):
+    return _confidence_response(government.generate_candidate_confidence, bioguide_id)
 
 
 @app.get("/metrics/debt")
