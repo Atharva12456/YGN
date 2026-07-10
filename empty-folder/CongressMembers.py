@@ -1867,10 +1867,19 @@ def getRecentBillDigest(limit=5):
                         LOGGER.warning("Bill digest item failed: %s", exc)
             items = [item for item in items if item]
         ai_on = ai_insights_available()
-        if ai_on:
-            for item in items:
+        if ai_on and items:
+            # Generate AI impacts concurrently (reasoning models are slow; a
+            # sequential loop over 10-20 bills would blow the request budget).
+            # Bounded worker count avoids hammering the provider's rate limit.
+            def _impact_for(item):
                 try:
-                    impact = generate_bill_impact(item)
+                    return item, generate_bill_impact(item)
+                except Exception as exc:  # noqa: BLE001 - keep placeholder on failure
+                    LOGGER.warning("Bill impact generation failed: %s", exc)
+                    return item, None
+
+            with ThreadPoolExecutor(max_workers=min(5, len(items))) as pool:
+                for item, impact in pool.map(_impact_for, items):
                     if impact and impact.get("summary"):
                         item["impact"] = {
                             **item["impact"],
@@ -1879,8 +1888,6 @@ def getRecentBillDigest(limit=5):
                             "model": impact.get("model"),
                             "generated_at": impact.get("generated_at"),
                         }
-                except Exception as exc:  # noqa: BLE001 - keep the placeholder on failure
-                    LOGGER.warning("Bill impact generation failed: %s", exc)
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "congress_api",
