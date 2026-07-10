@@ -442,6 +442,72 @@ def _fec_retry_delay(response, attempt):
     return min(0.5 * (attempt + 1), 3.0)
 
 
+def fec_key_diagnostic():
+    """One live FEC call to diagnose the configured key. Read-only, cached 60s.
+
+    Distinguishes an invalid key (403), an exhausted one (429), and a working one
+    (200) by reporting the raw HTTP status + rate-limit headers. Reports the key's
+    length and last 4 chars (to catch typos / whitespace / wrong value) but never
+    the key itself.
+    """
+    cache_key = _build_cache_key("fec-diagnostic", {"v": 1})
+
+    def fetch_json():
+        source = _fec_api_key_source()
+        try:
+            api_key = _fec_api_key()
+        except MissingFecApiKey:
+            return {"ok": False, "reason": "no_key_configured", "source": source}
+
+        meta = {
+            "source": source,
+            "key_length": len(api_key),
+            "key_last4": api_key[-4:] if len(api_key) >= 4 else None,
+            "is_legacy_demo_key": api_key == _legacy_fec_api_key(),
+        }
+        try:
+            resp = requests.get(
+                f"{FEC_BASE_URL}/candidates/search/",
+                params={
+                    "q": "Sanders",
+                    "office": "S",
+                    "state": "VT",
+                    "per_page": 1,
+                    "api_key": api_key,
+                },
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+        except requests.RequestException as exc:
+            return {"ok": False, "reason": "request_failed", "error": str(exc), **meta}
+
+        result = {
+            "status": resp.status_code,
+            "rate_limit": resp.headers.get("X-RateLimit-Limit"),
+            "rate_remaining": resp.headers.get("X-RateLimit-Remaining"),
+            **meta,
+        }
+        if resp.status_code == 200:
+            try:
+                count = len(resp.json().get("results", []))
+            except ValueError:
+                count = 0
+            result["results"] = count
+            result["ok"] = count > 0
+            result["reason"] = "working" if count > 0 else "no_results"
+        else:
+            result["ok"] = False
+            result["reason"] = {403: "forbidden_or_invalid_key", 429: "rate_limited"}.get(
+                resp.status_code, "http_error"
+            )
+            try:
+                result["message"] = ((resp.json() or {}).get("error") or {}).get("message") or resp.text[:180]
+            except ValueError:
+                result["message"] = resp.text[:180]
+        return result
+
+    return _cached_json(cache_key, "fec:diagnostic", fetch_json, ttl_seconds=60)
+
+
 def _fec_get(path, params=None, ttl_seconds=None):
     cache_params = dict(params or {})
     cache_key = _build_cache_key(

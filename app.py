@@ -356,6 +356,11 @@ def economy_snapshot():
     return _backend_response(government.get_economy_snapshot)
 
 
+@app.get("/metrics/fec-status", include_in_schema=False)
+def fec_status():
+    return _backend_response(government.fec_key_diagnostic)
+
+
 @app.post("/cache/refresh")
 def refresh_cache():
     return _backend_response(government.refresh_government_officials_cache)
