@@ -370,7 +370,14 @@ def _confidence_response(callable_, *args, **kwargs):
             "reason": "AI insights are not configured on the server.",
             "note": "Set AZURE_OPENAI_* (or OPENAI_*) environment variables to enable estimates.",
         }
-    result = _backend_response(callable_, *args, **kwargs)
+    # Degrade gracefully: if the AI provider errors (bad deployment, quota, etc.)
+    # return a structured unavailable payload the UI can show, not a 502.
+    try:
+        result = callable_(*args, **kwargs)
+    except government.UpstreamDataError as exc:
+        return {"available": False, "reason": str(exc)}
+    except (requests.HTTPError, requests.RequestException):
+        return {"available": False, "reason": "The AI provider request failed."}
     if result is None:
         return {"available": False, "reason": "No estimate could be generated."}
     return {"available": True, **result}
@@ -402,6 +409,11 @@ def economy_snapshot():
 @app.get("/metrics/fec-status", include_in_schema=False)
 def fec_status():
     return _backend_response(government.fec_key_diagnostic)
+
+
+@app.get("/metrics/ai-status", include_in_schema=False)
+def ai_status():
+    return _backend_response(government.ai_key_diagnostic)
 
 
 @app.post("/cache/refresh")

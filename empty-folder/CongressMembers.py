@@ -1523,14 +1523,79 @@ def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
             json=body,
             timeout=REQUEST_TIMEOUT_SECONDS,
         )
-        response.raise_for_status()
-    except requests.RequestException:
-        raise UpstreamDataError("AI provider request failed.") from None
+    except requests.RequestException as exc:
+        LOGGER.warning("AI provider connection failed: %s", exc)
+        raise UpstreamDataError(f"AI provider request failed: {exc}") from None
+
+    if response.status_code >= 400:
+        # Surface WHY (status + a short body snippet) so misconfig is diagnosable
+        # from logs / the /metrics/ai-status endpoint instead of a blank failure.
+        snippet = (response.text or "")[:300].replace("\n", " ")
+        hint = _ai_error_hint(config, response.status_code)
+        LOGGER.warning("AI provider HTTP %s: %s", response.status_code, snippet)
+        raise UpstreamDataError(
+            f"AI provider returned HTTP {response.status_code}. {hint} Detail: {snippet}"
+        )
 
     choices = response.json().get("choices") or []
     if not choices:
         raise UpstreamDataError("AI provider returned no choices.")
     return (choices[0].get("message") or {}).get("content", "").strip()
+
+
+def _ai_error_hint(config, status_code):
+    """Human hint for the most common provider misconfigurations."""
+    if status_code in (401, 403):
+        return "Check the API key (AZURE_OPENAI_API_KEY / OPENAI_API_KEY)."
+    if status_code == 404:
+        if config.get("kind") == "azure":
+            return (
+                "The deployment was not found - set AZURE_OPENAI_DEPLOYMENT to your exact "
+                "Azure deployment name and verify AZURE_OPENAI_ENDPOINT."
+            )
+        return "The model/endpoint was not found - check OPENAI_MODEL / OPENAI_BASE_URL."
+    if status_code == 429:
+        return "Rate limited or over quota - the Azure deployment may need a quota increase."
+    if status_code == 400:
+        return (
+            "The request was rejected - the deployed model may need a different API version "
+            "or reject 'temperature'/'max_tokens'; try AZURE_OPENAI_API_VERSION=2024-08-01-preview."
+        )
+    return "Verify the provider endpoint, key, deployment/model, and API version."
+
+
+def ai_key_diagnostic():
+    """Attempt a minimal AI completion and report the outcome (no secrets). Used by
+    /metrics/ai-status so Azure/OpenAI misconfiguration is diagnosable in prod."""
+    config = _ai_provider_config()
+    if not config:
+        return {
+            "available": False,
+            "provider": None,
+            "reason": "No AI provider configured (set AZURE_OPENAI_* or OPENAI_*).",
+        }
+    result = {
+        "available": True,
+        "provider": config["kind"],
+        "model": config.get("model"),
+        "endpoint_host": None,
+        "ok": False,
+    }
+    try:
+        from urllib.parse import urlparse
+
+        result["endpoint_host"] = urlparse(config["url"]).hostname
+    except Exception:  # noqa: BLE001
+        pass
+    if config["kind"] == "azure":
+        result["api_version"] = config.get("api_version")
+    try:
+        reply = _llm_chat("You are a test.", "Reply with the single word OK.", max_tokens=5)
+        result["ok"] = True
+        result["sample"] = (reply or "")[:40]
+    except UpstreamDataError as exc:
+        result["error"] = str(exc)[:400]
+    return result
 
 
 def generate_bill_impact(bill_item):
