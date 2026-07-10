@@ -1,47 +1,49 @@
 {
   "bioguideId": "S001228",
-  "candidate": null,
+  "candidate": {
+    "candidate_id": "H4KS02164",
+    "district": "02",
+    "name": "SCHMIDT, DEREK",
+    "office": "H",
+    "party": "REP",
+    "state": "KS"
+  },
   "components": {
-    "constituency_specificity": {
-      "score": 85.2,
-      "value": 0.8,
-      "weight": 0.18
-    },
-    "disclosure_baseline": {
-      "score": 86.4,
-      "value": 0.4426,
-      "weight": 0.23
-    },
-    "public_accountability_baseline": {
-      "score": 64.3,
-      "value": 0.8097,
-      "weight": 0.24
-    },
-    "public_record_completeness": {
-      "score": 96.0,
-      "value": 1.0,
+    "donor_diversity": {
+      "score": 57.3,
+      "value": 0.3397,
       "weight": 0.2
     },
-    "service_context": {
-      "score": 76.6,
-      "value": 0.0333,
+    "in_state_support": {
+      "score": 97.7,
+      "value": 0.8596,
       "weight": 0.1
     },
-    "static_baseline_variation": {
-      "score": 82.1,
-      "value": 0.4307,
-      "weight": 0.05
+    "pac_independence": {
+      "score": 80.8,
+      "value": 0.6396,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 61.8,
+      "value": 0.0707,
+      "weight": 0.3
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-07T04:32:34.361700+00:00",
-  "grade": "B-",
-  "method": "campaign_finance_v2",
+  "generated_at": "2026-07-10T19:54:25.805888+00:00",
+  "grade": "C",
+  "method": "campaign_finance_v3",
   "notes": [
-    "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
-    "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations."
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
-  "score": 81.6,
-  "source": "static_fallback",
-  "updated_at": "2026-07-07T00:00:00+00:00"
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 74.4,
+  "source": "fec_live",
+  "updated_at": "2026-07-10T19:55:41.791222+00:00"
 }

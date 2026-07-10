@@ -4,11 +4,13 @@
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/8192?format=json",
       "committees": [],
       "congress": 119,
+      "cosponsorCount": 0,
       "description": {
         "source": "Congress.gov bill detail",
         "text": "Nitazene Response Act",
         "updated_at": "2026-04-13T14:39:31Z"
       },
+      "detailPath": "119/hr/8192",
       "identifier": "HR 8192",
       "impact": {
         "sources": [
@@ -31,15 +33,30 @@
       "members": [
         {
           "bioguideId": "T000490",
+          "district": 2,
+          "isOriginalCosponsor": null,
           "name": "Rep. Taylor, David J. [R-OH-2]",
           "party": "R",
           "role": "Sponsor",
+          "sponsorshipDate": null,
           "state": "OH"
         }
       ],
       "number": "8192",
       "originChamber": "House",
       "policyArea": "Crime and Law Enforcement",
+      "sponsors": [
+        {
+          "bioguideId": "T000490",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Taylor, David J. [R-OH-2]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OH"
+        }
+      ],
       "title": "Nitazene Response Act",
       "type": "HR",
       "updatedAt": "2026-04-13T14:39:31Z",
@@ -49,11 +66,13 @@
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/1142?format=json",
       "committees": [],
       "congress": 119,
+      "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
         "text": "Scarper Ridge Golden Gate National Recreation Area Boundary Adjustment Act",
         "updated_at": "2026-04-13T02:07:57Z"
       },
+      "detailPath": "119/s/1142",
       "identifier": "S 1142",
       "impact": {
         "sources": [
@@ -76,15 +95,30 @@
       "members": [
         {
           "bioguideId": "P000145",
+          "district": null,
+          "isOriginalCosponsor": null,
           "name": "Sen. Padilla, Alex [D-CA]",
           "party": "D",
           "role": "Sponsor",
+          "sponsorshipDate": null,
           "state": "CA"
         }
       ],
       "number": "1142",
       "originChamber": "Senate",
       "policyArea": "Public Lands and Natural Resources",
+      "sponsors": [
+        {
+          "bioguideId": "P000145",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Padilla, Alex [D-CA]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
       "title": "Scarper Ridge Golden Gate National Recreation Area Boundary Adjustment Act",
       "type": "S",
       "updatedAt": "2026-04-13T02:07:57Z",
@@ -94,11 +128,13 @@
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/665?format=json",
       "committees": [],
       "congress": 119,
+      "cosponsorCount": 8,
       "description": {
         "source": "Congress.gov bill summary",
         "text": "This resolution designates April 2026 as National Native Plant Month.",
         "updated_at": "2026-04-13T12:18:15Z"
       },
+      "detailPath": "119/sres/665",
       "identifier": "SRES 665",
       "impact": {
         "sources": [
@@ -121,15 +157,30 @@
       "members": [
         {
           "bioguideId": "H001079",
+          "district": null,
+          "isOriginalCosponsor": null,
           "name": "Sen. Hyde-Smith, Cindy [R-MS]",
           "party": "R",
           "role": "Sponsor",
+          "sponsorshipDate": null,
           "state": "MS"
         }
       ],
       "number": "665",
       "originChamber": "Senate",
       "policyArea": "Environmental Protection",
+      "sponsors": [
+        {
+          "bioguideId": "H001079",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Hyde-Smith, Cindy [R-MS]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MS"
+        }
+      ],
       "title": "A resolution designating April 2026 as \"National Native Plant Month\".",
       "type": "SRES",
       "updatedAt": "2026-04-13T12:18:20Z",
@@ -139,11 +190,13 @@
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/647?format=json",
       "committees": [],
       "congress": 119,
+      "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill summary",
         "text": "This resolution designates March 21, 2026, as National Osceola Turkey Day.",
         "updated_at": "2026-04-13T12:19:17Z"
       },
+      "detailPath": "119/sres/647",
       "identifier": "SRES 647",
       "impact": {
         "sources": [
@@ -166,15 +219,30 @@
       "members": [
         {
           "bioguideId": "S001217",
+          "district": null,
+          "isOriginalCosponsor": null,
           "name": "Sen. Scott, Rick [R-FL]",
           "party": "R",
           "role": "Sponsor",
+          "sponsorshipDate": null,
           "state": "FL"
         }
       ],
       "number": "647",
       "originChamber": "Senate",
       "policyArea": "Animals",
+      "sponsors": [
+        {
+          "bioguideId": "S001217",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Scott, Rick [R-FL]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
       "title": "A resolution designating March 21, 2026, as \"National Osceola Turkey Day\".",
       "type": "SRES",
       "updatedAt": "2026-04-13T12:19:23Z",
@@ -184,11 +252,13 @@
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/8143?format=json",
       "committees": [],
       "congress": 119,
+      "cosponsorCount": 2,
       "description": {
         "source": "Congress.gov bill detail",
         "text": "Ensuring Access to Lower-Cost Medicines for Seniors Act of 2026.",
         "updated_at": "2026-04-13T14:34:23Z"
       },
+      "detailPath": "119/hr/8143",
       "identifier": "HR 8143",
       "impact": {
         "sources": [
@@ -211,15 +281,30 @@
       "members": [
         {
           "bioguideId": "M001163",
+          "district": 7,
+          "isOriginalCosponsor": null,
           "name": "Rep. Matsui, Doris O. [D-CA-7]",
           "party": "D",
           "role": "Sponsor",
+          "sponsorshipDate": null,
           "state": "CA"
         }
       ],
       "number": "8143",
       "originChamber": "House",
       "policyArea": "Health",
+      "sponsors": [
+        {
+          "bioguideId": "M001163",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Matsui, Doris O. [D-CA-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
       "title": "Ensuring Access to Lower-Cost Medicines for Seniors Act of 2026.",
       "type": "HR",
       "updatedAt": "2026-04-13T14:34:23Z",
@@ -227,7 +312,7 @@
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-07-10T15:05:06.690222+00:00",
+  "generated_at": "2026-07-10T19:54:28.448177+00:00",
   "impact_status": "placeholder_until_ai_key",
   "source": "congress_api"
 }
