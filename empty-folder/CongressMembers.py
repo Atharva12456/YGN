@@ -1494,53 +1494,84 @@ def ai_provider_name():
     return config["kind"] if config else None
 
 
+def _is_next_gen_model(model):
+    """gpt-5*, o1/o3/o4* reasoning models require `max_completion_tokens` (not
+    `max_tokens`) and only accept the default temperature."""
+    return bool(re.match(r"(gpt-5|o[1-4])(\b|[-_])", str(model or "").lower()))
+
+
 def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
     config = _ai_provider_config()
     if not config:
         raise UpstreamDataError("No AI provider is configured.")
 
-    body = {
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-    }
-    params = None
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
     if config["kind"] == "azure":
         headers = {"api-key": config["key"], "Content-Type": "application/json"}
         params = {"api-version": config["api_version"]}
     else:
         headers = {"Authorization": f"Bearer {config['key']}", "Content-Type": "application/json"}
-        body["model"] = config["model"]
+        params = None
 
-    try:
-        response = requests.post(
-            config["url"],
-            params=params,
-            headers=headers,
-            json=body,
-            timeout=REQUEST_TIMEOUT_SECONDS,
-        )
-    except requests.RequestException as exc:
-        LOGGER.warning("AI provider connection failed: %s", exc)
-        raise UpstreamDataError(f"AI provider request failed: {exc}") from None
+    # Start from a model-name heuristic, then adapt to the two common 400s
+    # ("use max_completion_tokens" / "temperature not supported") so this works
+    # across gpt-4o-mini AND gpt-5/o-series without per-deployment config.
+    state = {"modern": _is_next_gen_model(config.get("model")), "temperature": True}
 
-    if response.status_code >= 400:
-        # Surface WHY (status + a short body snippet) so misconfig is diagnosable
-        # from logs / the /metrics/ai-status endpoint instead of a blank failure.
-        snippet = (response.text or "")[:300].replace("\n", " ")
+    def build_body():
+        body = {"messages": messages}
+        if state["modern"]:
+            # Reasoning models spend part of the budget on hidden reasoning, so
+            # give output enough headroom that it isn't starved to empty.
+            body["max_completion_tokens"] = max(max_tokens * 4, 1200)
+        else:
+            body["max_tokens"] = max_tokens
+            if state["temperature"]:
+                body["temperature"] = temperature
+        if config["kind"] != "azure":
+            body["model"] = config["model"]
+        return body
+
+    last_error = None
+    for _ in range(3):
+        try:
+            response = requests.post(
+                config["url"], params=params, headers=headers,
+                json=build_body(), timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+        except requests.RequestException as exc:
+            LOGGER.warning("AI provider connection failed: %s", exc)
+            raise UpstreamDataError(f"AI provider request failed: {exc}") from None
+
+        if response.status_code < 400:
+            choices = response.json().get("choices") or []
+            content = (choices[0].get("message") or {}).get("content", "").strip() if choices else ""
+            if content:
+                return content
+            raise UpstreamDataError("AI provider returned an empty completion.")
+
+        body_text = (response.text or "")
+        low = body_text.lower()
+        # Adaptive parameter fixes (retry once each).
+        if response.status_code == 400 and "max_completion_tokens" in low and not state["modern"]:
+            state["modern"] = True
+            continue
+        if response.status_code == 400 and "temperature" in low and state["temperature"] and not state["modern"]:
+            state["temperature"] = False
+            continue
+
+        snippet = body_text[:300].replace("\n", " ")
         hint = _ai_error_hint(config, response.status_code)
         LOGGER.warning("AI provider HTTP %s: %s", response.status_code, snippet)
-        raise UpstreamDataError(
+        last_error = UpstreamDataError(
             f"AI provider returned HTTP {response.status_code}. {hint} Detail: {snippet}"
         )
+        break
 
-    choices = response.json().get("choices") or []
-    if not choices:
-        raise UpstreamDataError("AI provider returned no choices.")
-    return (choices[0].get("message") or {}).get("content", "").strip()
+    raise last_error or UpstreamDataError("AI provider request failed after parameter adaptation.")
 
 
 def _ai_error_hint(config, status_code):

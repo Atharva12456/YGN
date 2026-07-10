@@ -92,6 +92,13 @@ class ConfidenceParsingTests(unittest.TestCase):
             self.assertIsNone(self.gov.generate_event_confidence("Test war"))
             self.assertIsNone(self.gov.generate_candidate_confidence("A000001"))
 
+    def test_next_gen_model_detection(self):
+        f = self.gov._is_next_gen_model
+        for m in ["gpt-5-mini", "gpt-5", "o1-mini", "o3", "o4-mini"]:
+            self.assertTrue(f(m), m)
+        for m in ["gpt-4o-mini", "gpt-4o", "gpt-4.1", "gpt-35-turbo", "", None]:
+            self.assertFalse(f(m), m)
+
 
 if __name__ == "__main__":
     unittest.main()
