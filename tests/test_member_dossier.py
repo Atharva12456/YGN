@@ -47,6 +47,19 @@ class MemberDossierBackendTests(unittest.TestCase):
 
         self.assertEqual(captured["params"]["state"], "VT")
 
+    def test_cached_json_dynamic_ttl_depends_on_result(self):
+        captured = {}
+        with patch.object(self.gov, "_read_cache", return_value=None), patch.object(
+            self.gov, "_write_cache",
+            side_effect=lambda k, v, s, ttl_seconds=None: captured.update({"ttl": ttl_seconds}),
+        ):
+            ttl_for = (lambda r: self.gov.FEC_LIVE_CACHE_TTL_SECONDS
+                       if r.get("source") == "fec_live" else 900)
+            self.gov._cached_json_dynamic("k1", "src", lambda: {"source": "fec_live"}, ttl_for)
+            self.assertEqual(captured["ttl"], self.gov.FEC_LIVE_CACHE_TTL_SECONDS)
+            self.gov._cached_json_dynamic("k2", "src", lambda: {"source": "static_fallback"}, ttl_for)
+            self.assertEqual(captured["ttl"], 900)
+
     # --- committees (extra feature) ---------------------------------------
 
     def test_committees_map_full_and_subcommittee_assignments(self):

@@ -389,6 +389,39 @@ def _cached_json(cache_key, source, fetch_json, ttl_seconds=None):
         return response_json
 
 
+# Live FEC-backed results (ethics grades, funding) are cached far longer than the
+# default because campaign-finance data changes monthly, not every 15 minutes —
+# this cuts FEC calls ~100x for warm members so a modest key covers the roster.
+FEC_LIVE_CACHE_TTL_SECONDS = 24 * 60 * 60
+
+
+def _cached_json_dynamic(cache_key, source, fetch_json, ttl_for):
+    """Like _cached_json, but the TTL is derived from the fetched result via
+    ttl_for(result). Lets a successful live result cache for a long time while a
+    fallback/failure caches briefly so it retries soon (e.g. once quota resets)."""
+    fresh_response = _read_cache(cache_key)
+    if fresh_response is not None:
+        return fresh_response
+
+    key_lock = _cache_lock_for_key(cache_key)
+    with key_lock:
+        fresh_response = _read_cache(cache_key)
+        if fresh_response is not None:
+            return fresh_response
+
+        try:
+            response_json = fetch_json()
+        except Exception:
+            stale_response = _read_cache(cache_key, allow_stale=True)
+            if stale_response is not None:
+                LOGGER.warning("Returning stale cache data for %s.", source, exc_info=True)
+                return stale_response
+            raise
+
+        _write_cache(cache_key, response_json, source, ttl_seconds=ttl_for(response_json))
+        return response_json
+
+
 def _congress_get(path, params=None, ttl_seconds=None):
     cache_params = dict(params or {})
     cache_params.setdefault("format", "json")
@@ -2510,11 +2543,13 @@ def get_ethics_score(bioguide_id: str):
         except (MissingCongressApiKey, MissingFecApiKey, UpstreamDataError, requests.RequestException):
             return _static_ethics_fallback(bioguide_id, member)
 
-    return _cached_json(
+    return _cached_json_dynamic(
         cache_key,
         f"ethics:score:{bioguide_id}",
         fetch_json,
-        ttl_seconds=_cache_ttl_seconds(),
+        lambda result: FEC_LIVE_CACHE_TTL_SECONDS
+        if (result or {}).get("source") == "fec_live"
+        else _cache_ttl_seconds(),
     )
 
 
@@ -3167,11 +3202,13 @@ def get_funding_summary(bioguide_id):
         )
         return base
 
-    return _cached_json(
+    return _cached_json_dynamic(
         cache_key,
         f"funding:{bioguide_id}",
         fetch_json,
-        ttl_seconds=_cache_ttl_seconds(),
+        lambda result: FEC_LIVE_CACHE_TTL_SECONDS
+        if (result or {}).get("available")
+        else _cache_ttl_seconds(),
     )
 
 
