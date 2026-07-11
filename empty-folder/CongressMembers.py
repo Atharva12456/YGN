@@ -1653,7 +1653,9 @@ def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
 
         if response.status_code < 400:
             choices = response.json().get("choices") or []
-            content = (choices[0].get("message") or {}).get("content", "").strip() if choices else ""
+            # `content` can be explicitly null (reasoning models that exhaust
+            # max_completion_tokens on hidden reasoning), so coalesce before strip.
+            content = ((choices[0].get("message") or {}).get("content") or "").strip() if choices else ""
             if content:
                 return content
             raise UpstreamDataError("AI provider returned an empty completion.")

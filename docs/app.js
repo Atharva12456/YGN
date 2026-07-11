@@ -747,7 +747,10 @@ async function initCongressBalance() {
     const total = t.D + t.R + t.I || 1;
     const seg = (n, cls, label) => n > 0
       ? `<span class="cb-seg ${cls}" style="width:${(n / total) * 100}%" title="${label}: ${n}">${n}</span>` : '';
-    const majority = t.D > t.R ? 'Democratic' : t.R > t.D ? 'Republican' : 'Split';
+    // Independents in the modern Senate caucus with Democrats; fold them in so
+    // the "who controls" label reflects governing control, not just raw D vs R.
+    const dCaucus = t.D + t.I;
+    const majority = dCaucus > t.R ? 'Democratic' : t.R > dCaucus ? 'Republican' : 'Evenly split';
     return `<div class="cb-chamber">
       <div class="cb-head"><strong>${esc(name)}</strong><span class="cb-majority">${esc(majority)} majority</span></div>
       <div class="cb-bar">${seg(t.D, 'party-d', 'Democrats')}${seg(t.I, 'party-i', 'Independents')}${seg(t.R, 'party-r', 'Republicans')}</div>
@@ -830,7 +833,8 @@ function renderBillRows() {
     recentBillsStatus.textContent = `${source === 'api' ? 'Live Congress.gov data' : 'Static fallback data'}.${generatedAt}`;
   }
 
-  renderCivicPulse(limited, digest);
+  // Pulse reflects the active filter (falls back to the full slice when unfiltered).
+  renderCivicPulse(bills.length ? bills : limited, digest);
 
   if (bills.length === 0) {
     const empty = document.createElement('div');
