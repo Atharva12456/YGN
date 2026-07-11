@@ -2025,13 +2025,25 @@ def generate_candidate_confidence(bioguide_id):
 # Cap on FRESH AI impact calls per cold digest build. Committed impacts (from
 # bill-ai.json) are always applied for free; only bills lacking one and beyond
 # this budget keep the placeholder until the snapshot job fills them in.
-AI_DIGEST_IMPACT_BUDGET = 25
+AI_DIGEST_IMPACT_BUDGET = 6
+
+
+def _bill_ai_live_enabled():
+    """Whether live requests may spend model calls generating bill AI inline.
+
+    Default OFF: generating many gpt-5-mini impacts inside one request blows
+    Heroku's 30s limit (the digest 503s). Instead the site serves committed
+    content (bill-ai.json) and the build-time snapshot job -- which has no request
+    limit -- generates the rest. Flip YGN_BILL_AI_LIVE=1 to allow a small live
+    top-up for the newest uncommitted bills."""
+    _load_local_env()
+    return os.getenv("YGN_BILL_AI_LIVE", "0") not in {"0", "false", "False", ""}
 
 
 def getRecentBillDigest(limit=5):
     limit = max(1, min(int(limit), 40))
     cache_key = _build_cache_key(
-        "recent-bill-digest-v2",
+        "recent-bill-digest-v3",
         {
             "limit": limit,
         },
@@ -2070,8 +2082,10 @@ def getRecentBillDigest(limit=5):
             else:
                 need_ai.append(item)
 
+        # Only top up live when explicitly enabled (default off) so the digest
+        # never fans out into a request-timeout; committed content covers the rest.
         ai_on = ai_insights_available()
-        if ai_on and need_ai:
+        if ai_on and need_ai and _bill_ai_live_enabled():
             budget = need_ai[:AI_DIGEST_IMPACT_BUDGET]
 
             def _impact_for(item):
