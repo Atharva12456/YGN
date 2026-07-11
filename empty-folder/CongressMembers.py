@@ -1640,7 +1640,7 @@ def refresh_bill_ai(congress, bill_type, number, *, force=False):
 AI_IMPACT_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_DESCRIPTION_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_PENDING_JOB_TTL_SECONDS = 7 * 24 * 60 * 60
-AI_BILL_CONTENT_VERSION = "bill-ai-v5"
+AI_BILL_CONTENT_VERSION = "bill-ai-v6"
 AI_REFRESH_QUEUE_SOURCE = "ai-refresh-queue"
 # Model calls get a longer HTTP timeout than ordinary API fetches: reasoning
 # models chew on the full bill text for well over the global 20s.
@@ -2200,12 +2200,13 @@ def generate_bill_impact(bill_item, *, force=False):
     def fetch_json():
         user_prompt = (
             f"{context}\n\n"
-            "In 2-3 COMPLETE sentences totalling AT MOST 60 words, explain what this bill "
-            "would do and specifically who or what it would affect if enacted -- name the "
-            "actual groups, agencies, industries, states, or programs, drawing on the bill "
-            "text above and what you know about this policy area. Every sentence must carry "
-            "substance; no meta-commentary about sources or missing information. Finish every "
-            "sentence; never end with '...' or a cut-off clause."
+            "In 2 COMPLETE sentences totalling STRICTLY 45 words or fewer (this is a hard "
+            "limit -- count them), explain what this bill would do and specifically who or "
+            "what it would affect if enacted -- name the actual groups, agencies, industries, "
+            "states, or programs, drawing on the bill text above and what you know about this "
+            "policy area. Every sentence must carry substance; no meta-commentary about sources "
+            "or missing information. Finish every sentence; never end with '...' or a cut-off "
+            "clause. If you approach the limit, stop at a complete sentence."
         )
         summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=260)
         return {
@@ -2256,11 +2257,13 @@ def generate_bill_description(bill_item, *, force=False):
     def fetch_json():
         user_prompt = (
             f"{context}\n\n"
-            "In 2-3 COMPLETE sentences totalling AT MOST 65 words, describe what this bill "
-            "is and the concrete change it proposes, then its scope (who/what it covers), "
-            "working from the bill text above and your knowledge of this policy area. Every "
-            "sentence must carry substance; no meta-commentary about sources or missing "
-            "information. Finish every sentence; never end with '...' or a cut-off clause."
+            "In 2 COMPLETE sentences totalling STRICTLY 50 words or fewer (this is a hard "
+            "limit -- count them), describe what this bill is and the concrete change it "
+            "proposes, then its scope (who/what it covers), working from the bill text above "
+            "and your knowledge of this policy area. Every sentence must carry substance; no "
+            "meta-commentary about sources or missing information. Finish every sentence; "
+            "never end with '...' or a cut-off clause. If you approach the limit, stop at a "
+            "complete sentence."
         )
         summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=240)
         return {

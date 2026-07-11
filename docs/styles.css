@@ -393,13 +393,16 @@ button {
 
 .bill-row {
   display: grid;
+  /* Description + Impacts carry the AI prose, so give them the most room; the
+     text is shown in full (no clamp), and wider columns keep rows from getting
+     tall. Members + Other Info are narrower. */
   grid-template-columns:
-    minmax(220px, 0.9fr)
-    minmax(300px, 1.25fr)
-    minmax(220px, 0.85fr)
-    minmax(270px, 1fr)
-    minmax(270px, 1fr);
-  min-width: 1280px;
+    minmax(190px, 0.8fr)
+    minmax(300px, 1.55fr)
+    minmax(170px, 0.65fr)
+    minmax(300px, 1.55fr)
+    minmax(210px, 0.85fr);
+  min-width: 1320px;
   border-top: 1px solid var(--color-border);
 }
 
@@ -2782,7 +2785,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .foreign-bill-meta { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Civic data features: who-represents, weekly brief, vote spotlight,
+   Civic data features: weekly brief, vote spotlight,
    on-this-day, recent laws, hearings, glossary, EOs, treaties, bill stepper
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -2796,33 +2799,10 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 }
 .otd-label { font-weight: 700; color: var(--color-accent); margin-right: 0.4rem; text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.04em; }
 
-/* Who represents me */
-.who-represents {
-  margin-top: 2.25rem; background: var(--color-surface); border: 1px solid var(--color-border);
-  border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.5rem 1.6rem;
-}
-.wr-intro { color: var(--color-text-muted); max-width: 62ch; margin: 0.4rem 0 1rem; }
-.wr-picker { max-width: 320px; display: block; }
-.wr-picker select { width: 100%; padding: 0.55rem 0.7rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.95rem; background: var(--color-bg); color: var(--color-text); }
-.wr-group { margin-top: 1.1rem; }
-.wr-group h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 0.5rem; }
-.wr-cards { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.wr-card {
-  display: inline-flex; flex-direction: column; gap: 0.15rem; text-decoration: none;
-  border: 1px solid var(--color-border); border-left-width: 4px; border-radius: var(--radius-sm);
-  padding: 0.55rem 0.9rem; background: var(--color-bg); color: var(--color-text); min-width: 180px;
-}
-a.wr-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-card); }
-.wr-card.party-d { border-left-color: #3b6fd4; }
-.wr-card.party-r { border-left-color: #d0453f; }
-.wr-card.party-i { border-left-color: #7a5bd0; }
-.wr-name { font-weight: 600; }
-.wr-meta { font-size: 0.8rem; color: var(--color-text-muted); }
-.wr-hint { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.8rem; }
-
-/* Home civic row: weekly brief + vote spotlight side by side */
-.home-civic-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
-@media (max-width: 860px) { .home-civic-row { grid-template-columns: 1fr; } }
+/* Home civic row: weekly brief + vote spotlight. auto-fit so a single visible
+   card fills the width (weekly brief stays hidden until the AI brief is built),
+   avoiding a blank second column. */
+.home-civic-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; align-items: start; }
 .civic-card[hidden] { display: none; }
 .weekly-brief-text { line-height: 1.65; }
 

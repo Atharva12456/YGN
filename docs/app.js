@@ -429,12 +429,6 @@ async function checkHealth() {
     if (result.data) {
       healthIndicator.className = 'connected';
       healthIndicator.textContent = result.source === 'static' ? 'Static data' : 'Connected';
-      updateStatCard(
-        'stat-backend',
-        'Backend Status',
-        result.source === 'static' ? 'Static data OK' : 'Connected OK',
-        result.source === 'static' ? 'Static fallback health' : 'Live API health'
-      );
       return result.source;
     } else {
       throw new Error('non-ok status');
@@ -442,7 +436,6 @@ async function checkHealth() {
   } catch {
     healthIndicator.className = 'disconnected';
     healthIndicator.textContent = 'Disconnected';
-    updateStatCard('stat-backend', 'Backend Status', 'Disconnected', 'YGN API health');
     return null;
   }
 }
@@ -483,7 +476,7 @@ function initHomeStats() {
   updateStatCard('stat-register', 'Federal Register', '-', 'Last 7 days');
   updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'USAspending.gov');
   updateStatCard('stat-members', 'Members Tracked', '-', 'YGN static/API data');
-  updateStatCard('stat-backend', 'Backend Status', 'Checking', 'YGN API health');
+  updateStatCard('stat-laws', 'Laws Enacted', '-', 'This Congress');
 }
 
 function initDailyQuote() {
@@ -695,16 +688,12 @@ function renderCivicPulse(bills, digest) {
     .sort()
     .pop();
 
+  const policyAreas = new Set(bills.map(b => b.policyArea).filter(Boolean));
   const cards = [
     ['Bills Tracked', String(bills.length), digest.source === 'congress_api' ? 'Congress.gov digest' : 'Static fallback'],
     ['Newest Update', formatShortDate(newestDate) || '-', 'From top recent bills'],
     ['Top Chamber', topChamber ? `${topChamber[0]} (${topChamber[1]})` : '-', 'Within this digest'],
-    (() => {
-      const withAi = bills.filter(b => b.impact && b.impact.status === 'AI impact analysis').length;
-      return withAi > 0
-        ? ['AI Analyses', `${withAi}/${bills.length}`, 'Plain-language impact coverage']
-        : ['Impact Status', 'Queued', 'Generated at next content refresh'];
-    })()
+    ['Policy Areas', String(policyAreas.size || '-'), 'Distinct topics in view']
   ];
 
   cards.forEach(([label, value, source]) => {
@@ -981,13 +970,10 @@ function renderBillRows() {
     const impactCell = document.createElement('div');
     const impact = bill.impact || {};
     appendText(impactCell, 'bill-impact-status', impact.status || 'Pending AI impact analysis', 'strong');
-    appendText(impactCell, 'bill-description', impact.summary || 'AI impact analysis is queued and will appear after the next content refresh.');
-    const sources = document.createElement('div');
-    sources.className = 'bill-source-links';
-    (impact.sources || []).forEach(sourceItem => {
-      appendLink(sources, sourceItem.label || 'Source', sourceItem.url);
-    });
-    impactCell.appendChild(sources);
+    // Word-limited AI impact, shown in full (bill-description--ai does not clamp),
+    // so it never ends in an ellipsis. The redundant Congress.gov link is dropped
+    // to give the analysis the whole cell.
+    appendText(impactCell, 'bill-description bill-description--ai', impact.summary || 'AI impact analysis is queued and will appear after the next content refresh.');
 
     const infoCell = document.createElement('div');
     const latestAction = bill.latestAction || {};
@@ -3767,65 +3753,16 @@ async function fetchCivic(name) {
   }
 }
 
-// -- Who represents me (home): the #1 civic knowledge gap -----------------------
+// -- Laws-enacted home stat (from the committed civic snapshot) -----------------
 
-async function initWhoRepresents() {
-  const host = document.getElementById('who-represents');
-  if (!host) return;
-  const select = host.querySelector('#wr-state');
-  const results = host.querySelector('#wr-results');
-  if (!select || !results) return;
-
-  Object.entries(STATE_ABBR_TO_NAME).forEach(([abbr, name]) => {
-    const option = document.createElement('option');
-    option.value = abbr;
-    option.textContent = name;
-    select.appendChild(option);
-  });
-
-  const saved = (() => { try { return localStorage.getItem('ygn_my_state') || ''; } catch (_) { return ''; } })();
-
-  async function render(abbr) {
-    if (!abbr) { results.innerHTML = ''; return; }
-    results.innerHTML = '<p class="muted-text">Loading your delegation…</p>';
-    try { await loadMemberDataOnly(); } catch (_) {
-      results.innerHTML = '<p class="muted-text">Member data could not be loaded right now.</p>';
-      return;
-    }
-    const members = getMembersForState(abbr);
-    if (!members.length) {
-      results.innerHTML = '<p class="muted-text">No current members found for that state.</p>';
-      return;
-    }
-    const senators = members.filter(m => String(getMemberChamber(m) || '').toLowerCase().includes('senate'));
-    const reps = members.filter(m => !senators.includes(m));
-    const card = m => {
-      const id = getMemberField(m, 'bioguideId');
-      const name = esc(formatMemberDisplayName(m) || 'Unknown');
-      const party = esc(memberPartyLabel(m));
-      const seat = esc(formatDistrictLabel(m) || getMemberChamber(m) || '');
-      const href = id ? withApiParam(`member.html?id=${encodeURIComponent(id)}`) : null;
-      const inner = `<span class="wr-name">${name}</span><span class="wr-meta">${party}${seat ? ` · ${seat}` : ''}</span>`;
-      return href
-        ? `<a class="wr-card party-${party.toLowerCase() || 'i'}" href="${href}">${inner}</a>`
-        : `<span class="wr-card">${inner}</span>`;
-    };
-    results.innerHTML = `
-      ${senators.length ? `<div class="wr-group"><h4>Your senators</h4><div class="wr-cards">${senators.map(card).join('')}</div></div>` : ''}
-      ${reps.length ? `<div class="wr-group"><h4>Your House member${reps.length > 1 ? 's' : ''}</h4><div class="wr-cards">${reps.map(card).join('')}</div></div>` : ''}
-      <p class="wr-hint">Click a member to see their funding, ethics grade, votes, and bills.</p>`;
-  }
-
-  select.addEventListener('change', () => {
-    const abbr = select.value;
-    try { localStorage.setItem('ygn_my_state', abbr); } catch (_) { /* private mode */ }
-    render(abbr);
-  });
-
-  if (saved && STATE_ABBR_TO_NAME[saved]) {
-    select.value = saved;
-    render(saved);
-  }
+async function initLawsStat() {
+  const card = document.getElementById('stat-laws');
+  if (!card) return;
+  const valueEl = card.querySelector('.stat-value');
+  const data = await fetchCivic('recent-laws.json');
+  const total = data && Number(data.totalLawsThisCongress);
+  if (valueEl && Number.isFinite(total)) valueEl.textContent = formatNumber(total);
+  else if (valueEl) valueEl.textContent = '—';
 }
 
 // -- This week in Congress (AI brief, regenerated only on digest change) --------
@@ -3995,7 +3932,7 @@ async function initForeignCivic() {
 }
 
 function initCivicFeatures() {
-  initWhoRepresents();
+  initLawsStat();
   initWeeklyBrief();
   initVoteSpotlight();
   initOnThisDay();
