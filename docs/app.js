@@ -664,7 +664,12 @@ function renderCivicPulse(bills, digest) {
     ['Bills Tracked', String(bills.length), digest.source === 'congress_api' ? 'Congress.gov digest' : 'Static fallback'],
     ['Newest Update', formatShortDate(newestDate) || '-', 'From top recent bills'],
     ['Top Chamber', topChamber ? `${topChamber[0]} (${topChamber[1]})` : '-', 'Within this digest'],
-    ['Impact Status', 'Queued', 'Awaiting ChatGPT API key']
+    (() => {
+      const withAi = bills.filter(b => b.impact && b.impact.status === 'AI impact analysis').length;
+      return withAi > 0
+        ? ['AI Analyses', `${withAi}/${bills.length}`, 'Plain-language impact coverage']
+        : ['Impact Status', 'Queued', 'Generated at next content refresh'];
+    })()
   ];
 
   cards.forEach(([label, value, source]) => {
@@ -924,7 +929,7 @@ function renderBillRows() {
     const impactCell = document.createElement('div');
     const impact = bill.impact || {};
     appendText(impactCell, 'bill-impact-status', impact.status || 'Pending AI impact analysis', 'strong');
-    appendText(impactCell, 'bill-description', impact.summary || 'Impact analysis will be generated after a ChatGPT API key is configured.');
+    appendText(impactCell, 'bill-description', impact.summary || 'AI impact analysis is queued and will appear after the next content refresh.');
     const sources = document.createElement('div');
     sources.className = 'bill-source-links';
     (impact.sources || []).forEach(sourceItem => {

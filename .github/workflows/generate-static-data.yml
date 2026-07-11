@@ -58,7 +58,7 @@ jobs:
         run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS"
 
       - name: Snapshot AI bill descriptions/impacts
-        run: python scripts/snapshot_bill_ai.py --limit 30
+        run: python scripts/snapshot_bill_ai.py --limit 40
 
       - name: Commit generated data
         run: |
