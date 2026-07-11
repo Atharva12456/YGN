@@ -1700,9 +1700,11 @@ def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
     def build_body():
         body = {"messages": messages}
         if state["modern"]:
-            # Reasoning models spend part of the budget on hidden reasoning, so
-            # give output enough headroom that it isn't starved to empty.
-            body["max_completion_tokens"] = max(max_tokens * 4, 1200)
+            # Reasoning models spend part of the budget on hidden reasoning, and
+            # long inputs (full bill text) can burn 1-2k reasoning tokens before a
+            # single output token -- a 1200 cap produced empty completions on big
+            # bills. Give real headroom; unused budget costs nothing.
+            body["max_completion_tokens"] = max(max_tokens * 4, 4000)
         else:
             body["max_tokens"] = max_tokens
             if state["temperature"]:
