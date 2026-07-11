@@ -72,6 +72,9 @@ jobs:
       - name: Snapshot AI bill descriptions/impacts
         run: python scripts/snapshot_bill_ai.py --limit 40
 
+      - name: Build civic data snapshots (laws, hearings, EOs, treaties, votes, weekly brief)
+        run: python scripts/build_civic_data.py
+
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"

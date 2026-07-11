@@ -929,6 +929,9 @@ function renderBillRows() {
       appendText(titleCell, 'bill-title', bill.title || 'Untitled bill', 'h3');
     }
     appendText(titleCell, 'bill-meta', [bill.congress ? `${bill.congress}th Congress` : '', bill.originChamber].filter(Boolean).join(' - '), 'p');
+    const stageWrap = document.createElement('div');
+    stageWrap.innerHTML = billStageChipHtml(bill);
+    titleCell.appendChild(stageWrap.firstElementChild);
     if (detailHref) {
       const detailLink = document.createElement('a');
       detailLink.className = 'bill-detail-link';
@@ -1180,6 +1183,61 @@ function aiBlockHtml(id, label, summary, pending) {
   </div>`;
 }
 
+// ─── Bill status stepper (Congress.gov "Status of Legislation" stages) ───────
+// Heuristic from the latest action text; the canonical labels are Introduced →
+// Passed House → Passed Senate → To President → Became Law, chamber order
+// following the origin chamber. Committee referral shows as a sub-state of
+// Introduced, matching congress.gov's tracker.
+
+function billStage(bill) {
+  const action = String((bill.latestAction || {}).text || '').toLowerCase();
+  const origin = String(bill.originChamber || '').toLowerCase();
+  const type = String(bill.type || '').toLowerCase().replace(/\./g, '');
+  const first = origin.includes('senate') || type.startsWith('s') ? 'Senate' : 'House';
+  const second = first === 'Senate' ? 'House' : 'Senate';
+
+  // Simple resolutions (HRES/SRES) live and die in one chamber; concurrent
+  // (HCONRES/SCONRES) need both but never reach the President; bills and joint
+  // resolutions follow the full congress.gov tracker.
+  const isSimpleRes = type === 'hres' || type === 'sres';
+  const isConcurrentRes = type === 'hconres' || type === 'sconres';
+  const stages = isSimpleRes
+    ? ['Introduced', `Agreed to in ${first}`]
+    : isConcurrentRes
+      ? ['Introduced', `Agreed to ${first}`, `Agreed to ${second}`]
+      : ['Introduced', `Passed ${first}`, `Passed ${second}`, 'To President', 'Became Law'];
+
+  const passedRe = chamber => new RegExp(`(passed|agreed to)( in| by)?( the)? ${chamber.toLowerCase()}`);
+  let index = 0;
+  let sub = null;
+  if (!isSimpleRes && !isConcurrentRes && /became public law|public law no|signed by president/.test(action)) index = 4;
+  else if (!isSimpleRes && !isConcurrentRes && /presented to (the )?president/.test(action)) index = 3;
+  else if (!isSimpleRes && passedRe(second).test(action)) index = 2;
+  else if (passedRe(first).test(action) || /passed\/agreed to in/.test(action) || /submitted in the senate.*agreed to/.test(action)) index = 1;
+  else if (/referred to|committee/.test(action)) { index = 0; sub = 'In committee'; }
+
+  index = Math.min(index, stages.length - 1);
+  return { stages, index, sub };
+}
+
+function billStepperHtml(bill) {
+  const { stages, index, sub } = billStage(bill);
+  const nodes = stages.map((label, i) => {
+    const cls = i < index ? 'done' : i === index ? 'current' : 'todo';
+    const subHtml = (i === index && sub) ? `<small>${esc(sub)}</small>` : '';
+    return `<li class="stage-${cls}"><span class="stage-dot"></span><span class="stage-label">${esc(label)}${subHtml}</span></li>`;
+  }).join('');
+  return `<ol class="bill-stepper" aria-label="Bill status">${nodes}</ol>`;
+}
+
+function billStageChipHtml(bill) {
+  const { stages, index, sub } = billStage(bill);
+  const label = sub || stages[index];
+  const pct = ((index + 1) / stages.length) * 100;
+  return `<span class="stage-chip" title="Status: ${esc(label)} (step ${index + 1} of ${stages.length})">
+    <span class="stage-chip-bar"><span style="width:${pct}%"></span></span>${esc(label)}</span>`;
+}
+
 function renderBillDetail(container, data) {
   const bill = (data && data.bill) || {};
   const desc = bill.description || {};
@@ -1224,6 +1282,7 @@ function renderBillDetail(container, data) {
         <div class="bill-detail-kicker">${esc(bill.identifier || '')}</div>
         <h1>${esc(bill.title || 'Untitled bill')}</h1>
         <p class="bill-detail-meta">${headMeta}</p>
+        ${billStepperHtml(bill)}
         <div class="bill-detail-links">
           ${bill.url ? `<a class="secondary-button" href="${esc(safeUrl(bill.url))}" target="_blank" rel="noopener">Open on Congress.gov</a>` : ''}
         </div>
@@ -2494,6 +2553,21 @@ function renderMemberListForState(stateInfo) {
     return;
   }
 
+  // Delegation party split at a glance before the member rows.
+  const split = { D: 0, R: 0, I: 0 };
+  members.forEach(m => {
+    const p = memberPartyLabel(m);
+    if (split[p] !== undefined) split[p] += 1;
+  });
+  const splitTotal = split.D + split.R + split.I || 1;
+  const splitSeg = (n, cls) => n > 0
+    ? `<span class="delegation-seg ${cls}" style="width:${(n / splitTotal) * 100}%">${n}</span>` : '';
+  const splitHtml = `
+    <div class="delegation-split" aria-label="Delegation party split">
+      <div class="delegation-bar">${splitSeg(split.D, 'party-d')}${splitSeg(split.I, 'party-i')}${splitSeg(split.R, 'party-r')}</div>
+      <span class="delegation-nums">${split.D}D · ${split.R}R${split.I ? ` · ${split.I}I` : ''} in this delegation</span>
+    </div>`;
+
   const visibleMembers = members.slice(0, 9);
   const rows = visibleMembers.map(member => {
     const name = esc(formatMemberDisplayName(member) || 'Unknown member');
@@ -2506,6 +2580,7 @@ function renderMemberListForState(stateInfo) {
       </div>
     `;
   });
+  rows.unshift(splitHtml);
 
   if (members.length > visibleMembers.length) {
     rows.push(`
@@ -3660,6 +3735,258 @@ async function initMemberPage() {
   }
 }
 
+// ═══ Civic data features ══════════════════════════════════════════════════════
+// All of these read COMMITTED snapshots (docs/data/civic/*.json) written by the
+// scheduled build — no upstream or model calls at request time. Sections hide
+// themselves when their snapshot is missing.
+
+async function fetchCivic(name) {
+  try {
+    const res = await fetch(`data/civic/${name}`, { cache: 'default' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (_) {
+    return null;
+  }
+}
+
+// -- Who represents me (home): the #1 civic knowledge gap -----------------------
+
+async function initWhoRepresents() {
+  const host = document.getElementById('who-represents');
+  if (!host) return;
+  const select = host.querySelector('#wr-state');
+  const results = host.querySelector('#wr-results');
+  if (!select || !results) return;
+
+  Object.entries(STATE_ABBR_TO_NAME).forEach(([abbr, name]) => {
+    const option = document.createElement('option');
+    option.value = abbr;
+    option.textContent = name;
+    select.appendChild(option);
+  });
+
+  const saved = (() => { try { return localStorage.getItem('ygn_my_state') || ''; } catch (_) { return ''; } })();
+
+  async function render(abbr) {
+    if (!abbr) { results.innerHTML = ''; return; }
+    results.innerHTML = '<p class="muted-text">Loading your delegation…</p>';
+    try { await loadMemberDataOnly(); } catch (_) {
+      results.innerHTML = '<p class="muted-text">Member data could not be loaded right now.</p>';
+      return;
+    }
+    const members = getMembersForState(abbr);
+    if (!members.length) {
+      results.innerHTML = '<p class="muted-text">No current members found for that state.</p>';
+      return;
+    }
+    const senators = members.filter(m => String(getMemberChamber(m) || '').toLowerCase().includes('senate'));
+    const reps = members.filter(m => !senators.includes(m));
+    const card = m => {
+      const id = getMemberField(m, 'bioguideId');
+      const name = esc(formatMemberDisplayName(m) || 'Unknown');
+      const party = esc(memberPartyLabel(m));
+      const seat = esc(formatDistrictLabel(m) || getMemberChamber(m) || '');
+      const href = id ? withApiParam(`member.html?id=${encodeURIComponent(id)}`) : null;
+      const inner = `<span class="wr-name">${name}</span><span class="wr-meta">${party}${seat ? ` · ${seat}` : ''}</span>`;
+      return href
+        ? `<a class="wr-card party-${party.toLowerCase() || 'i'}" href="${href}">${inner}</a>`
+        : `<span class="wr-card">${inner}</span>`;
+    };
+    results.innerHTML = `
+      ${senators.length ? `<div class="wr-group"><h4>Your senators</h4><div class="wr-cards">${senators.map(card).join('')}</div></div>` : ''}
+      ${reps.length ? `<div class="wr-group"><h4>Your House member${reps.length > 1 ? 's' : ''}</h4><div class="wr-cards">${reps.map(card).join('')}</div></div>` : ''}
+      <p class="wr-hint">Click a member to see their funding, ethics grade, votes, and bills.</p>`;
+  }
+
+  select.addEventListener('change', () => {
+    const abbr = select.value;
+    try { localStorage.setItem('ygn_my_state', abbr); } catch (_) { /* private mode */ }
+    render(abbr);
+  });
+
+  if (saved && STATE_ABBR_TO_NAME[saved]) {
+    select.value = saved;
+    render(saved);
+  }
+}
+
+// -- This week in Congress (AI brief, regenerated only on digest change) --------
+
+async function initWeeklyBrief() {
+  const host = document.getElementById('weekly-brief');
+  if (!host) return;
+  const data = await fetchCivic('weekly-brief.json');
+  if (!data || !data.summary) { host.hidden = true; return; }
+  host.innerHTML = `
+    <div class="cb-title">This week in Congress <span class="ai-badge">AI</span></div>
+    <p class="weekly-brief-text">${esc(data.summary)}</p>
+    <p class="civic-meta">Generated ${esc(formatShortDate(data.generated_at))} from the ${Number(data.billCount) || 'latest'} most recently active bills · regenerates only when activity changes</p>`;
+  host.hidden = false;
+}
+
+// -- Vote spotlight (home) ------------------------------------------------------
+
+async function initVoteSpotlight() {
+  const host = document.getElementById('vote-spotlight');
+  if (!host) return;
+  const data = await fetchCivic('vote-spotlight.json');
+  const votes = (data && data.votes) || [];
+  if (!votes.length) { host.hidden = true; return; }
+  const rows = votes.map(v => {
+    const total = (v.yea || 0) + (v.nay || 0) || 1;
+    const yeaPct = ((v.yea || 0) / total) * 100;
+    const href = v.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(v.detailPath)}`) : null;
+    const title = esc(v.billTitle || v.identifier || 'Bill');
+    const head = href ? `<a href="${href}">${title}</a>` : title;
+    return `<div class="spotlight-row">
+      <div class="spotlight-head">${head}<span class="spotlight-meta">${esc(v.chamber || '')} · ${esc(v.question || 'Vote')} · ${esc(formatShortDate(v.date))}</span></div>
+      <div class="spotlight-bar" title="Yea ${v.yea} — Nay ${v.nay}"><span class="yea" style="width:${yeaPct}%"></span></div>
+      <div class="spotlight-nums"><strong class="yea-n">${v.yea} yea</strong> · <strong class="nay-n">${v.nay} nay</strong> · ${esc(v.result || '')}</div>
+    </div>`;
+  }).join('');
+  host.innerHTML = `<div class="cb-title">Vote spotlight — recent roll calls</div>${rows}
+    <p class="civic-meta">Closest, fullest recent recorded votes. Click through for the member-by-member breakdown.</p>`;
+  host.hidden = false;
+}
+
+// -- On this day (home, light) ---------------------------------------------------
+
+async function initOnThisDay() {
+  const host = document.getElementById('on-this-day');
+  if (!host) return;
+  const data = await fetchCivic('on-this-day.json');
+  const events = (data && data.events) || {};
+  const now = new Date();
+  const key = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  let entry = events[key];
+  let label = 'On this day';
+  if (!entry) {
+    // Fall back to the nearest earlier entry in the same month.
+    const month = key.slice(0, 2);
+    const candidates = Object.keys(events).filter(k => k.startsWith(month) && k <= key).sort();
+    const alt = candidates.pop();
+    if (alt) { entry = events[alt]; label = 'This month in history'; }
+  }
+  if (!entry) { host.hidden = true; return; }
+  host.innerHTML = `<span class="otd-label">${esc(label)}${entry.year ? ` · ${esc(String(entry.year))}` : ''}</span> <span class="otd-text">${esc(entry.text)}</span>`;
+  host.hidden = false;
+}
+
+// -- Recently became law (bills page) --------------------------------------------
+
+async function initRecentLaws() {
+  const host = document.getElementById('recent-laws');
+  if (!host) return;
+  const data = await fetchCivic('recent-laws.json');
+  const laws = (data && data.laws) || [];
+  if (!laws.length) { host.hidden = true; return; }
+  const rows = laws.slice(0, 8).map(l => {
+    const href = l.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(l.detailPath)}`) : null;
+    const title = esc(l.title || l.identifier || 'Untitled');
+    return `<li class="law-item">
+      <span class="law-no">${esc(l.lawNumber || l.identifier || '')}</span>
+      <span class="law-title">${href ? `<a href="${href}">${title}</a>` : title}</span>
+      <span class="law-date">${esc(formatShortDate(l.actionDate))}</span>
+    </li>`;
+  }).join('');
+  const total = data.totalLawsThisCongress;
+  host.innerHTML = `
+    <div class="section-heading"><div><p class="eyebrow">Outcomes, not just process</p><h2>Recently became law</h2></div>
+    ${total ? `<span class="law-total">${esc(String(total))} laws enacted this Congress</span>` : ''}</div>
+    <ul class="law-list">${rows}</ul>`;
+  host.hidden = false;
+}
+
+// -- Upcoming hearings (bills page) ----------------------------------------------
+
+async function initHearings() {
+  const host = document.getElementById('upcoming-hearings');
+  if (!host) return;
+  const data = await fetchCivic('hearings.json');
+  const hearings = (data && data.hearings) || [];
+  if (!hearings.length) { host.hidden = true; return; }
+  const rows = hearings.slice(0, 6).map(h => `
+    <li class="hearing-item">
+      <span class="hearing-date">${esc(formatShortDate(h.date))}</span>
+      <span class="hearing-body"><strong>${esc(h.title || 'Committee meeting')}</strong>
+      <span class="hearing-meta">${esc([h.chamber, h.committee].filter(Boolean).join(' · '))}</span></span>
+    </li>`).join('');
+  host.innerHTML = `
+    <div class="section-heading"><div><p class="eyebrow">What's scheduled</p><h2>Upcoming committee hearings</h2></div></div>
+    <ul class="hearing-list">${rows}</ul>`;
+  host.hidden = false;
+}
+
+// -- Glossary (bills page, expandable; research says inline > standalone) --------
+
+async function initGlossary() {
+  const host = document.getElementById('civic-glossary');
+  if (!host) return;
+  const data = await fetchCivic('glossary.json');
+  const terms = (data && data.terms) || [];
+  if (!terms.length) { host.hidden = true; return; }
+  const rows = terms.map(t => `<div class="gloss-row"><dt>${esc(t.term)}</dt><dd>${esc(t.definition)}</dd></div>`).join('');
+  host.innerHTML = `
+    <summary><strong>Decoder: what those congressional terms actually mean</strong><span class="gloss-count">${terms.length} terms</span></summary>
+    <dl class="gloss-list">${rows}</dl>`;
+  host.hidden = false;
+}
+
+// -- Foreign affairs: executive orders + live treaty actions ----------------------
+
+async function initForeignCivic() {
+  const eoHost = document.getElementById('executive-orders');
+  if (eoHost) {
+    const data = await fetchCivic('executive-orders.json');
+    const orders = (data && data.orders) || [];
+    if (orders.length) {
+      const rows = orders.slice(0, 6).map(o => `
+        <article class="eo-card">
+          <span class="eo-number">EO ${esc(String(o.number || '—'))}</span>
+          <h3>${o.url ? `<a href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener">${esc(o.title || 'Untitled order')}</a>` : esc(o.title || 'Untitled order')}</h3>
+          <p class="eo-meta">Signed ${esc(formatShortDate(o.signedDate || o.publicationDate))}</p>
+        </article>`).join('');
+      eoHost.innerHTML = `
+        <div class="foreign-section-heading"><div><p class="eyebrow">White House actions</p><h2>Recent executive orders</h2></div>
+        <a class="secondary-button" href="https://www.federalregister.gov/presidential-documents/executive-orders" target="_blank" rel="noopener">Federal Register</a></div>
+        <div class="eo-grid">${rows}</div>
+        <p class="civic-meta">Source: Federal Register API · refreshed with each data build</p>`;
+      eoHost.hidden = false;
+    } else { eoHost.hidden = true; }
+  }
+
+  const trHost = document.getElementById('treaties-live');
+  if (trHost) {
+    const data = await fetchCivic('treaties.json');
+    const treaties = (data && data.treaties) || [];
+    if (treaties.length) {
+      const rows = treaties.slice(0, 6).map(t => `
+        <li class="treaty-item">
+          <span class="treaty-topic">${esc(t.topic || 'Treaty')}</span>
+          <span class="treaty-meta">Treaty ${esc(String(t.number || ''))}${t.congress ? ` · received ${esc(String(t.congress))}th Congress` : ''}${t.countriesText ? ` · ${esc(t.countriesText)}` : ''} · updated ${esc(formatShortDate(t.updateDate))}</span>
+        </li>`).join('');
+      trHost.innerHTML = `
+        <div class="foreign-section-heading"><div><p class="eyebrow">Senate treaty queue — live</p><h2>Latest treaty actions</h2></div>
+        <a class="secondary-button" href="https://www.congress.gov/search?q=%7B%22source%22%3A%22treaties%22%7D" target="_blank" rel="noopener">All treaties</a></div>
+        <ul class="treaty-live-list">${rows}</ul>
+        <p class="civic-meta">Source: Congress.gov treaty records · refreshed with each data build</p>`;
+      trHost.hidden = false;
+    } else { trHost.hidden = true; }
+  }
+}
+
+function initCivicFeatures() {
+  initWhoRepresents();
+  initWeeklyBrief();
+  initVoteSpotlight();
+  initOnThisDay();
+  initRecentLaws();
+  initHearings();
+  initGlossary();
+  initForeignCivic();
+}
+
 // ─── Initialisation ──────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -3717,6 +4044,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCongressBalance();
   }
   initRecentBills();
+  initCivicFeatures();
 
   // ── Navigation
   document.querySelectorAll('.main-nav button').forEach(btn => {

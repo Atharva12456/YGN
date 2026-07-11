@@ -84,6 +84,25 @@
         </div>
       </div>
 
+      <p id="on-this-day" class="on-this-day" hidden></p>
+
+      <div id="who-represents" class="who-represents" aria-labelledby="wr-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Start here</p>
+            <h2 id="wr-title">Who represents me?</h2>
+          </div>
+        </div>
+        <p class="wr-intro">Most Americans can't name their House member. Pick your state to meet your delegation — then explore their votes, funding, and ethics grade.</p>
+        <label class="filter-field wr-picker">
+          <span>Your state</span>
+          <select id="wr-state" aria-label="Select your state">
+            <option value="">Choose a state…</option>
+          </select>
+        </label>
+        <div id="wr-results" class="wr-results" aria-live="polite"></div>
+      </div>
+
       <div id="district-map" class="home-map-section">
         <div class="map-page">
           <div class="map-heading">
@@ -155,6 +174,11 @@
         <div id="civic-pulse-grid" class="civic-pulse-grid" aria-label="Recent bill civic pulse"></div>
         <p id="recent-bills-status" class="section-status">Loading recent bills</p>
         <div id="recent-bills-grid" class="recent-bills-grid" data-limit="6" aria-live="polite"></div>
+      </div>
+
+      <div class="home-civic-row">
+        <div id="weekly-brief" class="congress-balance civic-card" aria-label="This week in Congress" hidden></div>
+        <div id="vote-spotlight" class="congress-balance civic-card" aria-label="Recent notable votes" hidden></div>
       </div>
 
       <div id="home-congress-balance" class="congress-balance congress-balance--full" aria-label="Party balance in Congress" hidden></div>
