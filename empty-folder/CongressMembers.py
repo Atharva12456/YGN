@@ -937,6 +937,56 @@ def _bill_summaries_payload(bill):
     return payload.get("summaries") or []
 
 
+# Full bill text for the AI. Newly-introduced bills usually have NO official
+# summary for weeks, which used to make the model punt with "the material is too
+# thin" filler. The published text always exists, so feed it (capped) instead.
+BILL_TEXT_MAX_CHARS = 9000
+BILL_TEXT_TTL_SECONDS = 3 * 24 * 60 * 60
+
+
+def _bill_text_excerpt(bill):
+    """Plain-text excerpt of the bill's most recent published text version, capped
+    at BILL_TEXT_MAX_CHARS. Returns '' when no text is published yet. Cached."""
+    path = _bill_api_path(bill)
+    if not path:
+        return ""
+
+    cache_key = _build_cache_key("bill-text-v1", {"path": path})
+
+    def fetch_json():
+        try:
+            payload = _congress_get(f"{path}/text", params={"format": "json", "limit": 3})
+        except Exception:  # noqa: BLE001 - text is best-effort enrichment
+            return {"text": ""}
+        url = None
+        for version in payload.get("textVersions") or []:
+            for fmt in version.get("formats") or []:
+                if "formatted text" in str(fmt.get("type") or "").lower():
+                    url = fmt.get("url")
+                    break
+            if url:
+                break
+        if not url:
+            return {"text": ""}
+        try:
+            response = requests.get(
+                url, headers={"User-Agent": WIKI_USER_AGENT}, timeout=REQUEST_TIMEOUT_SECONDS
+            )
+            response.raise_for_status()
+        except requests.RequestException:
+            return {"text": ""}
+        text = _strip_markup(response.text)
+        return {"text": text[:BILL_TEXT_MAX_CHARS]}
+
+    try:
+        return (
+            _cached_json(cache_key, f"bill-text:{path}", fetch_json, ttl_seconds=BILL_TEXT_TTL_SECONDS)
+            or {}
+        ).get("text", "")
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def _bill_committee_names(detail):
     committees = detail.get("committees") or []
     if isinstance(committees, dict):
@@ -1049,17 +1099,12 @@ def _bill_digest_item(bill):
         "impact": {
             "status": "Pending AI impact analysis",
             "summary": (
-                "Impact analysis will be generated after a ChatGPT API key is configured. "
-                "For now, YGN links to the official bill record and Congress.gov data used for the digest."
+                "AI impact analysis for this bill is queued and will appear after the next "
+                "content refresh. The official Congress.gov record is linked below."
             ),
-            "sources": [
-                source
-                for source in (
-                    {"label": "Congress.gov bill page", "url": web_url} if web_url else None,
-                    {"label": "Congress.gov API record", "url": api_url} if api_url else None,
-                )
-                if source
-            ],
+            # Just the human-readable bill page; the raw API-record link added
+            # clutter without helping readers.
+            "sources": [{"label": "Congress.gov bill page", "url": web_url}] if web_url else [],
         },
         "latestAction": {
             "date": latest_action.get("actionDate"),
@@ -1356,6 +1401,12 @@ def _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors):
             "date": latest_action.get("actionDate"),
             "text": latest_action.get("text"),
         },
+        # Full published bill text (capped) so the model never has to punt on
+        # "no official summary yet" bills.
+        "textExcerpt": _bill_text_excerpt(bill_ref),
+        "congress": bill_ref.get("congress"),
+        "type": bill_ref.get("type"),
+        "number": bill_ref.get("number"),
     }
 
 
@@ -1531,24 +1582,30 @@ DEFAULT_AI_MODEL = "gpt-4o-mini"
 BILL_IMPACT_SYSTEM_PROMPT = (
     "You are a nonpartisan legislative analyst for a U.S. civic-information site. Your job "
     "is to explain, in plain language a curious 9th-grader could follow, WHO and WHAT a bill "
-    "would affect if it became law. Rules: (1) Be concrete and specific to THIS bill's "
-    "subject -- name the actual groups, agencies, industries, states, or programs involved; "
+    "would affect if it became law. You are given the bill's FULL TEXT when it is published "
+    "-- read it and work from what it actually says. Rules: (1) Be concrete and specific to "
+    "THIS bill -- name the actual groups, agencies, industries, states, or programs involved; "
     "never write generic filler like 'this bill could affect various stakeholders.' "
-    "(2) Ground every claim in the provided title/summary/policy area; if the material is too "
-    "thin to identify real effects, say so in one sentence and stop -- do not pad or invent "
-    "provisions, dollar amounts, or effects that aren't supported. (3) Stay strictly "
-    "nonpartisan: no praise, no criticism, no predicting passage, no 'supporters say / critics "
-    "say' framing. (4) Prefer active voice and everyday words over legislative jargon."
+    "(2) Combine the bill text with your background knowledge of the relevant law, agencies, "
+    "programs, and public reporting on this subject to explain real-world effects. "
+    "(3) NEVER say the material is too thin, that you cannot assess, or that no summary is "
+    "available -- every response must extract concrete substance from the text, title, and "
+    "your knowledge. Do not invent specific dollar amounts or provisions that are not "
+    "supported. (4) Strictly nonpartisan: no praise, no criticism, no predicting passage. "
+    "(5) Active voice, everyday words, zero meta-commentary about your sources or limits."
 )
 BILL_DESCRIPTION_SYSTEM_PROMPT = (
     "You are a nonpartisan civic explainer for a U.S. government-information site. In plain "
     "language a general audience can follow, describe what a bill IS: its subject, the concrete "
-    "change it proposes, and its scope (who/what it covers). Rules: (1) Lead with the single "
-    "clearest sentence a reader needs -- what the bill does -- then add scope. (2) Be specific "
-    "to this bill; never generic boilerplate. (3) Do not invent provisions, numbers, or effects "
-    "beyond the provided material; if it is too thin, say so plainly in one sentence. "
-    "(4) Strictly neutral: no partisan framing, no praise or criticism, no passage prediction. "
-    "(5) Do not restate the bill number or 'this bill is a bill'; get straight to substance."
+    "change it proposes, and its scope (who/what it covers). You are given the bill's FULL TEXT "
+    "when it is published -- read it and describe what it actually does. Rules: (1) Lead with "
+    "the single clearest sentence a reader needs -- what the bill does -- then add scope. "
+    "(2) Be specific to this bill; combine its text with your background knowledge of the "
+    "relevant law and agencies. Never generic boilerplate. (3) NEVER say the material is too "
+    "thin or that no summary exists -- extract the substance from the text and title; just do "
+    "not invent provisions or numbers that are not supported. (4) Strictly neutral: no partisan "
+    "framing, no passage prediction. (5) No meta-commentary (do not mention summaries, "
+    "sources, or what you were given); get straight to substance."
 )
 # The "public confidence" prompts return a calibrated ESTIMATE with reasoning, not a real
 # poll. The system prompt forces a clearly-labeled estimate + strict JSON so the UI can
@@ -1813,7 +1870,22 @@ def _bill_ai_context(bill_item):
     if latest:
         lines.append(f"Latest action: {latest}")
     official = (bill_item.get("description") or {}).get("text") or ""
-    lines.append(f"Official summary: {official or 'No official summary published yet.'}")
+    if official:
+        lines.append(f"Official summary: {official}")
+
+    # Full bill text: present on AI seeds; digest items carry congress/type/number
+    # so it can be fetched lazily. This is what lets the model always say something
+    # substantive instead of "the summary is too thin".
+    text = bill_item.get("textExcerpt")
+    if text is None and _bill_api_path(bill_item):
+        text = _bill_text_excerpt(bill_item)
+    if text:
+        lines.append(f"\nFULL BILL TEXT (excerpt, from congress.gov):\n{text}")
+    elif not official:
+        lines.append(
+            "No official summary or published text yet -- work from the title, sponsor, "
+            "committees, and your background knowledge of the subject."
+        )
     return "\n".join(lines)
 
 
@@ -1831,7 +1903,7 @@ def generate_bill_impact(bill_item):
         return None
 
     cache_key = _build_cache_key(
-        "bill-impact-v3", {"id": identifier, "model": config["model"]}
+        "bill-impact-v4", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
@@ -1839,9 +1911,10 @@ def generate_bill_impact(bill_item):
             f"{_bill_ai_context(bill_item)}\n\n"
             "In 2-3 COMPLETE sentences totalling AT MOST 60 words, explain what this bill "
             "would do and specifically who or what it would affect if enacted -- name the "
-            "actual groups, agencies, industries, states, or programs. If the material is too "
-            "thin to identify real effects, say that in one sentence instead of guessing. "
-            "Finish every sentence; never end with '...' or a cut-off clause."
+            "actual groups, agencies, industries, states, or programs, drawing on the bill "
+            "text above and what you know about this policy area. Every sentence must carry "
+            "substance; no meta-commentary about sources or missing information. Finish every "
+            "sentence; never end with '...' or a cut-off clause."
         )
         summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=260)
         return {
@@ -1873,16 +1946,17 @@ def generate_bill_description(bill_item):
         return None
 
     cache_key = _build_cache_key(
-        "bill-description-v3", {"id": identifier, "model": config["model"]}
+        "bill-description-v4", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
         user_prompt = (
             f"{_bill_ai_context(bill_item)}\n\n"
             "In 2-3 COMPLETE sentences totalling AT MOST 65 words, describe what this bill "
-            "is and the concrete change it proposes, then its scope (who/what it covers). "
-            "Be specific to this bill; if the text is too thin, say so plainly in one "
-            "sentence. Finish every sentence; never end with '...' or a cut-off clause."
+            "is and the concrete change it proposes, then its scope (who/what it covers), "
+            "working from the bill text above and your knowledge of this policy area. Every "
+            "sentence must carry substance; no meta-commentary about sources or missing "
+            "information. Finish every sentence; never end with '...' or a cut-off clause."
         )
         summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=240)
         return {
