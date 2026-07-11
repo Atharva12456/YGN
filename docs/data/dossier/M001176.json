@@ -1,0 +1,664 @@
+{
+  "bioguideId": "M001176",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "senate",
+        "code": "SSBU",
+        "committee": "Senate Committee on the Budget",
+        "committeeUrl": "http://www.budget.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": null
+      },
+      {
+        "chamber": "joint",
+        "code": "JSPR",
+        "committee": "Joint Committee on Printing",
+        "committeeUrl": "https://cha.house.gov/jointcommittees/joint-committee-on-printing",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSRA",
+        "committee": "Senate Committee on Rules and Administration",
+        "committeeUrl": "http://www.rules.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP17",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Department of Interior, Environment, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV09",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP01",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV08",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Transportation and Infrastructure"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR02",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "East Asia, the Pacific, and International Cybersecurity Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR06",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP22",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Energy and Water Development"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR09",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Africa and Global Health Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "State, Foreign Operations, and Related Programs"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP16",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Commerce, Justice, Science, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP18",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
+      }
+    ],
+    "bioguideId": "M001176",
+    "count": 18,
+    "leadershipCount": 3,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "M001176",
+    "official": {
+      "contactForm": "https://www.merkley.senate.gov/contact/",
+      "office": "531 Hart Senate Office Building",
+      "phone": "202-224-3753",
+      "website": "https://www.merkley.senate.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Jeff_Merkley",
+      "cspan": "https://www.c-span.org/person/?1029842",
+      "govtrack": "https://www.govtrack.us/congress/members/412325",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00029303",
+      "votesmart": "https://justfacts.votesmart.org/candidate/23644",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jeff_Merkley"
+    },
+    "social": {
+      "facebook": {
+        "handle": "jeffmerkley",
+        "url": "https://facebook.com/jeffmerkley"
+      },
+      "instagram": {
+        "handle": "senjeffmerkley",
+        "url": "https://instagram.com/senjeffmerkley"
+      },
+      "twitter": {
+        "handle": "SenJeffMerkley",
+        "url": "https://twitter.com/SenJeffMerkley"
+      },
+      "youtube": {
+        "handle": "SenatorJeffMerkley",
+        "url": "https://youtube.com/user/SenatorJeffMerkley"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "531 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-3753",
+        "zipCode": 20510
+      },
+      "bioguideId": "M001176",
+      "birthYear": "1956",
+      "chamber": "Senate",
+      "cosponsoredLegislation": {
+        "count": 4964,
+        "url": "https://api.congress.gov/v3/member/M001176/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/m001176_200.jpg"
+      },
+      "directOrderName": "Jeff Merkley",
+      "districtLabel": "Statewide",
+      "firstName": "Jeff",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Merkley, Jeff",
+      "lastName": "Merkley",
+      "officialWebsiteUrl": "https://www.merkley.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2009
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Jeff Merkley",
+          "firstName": "Jeff",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Merkley, Jeff",
+          "lastName": "Merkley",
+          "startDate": "2009-01-06T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 1250,
+        "url": "https://api.congress.gov/v3/member/M001176/sponsored-legislation"
+      },
+      "state": "Oregon",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2009,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "OR",
+          "stateName": "Oregon"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:00Z"
+    },
+    "request": {
+      "bioguideId": "m001176",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "M001176",
+    "birthYear": "1956",
+    "birthday": "1956-10-24",
+    "chambersServed": [
+      "Senate"
+    ],
+    "firstElectedYear": 2009,
+    "fullName": "Jeff Merkley",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2009
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 9,
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "district": null,
+        "endYear": 2011,
+        "party": null,
+        "startYear": 2009,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "district": null,
+        "endYear": 2013,
+        "party": null,
+        "startYear": 2011,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "district": null,
+        "endYear": 2015,
+        "party": null,
+        "startYear": 2013,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "district": null,
+        "endYear": 2017,
+        "party": null,
+        "startYear": 2015,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "district": null,
+        "endYear": 2019,
+        "party": null,
+        "startYear": 2017,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "district": null,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "district": null,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Oregon"
+      }
+    ],
+    "yearsOfService": 17
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "531 Hart Senate Office Building  Washington, DC 20510",
+      "phoneNumber": "(202) 224-3753",
+      "zipCode": 20510
+    },
+    "bioguideId": "M001176",
+    "birthYear": "1956",
+    "chamber": "Senate",
+    "cosponsoredLegislation": {
+      "count": 4964,
+      "url": "https://api.congress.gov/v3/member/M001176/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+      "imageUrl": "https://www.congress.gov/img/member/m001176_200.jpg"
+    },
+    "directOrderName": "Jeff Merkley",
+    "districtLabel": "Statewide",
+    "firstName": "Jeff",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Merkley, Jeff",
+    "lastName": "Merkley",
+    "officialWebsiteUrl": "https://www.merkley.senate.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2009
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Jeff Merkley",
+        "firstName": "Jeff",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Merkley, Jeff",
+        "lastName": "Merkley",
+        "startDate": "2009-01-06T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 1250,
+      "url": "https://api.congress.gov/v3/member/M001176/sponsored-legislation"
+    },
+    "state": "Oregon",
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "endYear": 2011,
+        "memberType": "Senator",
+        "startYear": 2009,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "endYear": 2013,
+        "memberType": "Senator",
+        "startYear": 2011,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "endYear": 2015,
+        "memberType": "Senator",
+        "startYear": 2013,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "endYear": 2017,
+        "memberType": "Senator",
+        "startYear": 2015,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "endYear": 2019,
+        "memberType": "Senator",
+        "startYear": 2017,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "endYear": 2021,
+        "memberType": "Senator",
+        "startYear": 2019,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "endYear": 2023,
+        "memberType": "Senator",
+        "startYear": 2021,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Senator",
+        "startYear": 2023,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "memberType": "Senator",
+        "startYear": 2025,
+        "stateCode": "OR",
+        "stateName": "Oregon"
+      }
+    ],
+    "updateDate": "2026-03-08T10:32:00Z"
+  },
+  "nominate": {
+    "dim1": -0.454,
+    "geo_mean": 0.96813
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Jeffrey Alan Merkley is an American politician who is the junior United States senator from Oregon. He was first elected to the Senate in 2008.",
+    "source": "wikipedia",
+    "summary": "Jeffrey Alan Merkley is an American politician who is the junior United States senator from Oregon. He was first elected to the Senate in 2008.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jeff_Merkley%2C_115th_official_photo.jpg/330px-Jeff_Merkley%2C_115th_official_photo.jpg",
+    "title": "Jeff Merkley",
+    "type": "standard",
+    "wiki_page_id": 7921812,
+    "wiki_url": "https://en.wikipedia.org/wiki/Jeff_Merkley"
+  }
+}

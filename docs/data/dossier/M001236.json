@@ -1,0 +1,340 @@
+{
+  "bioguideId": "M001236",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSBU",
+        "committee": "House Committee on the Budget",
+        "committeeUrl": "https://budget.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 21,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSBA",
+        "committee": "House Committee on Financial Services",
+        "committeeUrl": "https://financialservices.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 30,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSBA09",
+        "committee": "House Committee on Financial Services",
+        "committeeUrl": "https://financialservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 2,
+        "role": "Vice Chairman",
+        "subcommittee": "Oversight and Investigations"
+      },
+      {
+        "chamber": "house",
+        "code": "HSBA21",
+        "committee": "House Committee on Financial Services",
+        "committeeUrl": "https://financialservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 12,
+        "role": null,
+        "subcommittee": "Digital Assets, Financial Technology, and Artificial Intelligence"
+      },
+      {
+        "chamber": "house",
+        "code": "HSBA20",
+        "committee": "House Committee on Financial Services",
+        "committeeUrl": "https://financialservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 14,
+        "role": null,
+        "subcommittee": "Financial Institutions"
+      }
+    ],
+    "bioguideId": "M001236",
+    "count": 5,
+    "leadershipCount": 1,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "M001236",
+    "official": {
+      "contactForm": null,
+      "office": "1424 Longworth House Office Building",
+      "phone": "202-225-5634",
+      "website": "https://timmoore.house.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Timothy_K._Moore",
+      "govtrack": "https://www.govtrack.us/congress/members/457005",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00053948",
+      "votesmart": "https://justfacts.votesmart.org/candidate/41316",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tim_Moore_%28North_Carolina_politician%29"
+    },
+    "social": {
+      "facebook": {
+        "handle": "CongressmanTimMoore",
+        "url": "https://facebook.com/CongressmanTimMoore"
+      },
+      "instagram": {
+        "handle": "reptimmoore",
+        "url": "https://instagram.com/reptimmoore"
+      },
+      "twitter": {
+        "handle": "RepTimMooreNC",
+        "url": "https://twitter.com/RepTimMooreNC"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1424 Longworth House Office Building",
+        "phoneNumber": "(202) 225-5634",
+        "zipCode": 20515
+      },
+      "bioguideId": "M001236",
+      "birthYear": "1970",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 272,
+        "url": "https://api.congress.gov/v3/member/M001236/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/67744a540b34857ecc909137_200.jpg"
+      },
+      "directOrderName": "Tim Moore",
+      "district": 14,
+      "districtLabel": "District 14",
+      "firstName": "Tim",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Moore, Tim",
+      "lastName": "Moore",
+      "officialWebsiteUrl": "https://timmoore.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Tim Moore",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moore, Tim",
+          "lastName": "Moore",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Tim Moore",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moore, Tim",
+          "lastName": "Moore",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Tim Moore",
+          "firstName": "Tim",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moore, Tim",
+          "lastName": "Moore",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 27,
+        "url": "https://api.congress.gov/v3/member/M001236/sponsored-legislation"
+      },
+      "state": "North Carolina",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 14,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "NC",
+          "stateName": "North Carolina"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:31Z"
+    },
+    "request": {
+      "bioguideId": "m001236",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "M001236",
+    "birthYear": "1970",
+    "birthday": "1970-10-02",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2025,
+    "fullName": "Tim Moore",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2025
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 1,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 14,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "North Carolina"
+      }
+    ],
+    "yearsOfService": 1
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1424 Longworth House Office Building",
+      "phoneNumber": "(202) 225-5634",
+      "zipCode": 20515
+    },
+    "bioguideId": "M001236",
+    "birthYear": "1970",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 272,
+      "url": "https://api.congress.gov/v3/member/M001236/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/67744a540b34857ecc909137_200.jpg"
+    },
+    "directOrderName": "Tim Moore",
+    "district": 14,
+    "districtLabel": "District 14",
+    "firstName": "Tim",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Moore, Tim",
+    "lastName": "Moore",
+    "officialWebsiteUrl": "https://timmoore.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2025
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Tim Moore",
+        "endDate": "2025-01-10T17:36:18Z",
+        "firstName": "Tim",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Moore, Tim",
+        "lastName": "Moore",
+        "startDate": "2025-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Tim Moore",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Tim",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Moore, Tim",
+        "lastName": "Moore",
+        "startDate": "2025-01-10T17:36:19Z"
+      },
+      {
+        "directOrderName": "Tim Moore",
+        "firstName": "Tim",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Moore, Tim",
+        "lastName": "Moore",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 27,
+      "url": "https://api.congress.gov/v3/member/M001236/sponsored-legislation"
+    },
+    "state": "North Carolina",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 14,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "NC",
+        "stateName": "North Carolina"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:31Z"
+  },
+  "nominate": {
+    "dim1": 0.577,
+    "geo_mean": 0.94628
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Timothy Keith Moore is an American attorney and politician who has been the U.S. representative for North Carolina's 14th congressional district since 2025. He previously served as speaker of the North Carolina House of Representatives from 2015 to 2025.",
+    "source": "wikipedia",
+    "summary": "Timothy Keith Moore is an American attorney and politician who has been the U.S. representative for North Carolina's 14th congressional district since 2025. He previously served as speaker of the North Carolina House of Representatives from 2015 to 2025.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Moore_Tim_119th_Congress_%28cropped2%29.jpg/330px-Moore_Tim_119th_Congress_%28cropped2%29.jpg",
+    "title": "Tim Moore (North Carolina politician)",
+    "type": "standard",
+    "wiki_page_id": 451649,
+    "wiki_url": "https://en.wikipedia.org/wiki/Tim_Moore_(North_Carolina_politician)"
+  }
+}

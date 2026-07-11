@@ -1,0 +1,338 @@
+{
+  "bioguideId": "R000621",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSII",
+        "committee": "House Committee on Natural Resources",
+        "committeeUrl": "https://naturalresources.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 11,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 13,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO27",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Health Care and Financial Services"
+      },
+      {
+        "chamber": "house",
+        "code": "HSII24",
+        "committee": "House Committee on Natural Resources",
+        "committeeUrl": "https://naturalresources.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Indian and Insular Affairs"
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO24",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Government Operations"
+      },
+      {
+        "chamber": "house",
+        "code": "HSII10",
+        "committee": "House Committee on Natural Resources",
+        "committeeUrl": "https://naturalresources.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Federal Lands"
+      }
+    ],
+    "bioguideId": "R000621",
+    "count": 6,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "R000621",
+    "official": {
+      "contactForm": null,
+      "office": "1531 Longworth House Office Building",
+      "phone": "202-225-5916",
+      "website": "https://randall.house.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Emily_Randall",
+      "govtrack": "https://www.govtrack.us/congress/members/457030",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00054078",
+      "votesmart": "https://justfacts.votesmart.org/candidate/183038",
+      "wikipedia": "https://en.wikipedia.org/wiki/Emily_Randall"
+    },
+    "social": {},
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1531 Longworth House Office Building",
+        "phoneNumber": "(202) 225-5916",
+        "zipCode": 20515
+      },
+      "bioguideId": "R000621",
+      "birthYear": "1985",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 369,
+        "url": "https://api.congress.gov/v3/member/R000621/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/67745dcf0b34857ecc909173_200.jpg"
+      },
+      "directOrderName": "Emily Randall",
+      "district": 6,
+      "districtLabel": "District 6",
+      "firstName": "Emily",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Randall, Emily",
+      "lastName": "Randall",
+      "officialWebsiteUrl": "https://randall.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Emily Randall",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Emily",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Randall, Emily",
+          "lastName": "Randall",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Emily Randall",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Emily",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Randall, Emily",
+          "lastName": "Randall",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Emily Randall",
+          "firstName": "Emily",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Randall, Emily",
+          "lastName": "Randall",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 13,
+        "url": "https://api.congress.gov/v3/member/R000621/sponsored-legislation"
+      },
+      "state": "Washington",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 6,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "WA",
+          "stateName": "Washington"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:24Z"
+    },
+    "request": {
+      "bioguideId": "r000621",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "R000621",
+    "birthYear": "1985",
+    "birthday": "1985-10-30",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2025,
+    "fullName": "Emily Randall",
+    "gender": "F",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2025
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 1,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 6,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Washington"
+      }
+    ],
+    "yearsOfService": 1
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1531 Longworth House Office Building",
+      "phoneNumber": "(202) 225-5916",
+      "zipCode": 20515
+    },
+    "bioguideId": "R000621",
+    "birthYear": "1985",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 369,
+      "url": "https://api.congress.gov/v3/member/R000621/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/67745dcf0b34857ecc909173_200.jpg"
+    },
+    "directOrderName": "Emily Randall",
+    "district": 6,
+    "districtLabel": "District 6",
+    "firstName": "Emily",
+    "honorificName": "Ms.",
+    "invertedOrderName": "Randall, Emily",
+    "lastName": "Randall",
+    "officialWebsiteUrl": "https://randall.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2025
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Emily Randall",
+        "endDate": "2025-01-10T17:36:18Z",
+        "firstName": "Emily",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Randall, Emily",
+        "lastName": "Randall",
+        "startDate": "2025-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Emily Randall",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Emily",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Randall, Emily",
+        "lastName": "Randall",
+        "startDate": "2025-01-10T17:36:19Z"
+      },
+      {
+        "directOrderName": "Emily Randall",
+        "firstName": "Emily",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Randall, Emily",
+        "lastName": "Randall",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 13,
+      "url": "https://api.congress.gov/v3/member/R000621/sponsored-legislation"
+    },
+    "state": "Washington",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 6,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "WA",
+        "stateName": "Washington"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:24Z"
+  },
+  "nominate": {
+    "dim1": -0.576,
+    "geo_mean": 0.97382
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Emily Elissa Randall is an American politician and healthcare advocate serving as the U.S. representative for Washington's 6th congressional district since 2025. A member of the Democratic Party, she previously served in the Washington State Senate from 2019 to 2024.",
+    "source": "wikipedia",
+    "summary": "Emily Elissa Randall is an American politician and healthcare advocate serving as the U.S. representative for Washington's 6th congressional district since 2025. A member of the Democratic Party, she previously served in the Washington State Senate from 2019 to 2024.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Randall_Emily_119th_Congress.jpg/330px-Randall_Emily_119th_Congress.jpg",
+    "title": "Emily Randall",
+    "type": "standard",
+    "wiki_page_id": 59596893,
+    "wiki_url": "https://en.wikipedia.org/wiki/Emily_Randall"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:10:15.740545+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The PACE Act makes the Child and Dependent Care Tax Credit fully refundable, raises the credit rate from 35% (previously reducible to 20%) to 50% (not below 35%), and indexes the credit\u2019s dollar limits for inflation. It also raises the employer\u2011provided dependent care exclusion from $5,000 to $7,500, indexes that amount for inflation, and applies to taxable years beginning after December 31, 2025."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001190",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schneider, Bradley Scott [D-IL-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-10",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-10",
+        "state": "VA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Promoting Affordable Childcare for Everyone Act or the PACE Act This bill increases and makes refundable the tax credit for qualified child and dependent care expenses. The bill also increases the exclusion from gross income for employer-provided child and dependent care benefits. Under current law, a nonrefundable tax credit is allowed for up to 35% (maximum tax credit percentage) of qualified child and dependent care expenses incurred by an individual to work or look for work, up to a maximum amount. The percentage of such expenses allowed as a tax credit may be reduced, but not below 20% (minimum tax credit percentage), based on an individual\u2019s adjusted gross income. The bill generally increases the tax credit for qualified child and dependent care expenses by increasing the maximum tax credit percentage to 50%, increasing the minimum tax credit percentage to 35%, and adjusting the maximum credit amounts annually for inflation. The bill also makes the tax credit for qualified child and dependent care expenses refundable. Finally, the bill increases and adjusts for inflation the amount that may be excluded from gross income for employer-sponsored child and dependent care benefits (e.g., dependent care flexible spending arrangements) to $7,500 (from $5,000).",
+      "updated_at": "2026-03-13T13:25:55Z"
+    },
+    "detailPath": "119/hr/2900",
+    "identifier": "HR 2900",
+    "impact": {
+      "generated_at": "2026-07-11T06:10:10.704884+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The PACE Act raises the Child and Dependent Care Tax Credit to 50% (minimum 35%), makes it fully refundable, and indexes credit limits for inflation beginning in tax years after 2025. It also increases the employer dependent-care exclusion from $5,000 to $7,500, indexes it, and thereby affects taxpayers who pay for child/dependent care, employers offering dependent-care FSAs, and the IRS."
+    },
+    "introducedDate": "2025-04-10",
+    "latestAction": {
+      "date": "2025-04-10",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "2900",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "T000478",
+        "district": 24,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Tenney, Claudia [R-NY-24]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "PACE Act",
+    "type": "HR",
+    "updatedAt": "2026-03-13T13:30:09Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/2900",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:58:12.109481+00:00",
+  "source": "congress_api"
+}

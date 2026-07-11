@@ -1,0 +1,362 @@
+{
+  "bioguideId": "J000307",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSIF",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 20,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF17",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Commerce, Manufacturing, and Trade"
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF03",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 9,
+        "role": null,
+        "subcommittee": "Energy"
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF14",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 12,
+        "role": null,
+        "subcommittee": "Health"
+      }
+    ],
+    "bioguideId": "J000307",
+    "count": 4,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "J000307",
+    "official": {
+      "contactForm": null,
+      "office": "1519 Longworth House Office Building",
+      "phone": "202-225-4961",
+      "website": "https://james.house.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/John_James_%28Michigan%29",
+      "govtrack": "https://www.govtrack.us/congress/members/456907",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00041550",
+      "votesmart": "https://justfacts.votesmart.org/candidate/181062",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_James_%28Michigan_politician%29"
+    },
+    "social": {
+      "facebook": {
+        "handle": "RepJohnJames",
+        "url": "https://facebook.com/RepJohnJames"
+      },
+      "instagram": {
+        "handle": "RepJohnJames",
+        "url": "https://instagram.com/RepJohnJames"
+      },
+      "twitter": {
+        "handle": "RepJames",
+        "url": "https://twitter.com/RepJames"
+      },
+      "youtube": {
+        "handle": "@RepJohnJames",
+        "url": "https://youtube.com/user/RepJohnJames"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1519 Longworth House Office Building",
+        "phoneNumber": "(202) 225-4961",
+        "zipCode": 20515
+      },
+      "bioguideId": "J000307",
+      "birthYear": "1981",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 289,
+        "url": "https://api.congress.gov/v3/member/J000307/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/j000307_200.jpg"
+      },
+      "directOrderName": "John James",
+      "district": 10,
+      "districtLabel": "District 10",
+      "firstName": "John",
+      "honorificName": "Mr.",
+      "invertedOrderName": "James, John",
+      "lastName": "James",
+      "officialWebsiteUrl": "https://james.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "John James",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "James, John",
+          "lastName": "James",
+          "startDate": "2023-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "John James",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "James, John",
+          "lastName": "James",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "John James",
+          "firstName": "John",
+          "honorificName": "Mr.",
+          "invertedOrderName": "James, John",
+          "lastName": "James",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 64,
+        "url": "https://api.congress.gov/v3/member/J000307/sponsored-legislation"
+      },
+      "state": "Michigan",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 10,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 10,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "MI",
+          "stateName": "Michigan"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:29Z"
+    },
+    "request": {
+      "bioguideId": "j000307",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "J000307",
+    "birthYear": "1981",
+    "birthday": "1981-06-08",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2023,
+    "fullName": "John James",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2023
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 2,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 10,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Michigan"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 10,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Michigan"
+      }
+    ],
+    "yearsOfService": 3
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1519 Longworth House Office Building",
+      "phoneNumber": "(202) 225-4961",
+      "zipCode": 20515
+    },
+    "bioguideId": "J000307",
+    "birthYear": "1981",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 289,
+      "url": "https://api.congress.gov/v3/member/J000307/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/j000307_200.jpg"
+    },
+    "directOrderName": "John James",
+    "district": 10,
+    "districtLabel": "District 10",
+    "firstName": "John",
+    "honorificName": "Mr.",
+    "invertedOrderName": "James, John",
+    "lastName": "James",
+    "officialWebsiteUrl": "https://james.house.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2023
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "John James",
+        "endDate": "2024-06-03T03:59:59Z",
+        "firstName": "John",
+        "honorificName": "Mr.",
+        "invertedOrderName": "James, John",
+        "lastName": "James",
+        "startDate": "2023-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "John James",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "John",
+        "honorificName": "Mr.",
+        "invertedOrderName": "James, John",
+        "lastName": "James",
+        "startDate": "2024-06-03T04:00:00Z"
+      },
+      {
+        "directOrderName": "John James",
+        "firstName": "John",
+        "honorificName": "Mr.",
+        "invertedOrderName": "James, John",
+        "lastName": "James",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 64,
+      "url": "https://api.congress.gov/v3/member/J000307/sponsored-legislation"
+    },
+    "state": "Michigan",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 10,
+        "endYear": 2025,
+        "memberType": "Representative",
+        "startYear": 2023,
+        "stateCode": "MI",
+        "stateName": "Michigan"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 10,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "MI",
+        "stateName": "Michigan"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:29Z"
+  },
+  "nominate": {
+    "dim1": 0.32,
+    "geo_mean": 0.95154
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "John Edward James is an American politician, businessman, and former military officer serving as the U.S. representative for Michigan's 10th congressional district since 2023. A member of the Republican Party, he was the party's nominee for U.S. Senate in 2018 and 2020.",
+    "source": "wikipedia",
+    "summary": "John Edward James is an American politician, businessman, and former military officer serving as the U.S. representative for Michigan's 10th congressional district since 2023. A member of the Republican Party, he was the party's nominee for U.S. Senate in 2018 and 2020.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rep._John_James_official_photo%2C_118th_Congress.jpg/330px-Rep._John_James_official_photo%2C_118th_Congress.jpg",
+    "title": "John James (Michigan politician)",
+    "type": "standard",
+    "wiki_page_id": 58192172,
+    "wiki_url": "https://en.wikipedia.org/wiki/John_James_(Michigan_politician)"
+  }
+}

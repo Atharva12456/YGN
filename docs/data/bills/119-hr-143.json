@@ -1,0 +1,80 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:08:21.439030+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The Unauthorized Spending Accountability Act mandates automatic 302(a) allocation cuts for programs with expired authorizations starting in FY2026: a 10% reduction the first unauthorized year and 15% reductions in the second and third unauthorized years, terminating them on Oct. 1 following the third unauthorized year. It covers programs listed in CBO\u2019s annual expired-and-expiring authorizations report and restores cuts if reauthorized with a sunset no longer than three years."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001228",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schmidt, Derek [R-KS-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-01-03",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "B001321",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Barrett, Tom [R-MI-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-21",
+        "state": "MI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Unauthorized Spending Accountability Act This bill reduces budgetary levels for certain federal programs that are funded through the annual appropriations process and do not have an authorization of appropriations. Under the bill, budgetary levels are spending allocations provided to the congressional appropriations committees by a congressional budget resolution or a deeming resolution. The allocations are provided under the Congressional Budget Act of 1974 and are often referred to as 302(a) allocations. The bill applies to programs included in the Congressional Budget Office's (CBO's) annual report listing programs that are funded through the appropriations process and have an authorization of appropriations that has either expired or will expire during the year. If a program is listed in the CBO report, the bill requires specified reductions to be implemented over a three-year period and terminates the unauthorized programs at the end of the third unauthorized year.",
+      "updated_at": "2025-02-04T15:10:28Z"
+    },
+    "detailPath": "119/hr/143",
+    "identifier": "HR 143",
+    "impact": {
+      "generated_at": "2026-07-11T06:08:21.579862+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill cuts 302(a) allocations for any program the CBO lists as having an expired authorization: \u221210% the first unauthorized year and \u221215% in years two and three. After year three the program terminates October 1, agencies may only close out prior obligations, and Congress can restore funding only by reauthorizing for up to three years."
+    },
+    "introducedDate": "2025-01-03",
+    "latestAction": {
+      "date": "2025-12-02",
+      "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 25 - 19."
+    },
+    "number": "143",
+    "originChamber": "House",
+    "policyArea": "Economics and Public Finance",
+    "sponsors": [
+      {
+        "bioguideId": "C001039",
+        "district": 3,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Cammack, Kat [R-FL-3]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "Unauthorized Spending Accountability Act",
+    "type": "HR",
+    "updatedAt": "2026-03-13T15:50:16Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/143",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:59.405390+00:00",
+  "source": "congress_api"
+}

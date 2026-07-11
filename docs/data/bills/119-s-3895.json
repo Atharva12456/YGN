@@ -1,0 +1,70 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:05:55.298704+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill directs FEMA, within 120 days, to revise 44 C.F.R. \u00a7206.48 to apply fixed weighted criteria for Public Assistance (10/40/10/10/10/10/10: cost; localized impacts; insurance; mitigation; recent disasters; other Federal aid; economic) and Individual Assistance (20/20/20/10/20/5/5: concentration; trauma; special populations; voluntary agencies; insurance; state average aid; economic). It applies to Governors\u2019 requests for Stafford Act major disaster declarations denied on or after January 1, 2012."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "D000622",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Duckworth, Tammy [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-24",
+        "state": "IL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Fairness in Federal Disaster Declarations Act of 2026",
+      "updated_at": "2026-03-13T21:50:12Z"
+    },
+    "detailPath": "119/s/3895",
+    "identifier": "S 3895",
+    "impact": {
+      "generated_at": "2026-07-11T06:05:49.723921+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "FEMA's Administrator must amend 44 C.F.R. \u00a7206.48 within 120 days to assign weights when evaluating Public Assistance (localized impacts 40%, cost 10%) and Individual Assistance (damage concentration 20%, trauma 20%, insurance 20%). The change alters how FEMA decides Governors' Stafford Act requests and affects states, localities, survivors, voluntary agencies, and insurers for disasters denied on or after January 1, 2012."
+    },
+    "introducedDate": "2026-02-24",
+    "latestAction": {
+      "date": "2026-02-24",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs. (text: CR S652-653)"
+    },
+    "number": "3895",
+    "originChamber": "Senate",
+    "policyArea": "Emergency Management",
+    "sponsors": [
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "Fairness in Federal Disaster Declarations Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-13T21:50:12Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3895",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:51.944184+00:00",
+  "source": "congress_api"
+}

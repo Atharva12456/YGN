@@ -1,0 +1,90 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:08:16.997073+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "This Senate resolution formally condemns use of \"congressionally directed spending\" and \"community project funding\" (earmarks) and calls for an immediate, permanent restoration of the ban on such earmarks. As a nonbinding Senate resolution, it expresses the chamber's opposition and urges Congress to stop directing taxpayer dollars to earmarks and to rein in federal overspending, but it does not itself change law or appropriations."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "L000577",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Lee, Mike [R-UT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "UT"
+      },
+      {
+        "bioguideId": "J000293",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Johnson, Ron [R-WI]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "B001261",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Barrasso, John [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "WY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution expressing opposition to congressional spending on earmarks.",
+      "updated_at": "2026-03-13T11:18:30Z"
+    },
+    "detailPath": "119/sres/517",
+    "identifier": "SRES 517",
+    "impact": {
+      "generated_at": "2026-07-11T06:08:21.085741+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "This Senate resolution condemns \"community project funding\" (earmarks) and urges an immediate permanent ban, targeting Members of Congress and the Senate and House Appropriations Committees. It would cut a congressional route of federal dollars to state and local governments, universities, and contractors and curb congressional inserts into agency appropriations such as Defense and Transportation."
+    },
+    "introducedDate": "2025-11-20",
+    "latestAction": {
+      "date": "2025-11-20",
+      "text": "Referred to the Committee on Appropriations."
+    },
+    "number": "517",
+    "originChamber": "Senate",
+    "policyArea": "Congress",
+    "sponsors": [
+      {
+        "bioguideId": "S001217",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Scott, Rick [R-FL]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "A resolution expressing opposition to congressional spending on earmarks.",
+    "type": "SRES",
+    "updatedAt": "2026-03-13T11:18:30Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/517",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:58:01.505339+00:00",
+  "source": "congress_api"
+}

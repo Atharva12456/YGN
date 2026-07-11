@@ -1,0 +1,679 @@
+{
+  "bioguideId": "C001088",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "senate",
+        "code": "SLET",
+        "committee": "Senate Select Committee on Ethics",
+        "committeeUrl": "http://www.ethics.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 1,
+        "role": "Vice Chairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSSB",
+        "committee": "Senate Committee on Small Business and Entrepreneurship",
+        "committeeUrl": "http://www.sbc.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP02",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Department of Defense"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR02",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "East Asia, the Pacific, and International Cybersecurity Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR09",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Africa and Global Health Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR14",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "State Department and USAID Management, International Operations, and Bilateral International Development"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU28",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Privacy, Technology, and the Law"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP23",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Financial Services and General Government"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU22",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Crime and Counterterrorism"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU26",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Intellectual Property"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP16",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Commerce, Justice, Science, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP22",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Energy and Water Development"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "State, Foreign Operations, and Related Programs"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFR15",
+        "committee": "Senate Committee on Foreign Relations",
+        "committeeUrl": "http://www.foreign.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU04",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Border Security and Immigration"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP24",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
+      }
+    ],
+    "bioguideId": "C001088",
+    "count": 19,
+    "leadershipCount": 3,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "C001088",
+    "official": {
+      "contactForm": "https://www.coons.senate.gov/contact",
+      "office": "218 Russell Senate Office Building",
+      "phone": "202-224-5042",
+      "website": "https://www.coons.senate.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Chris_Coons",
+      "cspan": "https://www.c-span.org/person/?9269028",
+      "govtrack": "https://www.govtrack.us/congress/members/412390",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00031820",
+      "votesmart": "https://justfacts.votesmart.org/candidate/122834",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chris_Coons"
+    },
+    "social": {
+      "facebook": {
+        "handle": "senatorchriscoons",
+        "url": "https://facebook.com/senatorchriscoons"
+      },
+      "instagram": {
+        "handle": "senatorchriscoons",
+        "url": "https://instagram.com/senatorchriscoons"
+      },
+      "twitter": {
+        "handle": "ChrisCoons",
+        "url": "https://twitter.com/ChrisCoons"
+      },
+      "youtube": {
+        "handle": "senatorchriscoons",
+        "url": "https://youtube.com/user/senatorchriscoons"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "218 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-5042",
+        "zipCode": 20510
+      },
+      "bioguideId": "C001088",
+      "birthYear": "1963",
+      "chamber": "Senate",
+      "cosponsoredLegislation": {
+        "count": 4154,
+        "url": "https://api.congress.gov/v3/member/C001088/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/c001088_200.jpg"
+      },
+      "directOrderName": "Christopher A. Coons",
+      "districtLabel": "Statewide",
+      "firstName": "Christopher",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Coons, Christopher A.",
+      "lastName": "Coons",
+      "middleName": "A.",
+      "officialWebsiteUrl": "https://www.coons.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2010
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Christopher A. Coons",
+          "firstName": "Christopher",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Coons, Christopher A.",
+          "lastName": "Coons",
+          "middleName": "A.",
+          "startDate": "2010-11-15T00:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 791,
+        "url": "https://api.congress.gov/v3/member/C001088/sponsored-legislation"
+      },
+      "state": "Delaware",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2010,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "DE",
+          "stateName": "Delaware"
+        }
+      ],
+      "updateDate": "2026-03-08T10:30:51Z"
+    },
+    "request": {
+      "bioguideId": "c001088",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "C001088",
+    "birthYear": "1963",
+    "birthday": "1963-09-09",
+    "chambersServed": [
+      "Senate"
+    ],
+    "firstElectedYear": 2010,
+    "fullName": "Christopher A. Coons",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2010
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 9,
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "district": null,
+        "endYear": 2011,
+        "party": null,
+        "startYear": 2010,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "district": null,
+        "endYear": 2013,
+        "party": null,
+        "startYear": 2011,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "district": null,
+        "endYear": 2015,
+        "party": null,
+        "startYear": 2013,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "district": null,
+        "endYear": 2017,
+        "party": null,
+        "startYear": 2015,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "district": null,
+        "endYear": 2019,
+        "party": null,
+        "startYear": 2017,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "district": null,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "district": null,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Delaware"
+      }
+    ],
+    "yearsOfService": 16
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "218 Russell Senate Office Building  Washington, DC 20510",
+      "phoneNumber": "(202) 224-5042",
+      "zipCode": 20510
+    },
+    "bioguideId": "C001088",
+    "birthYear": "1963",
+    "chamber": "Senate",
+    "cosponsoredLegislation": {
+      "count": 4154,
+      "url": "https://api.congress.gov/v3/member/C001088/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+      "imageUrl": "https://www.congress.gov/img/member/c001088_200.jpg"
+    },
+    "directOrderName": "Christopher A. Coons",
+    "districtLabel": "Statewide",
+    "firstName": "Christopher",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Coons, Christopher A.",
+    "lastName": "Coons",
+    "middleName": "A.",
+    "officialWebsiteUrl": "https://www.coons.senate.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2010
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Christopher A. Coons",
+        "firstName": "Christopher",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Coons, Christopher A.",
+        "lastName": "Coons",
+        "middleName": "A.",
+        "startDate": "2010-11-15T00:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 791,
+      "url": "https://api.congress.gov/v3/member/C001088/sponsored-legislation"
+    },
+    "state": "Delaware",
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "endYear": 2011,
+        "memberType": "Senator",
+        "startYear": 2010,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "endYear": 2013,
+        "memberType": "Senator",
+        "startYear": 2011,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "endYear": 2015,
+        "memberType": "Senator",
+        "startYear": 2013,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "endYear": 2017,
+        "memberType": "Senator",
+        "startYear": 2015,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "endYear": 2019,
+        "memberType": "Senator",
+        "startYear": 2017,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "endYear": 2021,
+        "memberType": "Senator",
+        "startYear": 2019,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "endYear": 2023,
+        "memberType": "Senator",
+        "startYear": 2021,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Senator",
+        "startYear": 2023,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "memberType": "Senator",
+        "startYear": 2025,
+        "stateCode": "DE",
+        "stateName": "Delaware"
+      }
+    ],
+    "updateDate": "2026-03-08T10:30:51Z"
+  },
+  "nominate": {
+    "dim1": -0.24,
+    "geo_mean": 0.89875
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Christopher Andrew Coons is an American lawyer and politician serving as the senior United States senator from Delaware, a seat he has held since 2010. A member of the Democratic Party, Coons served as the county executive of New Castle County from 2005 to 2010.",
+    "source": "wikipedia",
+    "summary": "Christopher Andrew Coons is an American lawyer and politician serving as the senior United States senator from Delaware, a seat he has held since 2010. A member of the Democratic Party, Coons served as the county executive of New Castle County from 2005 to 2010.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Chris_Coons_2024.jpg/330px-Chris_Coons_2024.jpg",
+    "title": "Chris Coons",
+    "type": "standard",
+    "wiki_page_id": 2782602,
+    "wiki_url": "https://en.wikipedia.org/wiki/Chris_Coons"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:05:28.779806+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill requires foreign payment stablecoin issuers with over $50 billion in consolidated issuance and not subject to SEC Section 13(a) or 15(d) reporting to prepare GAAP annual financial statements that disclose related\u2011party transactions and to obtain annual audits conducted under PCAOB auditing standards by registered auditors. It amends section 18 of the GENIUS Act and clarifies this requirement does not alter PCAOB jurisdiction over permitted payment stablecoin issuers or auditors."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Foreign Stablecoin Transparency Act",
+      "updated_at": "2026-03-13T17:04:33Z"
+    },
+    "detailPath": "119/s/3907",
+    "identifier": "S 3907",
+    "impact": {
+      "generated_at": "2026-07-11T06:05:24.806471+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "Foreign payment stablecoin issuers with over $50,000,000,000 in consolidated outstanding issuance that do not file SEC reports under sections 13(a) or 15(d) must prepare GAAP annual financial statements disclosing related\u2011party transactions. They must engage a registered public accounting firm to audit those statements under PCAOB auditing standards, including auditor independence, internal controls, and related\u2011party rules."
+    },
+    "introducedDate": "2026-02-24",
+    "latestAction": {
+      "date": "2026-02-24",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs. (Sponsor introductory remarks on measure: CR S653-654)"
+    },
+    "number": "3907",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "R000122",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Reed, Jack [D-RI]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "RI"
+      }
+    ],
+    "title": "Foreign Stablecoin Transparency Act",
+    "type": "S",
+    "updatedAt": "2026-03-13T17:04:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3907",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:51.487701+00:00",
+  "source": "congress_api"
+}

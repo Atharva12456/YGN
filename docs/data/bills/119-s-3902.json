@@ -1,0 +1,59 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:06:57.851949+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The RECEIPTS Act conditions DoD's transfer and reprogramming authority on the Department obtaining an unqualified audit after FY2028 and imposes Comptroller qualifications if DoD fails that audit by Dec 31, 2028. If audited clean, the Secretary's transfer cap becomes the greater of $10B or 1% of DoD budget; component reprogramming thresholds become $60M (procurement), $30M (research), $45M (O&M), $30M (military personnel); statutory audit-reporting requirements end."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "RECEIPTS Act",
+      "updated_at": "2026-03-13T22:30:24Z"
+    },
+    "detailPath": "119/s/3902",
+    "identifier": "S 3902",
+    "impact": {
+      "generated_at": "2026-07-11T06:14:08.156756+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill raises transfer and reprogramming thresholds and ends several DoD audit-reporting requirements once the Department of Defense, military departments, Defense Agencies, and Defense Field Activities obtain an unqualified audit after FY2028. If DoD misses a clean FY2028 audit, nominees for Under Secretary (Comptroller) must be CPAs with prior CFO-level experience at a government agency with an unqualified audit."
+    },
+    "introducedDate": "2026-02-24",
+    "latestAction": {
+      "date": "2026-02-24",
+      "text": "Read twice and referred to the Committee on Armed Services."
+    },
+    "number": "3902",
+    "originChamber": "Senate",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "E000295",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ernst, Joni [R-IA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IA"
+      }
+    ],
+    "title": "RECEIPTS Act",
+    "type": "S",
+    "updatedAt": "2026-03-13T22:30:24Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3902",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:52.983167+00:00",
+  "source": "congress_api"
+}

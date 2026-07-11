@@ -1,0 +1,70 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:01:27.718271+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "This Senate resolution honors two Christian County, Missouri deputies killed on February 23, 2026, offers condolences to their families, condemns violence against officers, and affirms support for law enforcement. It names Deputy Gabriel Ramirez and Deputy Michael Hislope, notes four officers were shot (two fatally), and is a nonbinding congressional statement, not a law."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "S001227",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schmitt, Eric [R-MO]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-10",
+        "state": "MO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution honoring the lives of fallen Missouri police officers and expressing condolences to their families.",
+      "updated_at": "2026-03-13T15:19:56Z"
+    },
+    "detailPath": "119/sres/630",
+    "identifier": "SRES 630",
+    "impact": {
+      "generated_at": "2026-07-11T06:01:27.839792+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The Senate resolution would formally honor Deputies Gabriel Ramirez and Michael Hislope of the Christian County Sheriff's Office, express condolences to their families for the February 23, 2026 shooting, and recognize Missouri police officers' sacrifice. It also records the Senate's condemnation of violence against law enforcement and expresses support for law enforcement nationwide without creating legal obligations."
+    },
+    "introducedDate": "2026-03-10",
+    "latestAction": {
+      "date": "2026-03-10",
+      "text": "Referred to the Committee on the Judiciary. (text: CR S960)"
+    },
+    "number": "630",
+    "originChamber": "Senate",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "H001089",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hawley, Josh [R-MO]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "A resolution honoring the lives of fallen Missouri police officers and expressing condolences to their families.",
+    "type": "SRES",
+    "updatedAt": "2026-03-13T15:19:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/630",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:45.887481+00:00",
+  "source": "congress_api"
+}

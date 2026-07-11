@@ -1,0 +1,379 @@
+{
+  "bioguideId": "H001090",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSAP",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 19,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSAP06",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Interior, Environment, and Related Agencies"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAP07",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Labor, Health and Human Services, Education, and Related Agencies"
+      }
+    ],
+    "bioguideId": "H001090",
+    "count": 3,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "H001090",
+    "official": {
+      "contactForm": null,
+      "office": "209 Cannon House Office Building",
+      "phone": "202-225-4540",
+      "website": "https://harder.house.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Josh_Harder",
+      "govtrack": "https://www.govtrack.us/congress/members/412754",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00040853",
+      "votesmart": "https://justfacts.votesmart.org/candidate/179326",
+      "wikipedia": "https://en.wikipedia.org/wiki/Josh_Harder"
+    },
+    "social": {
+      "twitter": {
+        "handle": "RepJoshHarder",
+        "url": "https://twitter.com/RepJoshHarder"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "209 Cannon House Office Building",
+        "phoneNumber": "(202) 225-4540",
+        "zipCode": 20515
+      },
+      "bioguideId": "H001090",
+      "birthYear": "1986",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 1904,
+        "url": "https://api.congress.gov/v3/member/H001090/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/h001090_200.jpg"
+      },
+      "directOrderName": "Josh Harder",
+      "district": 9,
+      "districtLabel": "District 9",
+      "firstName": "Josh",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Harder, Josh",
+      "lastName": "Harder",
+      "officialWebsiteUrl": "https://harder.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Josh Harder",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Harder, Josh",
+          "lastName": "Harder",
+          "startDate": "2019-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Josh Harder",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Harder, Josh",
+          "lastName": "Harder",
+          "startDate": "2024-06-03T04:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 156,
+        "url": "https://api.congress.gov/v3/member/H001090/sponsored-legislation"
+      },
+      "state": "California",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 10,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "CA",
+          "stateName": "California"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 10,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "CA",
+          "stateName": "California"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 9,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "CA",
+          "stateName": "California"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 9,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "CA",
+          "stateName": "California"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:28Z"
+    },
+    "request": {
+      "bioguideId": "h001090",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "H001090",
+    "birthYear": "1986",
+    "birthday": "1986-08-01",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2019,
+    "fullName": "Josh Harder",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2019
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 4,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 116,
+        "district": 10,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 10,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 9,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 9,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "California"
+      }
+    ],
+    "yearsOfService": 7
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "209 Cannon House Office Building",
+      "phoneNumber": "(202) 225-4540",
+      "zipCode": 20515
+    },
+    "bioguideId": "H001090",
+    "birthYear": "1986",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 1904,
+      "url": "https://api.congress.gov/v3/member/H001090/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/h001090_200.jpg"
+    },
+    "directOrderName": "Josh Harder",
+    "district": 9,
+    "districtLabel": "District 9",
+    "firstName": "Josh",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Harder, Josh",
+    "lastName": "Harder",
+    "officialWebsiteUrl": "https://harder.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2019
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Josh Harder",
+        "endDate": "2024-06-03T03:59:59Z",
+        "firstName": "Josh",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Harder, Josh",
+        "lastName": "Harder",
+        "startDate": "2019-01-03T05:00:00Z"
+      },
+      {
+        "directOrderName": "Josh Harder",
+        "firstName": "Josh",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Harder, Josh",
+        "lastName": "Harder",
+        "startDate": "2024-06-03T04:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 156,
+      "url": "https://api.congress.gov/v3/member/H001090/sponsored-legislation"
+    },
+    "state": "California",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 116,
+        "district": 10,
+        "endYear": 2021,
+        "memberType": "Representative",
+        "startYear": 2019,
+        "stateCode": "CA",
+        "stateName": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 10,
+        "endYear": 2023,
+        "memberType": "Representative",
+        "startYear": 2021,
+        "stateCode": "CA",
+        "stateName": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 9,
+        "endYear": 2025,
+        "memberType": "Representative",
+        "startYear": 2023,
+        "stateCode": "CA",
+        "stateName": "California"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 9,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "CA",
+        "stateName": "California"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:28Z"
+  },
+  "nominate": {
+    "dim1": -0.296,
+    "geo_mean": 0.90097
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Joshua Keck Harder is an American politician who has served as the U.S. representative for California's 9th congressional district since 2023, after representing the 10th district from 2019 to 2023. A member of the Democratic Party, he was first elected in 2018 by defeating Republican incumbent Jeff Denham.",
+    "source": "wikipedia",
+    "summary": "Joshua Keck Harder is an American politician who has served as the U.S. representative for California's 9th congressional district since 2023, after representing the 10th district from 2019 to 2023. A member of the Democratic Party, he was first elected in 2018 by defeating Republican incumbent Jeff Denham.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Josh_Harder%2C_official_portrait%2C_116th_Congress_%283x4_cropped%29.jpg/330px-Josh_Harder%2C_official_portrait%2C_116th_Congress_%283x4_cropped%29.jpg",
+    "title": "Josh Harder",
+    "type": "standard",
+    "wiki_page_id": 58873251,
+    "wiki_url": "https://en.wikipedia.org/wiki/Josh_Harder"
+  }
+}

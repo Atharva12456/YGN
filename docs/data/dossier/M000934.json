@@ -1,0 +1,828 @@
+{
+  "bioguideId": "M000934",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "senate",
+        "code": "SSVA",
+        "committee": "Senate Committee on Veterans' Affairs",
+        "committeeUrl": "http://www.veterans.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SLIA",
+        "committee": "Senate Committee on Indian Affairs",
+        "committeeUrl": "http://www.indian.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SLIN",
+        "committee": "Senate Select Committee on Intelligence",
+        "committeeUrl": "http://www.intelligence.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAF",
+        "committee": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "committeeUrl": "http://www.agriculture.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 12,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP16",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": "Commerce, Justice, Science, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM33",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": "Aviation, Space, and Innovation"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAF13",
+        "committee": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "committeeUrl": "http://www.agriculture.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Commodities, Derivatives, Risk Management, and Trade"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP18",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP01",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "State, Foreign Operations, and Related Programs"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM34",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Telecommunications and Media"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM35",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Consumer Protection, Technology, and Data Privacy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAF15",
+        "committee": "Senate Committee on Agriculture, Nutrition, and Forestry",
+        "committeeUrl": "http://www.agriculture.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Rural Development, Energy, and Credit"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP02",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Department of Defense"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP24",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 8,
+        "role": null,
+        "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
+      }
+    ],
+    "bioguideId": "M000934",
+    "count": 17,
+    "leadershipCount": 3,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "M000934",
+    "official": {
+      "contactForm": "https://www.moran.senate.gov/public/index.cfm/e-mail-jerry",
+      "office": "521 Dirksen Senate Office Building",
+      "phone": "202-224-6521",
+      "website": "https://www.moran.senate.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Jerry_Moran",
+      "cspan": "https://www.c-span.org/person/?45469",
+      "govtrack": "https://www.govtrack.us/congress/members/400284",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00005282",
+      "votesmart": "https://justfacts.votesmart.org/candidate/542",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jerry_Moran"
+    },
+    "social": {
+      "facebook": {
+        "handle": "jerrymoran",
+        "url": "https://facebook.com/jerrymoran"
+      },
+      "instagram": {
+        "handle": "senjerrymoran",
+        "url": "https://instagram.com/senjerrymoran"
+      },
+      "twitter": {
+        "handle": "JerryMoran",
+        "url": "https://twitter.com/JerryMoran"
+      },
+      "youtube": {
+        "handle": "senatorjerrymoran",
+        "url": "https://youtube.com/user/senatorjerrymoran"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "521 Dirksen Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6521",
+        "zipCode": 20515
+      },
+      "bioguideId": "M000934",
+      "birthYear": "1954",
+      "chamber": "Senate",
+      "cosponsoredLegislation": {
+        "count": 3840,
+        "url": "https://api.congress.gov/v3/member/M000934/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/m000934_200.jpg"
+      },
+      "directOrderName": "Jerry Moran",
+      "districtLabel": "Statewide",
+      "firstName": "Jerry",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Moran, Jerry",
+      "lastName": "Moran",
+      "officialWebsiteUrl": "https://www.moran.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 1997
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Jerry Moran",
+          "firstName": "Jerry",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Moran, Jerry",
+          "lastName": "Moran",
+          "startDate": "1997-01-03T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 781,
+        "url": "https://api.congress.gov/v3/member/M000934/sponsored-legislation"
+      },
+      "state": "Kansas",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 105,
+          "district": 1,
+          "endYear": 1999,
+          "memberType": "Representative",
+          "startYear": 1997,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 106,
+          "district": 1,
+          "endYear": 2001,
+          "memberType": "Representative",
+          "startYear": 1999,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 107,
+          "district": 1,
+          "endYear": 2003,
+          "memberType": "Representative",
+          "startYear": 2001,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 108,
+          "district": 1,
+          "endYear": 2005,
+          "memberType": "Representative",
+          "startYear": 2003,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 109,
+          "district": 1,
+          "endYear": 2007,
+          "memberType": "Representative",
+          "startYear": 2005,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 110,
+          "district": 1,
+          "endYear": 2009,
+          "memberType": "Representative",
+          "startYear": 2007,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 111,
+          "district": 1,
+          "endYear": 2011,
+          "memberType": "Representative",
+          "startYear": 2009,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "KS",
+          "stateName": "Kansas"
+        }
+      ],
+      "updateDate": "2026-03-08T10:32:04Z"
+    },
+    "request": {
+      "bioguideId": "m000934",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "M000934",
+    "birthYear": "1954",
+    "birthday": "1954-05-29",
+    "chambersServed": [
+      "House of Representatives",
+      "Senate"
+    ],
+    "firstElectedYear": 1997,
+    "fullName": "Jerry Moran",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 1997
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 15,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 105,
+        "district": 1,
+        "endYear": 1999,
+        "party": null,
+        "startYear": 1997,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 106,
+        "district": 1,
+        "endYear": 2001,
+        "party": null,
+        "startYear": 1999,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 107,
+        "district": 1,
+        "endYear": 2003,
+        "party": null,
+        "startYear": 2001,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 108,
+        "district": 1,
+        "endYear": 2005,
+        "party": null,
+        "startYear": 2003,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 109,
+        "district": 1,
+        "endYear": 2007,
+        "party": null,
+        "startYear": 2005,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 110,
+        "district": 1,
+        "endYear": 2009,
+        "party": null,
+        "startYear": 2007,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 111,
+        "district": 1,
+        "endYear": 2011,
+        "party": null,
+        "startYear": 2009,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "district": null,
+        "endYear": 2013,
+        "party": null,
+        "startYear": 2011,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "district": null,
+        "endYear": 2015,
+        "party": null,
+        "startYear": 2013,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "district": null,
+        "endYear": 2017,
+        "party": null,
+        "startYear": 2015,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "district": null,
+        "endYear": 2019,
+        "party": null,
+        "startYear": 2017,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "district": null,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "district": null,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Kansas"
+      }
+    ],
+    "yearsOfService": 29
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "521 Dirksen Senate Office Building  Washington, DC 20510",
+      "phoneNumber": "(202) 224-6521",
+      "zipCode": 20515
+    },
+    "bioguideId": "M000934",
+    "birthYear": "1954",
+    "chamber": "Senate",
+    "cosponsoredLegislation": {
+      "count": 3840,
+      "url": "https://api.congress.gov/v3/member/M000934/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+      "imageUrl": "https://www.congress.gov/img/member/m000934_200.jpg"
+    },
+    "directOrderName": "Jerry Moran",
+    "districtLabel": "Statewide",
+    "firstName": "Jerry",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Moran, Jerry",
+    "lastName": "Moran",
+    "officialWebsiteUrl": "https://www.moran.senate.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 1997
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Jerry Moran",
+        "firstName": "Jerry",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Moran, Jerry",
+        "lastName": "Moran",
+        "startDate": "1997-01-03T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 781,
+      "url": "https://api.congress.gov/v3/member/M000934/sponsored-legislation"
+    },
+    "state": "Kansas",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 105,
+        "district": 1,
+        "endYear": 1999,
+        "memberType": "Representative",
+        "startYear": 1997,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 106,
+        "district": 1,
+        "endYear": 2001,
+        "memberType": "Representative",
+        "startYear": 1999,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 107,
+        "district": 1,
+        "endYear": 2003,
+        "memberType": "Representative",
+        "startYear": 2001,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 108,
+        "district": 1,
+        "endYear": 2005,
+        "memberType": "Representative",
+        "startYear": 2003,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 109,
+        "district": 1,
+        "endYear": 2007,
+        "memberType": "Representative",
+        "startYear": 2005,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 110,
+        "district": 1,
+        "endYear": 2009,
+        "memberType": "Representative",
+        "startYear": 2007,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 111,
+        "district": 1,
+        "endYear": 2011,
+        "memberType": "Representative",
+        "startYear": 2009,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "endYear": 2013,
+        "memberType": "Senator",
+        "startYear": 2011,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "endYear": 2015,
+        "memberType": "Senator",
+        "startYear": 2013,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "endYear": 2017,
+        "memberType": "Senator",
+        "startYear": 2015,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "endYear": 2019,
+        "memberType": "Senator",
+        "startYear": 2017,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "endYear": 2021,
+        "memberType": "Senator",
+        "startYear": 2019,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "endYear": 2023,
+        "memberType": "Senator",
+        "startYear": 2021,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Senator",
+        "startYear": 2023,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "memberType": "Senator",
+        "startYear": 2025,
+        "stateCode": "KS",
+        "stateName": "Kansas"
+      }
+    ],
+    "updateDate": "2026-03-08T10:32:04Z"
+  },
+  "nominate": {
+    "dim1": 0.413,
+    "geo_mean": 0.966
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Gerald Wesley Moran is an American lawyer and politician who is the senior United States senator from Kansas, a seat he has held since 2011. Previously, he was a member of the United States House of Representatives and the Kansas Senate.",
+    "source": "wikipedia",
+    "summary": "Gerald Wesley Moran is an American lawyer and politician who is the senior United States senator from Kansas, a seat he has held since 2011. Previously, he was a member of the United States House of Representatives and the Kansas Senate.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Senator_Jerry_Moran_2024.jpg/330px-Senator_Jerry_Moran_2024.jpg",
+    "title": "Jerry Moran",
+    "wiki_url": "https://en.wikipedia.org/wiki/Jerry_Moran"
+  }
+}

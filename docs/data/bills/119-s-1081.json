@@ -1,0 +1,70 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:14:33.390435+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill requires NASA to provide any law\u2011required report or notice it sends to Congress to the Senate Commerce and House Science committees concurrently and within 10 days of any other congressional delivery, and to keep nonpublic items confidential. It also requires NASA to submit copies of any international agreement or nonbinding space instrument to those committees and to congressional foreign\u2011affairs committees within 15 days."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "D000622",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Duckworth, Tammy [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-14",
+        "state": "IL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Comprehensive NASA Reporting Act of 2025 This bill sets forth general requirements for the submission of reports and notices to Congress by the National Aeronautics and Space Administration (NASA). The bill also requires NASA to provide Congress with a copy of any international agreement or nonbinding instrument entered into by the United States that concerns NASA\u2019s activities in space.",
+      "updated_at": "2025-09-03T18:44:49Z"
+    },
+    "detailPath": "119/s/1081",
+    "identifier": "S 1081",
+    "impact": {
+      "generated_at": "2026-07-11T06:09:17.966635+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill requires NASA to give required reports, notifications, and budget reprogramming requests to the Senate Commerce Committee and the House Science Committee within 10 days and directs those items be kept confidential. It also requires NASA to provide copies of any international agreement or nonbinding instrument on NASA\u2019s outer\u2011space activities to Senate Commerce, Senate Foreign Relations, House Science, and House Foreign Affairs within 15 days."
+    },
+    "introducedDate": "2025-03-14",
+    "latestAction": {
+      "date": "2025-09-08",
+      "text": "Placed on Senate Legislative Calendar under General Orders. Calendar No. 150."
+    },
+    "number": "1081",
+    "originChamber": "Senate",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "C001098",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cruz, Ted [R-TX]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "Comprehensive NASA Reporting Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-13T14:23:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1081",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:58:10.046592+00:00",
+  "source": "congress_api"
+}

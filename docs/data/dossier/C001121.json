@@ -1,0 +1,434 @@
+{
+  "bioguideId": "C001121",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HLIG",
+        "committee": "House Permanent Select Committee on Intelligence",
+        "committeeUrl": "https://intelligence.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSAS",
+        "committee": "House Committee on Armed Services",
+        "committeeUrl": "https://armedservices.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 10,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSAS26",
+        "committee": "House Committee on Armed Services",
+        "committeeUrl": "https://armedservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Intelligence and Special Operations"
+      },
+      {
+        "chamber": "house",
+        "code": "HLIG11",
+        "committee": "House Permanent Select Committee on Intelligence",
+        "committeeUrl": "https://intelligence.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Open Source Intelligence"
+      },
+      {
+        "chamber": "house",
+        "code": "HLIG01",
+        "committee": "House Permanent Select Committee on Intelligence",
+        "committeeUrl": "https://intelligence.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Central Intelligence Agency"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAS35",
+        "committee": "House Committee on Armed Services",
+        "committeeUrl": "https://armedservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Cyber, Information Technologies, and Innovation"
+      }
+    ],
+    "bioguideId": "C001121",
+    "count": 6,
+    "leadershipCount": 1,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "C001121",
+    "official": {
+      "contactForm": null,
+      "office": "1323 Longworth House Office Building",
+      "phone": "202-225-7882",
+      "website": "https://crow.house.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Jason_Crow",
+      "govtrack": "https://www.govtrack.us/congress/members/412762",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00040876",
+      "votesmart": "https://justfacts.votesmart.org/candidate/180218",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jason_Crow"
+    },
+    "social": {
+      "facebook": {
+        "handle": "RepJasonCrow",
+        "url": "https://facebook.com/RepJasonCrow"
+      },
+      "twitter": {
+        "handle": "RepJasonCrow",
+        "url": "https://twitter.com/RepJasonCrow"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1323 Longworth House Office Building",
+        "phoneNumber": "(202) 225-7882",
+        "zipCode": 20515
+      },
+      "bioguideId": "C001121",
+      "birthYear": "1979",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 1614,
+        "url": "https://api.congress.gov/v3/member/C001121/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/69d7f4167304cef7a0c9779f_200.jpg"
+      },
+      "directOrderName": "Jason Crow",
+      "district": 6,
+      "districtLabel": "District 6",
+      "firstName": "Jason",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Crow, Jason",
+      "lastName": "Crow",
+      "officialWebsiteUrl": "https://crow.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2019
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Jason Crow",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Jason",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Crow, Jason",
+          "lastName": "Crow",
+          "startDate": "2023-06-01T04:00:00Z"
+        },
+        {
+          "directOrderName": "Jason Crow",
+          "endDate": "2023-06-01T03:59:59Z",
+          "firstName": "Jason",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Crow, Jason",
+          "lastName": "Crow",
+          "startDate": "2019-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Jason Crow",
+          "firstName": "Jason",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Crow, Jason",
+          "lastName": "Crow",
+          "startDate": "2024-06-03T04:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 164,
+        "url": "https://api.congress.gov/v3/member/C001121/sponsored-legislation"
+      },
+      "state": "Colorado",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 116,
+          "district": 6,
+          "endYear": 2021,
+          "memberType": "Representative",
+          "startYear": 2019,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 6,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 6,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 6,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "CO",
+          "stateName": "Colorado"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:27Z"
+    },
+    "request": {
+      "bioguideId": "c001121",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "C001121",
+    "birthYear": "1979",
+    "birthday": "1979-03-15",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2019,
+    "fullName": "Jason Crow",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2019
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 4,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 116,
+        "district": 6,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 6,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 6,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 6,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Colorado"
+      }
+    ],
+    "yearsOfService": 7
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1323 Longworth House Office Building",
+      "phoneNumber": "(202) 225-7882",
+      "zipCode": 20515
+    },
+    "bioguideId": "C001121",
+    "birthYear": "1979",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 1614,
+      "url": "https://api.congress.gov/v3/member/C001121/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/69d7f4167304cef7a0c9779f_200.jpg"
+    },
+    "directOrderName": "Jason Crow",
+    "district": 6,
+    "districtLabel": "District 6",
+    "firstName": "Jason",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Crow, Jason",
+    "lastName": "Crow",
+    "officialWebsiteUrl": "https://crow.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2019
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Jason Crow",
+        "endDate": "2024-06-03T03:59:59Z",
+        "firstName": "Jason",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Crow, Jason",
+        "lastName": "Crow",
+        "startDate": "2023-06-01T04:00:00Z"
+      },
+      {
+        "directOrderName": "Jason Crow",
+        "endDate": "2023-06-01T03:59:59Z",
+        "firstName": "Jason",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Crow, Jason",
+        "lastName": "Crow",
+        "startDate": "2019-01-03T05:00:00Z"
+      },
+      {
+        "directOrderName": "Jason Crow",
+        "firstName": "Jason",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Crow, Jason",
+        "lastName": "Crow",
+        "startDate": "2024-06-03T04:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 164,
+      "url": "https://api.congress.gov/v3/member/C001121/sponsored-legislation"
+    },
+    "state": "Colorado",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 116,
+        "district": 6,
+        "endYear": 2021,
+        "memberType": "Representative",
+        "startYear": 2019,
+        "stateCode": "CO",
+        "stateName": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 6,
+        "endYear": 2023,
+        "memberType": "Representative",
+        "startYear": 2021,
+        "stateCode": "CO",
+        "stateName": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 6,
+        "endYear": 2025,
+        "memberType": "Representative",
+        "startYear": 2023,
+        "stateCode": "CO",
+        "stateName": "Colorado"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 6,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "CO",
+        "stateName": "Colorado"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:27Z"
+  },
+  "nominate": {
+    "dim1": -0.362,
+    "geo_mean": 0.93112
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Jason Crow is an American politician, lawyer, and former U.S. Army officer serving since 2019 as the United States representative for Colorado's 6th congressional district. Crow is the first member of the Democratic Party to represent the district, which includes Aurora, Littleton, Centennial, and other portions of the inner eastern and southern Denver metro area.",
+    "source": "wikipedia",
+    "summary": "Jason Crow is an American politician, lawyer, and former U.S. Army officer serving since 2019 as the United States representative for Colorado's 6th congressional district. Crow is the first member of the Democratic Party to represent the district, which includes Aurora, Littleton, Centennial, and other portions of the inner eastern and southern Denver metro area.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Rep._Jason_Crow_%28D-CO%29%2C_119th_Congress.jpg/330px-Rep._Jason_Crow_%28D-CO%29%2C_119th_Congress.jpg",
+    "title": "Jason Crow",
+    "type": "standard",
+    "wiki_page_id": 58713769,
+    "wiki_url": "https://en.wikipedia.org/wiki/Jason_Crow"
+  }
+}

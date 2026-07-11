@@ -1,0 +1,100 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:07:44.851260+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The BO's Act directs HHS to study and report to Congress within one year on home cardiorespiratory monitors for infants and their role in preventing sudden unexpected infant death. The report must assess device accuracy and effectiveness\u2014especially for high\u2011risk infants\u2014outline care models using monitors, set medical\u2011coverage criteria, and recommend whether public or private insurers should cover them."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-28",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-04",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "O000174",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Ossoff, Jon [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "W000437",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Wicker, Roger F. [R-MS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "MS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "BO\u2019s Act",
+      "updated_at": "2026-03-13T11:03:18Z"
+    },
+    "detailPath": "119/s/3712",
+    "identifier": "S 3712",
+    "impact": {
+      "generated_at": "2026-07-11T06:07:47.318582+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill directs the Secretary of Health and Human Services to study and report within one year on the effectiveness and accuracy of home infant cardiorespiratory monitors for preventing SUID, focusing on high\u2011risk infants and home\u2011sleep care models. It would inform HHS (including CDC), pediatricians and families, monitor manufacturers, and public and private insurers, potentially shaping Medicaid and private coverage."
+    },
+    "introducedDate": "2026-01-28",
+    "latestAction": {
+      "date": "2026-01-28",
+      "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+    },
+    "number": "3712",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "H001079",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hyde-Smith, Cindy [R-MS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MS"
+      }
+    ],
+    "title": "BO\u2019s Act",
+    "type": "S",
+    "updatedAt": "2026-03-13T11:03:18Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3712",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:57.474517+00:00",
+  "source": "congress_api"
+}

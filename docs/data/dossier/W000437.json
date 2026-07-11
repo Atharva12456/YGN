@@ -1,0 +1,928 @@
+{
+  "bioguideId": "W000437",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "senate",
+        "code": "SSAS",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "joint",
+        "code": "JCSE",
+        "committee": "Commission on Security and Cooperation in Europe",
+        "committeeUrl": "http://www.csce.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 1,
+        "role": "Cochairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSRA",
+        "committee": "Senate Committee on Rules and Administration",
+        "committeeUrl": "http://www.rules.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 8,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SLIN",
+        "committee": "Senate Select Committee on Intelligence",
+        "committeeUrl": "http://www.intelligence.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 11,
+        "role": "Ex Officio",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM36",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Coast Guard, Maritime, and Fisheries"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM34",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Telecommunications and Media"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSCM38",
+        "committee": "Senate Committee on Commerce, Science, and Transportation",
+        "committeeUrl": "http://www.commerce.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Surface Transportation, Freight, Pipelines, and Safety"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV09",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS21",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": "Ex Officio",
+        "subcommittee": "Cybersecurity"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS17",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": "Ex Officio",
+        "subcommittee": "Personnel"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS15",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": "Ex Officio",
+        "subcommittee": "Readiness and Management Support"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS13",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": "Ex Officio",
+        "subcommittee": "Seapower"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS16",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": "Ex Officio",
+        "subcommittee": "Strategic Forces"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV08",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": null,
+        "subcommittee": "Transportation and Infrastructure"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS14",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 8,
+        "role": "Ex Officio",
+        "subcommittee": "Airland"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAS20",
+        "committee": "Senate Committee on Armed Services",
+        "committeeUrl": "http://www.armed-services.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 9,
+        "role": "Ex Officio",
+        "subcommittee": "Emerging Threats and Capabilities"
+      }
+    ],
+    "bioguideId": "W000437",
+    "count": 19,
+    "leadershipCount": 10,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "W000437",
+    "official": {
+      "contactForm": "https://www.wicker.senate.gov/public/index.cfm/contact",
+      "office": "425 Russell Senate Office Building",
+      "phone": "202-224-6253",
+      "website": "https://www.wicker.senate.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Roger_Wicker",
+      "cspan": "https://www.c-span.org/person/?18203",
+      "govtrack": "https://www.govtrack.us/congress/members/400432",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00003280",
+      "votesmart": "https://justfacts.votesmart.org/candidate/21926",
+      "wikipedia": "https://en.wikipedia.org/wiki/Roger_Wicker"
+    },
+    "social": {
+      "facebook": {
+        "handle": "SenatorWicker",
+        "url": "https://facebook.com/SenatorWicker"
+      },
+      "instagram": {
+        "handle": "senatorwicker",
+        "url": "https://instagram.com/senatorwicker"
+      },
+      "twitter": {
+        "handle": "SenatorWicker",
+        "url": "https://twitter.com/SenatorWicker"
+      },
+      "youtube": {
+        "handle": "SenatorWicker",
+        "url": "https://youtube.com/user/SenatorWicker"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "425 Russell Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-6253",
+        "zipCode": 20515
+      },
+      "bioguideId": "W000437",
+      "birthYear": "1951",
+      "chamber": "Senate",
+      "cosponsoredLegislation": {
+        "count": 4503,
+        "url": "https://api.congress.gov/v3/member/W000437/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/f49ac425119375e9fe6a075762734079_200.jpg"
+      },
+      "directOrderName": "Roger F. Wicker",
+      "districtLabel": "Statewide",
+      "firstName": "Roger",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Wicker, Roger F.",
+      "lastName": "Wicker",
+      "middleName": "F.",
+      "officialWebsiteUrl": "https://www.wicker.senate.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 1995
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Roger F. Wicker",
+          "endDate": "2023-02-03T07:34:59Z",
+          "firstName": "Roger",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Wicker, Roger F.",
+          "lastName": "Wicker",
+          "middleName": "F.",
+          "startDate": "1995-01-03T05:00:00Z"
+        },
+        {
+          "directOrderName": "Roger F. Wicker",
+          "firstName": "Roger",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Wicker, Roger F.",
+          "lastName": "Wicker",
+          "middleName": "F.",
+          "startDate": "2023-02-03T07:35:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 755,
+        "url": "https://api.congress.gov/v3/member/W000437/sponsored-legislation"
+      },
+      "state": "Mississippi",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 104,
+          "district": 1,
+          "endYear": 1997,
+          "memberType": "Representative",
+          "startYear": 1995,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 105,
+          "district": 1,
+          "endYear": 1999,
+          "memberType": "Representative",
+          "startYear": 1997,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 106,
+          "district": 1,
+          "endYear": 2001,
+          "memberType": "Representative",
+          "startYear": 1999,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 107,
+          "district": 1,
+          "endYear": 2003,
+          "memberType": "Representative",
+          "startYear": 2001,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 108,
+          "district": 1,
+          "endYear": 2005,
+          "memberType": "Representative",
+          "startYear": 2003,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 109,
+          "district": 1,
+          "endYear": 2007,
+          "memberType": "Representative",
+          "startYear": 2005,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 110,
+          "district": 1,
+          "endYear": 2007,
+          "memberType": "Representative",
+          "startYear": 2007,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 110,
+          "endYear": 2009,
+          "memberType": "Senator",
+          "startYear": 2007,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2009,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "MS",
+          "stateName": "Mississippi"
+        }
+      ],
+      "updateDate": "2026-03-08T10:33:05Z"
+    },
+    "request": {
+      "bioguideId": "w000437",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "W000437",
+    "birthYear": "1951",
+    "birthday": "1951-07-05",
+    "chambersServed": [
+      "House of Representatives",
+      "Senate"
+    ],
+    "firstElectedYear": 1995,
+    "fullName": "Roger F. Wicker",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 1995
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 17,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 104,
+        "district": 1,
+        "endYear": 1997,
+        "party": null,
+        "startYear": 1995,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 105,
+        "district": 1,
+        "endYear": 1999,
+        "party": null,
+        "startYear": 1997,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 106,
+        "district": 1,
+        "endYear": 2001,
+        "party": null,
+        "startYear": 1999,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 107,
+        "district": 1,
+        "endYear": 2003,
+        "party": null,
+        "startYear": 2001,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 108,
+        "district": 1,
+        "endYear": 2005,
+        "party": null,
+        "startYear": 2003,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 109,
+        "district": 1,
+        "endYear": 2007,
+        "party": null,
+        "startYear": 2005,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 110,
+        "district": 1,
+        "endYear": 2007,
+        "party": null,
+        "startYear": 2007,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 110,
+        "district": null,
+        "endYear": 2009,
+        "party": null,
+        "startYear": 2007,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "district": null,
+        "endYear": 2011,
+        "party": null,
+        "startYear": 2009,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "district": null,
+        "endYear": 2013,
+        "party": null,
+        "startYear": 2011,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "district": null,
+        "endYear": 2015,
+        "party": null,
+        "startYear": 2013,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "district": null,
+        "endYear": 2017,
+        "party": null,
+        "startYear": 2015,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "district": null,
+        "endYear": 2019,
+        "party": null,
+        "startYear": 2017,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "district": null,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "district": null,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Mississippi"
+      }
+    ],
+    "yearsOfService": 31
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "425 Russell Senate Office Building  Washington, DC 20510",
+      "phoneNumber": "(202) 224-6253",
+      "zipCode": 20515
+    },
+    "bioguideId": "W000437",
+    "birthYear": "1951",
+    "chamber": "Senate",
+    "cosponsoredLegislation": {
+      "count": 4503,
+      "url": "https://api.congress.gov/v3/member/W000437/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/f49ac425119375e9fe6a075762734079_200.jpg"
+    },
+    "directOrderName": "Roger F. Wicker",
+    "districtLabel": "Statewide",
+    "firstName": "Roger",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Wicker, Roger F.",
+    "lastName": "Wicker",
+    "middleName": "F.",
+    "officialWebsiteUrl": "https://www.wicker.senate.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 1995
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Roger F. Wicker",
+        "endDate": "2023-02-03T07:34:59Z",
+        "firstName": "Roger",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Wicker, Roger F.",
+        "lastName": "Wicker",
+        "middleName": "F.",
+        "startDate": "1995-01-03T05:00:00Z"
+      },
+      {
+        "directOrderName": "Roger F. Wicker",
+        "firstName": "Roger",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Wicker, Roger F.",
+        "lastName": "Wicker",
+        "middleName": "F.",
+        "startDate": "2023-02-03T07:35:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 755,
+      "url": "https://api.congress.gov/v3/member/W000437/sponsored-legislation"
+    },
+    "state": "Mississippi",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 104,
+        "district": 1,
+        "endYear": 1997,
+        "memberType": "Representative",
+        "startYear": 1995,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 105,
+        "district": 1,
+        "endYear": 1999,
+        "memberType": "Representative",
+        "startYear": 1997,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 106,
+        "district": 1,
+        "endYear": 2001,
+        "memberType": "Representative",
+        "startYear": 1999,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 107,
+        "district": 1,
+        "endYear": 2003,
+        "memberType": "Representative",
+        "startYear": 2001,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 108,
+        "district": 1,
+        "endYear": 2005,
+        "memberType": "Representative",
+        "startYear": 2003,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 109,
+        "district": 1,
+        "endYear": 2007,
+        "memberType": "Representative",
+        "startYear": 2005,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 110,
+        "district": 1,
+        "endYear": 2007,
+        "memberType": "Representative",
+        "startYear": 2007,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 110,
+        "endYear": 2009,
+        "memberType": "Senator",
+        "startYear": 2007,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "endYear": 2011,
+        "memberType": "Senator",
+        "startYear": 2009,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "endYear": 2013,
+        "memberType": "Senator",
+        "startYear": 2011,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "endYear": 2015,
+        "memberType": "Senator",
+        "startYear": 2013,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "endYear": 2017,
+        "memberType": "Senator",
+        "startYear": 2015,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "endYear": 2019,
+        "memberType": "Senator",
+        "startYear": 2017,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "endYear": 2021,
+        "memberType": "Senator",
+        "startYear": 2019,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "endYear": 2023,
+        "memberType": "Senator",
+        "startYear": 2021,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Senator",
+        "startYear": 2023,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "memberType": "Senator",
+        "startYear": 2025,
+        "stateCode": "MS",
+        "stateName": "Mississippi"
+      }
+    ],
+    "updateDate": "2026-03-08T10:33:05Z"
+  },
+  "nominate": {
+    "dim1": 0.378,
+    "geo_mean": 0.9791
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Roger Frederick Wicker is an American politician, attorney, and former Air Force officer serving as the senior United States senator from Mississippi, a seat he has held since 2007. A member of the Republican Party, Wicker was a Mississippi State Senator from 1988 to 1995 and the U.S. representative from Mississippi's 1st congressional district from 1995 until 2007.",
+    "source": "wikipedia",
+    "summary": "Roger Frederick Wicker is an American politician, attorney, and former Air Force officer serving as the senior United States senator from Mississippi, a seat he has held since 2007. A member of the Republican Party, Wicker was a Mississippi State Senator from 1988 to 1995 and the U.S. representative from Mississippi's 1st congressional district from 1995 until 2007.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Roger_Wicker_Portrait_2018_full.jpg/330px-Roger_Wicker_Portrait_2018_full.jpg",
+    "title": "Roger Wicker",
+    "wiki_url": "https://en.wikipedia.org/wiki/Roger_Wicker"
+  }
+}

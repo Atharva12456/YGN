@@ -1,0 +1,353 @@
+{
+  "bioguideId": "G000601",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSIF",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 29,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF17",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 13,
+        "role": null,
+        "subcommittee": "Commerce, Manufacturing, and Trade"
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF16",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 15,
+        "role": null,
+        "subcommittee": "Communications and Technology"
+      },
+      {
+        "chamber": "house",
+        "code": "HSIF03",
+        "committee": "House Committee on Energy and Commerce",
+        "committeeUrl": "https://energycommerce.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 16,
+        "role": null,
+        "subcommittee": "Energy"
+      }
+    ],
+    "bioguideId": "G000601",
+    "count": 4,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "G000601",
+    "official": {
+      "contactForm": null,
+      "office": "1716 Longworth House Office Building",
+      "phone": "202-225-5071",
+      "website": "https://craiggoldman.house.gov/"
+    },
+    "profiles": {
+      "govtrack": "https://www.govtrack.us/congress/members/457021",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00053861",
+      "wikipedia": "https://en.wikipedia.org/wiki/Craig_Goldman"
+    },
+    "social": {
+      "facebook": {
+        "handle": "61571449239416",
+        "url": "https://facebook.com/61571449239416"
+      },
+      "instagram": {
+        "handle": "repcraiggoldman",
+        "url": "https://instagram.com/repcraiggoldman"
+      },
+      "twitter": {
+        "handle": "RepCraigGoldman",
+        "url": "https://twitter.com/RepCraigGoldman"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1716 Longworth House Office Building",
+        "phoneNumber": "(202) 225-5071",
+        "zipCode": 20515
+      },
+      "bioguideId": "G000601",
+      "birthYear": "1968",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 204,
+        "url": "https://api.congress.gov/v3/member/G000601/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "imageUrl": "https://www.congress.gov/img/member/6774277d0b34857ecc9090a7_200.jpg"
+      },
+      "directOrderName": "Craig A. Goldman",
+      "district": 12,
+      "districtLabel": "District 12",
+      "firstName": "Craig",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Goldman, Craig A.",
+      "lastName": "Goldman",
+      "middleName": "A.",
+      "officialWebsiteUrl": "https://craiggoldman.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Craig Goldman",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Craig",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Goldman, Craig",
+          "lastName": "Goldman",
+          "middleName": "A.",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Craig Goldman",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Craig",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Goldman, Craig",
+          "lastName": "Goldman",
+          "middleName": "A.",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Craig Goldman",
+          "endDate": "2025-04-28T13:04:25Z",
+          "firstName": "Craig",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Goldman, Craig",
+          "lastName": "Goldman",
+          "middleName": "A.",
+          "startDate": "2025-01-17T05:00:00Z"
+        },
+        {
+          "directOrderName": "Craig A. Goldman",
+          "firstName": "Craig",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Goldman, Craig A.",
+          "lastName": "Goldman",
+          "middleName": "A.",
+          "startDate": "2025-04-28T13:04:26Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 12,
+        "url": "https://api.congress.gov/v3/member/G000601/sponsored-legislation"
+      },
+      "state": "Texas",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 12,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "TX",
+          "stateName": "Texas"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:31Z"
+    },
+    "request": {
+      "bioguideId": "g000601",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "G000601",
+    "birthYear": "1968",
+    "birthday": "1968-10-03",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2025,
+    "fullName": "Craig A. Goldman",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2025
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 1,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 12,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Texas"
+      }
+    ],
+    "yearsOfService": 1
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1716 Longworth House Office Building",
+      "phoneNumber": "(202) 225-5071",
+      "zipCode": 20515
+    },
+    "bioguideId": "G000601",
+    "birthYear": "1968",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 204,
+      "url": "https://api.congress.gov/v3/member/G000601/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "imageUrl": "https://www.congress.gov/img/member/6774277d0b34857ecc9090a7_200.jpg"
+    },
+    "directOrderName": "Craig A. Goldman",
+    "district": 12,
+    "districtLabel": "District 12",
+    "firstName": "Craig",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Goldman, Craig A.",
+    "lastName": "Goldman",
+    "middleName": "A.",
+    "officialWebsiteUrl": "https://craiggoldman.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2025
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Craig Goldman",
+        "endDate": "2025-01-10T17:36:18Z",
+        "firstName": "Craig",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Goldman, Craig",
+        "lastName": "Goldman",
+        "middleName": "A.",
+        "startDate": "2025-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Craig Goldman",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Craig",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Goldman, Craig",
+        "lastName": "Goldman",
+        "middleName": "A.",
+        "startDate": "2025-01-10T17:36:19Z"
+      },
+      {
+        "directOrderName": "Craig Goldman",
+        "endDate": "2025-04-28T13:04:25Z",
+        "firstName": "Craig",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Goldman, Craig",
+        "lastName": "Goldman",
+        "middleName": "A.",
+        "startDate": "2025-01-17T05:00:00Z"
+      },
+      {
+        "directOrderName": "Craig A. Goldman",
+        "firstName": "Craig",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Goldman, Craig A.",
+        "lastName": "Goldman",
+        "middleName": "A.",
+        "startDate": "2025-04-28T13:04:26Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 12,
+      "url": "https://api.congress.gov/v3/member/G000601/sponsored-legislation"
+    },
+    "state": "Texas",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 12,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "TX",
+        "stateName": "Texas"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:31Z"
+  },
+  "nominate": {
+    "dim1": 0.803,
+    "geo_mean": 0.95549
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Craig Alan Goldman is an American politician who is serving as the U.S. representative for Texas's 12th congressional district since 2025. A member of the Republican Party, he previously represented the 97th district in the Texas House of Representatives from 2013 to 2025.",
+    "source": "wikipedia",
+    "summary": "Craig Alan Goldman is an American politician who is serving as the U.S. representative for Texas's 12th congressional district since 2025. A member of the Republican Party, he previously represented the 97th district in the Texas House of Representatives from 2013 to 2025.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Representative_Craig_Goldman_Official_Portrait.jpg/330px-Representative_Craig_Goldman_Official_Portrait.jpg",
+    "title": "Craig Goldman",
+    "type": "standard",
+    "wiki_page_id": 70736462,
+    "wiki_url": "https://en.wikipedia.org/wiki/Craig_Goldman"
+  }
+}

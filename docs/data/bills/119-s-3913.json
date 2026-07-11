@@ -1,0 +1,70 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:04:32.229145+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill creates a Commerce Department task force to research and recommend starting antidumping, countervailing duty, and circumvention investigations. It directs the task force to monitor trade flows, pricing, foreign subsidies, consult other agencies and U.S. industries, prioritize impacts on small and medium-sized U.S. firms, and keep findings confidential until formal initiation under sections 702(a), 732(a), or 781 of the Tariff Act."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "T000476",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Tillis, Thomas [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Self-Initiation Trade Enforcement Act of 2026",
+      "updated_at": "2026-03-13T22:00:43Z"
+    },
+    "detailPath": "119/s/3913",
+    "identifier": "S 3913",
+    "impact": {
+      "generated_at": "2026-07-11T06:05:07.522844+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "Creates a Commerce task force under Under Secretary for International Trade to flag countervailable subsidies, dumping, and circumvention and to recommend starting investigations under the Tariff Act. It will consult the U.S. International Trade Commission and Customs and Border Protection, monitor imports and foreign subsidies, prioritize harms to small and medium-sized U.S. businesses, and keep findings confidential until investigations open."
+    },
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3913",
+    "originChamber": "Senate",
+    "policyArea": "Foreign Trade and International Finance",
+    "sponsors": [
+      {
+        "bioguideId": "P000595",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Peters, Gary C. [D-MI]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MI"
+      }
+    ],
+    "title": "Self-Initiation Trade Enforcement Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-13T22:00:43Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3913",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:49.462999+00:00",
+  "source": "congress_api"
+}

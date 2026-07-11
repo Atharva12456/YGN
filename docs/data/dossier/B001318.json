@@ -1,0 +1,352 @@
+{
+  "bioguideId": "B001318",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSBU",
+        "committee": "House Committee on the Budget",
+        "committeeUrl": "https://budget.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 10,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSJU",
+        "committee": "House Committee on the Judiciary",
+        "committeeUrl": "https://judiciary.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 13,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSJU05",
+        "committee": "House Committee on the Judiciary",
+        "committeeUrl": "https://judiciary.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "The Administrative State, Regulatory Reform, and Antitrust"
+      },
+      {
+        "chamber": "house",
+        "code": "HSJU10",
+        "committee": "House Committee on the Judiciary",
+        "committeeUrl": "https://judiciary.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "The Constitution and Limited Government"
+      }
+    ],
+    "bioguideId": "B001318",
+    "count": 4,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "B001318",
+    "official": {
+      "contactForm": null,
+      "office": "1510 Longworth House Office Building",
+      "phone": "202-225-4115",
+      "website": "https://balint.house.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Becca_Balint",
+      "govtrack": "https://www.govtrack.us/congress/members/456948",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00049900",
+      "votesmart": "https://justfacts.votesmart.org/candidate/154056",
+      "wikipedia": "https://en.wikipedia.org/wiki/Becca_Balint"
+    },
+    "social": {
+      "facebook": {
+        "handle": "repbeccab",
+        "url": "https://facebook.com/repbeccab"
+      },
+      "instagram": {
+        "handle": "repbeccab",
+        "url": "https://instagram.com/repbeccab"
+      },
+      "twitter": {
+        "handle": "RepBeccaB",
+        "url": "https://twitter.com/RepBeccaB"
+      },
+      "youtube": {
+        "handle": "YouTubeChannelID",
+        "url": "https://youtube.com/user/YouTubeChannelID"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "1510 Longworth House Office Building",
+        "phoneNumber": "(202) 225-4115",
+        "zipCode": 20515
+      },
+      "bioguideId": "B001318",
+      "birthYear": "1968",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 823,
+        "url": "https://api.congress.gov/v3/member/B001318/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/b001318_200.jpg"
+      },
+      "directOrderName": "Becca Balint",
+      "firstName": "Becca",
+      "honorificName": "Ms.",
+      "invertedOrderName": "Balint, Becca",
+      "lastName": "Balint",
+      "officialWebsiteUrl": "https://balint.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2023
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Becca Balint",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Becca",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Balint, Becca",
+          "lastName": "Balint",
+          "startDate": "2023-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Becca Balint",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Becca",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Balint, Becca",
+          "lastName": "Balint",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "Becca Balint",
+          "firstName": "Becca",
+          "honorificName": "Ms.",
+          "invertedOrderName": "Balint, Becca",
+          "lastName": "Balint",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 44,
+        "url": "https://api.congress.gov/v3/member/B001318/sponsored-legislation"
+      },
+      "state": "Vermont",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "VT",
+          "stateName": "Vermont"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:30Z"
+    },
+    "request": {
+      "bioguideId": "b001318",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "B001318",
+    "birthYear": "1968",
+    "birthday": "1968-05-04",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2023,
+    "fullName": "Becca Balint",
+    "gender": "F",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2023
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 2,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Vermont"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Vermont"
+      }
+    ],
+    "yearsOfService": 3
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "1510 Longworth House Office Building",
+      "phoneNumber": "(202) 225-4115",
+      "zipCode": 20515
+    },
+    "bioguideId": "B001318",
+    "birthYear": "1968",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 823,
+      "url": "https://api.congress.gov/v3/member/B001318/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/b001318_200.jpg"
+    },
+    "directOrderName": "Becca Balint",
+    "firstName": "Becca",
+    "honorificName": "Ms.",
+    "invertedOrderName": "Balint, Becca",
+    "lastName": "Balint",
+    "officialWebsiteUrl": "https://balint.house.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2023
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Becca Balint",
+        "endDate": "2024-06-03T03:59:59Z",
+        "firstName": "Becca",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Balint, Becca",
+        "lastName": "Balint",
+        "startDate": "2023-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Becca Balint",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Becca",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Balint, Becca",
+        "lastName": "Balint",
+        "startDate": "2024-06-03T04:00:00Z"
+      },
+      {
+        "directOrderName": "Becca Balint",
+        "firstName": "Becca",
+        "honorificName": "Ms.",
+        "invertedOrderName": "Balint, Becca",
+        "lastName": "Balint",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 44,
+      "url": "https://api.congress.gov/v3/member/B001318/sponsored-legislation"
+    },
+    "state": "Vermont",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Representative",
+        "startYear": 2023,
+        "stateCode": "VT",
+        "stateName": "Vermont"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "VT",
+        "stateName": "Vermont"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:30Z"
+  },
+  "nominate": {
+    "dim1": -0.441,
+    "geo_mean": 0.97824
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Rebecca A. Balint is an American politician who is a member of the United States House of Representatives from Vermont's at-large congressional district. A progressive Democrat, she served as a member of the Vermont Senate from Windham County from 2015 to 2023, as majority leader from 2017 to 2021, and as president pro tempore from 2021 to 2023.",
+    "source": "wikipedia",
+    "summary": "Rebecca A. Balint is an American politician who is a member of the United States House of Representatives from Vermont's at-large congressional district. A progressive Democrat, she served as a member of the Vermont Senate from Windham County from 2015 to 2023, as majority leader from 2017 to 2021, and as president pro tempore from 2021 to 2023.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Rep._Becca_Balint_-_118th_Congress.jpg/330px-Rep._Becca_Balint_-_118th_Congress.jpg",
+    "title": "Becca Balint",
+    "wiki_url": "https://en.wikipedia.org/wiki/Becca_Balint"
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "bioguideId": "M001214",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSAP",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 26,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSAP19",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Commerce, Justice, Science, and Related Agencies"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAP10",
+        "committee": "House Committee on Appropriations",
+        "committeeUrl": "https://appropriations.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Energy and Water Development and Related Agencies"
+      }
+    ],
+    "bioguideId": "M001214",
+    "count": 3,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "M001214",
+    "official": {
+      "contactForm": null,
+      "office": "2441 Rayburn House Office Building",
+      "phone": "202-225-2461",
+      "website": "https://mrvan.house.gov"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Frank_Mrvan_%28Indiana_congressional_member%29",
+      "govtrack": "https://www.govtrack.us/congress/members/456821",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00045905",
+      "votesmart": "https://justfacts.votesmart.org/candidate/113775",
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+    },
+    "social": {
+      "facebook": {
+        "handle": "RepMrvan",
+        "url": "https://facebook.com/RepMrvan"
+      },
+      "twitter": {
+        "handle": "RepMrvan",
+        "url": "https://twitter.com/RepMrvan"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "2441 Rayburn House Office Building",
+        "phoneNumber": "(202) 225-2461",
+        "zipCode": 20515
+      },
+      "bioguideId": "M001214",
+      "birthYear": "1969",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 780,
+        "url": "https://api.congress.gov/v3/member/M001214/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/m001214_200.jpg"
+      },
+      "directOrderName": "Frank J. Mrvan",
+      "district": 1,
+      "districtLabel": "District 1",
+      "firstName": "Frank",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Mrvan, Frank J.",
+      "lastName": "Mrvan",
+      "middleName": "J.",
+      "officialWebsiteUrl": "https://mrvan.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2021
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Frank J. Mrvan",
+          "endDate": "2024-06-03T03:59:59Z",
+          "firstName": "Frank",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Mrvan, Frank J.",
+          "lastName": "Mrvan",
+          "middleName": "J.",
+          "startDate": "2021-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Frank J. Mrvan",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Frank",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Mrvan, Frank J.",
+          "lastName": "Mrvan",
+          "middleName": "J.",
+          "startDate": "2024-06-03T04:00:00Z"
+        },
+        {
+          "directOrderName": "Frank J. Mrvan",
+          "firstName": "Frank",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Mrvan, Frank J.",
+          "lastName": "Mrvan",
+          "middleName": "J.",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 17,
+        "url": "https://api.congress.gov/v3/member/M001214/sponsored-legislation"
+      },
+      "state": "Indiana",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 117,
+          "district": 1,
+          "endYear": 2023,
+          "memberType": "Representative",
+          "startYear": 2021,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 118,
+          "district": 1,
+          "endYear": 2025,
+          "memberType": "Representative",
+          "startYear": 2023,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        },
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 1,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "IN",
+          "stateName": "Indiana"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:28Z"
+    },
+    "request": {
+      "bioguideId": "m001214",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "M001214",
+    "birthYear": "1969",
+    "birthday": "1969-04-16",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2021,
+    "fullName": "Frank J. Mrvan",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2021
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 3,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 1,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Indiana"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 1,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Indiana"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 1,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Indiana"
+      }
+    ],
+    "yearsOfService": 5
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "2441 Rayburn House Office Building",
+      "phoneNumber": "(202) 225-2461",
+      "zipCode": 20515
+    },
+    "bioguideId": "M001214",
+    "birthYear": "1969",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 780,
+      "url": "https://api.congress.gov/v3/member/M001214/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/m001214_200.jpg"
+    },
+    "directOrderName": "Frank J. Mrvan",
+    "district": 1,
+    "districtLabel": "District 1",
+    "firstName": "Frank",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Mrvan, Frank J.",
+    "lastName": "Mrvan",
+    "middleName": "J.",
+    "officialWebsiteUrl": "https://mrvan.house.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2021
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Frank J. Mrvan",
+        "endDate": "2024-06-03T03:59:59Z",
+        "firstName": "Frank",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Mrvan, Frank J.",
+        "lastName": "Mrvan",
+        "middleName": "J.",
+        "startDate": "2021-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Frank J. Mrvan",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Frank",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Mrvan, Frank J.",
+        "lastName": "Mrvan",
+        "middleName": "J.",
+        "startDate": "2024-06-03T04:00:00Z"
+      },
+      {
+        "directOrderName": "Frank J. Mrvan",
+        "firstName": "Frank",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Mrvan, Frank J.",
+        "lastName": "Mrvan",
+        "middleName": "J.",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 17,
+      "url": "https://api.congress.gov/v3/member/M001214/sponsored-legislation"
+    },
+    "state": "Indiana",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 117,
+        "district": 1,
+        "endYear": 2023,
+        "memberType": "Representative",
+        "startYear": 2021,
+        "stateCode": "IN",
+        "stateName": "Indiana"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 118,
+        "district": 1,
+        "endYear": 2025,
+        "memberType": "Representative",
+        "startYear": 2023,
+        "stateCode": "IN",
+        "stateName": "Indiana"
+      },
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 1,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "IN",
+        "stateName": "Indiana"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:28Z"
+  },
+  "nominate": {
+    "dim1": -0.303,
+    "geo_mean": 0.91352
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Frank John Mrvan is an American politician who has served as the U.S. representative for Indiana's 1st congressional district since 2021. From 2005 until 2021, he served as the township trustee for North Township, Indiana.",
+    "source": "wikipedia",
+    "summary": "Frank John Mrvan is an American politician who has served as the U.S. representative for Indiana's 1st congressional district since 2021. From 2005 until 2021, he served as the township trustee for North Township, Indiana.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Frank_Mrvan_117th_U.S_Congress.jpg/330px-Frank_Mrvan_117th_U.S_Congress.jpg",
+    "title": "Frank J. Mrvan",
+    "type": "standard",
+    "wiki_page_id": 64157416,
+    "wiki_url": "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+  }
+}

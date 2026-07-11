@@ -1,0 +1,70 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:08:00.396404+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The Affordable CHOICE Act creates a public insurance option under the ACA to be offered by HHS through the Exchanges beginning plan year Jan. 1, 2027, as metal-level (bronze, silver, gold) plans with geographically adjusted premiums to fund benefits and administration. The Secretary must negotiate provider and drug payment rates with fallback to Medicare rates, apply the option nationwide to Exchange enrollees and providers, and prohibit transferring insurance risk to contractors."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "S001208",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Slotkin, Elissa [D-MI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "MI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Affordable CHOICE Act",
+      "updated_at": "2026-03-13T15:59:41Z"
+    },
+    "detailPath": "119/s/3599",
+    "identifier": "S 3599",
+    "impact": {
+      "generated_at": "2026-07-11T06:07:56.242811+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill directs HHS to create a federal public health insurance option sold only through ACA Exchanges starting January 1, 2027, offering bronze, silver, and gold plans. It would affect Exchange enrollees, private insurers competing on Exchanges, hospitals/clinicians/pharmacies paid at Secretary\u2011negotiated or Medicare rates, the prescription drug market, and the Treasury via a dedicated account and startup appropriations."
+    },
+    "introducedDate": "2026-01-08",
+    "latestAction": {
+      "date": "2026-01-08",
+      "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+    },
+    "number": "3599",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "W000802",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Whitehouse, Sheldon [D-RI]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "RI"
+      }
+    ],
+    "title": "Affordable CHOICE Act",
+    "type": "S",
+    "updatedAt": "2026-03-13T15:59:41Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3599",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:58.197757+00:00",
+  "source": "congress_api"
+}

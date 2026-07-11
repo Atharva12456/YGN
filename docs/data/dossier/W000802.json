@@ -1,0 +1,678 @@
+{
+  "bioguideId": "W000802",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "senate",
+        "code": "SSEV",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SCNC",
+        "committee": "United States Senate Caucus on International Narcotics Control",
+        "committeeUrl": "http://www.drugcaucus.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "joint",
+        "code": "JCSE",
+        "committee": "Commission on Security and Cooperation in Europe",
+        "committeeUrl": "http://www.csce.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 1,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFI",
+        "committee": "Senate Committee on Finance",
+        "committeeUrl": "http://www.finance.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSBU",
+        "committee": "Senate Committee on the Budget",
+        "committeeUrl": "http://www.budget.senate.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU25",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Federal Courts, Oversight, Agency Action, and Federal Rights"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU04",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Border Security and Immigration"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU26",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Intellectual Property"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU21",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "the Constitution"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFI10",
+        "committee": "Senate Committee on Finance",
+        "committeeUrl": "http://www.finance.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Health Care"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFI11",
+        "committee": "Senate Committee on Finance",
+        "committeeUrl": "http://www.finance.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Taxation and IRS Oversight"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSFI13",
+        "committee": "Senate Committee on Finance",
+        "committeeUrl": "http://www.finance.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "International Trade, Customs, and Global Competitiveness"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV09",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": "Ex Officio",
+        "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV15",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": "Ex Officio",
+        "subcommittee": "Fisheries, Wildlife, and Water"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 8,
+        "role": "Ex Officio",
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV08",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 8,
+        "role": "Ex Officio",
+        "subcommittee": "Transportation and Infrastructure"
+      }
+    ],
+    "bioguideId": "W000802",
+    "count": 17,
+    "leadershipCount": 7,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "W000802",
+    "official": {
+      "contactForm": "https://www.whitehouse.senate.gov/contact/email-sheldon",
+      "office": "530 Hart Senate Office Building",
+      "phone": "202-224-2921",
+      "website": "https://www.whitehouse.senate.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Sheldon_Whitehouse",
+      "cspan": "https://www.c-span.org/person/?92235",
+      "govtrack": "https://www.govtrack.us/congress/members/412247",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00027533",
+      "votesmart": "https://justfacts.votesmart.org/candidate/2572",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sheldon_Whitehouse"
+    },
+    "social": {
+      "facebook": {
+        "handle": "SenatorWhitehouse",
+        "url": "https://facebook.com/SenatorWhitehouse"
+      },
+      "instagram": {
+        "handle": "SenWhitehouse",
+        "url": "https://instagram.com/SenWhitehouse"
+      },
+      "twitter": {
+        "handle": "SenWhitehouse",
+        "url": "https://twitter.com/SenWhitehouse"
+      },
+      "youtube": {
+        "handle": "SenatorWhitehouse",
+        "url": "https://youtube.com/user/SenatorWhitehouse"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "530 Hart Senate Office Building  Washington, DC 20510",
+        "phoneNumber": "(202) 224-2921",
+        "zipCode": 20510
+      },
+      "bioguideId": "W000802",
+      "birthYear": "1955",
+      "chamber": "Senate",
+      "cosponsoredLegislation": {
+        "count": 4891,
+        "url": "https://api.congress.gov/v3/member/W000802/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+        "imageUrl": "https://www.congress.gov/img/member/w000802_200.jpg"
+      },
+      "directOrderName": "Sheldon Whitehouse",
+      "districtLabel": "Statewide",
+      "firstName": "Sheldon",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Whitehouse, Sheldon",
+      "lastName": "Whitehouse",
+      "officialWebsiteUrl": "https://www.whitehouse.senate.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2007
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Sheldon Whitehouse",
+          "firstName": "Sheldon",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Whitehouse, Sheldon",
+          "lastName": "Whitehouse",
+          "startDate": "2007-01-04T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 769,
+        "url": "https://api.congress.gov/v3/member/W000802/sponsored-legislation"
+      },
+      "state": "Rhode Island",
+      "terms": [
+        {
+          "chamber": "Senate",
+          "congress": 110,
+          "endYear": 2009,
+          "memberType": "Senator",
+          "startYear": 2007,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 111,
+          "endYear": 2011,
+          "memberType": "Senator",
+          "startYear": 2009,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 112,
+          "endYear": 2013,
+          "memberType": "Senator",
+          "startYear": 2011,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 113,
+          "endYear": 2015,
+          "memberType": "Senator",
+          "startYear": 2013,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 114,
+          "endYear": 2017,
+          "memberType": "Senator",
+          "startYear": 2015,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 115,
+          "endYear": 2019,
+          "memberType": "Senator",
+          "startYear": 2017,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 116,
+          "endYear": 2021,
+          "memberType": "Senator",
+          "startYear": 2019,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 117,
+          "endYear": 2023,
+          "memberType": "Senator",
+          "startYear": 2021,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 118,
+          "endYear": 2025,
+          "memberType": "Senator",
+          "startYear": 2023,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        },
+        {
+          "chamber": "Senate",
+          "congress": 119,
+          "memberType": "Senator",
+          "startYear": 2025,
+          "stateCode": "RI",
+          "stateName": "Rhode Island"
+        }
+      ],
+      "updateDate": "2026-03-08T10:33:03Z"
+    },
+    "request": {
+      "bioguideId": "w000802",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "W000802",
+    "birthYear": "1955",
+    "birthday": "1955-10-20",
+    "chambersServed": [
+      "Senate"
+    ],
+    "firstElectedYear": 2007,
+    "fullName": "Sheldon Whitehouse",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2007
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 10,
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 110,
+        "district": null,
+        "endYear": 2009,
+        "party": null,
+        "startYear": 2007,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "district": null,
+        "endYear": 2011,
+        "party": null,
+        "startYear": 2009,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "district": null,
+        "endYear": 2013,
+        "party": null,
+        "startYear": 2011,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "district": null,
+        "endYear": 2015,
+        "party": null,
+        "startYear": 2013,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "district": null,
+        "endYear": 2017,
+        "party": null,
+        "startYear": 2015,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "district": null,
+        "endYear": 2019,
+        "party": null,
+        "startYear": 2017,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "district": null,
+        "endYear": 2021,
+        "party": null,
+        "startYear": 2019,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "district": null,
+        "endYear": 2023,
+        "party": null,
+        "startYear": 2021,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "district": null,
+        "endYear": 2025,
+        "party": null,
+        "startYear": 2023,
+        "state": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "district": null,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "Rhode Island"
+      }
+    ],
+    "yearsOfService": 19
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "530 Hart Senate Office Building  Washington, DC 20510",
+      "phoneNumber": "(202) 224-2921",
+      "zipCode": 20510
+    },
+    "bioguideId": "W000802",
+    "birthYear": "1955",
+    "chamber": "Senate",
+    "cosponsoredLegislation": {
+      "count": 4891,
+      "url": "https://api.congress.gov/v3/member/W000802/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "<a href=\"http://www.senate.gov/artandhistory/history/common/generic/Photo_Collection_of_the_Senate_Historical_Office.htm\">Courtesy U.S. Senate Historical Office</a>",
+      "imageUrl": "https://www.congress.gov/img/member/w000802_200.jpg"
+    },
+    "directOrderName": "Sheldon Whitehouse",
+    "districtLabel": "Statewide",
+    "firstName": "Sheldon",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Whitehouse, Sheldon",
+    "lastName": "Whitehouse",
+    "officialWebsiteUrl": "https://www.whitehouse.senate.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2007
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Sheldon Whitehouse",
+        "firstName": "Sheldon",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Whitehouse, Sheldon",
+        "lastName": "Whitehouse",
+        "startDate": "2007-01-04T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 769,
+      "url": "https://api.congress.gov/v3/member/W000802/sponsored-legislation"
+    },
+    "state": "Rhode Island",
+    "terms": [
+      {
+        "chamber": "Senate",
+        "congress": 110,
+        "endYear": 2009,
+        "memberType": "Senator",
+        "startYear": 2007,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 111,
+        "endYear": 2011,
+        "memberType": "Senator",
+        "startYear": 2009,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 112,
+        "endYear": 2013,
+        "memberType": "Senator",
+        "startYear": 2011,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 113,
+        "endYear": 2015,
+        "memberType": "Senator",
+        "startYear": 2013,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 114,
+        "endYear": 2017,
+        "memberType": "Senator",
+        "startYear": 2015,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 115,
+        "endYear": 2019,
+        "memberType": "Senator",
+        "startYear": 2017,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 116,
+        "endYear": 2021,
+        "memberType": "Senator",
+        "startYear": 2019,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 117,
+        "endYear": 2023,
+        "memberType": "Senator",
+        "startYear": 2021,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 118,
+        "endYear": 2025,
+        "memberType": "Senator",
+        "startYear": 2023,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      },
+      {
+        "chamber": "Senate",
+        "congress": 119,
+        "memberType": "Senator",
+        "startYear": 2025,
+        "stateCode": "RI",
+        "stateName": "Rhode Island"
+      }
+    ],
+    "updateDate": "2026-03-08T10:33:03Z"
+  },
+  "nominate": {
+    "dim1": -0.34,
+    "geo_mean": 0.88915
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Sheldon Whitehouse is an American politician and attorney serving as the junior United States senator from Rhode Island, a seat he has held since 2007. A member of the Democratic Party, he served as the United States Attorney for the District of Rhode Island from 1993 to 1998, and as the 71st attorney general of Rhode Island from 1999 to 2003.",
+    "source": "wikipedia",
+    "summary": "Sheldon Whitehouse is an American politician and attorney serving as the junior United States senator from Rhode Island, a seat he has held since 2007. A member of the Democratic Party, he served as the United States Attorney for the District of Rhode Island from 1993 to 1998, and as the 71st attorney general of Rhode Island from 1999 to 2003.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sheldon_Whitehouse%2C_official_portrait%2C_116th_congress.jpg/330px-Sheldon_Whitehouse%2C_official_portrait%2C_116th_congress.jpg",
+    "title": "Sheldon Whitehouse",
+    "wiki_url": "https://en.wikipedia.org/wiki/Sheldon_Whitehouse"
+  }
+}

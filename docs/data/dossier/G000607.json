@@ -1,0 +1,225 @@
+{
+  "bioguideId": "G000607",
+  "committees": {
+    "assignments": [],
+    "bioguideId": "G000607",
+    "count": 0,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "G000607",
+    "official": {
+      "contactForm": null,
+      "office": "408 Cannon House Office Building",
+      "phone": "(202) 225-3076",
+      "website": "https://gallagher.house.gov"
+    },
+    "profiles": {
+      "govtrack": "https://www.govtrack.us/congress/members/457043"
+    },
+    "social": {},
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "408 Cannon House Office Building",
+        "phoneNumber": "(202) 225-3076",
+        "zipCode": 20515
+      },
+      "bioguideId": "G000607",
+      "birthYear": "1981",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 11,
+        "url": "https://api.congress.gov/v3/member/G000607/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "imageUrl": "https://www.congress.gov/img/member/6a29d4f81c6ce0de6fbae1f7_200.jpg"
+      },
+      "directOrderName": "James Gallagher",
+      "district": 1,
+      "districtLabel": "District 1",
+      "firstName": "James",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Gallagher, James",
+      "lastName": "Gallagher",
+      "officialWebsiteUrl": "https://gallagher.house.gov",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "R",
+          "partyName": "Republican",
+          "startYear": 2026
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "James Gallagher",
+          "firstName": "James",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Gallagher, James",
+          "lastName": "Gallagher",
+          "startDate": "2026-06-10T04:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 1,
+        "url": "https://api.congress.gov/v3/member/G000607/sponsored-legislation"
+      },
+      "state": "California",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 1,
+          "memberType": "Representative",
+          "startYear": 2026,
+          "stateCode": "CA",
+          "stateName": "California"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:32Z"
+    },
+    "request": {
+      "bioguideId": "g000607",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "G000607",
+    "birthYear": "1981",
+    "birthday": "1981-03-07",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2026,
+    "fullName": "James Gallagher",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2026
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 1,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 1,
+        "endYear": null,
+        "party": null,
+        "startYear": 2026,
+        "state": "California"
+      }
+    ],
+    "yearsOfService": 0
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "408 Cannon House Office Building",
+      "phoneNumber": "(202) 225-3076",
+      "zipCode": 20515
+    },
+    "bioguideId": "G000607",
+    "birthYear": "1981",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 11,
+      "url": "https://api.congress.gov/v3/member/G000607/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "imageUrl": "https://www.congress.gov/img/member/6a29d4f81c6ce0de6fbae1f7_200.jpg"
+    },
+    "directOrderName": "James Gallagher",
+    "district": 1,
+    "districtLabel": "District 1",
+    "firstName": "James",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Gallagher, James",
+    "lastName": "Gallagher",
+    "officialWebsiteUrl": "https://gallagher.house.gov",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "R",
+        "partyName": "Republican",
+        "startYear": 2026
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "James Gallagher",
+        "firstName": "James",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Gallagher, James",
+        "lastName": "Gallagher",
+        "startDate": "2026-06-10T04:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 1,
+      "url": "https://api.congress.gov/v3/member/G000607/sponsored-legislation"
+    },
+    "state": "California",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 1,
+        "memberType": "Representative",
+        "startYear": 2026,
+        "stateCode": "CA",
+        "stateName": "California"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:32Z"
+  },
+  "nominate": null,
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "James Matthew Gallagher is an American politician who is a member of the United States House of Representatives from California's 1st congressional district. A member of the Republican Party, he served in the California State Assembly from 2014 to 2026, representing the 3rd district located in the northern Sacramento Valley.",
+    "source": "wikipedia",
+    "summary": "James Matthew Gallagher is an American politician who is a member of the United States House of Representatives from California's 1st congressional district. A member of the Republican Party, he served in the California State Assembly from 2014 to 2026, representing the 3rd district located in the northern Sacramento Valley.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/James_Gallagher%2C_official_portrait_%28119th_Congress%29.jpg/330px-James_Gallagher%2C_official_portrait_%28119th_Congress%29.jpg",
+    "title": "James Gallagher (California politician)",
+    "wiki_page_id": 44514311,
+    "wiki_url": "https://en.wikipedia.org/wiki/James_Gallagher_(California_politician)"
+  }
+}

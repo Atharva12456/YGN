@@ -1,18 +1,57 @@
 {
+  "bill_details": 40,
   "congress": 119,
   "current_member": true,
+  "debt_metric": true,
   "descriptions": 537,
   "details": 537,
+  "dossiers": 537,
   "errors": [],
   "ethics": 537,
   "ethics_fallback": 528,
   "fallback_descriptions": 3,
   "fec_scored_this_run": 12,
-  "generated_at": "2026-07-10T19:54:25.805888+00:00",
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
   "member_score_index": true,
   "members": 537,
   "nominate": 536,
   "recent_bills": true,
+  "roster_summary": {
+    "by_chamber": {
+      "House": 437,
+      "Senate": 100
+    },
+    "by_chamber_party": {
+      "House": {
+        "DEM": 215,
+        "IND": 1,
+        "REP": 221
+      },
+      "Senate": {
+        "DEM": 45,
+        "IND": 2,
+        "REP": 53
+      }
+    },
+    "by_party": {
+      "DEM": 260,
+      "IND": 3,
+      "REP": 274
+    },
+    "total": 537,
+    "voting_by_chamber_party": {
+      "House": {
+        "DEM": 212,
+        "IND": 1,
+        "REP": 218
+      },
+      "Senate": {
+        "DEM": 45,
+        "IND": 2,
+        "REP": 53
+      }
+    }
+  },
   "wiki": 534,
   "wiki_reused": 534
 }

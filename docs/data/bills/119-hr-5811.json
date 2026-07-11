@@ -1,0 +1,120 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:08:45.622063+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill overhauls U.S. patent law by repealing key America Invents Act sections to restore a first\u2011to\u2011invent rule with a one\u2011year grace period and abolish inter partes/post\u2011grant review and the Patent Trial and Appeal Board. It reinstates the Board of Patent Appeals and Interferences, narrows ineligible subject matter to natural phenomena and mental processes, limits prior art, presumes irreparable harm for injunctions, and authorizes USPTO fee retention."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "K000009",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kaptur, Marcy [D-OH-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "R000614",
+        "district": 21,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Roy, Chip [R-TX-21]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "D000626",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davidson, Warren [R-OH-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "C001115",
+        "district": 27,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cloud, Michael [R-TX-27]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "G000565",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gosar, Paul A. [R-AZ-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "L000596",
+        "district": 13,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Luna, Anna Paulina [R-FL-13]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Restoring America's Leadership in Innovation Act of 2025 This bill revises several aspects of patent law. The bill changes the U.S. patent system back to a first-to-invent system, in which the first inventor to conceive of an invention is entitled to a patent. Currently, the first person to file an application that meets all the necessary requirements is entitled to the patent. Several types of administrative patent challenge proceedings are abolished, as well as the U.S. Patent and Trademark Office (USPTO) body that decides those proceedings. The bill relaxes the standard for what constitutes patent-eligible subject matter. The only ineligible inventions shall be those that exist in nature independent or prior to human activity or that exist solely in the human mind. The bill also makes it easier for a patent owner that has won an infringement case in court to secure a permanent injunction against the infringing defendant. Specifically, there shall be a presumption that further infringement would cause irreparable harm to the prevailing patent owner, and the burden shall be on the infringer to prove otherwise. (Currently, a prevailing patent owner seeking a permanent injunction must prove, among other things, that further infringement would cause irreparable harm.) The bill limits what types of publications shall be treated as prior art that could be used to make an invention be considered to be anticipated or obvious (and therefore not patentable). The bill authorizes the USPTO to keep and spend all the fees that it collects.",
+      "updated_at": "2026-03-13T20:22:15Z"
+    },
+    "detailPath": "119/hr/5811",
+    "identifier": "HR 5811",
+    "impact": {
+      "generated_at": "2026-07-11T06:08:41.219742+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill restores first-to-invent rules and a one-year filing grace, changing how the USPTO and inventors, startups, universities, and tech and pharmaceutical firms secure patents. It abolishes inter partes and post-grant review and the Patent Trial and Appeal Board, restores a Board of Patent Appeals and Interferences, and shifts patent invalidation disputes to federal courts, affecting generic drug makers."
+    },
+    "introducedDate": "2025-10-24",
+    "latestAction": {
+      "date": "2025-10-24",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "5811",
+    "originChamber": "House",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "M001184",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Massie, Thomas [R-KY-4]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KY"
+      }
+    ],
+    "title": "Restoring America\u2019s Leadership in Innovation Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-13T20:22:21Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5811",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:58:02.454790+00:00",
+  "source": "congress_api"
+}

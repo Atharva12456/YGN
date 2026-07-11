@@ -1,0 +1,90 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:07:46.244748+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "The bill creates a Department of Education pilot to award competitive grants\u2014up to $200,000 for two years, with $10 million authorized for FY2026\u2014for buying, distributing, or donating books and hosting literacy programs and other book\u2011access activities. Grants cover nongovernmental and nonprofit groups serving children under 19, require a community leader letter and viewpoint\u2011neutral review, include report to Congress, and do not compel libraries to accept donations."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "A000370",
+        "district": 12,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Adams, Alma S. [D-NC-12]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-03",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "D000399",
+        "district": 37,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Doggett, Lloyd [D-TX-37]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-10",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "R000305",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Ross, Deborah K. [D-NC-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Empowering Young Readers Act of 2026",
+      "updated_at": "2026-03-13T08:05:36Z"
+    },
+    "detailPath": "119/hr/7327",
+    "identifier": "HR 7327",
+    "impact": {
+      "generated_at": "2026-07-11T06:07:53.313750+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The bill directs the Department of Education to run a competitive pilot awarding nonprofit or nongovernmental organizations grants (up to $200,000; $10 million authorized for FY2026) to provide books and literacy programs for children under 19. It requires viewpoint-neutral review, lets libraries refuse donations, and directs the Secretary to report to Congress on books distributed and child literacy changes."
+    },
+    "introducedDate": "2026-02-03",
+    "latestAction": {
+      "date": "2026-02-03",
+      "text": "Referred to the House Committee on Education and Workforce."
+    },
+    "number": "7327",
+    "originChamber": "House",
+    "policyArea": "Education",
+    "sponsors": [
+      {
+        "bioguideId": "F000477",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NC"
+      }
+    ],
+    "title": "Empowering Young Readers Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-13T08:05:36Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7327",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:57.005286+00:00",
+  "source": "congress_api"
+}

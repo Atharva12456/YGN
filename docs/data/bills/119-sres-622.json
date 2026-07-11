@@ -1,0 +1,590 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiDescription": {
+      "generated_at": "2026-07-11T06:12:42.732655+00:00",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "source": "committed_legacy",
+      "summary": "This Senate resolution supports designating February 21\u201328, 2026, as \"National FFA Week,\" recognizes the National FFA Organization's role in developing student leaders, and celebrates the 50th anniversary of Alaska's State FFA Association. The nonbinding measure covers the FFA's roughly 1,000,000 members in 9,407 chapters nationwide and specifically notes Alaska's 19 chapters and 493 members."
+    },
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 53,
+    "cosponsors": [
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "S001198",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Sullivan, Dan [R-AK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "AK"
+      },
+      {
+        "bioguideId": "B001267",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Bennet, Michael F. [D-CO]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "R000584",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Risch, James E. [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ID"
+      },
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "C001095",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cotton, Tom [R-AR]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "AR"
+      },
+      {
+        "bioguideId": "B001303",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blunt Rochester, Lisa [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "D000618",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Daines, Steve [R-MT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MT"
+      },
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "L000571",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Lummis, Cynthia M. [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "WY"
+      },
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "H001079",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hyde-Smith, Cindy [R-MS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MS"
+      },
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "T000476",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Tillis, Thomas [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "D000622",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Duckworth, Tammy [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "J000312",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Justice, James C. [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "F000479",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Fetterman, John [D-PA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "H000601",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hagerty, Bill [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "H000273",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hickenlooper, John W. [D-CO]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "C001096",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cramer, Kevin [R-ND]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "K000384",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kaine, Tim [D-VA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "C000880",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Crapo, Mike [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ID"
+      },
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "L000575",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Lankford, James [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "K000383",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. King, Angus S., Jr. [I-ME]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "R000605",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Rounds, Mike [R-SD]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "SD"
+      },
+      {
+        "bioguideId": "M001176",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Merkley, Jeff [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "L000570",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Luj\u00e1n, Ben Ray [D-NM]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "S001232",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Sheehy, Tim [R-MT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MT"
+      },
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "S001203",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Smith, Tina [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "F000463",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Fischer, Deb [R-NE]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "B001261",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Barrasso, John [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "WY"
+      },
+      {
+        "bioguideId": "W000779",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Wyden, Ron [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "B001236",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Boozman, John [R-AR]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "AR"
+      },
+      {
+        "bioguideId": "B001243",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blackburn, Marsha [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "B001305",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Budd, Ted [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "S001184",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Scott, Tim [R-SC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "M001190",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Mullin, Markwayne [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "H001061",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hoeven, John [R-ND]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "C001035",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Collins, Susan M. [R-ME]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "M000355",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. McConnell, Mitch [R-KY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "G000386",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Grassley, Chuck [R-IA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "E000295",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Ernst, Joni [R-IA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "B001299",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Banks, Jim [R-IN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001243",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. McCormick, David [R-PA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "PA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution supports the designation of February 21-28, 2026, as National FFA (Future Farmers of America) Week. It also celebrates the 50th anniversary of the chartering of Alaska as a State FFA Association of the National FFA Organization.",
+      "updated_at": "2026-03-14T19:51:14Z"
+    },
+    "detailPath": "119/sres/622",
+    "identifier": "SRES 622",
+    "impact": {
+      "generated_at": "2026-07-11T06:04:08.739194+00:00",
+      "model": "gpt-5-mini",
+      "source": "committed_legacy",
+      "status": "AI impact analysis",
+      "summary": "The Senate resolution designates February 21\u201328, 2026, as \"National FFA Week\" and recognizes the National FFA Organization\u2019s role training students for agriculture, food, natural resources, and leadership careers. It notes the FFA\u2019s over 1,000,000 members in 9,407 chapters, about 13,000 advisors and teachers, and celebrates Alaska\u2019s State FFA Association\u2019s 50th anniversary with 19 chapters and 493 members."
+    },
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S716; text: CR S712)"
+    },
+    "number": "622",
+    "originChamber": "Senate",
+    "policyArea": "Agriculture and Food",
+    "sponsors": [
+      {
+        "bioguideId": "Y000064",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Young, Todd [R-IN]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IN"
+      }
+    ],
+    "title": "A resolution expressing support for the designation of February 21 through February 28, 2026, as \"National FFA Week\", recognizing the important role of the National FFA Organization in developing the next generation of globally conscious leaders who will change the world, and celebrating the 50th anniversary of the chartering of the State of Alaska as a State FFA  Association.",
+    "type": "SRES",
+    "updatedAt": "2026-03-14T19:51:53Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/622",
+    "votes": []
+  },
+  "generated_at": "2026-07-11T13:57:48.391740+00:00",
+  "source": "congress_api"
+}

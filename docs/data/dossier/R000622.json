@@ -1,0 +1,334 @@
+{
+  "bioguideId": "R000622",
+  "committees": {
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSSY",
+        "committee": "House Committee on Science, Space, and Technology",
+        "committeeUrl": "https://science.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 16,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSAG",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 21,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSSY20",
+        "committee": "House Committee on Science, Space, and Technology",
+        "committeeUrl": "https://science.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Energy"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAG15",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Forestry and Horticulture"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAG29",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Livestock, Dairy, and Poultry"
+      }
+    ],
+    "bioguideId": "R000622",
+    "count": 5,
+    "leadershipCount": 0,
+    "source": "unitedstates/congress-legislators"
+  },
+  "contact": {
+    "bioguideId": "R000622",
+    "official": {
+      "contactForm": null,
+      "office": "128 Cannon House Office Building",
+      "phone": "202-225-5441",
+      "website": "https://riley.house.gov/"
+    },
+    "profiles": {
+      "ballotpedia": "https://ballotpedia.org/Josh_Riley",
+      "govtrack": "https://www.govtrack.us/congress/members/457012",
+      "opensecrets": "https://www.opensecrets.org/members-of-congress/summary?cid=N00049916",
+      "votesmart": "https://justfacts.votesmart.org/candidate/205997",
+      "wikipedia": "https://en.wikipedia.org/wiki/Josh_Riley"
+    },
+    "social": {
+      "facebook": {
+        "handle": "RepRileyNY",
+        "url": "https://facebook.com/RepRileyNY"
+      },
+      "instagram": {
+        "handle": "RepRileyNY",
+        "url": "https://instagram.com/RepRileyNY"
+      }
+    },
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ]
+  },
+  "detail": {
+    "member": {
+      "addressInformation": {
+        "city": "Washington",
+        "district": "DC",
+        "officeAddress": "128 Cannon House Office Building",
+        "phoneNumber": "(202) 225-5441",
+        "zipCode": 20515
+      },
+      "bioguideId": "R000622",
+      "birthYear": "1981",
+      "chamber": "House of Representatives",
+      "cosponsoredLegislation": {
+        "count": 376,
+        "url": "https://api.congress.gov/v3/member/R000622/cosponsored-legislation"
+      },
+      "currentMember": true,
+      "depiction": {
+        "attribution": "Image courtesy of the Member",
+        "imageUrl": "https://www.congress.gov/img/member/67745e360b34857ecc909179_200.jpg"
+      },
+      "directOrderName": "Josh Riley",
+      "district": 19,
+      "districtLabel": "District 19",
+      "firstName": "Josh",
+      "honorificName": "Mr.",
+      "invertedOrderName": "Riley, Josh",
+      "lastName": "Riley",
+      "officialWebsiteUrl": "https://riley.house.gov/",
+      "partyHistory": [
+        {
+          "partyAbbreviation": "D",
+          "partyName": "Democratic",
+          "startYear": 2025
+        }
+      ],
+      "previousNames": [
+        {
+          "directOrderName": "Josh Riley",
+          "endDate": "2025-01-10T17:36:18Z",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Riley, Josh",
+          "lastName": "Riley",
+          "startDate": "2025-01-03T17:00:00Z"
+        },
+        {
+          "directOrderName": "Josh Riley",
+          "endDate": "2025-01-17T04:59:59Z",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Riley, Josh",
+          "lastName": "Riley",
+          "startDate": "2025-01-10T17:36:19Z"
+        },
+        {
+          "directOrderName": "Josh Riley",
+          "firstName": "Josh",
+          "honorificName": "Mr.",
+          "invertedOrderName": "Riley, Josh",
+          "lastName": "Riley",
+          "startDate": "2025-01-17T05:00:00Z"
+        }
+      ],
+      "sponsoredLegislation": {
+        "count": 14,
+        "url": "https://api.congress.gov/v3/member/R000622/sponsored-legislation"
+      },
+      "state": "New York",
+      "terms": [
+        {
+          "chamber": "House of Representatives",
+          "congress": 119,
+          "district": 19,
+          "memberType": "Representative",
+          "startYear": 2025,
+          "stateCode": "NY",
+          "stateName": "New York"
+        }
+      ],
+      "updateDate": "2026-07-11T07:40:31Z"
+    },
+    "request": {
+      "bioguideId": "r000622",
+      "contentType": "application/json",
+      "format": "json"
+    }
+  },
+  "errors": [],
+  "ethics": null,
+  "funding": {
+    "available": false,
+    "note": "Live campaign-funding detail is available on the hosted API.",
+    "source": "static"
+  },
+  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "history": {
+    "bioguideId": "R000622",
+    "birthYear": "1981",
+    "birthday": "1981-01-21",
+    "chambersServed": [
+      "House of Representatives"
+    ],
+    "firstElectedYear": 2025,
+    "fullName": "Josh Riley",
+    "gender": "M",
+    "leadership": [],
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2025
+      }
+    ],
+    "sources": [
+      "congress.gov",
+      "unitedstates/congress-legislators"
+    ],
+    "termCount": 1,
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 19,
+        "endYear": null,
+        "party": null,
+        "startYear": 2025,
+        "state": "New York"
+      }
+    ],
+    "yearsOfService": 1
+  },
+  "legislation": {
+    "available": false,
+    "cosponsored": [],
+    "note": "Live legislation detail is available on the hosted API.",
+    "sponsored": []
+  },
+  "member": {
+    "addressInformation": {
+      "city": "Washington",
+      "district": "DC",
+      "officeAddress": "128 Cannon House Office Building",
+      "phoneNumber": "(202) 225-5441",
+      "zipCode": 20515
+    },
+    "bioguideId": "R000622",
+    "birthYear": "1981",
+    "chamber": "House of Representatives",
+    "cosponsoredLegislation": {
+      "count": 376,
+      "url": "https://api.congress.gov/v3/member/R000622/cosponsored-legislation"
+    },
+    "currentMember": true,
+    "depiction": {
+      "attribution": "Image courtesy of the Member",
+      "imageUrl": "https://www.congress.gov/img/member/67745e360b34857ecc909179_200.jpg"
+    },
+    "directOrderName": "Josh Riley",
+    "district": 19,
+    "districtLabel": "District 19",
+    "firstName": "Josh",
+    "honorificName": "Mr.",
+    "invertedOrderName": "Riley, Josh",
+    "lastName": "Riley",
+    "officialWebsiteUrl": "https://riley.house.gov/",
+    "partyHistory": [
+      {
+        "partyAbbreviation": "D",
+        "partyName": "Democratic",
+        "startYear": 2025
+      }
+    ],
+    "previousNames": [
+      {
+        "directOrderName": "Josh Riley",
+        "endDate": "2025-01-10T17:36:18Z",
+        "firstName": "Josh",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Riley, Josh",
+        "lastName": "Riley",
+        "startDate": "2025-01-03T17:00:00Z"
+      },
+      {
+        "directOrderName": "Josh Riley",
+        "endDate": "2025-01-17T04:59:59Z",
+        "firstName": "Josh",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Riley, Josh",
+        "lastName": "Riley",
+        "startDate": "2025-01-10T17:36:19Z"
+      },
+      {
+        "directOrderName": "Josh Riley",
+        "firstName": "Josh",
+        "honorificName": "Mr.",
+        "invertedOrderName": "Riley, Josh",
+        "lastName": "Riley",
+        "startDate": "2025-01-17T05:00:00Z"
+      }
+    ],
+    "sponsoredLegislation": {
+      "count": 14,
+      "url": "https://api.congress.gov/v3/member/R000622/sponsored-legislation"
+    },
+    "state": "New York",
+    "terms": [
+      {
+        "chamber": "House of Representatives",
+        "congress": 119,
+        "district": 19,
+        "memberType": "Representative",
+        "startYear": 2025,
+        "stateCode": "NY",
+        "stateName": "New York"
+      }
+    ],
+    "updateDate": "2026-07-11T07:40:31Z"
+  },
+  "nominate": {
+    "dim1": -0.2,
+    "geo_mean": 0.905
+  },
+  "stocks": {
+    "available": false,
+    "filings": [],
+    "note": "Live financial-disclosure detail is available on the hosted API.",
+    "provider": "static",
+    "trades": []
+  },
+  "wiki": {
+    "extract": "Joshua Paul Riley is an American politician and lawyer who has served as the U.S. representative for New York's 19th congressional district since 2025. A member of the Democratic Party, he previously worked as a policy analyst at the U.S. Department of Labor and as counsel on the U.S. Senate Judiciary Committee.",
+    "source": "wikipedia",
+    "summary": "Joshua Paul Riley is an American politician and lawyer who has served as the U.S. representative for New York's 19th congressional district since 2025. A member of the Democratic Party, he previously worked as a policy analyst at the U.S. Department of Labor and as counsel on the U.S. Senate Judiciary Committee.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Rep._Josh_Riley_official_photo%2C_119th_Congress.jpg/330px-Rep._Josh_Riley_official_photo%2C_119th_Congress.jpg",
+    "title": "Josh Riley",
+    "wiki_url": "https://en.wikipedia.org/wiki/Josh_Riley"
+  }
+}
