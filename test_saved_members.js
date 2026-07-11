@@ -40,7 +40,12 @@ function listen(serverApp) {
   let browser;
 
   try {
-    browser = await puppeteer.launch({ headless: 'new' });
+    // --no-sandbox is required on CI (GitHub Ubuntu runners have no user
+    // namespace sandbox); without it Chrome fails to launch ("Code: null").
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    });
     const page = await browser.newPage();
     await page.goto(`${baseUrl}/members.html?api=origin`, { waitUntil: 'domcontentloaded' });
     await page.evaluate(() => localStorage.removeItem('ygn_saved_members_v1'));
