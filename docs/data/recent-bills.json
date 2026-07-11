@@ -1012,21 +1012,6 @@
           "actionDate": "2001-05-30",
           "text": "Referred to the Subcommittee on Government Efficiency, Financial Management and Intergovernmental Relations."
         },
-        "number": "1910",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Nazi Benefits Termination Act of 2001",
-        "type": "HR",
-        "updateDate": "2026-03-13",
-        "updateDateIncludingText": "2026-03-13",
-        "url": "https://api.congress.gov/v3/bill/107/hr/1910?format=json"
-      },
-      {
-        "congress": 107,
-        "latestAction": {
-          "actionDate": "2001-05-30",
-          "text": "Referred to the Subcommittee on Government Efficiency, Financial Management and Intergovernmental Relations."
-        },
         "number": "1940",
         "originChamber": "House",
         "originChamberCode": "H",
@@ -1035,6 +1020,21 @@
         "updateDate": "2026-03-13",
         "updateDateIncludingText": "2026-03-13",
         "url": "https://api.congress.gov/v3/bill/107/hr/1940?format=json"
+      },
+      {
+        "congress": 107,
+        "latestAction": {
+          "actionDate": "2001-05-30",
+          "text": "Referred to the Subcommittee on Government Efficiency, Financial Management and Intergovernmental Relations."
+        },
+        "number": "1910",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "Nazi Benefits Termination Act of 2001",
+        "type": "HR",
+        "updateDate": "2026-03-13",
+        "updateDateIncludingText": "2026-03-13",
+        "url": "https://api.congress.gov/v3/bill/107/hr/1910?format=json"
       },
       {
         "congress": 107,
@@ -1203,7 +1203,7 @@
       }
     ],
     "pagination": {
-      "count": 32140,
+      "count": 32160,
       "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-03-13T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
@@ -1211,5 +1211,5 @@
       "format": "json"
     }
   },
-  "generated_at": "2026-07-11T13:57:36.096334+00:00"
+  "generated_at": "2026-07-11T19:35:02.425960+00:00"
 }
