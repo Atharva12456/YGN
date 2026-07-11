@@ -82,6 +82,7 @@
             <div class="stat-source">YGN API health</div>
           </div>
         </div>
+        <div id="home-congress-balance" class="congress-balance" aria-label="Party balance in Congress" hidden></div>
       </div>
 
       <div id="district-map" class="home-map-section">
@@ -92,6 +93,10 @@
               <h2>Interactive District Map</h2>
             </div>
             <div class="map-actions">
+              <div class="map-colorby" role="group" aria-label="Color the map by">
+                <button type="button" class="map-colorby-btn active" data-mode="lean">Party lean</button>
+                <button type="button" class="map-colorby-btn" data-mode="gerry">Gerrymandering</button>
+              </div>
               <button id="map-reset" class="secondary-button" type="button">Reset View</button>
               <a id="methodology-open" class="secondary-button icon-button" href="methodology.html" aria-label="Open gerrymandering methodology" title="Open gerrymandering methodology">i</a>
             </div>
@@ -102,6 +107,7 @@
               <svg id="us-map" viewBox="0 0 960 600" role="img" aria-label="Interactive United States map"></svg>
               <div id="map-tooltip" class="map-tooltip" role="tooltip"></div>
               <div id="map-status" class="map-status">Loading map</div>
+              <div id="map-legend" class="map-legend" aria-label="Map color legend"></div>
             </div>
 
             <aside id="state-panel" class="state-panel" aria-live="polite">
@@ -126,6 +132,7 @@
                   <strong id="gerry-score">-</strong>
                   <div class="gerry-meter" aria-hidden="true"><span id="gerry-meter-fill"></span></div>
                   <p id="gerry-note" class="metric-note">Educational risk signal, not a legal finding.</p>
+                  <div id="gerry-components" class="gerry-components"></div>
                 </div>
               </div>
 

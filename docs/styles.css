@@ -1816,9 +1816,17 @@ button {
     grid-template-columns: 1fr;
   }
 
+  /* Stack the 5-column bill table into readable cards on phones instead of
+     forcing a 1120px horizontal scroll. */
   .bill-row {
-    min-width: 1120px;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
   }
+  .bill-row-header { display: none; }
+  .bill-cell { border-bottom: 1px solid var(--color-border); padding-bottom: 0.6rem; }
+  .bill-cell:last-child { border-bottom: none; }
 
   .foreign-hero,
   .conflict-grid,
@@ -2477,6 +2485,13 @@ button {
   border: 1px solid rgba(79,142,247,0.25); border-radius: var(--radius-sm);
 }
 .bill-ai-block--pending { background: var(--color-bg); border-style: dashed; }
+.bill-ai-block--loading { background: var(--color-bg); }
+.ai-loading { color: var(--color-text-muted); font-style: italic; }
+.ai-loading::after {
+  content: ""; display: inline-block; width: 1em; text-align: left;
+  animation: ai-dots 1.2s steps(4, end) infinite;
+}
+@keyframes ai-dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
 .bill-ai-label {
   font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
   letter-spacing: 0.04em; color: var(--color-text-muted); margin-bottom: 0.4rem;
@@ -2580,3 +2595,80 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
   .confidence-factor-grid { grid-template-columns: 1fr; }
   .bill-detail-head h1 { font-size: 1.5rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Full-app feature pass: home balance, map color-by/components, bill filters,
+   vote party analysis, cosponsor split, foreign-affairs live bills
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Home: Congress party balance */
+.congress-balance { margin-top: 1.25rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.25rem 1.4rem; }
+.cb-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.9rem; }
+.cb-chamber { margin-bottom: 1rem; }
+.cb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
+.cb-majority { font-size: 0.8rem; color: var(--color-text-muted); }
+.cb-bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--color-tint-gray); }
+.cb-seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.78rem; font-weight: 600; min-width: 1.4rem; }
+.cb-seg.party-d { background: #3b6fd4; }
+.cb-seg.party-r { background: #d0453f; }
+.cb-seg.party-i { background: #7a5bd0; }
+.cb-nums { font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+.cb-link { display: inline-block; margin-top: 0.4rem; font-size: 0.85rem; color: var(--color-accent); text-decoration: none; font-weight: 600; }
+.cb-link:hover { text-decoration: underline; }
+
+/* Map: color-by toggle + legend + gerry components */
+.map-colorby { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; overflow: hidden; }
+.map-colorby-btn { background: var(--color-surface); border: none; padding: 0.4rem 0.85rem; font-size: 0.82rem; font-family: var(--font-body); cursor: pointer; color: var(--color-text-muted); }
+.map-colorby-btn.active { background: var(--color-accent); color: #fff; }
+.map-legend { position: absolute; left: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; background: rgba(255,255,255,0.9); border: 1px solid var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; font-size: 0.75rem; }
+.map-legend-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.map-legend-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.gerry-components { display: grid; gap: 0.3rem; margin-top: 0.6rem; }
+.gerry-comp-row { display: grid; grid-template-columns: 8.5rem 1fr 1.6rem; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.gerry-comp-label { color: var(--color-text-muted); }
+.gerry-comp-track { height: 8px; background: var(--color-tint-gray); border-radius: 4px; overflow: hidden; }
+.gerry-comp-track > span { display: block; height: 100%; border-radius: 4px; }
+.gerry-comp-val { text-align: right; font-weight: 600; }
+
+/* Recent Bills: filter chips */
+.bill-filters { margin: 0.5rem 0 1rem; display: grid; gap: 0.5rem; }
+.bill-chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.bill-chip { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; font-family: var(--font-body); color: var(--color-text); }
+.bill-chip:hover { border-color: var(--color-accent); }
+.bill-chip.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+
+/* Bill detail: vote party analysis */
+.vote-party-analysis { margin: 0.4rem 0 0.9rem; padding: 0.7rem 0.8rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+.vote-party-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.5rem; border-radius: 999px; margin-bottom: 0.55rem; }
+.vote-tag--partyline { background: #f6dede; color: #b23a34; }
+.vote-tag--bipartisan { background: #dcefe4; color: #2f7d5c; }
+.vote-tag--mixed { background: #f3e9d3; color: #99772a; }
+.vote-party-row { display: grid; grid-template-columns: 6rem 1fr 3rem; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; }
+.vote-party-label { font-size: 0.8rem; font-weight: 600; }
+.vote-party-label.party-d { color: #3b6fd4; }
+.vote-party-label.party-r { color: #d0453f; }
+.vote-party-bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--color-tint-gray); }
+.vote-party-bar > span { display: block; height: 100%; }
+.vote-party-nums { font-size: 0.8rem; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Bill detail: cosponsor split */
+.cosponsor-split { margin-bottom: 0.8rem; }
+.cosponsor-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.12rem 0.5rem; border-radius: 999px; margin-bottom: 0.4rem; }
+.cosponsor-tag.bipartisan { background: #dcefe4; color: #2f7d5c; }
+.cosponsor-tag.single { background: var(--color-tint-gray); color: var(--color-text-muted); }
+.cosponsor-split-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--color-tint-gray); }
+.cosponsor-split-bar > span { display: block; height: 100%; }
+.cosponsor-split-bar .party-d { background: #3b6fd4; }
+.cosponsor-split-bar .party-r { background: #d0453f; }
+.cosponsor-split-bar .party-i { background: #7a5bd0; }
+.cosponsor-split-nums { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+
+/* Foreign affairs: live bills */
+.foreign-bills-note { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: 1.1rem; max-width: 70ch; }
+.foreign-bills-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.foreign-bill-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.1rem 1.2rem; }
+.foreign-bill-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.3rem; }
+.foreign-bill-card h3 { font-size: 1rem; line-height: 1.35; margin-bottom: 0.4rem; }
+.foreign-bill-card h3 a { color: var(--color-text); text-decoration: none; }
+.foreign-bill-card h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.foreign-bill-meta { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }

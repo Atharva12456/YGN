@@ -363,6 +363,20 @@ def bill_detail(
     )
 
 
+@app.get("/bills/{congress}/{bill_type}/{number}/ai")
+def bill_ai(congress: str, bill_type: str, number: str):
+    # Lazily generated AI description + impact; kept out of the main detail
+    # response so the page never blocks on a slow model call.
+    if not government.ai_insights_available():
+        return {"available": False, "ai_enabled": False, "reason": "AI not configured."}
+    try:
+        return government.get_bill_ai(congress, bill_type, number)
+    except government.UpstreamDataError as exc:
+        return {"available": False, "ai_enabled": True, "reason": str(exc)}
+    except (requests.HTTPError, requests.RequestException):
+        return {"available": False, "ai_enabled": True, "reason": "Upstream request failed."}
+
+
 def _confidence_response(callable_, *args, **kwargs):
     if not government.ai_insights_available():
         return {

@@ -75,7 +75,9 @@ def main():
         if len(parts) != 3:
             continue
         try:
-            detail = backend.get_bill_detail(parts[0], parts[1], parts[2], include_votes=False)
+            detail = backend.get_bill_detail(
+                parts[0], parts[1], parts[2], include_votes=False, include_ai=True
+            )
         except Exception as exc:  # noqa: BLE001
             print(f"  skip {identifier}: {type(exc).__name__}")
             continue

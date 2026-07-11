@@ -96,6 +96,7 @@ let membersGrid;
 let membersSearch;
 let membersPartyFilter;
 let membersChamberFilter;
+let membersStateFilter;
 let membersSort;
 let membersCount;
 let homeStats;
@@ -366,6 +367,17 @@ function initNavLinks() {
       link.setAttribute('href', withApiParam(href));
     }
   });
+
+  // Preserve the ?api= override across in-content internal links too (e.g. the
+  // "Open Bills Page" / "Back to Homepage View" buttons that live outside .main-nav).
+  if (apiQuerySuffix()) {
+    document.querySelectorAll('main a[href$=".html"], main a[href*=".html#"]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.includes('api=')) {
+        link.setAttribute('href', withApiParam(href));
+      }
+    });
+  }
 }
 
 // ─── Health check ────────────────────────────────────────────────────────────
@@ -665,9 +677,152 @@ function renderCivicPulse(bills, digest) {
   });
 }
 
+// Foreign Affairs: live feed of foreign-policy bills, filtered from the recent
+// bill digest by policy area + keyword — turns the static page into a live tool.
+const FOREIGN_POLICY_AREAS = new Set([
+  'International Affairs', 'Armed Forces and National Security', 'Foreign Trade and International Finance',
+  'Immigration', 'Intelligence and National Security'
+]);
+const FOREIGN_KEYWORDS = /\b(nato|ukraine|russia|china|taiwan|israel|gaza|iran|treaty|sanction|foreign|defense|military|diplomat|embassy|refugee|war|troops|weapons|arms|tariff|export control)\b/i;
+
+async function initForeignBills() {
+  const host = document.getElementById('foreign-bills-list');
+  if (!host) return;
+  try {
+    const res = await fetchJsonWithStaticFallback(
+      '/bills/recent/digest?limit=40', 'recent-bills-digest.json',
+      { cache: 'no-store', staticCache: 'no-store' }
+    );
+    const list = normalizeBillDigest(res.data).bills;
+    const matches = list.filter(b =>
+      FOREIGN_POLICY_AREAS.has(b.policyArea) || FOREIGN_KEYWORDS.test(String(b.title || ''))
+    ).slice(0, 12);
+
+    if (matches.length === 0) {
+      host.innerHTML = '<p class="bill-empty-state">No foreign-policy bills in the current feed. Check the full Recent Bills page.</p>';
+      return;
+    }
+    host.innerHTML = matches.map(b => {
+      const href = b.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(b.detailPath)}`) : null;
+      const title = esc(b.title || 'Untitled bill');
+      const meta = [b.identifier, b.policyArea, (b.latestAction && formatShortDate(b.latestAction.date))].filter(Boolean).map(esc).join(' · ');
+      return `<article class="foreign-bill-card">
+        <div class="foreign-bill-kicker">${esc(b.identifier || '')}</div>
+        ${href ? `<h3><a href="${href}">${title}</a></h3>` : `<h3>${title}</h3>`}
+        <p class="foreign-bill-meta">${meta}</p>
+        ${href ? `<a class="bill-detail-link" href="${href}">Cosponsors, votes & analysis →</a>` : ''}
+      </article>`;
+    }).join('');
+  } catch (_) {
+    host.innerHTML = '<p class="bill-empty-state">Foreign-policy bill feed is unavailable right now.</p>';
+  }
+}
+
+// Home: party balance (House + Senate seat split), aggregated from the roster —
+// the single most-asked "who controls Congress" fact, no new backend needed.
+async function initCongressBalance() {
+  const host = document.getElementById('home-congress-balance');
+  if (!host) return;
+  let members = [];
+  try {
+    const res = await loadRoster();
+    members = (res.data && res.data.members) || [];
+  } catch (_) { return; }
+  if (!members.length) return;
+
+  // Non-voting delegates (DC + territories) aren't part of the floor majority.
+  const NONVOTING = new Set(['DC', 'PR', 'GU', 'VI', 'AS', 'MP',
+    'District of Columbia', 'Puerto Rico', 'Guam', 'Virgin Islands',
+    'American Samoa', 'Northern Mariana Islands']);
+  const tally = { House: { D: 0, R: 0, I: 0 }, Senate: { D: 0, R: 0, I: 0 } };
+  members.forEach(m => {
+    const chamber = String(getMemberChamber(m) || '').toLowerCase();
+    const bucket = chamber.includes('senate') ? 'Senate' : chamber.includes('house') ? 'House' : null;
+    if (!bucket) return;
+    if (bucket === 'House' && NONVOTING.has(getMemberField(m, 'state'))) return;
+    tally[bucket][memberPartyCode(m)]++;
+  });
+
+  const chamberBar = (name, t) => {
+    const total = t.D + t.R + t.I || 1;
+    const seg = (n, cls, label) => n > 0
+      ? `<span class="cb-seg ${cls}" style="width:${(n / total) * 100}%" title="${label}: ${n}">${n}</span>` : '';
+    const majority = t.D > t.R ? 'Democratic' : t.R > t.D ? 'Republican' : 'Split';
+    return `<div class="cb-chamber">
+      <div class="cb-head"><strong>${esc(name)}</strong><span class="cb-majority">${esc(majority)} majority</span></div>
+      <div class="cb-bar">${seg(t.D, 'party-d', 'Democrats')}${seg(t.I, 'party-i', 'Independents')}${seg(t.R, 'party-r', 'Republicans')}</div>
+      <div class="cb-nums">${t.D} Democrats · ${t.R} Republicans${t.I ? ` · ${t.I} Independent` : ''}</div>
+    </div>`;
+  };
+
+  host.innerHTML = `
+    <div class="cb-title">Who controls the 119th Congress</div>
+    ${chamberBar('House', tally.House)}
+    ${chamberBar('Senate', tally.Senate)}
+    <a class="cb-link" href="${withApiParam('members.html')}">Browse all members →</a>`;
+  host.hidden = false;
+}
+
+let currentBillsDigest = null;
+const billFilterState = { policyArea: null, chamber: null };
+
+function billMatchesFilter(bill) {
+  if (billFilterState.policyArea && bill.policyArea !== billFilterState.policyArea) return false;
+  if (billFilterState.chamber) {
+    const ch = String(bill.originChamber || '').toLowerCase();
+    if (!ch.startsWith(billFilterState.chamber)) return false;
+  }
+  return true;
+}
+
+// Topic + chamber filter chips (standalone Recent Bills page only, gated on the
+// presence of #bill-filters). Filters the already-loaded digest in memory.
+function renderBillFilterChips() {
+  const host = document.getElementById('bill-filters');
+  if (!host || !currentBillsDigest) return;
+  const bills = currentBillsDigest.bills || [];
+  const areas = {};
+  bills.forEach(b => { if (b.policyArea) areas[b.policyArea] = (areas[b.policyArea] || 0) + 1; });
+  const topAreas = Object.entries(areas).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+  const chip = (label, active, group, value) =>
+    `<button type="button" class="bill-chip${active ? ' active' : ''}" data-group="${group}" data-value="${esc(value == null ? '' : value)}">${esc(label)}</button>`;
+
+  const chamberChips = [
+    chip('All chambers', !billFilterState.chamber, 'chamber', ''),
+    chip('House', billFilterState.chamber === 'house', 'chamber', 'house'),
+    chip('Senate', billFilterState.chamber === 'senate', 'chamber', 'senate'),
+  ].join('');
+  const areaChips = [chip('All topics', !billFilterState.policyArea, 'policyArea', '')]
+    .concat(topAreas.map(([a, n]) => chip(`${a} (${n})`, billFilterState.policyArea === a, 'policyArea', a)))
+    .join('');
+
+  host.innerHTML = `<div class="bill-chip-row">${chamberChips}</div><div class="bill-chip-row">${areaChips}</div>`;
+  host.querySelectorAll('.bill-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.dataset.group;
+      const value = btn.dataset.value || null;
+      billFilterState[group] = billFilterState[group] === value ? null : value;
+      renderBillFilterChips();
+      renderBillRows();
+    });
+  });
+}
+
 function renderRecentBills(digest, source) {
   if (!recentBillsGrid) return;
-  const bills = digest.bills.slice(0, Number(recentBillsGrid.dataset.limit || 5));
+  currentBillsDigest = digest;
+  if (source !== undefined) recentBillsGrid.dataset.source = source;
+  renderBillFilterChips();
+  renderBillRows();
+}
+
+function renderBillRows() {
+  if (!recentBillsGrid || !currentBillsDigest) return;
+  const digest = currentBillsDigest;
+  const source = recentBillsGrid.dataset.source;
+  const limited = (digest.bills || []).slice(0, Number(recentBillsGrid.dataset.limit || 5));
+  const bills = limited.filter(billMatchesFilter);
   recentBillsGrid.innerHTML = '';
 
   if (recentBillsStatus) {
@@ -675,12 +830,14 @@ function renderRecentBills(digest, source) {
     recentBillsStatus.textContent = `${source === 'api' ? 'Live Congress.gov data' : 'Static fallback data'}.${generatedAt}`;
   }
 
-  renderCivicPulse(bills, digest);
+  renderCivicPulse(limited, digest);
 
   if (bills.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'bill-empty-state';
-    empty.textContent = 'No recent bills are available right now.';
+    empty.textContent = (billFilterState.policyArea || billFilterState.chamber)
+      ? 'No bills match the selected filters.'
+      : 'No recent bills are available right now.';
     recentBillsGrid.appendChild(empty);
     return;
   }
@@ -853,14 +1010,107 @@ function billVoteHtml(vote, index) {
     </div>
     <div class="vote-bar">${bar}</div>
     <div class="vote-legend">${legend}</div>
+    ${votePartyAnalysisHtml(positions)}
     <div class="vote-groups">${groups}</div>
     ${vote.url ? `<a class="bill-vote-source" href="${safeUrl(vote.url)}" target="_blank" rel="noopener">Official roll-call record →</a>` : ''}
+  </div>`;
+}
+
+// Party-split analysis: for D and R, how each side voted yea/nay, plus a derived
+// "Party-line vote / Bipartisan / cross-party defections" label — the single most
+// instructive fact about a roll-call for a civic-education audience.
+function votePartyAnalysisHtml(positions) {
+  const tally = { D: { Yea: 0, Nay: 0 }, R: { Yea: 0, Nay: 0 } };
+  positions.forEach(p => {
+    const cls = partyClass(p.party);
+    const key = cls === 'party-d' ? 'D' : cls === 'party-r' ? 'R' : null;
+    if (key && (p.vote === 'Yea' || p.vote === 'Nay')) tally[key][p.vote]++;
+  });
+  const dTot = tally.D.Yea + tally.D.Nay;
+  const rTot = tally.R.Yea + tally.R.Nay;
+  if (dTot < 2 || rTot < 2) return '';
+
+  const dYeaPct = tally.D.Yea / dTot, rYeaPct = tally.R.Yea / rTot;
+  // Each party's majority side; "party-line" when the two parties' majorities oppose
+  // and each is lopsided (>=85%).
+  const dMajYea = dYeaPct >= 0.5, rMajYea = rYeaPct >= 0.5;
+  const dLopsided = Math.max(dYeaPct, 1 - dYeaPct) >= 0.85;
+  const rLopsided = Math.max(rYeaPct, 1 - rYeaPct) >= 0.85;
+  let label, cls;
+  if (dMajYea !== rMajYea && dLopsided && rLopsided) {
+    label = 'Party-line vote'; cls = 'vote-tag--partyline';
+  } else if (dMajYea === rMajYea) {
+    label = 'Bipartisan'; cls = 'vote-tag--bipartisan';
+  } else {
+    const crossed = dMajYea ? tally.D.Nay + tally.R.Yea : tally.D.Yea + tally.R.Nay;
+    label = `Mostly along party lines · ${crossed} cross-party`; cls = 'vote-tag--mixed';
+  }
+
+  const row = (party, t, tot) => `
+    <div class="vote-party-row">
+      <span class="vote-party-label ${party === 'D' ? 'party-d' : 'party-r'}">${party === 'D' ? 'Democrats' : 'Republicans'}</span>
+      <span class="vote-party-bar">
+        <span class="vote-yea" style="width:${(t.Yea / tot) * 100}%"></span>
+        <span class="vote-nay" style="width:${(t.Nay / tot) * 100}%"></span>
+      </span>
+      <span class="vote-party-nums">${t.Yea}–${t.Nay}</span>
+    </div>`;
+
+  return `<div class="vote-party-analysis">
+    <div class="vote-party-tag ${cls}">${esc(label)}</div>
+    ${row('D', tally.D, dTot)}
+    ${row('R', tally.R, rTot)}
   </div>`;
 }
 
 function billPeopleListHtml(people, roleLabel) {
   if (!Array.isArray(people) || people.length === 0) return '';
   return `<div class="bill-people">${people.map(p => personLinkHtml(p, roleLabel)).join('')}</div>`;
+}
+
+// Cosponsor party split + a bipartisan/single-party label.
+function cosponsorSplitHtml(cosponsors) {
+  if (!Array.isArray(cosponsors) || cosponsors.length < 2) return '';
+  const counts = { D: 0, R: 0, I: 0 };
+  cosponsors.forEach(c => {
+    const cls = partyClass(c.party);
+    counts[cls === 'party-d' ? 'D' : cls === 'party-r' ? 'R' : 'I']++;
+  });
+  const total = counts.D + counts.R + counts.I || 1;
+  const parties = [counts.D > 0, counts.R > 0].filter(Boolean).length;
+  const tag = parties >= 2
+    ? '<span class="cosponsor-tag bipartisan">Bipartisan cosponsors</span>'
+    : '<span class="cosponsor-tag single">Single-party cosponsors</span>';
+  const seg = (n, cls) => n > 0 ? `<span class="${cls}" style="width:${(n / total) * 100}%" title="${n}"></span>` : '';
+  return `<div class="cosponsor-split">
+    ${tag}
+    <div class="cosponsor-split-bar">
+      ${seg(counts.D, 'party-d')}${seg(counts.R, 'party-r')}${seg(counts.I, 'party-i')}
+    </div>
+    <div class="cosponsor-split-nums">${counts.D} D · ${counts.R} R${counts.I ? ` · ${counts.I} I` : ''}</div>
+  </div>`;
+}
+
+// One AI content block: filled when `summary` is present, a spinner when pending
+// (lazy /ai fetch in flight), an "enable AI" hint otherwise. id lets the lazy
+// fetch swap the block in place.
+function aiBlockHtml(id, label, summary, pending) {
+  if (summary) {
+    return `<div class="bill-ai-block" id="${id}">
+      <div class="bill-ai-label">${esc(label)} <span class="ai-badge">AI</span></div>
+      <p>${esc(summary)}</p>
+    </div>`;
+  }
+  if (pending) {
+    return `<div class="bill-ai-block bill-ai-block--loading" id="${id}">
+      <div class="bill-ai-label">${esc(label)} <span class="ai-badge">AI</span></div>
+      <p class="ai-loading">Generating…</p>
+    </div>`;
+  }
+  return `<div class="bill-ai-block bill-ai-block--pending" id="${id}">
+    <div class="bill-ai-label">${esc(label)}</div>
+    <p>AI analysis appears here once an AI provider is configured on the server.</p>
+  </div>`;
 }
 
 function renderBillDetail(container, data) {
@@ -874,21 +1124,19 @@ function renderBillDetail(container, data) {
   const chamberLabel = bill.originChamber || '';
   const headMeta = [congressLabel, chamberLabel, bill.policyArea].filter(Boolean).map(esc).join(' · ');
 
-  const aiDesc = bill.aiDescription && bill.aiDescription.summary
-    ? `<div class="bill-ai-block">
-         <div class="bill-ai-label">Plain-language description <span class="ai-badge">AI</span></div>
-         <p>${esc(bill.aiDescription.summary)}</p>
-       </div>` : '';
-
-  const impact = bill.impact && bill.impact.summary
-    ? `<div class="bill-ai-block">
-         <div class="bill-ai-label">Who this affects — impact analysis <span class="ai-badge">AI</span></div>
-         <p>${esc(bill.impact.summary)}</p>
-       </div>`
-    : `<div class="bill-ai-block bill-ai-block--pending">
-         <div class="bill-ai-label">Impact analysis</div>
-         <p>AI impact analysis appears here once an AI provider (Azure/OpenAI) is configured on the server.</p>
-       </div>`;
+  // AI blocks render from committed content immediately; when the server says
+  // more AI is pending (aiPending), we show a loader and lazy-fetch /ai.
+  const pending = !!bill.aiPending;
+  const aiDesc = aiBlockHtml(
+    'ai-desc-block', 'Plain-language description',
+    bill.aiDescription && bill.aiDescription.summary,
+    pending && !(bill.aiDescription && bill.aiDescription.summary)
+  );
+  const impact = aiBlockHtml(
+    'ai-impact-block', 'Who this affects — impact analysis',
+    bill.impact && bill.impact.summary,
+    pending && !(bill.impact && bill.impact.summary)
+  );
 
   const votesHtml = votes.length
     ? votes.map((v, i) => billVoteHtml(v, i)).join('')
@@ -929,6 +1177,7 @@ function renderBillDetail(container, data) {
         </section>
         <section class="bill-detail-card">
           <h2>Cosponsors <span class="bill-count-badge">${cosponsorCount}</span></h2>
+          ${cosponsorSplitHtml(cosponsors)}
           ${cosponsorsHtml}
         </section>
       </div>
@@ -977,8 +1226,42 @@ async function initBillPage() {
       return;
     }
     renderBillDetail(container, result.data);
+
+    // Lazy-load AI description/impact separately so the page never blocks on a
+    // slow model call (which would exceed the platform request timeout).
+    const bill = (result.data && result.data.bill) || {};
+    if (result.source === 'api' && bill.aiPending) {
+      loadBillAi(congress, billType, number, container);
+    }
   } catch (_) {
     container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load this bill. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
+  }
+}
+
+async function loadBillAi(congress, billType, number, container) {
+  const swap = (id, label, summary) => {
+    const el = container.querySelector('#' + id);
+    if (!el) return;
+    if (summary) {
+      el.classList.remove('bill-ai-block--loading', 'bill-ai-block--pending');
+      el.innerHTML = `<div class="bill-ai-label">${esc(label)} <span class="ai-badge">AI</span></div><p>${esc(summary)}</p>`;
+    } else if (el.classList.contains('bill-ai-block--loading')) {
+      el.classList.remove('bill-ai-block--loading');
+      el.classList.add('bill-ai-block--pending');
+      el.innerHTML = `<div class="bill-ai-label">${esc(label)}</div><p>An AI summary isn't available for this bill right now.</p>`;
+    }
+  };
+  try {
+    const res = await fetchJsonWithStaticFallback(
+      `/bills/${encodeURIComponent(congress)}/${encodeURIComponent(billType)}/${encodeURIComponent(number)}/ai`,
+      null
+    );
+    const d = res.data || {};
+    swap('ai-desc-block', 'Plain-language description', d.aiDescription && d.aiDescription.summary);
+    swap('ai-impact-block', 'Who this affects — impact analysis', d.impact && d.impact.summary);
+  } catch (_) {
+    swap('ai-desc-block', 'Plain-language description', null);
+    swap('ai-impact-block', 'Who this affects — impact analysis', null);
   }
 }
 
@@ -1369,6 +1652,7 @@ async function loadMembers() {
       return members;
     }
 
+    populateStateFilter();
     applyFilters();
     return members;
 
@@ -1893,12 +2177,78 @@ function memberSortForState(member) {
   return Number.isFinite(Number(district)) ? Number(district) : 9_000;
 }
 
+let mapColorMode = 'lean'; // 'lean' | 'gerry'
+
 function getStateFill(stateInfo) {
+  if (mapColorMode === 'gerry') return getGerryFill(stateInfo);
   const lean = String(stateInfo && stateInfo.leanCategory || '').toLowerCase();
   if (lean.includes('democratic')) return '#8fb3e7';
   if (lean.includes('republican')) return '#eaa09a';
   if (lean.includes('competitive')) return '#d7c78f';
   return '#a8c7b1';
+}
+
+// Sequential green→amber→red scale for gerrymandering risk (0-100).
+function getGerryFill(stateInfo) {
+  const score = Number(stateInfo && stateInfo.gerrymanderingIndex && stateInfo.gerrymanderingIndex.score);
+  if (!Number.isFinite(score)) return '#d8dee9';
+  if (score >= 70) return '#c0392b';
+  if (score >= 50) return '#e07b39';
+  if (score >= 30) return '#e8c25a';
+  if (score >= 15) return '#7fb98a';
+  return '#3b8f6d';
+}
+
+// Recolor every drawn state when the "color by" mode changes.
+function recolorStates() {
+  if (!mapSvg || !mapSvg.__ygnMap) return;
+  mapSvg.__ygnMap.svg.selectAll('.state-shape')
+    .attr('fill', feature => getStateFill(stateDataByFips.get(normalizeFips(feature.id))));
+}
+
+function setMapColorMode(mode) {
+  mapColorMode = mode === 'gerry' ? 'gerry' : 'lean';
+  document.querySelectorAll('.map-colorby-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === mapColorMode);
+  });
+  const legend = document.getElementById('map-legend');
+  if (legend) legend.innerHTML = mapLegendHtml();
+  recolorStates();
+}
+
+function mapLegendHtml() {
+  if (mapColorMode === 'gerry') {
+    return ['#3b8f6d Minimal', '#7fb98a Lower', '#e8c25a Moderate', '#e07b39 Elevated', '#c0392b High']
+      .map(s => { const [c, l] = s.split(' '); return `<span class="map-legend-item"><span class="map-legend-dot" style="background:${c}"></span>${l}</span>`; }).join('');
+  }
+  return [['#8fb3e7', 'Democratic'], ['#eaa09a', 'Republican'], ['#d7c78f', 'Competitive']]
+    .map(([c, l]) => `<span class="map-legend-item"><span class="map-legend-dot" style="background:${c}"></span>${l}</span>`).join('');
+}
+
+// Break the composite gerrymandering score into its weighted components so users
+// see WHAT drives it (process / partisan skew / district shape), not just a number.
+function renderGerryComponents(components) {
+  const host = document.getElementById('gerry-components');
+  if (!host) return;
+  if (!components || typeof components !== 'object') { host.innerHTML = ''; return; }
+  const labels = {
+    process: 'Redistricting control', partisan_skew: 'Partisan skew', shape: 'District shape',
+    voting: 'Seat-vote mismatch', control: 'Redistricting control', events: 'Political events',
+    social: 'Social sorting', donations: 'Donation patterns'
+  };
+  const rows = Object.entries(components)
+    .filter(([, v]) => Number.isFinite(Number(v)))
+    .sort((a, b) => Number(b[1]) - Number(a[1]))
+    .map(([k, v]) => {
+      const val = clamp(Number(v), 0, 100);
+      const color = val >= 70 ? '#c0392b' : val >= 50 ? '#e07b39' : val >= 30 ? '#e8c25a' : '#3b8f6d';
+      return `<div class="gerry-comp-row">
+        <span class="gerry-comp-label">${esc(labels[k] || k)}</span>
+        <span class="gerry-comp-track"><span style="width:${val}%;background:${color}"></span></span>
+        <span class="gerry-comp-val">${Math.round(val)}</span>
+      </div>`;
+    }).join('');
+  host.innerHTML = rows;
 }
 
 function topGerrymanderComponent(components) {
@@ -1949,6 +2299,7 @@ function updateStatePanel(stateInfo, mode = 'select') {
   gerryNoteEl.textContent = control
     ? `${gi.label || 'Risk'} - ${control}; strongest signal: ${signal}.`
     : `${gi.label || 'Risk'} - strongest signal: ${signal}.`;
+  renderGerryComponents(gi.components);
   districtStatusEl.textContent = mode === 'click'
     ? `Locked on ${stateInfo.name}. Reset View clears the selection. District outlines are loading or cached.`
     : `Selected ${stateInfo.name}. Click the state again to load district outlines.`;
@@ -2180,12 +2531,12 @@ function drawStateMap(us) {
     .on('mouseenter', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
-      showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
+      showMapTooltip(`<strong>${esc(stateInfo.name)}</strong><span>${esc(stateInfo.historicalLean)}</span>`, event);
     })
     .on('mousemove', (event, feature) => {
       const stateInfo = stateDataByFips.get(normalizeFips(feature.id));
       if (!stateInfo) return;
-      showMapTooltip(`<strong>${stateInfo.name}</strong><span>${stateInfo.historicalLean}</span>`, event);
+      showMapTooltip(`<strong>${esc(stateInfo.name)}</strong><span>${esc(stateInfo.historicalLean)}</span>`, event);
     })
     .on('mouseleave', hideMapTooltip)
     .on('blur', hideMapTooltip)
@@ -2402,6 +2753,14 @@ function memberEthicsScore(member) {
   return e && typeof e.score === 'number' ? e.score : null;
 }
 
+function memberFirstYear(member) {
+  const terms = (member.terms && (member.terms.item || member.terms)) || [];
+  const years = (Array.isArray(terms) ? terms : [terms])
+    .map(t => parseInt(t && t.startYear, 10))
+    .filter(y => Number.isFinite(y));
+  return years.length ? Math.min(...years) : null;
+}
+
 function sortMembers(list, sortBy) {
   const arr = list.slice();
   if (sortBy === 'ideology' || sortBy === 'ethics') {
@@ -2416,9 +2775,35 @@ function sortMembers(list, sortBy) {
       if (vb === null) return -1;
       return (va - vb) * dir;
     });
+  } else if (sortBy === 'seniority') {
+    // Longest-serving first (earliest first year). Unknowns last.
+    arr.sort((a, b) => {
+      const va = memberFirstYear(a);
+      const vb = memberFirstYear(b);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      return va - vb;
+    });
   }
   // 'name' keeps allMembers' existing alphabetical order.
   return arr;
+}
+
+// Populate the State filter <select> from the loaded roster (distinct states).
+function populateStateFilter() {
+  if (!membersStateFilter || membersStateFilter.dataset.filled) return;
+  const states = Array.from(new Set(
+    allMembers.map(m => getMemberField(m, 'state')).filter(Boolean)
+  )).sort();
+  const frag = document.createDocumentFragment();
+  states.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    frag.appendChild(opt);
+  });
+  membersStateFilter.appendChild(frag);
+  membersStateFilter.dataset.filled = '1';
 }
 
 function applyFilters() {
@@ -2426,11 +2811,13 @@ function applyFilters() {
   const query = (membersSearch ? membersSearch.value : '').trim().toLowerCase();
   const partyFilter = membersPartyFilter ? membersPartyFilter.value : '';
   const chamberFilter = membersChamberFilter ? membersChamberFilter.value : '';
+  const stateFilter = membersStateFilter ? membersStateFilter.value : '';
   const sortBy = membersSort ? membersSort.value : 'name';
 
   let list = allMembers.filter(member => {
     if (partyFilter && memberPartyCode(member) !== partyFilter) return false;
     if (chamberFilter && !getMemberChamber(member).toLowerCase().includes(chamberFilter)) return false;
+    if (stateFilter && getMemberField(member, 'state') !== stateFilter) return false;
     if (query) {
       const name = getMemberField(member, 'name', 'directOrderName', 'invertedOrderName').toLowerCase();
       const state = getMemberField(member, 'state').toLowerCase();
@@ -2633,7 +3020,7 @@ function normalizeHero(data, handoff, id) {
 
 function heroHtml(hero) {
   const initials = buildInitials(hero.name);
-  const photoInner = hero.photoUrl
+  const photoInner = hero.photoUrl && /^https?:\/\//i.test(hero.photoUrl)
     ? `<img class="dossier-hero-photo" src="${esc(hero.photoUrl)}" alt="${esc(hero.name)}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="dossier-hero-initials" style="display:none;" aria-hidden="true">${esc(initials)}</div>`
     : `<div class="dossier-hero-initials" aria-hidden="true">${esc(initials)}</div>`;
 
@@ -2696,7 +3083,7 @@ function sectionNavHtml(data) {
 
 function aboutHtml(wiki) {
   if (!wiki) return '';
-  const thumb = wiki.thumbnail && wiki.thumbnail.source
+  const thumb = wiki.thumbnail && wiki.thumbnail.source && /^https?:\/\//i.test(wiki.thumbnail.source)
     ? `<img class="wiki-thumb" src="${esc(wiki.thumbnail.source)}" alt="" loading="lazy">` : '';
   const note = wiki.source === 'congress_fallback'
     ? `<p class="muted-text" style="margin-top:.75rem;clear:both;">Generated summary — no Wikipedia article resolved.</p>` : '';
@@ -2874,7 +3261,7 @@ function committeesHtml(committees) {
   });
   const list = Object.values(grouped).map(c => {
     const title = c.committeeUrl
-      ? `<a href="${esc(c.committeeUrl)}" target="_blank" rel="noopener">${esc(c.committee)}</a>`
+      ? `<a href="${esc(safeUrl(c.committeeUrl))}" target="_blank" rel="noopener">${esc(c.committee)}</a>`
       : esc(c.committee);
     const role = c.role ? `<span class="badge badge--role">${esc(c.role)}</span>` : '';
     const subs = (c.subcommittees && c.subcommittees.length)
@@ -3113,6 +3500,7 @@ document.addEventListener('DOMContentLoaded', () => {
   membersSearch   = document.getElementById('members-search');
   membersPartyFilter   = document.getElementById('members-party');
   membersChamberFilter = document.getElementById('members-chamber');
+  membersStateFilter   = document.getElementById('members-state');
   membersSort          = document.getElementById('members-sort');
   membersCount         = document.getElementById('members-count');
   homeStats       = document.getElementById('home-stats');
@@ -3151,6 +3539,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDailyQuote();
     refreshHomeMetrics();
     setInterval(refreshHomeMetrics, 900_000);
+    initCongressBalance();
   }
   initRecentBills();
 
@@ -3180,9 +3569,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.body.dataset.page === 'economy') {
     initEconomy();
   }
+  if (document.body.dataset.page === 'foreign') {
+    initForeignBills();
+  }
   initEventConfidence();
   if (mapSvg) {
     initMapWhenReady();
+    const legend = document.getElementById('map-legend');
+    if (legend) legend.innerHTML = mapLegendHtml();
+    document.querySelectorAll('.map-colorby-btn').forEach(btn => {
+      btn.addEventListener('click', () => setMapColorMode(btn.dataset.mode));
+    });
   }
   scrollToHashTarget();
 
@@ -3200,7 +3597,7 @@ document.addEventListener('DOMContentLoaded', () => {
       searchTimer = setTimeout(applyFilters, 150);
     });
   }
-  [membersPartyFilter, membersChamberFilter, membersSort].forEach(control => {
+  [membersPartyFilter, membersChamberFilter, membersStateFilter, membersSort].forEach(control => {
     if (control) control.addEventListener('change', applyFilters);
   });
 

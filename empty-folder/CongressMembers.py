@@ -1323,16 +1323,48 @@ def _bill_recorded_votes(bill, max_votes=4):
     return votes
 
 
-def get_bill_detail(congress, bill_type, number, include_votes=True):
-    """Full bill detail for the clickable bill page: sponsor, full cosponsor
-    list, official + AI description, AI impact, committees, actions timeline, and
-    roll-call vote breakdowns (who voted yea/nay/present/not voting)."""
+def _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors):
+    policy_area = detail.get("policyArea")
+    if isinstance(policy_area, dict):
+        policy_area = policy_area.get("name")
+    latest_action = detail.get("latestAction") or {}
+    cosponsor_parties = {}
+    for person in cosponsors:
+        party = (person.get("party") or "?").strip() or "?"
+        cosponsor_parties[party] = cosponsor_parties.get(party, 0) + 1
+    return {
+        "identifier": _bill_identifier(bill_ref),
+        "title": _first_nonempty(detail.get("title"), "Untitled bill"),
+        "description": _bill_description(bill_ref, detail, summaries),
+        "policyArea": policy_area,
+        "originChamber": detail.get("originChamber"),
+        "sponsors": sponsors,
+        "cosponsorCount": _bill_cosponsor_count(bill_ref, detail) or len(cosponsors),
+        "cosponsorParties": cosponsor_parties,
+        "committees": _bill_committee_names(detail),
+        "latestAction": {
+            "date": latest_action.get("actionDate"),
+            "text": latest_action.get("text"),
+        },
+    }
+
+
+def get_bill_detail(congress, bill_type, number, include_votes=True, include_ai=False):
+    """Bill detail for the clickable page: sponsor, full cosponsor list, official
+    description, committees, latest action, and roll-call vote breakdowns.
+
+    AI description/impact are NOT generated inline by default -- a cold model call
+    (gpt-5-mini reasoning + cosponsor/vote fetches) can blow Heroku's 30s request
+    limit. Committed AI content (bill-ai.json) is applied instantly; anything not
+    committed is fetched lazily by the client via `get_bill_ai`. Set include_ai=True
+    (build-time snapshot only) to also generate missing AI content inline."""
     bill_type = str(bill_type or "").lower()
     congress = str(congress or "").strip()
     number = str(number or "").strip()
     cache_key = _build_cache_key(
-        "bill-detail-v1",
-        {"congress": congress, "type": bill_type, "number": number, "votes": bool(include_votes)},
+        "bill-detail-v2",
+        {"congress": congress, "type": bill_type, "number": number,
+         "votes": bool(include_votes), "ai": bool(include_ai)},
     )
 
     def fetch_json():
@@ -1346,70 +1378,57 @@ def get_bill_detail(congress, bill_type, number, include_votes=True):
         summaries = _bill_summaries_payload(bill_ref)
         sponsors = _bill_sponsor_items(bill_ref, detail)
         cosponsors = _bill_cosponsor_items(bill_ref)
-        latest_action = detail.get("latestAction") or {}
-        policy_area = detail.get("policyArea")
-        if isinstance(policy_area, dict):
-            policy_area = policy_area.get("name")
-
-        cosponsor_parties = {}
-        for person in cosponsors:
-            party = (person.get("party") or "?").strip() or "?"
-            cosponsor_parties[party] = cosponsor_parties.get(party, 0) + 1
-
-        digest_seed = {
-            "identifier": _bill_identifier(bill_ref),
-            "title": _first_nonempty(detail.get("title"), "Untitled bill"),
-            "description": _bill_description(bill_ref, detail, summaries),
-            "policyArea": policy_area,
-            "originChamber": detail.get("originChamber"),
-            "sponsors": sponsors,
-            "cosponsorCount": _bill_cosponsor_count(bill_ref, detail) or len(cosponsors),
-            "cosponsorParties": cosponsor_parties,
-            "committees": _bill_committee_names(detail),
-            "latestAction": {
-                "date": latest_action.get("actionDate"),
-                "text": latest_action.get("text"),
-            },
-        }
+        seed = _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors)
 
         item = {
-            "identifier": digest_seed["identifier"],
-            "title": digest_seed["title"],
+            "identifier": seed["identifier"],
+            "title": seed["title"],
             "congress": detail.get("congress") or congress,
             "type": detail.get("type") or bill_type.upper(),
             "number": detail.get("number") or number,
             "originChamber": detail.get("originChamber"),
             "introducedDate": detail.get("introducedDate"),
-            "policyArea": policy_area,
-            "description": digest_seed["description"],
+            "policyArea": seed["policyArea"],
+            "description": seed["description"],
             "sponsors": sponsors,
             "cosponsors": cosponsors,
-            "cosponsorCount": _bill_cosponsor_count(bill_ref, detail) or len(cosponsors),
-            "committees": _bill_committee_names(detail),
-            "latestAction": digest_seed["latestAction"],
+            "cosponsorCount": seed["cosponsorCount"],
+            "committees": seed["committees"],
+            "latestAction": seed["latestAction"],
             "updatedAt": detail.get("updateDate"),
             "url": _bill_web_url(bill_ref),
             "detailPath": f"{congress}/{bill_type}/{number}",
         }
 
-        # AI enrichment (no-ops to None when no provider is configured).
-        try:
-            ai_desc = generate_bill_description(digest_seed)
-            if ai_desc and ai_desc.get("summary"):
-                item["aiDescription"] = ai_desc
-        except Exception as exc:  # noqa: BLE001
-            LOGGER.warning("Bill AI description failed: %s", exc)
-        try:
-            impact = generate_bill_impact(digest_seed)
-            if impact and impact.get("summary"):
-                item["impact"] = impact
-        except Exception as exc:  # noqa: BLE001
-            LOGGER.warning("Bill AI impact failed: %s", exc)
+        # Committed AI content is instant (no model call); apply it always.
+        committed_desc = _static_bill_ai_entry(seed["identifier"], "description")
+        if committed_desc:
+            item["aiDescription"] = committed_desc
+        committed_impact = _static_bill_ai_entry(seed["identifier"], "impact")
+        if committed_impact:
+            item["impact"] = {"status": "AI impact analysis", **committed_impact}
 
-        if include_votes:
-            item["votes"] = _bill_recorded_votes(bill_ref)
-        else:
-            item["votes"] = []
+        if include_ai:
+            if "aiDescription" not in item:
+                try:
+                    ai_desc = generate_bill_description(seed)
+                    if ai_desc and ai_desc.get("summary"):
+                        item["aiDescription"] = ai_desc
+                except Exception as exc:  # noqa: BLE001
+                    LOGGER.warning("Bill AI description failed: %s", exc)
+            if "impact" not in item:
+                try:
+                    impact = generate_bill_impact(seed)
+                    if impact and impact.get("summary"):
+                        item["impact"] = impact
+                except Exception as exc:  # noqa: BLE001
+                    LOGGER.warning("Bill AI impact failed: %s", exc)
+
+        item["votes"] = _bill_recorded_votes(bill_ref) if include_votes else []
+        # Client should lazy-fetch /ai when a provider is on and content is missing.
+        item["aiPending"] = ai_insights_available() and (
+            "aiDescription" not in item or "impact" not in item
+        )
 
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -1424,6 +1443,61 @@ def get_bill_detail(congress, bill_type, number, include_votes=True):
         fetch_json,
         ttl_seconds=BILL_DETAIL_TTL_SECONDS,
     )
+
+
+def get_bill_ai(congress, bill_type, number):
+    """Lazily generate (or serve committed) AI description + impact for a bill.
+    Separate from get_bill_detail so the page renders immediately and this slower
+    call streams in after. Generates description + impact concurrently to stay
+    within one request budget. Cached."""
+    bill_type = str(bill_type or "").lower()
+    congress = str(congress or "").strip()
+    number = str(number or "").strip()
+    config = _ai_provider_config()
+
+    bill_ref = {"congress": congress, "type": bill_type, "number": number}
+    detail = _bill_detail_payload(bill_ref)
+    if not detail:
+        raise UpstreamDataError(
+            f"No Congress.gov record for {bill_type.upper()} {number} ({congress})."
+        )
+    summaries = _bill_summaries_payload(bill_ref)
+    sponsors = _bill_sponsor_items(bill_ref, detail)
+    cosponsors = _bill_cosponsor_items(bill_ref)
+    seed = _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors)
+
+    # Committed first (instant); only hit the model for what's missing.
+    result = {}
+    committed_desc = _static_bill_ai_entry(seed["identifier"], "description")
+    committed_impact = _static_bill_ai_entry(seed["identifier"], "impact")
+    if committed_desc:
+        result["aiDescription"] = committed_desc
+    if committed_impact:
+        result["impact"] = {"status": "AI impact analysis", **committed_impact}
+
+    if config and ("aiDescription" not in result or "impact" not in result):
+        jobs = {}
+        if "aiDescription" not in result:
+            jobs["aiDescription"] = lambda: generate_bill_description(seed)
+        if "impact" not in result:
+            jobs["impact"] = lambda: generate_bill_impact(seed)
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures = {pool.submit(fn): key for key, fn in jobs.items()}
+            for future in as_completed(futures):
+                key = futures[future]
+                try:
+                    value = future.result()
+                    if value and value.get("summary"):
+                        result[key] = value
+                except Exception as exc:  # noqa: BLE001
+                    LOGGER.warning("Lazy bill AI (%s) failed: %s", key, exc)
+
+    return {
+        "available": bool(result),
+        "ai_enabled": config is not None,
+        "identifier": seed["identifier"],
+        **result,
+    }
 
 
 # =========================================================================
