@@ -2603,6 +2603,9 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .grade-explainer-row small { color: var(--color-text-muted); font-weight: 400; }
 .grade-deduction { color: #c0453f; }
 
+/* AI descriptions are word-limited, so show them in full (no line-clamp/ellipsis). */
+.bill-description--ai { display: block; -webkit-line-clamp: none; line-clamp: none; overflow: visible; }
+
 /* ═══════════════════════════════════════════════════════════════════════════
    Full-app feature pass: home balance, map color-by/components, bill filters,
    vote party analysis, cosponsor split, foreign-affairs live bills

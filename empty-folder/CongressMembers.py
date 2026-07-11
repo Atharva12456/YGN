@@ -1039,6 +1039,9 @@ def _bill_digest_item(bill):
         "number": bill.get("number") or detail.get("number"),
         "originChamber": bill.get("originChamber") or detail.get("originChamber"),
         "description": _bill_description(bill, detail, summaries),
+        # A committed short AI description (bill-ai.json) when available -- the
+        # digest prefers it over the long official summary so tiles don't clip.
+        "aiDescription": _static_bill_ai_entry(_bill_identifier(bill), "description"),
         "members": _bill_member_items(bill, detail),
         "sponsors": sponsors,
         "cosponsorCount": cosponsor_count,
@@ -1828,7 +1831,7 @@ def generate_bill_impact(bill_item):
         return None
 
     cache_key = _build_cache_key(
-        "bill-impact-v2", {"id": identifier, "model": config["model"]}
+        "bill-impact-v3", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
@@ -1870,7 +1873,7 @@ def generate_bill_description(bill_item):
         return None
 
     cache_key = _build_cache_key(
-        "bill-description-v2", {"id": identifier, "model": config["model"]}
+        "bill-description-v3", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
@@ -1938,7 +1941,7 @@ def _generate_confidence(kind, subject, context, cache_id):
         return None
 
     cache_key = _build_cache_key(
-        "public-confidence-v2", {"kind": kind, "id": cache_id, "model": config["model"]}
+        "public-confidence-v3", {"kind": kind, "id": cache_id, "model": config["model"]}
     )
 
     def fetch_json():

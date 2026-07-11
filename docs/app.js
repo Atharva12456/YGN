@@ -886,8 +886,16 @@ function renderBillRows() {
 
     const descriptionCell = document.createElement('div');
     const description = bill.description || {};
-    appendText(descriptionCell, 'bill-description', description.text || 'Congress.gov has not published a summary for this bill yet.');
-    appendText(descriptionCell, 'bill-meta', [description.source, formatShortDate(description.updated_at)].filter(Boolean).join(' - '), 'p');
+    // Prefer the short, complete AI description (fits without ellipsis) over the
+    // long official summary; fall back to the official text when there's no AI one.
+    const aiDesc = bill.aiDescription && bill.aiDescription.summary;
+    if (aiDesc) {
+      appendText(descriptionCell, 'bill-description bill-description--ai', aiDesc);
+      appendText(descriptionCell, 'bill-meta', 'Plain-language summary · AI', 'p');
+    } else {
+      appendText(descriptionCell, 'bill-description', description.text || 'Congress.gov has not published a summary for this bill yet.');
+      appendText(descriptionCell, 'bill-meta', [description.source, formatShortDate(description.updated_at)].filter(Boolean).join(' - '), 'p');
+    }
 
     const membersCell = document.createElement('div');
     const members = Array.isArray(bill.members) ? bill.members : [];
