@@ -2596,6 +2596,13 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
   .bill-detail-head h1 { font-size: 1.5rem; }
 }
 
+/* Ethics grade explainer (finance score - stock deduction = final) */
+.grade-explainer { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; margin: 0.75rem 0 1rem; background: #fbfcff; }
+.grade-explainer-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.3rem 0; font-size: 0.86rem; border-bottom: 1px dashed var(--color-border); }
+.grade-explainer-row:last-child { border-bottom: none; font-weight: 600; }
+.grade-explainer-row small { color: var(--color-text-muted); font-weight: 400; }
+.grade-deduction { color: #c0453f; }
+
 /* ═══════════════════════════════════════════════════════════════════════════
    Full-app feature pass: home balance, map color-by/components, bill filters,
    vote party analysis, cosponsor split, foreign-affairs live bills
@@ -2603,6 +2610,11 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 
 /* Home: Congress party balance */
 .congress-balance { margin-top: 1.25rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.25rem 1.4rem; }
+/* Full-width variant (end of home): lay the two chambers side by side so the
+   block fills the row instead of leaving a blank column. */
+.congress-balance--full { margin-top: 2.5rem; }
+.congress-balance--full .cb-chambers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+@media (max-width: 640px) { .congress-balance--full .cb-chambers { grid-template-columns: 1fr; } }
 .cb-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.9rem; }
 .cb-chamber { margin-bottom: 1rem; }
 .cb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }

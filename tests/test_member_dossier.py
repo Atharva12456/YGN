@@ -88,6 +88,30 @@ class MemberDossierBackendTests(unittest.TestCase):
         with patch.object(self.gov, "_read_json_file", return_value=None):
             self.assertIsNone(self.gov._precomputed_fec_ethics("X"))
 
+    def test_stock_penalty_lowers_active_traders(self):
+        # A House member with many PTR filings is deducted; zero-trade members aren't.
+        heavy = [{"isStockReport": True}] * 5
+        with patch.object(self.gov, "_member_chamber", return_value="House"), \
+             patch.object(self.gov, "_house_disclosure_filings", return_value=heavy):
+            self.assertEqual(self.gov._member_stock_penalty({})["ptr_count"], 5)
+            self.assertEqual(self.gov._member_stock_penalty({})["penalty"], 22)
+        with patch.object(self.gov, "_member_chamber", return_value="House"), \
+             patch.object(self.gov, "_house_disclosure_filings", return_value=[]):
+            self.assertEqual(self.gov._member_stock_penalty({})["penalty"], 0)
+        # Senate can't be measured without a provider key -> None (no penalty).
+        with patch.object(self.gov, "_member_chamber", return_value="Senate"):
+            self.assertIsNone(self.gov._member_stock_penalty({}))
+
+    def test_apply_stock_penalty_blends_and_regrades(self):
+        result = {"score": 95.1, "grade": "A", "components": {}, "notes": []}
+        with patch.object(self.gov, "_member_stock_penalty",
+                          return_value={"ptr_count": 5, "penalty": 22}):
+            out = self.gov._apply_stock_penalty(result, {})
+        self.assertEqual(out["financeScore"], 95.1)
+        self.assertAlmostEqual(out["score"], 73.1, places=1)
+        self.assertEqual(out["grade"], "C")
+        self.assertTrue(out["components"]["stock_conflict"]["measurable"])
+
     def test_ethics_bench_calibration_spreads_grades(self):
         # A grassroots profile should clearly outrank a big-money one, and neither
         # should collapse to the old "everyone is a C" band.
@@ -242,13 +266,21 @@ class MemberDossierBackendTests(unittest.TestCase):
         self.assertIn("temporarily unavailable", result["note"])
 
     def test_funding_serves_grade_only_when_live_disabled(self):
-        with patch.object(self.gov, "_ethics_live_on_request", return_value=False), patch.object(
+        with patch.object(self.gov, "_funding_live_on_request", return_value=False), patch.object(
             self.gov, "get_ethics_score", return_value={"grade": "B", "source": "fec_live"}
         ), patch.object(self.gov, "_fec_best_candidate", side_effect=AssertionError("no FEC")):
             result = self.gov.get_funding_summary("X0001")
         self.assertFalse(result["available"])
         self.assertEqual(result["grade"]["grade"], "B")
         self.assertIn("build time", result["note"])
+
+    def test_funding_live_gate_on_with_real_key(self):
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=False), \
+             patch.object(self.gov, "_fec_api_key_source", return_value="env"):
+            self.assertTrue(self.gov._funding_live_on_request())
+        with patch.object(self.gov, "_ethics_live_on_request", return_value=False), \
+             patch.object(self.gov, "_fec_api_key_source", return_value="legacy_demo"):
+            self.assertFalse(self.gov._funding_live_on_request())
 
     def test_funding_builds_breakdown_and_reuses_grade(self):
         totals = {

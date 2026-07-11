@@ -49,7 +49,14 @@ DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
-ETHICS_METHOD_VERSION = "campaign_finance_v3"
+ETHICS_METHOD_VERSION = "campaign_finance_stock_v4"
+# Stock-trading conflict: a member whose household actively trades individual
+# stocks (disclosed via House Periodic Transaction Reports) carries a real
+# conflict-of-interest concern, so we DEDUCT from the campaign-finance grade
+# based on how many PTR filings they've made recently. Deduction-only so members
+# who don't trade individual stocks are unaffected. (max_ptr_inclusive, penalty)
+STOCK_PENALTY_BANDS = [(0, 0), (2, 10), (5, 22), (9, 32), (19, 42)]
+STOCK_PENALTY_MAX = 50
 
 # --- Member dossier data sources -----------------------------------------
 # unitedstates/congress-legislators: canonical, free, no-key crosswalk of
@@ -1558,9 +1565,10 @@ CONFIDENCE_SYSTEM_PROMPT = (
     "Respond with ONLY a compact JSON object, no prose or code fences, using keys: "
     '"confidence" (integer 0-100 = estimated share expressing confidence/support), '
     '"label" (one of "Very low","Low","Mixed","Moderate","High","Very high"), '
-    '"summary" (2-3 neutral sentences that justify the number and note uncertainty), '
-    '"support_factors" (array of up to 3 short specific strings), '
-    '"concern_factors" (array of up to 3 short specific strings), '
+    '"summary" (2-3 COMPLETE neutral sentences, at most 55 words, justifying the number '
+    'and noting uncertainty; never end mid-sentence or with "..."), '
+    '"support_factors" (array of up to 3 short specific strings, each <= 12 words), '
+    '"concern_factors" (array of up to 3 short specific strings, each <= 12 words), '
     '"confidence_in_estimate" (one of "low","medium","high").'
 )
 
@@ -1826,10 +1834,11 @@ def generate_bill_impact(bill_item):
     def fetch_json():
         user_prompt = (
             f"{_bill_ai_context(bill_item)}\n\n"
-            "In 2-3 sentences, explain what this bill would do and specifically who or what "
-            "it would affect if enacted -- name the actual groups, agencies, industries, "
-            "states, or programs. If the material is too thin to identify real effects, say "
-            "that in one sentence instead of guessing."
+            "In 2-3 COMPLETE sentences totalling AT MOST 60 words, explain what this bill "
+            "would do and specifically who or what it would affect if enacted -- name the "
+            "actual groups, agencies, industries, states, or programs. If the material is too "
+            "thin to identify real effects, say that in one sentence instead of guessing. "
+            "Finish every sentence; never end with '...' or a cut-off clause."
         )
         summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=260)
         return {
@@ -1867,9 +1876,10 @@ def generate_bill_description(bill_item):
     def fetch_json():
         user_prompt = (
             f"{_bill_ai_context(bill_item)}\n\n"
-            "In 2-3 sentences, describe what this bill is and the concrete change it "
-            "proposes, then its scope (who/what it covers). Be specific to this bill; if "
-            "the text is too thin, say so plainly in one sentence."
+            "In 2-3 COMPLETE sentences totalling AT MOST 65 words, describe what this bill "
+            "is and the concrete change it proposes, then its scope (who/what it covers). "
+            "Be specific to this bill; if the text is too thin, say so plainly in one "
+            "sentence. Finish every sentence; never end with '...' or a cut-off clause."
         )
         summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=240)
         return {
@@ -3438,6 +3448,64 @@ def _static_ethics_fallback(bioguide_id, member=None):
     }
 
 
+def _member_stock_penalty(member):
+    """Conflict-of-interest deduction from a member's ethics grade based on how
+    actively their household trades individual stocks, counted from House Periodic
+    Transaction Report (PTR) filings. Returns {ptr_count, penalty} or None when it
+    can't be measured (Senate has no machine-countable feed without a provider key,
+    so those members are simply not penalized on this axis)."""
+    chamber = str(_member_chamber(member) or "").lower()
+    if "senate" in chamber:
+        return None
+    try:
+        filings = _house_disclosure_filings(
+            member.get("lastName"), member.get("firstName"), _member_state_code(member)
+        )
+    except UpstreamDataError:
+        return None
+    ptr_count = sum(1 for f in filings if f.get("isStockReport"))
+    penalty = STOCK_PENALTY_MAX
+    for cap, pen in STOCK_PENALTY_BANDS:
+        if ptr_count <= cap:
+            penalty = pen
+            break
+    return {"ptr_count": ptr_count, "penalty": penalty}
+
+
+def _apply_stock_penalty(result, member):
+    """Blend the stock-trading conflict deduction into an FEC ethics result."""
+    stock = _member_stock_penalty(member)
+    if stock is None:
+        result.setdefault("components", {})["stock_conflict"] = {
+            "measurable": False,
+            "note": "Stock-trade conflict not machine-countable for this member "
+            "(Senate filings require a provider key); grade reflects campaign finance only.",
+        }
+        return result
+
+    penalty = stock["penalty"]
+    finance_score = result["score"]
+    final = round(max(0.0, min(100.0, finance_score - penalty)), 1)
+    result["financeScore"] = finance_score
+    result["stockPtrCount"] = stock["ptr_count"]
+    result["stockPenalty"] = penalty
+    result["components"]["stock_conflict"] = {
+        "measurable": True,
+        "ptr_filings": stock["ptr_count"],
+        "penalty": penalty,
+        "note": f"{stock['ptr_count']} individual-stock trade (PTR) disclosure "
+        f"filing(s) in ~2 years; -{penalty} conflict-of-interest deduction.",
+    }
+    result["score"] = final
+    result["grade"] = _ethics_letter_grade(final)
+    if penalty > 0:
+        result["notes"].append(
+            "Grade lowered for active individual-stock trading disclosed in House "
+            "Periodic Transaction Reports (a conflict-of-interest signal)."
+        )
+    return result
+
+
 def _live_ethics_score(member):
     candidate = _fec_best_candidate(member)
     if candidate is None:
@@ -3459,7 +3527,8 @@ def _live_ethics_score(member):
         candidate_id,
         cycle,
     )
-    return _score_ethics_from_fec(member, candidate, totals, by_size, by_state)
+    result = _score_ethics_from_fec(member, candidate, totals, by_size, by_state)
+    return _apply_stock_penalty(result, member)
 
 
 def _precomputed_fec_ethics(bioguide_id):
@@ -3528,6 +3597,19 @@ def _ethics_live_on_request():
     """
     _load_local_env()
     return os.getenv("YGN_ETHICS_LIVE_ON_REQUEST", "0") not in {"0", "false", "False", ""}
+
+
+def _funding_live_on_request():
+    """Whether to compute the live FEC funding BREAKDOWN per request. Unlike the
+    537-member ethics sweep, funding is only fetched for individually-viewed
+    members, so a real (env) FEC key can absorb it. Defaults ON when a real key is
+    configured, OFF with only the rate-limited legacy demo key. Override with
+    YGN_FUNDING_LIVE=0/1."""
+    _load_local_env()
+    override = os.getenv("YGN_FUNDING_LIVE")
+    if override is not None:
+        return override not in {"0", "false", "False", ""}
+    return _ethics_live_on_request() or _fec_api_key_source() == "env"
 
 
 def get_ethics_score(bioguide_id: str):
@@ -4123,8 +4205,9 @@ def get_funding_summary(bioguide_id):
             "grade": None,
         }
 
-        # Reserve FEC quota for the build-time generator unless live compute is on.
-        if not _ethics_live_on_request():
+        # Serve the live breakdown when a real FEC key can absorb per-view calls;
+        # otherwise fall back to grade-only to protect the rate-limited demo key.
+        if not _funding_live_on_request():
             try:
                 base["grade"] = get_ethics_score(bioguide_id)
             except Exception:  # noqa: BLE001

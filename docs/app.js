@@ -760,8 +760,10 @@ async function initCongressBalance() {
 
   host.innerHTML = `
     <div class="cb-title">Who controls the 119th Congress</div>
-    ${chamberBar('House', tally.House)}
-    ${chamberBar('Senate', tally.Senate)}
+    <div class="cb-chambers">
+      ${chamberBar('House', tally.House)}
+      ${chamberBar('Senate', tally.Senate)}
+    </div>
     <a class="cb-link" href="${withApiParam('members.html')}">Browse all members →</a>`;
   host.hidden = false;
 }
@@ -3171,6 +3173,7 @@ function fundingInnerHtml(funding, pending) {
   if (funding && funding.grade && funding.grade.grade) {
     gradeChip = `<span class="grade-badge" style="--grade-color:${getEthicsColor(funding.grade.score)};min-width:auto;padding:.25rem .6rem;font-size:1rem;flex-direction:row;gap:.35rem;">${esc(funding.grade.grade)}<span>Grade</span></span>`;
   }
+  const gradeExplainer = gradeExplainerHtml(funding && funding.grade);
   let body;
   if (funding && funding.available && funding.totals) {
     const t = funding.totals;
@@ -3195,7 +3198,25 @@ function fundingInnerHtml(funding, pending) {
   } else {
     body = `<p class="muted-text">${esc((funding && funding.note) || 'No matching FEC campaign committee was found.')}</p>`;
   }
-  return `<h3><span><span class="card-icon">💵</span>Campaign Funding</span>${gradeChip}</h3>${body}`;
+  return `<h3><span><span class="card-icon">💵</span>Campaign Funding</span>${gradeChip}</h3>${gradeExplainer}${body}`;
+}
+
+// Explain the ethics/funding grade: campaign-finance base minus a stock-trading
+// conflict deduction (from House PTR filings), so the letter grade isn't a black box.
+function gradeExplainerHtml(grade) {
+  if (!grade || grade.grade == null) return '';
+  const sc = grade.components && grade.components.stock_conflict;
+  const finance = Number.isFinite(Number(grade.financeScore)) ? Number(grade.financeScore) : null;
+  const penalty = Number(grade.stockPenalty) || 0;
+  if (finance === null && !(sc && sc.measurable)) return '';
+  const ptr = grade.stockPtrCount != null ? grade.stockPtrCount : (sc && sc.ptr_filings);
+  const rows = [];
+  if (finance !== null) rows.push(`<span>Campaign-finance score</span><strong>${finance.toFixed(0)}/100</strong>`);
+  if (penalty > 0) rows.push(`<span>Stock-trading deduction<br><small>${ptr} PTR disclosure filing${ptr === 1 ? '' : 's'} in ~2&nbsp;yrs</small></span><strong class="grade-deduction">−${penalty}</strong>`);
+  else if (sc && sc.measurable) rows.push(`<span>Stock-trading conflict</span><strong>None disclosed</strong>`);
+  if (Number.isFinite(Number(grade.score))) rows.push(`<span>Final grade score</span><strong>${Number(grade.score).toFixed(0)}/100 (${esc(grade.grade)})</strong>`);
+  if (!rows.length) return '';
+  return `<div class="grade-explainer">${rows.map(r => `<div class="grade-explainer-row">${r}</div>`).join('')}</div>`;
 }
 
 function fundingSectionHtml(funding, pending) {

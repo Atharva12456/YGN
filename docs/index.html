@@ -82,7 +82,6 @@
             <div class="stat-source">YGN API health</div>
           </div>
         </div>
-        <div id="home-congress-balance" class="congress-balance" aria-label="Party balance in Congress" hidden></div>
       </div>
 
       <div id="district-map" class="home-map-section">
@@ -148,15 +147,17 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Congress.gov Feed</p>
-            <h2 id="home-recent-bills-title">Top 5 Recent Bills</h2>
+            <h2 id="home-recent-bills-title">Recent Bills</h2>
           </div>
           <a class="secondary-button" href="recent-bills.html">Open Bills Page</a>
         </div>
 
         <div id="civic-pulse-grid" class="civic-pulse-grid" aria-label="Recent bill civic pulse"></div>
         <p id="recent-bills-status" class="section-status">Loading recent bills</p>
-        <div id="recent-bills-grid" class="recent-bills-grid" data-limit="5" aria-live="polite"></div>
+        <div id="recent-bills-grid" class="recent-bills-grid" data-limit="6" aria-live="polite"></div>
       </div>
+
+      <div id="home-congress-balance" class="congress-balance congress-balance--full" aria-label="Party balance in Congress" hidden></div>
     </section>
   </main>
 </body>
