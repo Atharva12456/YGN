@@ -68,29 +68,31 @@ class VoteParsingTests(unittest.TestCase):
         self.assertEqual(n(""), "Not Voting")
 
 
-class ConfidenceParsingTests(unittest.TestCase):
+class AiReadContractTests(unittest.TestCase):
     def setUp(self):
         self.gov = fastapi_app.government
 
-    def test_parse_confidence_json_handles_code_fence(self):
-        raw = '```json\n{"confidence": 62, "label": "Moderate", "summary": "x", ' \
-              '"support_factors": ["a", "b"], "concern_factors": ["c"], ' \
-              '"confidence_in_estimate": "medium"}\n```'
-        parsed = self.gov._parse_confidence_json(raw)
-        self.assertEqual(parsed["confidence"], 62)
-        self.assertEqual(parsed["label"], "Moderate")
-        self.assertEqual(parsed["support_factors"], ["a", "b"])
-        self.assertEqual(parsed["confidence_in_estimate"], "medium")
+    def test_event_confidence_is_deterministic_and_never_calls_model(self):
+        with mock.patch.object(
+            self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")
+        ):
+            result = self.gov.get_event_confidence("Test event", context="Some context")
 
-    def test_parse_confidence_json_clamps_and_extracts(self):
-        raw = 'Sure! {"confidence": 140, "label": "High", "summary": "y"} hope that helps'
-        parsed = self.gov._parse_confidence_json(raw)
-        self.assertEqual(parsed["confidence"], 100)  # clamped to 0-100
+        self.assertFalse(result["available"])
+        self.assertEqual(result["source"], "deterministic")
+        self.assertEqual(result["subject"], "Test event")
+        self.assertNotIn("confidence", result)
 
-    def test_confidence_disabled_returns_none(self):
-        with mock.patch.object(self.gov, "_ai_provider_config", return_value=None):
-            self.assertIsNone(self.gov.generate_event_confidence("Test war"))
-            self.assertIsNone(self.gov.generate_candidate_confidence("A000001"))
+    def test_candidate_confidence_is_deterministic_and_never_calls_model(self):
+        with mock.patch.object(
+            self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")
+        ):
+            result = self.gov.get_candidate_confidence("A000001")
+
+        self.assertFalse(result["available"])
+        self.assertEqual(result["source"], "deterministic")
+        self.assertEqual(result["bioguideId"], "A000001")
+        self.assertNotIn("confidence", result)
 
     def test_next_gen_model_detection(self):
         f = self.gov._is_next_gen_model
@@ -100,18 +102,104 @@ class ConfidenceParsingTests(unittest.TestCase):
             self.assertFalse(f(m), m)
 
     def test_committed_bill_ai_served_without_provider(self):
-        store = {"bills": {"HR 283": {
+        store = {"bills": {"119/hr/283": {
             "description": {"summary": "Committed description."},
             "impact": {"summary": "Committed impact."},
         }}}
+        bill = {"congress": 119, "type": "HR", "number": "283"}
         with mock.patch.object(self.gov, "_static_bill_ai_store", return_value=store["bills"]), \
              mock.patch.object(self.gov, "_ai_provider_config", return_value=None), \
              mock.patch.object(self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")):
-            desc = self.gov.generate_bill_description({"identifier": "HR 283"})
-            impact = self.gov.generate_bill_impact({"identifier": "HR 283"})
+            desc = self.gov.generate_bill_description(bill)
+            impact = self.gov.generate_bill_impact(bill)
         self.assertEqual(desc["summary"], "Committed description.")
         self.assertEqual(desc["source"], "committed")
         self.assertEqual(impact["summary"], "Committed impact.")
+
+    def test_bill_ai_identifier_is_scoped_to_congress(self):
+        bill_118 = {"congress": 118, "type": "HR", "number": "1"}
+        bill_119 = {"congress": 119, "type": "HR", "number": "1"}
+
+        self.assertEqual(self.gov._bill_ai_identifier(bill_118), "118/hr/1")
+        self.assertEqual(self.gov._bill_ai_identifier(bill_119), "119/hr/1")
+        self.assertNotEqual(
+            self.gov._bill_ai_identifier(bill_118),
+            self.gov._bill_ai_identifier(bill_119),
+        )
+
+    def test_public_bill_ai_read_serves_cache_without_calling_model(self):
+        seed = {
+            "identifier": "H.R. 1",
+            "congress": "119",
+            "type": "hr",
+            "number": "1",
+            "description": {"text": "Official summary."},
+        }
+
+        def cached(_bill, field, *, queue_if_missing=False):
+            self.assertTrue(queue_if_missing)
+            return {
+                "summary": f"Cached {field}.",
+                "source": "refresh_cache",
+            }
+
+        with mock.patch.object(self.gov, "_load_bill_ai_seed", return_value=seed), \
+             mock.patch.object(self.gov, "_cached_bill_ai_entry", side_effect=cached), \
+             mock.patch.object(self.gov, "ai_insights_available", return_value=True), \
+             mock.patch.object(self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")), \
+             mock.patch.object(
+                 self.gov,
+                 "generate_bill_description",
+                 side_effect=AssertionError("must not generate on a read"),
+             ), \
+             mock.patch.object(
+                 self.gov,
+                 "generate_bill_impact",
+                 side_effect=AssertionError("must not generate on a read"),
+             ):
+            result = self.gov.get_bill_ai("119", "hr", "1")
+
+        self.assertTrue(result["available"])
+        self.assertFalse(result["pending"])
+        self.assertEqual(result["identifier"], "119/hr/1")
+        self.assertEqual(result["aiDescription"]["summary"], "Cached description.")
+        self.assertEqual(result["impact"]["summary"], "Cached impact.")
+
+    def test_public_bill_detail_read_never_calls_model(self):
+        detail = {
+            "congress": 119,
+            "type": "HR",
+            "number": "1",
+            "title": "Test Act",
+            "policyArea": {"name": "Health"},
+            "latestAction": {"text": "Introduced", "actionDate": "2025-01-03"},
+        }
+
+        def execute_fetch(_key, _source, fetcher, **_kwargs):
+            return fetcher()
+
+        with mock.patch.object(self.gov, "_cached_json", side_effect=execute_fetch), \
+             mock.patch.object(self.gov, "_bill_detail_payload", return_value=detail), \
+             mock.patch.object(self.gov, "_bill_summaries_payload", return_value=[]), \
+             mock.patch.object(self.gov, "_bill_sponsor_items", return_value=[]), \
+             mock.patch.object(self.gov, "_bill_cosponsor_items", return_value=[]), \
+             mock.patch.object(self.gov, "_cached_bill_ai_entry", return_value=None), \
+             mock.patch.object(self.gov, "ai_insights_available", return_value=True), \
+             mock.patch.object(self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")), \
+             mock.patch.object(
+                 self.gov,
+                 "generate_bill_description",
+                 side_effect=AssertionError("must not generate on a read"),
+             ), \
+             mock.patch.object(
+                 self.gov,
+                 "generate_bill_impact",
+                 side_effect=AssertionError("must not generate on a read"),
+             ):
+            result = self.gov.get_bill_detail("119", "hr", "1", include_votes=False)
+
+        self.assertEqual(result["ai_mode"], "cache_refresh_only")
+        self.assertTrue(result["bill"]["aiPending"])
 
     def test_bill_ai_context_includes_bipartisanship(self):
         ctx = self.gov._bill_ai_context({

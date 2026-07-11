@@ -72,10 +72,23 @@
             <select id="members-sort" aria-label="Sort members">
               <option value="name">Name (A–Z)</option>
               <option value="ideology">Ideology (L→R)</option>
-              <option value="ethics">Ethics grade</option>
+              <option value="ethics">Funding grade</option>
               <option value="seniority">Seniority (longest first)</option>
             </select>
           </label>
+          <button
+            id="members-saved-toggle"
+            class="members-saved-toggle"
+            type="button"
+            aria-pressed="false"
+            title="Show saved members only"
+          >
+            <svg class="member-save-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.75 4.75A1.75 1.75 0 0 1 8.5 3h7a1.75 1.75 0 0 1 1.75 1.75v15.1L12 16.6l-5.25 3.25V4.75Z"></path>
+            </svg>
+            <span>Saved only</span>
+            <span id="members-saved-count" class="members-saved-count" aria-label="0 saved members">0</span>
+          </button>
         </div>
         <div id="members-count" class="members-count" aria-live="polite"></div>
       </div>

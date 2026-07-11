@@ -24,9 +24,32 @@ def load_backend():
     return module
 
 
-def write_json(path, payload):
+def _semantic_payload(payload):
+    if isinstance(payload, dict):
+        return {key: value for key, value in payload.items() if key != "generated_at"}
+    return payload
+
+
+def write_json(path, payload, *, force=False):
+    """Atomically write only when public data changed.
+
+    Per-run timestamps no longer churn thousands of otherwise identical files.
+    Returns True when the file changed.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    if not force and path.exists():
+        try:
+            existing = read_json(path)
+        except (OSError, json.JSONDecodeError):
+            existing = None
+        if _semantic_payload(existing) == _semantic_payload(payload):
+            return False
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    temporary.replace(path)
+    return True
 
 
 def read_json(path):
@@ -104,19 +127,21 @@ def read_existing_snapshot(path):
         return None
 
 
-def reusable_ethics_snapshot(path, generated_at, ttl_days):
+def reusable_ethics_snapshot(path, generated_at, ttl_days, expected_method=None):
     """Reuse a committed live (fec_live) ethics grade if it is still fresh, so a
     run doesn't re-spend FEC quota on members already scored. Returns the payload
-    (minus generated_at, which is re-stamped on write) or None."""
+    with its original data timestamp or None."""
     if ttl_days <= 0:
         return None
     payload = read_existing_snapshot(path)
     if not payload or payload.get("source") != "fec_live" or not payload.get("grade"):
         return None
+    if expected_method and payload.get("method") != expected_method:
+        return None
     snapshot_time = parse_generated_at(payload.get("generated_at"))
     if snapshot_time is None or generated_at - snapshot_time > timedelta(days=ttl_days):
         return None
-    return {k: v for k, v in payload.items() if k != "generated_at"}
+    return payload
 
 
 def safe_id(value):
@@ -189,6 +214,30 @@ def collect_members(backend, limit, max_members, congress, current_member):
             break
 
     return members
+
+
+def build_roster_summary(backend, members):
+    nonvoting = {"DC", "PR", "GU", "VI", "AS", "MP"}
+    summary = {
+        "total": len(members),
+        "by_chamber": {},
+        "by_party": {},
+        "by_chamber_party": {},
+        "voting_by_chamber_party": {},
+    }
+    for member in members:
+        chamber_text = str(backend._member_chamber(member) or "").lower()
+        chamber = "Senate" if "senate" in chamber_text else "House"
+        party = backend._party_abbreviation(member) or "Other"
+        summary["by_chamber"][chamber] = summary["by_chamber"].get(chamber, 0) + 1
+        summary["by_party"][party] = summary["by_party"].get(party, 0) + 1
+        chamber_parties = summary["by_chamber_party"].setdefault(chamber, {})
+        chamber_parties[party] = chamber_parties.get(party, 0) + 1
+        state = backend._member_state_code(member)
+        if chamber != "House" or state not in nonvoting:
+            voting = summary["voting_by_chamber_party"].setdefault(chamber, {})
+            voting[party] = voting.get(party, 0) + 1
+    return summary
 
 
 def parse_args():
@@ -285,6 +334,9 @@ def main():
         "ethics_fallback": 0,
         "member_score_index": False,
         "recent_bills": False,
+        "bill_details": 0,
+        "dossiers": 0,
+        "debt_metric": False,
         "errors": [],
     }
     member_score_index = {
@@ -307,6 +359,18 @@ def main():
         return 3
 
     report["members"] = len(members)
+    if (
+        output_dir.resolve() == DEFAULT_OUTPUT_DIR.resolve()
+        and args.max_members is None
+        and not args.include_former_members
+        and len(members) < 500
+    ):
+        print(
+            f"Refusing to replace the public roster with only {len(members)} current members.",
+            file=sys.stderr,
+        )
+        return 4
+    report["roster_summary"] = build_roster_summary(backend, members)
     write_json(
         output_dir / "officials.json",
         {
@@ -322,6 +386,7 @@ def main():
             "mode": "static",
             "status": "ok",
         },
+        force=True,
     )
 
     if not args.skip_recent_bills:
@@ -334,7 +399,7 @@ def main():
                     "data": recent_bills,
                 },
             )
-            recent_bill_digest = backend.getRecentBillDigest(limit=5)
+            recent_bill_digest = backend.getRecentBillDigest(limit=40)
             write_json(
                 output_dir / "recent-bills-digest.json",
                 {
@@ -342,9 +407,35 @@ def main():
                     **recent_bill_digest,
                 },
             )
+            for bill in recent_bill_digest.get("bills", []):
+                path = str(bill.get("detailPath") or "")
+                parts = path.split("/")
+                if len(parts) != 3:
+                    continue
+                try:
+                    detail = backend.get_bill_detail(
+                        parts[0], parts[1], parts[2], include_votes=False
+                    )
+                    write_json(
+                        output_dir / "bills" / f"{parts[0]}-{parts[1]}-{parts[2]}.json",
+                        detail,
+                    )
+                    report["bill_details"] += 1
+                except Exception as exc:
+                    report["errors"].append(
+                        {"stage": "bill-detail", "bill": path, "error": str(exc)}
+                    )
             report["recent_bills"] = True
         except Exception as exc:
             report["errors"].append({"stage": "recent-bills", "error": str(exc)})
+
+    try:
+        debt = backend.get_national_debt_metric()
+        if debt:
+            write_json(output_dir / "metrics" / "debt.json", debt)
+            report["debt_metric"] = True
+    except Exception as exc:
+        report["errors"].append({"stage": "debt-metric", "error": str(exc)})
 
     fec_scored = 0  # members scored against live FEC this run (budget-limited)
 
@@ -352,6 +443,11 @@ def main():
         bioguide_id = safe_id(member_bioguide_id(member))
         if not bioguide_id:
             continue
+
+        detail = None
+        wiki = None
+        nominate = None
+        ethics = None
 
         if not args.skip_details:
             try:
@@ -368,6 +464,11 @@ def main():
                 report["errors"].append(
                     {"bioguideId": bioguide_id, "stage": "detail", "error": str(exc)}
                 )
+        else:
+            existing_profile = read_existing_snapshot(
+                output_dir / "profiles" / f"{bioguide_id}.json"
+            )
+            detail = (existing_profile or {}).get("data")
 
         if not args.skip_wiki:
             wiki_path = output_dir / "wiki" / f"{bioguide_id}.json"
@@ -378,6 +479,7 @@ def main():
                 args.fallback_static_ttl_days,
             )
             if reusable_wiki:
+                wiki = {key: value for key, value in reusable_wiki.items() if key != "generated_at"}
                 report["descriptions"] += 1
                 if is_fallback_description(reusable_wiki):
                     report["fallback_descriptions"] += 1
@@ -429,7 +531,10 @@ def main():
             ethics_path = output_dir / "ethics" / f"{bioguide_id}.json"
             try:
                 reused = reusable_ethics_snapshot(
-                    ethics_path, generated_at_dt, args.ethics_static_ttl_days
+                    ethics_path,
+                    generated_at_dt,
+                    args.ethics_static_ttl_days,
+                    expected_method=backend.ETHICS_METHOD_VERSION,
                 )
                 if reused is not None:
                     # Already have a fresh live grade committed — keep it, no FEC call.
@@ -442,26 +547,52 @@ def main():
                         # Rate-limited / no FEC match: prefer an older committed live
                         # grade over a fresh fallback so we never regress a real grade.
                         prior = read_existing_snapshot(ethics_path)
-                        if prior and prior.get("source") == "fec_live" and prior.get("grade"):
-                            ethics = {k: v for k, v in prior.items() if k != "generated_at"}
+                        if (
+                            prior
+                            and prior.get("source") == "fec_live"
+                            and prior.get("method") == backend.ETHICS_METHOD_VERSION
+                            and prior.get("grade")
+                        ):
+                            ethics = prior
                     if args.fec_delay_seconds > 0:
                         time.sleep(args.fec_delay_seconds)
                 else:
                     # Budget spent this run: keep the existing snapshot if any, else a
                     # no-FEC static fallback (subsequent runs will score it live).
                     prior = read_existing_snapshot(ethics_path)
-                    if prior and prior.get("grade"):
-                        ethics = {k: v for k, v in prior.items() if k != "generated_at"}
+                    if (
+                        prior
+                        and prior.get("source") == "fec_live"
+                        and prior.get("method") == backend.ETHICS_METHOD_VERSION
+                        and prior.get("grade")
+                    ):
+                        ethics = prior
                     else:
                         ethics = backend.ethics_fallback_only(bioguide_id)
 
                 if ethics is not None:
-                    write_json(ethics_path, {"generated_at": generated_at, **ethics})
-                    member_score_index["ethics"][bioguide_id] = {
-                        key: ethics.get(key)
-                        for key in ("score", "grade", "source", "method", "updated_at", "cycle")
-                        if ethics.get(key) is not None
-                    }
+                    ethics_payload = (
+                        ethics
+                        if ethics.get("generated_at")
+                        else {"generated_at": generated_at, **ethics}
+                    )
+                    write_json(ethics_path, ethics_payload)
+                    if (
+                        ethics.get("source") == "fec_live"
+                        and ethics.get("method") == backend.ETHICS_METHOD_VERSION
+                    ):
+                        member_score_index["ethics"][bioguide_id] = {
+                            key: ethics.get(key)
+                            for key in (
+                                "score",
+                                "grade",
+                                "source",
+                                "method",
+                                "updated_at",
+                                "cycle",
+                            )
+                            if ethics.get(key) is not None
+                        }
                     report["ethics"] += 1
                     if ethics.get("source") != "fec_live":
                         report["ethics_fallback"] += 1
@@ -470,13 +601,70 @@ def main():
                     {"bioguideId": bioguide_id, "stage": "ethics", "error": str(exc)}
                 )
 
+        if detail:
+            dossier_errors = []
+
+            def dossier_section(stage, fetcher):
+                try:
+                    return fetcher()
+                except Exception as exc:
+                    dossier_errors.append({"stage": stage, "error": str(exc)})
+                    return None
+
+            public_ethics = (
+                ethics
+                if ethics
+                and ethics.get("source") == "fec_live"
+                and ethics.get("method") == backend.ETHICS_METHOD_VERSION
+                else None
+            )
+            dossier = {
+                "generated_at": generated_at,
+                "bioguideId": bioguide_id,
+                "member": detail.get("member") or member,
+                "detail": detail,
+                "wiki": wiki,
+                "nominate": nominate,
+                "ethics": public_ethics,
+                "funding": {
+                    "available": False,
+                    "source": "static",
+                    "note": "Live campaign-funding detail is available on the hosted API.",
+                },
+                "committees": dossier_section(
+                    "committees", lambda: backend.get_member_committees(bioguide_id)
+                ),
+                "contact": dossier_section(
+                    "contact", lambda: backend.get_member_contact(bioguide_id)
+                ),
+                "history": dossier_section(
+                    "history", lambda: backend.get_member_history(bioguide_id)
+                ),
+                "legislation": {
+                    "available": False,
+                    "sponsored": [],
+                    "cosponsored": [],
+                    "note": "Live legislation detail is available on the hosted API.",
+                },
+                "stocks": {
+                    "available": False,
+                    "provider": "static",
+                    "trades": [],
+                    "filings": [],
+                    "note": "Live financial-disclosure detail is available on the hosted API.",
+                },
+                "errors": dossier_errors,
+            }
+            write_json(output_dir / "dossier" / f"{bioguide_id}.json", dossier)
+            report["dossiers"] += 1
+
     report["fec_scored_this_run"] = fec_scored
 
     if member_score_index["nominate"] or member_score_index["ethics"]:
         write_json(output_dir / "member-scores.json", member_score_index)
         report["member_score_index"] = True
 
-    write_json(output_dir / "manifest.json", report)
+    write_json(output_dir / "manifest.json", report, force=True)
     print(json.dumps(report, indent=2, sort_keys=True))
     return 0
 

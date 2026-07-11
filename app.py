@@ -1,12 +1,13 @@
 import importlib.util
 import logging
 import os
+import secrets
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated
 
 import requests
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, Response
@@ -81,10 +82,13 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_configured_cors_origins = _cors_origins()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_cors_origins(),
-    allow_credentials=True,
+    allow_origins=_configured_cors_origins,
+    # Browsers reject credentialed wildcard CORS. Same-origin is the default UI
+    # path, so credentials are enabled only for an explicit origin allow-list.
+    allow_credentials="*" not in _configured_cors_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -152,6 +156,18 @@ def _backend_response(callable_, *args, not_found_message=None, **kwargs):
         raise HTTPException(status_code=404, detail=not_found_message)
 
     return result
+
+
+def _require_cache_admin_token(token):
+    configured = (os.getenv("YGN_ADMIN_TOKEN") or "").strip()
+    if not configured:
+        raise HTTPException(
+            status_code=503,
+            detail="Cache administration is disabled until YGN_ADMIN_TOKEN is configured.",
+        )
+    supplied = str(token or "")
+    if not supplied or not secrets.compare_digest(supplied, configured):
+        raise HTTPException(status_code=403, detail="Invalid cache administration token.")
 
 
 @app.get("/api")
@@ -365,10 +381,8 @@ def bill_detail(
 
 @app.get("/bills/{congress}/{bill_type}/{number}/ai")
 def bill_ai(congress: str, bill_type: str, number: str):
-    # Lazily generated AI description + impact; kept out of the main detail
-    # response so the page never blocks on a slow model call.
-    if not government.ai_insights_available():
-        return {"available": False, "ai_enabled": False, "reason": "AI not configured."}
+    # Read committed/refresh-cached content and queue misses. This public route
+    # never spends a model call.
     try:
         return government.get_bill_ai(congress, bill_type, number)
     except government.UpstreamDataError as exc:
@@ -377,37 +391,17 @@ def bill_ai(congress: str, bill_type: str, number: str):
         return {"available": False, "ai_enabled": True, "reason": "Upstream request failed."}
 
 
-def _confidence_response(callable_, *args, **kwargs):
-    if not government.ai_insights_available():
-        return {
-            "available": False,
-            "reason": "AI insights are not configured on the server.",
-            "note": "Set AZURE_OPENAI_* (or OPENAI_*) environment variables to enable estimates.",
-        }
-    # Degrade gracefully: if the AI provider errors (bad deployment, quota, etc.)
-    # return a structured unavailable payload the UI can show, not a 502.
-    try:
-        result = callable_(*args, **kwargs)
-    except government.UpstreamDataError as exc:
-        return {"available": False, "reason": str(exc)}
-    except (requests.HTTPError, requests.RequestException):
-        return {"available": False, "reason": "The AI provider request failed."}
-    if result is None:
-        return {"available": False, "reason": "No estimate could be generated."}
-    return {"available": True, **result}
-
-
 @app.get("/ai/confidence/event")
 def event_confidence(
     topic: Annotated[str, Query(min_length=2, max_length=200)],
     context: Annotated[str | None, Query(max_length=500)] = None,
 ):
-    return _confidence_response(government.generate_event_confidence, topic, context=context)
+    return _backend_response(government.get_event_confidence, topic, context=context)
 
 
 @app.get("/officials/{bioguide_id}/confidence")
 def candidate_confidence(bioguide_id: str):
-    return _confidence_response(government.generate_candidate_confidence, bioguide_id)
+    return _backend_response(government.get_candidate_confidence, bioguide_id)
 
 
 @app.get("/metrics/debt")
@@ -430,12 +424,21 @@ def ai_status():
     return _backend_response(government.ai_key_diagnostic)
 
 
-@app.post("/cache/refresh")
-def refresh_cache():
-    return _backend_response(government.refresh_government_officials_cache)
+@app.post("/cache/refresh", include_in_schema=False)
+def refresh_cache(
+    include_ai: bool = False,
+    admin_token: Annotated[
+        str | None, Header(alias="X-YGN-Admin-Token")
+    ] = None,
+):
+    _require_cache_admin_token(admin_token)
+    return _backend_response(
+        government.refresh_government_officials_cache,
+        include_ai=include_ai,
+    )
 
 
-@app.post("/cache/warm")
+@app.post("/cache/warm", include_in_schema=False)
 def warm_cache(
     include_details: bool = True,
     include_wiki: bool = True,
@@ -444,7 +447,11 @@ def warm_cache(
     include_recent_bills: bool = True,
     max_members: Annotated[int | None, Query(ge=1)] = None,
     limit: Annotated[int, Query(ge=1, le=250)] = 250,
+    admin_token: Annotated[
+        str | None, Header(alias="X-YGN-Admin-Token")
+    ] = None,
 ):
+    _require_cache_admin_token(admin_token)
     return _backend_response(
         government.warm_government_officials_cache,
         include_details=include_details,

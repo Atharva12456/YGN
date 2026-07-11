@@ -31,11 +31,8 @@ WIKIPEDIA_ACTION_API_URL = "https://en.wikipedia.org/w/api.php"
 WIKIPEDIA_SUMMARY_URL = "https://en.wikipedia.org/api/rest_v1/page/summary"
 CSV_PATH = Path(__file__).parent / "HSall_members.csv"
 DEFAULT_CACHE_PATH = Path(__file__).parent / ".cache" / "ygn_api_cache.sqlite"
-STATIC_ETHICS_PATH = Path(__file__).parent / "static_ethics_scores.json"
 STATIC_MEMBER_OVERRIDES_PATH = Path(__file__).parent / "static_member_overrides.json"
 STATIC_WIKI_DIR = Path(__file__).parent.parent / "docs" / "data" / "wiki"
-STATIC_OFFICIALS_PATH = Path(__file__).parent.parent / "docs" / "data" / "officials.json"
-STATIC_PROFILES_DIR = Path(__file__).parent.parent / "docs" / "data" / "profiles"
 # Build-time-computed live FEC ethics grades (written by generate_static_data.py,
 # committed under docs/data/ethics/). The live API prefers these so it doesn't
 # spend per-request FEC quota — see get_ethics_score.
@@ -47,6 +44,9 @@ STATIC_PRECOMPUTED_ETHICS_DIR = Path(__file__).parent.parent / "docs" / "data" /
 STATIC_BILL_AI_PATH = Path(__file__).parent.parent / "docs" / "data" / "bill-ai.json"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
+CACHE_LOCK_STRIPES = 256
+CACHE_STALE_RETENTION_SECONDS = 90 * 24 * 60 * 60
+CACHE_PRUNE_EVERY_WRITES = 256
 REQUEST_TIMEOUT_SECONDS = 20
 WIKI_USER_AGENT = "YGN/1.0 (government-officials-cache)"
 ETHICS_METHOD_VERSION = "campaign_finance_stock_v4"
@@ -132,10 +132,12 @@ ENV_PATHS = (
 )
 
 _cache_lock = threading.RLock()
-_cache_key_locks = {}
-_cache_key_locks_guard = threading.Lock()
+_cache_key_locks = tuple(threading.Lock() for _ in range(CACHE_LOCK_STRIPES))
+_cache_writes_since_prune = 0
 _background_refresh_thread = None
 _background_refresh_stop = threading.Event()
+_ai_refresh_lock = threading.Lock()
+_ai_generation_scope = threading.local()
 
 
 class MissingCongressApiKey(RuntimeError):
@@ -198,6 +200,13 @@ def _load_local_env():
         "YGN_ECON_API_KEY",
         "FMP_API_KEY",
         "YGN_STOCK_API_KEY",
+        "AZURE_OPENAI_ENDPOINT",
+        "AZURE_OPENAI_API_KEY",
+        "AZURE_OPENAI_DEPLOYMENT",
+        "AZURE_OPENAI_API_VERSION",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "OPENAI_MODEL",
     }
     for env_path in ENV_PATHS:
         if not env_path.exists():
@@ -219,27 +228,12 @@ def congress_api_key_available():
     return bool(os.getenv("CONGRESS_API_KEY") or API_KEY)
 
 
-def _legacy_fec_api_key():
-    legacy_path = Path(__file__).parent / "memberFinances.py"
-    if not legacy_path.exists():
-        return ""
-
-    try:
-        text = legacy_path.read_text(encoding="utf-8")
-    except OSError:
-        return ""
-
-    match = re.search(r"\bAPI_key\s*=\s*['\"]([^'\"]+)['\"]", text)
-    return match.group(1) if match else ""
-
-
 def fec_api_key_available():
     _load_local_env()
     return bool(
         os.getenv("FEC_API_KEY")
         or os.getenv("ECON_API_KEY")
         or os.getenv("YGN_ECON_API_KEY")
-        or _legacy_fec_api_key()
     )
 
 
@@ -261,7 +255,6 @@ def _fec_api_key():
         os.getenv("FEC_API_KEY")
         or os.getenv("ECON_API_KEY")
         or os.getenv("YGN_ECON_API_KEY")
-        or _legacy_fec_api_key()
     )
     if not api_key:
         raise MissingFecApiKey(
@@ -303,6 +296,14 @@ def _connect_cache():
                         source TEXT NOT NULL
                     )
                     """
+                )
+                conn.execute(
+                    "CREATE INDEX IF NOT EXISTS idx_api_cache_expires_at "
+                    "ON api_cache (expires_at)"
+                )
+                conn.execute(
+                    "CREATE INDEX IF NOT EXISTS idx_api_cache_source_created "
+                    "ON api_cache (source, created_at)"
                 )
                 conn.commit()
                 _initialized_cache_paths.add(path_key)
@@ -347,6 +348,8 @@ def _read_cache(cache_key, allow_stale=False):
 
 
 def _write_cache(cache_key, response_json, source, ttl_seconds=None):
+    global _cache_writes_since_prune
+
     created_at = _now_seconds()
     ttl = _cache_ttl_seconds() if ttl_seconds is None else ttl_seconds
     expires_at = created_at + ttl
@@ -364,21 +367,24 @@ def _write_cache(cache_key, response_json, source, ttl_seconds=None):
                 """,
                 (cache_key, payload, created_at, expires_at, source),
             )
+            _cache_writes_since_prune += 1
+            if _cache_writes_since_prune >= CACHE_PRUNE_EVERY_WRITES:
+                # Keep expired entries around long enough to serve stale data during
+                # an upstream outage, but do not let a long-lived dyno grow forever.
+                conn.execute(
+                    "DELETE FROM api_cache WHERE expires_at < ?",
+                    (created_at - CACHE_STALE_RETENTION_SECONDS,),
+                )
+                _cache_writes_since_prune = 0
             conn.commit()
 
 
 def _cache_lock_for_key(cache_key):
-    with _cache_key_locks_guard:
-        lock = _cache_key_locks.get(cache_key)
-        if lock is None:
-            # Bound growth: bill/FEC/etc. keys are unbounded over a long-lived
-            # server. Clearing is safe — in-flight locks stay alive via the
-            # caller's reference; a brand-new key just mints a fresh lock.
-            if len(_cache_key_locks) > 10000:
-                _cache_key_locks.clear()
-            lock = threading.Lock()
-            _cache_key_locks[cache_key] = lock
-        return lock
+    # Fixed lock striping preserves single-flight behavior for a key without an
+    # ever-growing dictionary (or a wholesale clear that can duplicate in-flight
+    # work). A collision only serializes two unrelated cold misses briefly.
+    digest = hashlib.blake2b(str(cache_key).encode("utf-8"), digest_size=2).digest()
+    return _cache_key_locks[int.from_bytes(digest, "big") % CACHE_LOCK_STRIPES]
 
 
 def _cached_json(cache_key, source, fetch_json, ttl_seconds=None):
@@ -470,8 +476,7 @@ def _congress_get(path, params=None, ttl_seconds=None):
 
 
 def _fec_api_key_source():
-    """Which FEC key is in play: 'env' (real key), 'legacy_demo' (hardcoded
-    fallback, ~60 req/hr), or None. Surfaced in /health for debugging."""
+    """Which environment-backed FEC key is in play, or None."""
     _load_local_env()
     if (
         os.getenv("FEC_API_KEY")
@@ -479,8 +484,6 @@ def _fec_api_key_source():
         or os.getenv("YGN_ECON_API_KEY")
     ):
         return "env"
-    if _legacy_fec_api_key():
-        return "legacy_demo"
     return None
 
 
@@ -491,18 +494,21 @@ def _fec_retry_delay(response, attempt):
     return min(0.5 * (attempt + 1), 3.0)
 
 
-def fec_key_diagnostic():
-    """One live FEC call to diagnose the configured key. Read-only, cached 60s.
+def fec_key_diagnostic(probe=False):
+    """Report FEC configuration; optionally make one explicit live probe.
 
-    Distinguishes an invalid key (403), an exhausted one (429), and a working one
-    (200) by reporting the raw HTTP status + rate-limit headers. Reports the key's
-    length and last 4 chars (to catch typos / whitespace / wrong value) but never
-    the key itself.
+    Public status requests never disclose key fragments or spend upstream quota.
     """
+    source = _fec_api_key_source()
+    if not probe:
+        return {
+            "configured": source is not None,
+            "source": source,
+            "probe_performed": False,
+        }
     cache_key = _build_cache_key("fec-diagnostic", {"v": 1})
 
     def fetch_json():
-        source = _fec_api_key_source()
         try:
             api_key = _fec_api_key()
         except MissingFecApiKey:
@@ -510,9 +516,7 @@ def fec_key_diagnostic():
 
         meta = {
             "source": source,
-            "key_length": len(api_key),
-            "key_last4": api_key[-4:] if len(api_key) >= 4 else None,
-            "is_legacy_demo_key": api_key == _legacy_fec_api_key(),
+            "probe_performed": True,
         }
         try:
             resp = requests.get(
@@ -1091,7 +1095,9 @@ def _bill_digest_item(bill):
         "description": _bill_description(bill, detail, summaries),
         # A committed short AI description (bill-ai.json) when available -- the
         # digest prefers it over the long official summary so tiles don't clip.
-        "aiDescription": _static_bill_ai_entry(_bill_identifier(bill), "description"),
+        "aiDescription": _cached_bill_ai_entry(
+            bill, "description", queue_if_missing=True
+        ),
         "members": _bill_member_items(bill, detail),
         "sponsors": sponsors,
         "cosponsorCount": cosponsor_count,
@@ -1378,7 +1384,7 @@ def _bill_recorded_votes(bill, max_votes=4):
     return votes
 
 
-def _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors):
+def _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors, *, include_text=False):
     policy_area = detail.get("policyArea")
     if isinstance(policy_area, dict):
         policy_area = policy_area.get("name")
@@ -1401,9 +1407,11 @@ def _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors):
             "date": latest_action.get("actionDate"),
             "text": latest_action.get("text"),
         },
-        # Full published bill text (capped) so the model never has to punt on
-        # "no official summary yet" bills.
-        "textExcerpt": _bill_text_excerpt(bill_ref),
+        "updatedAt": detail.get("updateDate") or bill_ref.get("updateDate"),
+        # Bill text is expensive (Congress metadata + a second HTML download).
+        # Request paths leave it lazy; explicit AI refresh/generation resolves it
+        # inside `_bill_ai_context` only when a model call is actually needed.
+        "textExcerpt": _bill_text_excerpt(bill_ref) if include_text else None,
         "congress": bill_ref.get("congress"),
         "type": bill_ref.get("type"),
         "number": bill_ref.get("number"),
@@ -1461,40 +1469,47 @@ def get_bill_detail(congress, bill_type, number, include_votes=True, include_ai=
             "detailPath": f"{congress}/{bill_type}/{number}",
         }
 
-        # Committed AI content is instant (no model call); apply it always.
-        committed_desc = _static_bill_ai_entry(seed["identifier"], "description")
-        if committed_desc:
-            item["aiDescription"] = committed_desc
-        committed_impact = _static_bill_ai_entry(seed["identifier"], "impact")
-        if committed_impact:
-            item["impact"] = {"status": "AI impact analysis", **committed_impact}
+        # Committed/refresh-cache AI is instant. Missing content is queued for a
+        # refresh worker; this request never invokes the model.
+        cached_desc = _cached_bill_ai_entry(
+            seed, "description", queue_if_missing=not include_ai
+        )
+        if cached_desc:
+            item["aiDescription"] = cached_desc
+        cached_impact = _cached_bill_ai_entry(
+            seed, "impact", queue_if_missing=not include_ai
+        )
+        if cached_impact:
+            item["impact"] = {"status": "AI impact analysis", **cached_impact}
 
         if include_ai:
-            if "aiDescription" not in item:
-                try:
-                    ai_desc = generate_bill_description(seed)
-                    if ai_desc and ai_desc.get("summary"):
-                        item["aiDescription"] = ai_desc
-                except Exception as exc:  # noqa: BLE001
-                    LOGGER.warning("Bill AI description failed: %s", exc)
-            if "impact" not in item:
-                try:
-                    impact = generate_bill_impact(seed)
-                    if impact and impact.get("summary"):
-                        item["impact"] = impact
-                except Exception as exc:  # noqa: BLE001
-                    LOGGER.warning("Bill AI impact failed: %s", exc)
+            # This flag is reserved for trusted build/refresh callers. The public
+            # route never passes it, and the generation scope guards future code
+            # from accidentally turning a read path into a paid model call.
+            with _allow_ai_generation():
+                if "aiDescription" not in item:
+                    try:
+                        ai_desc = generate_bill_description(seed)
+                        if ai_desc and ai_desc.get("summary"):
+                            item["aiDescription"] = ai_desc
+                    except Exception as exc:  # noqa: BLE001
+                        LOGGER.warning("Bill AI description failed: %s", exc)
+                if "impact" not in item:
+                    try:
+                        impact = generate_bill_impact(seed)
+                        if impact and impact.get("summary"):
+                            item["impact"] = impact
+                    except Exception as exc:  # noqa: BLE001
+                        LOGGER.warning("Bill AI impact failed: %s", exc)
 
         item["votes"] = _bill_recorded_votes(bill_ref) if include_votes else []
-        # Client should lazy-fetch /ai when a provider is on and content is missing.
-        item["aiPending"] = ai_insights_available() and (
-            "aiDescription" not in item or "impact" not in item
-        )
+        item["aiPending"] = "aiDescription" not in item or "impact" not in item
 
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "congress_api",
             "ai_enabled": ai_insights_available(),
+            "ai_mode": "cache_refresh_only",
             "bill": item,
         }
 
@@ -1506,16 +1521,10 @@ def get_bill_detail(congress, bill_type, number, include_votes=True, include_ai=
     )
 
 
-def get_bill_ai(congress, bill_type, number):
-    """Lazily generate (or serve committed) AI description + impact for a bill.
-    Separate from get_bill_detail so the page renders immediately and this slower
-    call streams in after. Generates description + impact concurrently to stay
-    within one request budget. Cached."""
+def _load_bill_ai_seed(congress, bill_type, number):
     bill_type = str(bill_type or "").lower()
     congress = str(congress or "").strip()
     number = str(number or "").strip()
-    config = _ai_provider_config()
-
     bill_ref = {"congress": congress, "type": bill_type, "number": number}
     detail = _bill_detail_payload(bill_ref)
     if not detail:
@@ -1525,38 +1534,91 @@ def get_bill_ai(congress, bill_type, number):
     summaries = _bill_summaries_payload(bill_ref)
     sponsors = _bill_sponsor_items(bill_ref, detail)
     cosponsors = _bill_cosponsor_items(bill_ref)
-    seed = _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors)
+    return _bill_ai_seed(bill_ref, detail, summaries, sponsors, cosponsors)
 
-    # Committed first (instant); only hit the model for what's missing.
+
+def _bill_ai_pending_fallback(seed):
+    return {
+        "description": seed.get("description"),
+        "impact": {
+            "status": "Queued for content refresh",
+            "summary": (
+                "A generated impact analysis is not cached yet. YGN will process this bill "
+                "during the next content refresh; the linked Congress.gov summary and text "
+                "remain the source of record."
+            ),
+        },
+    }
+
+
+def get_bill_ai(congress, bill_type, number):
+    """Serve committed/refresh-cached bill AI and queue misses.
+
+    This function is safe on a public HTTP request: it never invokes the model.
+    """
+    seed = _load_bill_ai_seed(congress, bill_type, number)
     result = {}
-    committed_desc = _static_bill_ai_entry(seed["identifier"], "description")
-    committed_impact = _static_bill_ai_entry(seed["identifier"], "impact")
-    if committed_desc:
-        result["aiDescription"] = committed_desc
-    if committed_impact:
-        result["impact"] = {"status": "AI impact analysis", **committed_impact}
+    cached_desc = _cached_bill_ai_entry(seed, "description", queue_if_missing=True)
+    cached_impact = _cached_bill_ai_entry(seed, "impact", queue_if_missing=True)
+    if cached_desc:
+        result["aiDescription"] = cached_desc
+    if cached_impact:
+        result["impact"] = {"status": "AI impact analysis", **cached_impact}
 
-    if config and ("aiDescription" not in result or "impact" not in result):
-        jobs = {}
-        if "aiDescription" not in result:
-            jobs["aiDescription"] = lambda: generate_bill_description(seed)
-        if "impact" not in result:
-            jobs["impact"] = lambda: generate_bill_impact(seed)
-        with ThreadPoolExecutor(max_workers=2) as pool:
-            futures = {pool.submit(fn): key for key, fn in jobs.items()}
-            for future in as_completed(futures):
-                key = futures[future]
-                try:
-                    value = future.result()
-                    if value and value.get("summary"):
-                        result[key] = value
-                except Exception as exc:  # noqa: BLE001
-                    LOGGER.warning("Lazy bill AI (%s) failed: %s", key, exc)
+    missing = [
+        label
+        for label, key in (("description", "aiDescription"), ("impact", "impact"))
+        if key not in result
+    ]
 
     return {
         "available": bool(result),
-        "ai_enabled": config is not None,
-        "identifier": seed["identifier"],
+        "pending": bool(missing),
+        "queued": bool(missing),
+        "missing": missing,
+        "ai_enabled": ai_insights_available(),
+        "ai_mode": "cache_refresh_only",
+        "identifier": _bill_ai_identifier(seed),
+        "display_identifier": seed["identifier"],
+        "fallback": _bill_ai_pending_fallback(seed) if missing else None,
+        **result,
+    }
+
+
+def refresh_bill_ai(congress, bill_type, number, *, force=False):
+    """Explicit model-writing path used only by refresh workers and CI."""
+    seed = _load_bill_ai_seed(congress, bill_type, number)
+    if not ai_insights_available():
+        return {
+            "available": False,
+            "identifier": _bill_ai_identifier(seed),
+            "reason": "No AI provider is configured.",
+        }
+
+    jobs = {
+        "aiDescription": lambda: generate_bill_description(seed, force=force),
+        "impact": lambda: generate_bill_impact(seed, force=force),
+    }
+    result = {}
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = {
+            pool.submit(_run_in_ai_generation_scope, fn): key
+            for key, fn in jobs.items()
+        }
+        for future in as_completed(futures):
+            key = futures[future]
+            try:
+                value = future.result()
+                if value and value.get("summary"):
+                    result[key] = value
+            except Exception as exc:  # noqa: BLE001
+                LOGGER.warning("Bill AI refresh (%s) failed: %s", key, exc)
+
+    return {
+        "available": bool(result),
+        "identifier": _bill_ai_identifier(seed),
+        "display_identifier": seed["identifier"],
+        "source_updated_at": seed.get("updatedAt"),
         **result,
     }
 
@@ -1577,7 +1639,9 @@ def get_bill_ai(congress, bill_type, number):
 
 AI_IMPACT_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_DESCRIPTION_TTL_SECONDS = 30 * 24 * 60 * 60
-AI_CONFIDENCE_TTL_SECONDS = 12 * 60 * 60
+AI_PENDING_JOB_TTL_SECONDS = 7 * 24 * 60 * 60
+AI_BILL_CONTENT_VERSION = "bill-ai-v5"
+AI_REFRESH_QUEUE_SOURCE = "ai-refresh-queue"
 # Model calls get a longer HTTP timeout than ordinary API fetches: reasoning
 # models chew on the full bill text for well over the global 20s.
 AI_REQUEST_TIMEOUT_SECONDS = 60
@@ -1610,30 +1674,131 @@ BILL_DESCRIPTION_SYSTEM_PROMPT = (
     "framing, no passage prediction. (5) No meta-commentary (do not mention summaries, "
     "sources, or what you were given); get straight to substance."
 )
-# The "public confidence" prompts return a calibrated ESTIMATE with reasoning, not a real
-# poll. The system prompt forces a clearly-labeled estimate + strict JSON so the UI can
-# render a gauge while making the "not a poll" nature unmistakable.
-CONFIDENCE_SYSTEM_PROMPT = (
-    "You are a nonpartisan public-opinion analyst for a civic-education site. Given a political "
-    "subject, produce a CALIBRATED ESTIMATE of current U.S. public confidence/support. "
-    "Method: (1) Anchor on what real polling (Gallup, Pew, AP-NORC, Chicago Council, Marquette, "
-    "etc.) has historically shown for this subject or the closest comparable, and reason from "
-    "that baseline -- do not just guess a round number. (2) You have NO live polling, so treat "
-    "the number as an informed estimate, not a measurement, and set confidence_in_estimate "
-    "honestly (use 'low' for fast-moving or niche subjects). (3) Be genuinely balanced: the "
-    "support and concern factors must each be substantive and specific to this subject, not "
-    "mirror-images or throwaways. (4) Strict nonpartisanship: describe why different groups hold "
-    "their views without endorsing any; avoid loaded language. (5) Reflect real polarization -- "
-    "if opinion splits sharply by party, say so and lean the label toward 'Mixed'. "
-    "Respond with ONLY a compact JSON object, no prose or code fences, using keys: "
-    '"confidence" (integer 0-100 = estimated share expressing confidence/support), '
-    '"label" (one of "Very low","Low","Mixed","Moderate","High","Very high"), '
-    '"summary" (2-3 COMPLETE neutral sentences, at most 55 words, justifying the number '
-    'and noting uncertainty; never end mid-sentence or with "..."), '
-    '"support_factors" (array of up to 3 short specific strings, each <= 12 words), '
-    '"concern_factors" (array of up to 3 short specific strings, each <= 12 words), '
-    '"confidence_in_estimate" (one of "low","medium","high").'
-)
+
+
+@contextmanager
+def _allow_ai_generation():
+    """Temporarily authorize model access for a trusted refresh operation."""
+    previous = getattr(_ai_generation_scope, "allowed", False)
+    _ai_generation_scope.allowed = True
+    try:
+        yield
+    finally:
+        _ai_generation_scope.allowed = previous
+
+
+def _run_in_ai_generation_scope(callable_):
+    # Thread-local state does not flow into ThreadPoolExecutor workers, so each
+    # refresh field establishes its own narrow generation scope.
+    with _allow_ai_generation():
+        return callable_()
+
+
+def _ai_result_cache_key(kind, cache_id):
+    return _build_cache_key("ai-result-v1", {"kind": kind, "id": cache_id})
+
+
+def _ai_job_cache_key(kind, cache_id):
+    return _build_cache_key("ai-refresh-job-v1", {"kind": kind, "id": cache_id})
+
+
+def _write_ai_result(kind, cache_id, result, ttl_seconds):
+    if not isinstance(result, dict) or not result:
+        return
+    _write_cache(
+        _ai_result_cache_key(kind, cache_id),
+        result,
+        f"ai-result:{kind}:{cache_id}",
+        ttl_seconds=ttl_seconds,
+    )
+
+
+def _read_ai_result(kind, cache_id, *, queue_payload=None):
+    """Serve a generated result without ever calling the model on this path.
+
+    Fresh results are returned immediately. An expired result remains usable while
+    a refresh job is queued, so a provider outage never erases previously generated
+    public content.
+    """
+    cache_key = _ai_result_cache_key(kind, cache_id)
+    fresh = _read_cache(cache_key)
+    if fresh is not None:
+        return fresh
+    stale = _read_cache(cache_key, allow_stale=True)
+    if queue_payload is not None:
+        _queue_ai_refresh_job(kind, cache_id, queue_payload)
+    return stale
+
+
+def _queue_ai_refresh_job(kind, cache_id, payload):
+    """Queue a missing/stale AI artifact for the next cache refresh.
+
+    The queue lives in SQLite alongside the API cache. INSERT-if-missing semantics
+    make repeated page views free and prevent a public request from multiplying
+    provider work.
+    """
+    job_key = _ai_job_cache_key(kind, cache_id)
+    if _read_cache(job_key, allow_stale=True) is not None:
+        return False
+    job = {
+        "kind": kind,
+        "cache_id": cache_id,
+        "payload": payload,
+        "queued_at": datetime.now(timezone.utc).isoformat(),
+        "attempts": 0,
+    }
+    _write_cache(
+        job_key,
+        job,
+        AI_REFRESH_QUEUE_SOURCE,
+        ttl_seconds=AI_PENDING_JOB_TTL_SECONDS,
+    )
+    return True
+
+
+def _pending_ai_refresh_jobs(limit):
+    limit = max(0, int(limit))
+    if not limit:
+        return []
+    with _cache_connection() as conn:
+        rows = conn.execute(
+            """
+            SELECT cache_key, response_json
+            FROM api_cache
+            WHERE source = ? AND expires_at > ?
+            ORDER BY created_at ASC
+            LIMIT ?
+            """,
+            (AI_REFRESH_QUEUE_SOURCE, _now_seconds(), limit),
+        ).fetchall()
+    jobs = []
+    for row in rows:
+        try:
+            job = json.loads(row["response_json"])
+        except (TypeError, ValueError):
+            job = {}
+        jobs.append((row["cache_key"], job))
+    return jobs
+
+
+def _delete_cache_entry(cache_key):
+    with _cache_lock:
+        with _cache_connection() as conn:
+            conn.execute("DELETE FROM api_cache WHERE cache_key = ?", (cache_key,))
+            conn.commit()
+
+
+def _record_ai_job_failure(job_key, job, error):
+    failed = dict(job or {})
+    failed["attempts"] = int(failed.get("attempts") or 0) + 1
+    failed["last_error"] = str(error)[:500]
+    failed["last_attempt_at"] = datetime.now(timezone.utc).isoformat()
+    _write_cache(
+        job_key,
+        failed,
+        AI_REFRESH_QUEUE_SOURCE,
+        ttl_seconds=AI_PENDING_JOB_TTL_SECONDS,
+    )
 
 
 def _ai_provider_config():
@@ -1677,6 +1842,10 @@ def _is_next_gen_model(model):
 
 
 def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
+    if not getattr(_ai_generation_scope, "allowed", False):
+        raise UpstreamDataError(
+            "AI generation is restricted to an explicit cache refresh operation."
+        )
     config = _ai_provider_config()
     if not config:
         raise UpstreamDataError("No AI provider is configured.")
@@ -1779,9 +1948,12 @@ def _ai_error_hint(config, status_code):
     return "Verify the provider endpoint, key, deployment/model, and API version."
 
 
-def ai_key_diagnostic():
-    """Attempt a minimal AI completion and report the outcome (no secrets). Used by
-    /metrics/ai-status so Azure/OpenAI misconfiguration is diagnosable in prod."""
+def ai_key_diagnostic(probe=False):
+    """Report provider configuration without spending a model call by default.
+
+    A live probe is reserved for explicit refresh/administrative workflows. The
+    public status endpoint only needs to say whether configuration is present.
+    """
     config = _ai_provider_config()
     if not config:
         return {
@@ -1794,7 +1966,8 @@ def ai_key_diagnostic():
         "provider": config["kind"],
         "model": config.get("model"),
         "endpoint_host": None,
-        "ok": False,
+        "configured": True,
+        "probe_performed": bool(probe),
     }
     try:
         from urllib.parse import urlparse
@@ -1804,8 +1977,13 @@ def ai_key_diagnostic():
         pass
     if config["kind"] == "azure":
         result["api_version"] = config.get("api_version")
+    if not probe:
+        return result
     try:
-        reply = _llm_chat("You are a test.", "Reply with the single word OK.", max_tokens=5)
+        with _allow_ai_generation():
+            reply = _llm_chat(
+                "You are a test.", "Reply with the single word OK.", max_tokens=5
+            )
         result["ok"] = True
         result["sample"] = (reply or "")[:40]
     except UpstreamDataError as exc:
@@ -1814,6 +1992,20 @@ def ai_key_diagnostic():
 
 
 def _bill_ai_identifier(bill_item):
+    """Stable, cross-Congress key for generated bill content.
+
+    Display identifiers such as ``HR 1`` collide every Congress. Prefer the
+    canonical ``119/hr/1`` path whenever the structured fields are available.
+    """
+    detail_path = str(bill_item.get("detailPath") or "").strip().strip("/")
+    parts = detail_path.split("/") if detail_path else []
+    if len(parts) == 3 and all(parts):
+        return f"{parts[0]}/{parts[1].lower()}/{parts[2]}"
+    congress = _bill_congress(bill_item)
+    bill_type = _bill_type_code(bill_item)
+    number = _bill_number(bill_item)
+    if congress and bill_type and number:
+        return f"{congress}/{str(bill_type).lower()}/{number}"
     return (
         bill_item.get("identifier")
         or bill_item.get("url")
@@ -1833,13 +2025,94 @@ def _static_bill_ai_store():
     return {}
 
 
-def _static_bill_ai_entry(identifier, field):
+def _static_bill_ai_record(bill_item):
+    """Return a committed record plus whether it used the legacy display key.
+
+    The legacy fallback is intentionally limited to the current Congress so an
+    old ``HR 1`` record cannot leak into a different Congress with the same
+    display identifier. The snapshot job rewrites touched records canonically.
+    """
+    store = _static_bill_ai_store()
+    identifier = (
+        _bill_ai_identifier(bill_item)
+        if isinstance(bill_item, dict)
+        else str(bill_item or "")
+    )
+    entry = store.get(identifier)
+    if isinstance(entry, dict):
+        return entry, False
+    if isinstance(bill_item, dict):
+        congress = _bill_congress(bill_item)
+        legacy_identifier = _bill_identifier(bill_item)
+        if (
+            str(congress or "") == str(_current_congress_number())
+            and legacy_identifier
+            and isinstance(store.get(legacy_identifier), dict)
+        ):
+            return store[legacy_identifier], True
+    return None, False
+
+
+def _bill_ai_entry_is_current(entry, bill_item):
+    if not isinstance(entry, dict):
+        return False
+    if entry.get("content_version") != AI_BILL_CONTENT_VERSION:
+        return False
+    expected_update = bill_item.get("updatedAt") or bill_item.get("updateDate")
+    cached_update = entry.get("source_updated_at")
+    return not expected_update or cached_update == expected_update
+
+
+def _static_bill_ai_entry(bill_item, field):
     """A committed AI `field` ('description'|'impact') for this bill, or None."""
-    entry = _static_bill_ai_store().get(identifier)
+    entry, legacy = _static_bill_ai_record(bill_item)
     if isinstance(entry, dict):
         value = entry.get(field)
         if isinstance(value, dict) and value.get("summary"):
-            return {**value, "source": "committed"}
+            return {
+                **value,
+                "source": "committed_legacy" if legacy else "committed",
+            }
+    return None
+
+
+def _bill_ai_job_payload(bill_item):
+    congress = _bill_congress(bill_item)
+    bill_type = _bill_type_code(bill_item)
+    number = _bill_number(bill_item)
+    if not congress or not bill_type or not number:
+        return None
+    return {
+        "congress": str(congress),
+        "bill_type": str(bill_type).lower(),
+        "number": str(number),
+        "source_updated_at": bill_item.get("updatedAt") or bill_item.get("updateDate"),
+    }
+
+
+def _cached_bill_ai_entry(bill_item, field, *, queue_if_missing=False):
+    identifier = _bill_ai_identifier(bill_item)
+    committed_record, _legacy = _static_bill_ai_record(bill_item)
+    committed = _static_bill_ai_entry(bill_item, field)
+    if committed:
+        if queue_if_missing and not _bill_ai_entry_is_current(
+            committed_record, bill_item
+        ):
+            payload = _bill_ai_job_payload(bill_item)
+            if payload:
+                _queue_ai_refresh_job("bill", identifier, payload)
+        return committed
+    cached = _read_ai_result(f"bill-{field}", identifier)
+    if cached and cached.get("summary"):
+        if queue_if_missing and not _bill_ai_entry_is_current(cached, bill_item):
+            payload = _bill_ai_job_payload(bill_item)
+            if payload:
+                _queue_ai_refresh_job("bill", identifier, payload)
+        return {**cached, "source": cached.get("source") or "refresh_cache"}
+    if queue_if_missing:
+        payload = _bill_ai_job_payload(bill_item)
+        if payload:
+            _queue_ai_refresh_job("bill", identifier, payload)
     return None
 
 
@@ -1898,12 +2171,12 @@ def _bill_ai_context(bill_item):
     return "\n".join(lines)
 
 
-def generate_bill_impact(bill_item):
+def generate_bill_impact(bill_item, *, force=False):
     """Plain-language AI impact analysis for a bill, cached 30 days. Prefers a
     committed snapshot (docs/data/bill-ai.json) so known bills never regenerate
     and work even with no AI provider. Returns {status, summary, ...} or None."""
     identifier = _bill_ai_identifier(bill_item)
-    committed = _static_bill_ai_entry(identifier, "impact")
+    committed = None if force else _static_bill_ai_entry(bill_item, "impact")
     if committed:
         return {"status": "AI impact analysis", **committed}
 
@@ -1911,13 +2184,22 @@ def generate_bill_impact(bill_item):
     if not config:
         return None
 
+    context = _bill_ai_context(bill_item)
+    input_hash = hashlib.sha256(context.encode("utf-8")).hexdigest()[:24]
     cache_key = _build_cache_key(
-        "bill-impact-v4", {"id": identifier, "model": config["model"]}
+        "bill-impact-v5",
+        {
+            "id": identifier,
+            "model": config["model"],
+            "content_version": AI_BILL_CONTENT_VERSION,
+            "input_hash": input_hash,
+            "source_updated_at": bill_item.get("updatedAt") or bill_item.get("updateDate"),
+        },
     )
 
     def fetch_json():
         user_prompt = (
-            f"{_bill_ai_context(bill_item)}\n\n"
+            f"{context}\n\n"
             "In 2-3 COMPLETE sentences totalling AT MOST 60 words, explain what this bill "
             "would do and specifically who or what it would affect if enacted -- name the "
             "actual groups, agencies, industries, states, or programs, drawing on the bill "
@@ -1932,21 +2214,25 @@ def generate_bill_impact(bill_item):
             "model": config["model"],
             "provider": config["kind"],
             "generated_at": datetime.now(timezone.utc).isoformat(),
+            "content_version": AI_BILL_CONTENT_VERSION,
+            "input_hash": input_hash,
         }
 
-    return _cached_json(
+    result = _cached_json(
         cache_key,
         f"bill-impact:{identifier}",
         fetch_json,
         ttl_seconds=AI_IMPACT_TTL_SECONDS,
     )
+    _write_ai_result("bill-impact", identifier, result, AI_IMPACT_TTL_SECONDS)
+    return result
 
 
-def generate_bill_description(bill_item):
+def generate_bill_description(bill_item, *, force=False):
     """Plain-language AI description of what a bill IS. Prefers a committed snapshot,
     then the AI provider. Returns {summary, ...} or None."""
     identifier = _bill_ai_identifier(bill_item)
-    committed = _static_bill_ai_entry(identifier, "description")
+    committed = None if force else _static_bill_ai_entry(bill_item, "description")
     if committed:
         return committed
 
@@ -1954,13 +2240,22 @@ def generate_bill_description(bill_item):
     if not config:
         return None
 
+    context = _bill_ai_context(bill_item)
+    input_hash = hashlib.sha256(context.encode("utf-8")).hexdigest()[:24]
     cache_key = _build_cache_key(
-        "bill-description-v4", {"id": identifier, "model": config["model"]}
+        "bill-description-v5",
+        {
+            "id": identifier,
+            "model": config["model"],
+            "content_version": AI_BILL_CONTENT_VERSION,
+            "input_hash": input_hash,
+            "source_updated_at": bill_item.get("updatedAt") or bill_item.get("updateDate"),
+        },
     )
 
     def fetch_json():
         user_prompt = (
-            f"{_bill_ai_context(bill_item)}\n\n"
+            f"{context}\n\n"
             "In 2-3 COMPLETE sentences totalling AT MOST 65 words, describe what this bill "
             "is and the concrete change it proposes, then its scope (who/what it covers), "
             "working from the bill text above and your knowledge of this policy area. Every "
@@ -1973,154 +2268,118 @@ def generate_bill_description(bill_item):
             "model": config["model"],
             "provider": config["kind"],
             "generated_at": datetime.now(timezone.utc).isoformat(),
+            "content_version": AI_BILL_CONTENT_VERSION,
+            "input_hash": input_hash,
         }
 
-    return _cached_json(
+    result = _cached_json(
         cache_key,
         f"bill-description:{identifier}",
         fetch_json,
         ttl_seconds=AI_DESCRIPTION_TTL_SECONDS,
     )
-
-
-def _parse_confidence_json(raw):
-    """Parse the confidence model's JSON reply, tolerating code fences / stray text."""
-    text = str(raw or "").strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
-        text = re.sub(r"\n?```$", "", text).strip()
-    try:
-        data = json.loads(text)
-    except (ValueError, TypeError):
-        match = re.search(r"\{.*\}", text, re.DOTALL)
-        if not match:
-            raise UpstreamDataError("Confidence model did not return JSON.")
-        data = json.loads(match.group(0))
-
-    try:
-        confidence = int(round(float(data.get("confidence"))))
-    except (TypeError, ValueError):
-        confidence = None
-    confidence = None if confidence is None else max(0, min(100, confidence))
-
-    def _clean_list(values):
-        return [str(v).strip() for v in (values or []) if str(v).strip()][:3]
-
-    return {
-        "confidence": confidence,
-        "label": str(data.get("label") or "").strip() or None,
-        "summary": str(data.get("summary") or "").strip() or None,
-        "support_factors": _clean_list(data.get("support_factors")),
-        "concern_factors": _clean_list(data.get("concern_factors")),
-        "confidence_in_estimate": str(data.get("confidence_in_estimate") or "").strip().lower() or None,
-    }
-
-
-def _generate_confidence(kind, subject, context, cache_id):
-    """Shared AI 'public confidence' estimator (events + candidates). Returns a
-    labeled ESTIMATE (not a poll) or None when no AI provider is configured."""
-    config = _ai_provider_config()
-    if not config:
-        return None
-
-    cache_key = _build_cache_key(
-        "public-confidence-v3", {"kind": kind, "id": cache_id, "model": config["model"]}
-    )
-
-    def fetch_json():
-        framing = (
-            "This is a sitting member of Congress; estimate public confidence/approval of "
-            "this specific person (not their party), reasoning from typical incumbent "
-            "approval patterns and any notable national profile."
-            if kind == "candidate"
-            else "This is a political event, policy, war, or bill; estimate current U.S. "
-            "public support/confidence, reasoning from the closest real polling you know."
-        )
-        user_prompt = (
-            f"Subject type: {kind}\n"
-            f"Subject: {subject}\n"
-            f"Context: {context or 'No additional context provided.'}\n\n"
-            f"{framing}\n"
-            "Anchor on real historical polling for this or the closest comparable subject, "
-            "reflect any sharp partisan split, and return ONLY the JSON object specified in "
-            "your instructions."
-        )
-        raw = _llm_chat(CONFIDENCE_SYSTEM_PROMPT, user_prompt, max_tokens=420, temperature=0.3)
-        parsed = _parse_confidence_json(raw)
-        parsed.update(
-            {
-                "kind": kind,
-                "subject": subject,
-                "model": config["model"],
-                "provider": config["kind"],
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-                "disclaimer": (
-                    "AI-generated estimate based on general historical patterns, not a "
-                    "live or scientific poll. For informational and educational use only."
-                ),
-            }
-        )
-        return parsed
-
-    return _cached_json(
-        cache_key,
-        f"public-confidence:{kind}:{cache_id}",
-        fetch_json,
-        ttl_seconds=AI_CONFIDENCE_TTL_SECONDS,
-    )
-
-
-def generate_event_confidence(topic, context=None):
-    """AI estimate of public confidence in a political event/topic (war, bill, policy)."""
-    topic = (topic or "").strip()
-    if not topic:
-        raise UpstreamDataError("A topic is required for event confidence.")
-    cache_id = hashlib.sha256(f"{topic}|{context or ''}".encode("utf-8")).hexdigest()[:16]
-    return _generate_confidence("political_event", topic, context, cache_id)
-
-
-def generate_candidate_confidence(bioguide_id):
-    """AI estimate of public confidence in a specific member of Congress."""
-    bioguide_id = (bioguide_id or "").strip()
-    if not bioguide_id:
-        raise UpstreamDataError("A bioguideId is required for candidate confidence.")
-
-    subject = bioguide_id
-    context = None
-    try:
-        member = CongressMembersID(bioguide_id).get("member", {})
-        if member:
-            name = _member_display_name(member) or bioguide_id
-            party = member.get("partyName") or _current_party_name(member) or ""
-            state = member.get("state") or _latest_member_term(member).get("stateName") or ""
-            chamber = _member_chamber(member) or ""
-            subject = name
-            context = ", ".join(part for part in (chamber, party, state) if part)
-    except (MissingCongressApiKey, UpstreamDataError, requests.RequestException):
-        pass
-
-    result = _generate_confidence("candidate", subject, context, bioguide_id)
-    if result is not None:
-        result["bioguideId"] = bioguide_id
+    _write_ai_result("bill-description", identifier, result, AI_DESCRIPTION_TTL_SECONDS)
     return result
 
 
-# Cap on FRESH AI impact calls per cold digest build. Committed impacts (from
-# bill-ai.json) are always applied for free; only bills lacking one and beyond
-# this budget keep the placeholder until the snapshot job fills them in.
-AI_DIGEST_IMPACT_BUDGET = 6
+def get_event_confidence(topic, context=None):
+    """Return an honest no-poll response instead of inventing a percentage."""
+    topic = (topic or "").strip()
+    if not topic:
+        raise UpstreamDataError("A topic is required for event confidence.")
+    return {
+        "available": False,
+        "source": "deterministic",
+        "subject": topic,
+        "reason": "No sourced polling estimate is available for this subject.",
+        "note": (
+            "YGN does not generate public-opinion percentages without a named pollster, "
+            "field dates, sample, and methodology."
+        ),
+    }
 
 
-def _bill_ai_live_enabled():
-    """Whether live requests may spend model calls generating bill AI inline.
+def get_candidate_confidence(bioguide_id):
+    """Return an honest no-poll response for a member of Congress."""
+    bioguide_id = (bioguide_id or "").strip()
+    if not bioguide_id:
+        raise UpstreamDataError("A bioguideId is required for candidate confidence.")
+    return {
+        "available": False,
+        "source": "deterministic",
+        "bioguideId": bioguide_id,
+        "reason": "No sourced approval or favorability poll is available for this member.",
+        "note": (
+            "YGN will not substitute an AI estimate for a scientific poll with published "
+            "field dates, sample, and methodology."
+        ),
+    }
 
-    Default OFF: generating many gpt-5-mini impacts inside one request blows
-    Heroku's 30s limit (the digest 503s). Instead the site serves committed
-    content (bill-ai.json) and the build-time snapshot job -- which has no request
-    limit -- generates the rest. Flip YGN_BILL_AI_LIVE=1 to allow a small live
-    top-up for the newest uncommitted bills."""
-    _load_local_env()
-    return os.getenv("YGN_BILL_AI_LIVE", "0") not in {"0", "false", "False", ""}
+
+def _ai_refresh_limit():
+    try:
+        return max(0, min(40, int(os.getenv("YGN_AI_REFRESH_LIMIT", "6"))))
+    except ValueError:
+        return 6
+
+
+def refresh_ai_generation_cache(limit=None):
+    """Drain bounded bill-AI jobs during an explicit/background cache refresh.
+
+    Public read routes only enqueue canonical bills. This is the sole runtime
+    path that is allowed to turn those misses into provider calls.
+    """
+    requested_limit = _ai_refresh_limit() if limit is None else max(0, min(40, int(limit)))
+    report = {
+        "enabled": ai_insights_available(),
+        "limit": requested_limit,
+        "processed": 0,
+        "completed": 0,
+        "partial": 0,
+        "errors": [],
+    }
+    if not report["enabled"] or requested_limit == 0:
+        return report
+    if not _ai_refresh_lock.acquire(blocking=False):
+        report["already_running"] = True
+        return report
+
+    try:
+        for job_key, job in _pending_ai_refresh_jobs(requested_limit):
+            report["processed"] += 1
+            try:
+                if job.get("kind") != "bill":
+                    raise ValueError("Unsupported AI refresh job kind.")
+                payload = job.get("payload") or {}
+                result = refresh_bill_ai(
+                    payload.get("congress"),
+                    payload.get("bill_type"),
+                    payload.get("number"),
+                    force=True,
+                )
+                fields = [key for key in ("aiDescription", "impact") if result.get(key)]
+                if len(fields) == 2:
+                    _delete_cache_entry(job_key)
+                    report["completed"] += 1
+                elif fields:
+                    report["partial"] += 1
+                    _record_ai_job_failure(
+                        job_key, job, "Only one bill AI field completed; retrying the missing field."
+                    )
+                else:
+                    raise UpstreamDataError("No bill AI fields were generated.")
+            except Exception as exc:  # noqa: BLE001 - preserve queue for retry
+                _record_ai_job_failure(job_key, job, exc)
+                report["errors"].append(
+                    {
+                        "kind": job.get("kind"),
+                        "cache_id": job.get("cache_id"),
+                        "error": str(exc)[:300],
+                    }
+                )
+    finally:
+        _ai_refresh_lock.release()
+    return report
 
 
 def getRecentBillDigest(limit=5):
@@ -2149,50 +2408,29 @@ def getRecentBillDigest(limit=5):
                     except Exception as exc:  # noqa: BLE001
                         LOGGER.warning("Bill digest item failed: %s", exc)
             items = [item for item in items if item]
-        # Apply committed impacts (bill-ai.json) to ALL items for free; spend
-        # fresh AI calls only on the most-recent items that lack one, up to a
-        # budget so a 40-bill digest can't fan out into 40 model calls.
-        committed_applied = 0
-        need_ai = []
+        # Apply committed/refresh-cached content for free. Missing artifacts are
+        # queued, but this public read path never calls the model.
+        cached_applied = 0
+        queued = 0
         for item in items:
-            committed = _static_bill_ai_entry(_bill_ai_identifier(item), "impact")
-            if committed:
+            cached = _cached_bill_ai_entry(item, "impact", queue_if_missing=True)
+            if cached:
                 item["impact"] = {
                     **item["impact"], "status": "AI impact analysis",
-                    "summary": committed["summary"], "generated_at": committed.get("generated_at"),
+                    "summary": cached["summary"],
+                    "generated_at": cached.get("generated_at"),
                 }
-                committed_applied += 1
+                cached_applied += 1
             else:
-                need_ai.append(item)
-
-        # Only top up live when explicitly enabled (default off) so the digest
-        # never fans out into a request-timeout; committed content covers the rest.
-        ai_on = ai_insights_available()
-        if ai_on and need_ai and _bill_ai_live_enabled():
-            budget = need_ai[:AI_DIGEST_IMPACT_BUDGET]
-
-            def _impact_for(item):
-                try:
-                    return item, generate_bill_impact(item)
-                except Exception as exc:  # noqa: BLE001 - keep placeholder on failure
-                    LOGGER.warning("Bill impact generation failed: %s", exc)
-                    return item, None
-
-            with ThreadPoolExecutor(max_workers=min(5, len(budget))) as pool:
-                for item, impact in pool.map(_impact_for, budget):
-                    if impact and impact.get("summary"):
-                        item["impact"] = {
-                            **item["impact"],
-                            "status": impact["status"],
-                            "summary": impact["summary"],
-                            "model": impact.get("model"),
-                            "generated_at": impact.get("generated_at"),
-                        }
+                queued += 1
         return {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "congress_api",
             "cache_ttl_seconds": _cache_ttl_seconds(),
-            "impact_status": "ai" if (ai_on or committed_applied) else "placeholder_until_ai_key",
+            "impact_status": "cached" if cached_applied else "queued_for_refresh",
+            "ai_mode": "cache_refresh_only",
+            "ai_cached": cached_applied,
+            "ai_queued": queued,
             "bills": items,
         }
 
@@ -3379,171 +3617,31 @@ def _score_ethics_from_fec(member, candidate, totals, by_size, by_state):
     }
 
 
-def _static_ethics_scores():
-    return _read_json_file_cached(STATIC_ETHICS_PATH, {})
-
-
-def _stable_fraction(*values):
-    seed = "|".join(str(value or "") for value in values)
-    digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()
-    return int(digest[:12], 16) / float(0xFFFFFFFFFFFF)
-
-
-def _bounded_score(score, minimum=0.0, maximum=100.0):
-    return max(minimum, min(maximum, score))
-
-
-def _static_member_snapshot(bioguide_id):
-    profile = _read_json_file(STATIC_PROFILES_DIR / f"{bioguide_id}.json", None)
-    if isinstance(profile, dict):
-        member = (profile.get("data") or {}).get("member")
-        if isinstance(member, dict):
-            return member
-
-    officials = _read_json_file(STATIC_OFFICIALS_PATH, {})
-    for member in officials.get("members", []) or []:
-        if _member_bioguide_id(member) == bioguide_id:
-            return member
-
-    return {}
-
-
-def _member_photo_url(member):
-    depiction = member.get("depiction") if isinstance(member.get("depiction"), dict) else {}
-    return depiction.get("imageUrl") or member.get("photoUrl") or member.get("thumbnail")
-
-
-def _member_start_year(member):
-    term = _latest_member_term(member)
-    for value in (term.get("startYear"), member.get("startYear")):
-        try:
-            if value not in (None, ""):
-                return int(value)
-        except (TypeError, ValueError):
-            continue
-    return None
-
-
-def _static_ethics_component_scores(bioguide_id, member, default_score):
-    member = member or {}
-    name = _member_display_name(member) if member else bioguide_id
-    state = member.get("stateCode") or member.get("state") or _latest_member_term(member).get("stateName")
-    chamber = _member_chamber(member) or ""
-    party = member.get("party") or member.get("partyName") or _current_party_name(member)
-    district = _member_district(member)
-    district_label = _district_label(member)
-    photo_url = _member_photo_url(member)
-
-    public_fields = [name, state, chamber, party, district_label or district, photo_url]
-    completeness = sum(1 for value in public_fields if value not in (None, "")) / len(public_fields)
-    data_score = 62 + completeness * 34
-
-    chamber_lower = str(chamber).lower()
-    if "senate" in chamber_lower:
-        constituency_value = 1.0
-        constituency_score = 80 + _stable_fraction("senate", bioguide_id, state) * 10
-    elif district not in (None, ""):
-        constituency_value = 0.8
-        constituency_score = 72 + _stable_fraction("district", state, district, bioguide_id) * 18
-    else:
-        constituency_value = 0.45
-        constituency_score = 66 + _stable_fraction("missing-district", bioguide_id, state) * 12
-
-    record_score = 62 + _stable_fraction("record", bioguide_id, name, state, party) * 34
-    disclosure_score = 60 + _stable_fraction("disclosure", bioguide_id, chamber, district) * 36
-
-    start_year = _member_start_year(member)
-    if start_year:
-        service_years = max(0, datetime.now(timezone.utc).year - start_year)
-        tenure_value = min(service_years, 30) / 30
-        tenure_score = 74 + min(service_years, 20) * 0.45 - max(0, service_years - 20) * 0.2
-        tenure_score += (_stable_fraction("tenure", bioguide_id) - 0.5) * 7
-        tenure_score = _bounded_score(tenure_score, 68, 91)
-    else:
-        tenure_value = None
-        tenure_score = 70 + _stable_fraction("tenure-missing", bioguide_id) * 16
-
-    baseline_score = default_score + (_stable_fraction("baseline", bioguide_id, state) - 0.5) * 18
-
-    return {
-        "public_record_completeness": _component(completeness, data_score, 0.20),
-        "constituency_specificity": _component(constituency_value, constituency_score, 0.18),
-        "public_accountability_baseline": _component(
-            _stable_fraction("record-value", bioguide_id),
-            record_score,
-            0.24,
-        ),
-        "disclosure_baseline": _component(
-            _stable_fraction("disclosure-value", bioguide_id),
-            disclosure_score,
-            0.23,
-        ),
-        "service_context": _component(tenure_value, tenure_score, 0.10),
-        "static_baseline_variation": _component(
-            _stable_fraction("baseline-value", bioguide_id),
-            baseline_score,
-            0.05,
-        ),
-    }
-
-
-def _static_ethics_score_from_components(components):
-    weighted_total = 0.0
-    active_weight = 0.0
-    for item in components.values():
-        if item["score"] is None:
-            continue
-        weighted_total += item["score"] * item["weight"]
-        active_weight += item["weight"]
-
-    if active_weight == 0:
-        return None
-
-    return round(_bounded_score(weighted_total / active_weight, 55, 96), 1)
-
-
 def _static_ethics_fallback(bioguide_id, member=None):
     docs_path = Path(__file__).parent.parent / "docs" / "data" / "ethics" / f"{bioguide_id}.json"
     docs_score = _read_json_file(docs_path, None)
     if (
         docs_score
         and docs_score.get("score") is not None
+        and docs_score.get("source") == "fec_live"
         and docs_score.get("method") == ETHICS_METHOD_VERSION
     ):
-        return {**docs_score, "source": docs_score.get("source") or "static_fallback"}
+        return docs_score
 
-    static_scores = _static_ethics_scores()
-    member_overrides = static_scores.get("members", {}) or {}
-    override = member_overrides.get(bioguide_id)
-    default_score = float(static_scores.get("default_score", 76.0))
-
-    components = {}
-    if isinstance(override, dict) and override.get("score") is not None:
-        score = override.get("score")
-        components = override.get("components") or {}
-    elif override is not None:
-        score = override
-    else:
-        member = member or _static_member_snapshot(bioguide_id)
-        components = _static_ethics_component_scores(bioguide_id, member, default_score)
-        score = _static_ethics_score_from_components(components)
-        if score is None:
-            score = default_score
-
-    score = round(float(score), 1)
     return {
         "bioguideId": bioguide_id,
-        "score": score,
-        "grade": _ethics_letter_grade(score),
-        "source": "static_fallback",
+        "available": False,
+        "score": None,
+        "grade": "N/A",
+        "source": "unavailable",
         "method": ETHICS_METHOD_VERSION,
-        "updated_at": static_scores.get("generated_at"),
-        "cycle": static_scores.get("cycle"),
+        "updated_at": None,
+        "cycle": None,
         "candidate": None,
-        "components": components,
+        "components": {},
         "notes": [
-            "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
-            "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations.",
+            "No current evidence-backed FEC grade is available for this member.",
+            "YGN does not substitute synthetic or randomized values for missing public data.",
         ],
     }
 
@@ -4679,7 +4777,7 @@ def _background_ethics_refresh_limit():
         return 25
 
 
-def refresh_government_officials_cache(include_ethics=True):
+def refresh_government_officials_cache(include_ethics=True, include_ai=False):
     """
     Refresh the core MVP cache entries used by the government officials surface.
 
@@ -4687,7 +4785,12 @@ def refresh_government_officials_cache(include_ethics=True):
     function still respects the 15-minute TTL and only calls upstream APIs when
     the cached response is stale or missing.
     """
-    members_page = listCongressMembers(limit=250, offset=0)
+    members_page = listCongressMembers(
+        limit=250,
+        offset=0,
+        congress=_current_congress_number(),
+        current_member=True,
+    )
     result = {
         "allCongressMembers": members_page,
         "getRecentBills": getRecentBills(),
@@ -4695,6 +4798,11 @@ def refresh_government_officials_cache(include_ethics=True):
         "dossierDatasetsWarmed": prewarm_dossier_datasets(),
         "ethicsScoresRefreshed": 0,
         "ethicsErrors": [],
+        "aiRefresh": (
+            refresh_ai_generation_cache()
+            if include_ai
+            else {"enabled": ai_insights_available(), "skipped": True}
+        ),
     }
 
     if include_ethics and fec_api_key_available():
@@ -4886,7 +4994,7 @@ def get_cache_stats():
 def _background_refresh_loop(interval_seconds, stop_event):
     while not stop_event.is_set():
         try:
-            refresh_government_officials_cache()
+            refresh_government_officials_cache(include_ai=True)
         except Exception:
             LOGGER.exception("Background cache refresh failed.")
 

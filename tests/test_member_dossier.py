@@ -452,38 +452,43 @@ class AiInsightsTests(unittest.TestCase):
         self.assertEqual(result["summary"], "This bill funds X and affects Y.")
         self.assertEqual(result["provider"], "azure")
 
-    def test_digest_enriches_impact_when_ai_available(self):
+    def test_digest_serves_cached_impact_without_calling_model(self):
         with patch.object(self.gov, "getRecentBills", return_value={"bills": [{"x": 1}]}), patch.object(
             self.gov, "_bill_digest_item",
             side_effect=lambda b: {"identifier": "hr-1",
                                    "impact": {"status": "Pending AI impact analysis",
                                               "summary": "placeholder", "sources": []}},
-        ), patch.object(self.gov, "ai_insights_available", return_value=True), patch.object(
-            self.gov, "_bill_ai_live_enabled", return_value=True), patch.object(
-            self.gov, "_static_bill_ai_entry", return_value=None), patch.object(
-            self.gov, "generate_bill_impact",
-            return_value={"status": "AI impact analysis", "summary": "Affects taxpayers.",
-                          "model": "gpt-4o-mini", "generated_at": "now"},
+        ), patch.object(
+            self.gov,
+            "_cached_bill_ai_entry",
+            return_value={"summary": "Affects taxpayers.", "generated_at": "now"},
+        ), patch.object(
+            self.gov, "_llm_chat", side_effect=AssertionError("must not call model inline")
+        ), patch.object(
+            self.gov, "generate_bill_impact", side_effect=AssertionError("must not generate inline")
         ):
             digest = self.gov.getRecentBillDigest(limit=1)
-        self.assertEqual(digest["impact_status"], "ai")
+        self.assertEqual(digest["impact_status"], "cached")
+        self.assertEqual(digest["ai_cached"], 1)
+        self.assertEqual(digest["ai_queued"], 0)
         self.assertEqual(digest["bills"][0]["impact"]["summary"], "Affects taxpayers.")
         self.assertEqual(digest["bills"][0]["impact"]["status"], "AI impact analysis")
 
-    def test_digest_serves_placeholder_when_live_ai_gated_off(self):
-        # Default (gate off): the digest must NOT call the model inline, so it
-        # never risks a request-timeout; it keeps the placeholder.
+    def test_digest_queues_missing_impact_without_calling_model(self):
         with patch.object(self.gov, "getRecentBills", return_value={"bills": [{"x": 1}]}), patch.object(
             self.gov, "_bill_digest_item",
             side_effect=lambda b: {"identifier": "hr-1",
                                    "impact": {"status": "Pending AI impact analysis",
                                               "summary": "placeholder", "sources": []}},
-        ), patch.object(self.gov, "ai_insights_available", return_value=True), patch.object(
-            self.gov, "_bill_ai_live_enabled", return_value=False), patch.object(
-            self.gov, "_static_bill_ai_entry", return_value=None), patch.object(
-            self.gov, "generate_bill_impact", side_effect=AssertionError("must not call model inline"),
+        ), patch.object(self.gov, "_cached_bill_ai_entry", return_value=None), patch.object(
+            self.gov, "_llm_chat", side_effect=AssertionError("must not call model inline")
+        ), patch.object(
+            self.gov, "generate_bill_impact", side_effect=AssertionError("must not generate inline")
         ):
             digest = self.gov.getRecentBillDigest(limit=1)
+        self.assertEqual(digest["impact_status"], "queued_for_refresh")
+        self.assertEqual(digest["ai_cached"], 0)
+        self.assertEqual(digest["ai_queued"], 1)
         self.assertEqual(digest["bills"][0]["impact"]["summary"], "placeholder")
 
 

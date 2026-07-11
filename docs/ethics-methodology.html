@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethics Score Methodology - YGN</title>
+  <title>Campaign-Finance Grade Methodology - YGN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -40,19 +40,19 @@
         <div class="methodology-header">
           <a class="secondary-button" href="members.html">Back to Members</a>
           <p class="eyebrow">YGN Methodology</p>
-          <h2>Ethics Grade Score</h2>
+          <h2>Campaign-Finance Transparency Grade</h2>
         </div>
 
         <div class="methodology-grid ethics-grid">
           <div>
             <h3>What the Grade Means</h3>
             <p>
-              The ethics grade is an educational transparency signal from 0 to 100, converted into a familiar letter grade.
+              The campaign-finance grade is an educational transparency signal from 0 to 100, converted into a familiar letter grade.
               It is not an accusation, legal conclusion, endorsement, or misconduct finding.
             </p>
             <p>
-              Live scores use FEC campaign finance data when an API key is available. If live finance data cannot be matched,
-              YGN falls back to deterministic static data so every member still has a stable, explainable grade.
+              Published grades use current FEC campaign-finance data and the method version shown in the data record.
+              If YGN cannot match enough current evidence, it displays <strong>N/A</strong>. It does not fill the gap with a synthetic, randomized, or data-completeness grade.
             </p>
           </div>
 
@@ -61,29 +61,27 @@
             <ul class="methodology-list">
               <li><strong>Small-donor share, 30%:</strong> higher share of unitemized individual contributions improves the score.</li>
               <li><strong>PAC independence, 25%:</strong> lower PAC and party-committee dependence improves the score.</li>
-              <li><strong>Donor concentration, 20%:</strong> lower reliance on very large itemized donations improves the score.</li>
-              <li><strong>In-state support, 15%:</strong> more itemized support from the represented state improves the score.</li>
-              <li><strong>Self and party independence, 10%:</strong> lower reliance on candidate funding and party committees improves the score.</li>
+              <li><strong>Donor diversity, 20%:</strong> lower reliance on itemized donations of $2,000 or more improves the score.</li>
+              <li><strong>Self and party independence, 15%:</strong> lower reliance on candidate funding and party committees improves the score.</li>
+              <li><strong>In-state support, 10%:</strong> more itemized support from the represented state improves the score.</li>
             </ul>
           </div>
 
           <div>
-            <h3>Static Fallback</h3>
+            <h3>Stock-Conflict Deduction</h3>
             <ul class="methodology-list">
-              <li><strong>Public record completeness, 20%:</strong> public profile fields, district labels, and photo availability.</li>
-              <li><strong>Constituency specificity, 18%:</strong> whether the member is tied to a district, at-large seat, or statewide seat.</li>
-              <li><strong>Accountability baseline, 24%:</strong> deterministic public-record variation by member and state.</li>
-              <li><strong>Disclosure baseline, 23%:</strong> deterministic variation tied to chamber and district context.</li>
-              <li><strong>Service context, 10%:</strong> term-start context with bounded tenure effects.</li>
-              <li><strong>Static variation, 5%:</strong> stable per-member spread so fallback grades do not collapse to one value.</li>
+              <li><strong>House members:</strong> YGN counts recent House Periodic Transaction Report filings that disclose individual-stock or asset trades.</li>
+              <li><strong>Deduction:</strong> 0 filings subtracts 0 points; increasing activity subtracts 10, 22, 32, 42, or at most 50 points from the campaign-finance score.</li>
+              <li><strong>Unavailable measurement:</strong> when a machine-countable disclosure feed is unavailable, no stock deduction is inferred.</li>
             </ul>
           </div>
 
           <div>
             <h3>Refresh Cadence</h3>
             <p>
-              Backend ethics responses are stored in the same SQLite cache as the rest of the YGN API. The default cache TTL is
-              15 minutes, and the background refresh job rechecks stale entries when API keys are configured.
+              The scheduled static-data workflow spends a bounded FEC request budget and reuses current-method live grades for up to 25 days.
+              It preserves the original evidence timestamp when reusing a grade, so an old result cannot become “fresh” merely because a new build ran.
+              Public page requests prefer the committed evidence-backed snapshot and do not consume FEC quota by default.
             </p>
           </div>
 
@@ -100,6 +98,7 @@
             <a href="https://www.fec.gov/data/browse-data/" target="_blank" rel="noopener">Federal Election Commission Data</a>
             <a href="https://api.open.fec.gov/developers/" target="_blank" rel="noopener">FEC API Documentation</a>
             <a href="https://api.congress.gov/" target="_blank" rel="noopener">Congress.gov API</a>
+            <a href="https://disclosures-clerk.house.gov/" target="_blank" rel="noopener">U.S. House Financial Disclosure Reports</a>
           </div>
         </div>
       </div>

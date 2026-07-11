@@ -559,6 +559,51 @@ button {
   cursor: pointer;
 }
 .filter-field select:focus { outline: 2px solid var(--color-accent); border-color: var(--color-accent); }
+.members-saved-toggle {
+  align-self: flex-end;
+  min-height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.members-saved-toggle:hover {
+  border-color: var(--color-accent);
+  background: #f4f7fc;
+}
+.members-saved-toggle.is-active {
+  border-color: var(--color-accent);
+  background: #e8f0fe;
+  color: #1a56b4;
+}
+.members-saved-toggle:focus-visible,
+.member-save-button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.members-saved-count {
+  min-width: 1.35rem;
+  padding: 0.05rem 0.3rem;
+  border-radius: 999px;
+  background: #e7ebf2;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+  text-align: center;
+}
+.members-saved-toggle.is-active .members-saved-count {
+  background: var(--color-accent);
+  color: #fff;
+}
 .members-count {
   flex-basis: 100%;
   font-size: 0.8rem;
@@ -626,6 +671,52 @@ button {
   object-fit: cover;
   object-position: top center;
   display: block;
+}
+
+.member-save-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+.member-save-icon path {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill var(--transition-fast);
+}
+.member-save-button.is-saved .member-save-icon path,
+.members-saved-toggle.is-active .member-save-icon path {
+  fill: currentColor;
+}
+.member-save-button--tile {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #39445a;
+  box-shadow: 0 2px 8px rgba(26, 31, 46, 0.22);
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+}
+.member-save-button--tile:hover {
+  transform: translateY(-1px) scale(1.04);
+  background: #fff;
+  color: var(--color-accent-hover);
+}
+.member-save-button--tile.is-saved {
+  background: #e8f0fe;
+  border-color: #fff;
+  color: #1a56b4;
 }
 
 /* Tile initials fallback */
@@ -871,6 +962,9 @@ button {
   color: var(--color-text-muted);
   font-size: 0.9rem;
   max-width: 30ch;
+}
+.saved-members-empty .secondary-button {
+  margin-top: 1rem;
 }
 
 /* Map / Districts */
@@ -1773,6 +1867,10 @@ button {
   }
 
   .members-filters { width: 100%; }
+  .members-saved-toggle {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2046,6 +2144,30 @@ button {
   transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 .ghost-btn:hover { background: #f4f6f9; border-color: var(--color-accent); }
+.member-save-button--detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 90px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.member-save-button--detail:hover {
+  background: #f4f7fc;
+  border-color: var(--color-accent);
+}
+.member-save-button--detail.is-saved {
+  background: #e8f0fe;
+  border-color: var(--color-accent);
+  color: #1a56b4;
+}
 
 /* ── At-a-glance stat row ─────────────────────────────────────────────────── */
 .dossier-statrow {
@@ -2350,7 +2472,7 @@ button {
   .dossier-hero-body { flex-basis: 100%; }
   .ideology-meter { margin: 0 auto; }
   .dossier-chips { justify-content: center; }
-  .dossier-hero-side { flex-direction: row; align-items: center; width: 100%; justify-content: center; }
+  .dossier-hero-side { flex-direction: row; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center; }
 }
 @media (max-width: 600px) {
   .dossier-hero { padding: 1.25rem; }
@@ -2417,7 +2539,7 @@ button {
 @media (max-width: 600px) { .econ-title { font-size: 1.9rem; } }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Bill detail page, cosponsors, roll-call votes, AI confidence
+   Bill detail page, cosponsors, roll-call votes, opinion sourcing
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* Bill list tweaks (clickable titles, cosponsor counts, load more) */
@@ -2553,7 +2675,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .bill-vote-source { display: inline-block; margin-top: 0.7rem; font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
 .bill-vote-source:hover { text-decoration: underline; }
 
-/* AI confidence estimator */
+/* Public-opinion sourcing standard */
 .ai-confidence-panel {
   background: var(--color-surface); border: 1px solid var(--color-border);
   border-radius: var(--radius-card); box-shadow: var(--shadow-card);
@@ -2561,42 +2683,13 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 }
 .ai-confidence-panel h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
 .ai-confidence-intro { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; max-width: 65ch; }
-.ai-confidence-form { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; }
-.ai-confidence-form input {
-  flex: 1 1 320px; padding: 0.6rem 0.8rem; font-size: 0.95rem;
-  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-  font-family: var(--font-body); color: var(--color-text); background: var(--color-bg);
-}
-.ai-confidence-form input:focus { outline: 2px solid var(--color-accent); border-color: var(--color-accent); }
-
-.confidence-mount { margin-top: 0.5rem; }
-.confidence-card { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 1.1rem; background: #fbfcff; }
-.confidence-subject { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.7rem; }
-.confidence-gauge-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
-.confidence-gauge { flex: 1; height: 16px; border-radius: 8px; background: var(--color-tint-gray); overflow: hidden; }
-.confidence-gauge-fill { height: 100%; border-radius: 8px; transition: width 0.5s ease; }
-.confidence-score { font-size: 1.4rem; font-weight: 700; line-height: 1; text-align: right; }
-.confidence-score span { display: block; font-size: 0.72rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; margin-top: 0.2rem; }
-.confidence-summary { line-height: 1.6; margin-bottom: 0.9rem; }
-.confidence-factor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.8rem; }
-.confidence-factors h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
-.confidence-factors.positive h4 { color: #2f7d5c; }
-.confidence-factors.negative h4 { color: #c04a44; }
-.confidence-factors ul { list-style: none; display: grid; gap: 0.3rem; }
-.confidence-factors li { font-size: 0.85rem; padding-left: 0.9rem; position: relative; color: var(--color-text); }
-.confidence-factors li::before { content: "\2022"; position: absolute; left: 0; color: var(--color-text-muted); }
-.confidence-disclaimer { font-size: 0.76rem; color: var(--color-text-muted); font-style: italic; border-top: 1px solid var(--color-border); padding-top: 0.6rem; }
-.confidence-certainty { font-style: normal; font-weight: 600; }
-.confidence-loading, .confidence-unavailable { color: var(--color-text-muted); font-size: 0.9rem; padding: 0.6rem 0; }
-.confidence-unavailable { color: #b06a1f; }
 
 @media (max-width: 700px) {
   .bill-detail-grid { grid-template-columns: 1fr; }
-  .confidence-factor-grid { grid-template-columns: 1fr; }
   .bill-detail-head h1 { font-size: 1.5rem; }
 }
 
-/* Ethics grade explainer (finance score - stock deduction = final) */
+/* Funding grade explainer (finance score - stock deduction = final) */
 .grade-explainer { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; margin: 0.75rem 0 1rem; background: #fbfcff; }
 .grade-explainer-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.3rem 0; font-size: 0.86rem; border-bottom: 1px dashed var(--color-border); }
 .grade-explainer-row:last-child { border-bottom: none; font-weight: 600; }

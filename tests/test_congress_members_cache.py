@@ -366,23 +366,23 @@ class CongressMembersCacheTests(unittest.TestCase):
 
         self.assertEqual(score, {"dim1": 0.25, "geo_mean": None})
 
-    def test_ethics_score_falls_back_to_static_without_fec_key(self):
+    def test_ethics_score_is_unavailable_without_evidence_backed_fec_data(self):
         os.environ.pop("FEC_API_KEY", None)
         os.environ.pop("ECON_API_KEY", None)
         os.environ.pop("YGN_ECON_API_KEY", None)
-        self.module._legacy_fec_api_key = Mock(return_value="")
         self.module.CongressMembersID = Mock(
             return_value={"member": {"bioguideId": "A000001", "directOrderName": "Jane Example"}}
         )
 
         score = self.module.get_ethics_score("A000001")
 
-        self.assertEqual(score["source"], "static_fallback")
-        self.assertEqual(score["method"], "campaign_finance_v2")
-        self.assertGreaterEqual(score["score"], 55.0)
-        self.assertLessEqual(score["score"], 96.0)
-        self.assertNotEqual(score["grade"], "N/A")
-        self.assertIn("public_record_completeness", score["components"])
+        self.assertFalse(score["available"])
+        self.assertEqual(score["source"], "unavailable")
+        self.assertEqual(score["method"], self.module.ETHICS_METHOD_VERSION)
+        self.assertIsNone(score["score"])
+        self.assertEqual(score["grade"], "N/A")
+        self.assertEqual(score["components"], {})
+        self.assertTrue(any("synthetic" in note.lower() for note in score["notes"]))
 
         other_score = self.module._static_ethics_fallback(
             "B000001",
@@ -395,7 +395,9 @@ class CongressMembersCacheTests(unittest.TestCase):
                 "terms": [{"chamber": "House of Representatives", "district": 10}],
             },
         )
-        self.assertNotEqual(score["score"], other_score["score"])
+        self.assertIsNone(other_score["score"])
+        self.assertEqual(other_score["grade"], "N/A")
+        self.assertEqual(other_score["source"], "unavailable")
 
     def test_ethics_formula_scores_live_fec_components(self):
         member = {
@@ -433,8 +435,9 @@ class CongressMembersCacheTests(unittest.TestCase):
         score = self.module._score_ethics_from_fec(member, candidate, totals, by_size, by_state)
 
         self.assertEqual(score["source"], "fec_live")
-        self.assertEqual(score["score"], 67.2)
-        self.assertEqual(score["grade"], "D+")
+        self.assertEqual(score["method"], self.module.ETHICS_METHOD_VERSION)
+        self.assertEqual(score["score"], 94.7)
+        self.assertEqual(score["grade"], "A")
 
     def test_recent_bill_digest_enriches_and_caches_top_bills(self):
         def response_for_request(url, params=None, headers=None, **kwargs):

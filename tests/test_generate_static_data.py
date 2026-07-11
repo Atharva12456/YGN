@@ -22,6 +22,7 @@ def load_module():
 
 class FakeBackend:
     UpstreamDataError = RuntimeError
+    ETHICS_METHOD_VERSION = "campaign_finance_stock_v4"
 
     def __init__(self):
         self.wiki_requests = []
@@ -42,6 +43,21 @@ class FakeBackend:
 
     def getRecentBills(self):
         return {"bills": []}
+
+    def getRecentBillDigest(self, limit=40):
+        return {"bills": []}
+
+    def get_national_debt_metric(self):
+        return None
+
+    def _member_chamber(self, member):
+        return member.get("chamber") or "House"
+
+    def _party_abbreviation(self, member):
+        return member.get("party") or "D"
+
+    def _member_state_code(self, member):
+        return member.get("state") or "NY"
 
     def CongressMembersID(self, bioguide_id):
         return {"member": {"bioguideId": bioguide_id}}
@@ -64,15 +80,19 @@ class FakeBackend:
             "bioguideId": bioguide_id,
             "score": 72.0,
             "grade": "C-",
-            "source": "static_fallback",
+            "source": "fec_live",
+            "method": self.ETHICS_METHOD_VERSION,
         }
 
     def ethics_fallback_only(self, bioguide_id):
         return {
             "bioguideId": bioguide_id,
-            "score": 72.0,
-            "grade": "C-",
-            "source": "static_fallback",
+            "available": False,
+            "score": None,
+            "grade": "N/A",
+            "source": "unavailable",
+            "method": self.ETHICS_METHOD_VERSION,
+            "components": {},
         }
 
 
@@ -126,7 +146,7 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(manifest["wiki_reused"], 1)
         self.assertEqual(manifest["nominate"], 2)
         self.assertEqual(manifest["ethics"], 2)
-        self.assertEqual(manifest["ethics_fallback"], 2)
+        self.assertEqual(manifest["ethics_fallback"], 0)
         self.assertTrue(manifest["member_score_index"])
         self.assertEqual(set(score_index["nominate"]), {"A000001", "B000001"})
         self.assertEqual(set(score_index["ethics"]), {"A000001", "B000001"})
@@ -148,16 +168,20 @@ class GenerateStaticDataTests(unittest.TestCase):
             output_dir = Path(temp_dir)
             eth_path = output_dir / "ethics" / "A000001.json"
             eth_path.parent.mkdir(parents=True, exist_ok=True)
+            original_generated_at = datetime.now(timezone.utc).isoformat()
             eth_path.write_text(json.dumps({
-                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "generated_at": original_generated_at,
                 "source": "fec_live", "grade": "A", "score": 95.0,
+                "method": backend.ETHICS_METHOD_VERSION,
             }), encoding="utf-8")
             self._run_ethics_only(output_dir, [], backend)
             score_index = json.loads((output_dir / "member-scores.json").read_text(encoding="utf-8"))
-        # A000001 already fec_live + fresh → kept for free; only B000001 is scored.
+            persisted = json.loads(eth_path.read_text(encoding="utf-8"))
+        # A000001 is current-method fec_live + fresh, so only B000001 is scored.
         self.assertEqual(backend.ethics_requests, ["B000001"])
         self.assertEqual(score_index["ethics"]["A000001"]["grade"], "A")
         self.assertEqual(score_index["ethics"]["A000001"]["source"], "fec_live")
+        self.assertEqual(persisted["generated_at"], original_generated_at)
 
     def test_fec_score_limit_caps_live_scoring_per_run(self):
         backend = FakeBackend()
@@ -165,11 +189,18 @@ class GenerateStaticDataTests(unittest.TestCase):
             output_dir = Path(temp_dir)
             self._run_ethics_only(output_dir, ["--fec-score-limit", "1"], backend)
             manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
-        # Budget of 1 → only the first member hits compute_ethics_score; the second
-        # falls back without a live call. Both still get written.
+            unavailable = json.loads(
+                (output_dir / "ethics" / "B000001.json").read_text(encoding="utf-8")
+            )
+        # A budget of one leaves the second member explicitly unavailable instead
+        # of assigning a synthetic grade. Both records are still written.
         self.assertEqual(backend.ethics_requests, ["A000001"])
         self.assertEqual(manifest["ethics"], 2)
+        self.assertEqual(manifest["ethics_fallback"], 1)
         self.assertEqual(manifest["fec_scored_this_run"], 1)
+        self.assertIsNone(unavailable["score"])
+        self.assertEqual(unavailable["grade"], "N/A")
+        self.assertEqual(unavailable["source"], "unavailable")
 
 
 if __name__ == "__main__":

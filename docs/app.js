@@ -10,6 +10,8 @@ const nominateCache = new Map();  // bioguideId → { dim1 } | null
 const ethicsCache = new Map();    // bioguideId -> { score, grade } | null
 let memberScoreIndex = null;
 let scoreObserver = null;
+const SAVED_MEMBERS_STORAGE_KEY = 'ygn_saved_members_v1';
+let savedMemberIdsCache = null;
 
 // ─── Application state ───────────────────────────────────────────────────────
 let allMembers = [];          // full sorted member array after first load
@@ -25,6 +27,7 @@ let congressionalDistrictsByFips = new Map();
 let congressionalDistrictPromisesByFips = new Map();
 let memberDataLoadPromise = null;
 let populationTicker = null;
+let showSavedMembersOnly = false;
 
 const STATE_ABBR_TO_NAME = {
   AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
@@ -99,6 +102,8 @@ let membersChamberFilter;
 let membersStateFilter;
 let membersSort;
 let membersCount;
+let membersSavedToggle;
+let membersSavedCount;
 let homeStats;
 let dailyQuoteEl;
 let dailyQuoteAuthorEl;
@@ -297,12 +302,36 @@ function getEthicsColor(score) {
   }
 }
 
+async function fetchResponseWithTimeout(url, options = {}, timeoutMs = 10_000) {
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+
+function evidenceBackedEthics(ethics) {
+  return !!(
+    ethics &&
+    ethics.source === 'fec_live' &&
+    ethics.method === 'campaign_finance_stock_v4' &&
+    typeof ethics.score === 'number' &&
+    ethics.grade && ethics.grade !== 'N/A'
+  );
+}
+
 async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
   const apiBaseUrl = typeof API_BASE_URL === 'string' ? API_BASE_URL : '';
 
   if (apiBaseUrl) {
     try {
-      const res = await fetch(apiBaseUrl + apiPath, { cache: options.cache || 'default' });
+      const res = await fetchResponseWithTimeout(
+        apiBaseUrl + apiPath,
+        { cache: options.cache || 'default' },
+        options.timeoutMs || 10_000
+      );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return { data: await res.json(), source: 'api' };
     } catch (apiError) {
@@ -315,7 +344,11 @@ async function fetchJsonWithStaticFallback(apiPath, staticPath, options = {}) {
   }
 
   try {
-    const res = await fetch(`data/${staticPath}`, { cache: options.staticCache || 'default' });
+    const res = await fetchResponseWithTimeout(
+      `data/${staticPath}`,
+      { cache: options.staticCache || 'default' },
+      options.staticTimeoutMs || 10_000
+    );
     if (res.status === 404) return { notFound: true, source: 'static' };
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return { data: await res.json(), source: 'static' };
@@ -386,7 +419,7 @@ function initNavLinks() {
  * Fetch /health and update the #health-indicator pill.
  */
 async function checkHealth() {
-  if (!healthIndicator) return;
+  if (!healthIndicator) return null;
 
   healthIndicator.className = 'checking';
   healthIndicator.textContent = 'Checking';
@@ -402,6 +435,7 @@ async function checkHealth() {
         result.source === 'static' ? 'Static data OK' : 'Connected OK',
         result.source === 'static' ? 'Static fallback health' : 'Live API health'
       );
+      return result.source;
     } else {
       throw new Error('non-ok status');
     }
@@ -409,6 +443,7 @@ async function checkHealth() {
     healthIndicator.className = 'disconnected';
     healthIndicator.textContent = 'Disconnected';
     updateStatCard('stat-backend', 'Backend Status', 'Disconnected', 'YGN API health');
+    return null;
   }
 }
 
@@ -574,7 +609,7 @@ async function loadMemberCount() {
   // The member count lives in the 0.5 KB manifest — no need to pull the ~390 KB
   // officials.json (+157 KB scores) on the home page just to render a number.
   try {
-    const res = await fetch('data/manifest.json', { cache: 'force-cache' });
+    const res = await fetch('data/manifest.json', { cache: 'no-cache' });
     if (res.ok) {
       const manifest = await res.json();
       if (manifest && manifest.members) {
@@ -728,25 +763,39 @@ async function initForeignBills() {
 async function initCongressBalance() {
   const host = document.getElementById('home-congress-balance');
   if (!host) return;
-  let members = [];
+  let congress = 119;
+  let tally = null;
   try {
-    const res = await loadRoster();
-    members = (res.data && res.data.members) || [];
-  } catch (_) { return; }
-  if (!members.length) return;
+    const response = await fetchResponseWithTimeout('data/manifest.json', { cache: 'no-cache' });
+    const manifest = response.ok ? await response.json() : {};
+    congress = manifest.congress || congress;
+    const compact = manifest.roster_summary && manifest.roster_summary.voting_by_chamber_party;
+    if (compact && compact.House && compact.Senate) {
+      tally = {
+        House: { D: compact.House.D || 0, R: compact.House.R || 0, I: compact.House.I || 0 },
+        Senate: { D: compact.Senate.D || 0, R: compact.Senate.R || 0, I: compact.Senate.I || 0 },
+      };
+    }
+  } catch (_) { /* older manifests fall back to the roster below */ }
 
-  // Non-voting delegates (DC + territories) aren't part of the floor majority.
-  const NONVOTING = new Set(['DC', 'PR', 'GU', 'VI', 'AS', 'MP',
-    'District of Columbia', 'Puerto Rico', 'Guam', 'Virgin Islands',
-    'American Samoa', 'Northern Mariana Islands']);
-  const tally = { House: { D: 0, R: 0, I: 0 }, Senate: { D: 0, R: 0, I: 0 } };
-  members.forEach(m => {
-    const chamber = String(getMemberChamber(m) || '').toLowerCase();
-    const bucket = chamber.includes('senate') ? 'Senate' : chamber.includes('house') ? 'House' : null;
-    if (!bucket) return;
-    if (bucket === 'House' && NONVOTING.has(getMemberField(m, 'state'))) return;
-    tally[bucket][memberPartyCode(m)]++;
-  });
+  if (!tally) {
+    let members = [];
+    try {
+      const res = await loadRoster();
+      members = (res.data && res.data.members) || [];
+    } catch (_) { return; }
+    if (!members.length) return;
+    const NONVOTING = new Set(['DC', 'PR', 'GU', 'VI', 'AS', 'MP',
+      'District of Columbia', 'Puerto Rico', 'Guam', 'Virgin Islands',
+      'American Samoa', 'Northern Mariana Islands']);
+    tally = { House: { D: 0, R: 0, I: 0 }, Senate: { D: 0, R: 0, I: 0 } };
+    members.forEach(m => {
+      const chamber = String(getMemberChamber(m) || '').toLowerCase();
+      const bucket = chamber.includes('senate') ? 'Senate' : chamber.includes('house') ? 'House' : null;
+      if (!bucket || (bucket === 'House' && NONVOTING.has(getMemberField(m, 'state')))) return;
+      tally[bucket][memberPartyCode(m)]++;
+    });
+  }
 
   const chamberBar = (name, t) => {
     const total = t.D + t.R + t.I || 1;
@@ -764,7 +813,7 @@ async function initCongressBalance() {
   };
 
   host.innerHTML = `
-    <div class="cb-title">Who controls the 119th Congress</div>
+    <div class="cb-title">Who controls the ${esc(congress)}th Congress</div>
     <div class="cb-chambers">
       ${chamberBar('House', tally.House)}
       ${chamberBar('Senate', tally.Senate)}
@@ -1031,7 +1080,7 @@ function billVoteHtml(vote, index) {
     <div class="vote-legend">${legend}</div>
     ${votePartyAnalysisHtml(positions)}
     <div class="vote-groups">${groups}</div>
-    ${vote.url ? `<a class="bill-vote-source" href="${safeUrl(vote.url)}" target="_blank" rel="noopener">Official roll-call record →</a>` : ''}
+    ${vote.url ? `<a class="bill-vote-source" href="${esc(safeUrl(vote.url))}" target="_blank" rel="noopener">Official roll-call record →</a>` : ''}
   </div>`;
 }
 
@@ -1110,9 +1159,8 @@ function cosponsorSplitHtml(cosponsors) {
   </div>`;
 }
 
-// One AI content block: filled when `summary` is present, a spinner when pending
-// (lazy /ai fetch in flight), an "enable AI" hint otherwise. id lets the lazy
-// fetch swap the block in place.
+// Generated content is read-only on page requests. Missing content is queued and
+// filled by the next trusted cache/static refresh.
 function aiBlockHtml(id, label, summary, pending) {
   if (summary) {
     return `<div class="bill-ai-block" id="${id}">
@@ -1121,14 +1169,14 @@ function aiBlockHtml(id, label, summary, pending) {
     </div>`;
   }
   if (pending) {
-    return `<div class="bill-ai-block bill-ai-block--loading" id="${id}">
-      <div class="bill-ai-label">${esc(label)} <span class="ai-badge">AI</span></div>
-      <p class="ai-loading">Generating…</p>
+    return `<div class="bill-ai-block bill-ai-block--pending" id="${id}">
+      <div class="bill-ai-label">${esc(label)} <span class="ai-badge">Queued</span></div>
+      <p>This analysis will appear after the next content refresh. Page requests never call the model directly.</p>
     </div>`;
   }
   return `<div class="bill-ai-block bill-ai-block--pending" id="${id}">
     <div class="bill-ai-label">${esc(label)}</div>
-    <p>AI analysis appears here once an AI provider is configured on the server.</p>
+    <p>No cached analysis is available. The official Congress.gov summary remains the source of record.</p>
   </div>`;
 }
 
@@ -1143,8 +1191,8 @@ function renderBillDetail(container, data) {
   const chamberLabel = bill.originChamber || '';
   const headMeta = [congressLabel, chamberLabel, bill.policyArea].filter(Boolean).map(esc).join(' · ');
 
-  // AI blocks render from committed content immediately; when the server says
-  // more AI is pending (aiPending), we show a loader and lazy-fetch /ai.
+  // AI blocks render committed/refresh-cached content immediately; misses show
+  // an honest queued state without a request-time model call.
   const pending = !!bill.aiPending;
   const aiDesc = aiBlockHtml(
     'ai-desc-block', 'Plain-language description',
@@ -1177,7 +1225,7 @@ function renderBillDetail(container, data) {
         <h1>${esc(bill.title || 'Untitled bill')}</h1>
         <p class="bill-detail-meta">${headMeta}</p>
         <div class="bill-detail-links">
-          ${bill.url ? `<a class="secondary-button" href="${safeUrl(bill.url)}" target="_blank" rel="noopener">Open on Congress.gov</a>` : ''}
+          ${bill.url ? `<a class="secondary-button" href="${esc(safeUrl(bill.url))}" target="_blank" rel="noopener">Open on Congress.gov</a>` : ''}
         </div>
       </header>
 
@@ -1246,127 +1294,10 @@ async function initBillPage() {
     }
     renderBillDetail(container, result.data);
 
-    // Lazy-load AI description/impact separately so the page never blocks on a
-    // slow model call (which would exceed the platform request timeout).
-    const bill = (result.data && result.data.bill) || {};
-    if (result.source === 'api' && bill.aiPending) {
-      loadBillAi(congress, billType, number, container);
-    }
   } catch (_) {
     container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load this bill. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
   }
 }
-
-async function loadBillAi(congress, billType, number, container) {
-  const swap = (id, label, summary) => {
-    const el = container.querySelector('#' + id);
-    if (!el) return;
-    if (summary) {
-      el.classList.remove('bill-ai-block--loading', 'bill-ai-block--pending');
-      el.innerHTML = `<div class="bill-ai-label">${esc(label)} <span class="ai-badge">AI</span></div><p>${esc(summary)}</p>`;
-    } else if (el.classList.contains('bill-ai-block--loading')) {
-      el.classList.remove('bill-ai-block--loading');
-      el.classList.add('bill-ai-block--pending');
-      el.innerHTML = `<div class="bill-ai-label">${esc(label)}</div><p>An AI summary isn't available for this bill right now.</p>`;
-    }
-  };
-  try {
-    const res = await fetchJsonWithStaticFallback(
-      `/bills/${encodeURIComponent(congress)}/${encodeURIComponent(billType)}/${encodeURIComponent(number)}/ai`,
-      null
-    );
-    const d = res.data || {};
-    swap('ai-desc-block', 'Plain-language description', d.aiDescription && d.aiDescription.summary);
-    swap('ai-impact-block', 'Who this affects — impact analysis', d.impact && d.impact.summary);
-  } catch (_) {
-    swap('ai-desc-block', 'Plain-language description', null);
-    swap('ai-impact-block', 'Who this affects — impact analysis', null);
-  }
-}
-
-// ─── AI public-confidence estimator (events + candidates) ────────────────────
-
-function confidenceGaugeHtml(data) {
-  const conf = Number(data.confidence);
-  const pct = Number.isFinite(conf) ? clamp(conf, 0, 100) : null;
-  const label = data.label || (pct === null ? 'Unknown' : pct >= 66 ? 'High' : pct >= 40 ? 'Moderate' : 'Low');
-  const fillColor = pct === null ? '#9aa4b2' : pct >= 66 ? '#3b8f6d' : pct >= 40 ? '#d5a642' : '#d95f5f';
-  const support = Array.isArray(data.support_factors) ? data.support_factors : [];
-  const concern = Array.isArray(data.concern_factors) ? data.concern_factors : [];
-
-  const factorList = (title, items, cls) => items.length
-    ? `<div class="confidence-factors ${cls}"><h4>${esc(title)}</h4><ul>${items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`
-    : '';
-
-  const certainty = data.confidence_in_estimate
-    ? `<span class="confidence-certainty">Estimate certainty: ${esc(data.confidence_in_estimate)}</span>` : '';
-
-  return `<div class="confidence-card">
-    <div class="confidence-subject">${esc(data.subject || '')}</div>
-    <div class="confidence-gauge-row">
-      <div class="confidence-gauge">
-        <div class="confidence-gauge-fill" style="width:${pct === null ? 0 : pct}%;background:${fillColor}"></div>
-      </div>
-      <div class="confidence-score">${pct === null ? '—' : pct + '%'}<span>${esc(label)}</span></div>
-    </div>
-    ${data.summary ? `<p class="confidence-summary">${esc(data.summary)}</p>` : ''}
-    <div class="confidence-factor-grid">
-      ${factorList('Reasons for confidence', support, 'positive')}
-      ${factorList('Reasons for concern', concern, 'negative')}
-    </div>
-    <p class="confidence-disclaimer">${esc(data.disclaimer || 'AI-generated estimate, not a scientific poll.')}${certainty ? ' · ' : ''}${certainty}</p>
-  </div>`;
-}
-
-function initEventConfidence() {
-  const form = document.getElementById('event-confidence-form');
-  const input = document.getElementById('event-confidence-input');
-  const resultEl = document.getElementById('event-confidence-result');
-  if (!form || !input || !resultEl) return;
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const topic = input.value.trim();
-    if (!topic) return;
-    resultEl.innerHTML = '<div class="confidence-loading">Estimating public confidence…</div>';
-    try {
-      const res = await fetchJsonWithStaticFallback(
-        `/ai/confidence/event?topic=${encodeURIComponent(topic)}`,
-        null
-      );
-      const data = res.data || {};
-      if (!data.available) {
-        resultEl.innerHTML = `<div class="confidence-unavailable">${esc(data.reason || 'AI estimates are not available right now.')}${data.note ? ` ${esc(data.note)}` : ''}</div>`;
-        return;
-      }
-      resultEl.innerHTML = confidenceGaugeHtml(data);
-    } catch (_) {
-      resultEl.innerHTML = '<div class="confidence-unavailable">Could not generate an estimate right now. The AI service may be unavailable.</div>';
-    }
-  });
-}
-
-// Lazy candidate-confidence loader used on the member detail page.
-async function loadCandidateConfidence(bioguideId, mountEl) {
-  if (!mountEl) return;
-  mountEl.innerHTML = '<div class="confidence-loading">Estimating public confidence…</div>';
-  try {
-    const res = await fetchJsonWithStaticFallback(
-      `/officials/${encodeURIComponent(bioguideId)}/confidence`,
-      null
-    );
-    const data = res.data || {};
-    if (!data.available) {
-      mountEl.innerHTML = `<div class="confidence-unavailable">${esc(data.reason || 'AI estimate unavailable.')}${data.note ? ` ${esc(data.note)}` : ''}</div>`;
-      return;
-    }
-    mountEl.innerHTML = confidenceGaugeHtml(data);
-  } catch (_) {
-    mountEl.innerHTML = '<div class="confidence-unavailable">Could not generate an estimate right now.</div>';
-  }
-}
-
-window.loadCandidateConfidence = loadCandidateConfidence;
 
 // ─── Economy dashboard ───────────────────────────────────────────────────────
 
@@ -1508,6 +1439,154 @@ async function initRecentBills() {
   await loadRecentBills(initialLimit);
 }
 
+// Saved members are intentionally browser-local: profiles can be bookmarked
+// without an account, and a storage failure never blocks the roster or dossier.
+function normalizeSavedMemberId(value) {
+  return String(value == null ? '' : value).trim();
+}
+
+function readSavedMemberIds() {
+  try {
+    const raw = window.localStorage.getItem(SAVED_MEMBERS_STORAGE_KEY);
+    if (!raw) return new Set();
+    const parsed = JSON.parse(raw);
+    const values = Array.isArray(parsed)
+      ? parsed
+      : (parsed && Array.isArray(parsed.ids) ? parsed.ids : []);
+    return new Set(values.map(normalizeSavedMemberId).filter(Boolean));
+  } catch (_) {
+    return new Set();
+  }
+}
+
+function getSavedMemberIds() {
+  if (savedMemberIdsCache === null) savedMemberIdsCache = readSavedMemberIds();
+  return savedMemberIdsCache;
+}
+
+function isMemberSaved(bioguideId) {
+  const id = normalizeSavedMemberId(bioguideId);
+  return !!id && getSavedMemberIds().has(id);
+}
+
+function persistSavedMemberIds(ids) {
+  try {
+    window.localStorage.setItem(SAVED_MEMBERS_STORAGE_KEY, JSON.stringify(Array.from(ids).sort()));
+  } catch (_) { /* In-memory state still works for this page view. */ }
+}
+
+function savedMemberButtonHtml(bioguideId, memberName, variant) {
+  const id = normalizeSavedMemberId(bioguideId);
+  if (!id) return '';
+  const name = memberName || 'this member';
+  const saved = isMemberSaved(id);
+  const isDetail = variant === 'detail';
+  const visibleLabel = saved ? 'Saved' : 'Save';
+  const ariaLabel = saved ? `Remove ${name} from saved members` : `Save ${name}`;
+  return `
+    <button
+      class="member-save-button member-save-button--${isDetail ? 'detail' : 'tile'}${saved ? ' is-saved' : ''}"
+      type="button"
+      data-save-member-id="${esc(id)}"
+      data-save-member-name="${esc(name)}"
+      data-save-variant="${isDetail ? 'detail' : 'tile'}"
+      aria-pressed="${saved ? 'true' : 'false'}"
+      aria-label="${esc(ariaLabel)}"
+      title="${esc(ariaLabel)}"
+    >
+      <svg class="member-save-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6.75 4.75A1.75 1.75 0 0 1 8.5 3h7a1.75 1.75 0 0 1 1.75 1.75v15.1L12 16.6l-5.25 3.25V4.75Z"></path>
+      </svg>
+      <span class="${isDetail ? 'member-save-label' : 'visually-hidden'}" data-save-label>${visibleLabel}</span>
+    </button>`;
+}
+
+function syncMemberSaveButton(button) {
+  if (!button) return;
+  const id = normalizeSavedMemberId(button.dataset.saveMemberId);
+  const name = button.dataset.saveMemberName || 'this member';
+  const saved = isMemberSaved(id);
+  const label = button.dataset.saveVariant === 'detail'
+    ? (saved ? 'Saved' : 'Save')
+    : (saved ? `Remove ${name} from saved members` : `Save ${name}`);
+  const ariaLabel = saved ? `Remove ${name} from saved members` : `Save ${name}`;
+
+  button.classList.toggle('is-saved', saved);
+  button.setAttribute('aria-pressed', saved ? 'true' : 'false');
+  button.setAttribute('aria-label', ariaLabel);
+  button.setAttribute('title', ariaLabel);
+  const text = button.querySelector('[data-save-label]');
+  if (text) text.textContent = label;
+}
+
+function currentRosterSavedCount() {
+  if (!membersLoaded) return getSavedMemberIds().size;
+  return allMembers.reduce((count, member) => {
+    const id = getMemberField(member, 'bioguideId', 'bioguide_id');
+    return count + (isMemberSaved(id) ? 1 : 0);
+  }, 0);
+}
+
+function syncSavedMembersUi() {
+  document.querySelectorAll('.member-save-button').forEach(syncMemberSaveButton);
+  const savedCount = currentRosterSavedCount();
+  if (membersSavedCount) {
+    membersSavedCount.textContent = String(savedCount);
+    membersSavedCount.setAttribute('aria-label', `${savedCount} saved member${savedCount === 1 ? '' : 's'}`);
+  }
+  if (membersSavedToggle) {
+    membersSavedToggle.classList.toggle('is-active', showSavedMembersOnly);
+    membersSavedToggle.setAttribute('aria-pressed', showSavedMembersOnly ? 'true' : 'false');
+    membersSavedToggle.title = showSavedMembersOnly ? 'Show all members' : 'Show saved members only';
+  }
+}
+
+function setMemberSaved(bioguideId, shouldSave) {
+  const id = normalizeSavedMemberId(bioguideId);
+  if (!id) return false;
+  const ids = new Set(getSavedMemberIds());
+  if (shouldSave) ids.add(id);
+  else ids.delete(id);
+  savedMemberIdsCache = ids;
+  persistSavedMemberIds(ids);
+  syncSavedMembersUi();
+  return shouldSave;
+}
+
+function wireMemberSaveButton(button) {
+  if (!button || button.dataset.saveBound) return;
+  button.dataset.saveBound = 'true';
+
+  // The tile itself is clickable and hoverable; keep every save interaction
+  // isolated from its navigation, keyboard, prefetch, and popover handlers.
+  ['pointerdown', 'mousedown', 'touchstart', 'keydown'].forEach(type => {
+    button.addEventListener(type, event => event.stopPropagation());
+  });
+  button.addEventListener('mouseenter', () => hidePopover());
+  button.addEventListener('focus', () => hidePopover());
+  button.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    hidePopover();
+    const id = button.dataset.saveMemberId;
+    setMemberSaved(id, !isMemberSaved(id));
+    if (showSavedMembersOnly && membersGrid) applyFilters();
+  });
+}
+
+function setSavedMembersOnly(active) {
+  showSavedMembersOnly = !!active;
+  syncSavedMembersUi();
+  applyFilters();
+}
+
+function handleSavedMemberStorage(event) {
+  if (event.key !== null && event.key !== SAVED_MEMBERS_STORAGE_KEY) return;
+  savedMemberIdsCache = readSavedMemberIds();
+  syncSavedMembersUi();
+  if (membersGrid && membersLoaded) applyFilters();
+}
+
 // ─── Congressional Members ───────────────────────────────────────────────────
 
 /**
@@ -1544,7 +1623,31 @@ function showError(msg) {
 /**
  * Show an empty state in the grid.
  */
-function showEmpty() {
+function showEmpty(options) {
+  options = options || {};
+  if (options.savedOnly) {
+    const hasSavedRosterMembers = Number(options.savedRosterCount || 0) > 0;
+    membersGrid.innerHTML = `
+      <div class="empty-state saved-members-empty">
+        <span class="state-icon" aria-hidden="true">&#9734;</span>
+        <p>${hasSavedRosterMembers
+          ? 'No saved members match your current search and filters.'
+          : 'You have not saved any current members yet. Use the bookmark button on a member card to build your list.'}</p>
+        <button class="secondary-button" id="saved-members-empty-action" type="button">
+          ${hasSavedRosterMembers ? 'Clear search and filters' : 'Show all members'}
+        </button>
+      </div>
+    `;
+    const action = membersGrid.querySelector('#saved-members-empty-action');
+    if (action) {
+      action.addEventListener('click', () => {
+        if (hasSavedRosterMembers) clearMemberSearchFilters();
+        else setSavedMembersOnly(false);
+      });
+    }
+    return;
+  }
+
   membersGrid.innerHTML = `
     <div class="empty-state">
       <span class="state-icon" aria-hidden="true">?</span>
@@ -1579,7 +1682,10 @@ function hydrateMemberScores(members, scoreIndex) {
     if (!enriched.nominate_score && nominateScores[bioguideId]) {
       enriched.nominate_score = nominateScores[bioguideId];
     }
-    if (!enriched.ethics_score && ethicsScores[bioguideId]) {
+    if (!evidenceBackedEthics(enriched.ethics_score)) {
+      delete enriched.ethics_score;
+    }
+    if (!enriched.ethics_score && evidenceBackedEthics(ethicsScores[bioguideId])) {
       enriched.ethics_score = ethicsScores[bioguideId];
     }
     return enriched;
@@ -1596,7 +1702,7 @@ async function loadRoster() {
   // current members and mix in historical ones. Use the snapshot for the grid;
   // detail pages still hit the live API.
   try {
-    const res = await fetch('data/officials.json', { cache: 'force-cache' });
+    const res = await fetch('data/officials.json', { cache: 'no-cache' });
     if (res.ok) {
       return { data: await res.json(), source: 'static' };
     }
@@ -1641,6 +1747,7 @@ async function loadMemberDataOnly() {
     allMembers = hydratedItems;
     membersLoaded = true;
     memberDataLoadPromise = null;
+    syncSavedMembersUi();
 
     updateStatCard('stat-members', 'Members Tracked', allMembers.length.toString(), 'YGN static/API data');
     return allMembers;
@@ -1722,7 +1829,7 @@ function createMemberTile(member) {
 
   // Party class mapping
   let partyClass = 'party-I';
-  const partyLower = party.toLowerCase();
+  const partyLower = String(party || '').toLowerCase();
   if (partyLower.includes('democrat') || partyLower === 'd') partyClass = 'party-D';
   else if (partyLower.includes('republican') || partyLower === 'r') partyClass = 'party-R';
 
@@ -1736,8 +1843,9 @@ function createMemberTile(member) {
   const photoUrl = getMemberPhotoUrl(member, bioguideId);
 
   const initials = buildInitials(name);
-  const ethicsScore = member.ethicsScore ?? member.ethics_score?.score ?? null;
-  const ethicsGrade = member.ethicsGrade || member.ethics_score?.grade || 'Ethics';
+  const ethicsData = evidenceBackedEthics(member.ethics_score) ? member.ethics_score : null;
+  const ethicsScore = ethicsData ? ethicsData.score : null;
+  const ethicsGrade = ethicsData ? ethicsData.grade : 'N/A';
   const ethicsColor = getEthicsColor(ethicsScore);
 
   // Build the tile element
@@ -1770,11 +1878,13 @@ function createMemberTile(member) {
   }
 
   const partyBadgeHtml = `<div class="party-badge ${partyClass}">${esc(partyLabel)}</div>`;
-  const ethicsBadgeHtml = `<a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" title="Open ethics score methodology" aria-label="Open ethics score methodology for ${safeName}" style="background-color: ${ethicsColor};">${esc(ethicsGrade)}</a>`;
+  const ethicsTitle = ethicsData ? 'Open evidence-backed funding methodology' : 'Evidence-backed grade unavailable';
+  const ethicsBadgeHtml = `<a class="ethics-badge" href="${withApiParam('ethics-methodology.html')}" title="${ethicsTitle}" aria-label="Open funding transparency methodology for ${safeName}" style="background-color: ${ethicsColor};">${esc(ethicsGrade)}</a>`;
 
   const photoHtml = `
     <div class="tile-photo-wrapper">
       ${photoInner}
+      ${savedMemberButtonHtml(bioguideId, name, 'tile')}
       ${partyBadgeHtml}
       ${ethicsBadgeHtml}
     </div>
@@ -1797,15 +1907,17 @@ function createMemberTile(member) {
     });
   }
 
+  wireMemberSaveButton(tile.querySelector('.member-save-button'));
+
   // Popover events: mouseenter/focus show; mouseleave/blur schedule hide.
-  // A short hover dwell also prefetches the member's dossier so the detail page
+  // A deliberate hover dwell prefetches only lightweight dossier sections so the detail page
   // paints instantly on click.
   let prefetchTimer = null;
   tile.addEventListener('mouseenter', () => {
     cancelPopoverHide();
     if (bioguideId) {
       triggerPopover(member, tile);
-      prefetchTimer = setTimeout(() => prefetchDossier(bioguideId), 250);
+      prefetchTimer = setTimeout(() => prefetchDossier(bioguideId), 700);
     }
   });
 
@@ -1818,7 +1930,6 @@ function createMemberTile(member) {
     cancelPopoverHide();
     if (bioguideId) {
       triggerPopover(member, tile);
-      prefetchDossier(bioguideId); // keyboard focus is deliberate — prefetch now
     }
   });
 
@@ -1845,7 +1956,7 @@ function createMemberTile(member) {
   tile.addEventListener('click', goToDetail);
 
   tile.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' && bioguideId) goToDetail();
+    if (event.target === tile && event.key === 'Enter' && bioguideId) goToDetail();
   });
 
   if (bioguideId) {
@@ -1862,7 +1973,7 @@ function createMemberTile(member) {
       if (cached && typeof cached.dim1 === 'number') applyNominateTint(tile, cached.dim1);
     }
 
-    if (ethicsScoreData && typeof ethicsScoreData.score === 'number') {
+    if (evidenceBackedEthics(ethicsScoreData)) {
       ethicsCache.set(bioguideId, ethicsScoreData);
       applyEthicsGrade(tile, ethicsScoreData);
     } else if (ethicsCache.has(bioguideId)) {
@@ -1950,13 +2061,14 @@ function applyEthicsGrade(tileEl, ethics) {
   const badge = tileEl.querySelector('.ethics-badge');
   if (!badge) return;
 
-  const score = ethics && typeof ethics.score === 'number' ? ethics.score : null;
-  const grade = ethics && ethics.grade ? ethics.grade : 'N/A';
+  const verified = evidenceBackedEthics(ethics) ? ethics : null;
+  const score = verified ? verified.score : null;
+  const grade = verified ? verified.grade : 'N/A';
   badge.textContent = grade;
   badge.style.backgroundColor = getEthicsColor(score);
   badge.title = score === null
-    ? 'Ethics grade unavailable. Open methodology.'
-    : `Ethics grade ${grade} (${score}). Open methodology.`;
+    ? 'Campaign-finance grade unavailable. Open methodology.'
+    : `Campaign-finance grade ${grade} (${score}). Open methodology.`;
 }
 
 async function fetchEthics(bioguideId, tileEl) {
@@ -1976,8 +2088,9 @@ async function fetchEthics(bioguideId, tileEl) {
       return;
     }
 
-    ethicsCache.set(bioguideId, result.data);
-    applyEthicsGrade(tileEl, result.data);
+    const verified = evidenceBackedEthics(result.data) ? result.data : null;
+    ethicsCache.set(bioguideId, verified);
+    applyEthicsGrade(tileEl, verified);
   } catch {
     ethicsCache.set(bioguideId, null);
     applyEthicsGrade(tileEl, null);
@@ -2060,16 +2173,16 @@ async function triggerPopover(member, tileEl) {
     );
     if (result.notFound) {
       wikiCache.set(bioguideId, null);
-      showPopover(member, null, tileEl);
+      if (currentAnchor === tileEl) showPopover(member, null, tileEl);
       return;
     }
 
     const data = result.data;
     wikiCache.set(bioguideId, data);
-    showPopover(member, data, tileEl);
+    if (currentAnchor === tileEl) showPopover(member, data, tileEl);
   } catch {
     wikiCache.set(bioguideId, null);
-    showPopover(member, null, tileEl);
+    if (currentAnchor === tileEl) showPopover(member, null, tileEl);
   }
 }
 
@@ -2769,7 +2882,7 @@ function memberDim1(member) {
 
 function memberEthicsScore(member) {
   const e = member.ethics_score || member.ethicsScore;
-  return e && typeof e.score === 'number' ? e.score : null;
+  return evidenceBackedEthics(e) ? e.score : null;
 }
 
 function memberFirstYear(member) {
@@ -2825,6 +2938,14 @@ function populateStateFilter() {
   membersStateFilter.dataset.filled = '1';
 }
 
+function clearMemberSearchFilters() {
+  if (membersSearch) membersSearch.value = '';
+  if (membersPartyFilter) membersPartyFilter.value = '';
+  if (membersChamberFilter) membersChamberFilter.value = '';
+  if (membersStateFilter) membersStateFilter.value = '';
+  applyFilters();
+}
+
 function applyFilters() {
   if (!membersGrid) return;
   const query = (membersSearch ? membersSearch.value : '').trim().toLowerCase();
@@ -2832,8 +2953,11 @@ function applyFilters() {
   const chamberFilter = membersChamberFilter ? membersChamberFilter.value : '';
   const stateFilter = membersStateFilter ? membersStateFilter.value : '';
   const sortBy = membersSort ? membersSort.value : 'name';
+  const savedRosterCount = showSavedMembersOnly ? currentRosterSavedCount() : 0;
 
   let list = allMembers.filter(member => {
+    const memberId = getMemberField(member, 'bioguideId', 'bioguide_id');
+    if (showSavedMembersOnly && !isMemberSaved(memberId)) return false;
     if (partyFilter && memberPartyCode(member) !== partyFilter) return false;
     if (chamberFilter && !getMemberChamber(member).toLowerCase().includes(chamberFilter)) return false;
     if (stateFilter && getMemberField(member, 'state') !== stateFilter) return false;
@@ -2856,17 +2980,24 @@ function applyFilters() {
   });
 
   list = sortMembers(list, sortBy);
-  updateMembersCount(list.length);
+  updateMembersCount(list.length, savedRosterCount);
 
   if (list.length === 0) {
-    showEmpty();
+    showEmpty({ savedOnly: showSavedMembersOnly, savedRosterCount });
   } else {
     renderGrid(list);
   }
 }
 
-function updateMembersCount(shown) {
+function updateMembersCount(shown, savedRosterCount) {
   if (!membersCount) return;
+  if (showSavedMembersOnly) {
+    const savedTotal = Number(savedRosterCount || 0);
+    membersCount.textContent = shown === savedTotal
+      ? `${savedTotal} saved member${savedTotal === 1 ? '' : 's'}`
+      : `${shown} of ${savedTotal} saved members`;
+    return;
+  }
   const total = allMembers.length;
   membersCount.textContent = shown === total
     ? `${total} members`
@@ -2892,6 +3023,7 @@ function applyInitialMemberQuery() {
 
 const DOSSIER_FAST_SECTIONS = 'wiki,nominate,history,committees,contact,legislation,stocks';
 const DOSSIER_SLOW_SECTIONS = 'ethics,funding';
+const DOSSIER_PREFETCH_SECTIONS = 'wiki,nominate,history,committees,contact';
 
 function esc(value) {
   return String(value == null ? '' : value)
@@ -2943,7 +3075,7 @@ function prefetchDossier(bioguideId) {
   }
   _prefetchedMembers.add(bioguideId);
   fetchJsonWithStaticFallback(
-    `/officials/${bioguideId}/dossier?sections=${DOSSIER_FAST_SECTIONS}`,
+    `/officials/${bioguideId}/dossier?sections=${DOSSIER_PREFETCH_SECTIONS}`,
     `dossier/${bioguideId}.json`
   )
     .then(res => {
@@ -2997,11 +3129,15 @@ function ideologyBlock(dim1) {
 
 function heroGradeHtml(ethics) {
   if (ethics === undefined) {
-    return `<span class="grade-badge" id="hero-grade" style="--grade-color:#cbd5e1" title="Loading ethics grade">…<span>Ethics</span></span>`;
+    return `<span class="grade-badge" id="hero-grade" style="--grade-color:#cbd5e1" title="Loading campaign-finance grade">…<span>Funding</span></span>`;
   }
-  const grade = ethics && ethics.grade ? ethics.grade : 'N/A';
-  const score = ethics ? ethics.score : null;
-  return `<a class="grade-badge" id="hero-grade" href="${withApiParam('ethics-methodology.html')}" style="--grade-color:${getEthicsColor(score)}" title="Campaign-finance transparency grade — click for methodology">${esc(grade)}<span>Ethics</span></a>`;
+  const verified = evidenceBackedEthics(ethics) ? ethics : null;
+  const grade = verified ? verified.grade : 'N/A';
+  const score = verified ? verified.score : null;
+  const title = verified
+    ? 'Evidence-backed campaign-finance transparency grade — click for methodology'
+    : 'No current evidence-backed grade is available';
+  return `<a class="grade-badge" id="hero-grade" href="${withApiParam('ethics-methodology.html')}" style="--grade-color:${getEthicsColor(score)}" title="${title}">${esc(grade)}<span>Funding</span></a>`;
 }
 
 function normalizeHero(data, handoff, id) {
@@ -3067,6 +3203,7 @@ function heroHtml(hero) {
       </div>
       <div class="dossier-hero-side">
         ${heroGradeHtml(hero.ethics)}
+        ${savedMemberButtonHtml(hero.id, hero.name, 'detail')}
         <button class="ghost-btn" id="dossier-share" type="button" title="Copy link to this profile">🔗 Share</button>
       </div>
     </div>`;
@@ -3102,8 +3239,11 @@ function sectionNavHtml(data) {
 
 function aboutHtml(wiki) {
   if (!wiki) return '';
-  const thumb = wiki.thumbnail && wiki.thumbnail.source && /^https?:\/\//i.test(wiki.thumbnail.source)
-    ? `<img class="wiki-thumb" src="${esc(wiki.thumbnail.source)}" alt="" loading="lazy">` : '';
+  const thumbnailUrl = typeof wiki.thumbnail === 'string'
+    ? wiki.thumbnail
+    : (wiki.thumbnail && wiki.thumbnail.source);
+  const thumb = thumbnailUrl && /^https?:\/\//i.test(thumbnailUrl)
+    ? `<img class="wiki-thumb" src="${esc(thumbnailUrl)}" alt="" loading="lazy">` : '';
   const note = wiki.source === 'congress_fallback'
     ? `<p class="muted-text" style="margin-top:.75rem;clear:both;">Generated summary — no Wikipedia article resolved.</p>` : '';
   const text = esc(wiki.extract || wiki.summary || 'No biography available.');
@@ -3183,7 +3323,7 @@ function fundingInnerHtml(funding, pending) {
       <div class="card-loading"><span class="card-spinner"></span>Loading campaign finance…</div>`;
   }
   let gradeChip = '';
-  if (funding && funding.grade && funding.grade.grade) {
+  if (funding && evidenceBackedEthics(funding.grade)) {
     gradeChip = `<span class="grade-badge" style="--grade-color:${getEthicsColor(funding.grade.score)};min-width:auto;padding:.25rem .6rem;font-size:1rem;flex-direction:row;gap:.35rem;">${esc(funding.grade.grade)}<span>Grade</span></span>`;
   }
   const gradeExplainer = gradeExplainerHtml(funding && funding.grade);
@@ -3388,11 +3528,8 @@ function legislationHtml(legislation) {
 function confidenceSectionHtml(id) {
   if (!id) return '';
   return `<section class="dossier-card" id="confidence">
-    <h2 class="dossier-card-title">Public Confidence <span class="ai-badge">AI</span></h2>
-    <p class="dossier-card-note">An AI-generated estimate of public confidence in this member, drawn from general historical patterns — not a live or scientific poll.</p>
-    <div id="confidence-mount" class="confidence-mount">
-      <button class="secondary-button" id="confidence-load-btn" type="button" data-bioguide="${esc(id)}">Estimate public confidence</button>
-    </div>
+    <h2 class="dossier-card-title">Public Polling</h2>
+    <p class="dossier-card-note">No sourced approval or favorability poll is available here. YGN does not substitute an AI-generated percentage for a poll with a named pollster, field dates, sample, and published methodology.</p>
   </section>`;
 }
 
@@ -3419,6 +3556,8 @@ function renderDossier(container, data, opts) {
 }
 
 function attachDossierInteractions(container) {
+  wireMemberSaveButton(container.querySelector('.member-save-button--detail'));
+
   const share = container.querySelector('#dossier-share');
   if (share) {
     share.addEventListener('click', async () => {
@@ -3433,14 +3572,6 @@ function attachDossierInteractions(container) {
     });
   }
 
-  const confidenceBtn = container.querySelector('#confidence-load-btn');
-  if (confidenceBtn) {
-    confidenceBtn.addEventListener('click', () => {
-      const id = confidenceBtn.dataset.bioguide;
-      const mount = container.querySelector('#confidence-mount');
-      if (id && mount) loadCandidateConfidence(id, mount);
-    });
-  }
 }
 
 function patchFunding(container, funding) {
@@ -3541,6 +3672,8 @@ document.addEventListener('DOMContentLoaded', () => {
   membersStateFilter   = document.getElementById('members-state');
   membersSort          = document.getElementById('members-sort');
   membersCount         = document.getElementById('members-count');
+  membersSavedToggle   = document.getElementById('members-saved-toggle');
+  membersSavedCount    = document.getElementById('members-saved-count');
   homeStats       = document.getElementById('home-stats');
   dailyQuoteEl    = document.getElementById('daily-quote');
   dailyQuoteAuthorEl = document.getElementById('daily-quote-author');
@@ -3572,6 +3705,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Home stats placeholder
   initNavLinks();
+  if (document.body.dataset.page === 'members' || document.body.dataset.page === 'member') {
+    syncSavedMembersUi();
+    window.addEventListener('storage', handleSavedMemberStorage);
+  }
   if (homeStats) {
     initHomeStats();
     initDailyQuote();
@@ -3610,7 +3747,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.body.dataset.page === 'foreign') {
     initForeignBills();
   }
-  initEventConfidence();
   if (mapSvg) {
     initMapWhenReady();
     const legend = document.getElementById('map-legend');
@@ -3622,8 +3758,12 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollToHashTarget();
 
   // ── Health check: immediate + every 30 seconds
-  checkHealth();
-  setInterval(checkHealth, 30_000);
+  checkHealth().then(source => {
+    if (source !== 'api') return;
+    setInterval(() => {
+      if (!document.hidden) checkHealth();
+    }, 120_000);
+  });
 
   // ── Search
   if (membersSearch) {
@@ -3638,6 +3778,9 @@ document.addEventListener('DOMContentLoaded', () => {
   [membersPartyFilter, membersChamberFilter, membersStateFilter, membersSort].forEach(control => {
     if (control) control.addEventListener('change', applyFilters);
   });
+  if (membersSavedToggle) {
+    membersSavedToggle.addEventListener('click', () => setSavedMembersOnly(!showSavedMembersOnly));
+  }
 
   if (viewStateMembersBtn) viewStateMembersBtn.addEventListener('click', openStateMembersSearch);
   if (mapResetBtn) mapResetBtn.addEventListener('click', resetMapView);

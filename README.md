@@ -4,11 +4,16 @@ Backend cache, FastAPI routes, and a static GitHub Pages frontend for the YGN go
 
 ## Local API
 
-For local MVP work, put your Congress.gov key in an ignored `.env` file:
+For local MVP work, put keys in an ignored `.env` file or your shell environment:
 
 ```powershell
 CONGRESS_API_KEY=your-key-here
+FEC_API_KEY=your-fec-key-here
 ```
+
+Never put a real key in Python, JavaScript, committed JSON, or a workflow file. If
+a key has ever been committed, revoke and rotate it; deleting the current file
+does not remove the value from Git history.
 
 Or set it in your shell:
 
@@ -43,8 +48,13 @@ For a smaller test run:
 The FastAPI server also exposes:
 
 - `POST /cache/warm`: fill the cache explicitly.
-- `POST /cache/refresh`: refresh the lightweight top-level cache.
+- `POST /cache/refresh`: refresh the lightweight top-level cache; an authenticated
+  call with `include_ai=true` may also drain the bounded bill-AI refresh queue.
 - `GET /cache/stats`: inspect SQLite cache entries.
+
+The two write endpoints are disabled until `YGN_ADMIN_TOKEN` is configured and
+then require that value in the `X-YGN-Admin-Token` header. Normal page requests
+never use either endpoint.
 
 ## GitHub Pages static data
 
@@ -58,13 +68,52 @@ Set the repository secret once:
 gh secret set CONGRESS_API_KEY
 ```
 
-Then run the `Generate Static Data` workflow from GitHub Actions. It writes public JSON snapshots into `docs/data/` and commits them back to `main`. By default it snapshots all current congressional members for the current Congress; for a smaller test run, pass a number in the `max_members` workflow input.
+Then run the `Generate Static Data` workflow from GitHub Actions. It writes public
+JSON snapshots into `docs/data/` and commits them back to `main`. By default it
+snapshots all current congressional members, 40 recent bills and their detail
+pages, lightweight member dossiers, evidence-backed score indexes, and compact
+homepage aggregates. Semantically unchanged JSON is not rewritten, avoiding a
+large timestamp-only commit every six hours.
 
-The backend SQLite cache and the GitHub Pages static JSON serve related but different roles. SQLite is a private server-side cache used when FastAPI is running. `docs/data/` is a public static snapshot used when the site is hosted on GitHub Pages without a backend server. Member description files under `docs/data/wiki/` prefer Wikipedia summaries and fall back to a Congress.gov-generated blurb when Wikipedia has no resolvable page or rate-limits the request.
+The backend SQLite cache and the GitHub Pages static JSON serve related but
+different roles. SQLite is a short-lived private server cache. `docs/data/` is a
+durable public snapshot for GitHub Pages. Member description files prefer
+Wikipedia and fall back to a deterministic Congress.gov-based biography.
+
+### AI refresh contract
+
+Public HTTP reads never call an AI model. Bill pages immediately use the official
+Congress.gov summary plus any committed AI description/impact already in
+`docs/data/bill-ai.json`. Missing content is shown honestly as pending and queued
+for a trusted refresh.
+
+`scripts/snapshot_bill_ai.py` is the durable model writer. During the scheduled
+workflow it compares each bill's Congress-scoped ID, source update timestamp, and
+content version. Unchanged bills make zero model calls; a new or changed bill is
+generated once, written atomically, and applied to the digest and bill-detail
+snapshot in the same run. Provider failures preserve the last valid artifact.
+
+Configure either Azure OpenAI or an OpenAI-compatible endpoint through repository
+secrets or environment variables—never source code:
+
+```text
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
+AZURE_OPENAI_API_KEY=your-key
+AZURE_OPENAI_DEPLOYMENT=your-deployment
+# or
+OPENAI_API_KEY=your-key
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Free-form “public confidence” percentages are deliberately not generated. YGN
+returns an evidence-standard notice until a result can cite a real pollster,
+field dates, population, sample size, methodology, and source.
 
 ## Frontend
 
-The `docs/` folder contains a no-build static frontend.
+The `docs/` folder contains a no-build static frontend. The Congressional Members
+page supports saved-member bookmarks and a saved-only filter; bookmarks stay in
+the browser with `localStorage` and synchronize across open tabs.
 
 To open it locally in static mode:
 
@@ -118,7 +167,9 @@ Dashboard setup:
 ```text
 CONGRESS_API_KEY=your-congress-key
 FEC_API_KEY=your-fec-or-econ-key
+YGN_ADMIN_TOKEN=generate-a-long-random-value
 YGN_ENABLE_BACKGROUND_REFRESH=1
+YGN_AI_REFRESH_LIMIT=6
 YGN_CACHE_TTL_SECONDS=900
 YGN_CORS_ORIGINS=*
 ```
@@ -129,7 +180,7 @@ If you install the Heroku CLI later, the equivalent deployment flow is:
 
 ```powershell
 heroku create your-ygn-app-name
-heroku config:set CONGRESS_API_KEY=your-congress-key FEC_API_KEY=your-fec-or-econ-key YGN_ENABLE_BACKGROUND_REFRESH=1 YGN_CACHE_TTL_SECONDS=900 YGN_CORS_ORIGINS=*
+heroku config:set CONGRESS_API_KEY=your-congress-key FEC_API_KEY=your-fec-or-econ-key YGN_ADMIN_TOKEN=your-random-admin-token YGN_ENABLE_BACKGROUND_REFRESH=1 YGN_CACHE_TTL_SECONDS=900 YGN_CORS_ORIGINS=*
 git push heroku main
 ```
 
@@ -148,7 +199,11 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 ## Useful environment variables
 
 - `CONGRESS_API_KEY`: required for Congress.gov requests. It can live in `.env` for local MVP work or in GitHub Secrets for the static-data workflow.
-- `FEC_API_KEY`, `ECON_API_KEY`, or `YGN_ECON_API_KEY`: optional FEC-compatible key used for live ethics score refreshes. Without one, the backend returns varied static fallback grades.
+- `FEC_API_KEY`, `ECON_API_KEY`, or `YGN_ECON_API_KEY`: optional FEC-compatible key used by trusted ethics refreshes. Without current evidence-backed FEC data, the public grade is `N/A`; YGN does not synthesize a grade.
+- `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_API_KEY`, `AZURE_OPENAI_DEPLOYMENT`, and `AZURE_OPENAI_API_VERSION`: optional Azure OpenAI refresh configuration.
+- `OPENAI_API_KEY`, `OPENAI_BASE_URL`, and `OPENAI_MODEL`: optional OpenAI-compatible refresh configuration used when Azure is not configured.
+- `YGN_ADMIN_TOKEN`: enables and protects the `/cache/warm` and `/cache/refresh` write endpoints.
+- `YGN_AI_REFRESH_LIMIT`: maximum queued bills generated by one trusted runtime refresh. Defaults to `6` and is capped at `40`.
 - `YGN_MAX_MEMBERS`: optional static-data member limit. Defaults to `all` current members in the selected Congress.
 - `YGN_CONGRESS`: optional static-data Congress number. Defaults to the current Congress.
 - `YGN_CACHE_PATH`: optional SQLite cache path. Defaults to `empty-folder/.cache/ygn_api_cache.sqlite`.
@@ -162,4 +217,15 @@ No backend URL is required for the current GitHub Pages MVP because the site use
 - `YGN_WIKI_SEARCH_QUERY_LIMIT`: optional maximum Wikipedia search queries per member. Defaults to `2`.
 - `YGN_WIKI_SEARCH_RESULT_LIMIT`: optional maximum Wikipedia search results inspected per query. Defaults to `3`.
 - `YGN_ENABLE_BACKGROUND_REFRESH`: set to `0` to disable startup background refresh.
-- `YGN_CORS_ORIGINS`: comma-separated allowed frontend origins. Defaults to `*` for local MVP work.
+- `YGN_CORS_ORIGINS`: comma-separated allowed frontend origins. Defaults to `*`; wildcard mode is non-credentialed, while an explicit allow-list may use credentials.
+
+## Verification
+
+```powershell
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+npm test
+```
+
+The Python suite covers cache behavior, static generation, evidence-only ethics,
+public model-free reads, and bill snapshot invalidation. The browser test covers
+saved-member persistence, filtering, navigation isolation, and `?api` routing.

@@ -1,47 +1,19 @@
 {
-  "bioguideId": "C001035",
-  "candidate": null,
-  "components": {
-    "constituency_specificity": {
-      "score": 88.0,
-      "value": 1.0,
-      "weight": 0.18
-    },
-    "disclosure_baseline": {
-      "score": 60.5,
-      "value": 0.1199,
-      "weight": 0.23
-    },
-    "public_accountability_baseline": {
-      "score": 77.2,
-      "value": 0.0198,
-      "weight": 0.24
-    },
-    "public_record_completeness": {
-      "score": 96.0,
-      "value": 1.0,
-      "weight": 0.2
-    },
-    "service_context": {
-      "score": 79.7,
-      "value": 0.9667,
-      "weight": 0.1
-    },
-    "static_baseline_variation": {
-      "score": 74.8,
-      "value": 0.7317,
-      "weight": 0.05
-    }
-  },
-  "cycle": 2026,
-  "generated_at": "2026-07-10T19:54:25.805888+00:00",
-  "grade": "C+",
-  "method": "campaign_finance_v2",
-  "notes": [
-    "Live FEC finance data was unavailable; using a deterministic static fallback grade.",
-    "Static fallback grades are educational placeholders and are not legal findings or misconduct allegations."
-  ],
-  "score": 79.2,
-  "source": "static_fallback",
-  "updated_at": "2026-07-07T00:00:00+00:00"
+    "available":  false,
+    "bioguideId":  "C001035",
+    "candidate":  null,
+    "components":  {
+
+                   },
+    "cycle":  null,
+    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
+    "grade":  "N/A",
+    "method":  "campaign_finance_stock_v4",
+    "notes":  [
+                  "No current evidence-backed FEC grade is available for this member.",
+                  "YGN does not substitute synthetic or randomized values for missing public data."
+              ],
+    "score":  null,
+    "source":  "unavailable",
+    "updated_at":  null
 }

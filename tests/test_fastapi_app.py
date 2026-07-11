@@ -133,7 +133,12 @@ class FastApiAppTests(unittest.TestCase):
             return_value={"members_seen": 2}
         )
 
-        response = self.app.warm_cache(max_members=2)
+        with patch.dict(
+            self.app.os.environ, {"YGN_ADMIN_TOKEN": "test-admin-token"}
+        ):
+            response = self.app.warm_cache(
+                max_members=2, admin_token="test-admin-token"
+            )
 
         self.assertEqual(response, {"members_seen": 2})
         self.app.government.warm_government_officials_cache.assert_called_once_with(
@@ -145,6 +150,47 @@ class FastApiAppTests(unittest.TestCase):
             max_members=2,
             limit=250,
         )
+
+    def test_cache_admin_endpoints_are_disabled_without_token_config(self):
+        with patch.dict(self.app.os.environ, {}, clear=True):
+            with self.assertRaises(self.app.HTTPException) as raised:
+                self.app.refresh_cache(admin_token=None)
+
+        self.assertEqual(raised.exception.status_code, 503)
+
+    def test_refresh_cache_can_explicitly_drain_ai_for_an_admin(self):
+        self.app.government.refresh_government_officials_cache = Mock(
+            return_value={"aiRefresh": {"completed": 1}}
+        )
+        with patch.dict(
+            self.app.os.environ, {"YGN_ADMIN_TOKEN": "test-admin-token"}
+        ):
+            response = self.app.refresh_cache(
+                include_ai=True, admin_token="test-admin-token"
+            )
+
+        self.assertEqual(response["aiRefresh"]["completed"], 1)
+        self.app.government.refresh_government_officials_cache.assert_called_once_with(
+            include_ai=True
+        )
+
+    def test_ai_status_never_probes_the_model(self):
+        config = {
+            "kind": "openai",
+            "url": "https://api.openai.com/v1/chat/completions",
+            "model": "gpt-4o-mini",
+        }
+        with patch.object(
+            self.app.government, "_ai_provider_config", return_value=config
+        ), patch.object(
+            self.app.government,
+            "_llm_chat",
+            side_effect=AssertionError("status must not call the model"),
+        ):
+            response = self.app.ai_status()
+
+        self.assertTrue(response["configured"])
+        self.assertFalse(response["probe_performed"])
 
     def test_cache_stats_endpoint_returns_stats(self):
         self.app.government.get_cache_stats = Mock(return_value={"total_entries": 3})

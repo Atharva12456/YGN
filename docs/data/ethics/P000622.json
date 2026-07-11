@@ -1,49 +1,19 @@
 {
-  "bioguideId": "P000622",
-  "candidate": {
-    "candidate_id": "H6FL01390",
-    "district": "01",
-    "name": "PATRONIS, JIMMY JR.",
-    "office": "H",
-    "party": "REP",
-    "state": "FL"
-  },
-  "components": {
-    "donor_diversity": {
-      "score": 50.7,
-      "value": 0.2385,
-      "weight": 0.2
-    },
-    "in_state_support": {
-      "score": 97.4,
-      "value": 0.8146,
-      "weight": 0.1
-    },
-    "pac_independence": {
-      "score": 93.0,
-      "value": 0.8465,
-      "weight": 0.25
-    },
-    "self_party_independence": {
-      "score": 96.0,
-      "value": 0.9907,
-      "weight": 0.15
-    },
-    "small_donor": {
-      "score": 79.8,
-      "value": 0.1681,
-      "weight": 0.3
-    }
-  },
-  "cycle": 2026,
-  "generated_at": "2026-07-10T19:54:25.805888+00:00",
-  "grade": "B-",
-  "method": "campaign_finance_v3",
-  "notes": [
-    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
-  ],
-  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 81.5,
-  "source": "fec_live",
-  "updated_at": "2026-07-10T19:54:58.635939+00:00"
+    "available":  false,
+    "bioguideId":  "P000622",
+    "candidate":  null,
+    "components":  {
+
+                   },
+    "cycle":  null,
+    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
+    "grade":  "N/A",
+    "method":  "campaign_finance_stock_v4",
+    "notes":  [
+                  "No current evidence-backed FEC grade is available for this member.",
+                  "YGN does not substitute synthetic or randomized values for missing public data."
+              ],
+    "score":  null,
+    "source":  "unavailable",
+    "updated_at":  null
 }

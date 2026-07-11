@@ -1,5 +1,9 @@
 {
-  "dependencies": {
+  "scripts": {
+    "check": "node --check docs/app.js && node --check test_saved_members.js",
+    "test": "npm run check && node test_saved_members.js"
+  },
+  "devDependencies": {
     "express": "^5.2.1",
     "puppeteer": "^25.3.0"
   }
