@@ -228,15 +228,26 @@ def _vote_notability(vote):
 def build_vote_spotlight(backend, digest, laws, keep=5):
     """Collect roll-call votes from recently-active bills + new laws, keep the
     most notable (closest, fullest) ones. Pure precompute -- no model."""
+    # Interleave sources under the fetch cap: newly-enacted laws are exactly the
+    # bills with notable final-passage roll calls, so they must not be starved
+    # out by a long digest (digest alone can exhaust the cap).
+    digest_bills = [
+        (b.get("detailPath"), b.get("identifier"), b.get("title"))
+        for b in (digest or {}).get("bills") or []
+        if b.get("detailPath")
+    ][:10]
+    law_bills = [
+        (l.get("detailPath"), l.get("identifier"), l.get("title"))
+        for l in (laws or {}).get("laws") or []
+        if l.get("detailPath")
+    ][:6]
     candidates = []
     seen_paths = set()
-    for source in ((digest or {}).get("bills") or [], (laws or {}).get("laws") or []):
-        for bill in source:
-            path = bill.get("detailPath")
-            if not path or path in seen_paths:
-                continue
-            seen_paths.add(path)
-            candidates.append((path, bill.get("identifier"), bill.get("title")))
+    for entry in law_bills + digest_bills:
+        if entry[0] in seen_paths:
+            continue
+        seen_paths.add(entry[0])
+        candidates.append(entry)
 
     def fetch_votes(candidate):
         path, identifier, title = candidate
@@ -279,10 +290,15 @@ def build_vote_spotlight(backend, digest, laws, keep=5):
                 }
             )
 
-    spotlight.sort(key=lambda v: (v.get("date") or "", v["_score"]), reverse=True)
-    for vote in spotlight:
+    # SELECT the most notable votes (closest margins, fullest chambers), then
+    # DISPLAY newest-first. Selecting by date would let recent blowouts crowd
+    # out an older nail-biter, contradicting the caption users see.
+    spotlight.sort(key=lambda v: (v["_score"], v.get("date") or ""), reverse=True)
+    chosen = spotlight[:keep]
+    chosen.sort(key=lambda v: v.get("date") or "", reverse=True)
+    for vote in chosen:
         vote.pop("_score", None)
-    return {**_stamp(), "votes": spotlight[:keep]}
+    return {**_stamp(), "votes": chosen}
 
 
 # --- Weekly AI brief (model runs ONLY when digest content changes) -----------
@@ -330,7 +346,10 @@ def build_weekly_brief(backend, force=False):
         "Write the weekly brief now, following your rules (4-6 complete sentences, <=120 "
         "words, most consequential first, nonpartisan)."
     )
-    summary = backend._llm_chat(WEEKLY_BRIEF_SYSTEM_PROMPT, user_prompt, max_tokens=300)
+    # _llm_chat is guarded so public request paths can never trigger generation;
+    # this build script is exactly the explicit refresh the guard exists for.
+    with backend._allow_ai_generation():
+        summary = backend._llm_chat(WEEKLY_BRIEF_SYSTEM_PROMPT, user_prompt, max_tokens=300)
     payload = {
         **_stamp(
             {

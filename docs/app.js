@@ -1208,12 +1208,29 @@ function billStage(bill) {
       : ['Introduced', `Passed ${first}`, `Passed ${second}`, 'To President', 'Became Law'];
 
   const passedRe = chamber => new RegExp(`(passed|agreed to)( in| by)?( the)? ${chamber.toLowerCase()}`);
+  // "Received in the {second chamber}" / "Held at the desk" are the standard
+  // resting states AFTER the first chamber passes — they must not read as
+  // "Introduced" (congress.gov shows "Passed {first}" for these).
+  const receivedInSecond = new RegExp(`received in( the)? ${second.toLowerCase()}`);
+  const secondAgreedLoose = new RegExp(`received in( the)? ${second.toLowerCase()}[^.]*agreed to`);
+
   let index = 0;
   let sub = null;
   if (!isSimpleRes && !isConcurrentRes && /became public law|public law no|signed by president/.test(action)) index = 4;
   else if (!isSimpleRes && !isConcurrentRes && /presented to (the )?president/.test(action)) index = 3;
-  else if (!isSimpleRes && passedRe(second).test(action)) index = 2;
-  else if (passedRe(first).test(action) || /passed\/agreed to in/.test(action) || /submitted in the senate.*agreed to/.test(action)) index = 1;
+  else if (!isSimpleRes && (passedRe(second).test(action) || secondAgreedLoose.test(action))) index = 2;
+  else if (
+    passedRe(first).test(action)
+    || /passed\/agreed to in/.test(action)
+    || /submitted in the senate.*agreed to/.test(action)
+    // House phrasing omits the chamber: "On agreeing to the resolution ... Agreed to".
+    || /on agreeing to the resolution[^.]*agreed to/.test(action)
+    || receivedInSecond.test(action)
+    || /held at the desk/.test(action)
+  ) {
+    index = 1;
+    if (receivedInSecond.test(action) || /held at the desk/.test(action)) sub = `In ${second}`;
+  }
   else if (/referred to|committee/.test(action)) { index = 0; sub = 'In committee'; }
 
   index = Math.min(index, stages.length - 1);
@@ -3834,8 +3851,9 @@ async function initVoteSpotlight() {
   const votes = (data && data.votes) || [];
   if (!votes.length) { host.hidden = true; return; }
   const rows = votes.map(v => {
-    const total = (v.yea || 0) + (v.nay || 0) || 1;
-    const yeaPct = ((v.yea || 0) / total) * 100;
+    v = { ...v, yea: Number(v.yea) || 0, nay: Number(v.nay) || 0 };
+    const total = (v.yea + v.nay) || 1;
+    const yeaPct = (v.yea / total) * 100;
     const href = v.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(v.detailPath)}`) : null;
     const title = esc(v.billTitle || v.identifier || 'Bill');
     const head = href ? `<a href="${href}">${title}</a>` : title;
