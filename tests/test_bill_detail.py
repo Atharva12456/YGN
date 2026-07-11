@@ -99,6 +99,32 @@ class ConfidenceParsingTests(unittest.TestCase):
         for m in ["gpt-4o-mini", "gpt-4o", "gpt-4.1", "gpt-35-turbo", "", None]:
             self.assertFalse(f(m), m)
 
+    def test_committed_bill_ai_served_without_provider(self):
+        store = {"bills": {"HR 283": {
+            "description": {"summary": "Committed description."},
+            "impact": {"summary": "Committed impact."},
+        }}}
+        with mock.patch.object(self.gov, "_static_bill_ai_store", return_value=store["bills"]), \
+             mock.patch.object(self.gov, "_ai_provider_config", return_value=None), \
+             mock.patch.object(self.gov, "_llm_chat", side_effect=AssertionError("must not call AI")):
+            desc = self.gov.generate_bill_description({"identifier": "HR 283"})
+            impact = self.gov.generate_bill_impact({"identifier": "HR 283"})
+        self.assertEqual(desc["summary"], "Committed description.")
+        self.assertEqual(desc["source"], "committed")
+        self.assertEqual(impact["summary"], "Committed impact.")
+
+    def test_bill_ai_context_includes_bipartisanship(self):
+        ctx = self.gov._bill_ai_context({
+            "title": "Test Act",
+            "sponsors": [{"name": "Rep. X", "party": "D", "state": "CA"}],
+            "cosponsorCount": 5,
+            "cosponsorParties": {"D": 3, "R": 2},
+            "policyArea": "Health",
+        })
+        self.assertIn("bipartisan", ctx)
+        self.assertIn("Lead sponsor", ctx)
+        self.assertIn("Health", ctx)
+
 
 if __name__ == "__main__":
     unittest.main()

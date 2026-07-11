@@ -23,6 +23,13 @@ jobs:
     env:
       CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
       FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+      # Optional: set these repo secrets to let the build snapshot AI bill
+      # descriptions/impacts into docs/data/bill-ai.json (served without
+      # re-calling the model). If unset, the snapshot step no-ops gracefully.
+      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+      AZURE_OPENAI_API_VERSION: ${{ secrets.AZURE_OPENAI_API_VERSION }}
       MAX_MEMBERS: ${{ github.event.inputs.max_members || 'all' }}
       YGN_CONGRESS: ${{ github.event.inputs.congress }}
       YGN_WIKI_MAX_ATTEMPTS: "1"
@@ -49,6 +56,9 @@ jobs:
 
       - name: Generate static JSON snapshots
         run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS"
+
+      - name: Snapshot AI bill descriptions/impacts
+        run: python scripts/snapshot_bill_ai.py --limit 30
 
       - name: Commit generated data
         run: |

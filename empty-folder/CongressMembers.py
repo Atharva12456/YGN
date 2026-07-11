@@ -40,6 +40,11 @@ STATIC_PROFILES_DIR = Path(__file__).parent.parent / "docs" / "data" / "profiles
 # committed under docs/data/ethics/). The live API prefers these so it doesn't
 # spend per-request FEC quota — see get_ethics_score.
 STATIC_PRECOMPUTED_ETHICS_DIR = Path(__file__).parent.parent / "docs" / "data" / "ethics"
+# Committed AI content for bills (descriptions + impacts), keyed by bill
+# identifier. Served before calling the AI so known bills never regenerate —
+# survives Heroku dyno restarts (the SQLite AI cache does not) and works even
+# when no AI provider is configured. Refreshed by scripts/snapshot_bill_ai.py.
+STATIC_BILL_AI_PATH = Path(__file__).parent.parent / "docs" / "data" / "bill-ai.json"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 REQUEST_TIMEOUT_SECONDS = 20
@@ -830,11 +835,11 @@ def getRecentBills():
     # re-sort by latest ACTION date so the digest shows genuinely recent
     # legislative activity (updateDate is a record refresh, not an action).
     now = datetime.now(timezone.utc)
-    from_dt = (now - timedelta(days=90)).strftime("%Y-%m-%dT00:00:00Z")
+    from_dt = (now - timedelta(days=120)).strftime("%Y-%m-%dT00:00:00Z")
     data = _congress_get(
         "/bill",
         params={
-            "limit": 40,
+            "limit": 80,
             "sort": "updateDate+desc",
             "fromDateTime": from_dt,
             "format": "json",
@@ -1346,11 +1351,20 @@ def get_bill_detail(congress, bill_type, number, include_votes=True):
         if isinstance(policy_area, dict):
             policy_area = policy_area.get("name")
 
+        cosponsor_parties = {}
+        for person in cosponsors:
+            party = (person.get("party") or "?").strip() or "?"
+            cosponsor_parties[party] = cosponsor_parties.get(party, 0) + 1
+
         digest_seed = {
             "identifier": _bill_identifier(bill_ref),
             "title": _first_nonempty(detail.get("title"), "Untitled bill"),
             "description": _bill_description(bill_ref, detail, summaries),
             "policyArea": policy_area,
+            "originChamber": detail.get("originChamber"),
+            "sponsors": sponsors,
+            "cosponsorCount": _bill_cosponsor_count(bill_ref, detail) or len(cosponsors),
+            "cosponsorParties": cosponsor_parties,
             "committees": _bill_committee_names(detail),
             "latestAction": {
                 "date": latest_action.get("actionDate"),
@@ -1431,32 +1445,49 @@ AI_DESCRIPTION_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_CONFIDENCE_TTL_SECONDS = 12 * 60 * 60
 DEFAULT_AI_MODEL = "gpt-4o-mini"
 BILL_IMPACT_SYSTEM_PROMPT = (
-    "You are a nonpartisan civic analyst for a U.S. government information site. "
-    "Explain federal legislation in plain, neutral language for a general audience. "
-    "Be factual and concise. Do not use partisan framing, do not predict whether a "
-    "bill will pass, and do not invent details beyond what you are given."
+    "You are a nonpartisan legislative analyst for a U.S. civic-information site. Your job "
+    "is to explain, in plain language a curious 9th-grader could follow, WHO and WHAT a bill "
+    "would affect if it became law. Rules: (1) Be concrete and specific to THIS bill's "
+    "subject -- name the actual groups, agencies, industries, states, or programs involved; "
+    "never write generic filler like 'this bill could affect various stakeholders.' "
+    "(2) Ground every claim in the provided title/summary/policy area; if the material is too "
+    "thin to identify real effects, say so in one sentence and stop -- do not pad or invent "
+    "provisions, dollar amounts, or effects that aren't supported. (3) Stay strictly "
+    "nonpartisan: no praise, no criticism, no predicting passage, no 'supporters say / critics "
+    "say' framing. (4) Prefer active voice and everyday words over legislative jargon."
 )
 BILL_DESCRIPTION_SYSTEM_PROMPT = (
-    "You are a nonpartisan civic explainer for a U.S. government information site. "
-    "Describe what a bill IS in plain, neutral language for a general audience: its "
-    "subject, what it proposes to change, and its scope. Be factual and concise. Do "
-    "not use partisan framing and do not invent provisions beyond what you are given."
+    "You are a nonpartisan civic explainer for a U.S. government-information site. In plain "
+    "language a general audience can follow, describe what a bill IS: its subject, the concrete "
+    "change it proposes, and its scope (who/what it covers). Rules: (1) Lead with the single "
+    "clearest sentence a reader needs -- what the bill does -- then add scope. (2) Be specific "
+    "to this bill; never generic boilerplate. (3) Do not invent provisions, numbers, or effects "
+    "beyond the provided material; if it is too thin, say so plainly in one sentence. "
+    "(4) Strictly neutral: no partisan framing, no praise or criticism, no passage prediction. "
+    "(5) Do not restate the bill number or 'this bill is a bill'; get straight to substance."
 )
-# The "public confidence" prompts return a calibrated ESTIMATE with reasoning, not
-# a real poll. The system prompt forces a clearly-labeled estimate + JSON so the
-# UI can render a gauge while making the "not a poll" nature unmistakable.
+# The "public confidence" prompts return a calibrated ESTIMATE with reasoning, not a real
+# poll. The system prompt forces a clearly-labeled estimate + strict JSON so the UI can
+# render a gauge while making the "not a poll" nature unmistakable.
 CONFIDENCE_SYSTEM_PROMPT = (
-    "You are a nonpartisan public-opinion analyst for a civic education site. Given a "
-    "political subject, produce a CALIBRATED ESTIMATE of U.S. public confidence/support "
-    "based on general historical patterns and publicly known context up to your training "
-    "data. You do not have live polling. Be explicitly balanced, name the main reasons "
-    "people are for and against, avoid partisanship, and never state your estimate as a "
-    "measured fact. Respond ONLY with a compact JSON object and no other text, using keys: "
-    '"confidence" (integer 0-100, estimated share expressing confidence/support), '
+    "You are a nonpartisan public-opinion analyst for a civic-education site. Given a political "
+    "subject, produce a CALIBRATED ESTIMATE of current U.S. public confidence/support. "
+    "Method: (1) Anchor on what real polling (Gallup, Pew, AP-NORC, Chicago Council, Marquette, "
+    "etc.) has historically shown for this subject or the closest comparable, and reason from "
+    "that baseline -- do not just guess a round number. (2) You have NO live polling, so treat "
+    "the number as an informed estimate, not a measurement, and set confidence_in_estimate "
+    "honestly (use 'low' for fast-moving or niche subjects). (3) Be genuinely balanced: the "
+    "support and concern factors must each be substantive and specific to this subject, not "
+    "mirror-images or throwaways. (4) Strict nonpartisanship: describe why different groups hold "
+    "their views without endorsing any; avoid loaded language. (5) Reflect real polarization -- "
+    "if opinion splits sharply by party, say so and lean the label toward 'Mixed'. "
+    "Respond with ONLY a compact JSON object, no prose or code fences, using keys: "
+    '"confidence" (integer 0-100 = estimated share expressing confidence/support), '
     '"label" (one of "Very low","Low","Mixed","Moderate","High","Very high"), '
-    '"summary" (2-3 neutral sentences), "support_factors" (array of up to 3 short strings), '
-    '"concern_factors" (array of up to 3 short strings), "confidence_in_estimate" (one of '
-    '"low","medium","high" reflecting how certain YOU are given no live data).'
+    '"summary" (2-3 neutral sentences that justify the number and note uncertainty), '
+    '"support_factors" (array of up to 3 short specific strings), '
+    '"concern_factors" (array of up to 3 short specific strings), '
+    '"confidence_in_estimate" (one of "low","medium","high").'
 )
 
 
@@ -1629,44 +1660,102 @@ def ai_key_diagnostic():
     return result
 
 
-def generate_bill_impact(bill_item):
-    """Plain-language AI impact analysis for a digest bill item, cached 30 days.
-
-    Returns {status, summary, model, provider, generated_at} or None when no AI
-    provider is configured (callers keep the existing placeholder in that case).
-    """
-    config = _ai_provider_config()
-    if not config:
-        return None
-
-    identifier = (
+def _bill_ai_identifier(bill_item):
+    return (
         bill_item.get("identifier")
         or bill_item.get("url")
         or bill_item.get("title")
         or "unknown"
     )
+
+
+def _static_bill_ai_store():
+    """Committed {identifier -> {description, impact}} AI content for bills.
+    Read once per file mtime; treat as read-only."""
+    store = _read_json_file_cached(STATIC_BILL_AI_PATH, {})
+    if isinstance(store, dict):
+        bills = store.get("bills")
+        if isinstance(bills, dict):
+            return bills
+    return {}
+
+
+def _static_bill_ai_entry(identifier, field):
+    """A committed AI `field` ('description'|'impact') for this bill, or None."""
+    entry = _static_bill_ai_store().get(identifier)
+    if isinstance(entry, dict):
+        value = entry.get(field)
+        if isinstance(value, dict) and value.get("summary"):
+            return {**value, "source": "committed"}
+    return None
+
+
+def _bill_ai_context(bill_item):
+    """Build the richest available context block for the AI (sponsor party,
+    bipartisanship signal, chamber, committees, latest action, official summary)."""
+    lines = [f"Bill: {bill_item.get('title') or 'Untitled bill'}"]
+    chamber = bill_item.get("originChamber")
+    if chamber:
+        lines.append(f"Originating chamber: {chamber}")
+    policy_area = bill_item.get("policyArea")
+    lines.append(f"Policy area: {policy_area or 'Unspecified'}")
+
+    sponsors = bill_item.get("sponsors") or []
+    if sponsors and isinstance(sponsors[0], dict):
+        s = sponsors[0]
+        who = " ".join(part for part in (s.get("name"), s.get("party") and f"[{s.get('party')}-{s.get('state') or '?'}]") if part)
+        if who:
+            lines.append(f"Lead sponsor: {who}")
+
+    count = bill_item.get("cosponsorCount")
+    parties = bill_item.get("cosponsorParties")
+    if isinstance(parties, dict) and parties:
+        breakdown = ", ".join(f"{n} {p}" for p, n in sorted(parties.items()))
+        bipartisan = len([p for p in parties if p in ("D", "R")]) >= 2
+        lines.append(
+            f"Cosponsors: {count if count is not None else sum(parties.values())} "
+            f"({breakdown}){'; bipartisan' if bipartisan else ''}"
+        )
+    elif count is not None:
+        lines.append(f"Cosponsors: {count}")
+
+    committees = ", ".join(bill_item.get("committees") or [])
+    if committees:
+        lines.append(f"Committees: {committees}")
+    latest = (bill_item.get("latestAction") or {}).get("text")
+    if latest:
+        lines.append(f"Latest action: {latest}")
+    official = (bill_item.get("description") or {}).get("text") or ""
+    lines.append(f"Official summary: {official or 'No official summary published yet.'}")
+    return "\n".join(lines)
+
+
+def generate_bill_impact(bill_item):
+    """Plain-language AI impact analysis for a bill, cached 30 days. Prefers a
+    committed snapshot (docs/data/bill-ai.json) so known bills never regenerate
+    and work even with no AI provider. Returns {status, summary, ...} or None."""
+    identifier = _bill_ai_identifier(bill_item)
+    committed = _static_bill_ai_entry(identifier, "impact")
+    if committed:
+        return {"status": "AI impact analysis", **committed}
+
+    config = _ai_provider_config()
+    if not config:
+        return None
+
     cache_key = _build_cache_key(
-        "bill-impact-v1", {"id": identifier, "model": config["model"]}
+        "bill-impact-v2", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
-        title = bill_item.get("title") or "Untitled bill"
-        description = (bill_item.get("description") or {}).get("text") or ""
-        policy_area = bill_item.get("policyArea") or "Unspecified"
-        committees = ", ".join(bill_item.get("committees") or []) or "Not yet referred"
-        latest = (bill_item.get("latestAction") or {}).get("text") or "No action recorded"
         user_prompt = (
-            f"Bill: {title}\n"
-            f"Policy area: {policy_area}\n"
-            f"Committees: {committees}\n"
-            f"Latest action: {latest}\n"
-            f"Official summary: {description or 'No official summary published yet.'}\n\n"
-            "In 2-3 sentences, explain in plain language what this bill would do and "
-            "who or what it would affect if enacted (which groups, sectors, agencies, "
-            "or people). If the available summary is too thin to assess impact, say "
-            "that plainly instead of guessing."
+            f"{_bill_ai_context(bill_item)}\n\n"
+            "In 2-3 sentences, explain what this bill would do and specifically who or what "
+            "it would affect if enacted -- name the actual groups, agencies, industries, "
+            "states, or programs. If the material is too thin to identify real effects, say "
+            "that in one sentence instead of guessing."
         )
-        summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=220)
+        summary = _llm_chat(BILL_IMPACT_SYSTEM_PROMPT, user_prompt, max_tokens=260)
         return {
             "status": "AI impact analysis",
             "summary": summary,
@@ -1684,35 +1773,29 @@ def generate_bill_impact(bill_item):
 
 
 def generate_bill_description(bill_item):
-    """Plain-language AI description of what a bill IS (distinct from its impact),
-    cached 30 days. Returns {summary, model, provider, generated_at} or None."""
+    """Plain-language AI description of what a bill IS. Prefers a committed snapshot,
+    then the AI provider. Returns {summary, ...} or None."""
+    identifier = _bill_ai_identifier(bill_item)
+    committed = _static_bill_ai_entry(identifier, "description")
+    if committed:
+        return committed
+
     config = _ai_provider_config()
     if not config:
         return None
 
-    identifier = (
-        bill_item.get("identifier")
-        or bill_item.get("url")
-        or bill_item.get("title")
-        or "unknown"
-    )
     cache_key = _build_cache_key(
-        "bill-description-v1", {"id": identifier, "model": config["model"]}
+        "bill-description-v2", {"id": identifier, "model": config["model"]}
     )
 
     def fetch_json():
-        title = bill_item.get("title") or "Untitled bill"
-        official = (bill_item.get("description") or {}).get("text") or ""
-        policy_area = bill_item.get("policyArea") or "Unspecified"
         user_prompt = (
-            f"Bill: {title}\n"
-            f"Policy area: {policy_area}\n"
-            f"Official summary: {official or 'No official summary published yet.'}\n\n"
-            "In 2-3 sentences, describe in plain language what this bill is and what it "
-            "proposes to do. Focus on the subject and the change it would make, not on "
-            "predicting passage. If the available text is too thin, say so plainly."
+            f"{_bill_ai_context(bill_item)}\n\n"
+            "In 2-3 sentences, describe what this bill is and the concrete change it "
+            "proposes, then its scope (who/what it covers). Be specific to this bill; if "
+            "the text is too thin, say so plainly in one sentence."
         )
-        summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=200)
+        summary = _llm_chat(BILL_DESCRIPTION_SYSTEM_PROMPT, user_prompt, max_tokens=240)
         return {
             "summary": summary,
             "model": config["model"],
@@ -1769,18 +1852,28 @@ def _generate_confidence(kind, subject, context, cache_id):
         return None
 
     cache_key = _build_cache_key(
-        "public-confidence-v1", {"kind": kind, "id": cache_id, "model": config["model"]}
+        "public-confidence-v2", {"kind": kind, "id": cache_id, "model": config["model"]}
     )
 
     def fetch_json():
+        framing = (
+            "This is a sitting member of Congress; estimate public confidence/approval of "
+            "this specific person (not their party), reasoning from typical incumbent "
+            "approval patterns and any notable national profile."
+            if kind == "candidate"
+            else "This is a political event, policy, war, or bill; estimate current U.S. "
+            "public support/confidence, reasoning from the closest real polling you know."
+        )
         user_prompt = (
             f"Subject type: {kind}\n"
             f"Subject: {subject}\n"
             f"Context: {context or 'No additional context provided.'}\n\n"
-            "Estimate current U.S. public confidence/support for this subject. Return the "
-            "JSON object exactly as specified in your instructions."
+            f"{framing}\n"
+            "Anchor on real historical polling for this or the closest comparable subject, "
+            "reflect any sharp partisan split, and return ONLY the JSON object specified in "
+            "your instructions."
         )
-        raw = _llm_chat(CONFIDENCE_SYSTEM_PROMPT, user_prompt, max_tokens=380, temperature=0.3)
+        raw = _llm_chat(CONFIDENCE_SYSTEM_PROMPT, user_prompt, max_tokens=420, temperature=0.3)
         parsed = _parse_confidence_json(raw)
         parsed.update(
             {
@@ -1840,10 +1933,16 @@ def generate_candidate_confidence(bioguide_id):
     return result
 
 
+# Cap on FRESH AI impact calls per cold digest build. Committed impacts (from
+# bill-ai.json) are always applied for free; only bills lacking one and beyond
+# this budget keep the placeholder until the snapshot job fills them in.
+AI_DIGEST_IMPACT_BUDGET = 25
+
+
 def getRecentBillDigest(limit=5):
-    limit = max(1, min(int(limit), 20))
+    limit = max(1, min(int(limit), 40))
     cache_key = _build_cache_key(
-        "recent-bill-digest-v1",
+        "recent-bill-digest-v2",
         {
             "limit": limit,
         },
@@ -1866,11 +1965,26 @@ def getRecentBillDigest(limit=5):
                     except Exception as exc:  # noqa: BLE001
                         LOGGER.warning("Bill digest item failed: %s", exc)
             items = [item for item in items if item]
+        # Apply committed impacts (bill-ai.json) to ALL items for free; spend
+        # fresh AI calls only on the most-recent items that lack one, up to a
+        # budget so a 40-bill digest can't fan out into 40 model calls.
+        committed_applied = 0
+        need_ai = []
+        for item in items:
+            committed = _static_bill_ai_entry(_bill_ai_identifier(item), "impact")
+            if committed:
+                item["impact"] = {
+                    **item["impact"], "status": "AI impact analysis",
+                    "summary": committed["summary"], "generated_at": committed.get("generated_at"),
+                }
+                committed_applied += 1
+            else:
+                need_ai.append(item)
+
         ai_on = ai_insights_available()
-        if ai_on and items:
-            # Generate AI impacts concurrently (reasoning models are slow; a
-            # sequential loop over 10-20 bills would blow the request budget).
-            # Bounded worker count avoids hammering the provider's rate limit.
+        if ai_on and need_ai:
+            budget = need_ai[:AI_DIGEST_IMPACT_BUDGET]
+
             def _impact_for(item):
                 try:
                     return item, generate_bill_impact(item)
@@ -1878,8 +1992,8 @@ def getRecentBillDigest(limit=5):
                     LOGGER.warning("Bill impact generation failed: %s", exc)
                     return item, None
 
-            with ThreadPoolExecutor(max_workers=min(5, len(items))) as pool:
-                for item, impact in pool.map(_impact_for, items):
+            with ThreadPoolExecutor(max_workers=min(5, len(budget))) as pool:
+                for item, impact in pool.map(_impact_for, budget):
                     if impact and impact.get("summary"):
                         item["impact"] = {
                             **item["impact"],
@@ -1892,7 +2006,7 @@ def getRecentBillDigest(limit=5):
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "source": "congress_api",
             "cache_ttl_seconds": _cache_ttl_seconds(),
-            "impact_status": "ai" if ai_on else "placeholder_until_ai_key",
+            "impact_status": "ai" if (ai_on or committed_applied) else "placeholder_until_ai_key",
             "bills": items,
         }
 
