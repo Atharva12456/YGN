@@ -1578,6 +1578,9 @@ def get_bill_ai(congress, bill_type, number):
 AI_IMPACT_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_DESCRIPTION_TTL_SECONDS = 30 * 24 * 60 * 60
 AI_CONFIDENCE_TTL_SECONDS = 12 * 60 * 60
+# Model calls get a longer HTTP timeout than ordinary API fetches: reasoning
+# models chew on the full bill text for well over the global 20s.
+AI_REQUEST_TIMEOUT_SECONDS = 60
 DEFAULT_AI_MODEL = "gpt-4o-mini"
 BILL_IMPACT_SYSTEM_PROMPT = (
     "You are a nonpartisan legislative analyst for a U.S. civic-information site. Your job "
@@ -1711,9 +1714,13 @@ def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
     last_error = None
     for _ in range(3):
         try:
+            # Reasoning models (gpt-5-mini) on a full-bill-text prompt routinely
+            # exceed the global 20s API timeout; give model calls their own budget.
+            # Even if Heroku cuts the client request at 30s, this handler finishes
+            # and caches the result, so the next request serves it instantly.
             response = requests.post(
                 config["url"], params=params, headers=headers,
-                json=build_body(), timeout=REQUEST_TIMEOUT_SECONDS,
+                json=build_body(), timeout=AI_REQUEST_TIMEOUT_SECONDS,
             )
         except requests.RequestException as exc:
             LOGGER.warning("AI provider connection failed: %s", exc)
