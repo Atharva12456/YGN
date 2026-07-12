@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "HCONRES",
     "updatedAt": "2026-03-16T15:58:00Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution authorizes the U.S. Capitol rotunda for the lying in state of seven named Army service members. The President pro tempore, the Speaker, and the Architect of the Capitol will set the date and arrange the ceremonies for those who served in support of Operation Epic Fury.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:12:12.375241+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b4dd0e0ecb8434cfdb431df1",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution authorizes the U.S. Capitol Rotunda to serve for the lying in state of seven named Army service members, including Major Jeffrey R. O'Brien. It directs the President pro tempore, Speaker, and Architect of the Capitol to set the date and arrange the event.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:12:20.935340+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b4dd0e0ecb8434cfdb431df1",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:02.968210+00:00",
   "source": "congress_api"

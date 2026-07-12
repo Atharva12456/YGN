@@ -72,6 +72,14 @@ jobs:
       - name: Snapshot AI bill descriptions/impacts
         run: python scripts/snapshot_bill_ai.py --limit 40
 
+      - name: Harvest AI bill content from the live site (CI has no AI key)
+        # The live app has the AI provider key and generates bill AI on its
+        # background-refresh queue; this pulls that content into the committed
+        # store so the digest never gets stuck on "queued" placeholders even
+        # when the AZURE_OPENAI_* secrets aren't set in this repo. Bills not yet
+        # generated are queued by the fetch and picked up on the next run.
+        run: python scripts/harvest_bill_ai.py --limit 40 || echo "harvest skipped"
+
       - name: Build civic data snapshots (laws, hearings, EOs, treaties, votes, weekly brief)
         run: python scripts/build_civic_data.py
 

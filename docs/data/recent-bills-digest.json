@@ -1,10 +1,18 @@
 {
-  "ai_cached": 2,
+  "ai_cached": 7,
   "ai_mode": "cache_refresh_only",
-  "ai_queued": 38,
+  "ai_queued": 33,
   "bills": [
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "The bill amends the FCRA by replacing \"active duty military consumer\" with \"armed forces member consumer\" and defining it to include any armed forces member. Changes affect 15 U.S.C. 1681c\u20111(k) and 1681t(b)(1)(K), take effect one year after enactment, and extend the FCRA credit-monitoring provisions to all armed forces members.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:25.423662+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "001eef65eec26a8f107b77b7",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/2074?format=json",
       "committees": [],
       "congress": 119,
@@ -23,8 +31,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The bill amends the FCRA to treat any U.S. armed forces member under 10 U.S.C. 101(a) as an \"armed forces member consumer\" and extend credit monitoring regardless of duty. It affects Equifax, Experian, TransUnion; lenders and furnishers; credit\u2011monitoring providers; enforcers CFPB, FTC, state attorneys general.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:29.857623+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "001eef65eec26a8f107b77b7",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-16",
@@ -63,7 +77,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This concurrent resolution expresses support for recognizing March 10, 2026, as \"Abortion Provider Appreciation Day\" to honor abortion providers and staff. It applauds their courage and care, affirms Congress's commitment to their safety and ability to provide care, and highlights impacts of state restrictions on access nationwide.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:34.616867+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "365e7081b7e576993487e2f4",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/78?format=json",
       "committees": [],
       "congress": 119,
@@ -82,8 +104,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "This concurrent resolution recognizes March 10, 2026, as \"Abortion Provider Appreciation Day\" for abortion providers and staff at independent clinics, Planned Parenthood centers, hospitals, and private physician offices. It references patients, communities, roughly 20 States with abortion bans, and the FACE Act.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:43.442820+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "365e7081b7e576993487e2f4",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-12",
@@ -122,7 +150,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This House resolution censures Representative Andrew Ogles and requires him to appear in the House well for a public reading of the censure. It also removes him from the House Committee on Homeland Security, applying only to Representative Ogles and his membership on that standing committee.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:50.093197+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "bf50c6a46528fab093fcfa34",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1113?format=json",
       "committees": [],
       "congress": 119,
@@ -141,8 +177,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "This resolution would censure Representative Andrew Ogles for publicly making Islamophobic and anti\u2011immigrant statements and require him to appear in the well of the U.S. House for a public reading of the censure by the Speaker. It removes him from the House Homeland Security Committee.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:12:01.799133+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "bf50c6a46528fab093fcfa34",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-12",
@@ -181,7 +223,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This resolution authorizes the U.S. Capitol rotunda for the lying in state of seven named Army service members. The President pro tempore, the Speaker, and the Architect of the Capitol will set the date and arrange the ceremonies for those who served in support of Operation Epic Fury.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:12:12.375241+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b4dd0e0ecb8434cfdb431df1",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/77?format=json",
       "committees": [],
       "congress": 119,
@@ -200,8 +250,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "This resolution authorizes the U.S. Capitol Rotunda to serve for the lying in state of seven named Army service members, including Major Jeffrey R. O'Brien. It directs the President pro tempore, Speaker, and Architect of the Capitol to set the date and arrange the event.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:12:20.935340+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b4dd0e0ecb8434cfdb431df1",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-12",
@@ -240,7 +296,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This House resolution recognizes the 245th anniversary of the Battle of Guilford Courthouse, honors the patriots who fought there, and encourages all United States citizens to visit the Guilford Courthouse National Military Park. It covers the Guilford Courthouse National Military Park in Guilford County, North Carolina, and is nonbinding.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:55.392717+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "654036de3eb0ca9fa022b677",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1111?format=json",
       "committees": [],
       "congress": 119,
@@ -259,8 +323,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1111"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The resolution recognizes the 245th anniversary of the Battle of Guilford Courthouse and honors the patriots who fought there. It encourages U.S. citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina, and affects the National Park Service and local tourism.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-12T23:11:43.267211+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "654036de3eb0ca9fa022b677",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-12",
@@ -477,11 +547,11 @@
     },
     {
       "aiDescription": {
-        "generated_at": "2026-07-11T06:12:42.732655+00:00",
+        "summary": "This Senate resolution supports designating February 21\u201328, 2026, as \"National FFA Week,\" recognizes the National FFA Organization's role in developing student leaders, and celebrates the 50th anniversary of Alaska's State FFA Association. The nonbinding measure covers the FFA's roughly 1,000,000 members in 9,407 chapters nationwide and specifically notes Alaska's 19 chapters and 493 members.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution supports designating February 21\u201328, 2026, as \"National FFA Week,\" recognizes the National FFA Organization's role in developing student leaders, and celebrates the 50th anniversary of Alaska's State FFA Association. The nonbinding measure covers the FFA's roughly 1,000,000 members in 9,407 chapters nationwide and specifically notes Alaska's 19 chapters and 493 members."
+        "generated_at": "2026-07-11T06:12:42.732655+00:00",
+        "source": "committed"
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/622?format=json",
       "committees": [],
@@ -503,7 +573,9 @@
           }
         ],
         "status": "AI impact analysis",
-        "summary": "The Senate resolution designates February 21\u201328, 2026, as \"National FFA Week\" and recognizes the National FFA Organization\u2019s role training students for agriculture, food, natural resources, and leadership careers. It notes the FFA\u2019s over 1,000,000 members in 9,407 chapters, about 13,000 advisors and teachers, and celebrates Alaska\u2019s State FFA Association\u2019s 50th anniversary with 19 chapters and 493 members."
+        "summary": "The Senate resolution designates February 21\u201328, 2026, as \"National FFA Week\" and recognizes the National FFA Organization\u2019s role training students for agriculture, food, natural resources, and leadership careers. It notes the FFA\u2019s over 1,000,000 members in 9,407 chapters, about 13,000 advisors and teachers, and celebrates Alaska\u2019s State FFA Association\u2019s 50th anniversary with 19 chapters and 493 members.",
+        "model": "gpt-5-mini",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-02-26",
@@ -2254,11 +2326,11 @@
     },
     {
       "aiDescription": {
-        "generated_at": "2026-07-11T06:08:41.956455+00:00",
+        "summary": "This Senate resolution designates October 5\u201311, 2025, as \"National 4\u2011H Week\" and formally recognizes 4\u2011H as the youth development program of the Cooperative Extension System and USDA's National Institute of Food and Agriculture. It highlights 4\u2011H's nationwide reach\u2014about 6 million youth and networks of land\u2011grant universities, volunteers, and extension professionals in all 50 states\u2014and is a non\u2011binding resolution that does not change law or funding.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution designates October 5\u201311, 2025, as \"National 4\u2011H Week\" and formally recognizes 4\u2011H as the youth development program of the Cooperative Extension System and USDA's National Institute of Food and Agriculture. It highlights 4\u2011H's nationwide reach\u2014about 6 million youth and networks of land\u2011grant universities, volunteers, and extension professionals in all 50 states\u2014and is a non\u2011binding resolution that does not change law or funding."
+        "generated_at": "2026-07-11T06:08:41.956455+00:00",
+        "source": "committed"
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/434?format=json",
       "committees": [],
@@ -2280,7 +2352,9 @@
           }
         ],
         "status": "AI impact analysis",
-        "summary": "The Senate resolution designates October 5\u201311, 2025, as National 4\u2011H Week and recognizes 4\u2011H as the youth program of the Cooperative Extension System and USDA's National Institute of Food and Agriculture. It spotlights 6 million 4\u2011H members, nearly 500,000 volunteers, 3,500 extension staff, more than 110 land\u2011grant universities and National 4\u2011H Council across all 50 states without added funding."
+        "summary": "The Senate resolution designates October 5\u201311, 2025, as National 4\u2011H Week and recognizes 4\u2011H as the youth program of the Cooperative Extension System and USDA's National Institute of Food and Agriculture. It spotlights 6 million 4\u2011H members, nearly 500,000 volunteers, 3,500 extension staff, more than 110 land\u2011grant universities and National 4\u2011H Council across all 50 states without added funding.",
+        "model": "gpt-5-mini",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2025-10-06",

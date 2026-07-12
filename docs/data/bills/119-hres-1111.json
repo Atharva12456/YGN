@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T18:16:50Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1111",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution recognizes the 245th anniversary of the Battle of Guilford Courthouse, honors the patriots who fought there, and encourages all United States citizens to visit the Guilford Courthouse National Military Park. It covers the Guilford Courthouse National Military Park in Guilford County, North Carolina, and is nonbinding.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:55.392717+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "654036de3eb0ca9fa022b677",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution recognizes the 245th anniversary of the Battle of Guilford Courthouse and honors the patriots who fought there. It encourages U.S. citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina, and affects the National Park Service and local tourism.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:43.267211+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "654036de3eb0ca9fa022b677",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:03.329277+00:00",
   "source": "congress_api"

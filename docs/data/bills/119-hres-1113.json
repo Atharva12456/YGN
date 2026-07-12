@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-16T12:21:10Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution censures Representative Andrew Ogles and requires him to appear in the House well for a public reading of the censure. It also removes him from the House Committee on Homeland Security, applying only to Representative Ogles and his membership on that standing committee.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:50.093197+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bf50c6a46528fab093fcfa34",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution would censure Representative Andrew Ogles for publicly making Islamophobic and anti\u2011immigrant statements and require him to appear in the well of the U.S. House for a public reading of the censure by the Speaker. It removes him from the House Homeland Security Committee.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:12:01.799133+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bf50c6a46528fab093fcfa34",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:02.605182+00:00",
   "source": "congress_api"

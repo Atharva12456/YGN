@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 22,
@@ -259,7 +259,26 @@
     "type": "HCONRES",
     "updatedAt": "2026-03-16T12:17:00Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This concurrent resolution expresses support for recognizing March 10, 2026, as \"Abortion Provider Appreciation Day\" to honor abortion providers and staff. It applauds their courage and care, affirms Congress's commitment to their safety and ability to provide care, and highlights impacts of state restrictions on access nationwide.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:34.616867+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "365e7081b7e576993487e2f4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This concurrent resolution recognizes March 10, 2026, as \"Abortion Provider Appreciation Day\" for abortion providers and staff at independent clinics, Planned Parenthood centers, hospitals, and private physician offices. It references patients, communities, roughly 20 States with abortion bans, and the FACE Act.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:43.442820+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "365e7081b7e576993487e2f4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:02.220690+00:00",
   "source": "congress_api"

@@ -2910,10 +2910,12 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .global-search input::placeholder { color: rgba(232,234,240,0.55); }
 .global-search input:focus { background: rgba(255,255,255,0.14); border-color: var(--color-accent); }
 .global-search-results {
-  position: absolute; right: 0.9rem; top: calc(100% + 4px); width: 330px; max-width: 88vw;
-  max-height: 380px; overflow-y: auto; background: var(--color-surface);
+  /* position:fixed + JS-set top/left/width so the nav's overflow-x:auto (mobile
+     scroll) can't clip the dropdown. */
+  position: fixed; width: 330px; max-width: 92vw;
+  max-height: 60vh; overflow-y: auto; background: var(--color-surface);
   border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-  box-shadow: 0 10px 32px rgba(26,31,46,0.22); z-index: 300;
+  box-shadow: 0 10px 32px rgba(26,31,46,0.22); z-index: 1000;
 }
 .global-search-item {
   display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.55rem 0.8rem;

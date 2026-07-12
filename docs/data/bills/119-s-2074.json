@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "S",
     "updatedAt": "2026-03-17T11:29:12Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the FCRA by replacing \"active duty military consumer\" with \"armed forces member consumer\" and defining it to include any armed forces member. Changes affect 15 U.S.C. 1681c\u20111(k) and 1681t(b)(1)(K), take effect one year after enactment, and extend the FCRA credit-monitoring provisions to all armed forces members.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:25.423662+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "001eef65eec26a8f107b77b7",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends the FCRA to treat any U.S. armed forces member under 10 U.S.C. 101(a) as an \"armed forces member consumer\" and extend credit monitoring regardless of duty. It affects Equifax, Experian, TransUnion; lenders and furnishers; credit\u2011monitoring providers; enforcers CFPB, FTC, state attorneys general.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-12T23:11:29.857623+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "001eef65eec26a8f107b77b7",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:01.857702+00:00",
   "source": "congress_api"

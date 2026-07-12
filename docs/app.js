@@ -4407,7 +4407,19 @@ function initGlobalSearch() {
 
   function close() { resultsEl.hidden = true; input.setAttribute('aria-expanded', 'false'); active = -1; }
 
+  // The nav uses overflow-x:auto for mobile scrolling, which clips an absolutely
+  // positioned dropdown. Anchor the (position:fixed) results to the input rect so
+  // it escapes the clip entirely.
+  function positionResults() {
+    const r = input.getBoundingClientRect();
+    resultsEl.style.top = `${r.bottom + 4}px`;
+    const width = Math.min(Math.max(r.width, 300), window.innerWidth - 16);
+    resultsEl.style.width = `${width}px`;
+    resultsEl.style.left = `${Math.min(r.left, window.innerWidth - width - 8)}px`;
+  }
+
   function render(matches) {
+    positionResults();
     if (!matches.length) {
       resultsEl.innerHTML = `<div class="global-search-empty">No members or recent bills match.</div>`;
       resultsEl.hidden = false;
@@ -4454,6 +4466,10 @@ function initGlobalSearch() {
   document.addEventListener('click', event => {
     if (!wrap.contains(event.target)) close();
   });
+  // Keep the fixed dropdown aligned with the input as the page scrolls/resizes.
+  const realign = () => { if (!resultsEl.hidden) positionResults(); };
+  window.addEventListener('scroll', realign, { passive: true });
+  window.addEventListener('resize', realign);
 }
 
 // -- Compare two members (members page) -------------------------------------------
