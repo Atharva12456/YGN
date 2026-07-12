@@ -144,6 +144,59 @@ def reusable_ethics_snapshot(path, generated_at, ttl_days, expected_method=None)
     return payload
 
 
+def evidence_backed_ethics(payload, expected_method):
+    return bool(
+        payload
+        and payload.get("source") == "fec_live"
+        and payload.get("method") == expected_method
+        and payload.get("grade")
+        and payload.get("grade") != "N/A"
+        and isinstance(payload.get("score"), (int, float))
+    )
+
+
+def ethics_refresh_selection(
+    members,
+    output_dir,
+    generated_at,
+    ttl_days,
+    expected_method,
+    limit,
+    previous_cursor=None,
+):
+    """Choose the next budgeted slice of members that needs a live FEC refresh.
+
+    The cursor advances through the whole roster, including members whose FEC
+    lookup fails. Without it, every scheduled run spends its quota retrying the
+    same first alphabetical members and the static grade index never fills in.
+    """
+    member_ids = [safe_id(member_bioguide_id(member)) for member in members]
+    member_ids = [bioguide_id for bioguide_id in member_ids if bioguide_id]
+    if not member_ids or limit <= 0:
+        return [], previous_cursor
+
+    start = 0
+    if previous_cursor in member_ids:
+        start = (member_ids.index(previous_cursor) + 1) % len(member_ids)
+    ordered_ids = member_ids[start:] + member_ids[:start]
+
+    selected = []
+    for bioguide_id in ordered_ids:
+        path = output_dir / "ethics" / f"{bioguide_id}.json"
+        if reusable_ethics_snapshot(
+            path,
+            generated_at,
+            ttl_days,
+            expected_method=expected_method,
+        ) is not None:
+            continue
+        selected.append(bioguide_id)
+        if len(selected) >= limit:
+            break
+
+    return selected, (selected[-1] if selected else previous_cursor)
+
+
 def safe_id(value):
     return re.sub(r"[^A-Za-z0-9_-]", "", value or "")
 
@@ -370,6 +423,58 @@ def main():
             file=sys.stderr,
         )
         return 4
+
+    current_member_ids = {
+        safe_id(member_bioguide_id(member))
+        for member in members
+        if safe_id(member_bioguide_id(member))
+    }
+    previous_score_index = read_existing_snapshot(output_dir / "member-scores.json") or {}
+    if previous_score_index.get("congress") == args.congress:
+        if args.skip_nominate:
+            member_score_index["nominate"] = {
+                bioguide_id: score
+                for bioguide_id, score in (previous_score_index.get("nominate") or {}).items()
+                if bioguide_id in current_member_ids
+            }
+        member_score_index["ethics"] = {
+            bioguide_id: score
+            for bioguide_id, score in (previous_score_index.get("ethics") or {}).items()
+            if bioguide_id in current_member_ids
+            and evidence_backed_ethics(score, backend.ETHICS_METHOD_VERSION)
+        }
+    # The per-member snapshots are the source of truth. Rebuild from them as
+    # well, so a prior partial/--skip-ethics index cannot hide valid grades.
+    for bioguide_id in current_member_ids:
+        snapshot = read_existing_snapshot(
+            output_dir / "ethics" / f"{bioguide_id}.json"
+        )
+        if evidence_backed_ethics(snapshot, backend.ETHICS_METHOD_VERSION):
+            member_score_index["ethics"][bioguide_id] = {
+                key: snapshot.get(key)
+                for key in (
+                    "score",
+                    "grade",
+                    "source",
+                    "method",
+                    "updated_at",
+                    "cycle",
+                )
+                if snapshot.get(key) is not None
+            }
+
+    previous_manifest = read_existing_snapshot(output_dir / "manifest.json") or {}
+    ethics_refresh_ids, ethics_sweep_cursor = ethics_refresh_selection(
+        members,
+        output_dir,
+        generated_at_dt,
+        args.ethics_static_ttl_days,
+        backend.ETHICS_METHOD_VERSION,
+        args.fec_score_limit if not args.skip_ethics else 0,
+        previous_manifest.get("ethics_sweep_cursor"),
+    )
+    ethics_refresh_ids = set(ethics_refresh_ids)
+    report["ethics_sweep_cursor"] = ethics_sweep_cursor
     report["roster_summary"] = build_roster_summary(backend, members)
     write_json(
         output_dir / "officials.json",
@@ -448,6 +553,13 @@ def main():
         wiki = None
         nominate = None
         ethics = None
+
+        if args.skip_ethics:
+            existing_ethics = read_existing_snapshot(
+                output_dir / "ethics" / f"{bioguide_id}.json"
+            )
+            if evidence_backed_ethics(existing_ethics, backend.ETHICS_METHOD_VERSION):
+                ethics = existing_ethics
 
         if not args.skip_details:
             try:
@@ -539,7 +651,7 @@ def main():
                 if reused is not None:
                     # Already have a fresh live grade committed — keep it, no FEC call.
                     ethics = reused
-                elif fec_scored < args.fec_score_limit:
+                elif bioguide_id in ethics_refresh_ids:
                     # Spend this run's FEC budget trying to score this member live.
                     fec_scored += 1
                     ethics = backend.compute_ethics_score(bioguide_id)
