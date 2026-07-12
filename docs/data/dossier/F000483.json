@@ -208,13 +208,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "F000483",
+    "candidate": {
+      "candidate_id": "H4CA30149",
+      "district": "30",
+      "name": "FRIEDMAN, LAURA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 84.6,
+        "value": 0.647,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.9,
+        "value": 0.8878,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 83.7,
+        "value": 0.6801,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 67.8,
+        "value": 0.1031,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "4 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+        "penalty": 22,
+        "ptr_filings": 4
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 82.4,
+    "grade": "D-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 60.4,
+    "source": "fec_live",
+    "stockPenalty": 22,
+    "stockPtrCount": 4,
+    "updated_at": "2026-07-12T23:38:42.564639+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-12T23:37:37.655413+00:00",
   "history": {
     "bioguideId": "F000483",
     "birthYear": "1966",
