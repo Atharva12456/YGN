@@ -4,14 +4,20 @@
   "current_member": true,
   "debt_metric": true,
   "descriptions": 537,
-  "details": 537,
-  "dossiers": 537,
-  "errors": [],
+  "details": 536,
+  "dossiers": 536,
+  "errors": [
+    {
+      "bioguideId": "Y000064",
+      "error": "Congress.gov request failed for /member/Y000064.",
+      "stage": "detail"
+    }
+  ],
   "ethics": 537,
   "ethics_fallback": 528,
   "fallback_descriptions": 3,
   "fec_scored_this_run": 12,
-  "generated_at": "2026-07-12T13:58:39.074993+00:00",
+  "generated_at": "2026-07-12T19:35:57.730954+00:00",
   "member_score_index": true,
   "members": 537,
   "nominate": 536,
