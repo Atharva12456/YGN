@@ -255,22 +255,27 @@ def build_support_spotlight(backend, keep=5):
         count = bill.get("cosponsorCount")
         if not isinstance(count, int) or count < 2:
             continue
+        # The stored cosponsor list is capped (~250) while cosponsorCount is the
+        # true total; only claim exact D/R numbers when the sample is complete.
+        # "Bipartisan" is safe either way: both parties in the sample proves it.
+        sampled = bill.get("cosponsors") or []
         parties = {}
-        for person in bill.get("cosponsors") or []:
+        for person in sampled:
             party = (person.get("party") or "?").strip() or "?"
             parties[party] = parties.get(party, 0) + 1
-        ranked.append(
-            {
-                "identifier": bill.get("identifier"),
-                "title": (bill.get("title") or "")[:160],
-                "detailPath": bill.get("detailPath"),
-                "cosponsorCount": count,
-                "democrats": parties.get("D", 0),
-                "republicans": parties.get("R", 0),
-                "bipartisan": parties.get("D", 0) >= 1 and parties.get("R", 0) >= 1,
-                "policyArea": bill.get("policyArea"),
-            }
-        )
+        complete = len(sampled) >= count
+        entry = {
+            "identifier": bill.get("identifier"),
+            "title": (bill.get("title") or "")[:160],
+            "detailPath": bill.get("detailPath"),
+            "cosponsorCount": count,
+            "bipartisan": parties.get("D", 0) >= 1 and parties.get("R", 0) >= 1,
+            "policyArea": bill.get("policyArea"),
+        }
+        if complete:
+            entry["democrats"] = parties.get("D", 0)
+            entry["republicans"] = parties.get("R", 0)
+        ranked.append(entry)
     ranked.sort(key=lambda b: (-b["cosponsorCount"], b.get("identifier") or ""))
     return {**_stamp(), "bills": ranked[:keep]}
 

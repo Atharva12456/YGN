@@ -617,7 +617,8 @@ button {
 #members-search::placeholder {
   color: var(--color-text-muted);
 }
-#members-search:focus {
+
+#members-search:focus {
   outline: 2px solid var(--color-accent);
   border-color: var(--color-accent);
 }
@@ -3090,3 +3091,8 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
   .global-search input { width: 100%; max-width: none; }
   .global-search-results { left: 0.6rem; right: 0.6rem; width: auto; }
 }
+
+/* Tracked bills that live outside the current digest: one full-width row */
+.bill-row--orphan { display: block; min-width: 0; }
+.bill-cell--orphan { padding: 0.9rem 1rem; }
+.bill-cell--orphan h3 { margin: 0.2rem 0; }

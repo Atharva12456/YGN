@@ -588,12 +588,15 @@ async function loadFederalRegisterMetric() {
 // Federal general elections: the Tuesday after the first Monday of November in
 // even years (2 U.S.C. §7). Deterministic, so this card never has a blank state.
 function nextFederalElectionDate(from = new Date()) {
-  for (let year = from.getFullYear(); year <= from.getFullYear() + 2; year++) {
+  // Compare at local midnight so Election Day itself still counts as "today"
+  // instead of rolling two years forward at 00:01.
+  const today = new Date(from.getFullYear(), from.getMonth(), from.getDate());
+  for (let year = today.getFullYear(); year <= today.getFullYear() + 2; year++) {
     if (year % 2 !== 0) continue;
     const firstOfNov = new Date(year, 10, 1);
     const firstMonday = 1 + ((8 - firstOfNov.getDay()) % 7);
     const electionDay = new Date(year, 10, firstMonday + 1);
-    if (electionDay >= from) return electionDay;
+    if (electionDay >= today) return electionDay;
   }
   return null;
 }
@@ -923,9 +926,21 @@ function renderBillRows() {
   if (!recentBillsGrid || !currentBillsDigest) return;
   const digest = currentBillsDigest;
   const source = recentBillsGrid.dataset.source;
-  const limited = (digest.bills || []).slice(0, Number(recentBillsGrid.dataset.limit || 5));
+  // Tracked view searches the WHOLE digest (not just the visible slice) so a
+  // bill tracked from page 3 or a detail page still shows up; other filters
+  // apply to the slice the user has loaded.
+  const limited = showSavedBillsOnly
+    ? (digest.bills || [])
+    : (digest.bills || []).slice(0, Number(recentBillsGrid.dataset.limit || 5));
   const bills = limited.filter(billMatchesFilter);
   recentBillsGrid.innerHTML = '';
+
+  // Tracked bills that aren't in the digest at all (starred on a detail page,
+  // spotlight, or aged out of the feed) still get a stub row from storage.
+  const digestPaths = new Set((digest.bills || []).map(b => b.detailPath).filter(Boolean));
+  const orphanSaved = showSavedBillsOnly
+    ? savedBillEntries().filter(e => !digestPaths.has(e.path))
+    : [];
 
   if (recentBillsStatus) {
     const generatedAt = digest.generated_at ? ` Updated ${formatShortDate(digest.generated_at)}.` : '';
@@ -935,11 +950,11 @@ function renderBillRows() {
   // Pulse reflects the active filter (falls back to the full slice when unfiltered).
   renderCivicPulse(bills.length ? bills : limited, digest);
 
-  if (bills.length === 0) {
+  if (bills.length === 0 && orphanSaved.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'bill-empty-state';
     empty.textContent = showSavedBillsOnly
-      ? 'No tracked bills in the current view — tap the ☆ on any bill to track it.'
+      ? 'No tracked bills yet — tap the ☆ on any bill to track it.'
       : (billFilterState.policyArea || billFilterState.chamber)
         ? 'No bills match the selected filters.'
         : 'No recent bills are available right now.';
@@ -966,7 +981,7 @@ function renderBillRows() {
     kicker.textContent = bill.identifier || `${bill.type || ''} ${bill.number || ''}`.trim();
     if (bill.detailPath) {
       const starWrap = document.createElement('span');
-      starWrap.innerHTML = billSaveButtonHtml(bill.detailPath, true);
+      starWrap.innerHTML = billSaveButtonHtml(bill.detailPath, true, bill);
       kicker.appendChild(starWrap.firstElementChild);
     }
     titleCell.appendChild(kicker);
@@ -1055,6 +1070,21 @@ function renderBillRows() {
     });
     recentBillsGrid.appendChild(row);
   });
+
+  orphanSaved.forEach(entry => {
+    const row = document.createElement('article');
+    row.className = 'bill-row bill-row--orphan';
+    const cell = document.createElement('div');
+    cell.className = 'bill-cell bill-cell--orphan';
+    const href = withApiParam(`bill.html?id=${encodeURIComponent(entry.path)}`);
+    cell.innerHTML = `
+      <div class="bill-kicker">${esc(entry.identifier || entry.path)}${billSaveButtonHtml(entry.path, true, entry)}</div>
+      <h3><a class="bill-title bill-title-link" href="${href}">${esc(entry.title || 'Tracked bill')}</a></h3>
+      <p class="bill-meta">Tracked bill outside the current recent-activity feed — open it for full detail.</p>`;
+    row.appendChild(cell);
+    recentBillsGrid.appendChild(row);
+  });
+
   wireBillSaveButtons(recentBillsGrid);
 }
 
@@ -1347,7 +1377,7 @@ function renderBillDetail(container, data) {
   container.innerHTML = `
     <article class="bill-detail">
       <header class="bill-detail-head">
-        <div class="bill-detail-kicker">${esc(bill.identifier || '')} ${billSaveButtonHtml(bill.detailPath, false)}</div>
+        <div class="bill-detail-kicker">${esc(bill.identifier || '')} ${billSaveButtonHtml(bill.detailPath, false, bill)}</div>
         <h1>${esc(bill.title || 'Untitled bill')}</h1>
         <p class="bill-detail-meta">${headMeta}</p>
         ${billStepperHtml(bill)}
@@ -3478,19 +3508,26 @@ function careerHtml(history) {
     ? `${esc(history.birthday)}${age ? ` (age ${age})` : ''}`
     : (history.birthYear ? esc(history.birthYear) : '—');
 
-  // Next election: a senator's current term runs to its endYear; a House seat
-  // is up every even year. Both are deterministic from the terms data.
+  // Next election: a senator's current term runs to its endYear (elections are
+  // held the November before the term expires); a House seat is up at every
+  // federal general election. Former members (last term already ended) get none.
   const current = chrono[chrono.length - 1] || {};
   const isSenate = String(current.chamber || '').toLowerCase().includes('senate');
   const nowYear = new Date().getFullYear();
+  const lastEnd = parseInt(current.endYear, 10);
+  const stillServing = !Number.isFinite(lastEnd) || lastEnd >= nowYear;
   let nextElection = null;
-  if (isSenate) {
-    const end = parseInt(current.endYear, 10);
-    if (Number.isFinite(end)) nextElection = end % 2 === 0 ? end : end - 1;
-  } else if (chrono.length) {
-    nextElection = nowYear % 2 === 0 ? nowYear : nowYear + 1;
+  if (chrono.length && stillServing) {
+    if (isSenate) {
+      // Current terms often have endYear=null; a Senate term is 6 years.
+      const end = Number.isFinite(lastEnd) ? lastEnd : parseInt(current.startYear, 10) + 6;
+      if (Number.isFinite(end)) nextElection = end % 2 === 0 ? end : end - 1;
+    } else {
+      const election = nextFederalElectionDate();
+      if (election) nextElection = election.getFullYear();
+    }
+    if (nextElection && nextElection < nowYear) nextElection = null;
   }
-  if (nextElection && nextElection < nowYear) nextElection = null;
 
   return `<section class="dossier-card" id="career">
     <h3><span><span class="card-icon">🏛️</span>Career History</span></h3>
@@ -4159,10 +4196,11 @@ async function initSupportSpotlight() {
   const rows = bills.map(b => {
     const href = b.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(b.detailPath)}`) : null;
     const title = esc(b.title || b.identifier || 'Untitled bill');
-    const d = Number(b.democrats) || 0;
-    const r = Number(b.republicans) || 0;
+    const splitTitle = (b.democrats != null && b.republicans != null)
+      ? `${Number(b.democrats) || 0} Democratic, ${Number(b.republicans) || 0} Republican cosponsors`
+      : `${esc(String(b.cosponsorCount))} cosponsors`;
     return `<li class="support-item">
-      <span class="support-count" title="${d} Democratic, ${r} Republican cosponsors">${esc(String(b.cosponsorCount))}</span>
+      <span class="support-count" title="${splitTitle}">${esc(String(b.cosponsorCount))}</span>
       <span class="support-body">
         ${href ? `<a href="${href}">${title}</a>` : title}
         <span class="support-meta">${esc(b.identifier || '')}${b.policyArea ? ` · ${esc(b.policyArea)}` : ''}${b.bipartisan ? ' · <strong class="bipartisan-tag">Bipartisan</strong>' : ''}</span>
@@ -4232,31 +4270,44 @@ function renderTrendingTopics(digest) {
 const SAVED_BILLS_STORAGE_KEY = 'ygn_saved_bills_v1';
 let showSavedBillsOnly = false;
 
-function savedBillPaths() {
+// Entries are {path, identifier, title} so bills tracked from anywhere (detail
+// pages, spotlight) can be listed even when they aren't in the digest slice.
+// Legacy plain-string entries (path only) are still accepted.
+function savedBillEntries() {
   try {
     const raw = JSON.parse(localStorage.getItem(SAVED_BILLS_STORAGE_KEY) || '[]');
-    return Array.isArray(raw) ? raw.filter(x => typeof x === 'string') : [];
+    if (!Array.isArray(raw)) return [];
+    return raw
+      .map(x => (typeof x === 'string' ? { path: x } : x))
+      .filter(x => x && typeof x.path === 'string' && x.path);
   } catch (_) { return []; }
+}
+
+function savedBillPaths() {
+  return savedBillEntries().map(e => e.path);
 }
 
 function isBillSaved(detailPath) {
   return !!detailPath && savedBillPaths().includes(detailPath);
 }
 
-function toggleSavedBill(detailPath) {
+function toggleSavedBill(detailPath, meta) {
   if (!detailPath) return false;
-  const paths = savedBillPaths();
-  const idx = paths.indexOf(detailPath);
-  if (idx >= 0) paths.splice(idx, 1); else paths.push(detailPath);
-  try { localStorage.setItem(SAVED_BILLS_STORAGE_KEY, JSON.stringify(paths)); } catch (_) { /* private mode */ }
+  const entries = savedBillEntries();
+  const idx = entries.findIndex(e => e.path === detailPath);
+  if (idx >= 0) entries.splice(idx, 1);
+  else entries.push({ path: detailPath, identifier: (meta && meta.identifier) || null, title: (meta && meta.title) || null });
+  try { localStorage.setItem(SAVED_BILLS_STORAGE_KEY, JSON.stringify(entries)); } catch (_) { /* private mode */ }
   return idx < 0;
 }
 
-function billSaveButtonHtml(detailPath, compact) {
+function billSaveButtonHtml(detailPath, compact, meta) {
   if (!detailPath) return '';
   const saved = isBillSaved(detailPath);
   return `<button type="button" class="bill-save-button${compact ? ' bill-save-button--compact' : ''}${saved ? ' is-saved' : ''}"
-    data-bill-path="${esc(detailPath)}" aria-pressed="${saved ? 'true' : 'false'}"
+    data-bill-path="${esc(detailPath)}" data-bill-identifier="${esc((meta && meta.identifier) || '')}"
+    data-bill-title="${esc(((meta && meta.title) || '').slice(0, 120))}"
+    aria-pressed="${saved ? 'true' : 'false'}"
     title="${saved ? 'Remove from tracked bills' : 'Track this bill'}">${saved ? '★' : '☆'}</button>`;
 }
 
@@ -4267,7 +4318,10 @@ function wireBillSaveButtons(scope) {
     btn.addEventListener('click', event => {
       event.preventDefault();
       event.stopPropagation();
-      const saved = toggleSavedBill(btn.dataset.billPath);
+      const saved = toggleSavedBill(btn.dataset.billPath, {
+        identifier: btn.dataset.billIdentifier || null,
+        title: btn.dataset.billTitle || null,
+      });
       btn.classList.toggle('is-saved', saved);
       btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
       btn.textContent = saved ? '★' : '☆';
@@ -4290,11 +4344,14 @@ async function ensureQuickSearchData() {
     fetch('data/recent-bills-digest.json', { cache: 'default' }).then(r => (r.ok ? r.json() : null)).catch(() => null),
   ]);
   const bills = (digestRes && digestRes.bills) || (currentBillsDigest && currentBillsDigest.bills) || [];
-  quickSearchData = {
+  const data = {
     members: membersLoadedOk ? allMembers : [],
     bills,
   };
-  return quickSearchData;
+  // Don't memoize a total failure — a transient network blip on first focus
+  // shouldn't leave search permanently empty for the session.
+  if (data.members.length || data.bills.length) quickSearchData = data;
+  return data;
 }
 
 function quickSearchMatches(query) {
@@ -4536,20 +4593,28 @@ async function renderIdeologyStrip(list) {
 
 function whatHappensNextHtml(bill) {
   const { stages, index } = billStage(bill);
-  const stage = stages[index] || '';
-  const isRes = /agreed to/i.test(stages[stages.length - 1] || '');
+  // Stage shapes: simple resolution = [Introduced, Agreed]; concurrent =
+  // [Introduced, Agreed 1st, Agreed 2nd]; full bill/joint resolution =
+  // [Introduced, Passed 1st, Passed 2nd, To President, Became Law].
+  const isSimpleRes = stages.length === 2;
+  const isConcurrentRes = stages.length === 3;
+  const isFullBill = stages.length === 5;
   let text;
-  if (/became law/i.test(stage)) {
+  if (isFullBill && index === 4) {
     text = 'This bill is law. Agencies now implement it, and Congress can oversee, fund, or amend how it works in practice.';
-  } else if (/to president/i.test(stage)) {
+  } else if (isFullBill && index === 3) {
     text = 'The President has 10 days to sign it into law or veto it. A veto goes back to Congress, which can override with two-thirds of both chambers.';
-  } else if (isRes && index === stages.length - 1) {
+  } else if (isFullBill && index === 2) {
+    text = 'Both chambers have passed it. Once any differences between their versions are resolved, it is enrolled and presented to the President.';
+  } else if ((isSimpleRes && index === 1) || (isConcurrentRes && index === 2)) {
     text = 'This resolution has been agreed to — resolutions express the chamber\'s position or set its rules and do not go to the President.';
-  } else if (index >= 1 && index < stages.length - 2) {
-    const other = /house/i.test(stage) ? 'Senate' : 'House';
+  } else if (isConcurrentRes && index === 1) {
+    // stages[2] is "Agreed to {second chamber}" — name that chamber.
+    const other = /senate/i.test(stages[2] || '') ? 'Senate' : 'House';
+    text = `One chamber has agreed to it. The ${other} must agree to the same text for it to take effect — concurrent resolutions bind Congress, not the public, and never go to the President.`;
+  } else if (isFullBill && index === 1) {
+    const other = /senate/i.test(stages[2] || '') ? 'Senate' : 'House';
     text = `One chamber has passed it. The ${other} must pass the same text next — most bills stall here; if versions differ, the chambers must reconcile them.`;
-  } else if (index === stages.length - 2 && !isRes) {
-    text = 'Both chambers have passed it; once any differences are resolved, it is enrolled and presented to the President.';
   } else {
     text = 'It sits with committee, which can hold hearings, amend ("mark up"), approve, or simply never act — the fate of roughly 9 in 10 bills. A floor vote only comes if leadership schedules one.';
   }
