@@ -1,535 +1,479 @@
 {
-  "ai_cached": 40,
+  "ai_cached": 2,
   "ai_mode": "cache_refresh_only",
-  "ai_queued": 0,
+  "ai_queued": 38,
   "bills": [
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:01:27.718271+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution honors two Christian County, Missouri deputies killed on February 23, 2026, offers condolences to their families, condemns violence against officers, and affirms support for law enforcement. It names Deputy Gabriel Ramirez and Deputy Michael Hislope, notes four officers were shot (two fatally), and is a nonbinding congressional statement, not a law."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/630?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/2074?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 1,
+      "cosponsorCount": 3,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "A resolution honoring the lives of fallen Missouri police officers and expressing condolences to their families.",
-        "updated_at": "2026-03-13T15:19:56Z"
+        "text": "Servicemembers\u2019 Credit Monitoring Enhancement Act",
+        "updated_at": "2026-03-17T11:29:12Z"
       },
-      "detailPath": "119/sres/630",
-      "identifier": "SRES 630",
+      "detailPath": "119/s/2074",
+      "identifier": "S 2074",
       "impact": {
-        "generated_at": "2026-07-11T06:01:27.839792+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/630"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The Senate resolution would formally honor Deputies Gabriel Ramirez and Michael Hislope of the Christian County Sheriff's Office, express condolences to their families for the February 23, 2026 shooting, and recognize Missouri police officers' sacrifice. It also records the Senate's condemnation of violence against law enforcement and expresses support for law enforcement nationwide without creating legal obligations."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on the Judiciary. (text: CR S960)"
+        "date": "2026-03-16",
+        "text": "Held at the desk."
       },
       "members": [
         {
-          "bioguideId": "H001089",
+          "bioguideId": "K000367",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Hawley, Josh [R-MO]",
+          "name": "Sen. Klobuchar, Amy [D-MN]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MN"
+        }
+      ],
+      "number": "2074",
+      "originChamber": "Senate",
+      "policyArea": "Finance and Financial Sector",
+      "sponsors": [
+        {
+          "bioguideId": "K000367",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Klobuchar, Amy [D-MN]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MN"
+        }
+      ],
+      "title": "Servicemembers\u2019 Credit Monitoring Enhancement Act",
+      "type": "S",
+      "updatedAt": "2026-03-17T11:29:12Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/78?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 22,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
+        "updated_at": "2026-03-16T12:17:00Z"
+      },
+      "detailPath": "119/hconres/78",
+      "identifier": "HCONRES 78",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-12",
+        "text": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+      },
+      "members": [
+        {
+          "bioguideId": "P000617",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pressley, Ayanna [D-MA-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "number": "78",
+      "originChamber": "House",
+      "policyArea": "Health",
+      "sponsors": [
+        {
+          "bioguideId": "P000617",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pressley, Ayanna [D-MA-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "title": "Expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
+      "type": "HCONRES",
+      "updatedAt": "2026-03-16T12:17:00Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1113?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Censuring Representative Andrew Ogles and Removing Him from the House Committee on Homeland Security.",
+        "updated_at": "2026-03-16T12:21:10Z"
+      },
+      "detailPath": "119/hres/1113",
+      "identifier": "HRES 1113",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-12",
+        "text": "Referred to the House Committee on Ethics."
+      },
+      "members": [
+        {
+          "bioguideId": "T000488",
+          "district": 13,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Thanedar, Shri [D-MI-13]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MI"
+        }
+      ],
+      "number": "1113",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "T000488",
+          "district": 13,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Thanedar, Shri [D-MI-13]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MI"
+        }
+      ],
+      "title": "Censuring Representative Andrew Ogles and Removing Him from the House Committee on Homeland Security.",
+      "type": "HRES",
+      "updatedAt": "2026-03-16T12:21:10Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/77?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 2,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
+        "updated_at": "2026-03-16T15:58:00Z"
+      },
+      "detailPath": "119/hconres/77",
+      "identifier": "HCONRES 77",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-12",
+        "text": "Referred to the House Committee on House Administration."
+      },
+      "members": [
+        {
+          "bioguideId": "M001199",
+          "district": 21,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Mast, Brian J. [R-FL-21]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "MO"
+          "state": "FL"
         }
       ],
-      "number": "630",
-      "originChamber": "Senate",
-      "policyArea": "Crime and Law Enforcement",
+      "number": "77",
+      "originChamber": "House",
+      "policyArea": "Congress",
       "sponsors": [
         {
-          "bioguideId": "H001089",
-          "district": null,
+          "bioguideId": "M001199",
+          "district": 21,
           "isOriginalCosponsor": null,
-          "name": "Sen. Hawley, Josh [R-MO]",
+          "name": "Rep. Mast, Brian J. [R-FL-21]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "MO"
+          "state": "FL"
         }
       ],
-      "title": "A resolution honoring the lives of fallen Missouri police officers and expressing condolences to their families.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T15:19:56Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/630"
+      "title": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
+      "type": "HCONRES",
+      "updatedAt": "2026-03-16T15:58:00Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:11:06.390078+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution directs the Secretary of State to submit within 30 days a 502B(c) statement on Ghana's human rights practices prepared with DRL and State Legal Adviser. It seeks details on alleged abuses (arrest/detention, torture, disappearances, killings, trafficking), treatment of non\u2011Ghanaians sent to Ghana by the U.S., U.S. security\u2011assistance risks and assurances, detention\u2011condition analyses, names of persons sent in 2025\u201326, and 2025\u201326 U.S.\u2013Ghana meetings."
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1111?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 2,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Recognizing the 245th anniversary of the Battle of Guilford Courthouse and encouraging all United States citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina.",
+        "updated_at": "2026-03-17T18:16:50Z"
       },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/632?format=json",
+      "detailPath": "119/hres/1111",
+      "identifier": "HRES 1111",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1111"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-12",
+        "text": "Referred to the House Committee on Natural Resources."
+      },
+      "members": [
+        {
+          "bioguideId": "M001240",
+          "district": 6,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McDowell, Addison P. [R-NC-6]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NC"
+        }
+      ],
+      "number": "1111",
+      "originChamber": "House",
+      "policyArea": "Public Lands and Natural Resources",
+      "sponsors": [
+        {
+          "bioguideId": "M001240",
+          "district": 6,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McDowell, Addison P. [R-NC-6]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NC"
+        }
+      ],
+      "title": "Recognizing the 245th anniversary of the Battle of Guilford Courthouse and encouraging all United States citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T18:16:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1111"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/638?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 0,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Ghana's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:52:52Z"
+        "text": "A resolution expressing the sense of the Senate that the law enforcement agents and other personnel of the Department of Justice and the Department of Homeland Security, who have been temporarily engaging in civil immigration enforcement operations, should be returned to their primary missions during periods of active hostility with Iran.",
+        "updated_at": "2026-03-16T17:46:20Z"
       },
-      "detailPath": "119/sres/632",
-      "identifier": "SRES 632",
+      "detailPath": "119/sres/638",
+      "identifier": "SRES 638",
       "impact": {
-        "generated_at": "2026-07-11T06:11:16.127353+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/632"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/638"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The resolution directs the Secretary of State, with the State Department\u2019s Assistant Secretary for Democracy, Human Rights, and Labor and the Legal Adviser, to submit a 502B(c) report on Ghana to the Senate Foreign Relations and House Foreign Affairs Committees within 30 days. It must detail abuses and treatment of non\u2011Ghanaians removed to Ghana by the United States, U.S.\u2013Ghana agreements or payments, security\u2011assistance risks, and 2025\u20132026 meetings."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-11",
+        "text": "Referred to the Committee on Homeland Security and Governmental Affairs. (text: CR S1015)"
+      },
+      "members": [
+        {
+          "bioguideId": "G000574",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Gallego, Ruben [D-AZ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "AZ"
+        }
+      ],
+      "number": "638",
+      "originChamber": "Senate",
+      "policyArea": "Immigration",
+      "sponsors": [
+        {
+          "bioguideId": "G000574",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Gallego, Ruben [D-AZ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "AZ"
+        }
+      ],
+      "title": "A resolution expressing the sense of the Senate that the law enforcement agents and other personnel of the Department of Justice and the Department of Homeland Security, who have been temporarily engaging in civil immigration enforcement operations, should be returned to their primary missions during periods of active hostility with Iran.",
+      "type": "SRES",
+      "updatedAt": "2026-03-16T17:46:20Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/638"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/639?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "A resolution establishing an annual Senate academic civics competition for secondary school students.",
+        "updated_at": "2026-03-16T18:10:22Z"
+      },
+      "detailPath": "119/sres/639",
+      "identifier": "SRES 639",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/639"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-03-11",
+        "text": "Referred to the Committee on Rules and Administration. (text: CR S1015-1016)"
+      },
+      "members": [
+        {
+          "bioguideId": "K000394",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "number": "639",
+      "originChamber": "Senate",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "K000394",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "title": "A resolution establishing an annual Senate academic civics competition for secondary school students.",
+      "type": "SRES",
+      "updatedAt": "2026-03-16T18:10:22Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/639"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/sconres/28?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 12,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "A concurrent resolution expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
+        "updated_at": "2026-03-16T12:16:23Z"
+      },
+      "detailPath": "119/sconres/28",
+      "identifier": "SCONRES 28",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-concurrent-resolution/28"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
         "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S961-962)"
+        "text": "Referred to the Committee on Health, Education, Labor, and Pensions. (text: CR S966)"
       },
       "members": [
         {
-          "bioguideId": "K000384",
+          "bioguideId": "H001042",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
+          "name": "Sen. Hirono, Mazie K. [D-HI]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "VA"
+          "state": "HI"
         }
       ],
-      "number": "632",
+      "number": "28",
       "originChamber": "Senate",
-      "policyArea": "International Affairs",
+      "policyArea": "Health",
       "sponsors": [
         {
-          "bioguideId": "K000384",
+          "bioguideId": "H001042",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
+          "name": "Sen. Hirono, Mazie K. [D-HI]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "VA"
+          "state": "HI"
         }
       ],
-      "title": "A resolution requesting information on the Republic of Ghana's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:52:52Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/632"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:11:16.592804+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The resolution asks the Secretary of State to submit, within 30 days, a 502B(c) report prepared with the DRL bureau and the State Department Legal Adviser on Honduras's human\u2011rights practices to Congress. It requires detailed information on alleged abuses (arrest, torture, killings, trafficking), treatment of non\u2011citizens removed to Honduras by the U.S., assessments of U.S. security\u2011assistance risks, agreements or payments, individuals sent in 2025 and 2026, and 2025\u201326 meeting summaries."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/633?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Honduras's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:53:08Z"
-      },
-      "detailPath": "119/sres/633",
-      "identifier": "SRES 633",
-      "impact": {
-        "generated_at": "2026-07-11T06:11:19.103784+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/633"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution directs the Secretary of State, with the Assistant Secretary for DRL and the State Department Legal Adviser, to submit within 30 days to the Senate Foreign Relations and House Foreign Affairs Committees a 502B(c) statement on Honduras's human rights. It must report alleged abuses, treatment of migrants removed by U.S. agencies, security\u2011assistance risks, agreements, and 2025\u20132026 meetings."
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S962-963)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "number": "633",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "title": "A resolution requesting information on the Republic of Honduras's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:53:08Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/633"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:11:43.676540+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The resolution directs the Secretary of State to submit a section 502B(c) report within 30 days, with DRL and Legal Adviser input, on Equatorial Guinea's human rights practices and related U.S. assessments and actions. It must cover alleged abuses (e.g., torture, arbitrary detention, disappearances, extrajudicial killings, trafficking), treatment of non\u2011citizens the U.S. removed to Equatorial Guinea, pre\u2011removal assessments, security\u2011assistance risks, 2025\u20132026 transfers, and bilateral meetings."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/634?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Equatorial Guinea's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:54:54Z"
-      },
-      "detailPath": "119/sres/634",
-      "identifier": "SRES 634",
-      "impact": {
-        "generated_at": "2026-07-11T06:12:08.595023+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/634"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution orders the Secretary of State to submit a 502B(c) report to the Senate Foreign Relations and House Foreign Affairs Committees on human rights in the Republic of Equatorial Guinea. It seeks details about alleged abuses, treatment of non\u2011citizens the United States removed there, U.S. security assistance risks, agreements or assurances, persons sent in 2025\u20132026, and meetings with U.S. officials."
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S963)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "number": "634",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "title": "A resolution requesting information on the Republic of Equatorial Guinea's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:54:54Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/634"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:11:49.933900+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The resolution directs the Secretary of State to submit within 30 days a statement, prepared with DRL and the State Department Legal Adviser, reporting on Guatemala\u2019s human\u2011rights practices. It requests credible information on alleged human\u2011rights abuses, the treatment of non\u2011Guatemalans removed to Guatemala, U.S. actions and risk assessments for security assistance, records of 2025\u201326 removals, related agreements or assurances, and meetings between U.S. and Guatemalan officials."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/636?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Guatemala's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:55:15Z"
-      },
-      "detailPath": "119/sres/636",
-      "identifier": "SRES 636",
-      "impact": {
-        "generated_at": "2026-07-11T06:11:44.309263+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/636"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution directs the Secretary of State, with the State Department\u2019s DRL office and the Office of the Legal Adviser, to submit a 502B(c) human-rights report on Guatemala within 30 days. It seeks details on alleged abuses and prison conditions for non\u2011Guatemalans the U.S. removed, U.S. security\u2011assistance risks, assurances or agreements, lists of people sent in 2025\u20132026, and meetings."
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S964-965)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "number": "636",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "title": "A resolution requesting information on the Republic of Guatemala's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:55:15Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/636"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:12:13.747535+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The resolution orders the Secretary of State, within 30 days, to submit a 502B(c) statement on Uzbekistan\u2019s human\u2011rights practices prepared with DRL and the State Department Legal Adviser. It requires information on alleged abuses (arbitrary detention, torture, disappearances, trafficking), treatment of non\u2011Uzbek nationals removed to Uzbekistan, U.S. actions and assessments (including security assistance, assurances, individuals sent in 2025\u201326), and summaries of 2025\u201326 U.S.\u2013Uzbek meetings."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/631?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Uzbekistan's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:59:02Z"
-      },
-      "detailPath": "119/sres/631",
-      "identifier": "SRES 631",
-      "impact": {
-        "generated_at": "2026-07-11T06:12:14.436373+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/631"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution directs the Secretary of State, with the State Department DRL office and Legal Adviser, to deliver a 502B report on Uzbekistan to the Senate Foreign Relations and House Foreign Affairs Committees within 30 days. The report must list alleged Uzbek abuses, U.S. security\u2011assistance risks, people the U.S. sent in 2025\u20132026, related assurances, and U.S. agencies' actions on removals."
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S960-961)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "number": "631",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "title": "A resolution requesting information on the Republic of Uzbekistan's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:59:02Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/631"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:12:30.560886+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution directs the Secretary of State to submit a 30\u2011day section 502B(c) report, prepared with the State Department\u2019s DRL and Legal Adviser, on Kosovo\u2019s human rights practices. It focuses on alleged abuses against non\u2011Kosovo citizens the U.S. sent to Kosovo, U.S. assessments of detention conditions and security\u2011assistance risks, agreements/transfers in 2025\u201326, and U.S. efforts to prevent or remedy renditions, trafficking, detention, or returns."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/635?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution requesting information on the Republic of Kosovo's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-        "updated_at": "2026-03-13T21:59:18Z"
-      },
-      "detailPath": "119/sres/635",
-      "identifier": "SRES 635",
-      "impact": {
-        "generated_at": "2026-07-11T06:12:27.746929+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/635"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution directs the Secretary of State and the Assistant Secretary for Democracy, Human Rights, and Labor to submit under 22 U.S.C. 2304(c) a report to the Senate Foreign Relations and House Foreign Affairs Committees within 30 days. It demands information on Kosovo\u2019s human\u2011rights record, treatment of non\u2011Kosovans the U.S. removed (including 2025\u20132026), U.S. security assistance, agreements, and related meetings."
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Foreign Relations. (text: CR S963-964)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "number": "635",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "K000384",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kaine, Tim [D-VA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "VA"
-        }
-      ],
-      "title": "A resolution requesting information on the Republic of Kosovo's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act of 1961.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T21:59:18Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/635"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:12:38.257545+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This joint resolution, under the Congressional Review Act, disapproves and voids the EPA rule (90 Fed. Reg. 55671, Dec. 3, 2025) that extended deadlines in Standards of Performance and Emissions Guidelines for the oil and natural gas sector. If enacted, it would remove nationwide those deadline extensions for new, reconstructed, modified, and existing sources, affecting owners and operators of oil and gas facilities."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sjres/121?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to \"Oil and Natural Gas Sector Climate Review: Extension of Deadlines in Standards of Performance for New, Reconstructed, and Modified Sources and Emissions Guidelines for Existing Sources\".",
-        "updated_at": "2026-03-13T15:47:34Z"
-      },
-      "detailPath": "119/sjres/121",
-      "identifier": "SJRES 121",
-      "impact": {
-        "generated_at": "2026-07-11T06:03:42.781130+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/121"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution would void the EPA rule (90 Fed. Reg. 55671) that extended deadlines in the Oil and Natural Gas Sector climate review, removing the agency's extension. This affects EPA enforcement and oil and gas operators (wells, pipelines, compressor stations, processing plants) and the state air agencies that implement Clean Air Act NSPS and Emissions Guidelines."
-      },
-      "latestAction": {
-        "date": "2026-03-09",
-        "text": "Read twice and referred to the Committee on Environment and Public Works."
-      },
-      "members": [
-        {
-          "bioguideId": "W000802",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Whitehouse, Sheldon [D-RI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "RI"
-        }
-      ],
-      "number": "121",
-      "originChamber": "Senate",
-      "policyArea": "Environmental Protection",
-      "sponsors": [
-        {
-          "bioguideId": "W000802",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Whitehouse, Sheldon [D-RI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "RI"
-        }
-      ],
-      "title": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to \"Oil and Natural Gas Sector Climate Review: Extension of Deadlines in Standards of Performance for New, Reconstructed, and Modified Sources and Emissions Guidelines for Existing Sources\".",
-      "type": "SJRES",
-      "updatedAt": "2026-03-13T15:47:34Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-joint-resolution/121"
+      "title": "A concurrent resolution expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
+      "type": "SCONRES",
+      "updatedAt": "2026-03-16T12:16:23Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-concurrent-resolution/28"
     },
     {
       "aiDescription": {
@@ -598,166 +542,499 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/622"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:03:35.101820+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This bill amends the Illegal Immigration Reform and Immigrant Responsibility Act to require 501(c)(3) nonprofits that pay individuals for political services or to take an active part in political management or campaigns to enroll in and comply with the federal E\u2011Verify program. It applies nationwide to tax\u2011exempt public charities and covers paid (not volunteer) workers, obligating organizations to use E\u2011Verify to confirm workers' authorization to work in the United States."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7680?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7738?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 0,
+      "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Protect our Ballots Act of 2026",
-        "updated_at": "2026-03-13T15:32:57Z"
+        "text": "Government Surveillance Transparency Act of 2026",
+        "updated_at": "2026-03-16T15:21:30Z"
       },
-      "detailPath": "119/hr/7680",
-      "identifier": "HR 7680",
+      "detailPath": "119/hr/7738",
+      "identifier": "HR 7738",
       "impact": {
-        "generated_at": "2026-07-11T06:04:04.498335+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7680"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill requires 501(c)(3) tax\u2011exempt nonprofits that pay people to do political work or take active roles in political campaigns to enroll in and follow the federal E\u2011Verify program. It would affect charities and community groups nationwide and the Department of Homeland Security/USCIS, which operates E\u2011Verify."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-02-25",
-        "text": "Referred to the Committee on the Judiciary, and in addition to the Committee on Education and Workforce, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-      },
-      "members": [
-        {
-          "bioguideId": "A000379",
-          "district": 4,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Alford, Mark [R-MO-4]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MO"
-        }
-      ],
-      "number": "7680",
-      "originChamber": "House",
-      "policyArea": "Immigration",
-      "sponsors": [
-        {
-          "bioguideId": "A000379",
-          "district": 4,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Alford, Mark [R-MO-4]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MO"
-        }
-      ],
-      "title": "Protect our Ballots Act of 2026",
-      "type": "HR",
-      "updatedAt": "2026-03-13T15:32:57Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7680"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:03.934638+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This bill amends the Radiation Exposure Compensation Act to add Guam as a covered Pacific test area, add renal disease to compensable illnesses, set specific qualifying presence periods for leukemia and other listed diseases, and include Enewetak Atoll radiological\u2011cleanup personnel. It applies to individuals physically present in affected Pacific areas during the listed dates (including the 1946\u20131992 windows and April\u2013November 1962) and to Armed Forces who cleaned up Enewetak (May 1, 1977\u2013May 31, 1980)."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7672?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Parity for Pacific Radiation Survivors Act",
-        "updated_at": "2026-03-13T19:36:00Z"
-      },
-      "detailPath": "119/hr/7672",
-      "identifier": "HR 7672",
-      "impact": {
-        "generated_at": "2026-07-11T06:04:53.266560+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7672"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill adds Guam to the Radiation Exposure Compensation Act\u2019s list of Pacific test sites, extends covered exposure dates, and adds Enewetak Atoll radiological\u2011cleanup participants (May 1, 1977\u2013May 31, 1980). Guam residents and U.S. Armed Forces veterans from that cleanup could file leukemia and specified\u2011disease claims, now including renal disease, with the Justice Department\u2019s Radiation Exposure Compensation Program."
-      },
-      "latestAction": {
-        "date": "2026-02-25",
+        "date": "2026-02-26",
         "text": "Referred to the House Committee on the Judiciary."
       },
       "members": [
         {
-          "bioguideId": "M001219",
-          "district": null,
+          "bioguideId": "L000582",
+          "district": 36,
           "isOriginalCosponsor": null,
-          "name": "Del. Moylan, James C. [R-GU-At Large]",
-          "party": "R",
+          "name": "Rep. Lieu, Ted [D-CA-36]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "GU"
+          "state": "CA"
         }
       ],
-      "number": "7672",
+      "number": "7738",
       "originChamber": "House",
-      "policyArea": "Labor and Employment",
+      "policyArea": "Crime and Law Enforcement",
       "sponsors": [
         {
-          "bioguideId": "M001219",
-          "district": null,
+          "bioguideId": "L000582",
+          "district": 36,
           "isOriginalCosponsor": null,
-          "name": "Del. Moylan, James C. [R-GU-At Large]",
-          "party": "R",
+          "name": "Rep. Lieu, Ted [D-CA-36]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "GU"
+          "state": "CA"
         }
       ],
-      "title": "Parity for Pacific Radiation Survivors Act",
+      "title": "Government Surveillance Transparency Act of 2026",
       "type": "HR",
-      "updatedAt": "2026-03-13T19:36:00Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7672"
+      "updatedAt": "2026-03-16T15:21:30Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:04:32.229145+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill creates a Commerce Department task force to research and recommend starting antidumping, countervailing duty, and circumvention investigations. It directs the task force to monitor trade flows, pricing, foreign subsidies, consult other agencies and U.S. industries, prioritize impacts on small and medium-sized U.S. firms, and keep findings confidential until formal initiation under sections 702(a), 732(a), or 781 of the Tariff Act."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3913?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7742?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Self-Initiation Trade Enforcement Act of 2026",
-        "updated_at": "2026-03-13T22:00:43Z"
+        "text": "Keep It Moving Act",
+        "updated_at": "2026-03-16T17:17:34Z"
       },
-      "detailPath": "119/s/3913",
-      "identifier": "S 3913",
+      "detailPath": "119/hr/7742",
+      "identifier": "HR 7742",
       "impact": {
-        "generated_at": "2026-07-11T06:05:07.522844+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3913"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7742"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "Creates a Commerce task force under Under Secretary for International Trade to flag countervailable subsidies, dumping, and circumvention and to recommend starting investigations under the Tariff Act. It will consult the U.S. International Trade Commission and Customs and Border Protection, monitor imports and foreign subsidies, prioritize harms to small and medium-sized U.S. businesses, and keep findings confidential until investigations open."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-26",
+        "text": "Referred to the House Committee on Energy and Commerce."
+      },
+      "members": [
+        {
+          "bioguideId": "P000048",
+          "district": 11,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pfluger, August [R-TX-11]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "number": "7742",
+      "originChamber": "House",
+      "policyArea": "Science, Technology, Communications",
+      "sponsors": [
+        {
+          "bioguideId": "P000048",
+          "district": 11,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pfluger, August [R-TX-11]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "title": "Keep It Moving Act",
+      "type": "HR",
+      "updatedAt": "2026-03-16T17:17:34Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7742"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7700?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Annual Public Housing Inspections Accountability Act",
+        "updated_at": "2026-03-16T14:44:38Z"
+      },
+      "detailPath": "119/hr/7700",
+      "identifier": "HR 7700",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7700"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Referred to the House Committee on Financial Services."
+      },
+      "members": [
+        {
+          "bioguideId": "L000599",
+          "district": 17,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Lawler, Michael [R-NY-17]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "number": "7700",
+      "originChamber": "House",
+      "policyArea": "Housing and Community Development",
+      "sponsors": [
+        {
+          "bioguideId": "L000599",
+          "district": 17,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Lawler, Michael [R-NY-17]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "title": "Annual Public Housing Inspections Accountability Act",
+      "type": "HR",
+      "updatedAt": "2026-03-16T14:44:38Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7700"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3918?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 3,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Government Surveillance Transparency Act of 2026",
+        "updated_at": "2026-03-16T15:21:40Z"
+      },
+      "detailPath": "119/s/3918",
+      "identifier": "S 3918",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3918"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Read twice and referred to the Committee on the Judiciary."
+      },
+      "members": [
+        {
+          "bioguideId": "W000779",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Wyden, Ron [D-OR]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "number": "3918",
+      "originChamber": "Senate",
+      "policyArea": "Crime and Law Enforcement",
+      "sponsors": [
+        {
+          "bioguideId": "W000779",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Wyden, Ron [D-OR]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "title": "Government Surveillance Transparency Act of 2026",
+      "type": "S",
+      "updatedAt": "2026-03-16T15:21:40Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3918"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7690?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Dr. William W. Sullivan TRIO Upward Bound Student Stipend Support Act",
+        "updated_at": "2026-03-16T16:36:07Z"
+      },
+      "detailPath": "119/hr/7690",
+      "identifier": "HR 7690",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7690"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Referred to the House Committee on Education and Workforce."
+      },
+      "members": [
+        {
+          "bioguideId": "D000096",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Davis, Danny K. [D-IL-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "number": "7690",
+      "originChamber": "House",
+      "policyArea": "Education",
+      "sponsors": [
+        {
+          "bioguideId": "D000096",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Davis, Danny K. [D-IL-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "title": "Dr. William W. Sullivan TRIO Upward Bound Student Stipend Support Act",
+      "type": "HR",
+      "updatedAt": "2026-03-16T16:36:07Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7690"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7689?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Earl N. Williams, Sr., First Chance Act",
+        "updated_at": "2026-03-16T17:13:05Z"
+      },
+      "detailPath": "119/hr/7689",
+      "identifier": "HR 7689",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7689"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Referred to the House Committee on Education and Workforce."
+      },
+      "members": [
+        {
+          "bioguideId": "D000096",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Davis, Danny K. [D-IL-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "number": "7689",
+      "originChamber": "House",
+      "policyArea": "Education",
+      "sponsors": [
+        {
+          "bioguideId": "D000096",
+          "district": 7,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Davis, Danny K. [D-IL-7]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "title": "Earl N. Williams, Sr., First Chance Act",
+      "type": "HR",
+      "updatedAt": "2026-03-16T17:13:05Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7689"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7701?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Public Housing Rent Reduction for First Responders Act",
+        "updated_at": "2026-03-16T17:20:50Z"
+      },
+      "detailPath": "119/hr/7701",
+      "identifier": "HR 7701",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7701"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Referred to the House Committee on Financial Services."
+      },
+      "members": [
+        {
+          "bioguideId": "L000599",
+          "district": 17,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Lawler, Michael [R-NY-17]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "number": "7701",
+      "originChamber": "House",
+      "policyArea": "Housing and Community Development",
+      "sponsors": [
+        {
+          "bioguideId": "L000599",
+          "district": 17,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Lawler, Michael [R-NY-17]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "title": "Public Housing Rent Reduction for First Responders Act",
+      "type": "HR",
+      "updatedAt": "2026-03-16T17:20:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7701"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3920?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "UASI Act",
+        "updated_at": "2026-03-16T17:53:50Z"
+      },
+      "detailPath": "119/s/3920",
+      "identifier": "S 3920",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+      },
+      "members": [
+        {
+          "bioguideId": "S001217",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Scott, Rick [R-FL]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
+      "number": "3920",
+      "originChamber": "Senate",
+      "policyArea": "Immigration",
+      "sponsors": [
+        {
+          "bioguideId": "S001217",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Scott, Rick [R-FL]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
+      "title": "UASI Act",
+      "type": "S",
+      "updatedAt": "2026-03-16T17:53:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3924?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "We Can't Wait Act of 2026",
+        "updated_at": "2026-03-16T18:05:41Z"
+      },
+      "detailPath": "119/s/3924",
+      "identifier": "S 3924",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
         "date": "2026-02-25",
@@ -765,1487 +1042,1215 @@
       },
       "members": [
         {
-          "bioguideId": "P000595",
+          "bioguideId": "C001035",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Peters, Gary C. [D-MI]",
-          "party": "D",
+          "name": "Sen. Collins, Susan M. [R-ME]",
+          "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "MI"
+          "state": "ME"
         }
       ],
-      "number": "3913",
+      "number": "3924",
       "originChamber": "Senate",
-      "policyArea": "Foreign Trade and International Finance",
+      "policyArea": "Social Welfare",
       "sponsors": [
         {
-          "bioguideId": "P000595",
+          "bioguideId": "C001035",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Peters, Gary C. [D-MI]",
-          "party": "D",
+          "name": "Sen. Collins, Susan M. [R-ME]",
+          "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "MI"
+          "state": "ME"
         }
       ],
-      "title": "Self-Initiation Trade Enforcement Act of 2026",
+      "title": "We Can't Wait Act of 2026",
       "type": "S",
-      "updatedAt": "2026-03-13T22:00:43Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3913"
+      "updatedAt": "2026-03-16T18:05:41Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:24.985859+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill directs the Department of Transportation to engage a university transportation research institute to create and maintain a national infrastructure intelligence tool that integrates public congestion-related data with the Highway Performance Monitoring System. It applies to DOT, State and local DOTs and metropolitan planning organizations; requires datasets such as speed, origin\u2011destination, crash, asset, commodity, and truck\u2011parking data, mandates at least annual updates, and authorizes $50 million from the Highway Trust Fund for five years."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3906?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3921?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Need for Speed Act",
-        "updated_at": "2026-03-13T15:14:10Z"
+        "text": "Sanctuary Jurisdiction Event Security Enhancement Act",
+        "updated_at": "2026-03-16T18:08:00Z"
       },
-      "detailPath": "119/s/3906",
-      "identifier": "S 3906",
+      "detailPath": "119/s/3921",
+      "identifier": "S 3921",
       "impact": {
-        "generated_at": "2026-07-11T06:13:57.364725+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3906"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3921"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the U.S. Secretary of Transportation to contract a university research institute to build a national infrastructure intelligence tool linking FHWA\u2019s Highway Performance Monitoring System with speed, origin\u2011destination, crash, truck\u2011parking, freight, and asset\u2011condition data. USDOT, FHWA, State DOTs, MPOs, and freight/trucking interests would use it, and it authorizes $50 million from the Highway Trust Fund for five years."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Environment and Public Works."
+        "date": "2026-02-25",
+        "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
       },
       "members": [
         {
-          "bioguideId": "C001056",
+          "bioguideId": "S001217",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Cornyn, John [R-TX]",
+          "name": "Sen. Scott, Rick [R-FL]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "FL"
         }
       ],
-      "number": "3906",
+      "number": "3921",
       "originChamber": "Senate",
-      "policyArea": "Transportation and Public Works",
+      "policyArea": "Immigration",
       "sponsors": [
         {
-          "bioguideId": "C001056",
+          "bioguideId": "S001217",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Cornyn, John [R-TX]",
+          "name": "Sen. Scott, Rick [R-FL]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "FL"
         }
       ],
-      "title": "Need for Speed Act",
+      "title": "Sanctuary Jurisdiction Event Security Enhancement Act",
       "type": "S",
-      "updatedAt": "2026-03-13T15:14:10Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3906"
+      "updatedAt": "2026-03-16T18:08:00Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3921"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:22.723529+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill requires U.S. Customs and Border Protection to refund, with interest, all duties imposed under the International Emergency Economic Powers Act to each importer of a covered article and to reliquidate previously liquidated entries, with refunds due within 180 days. CBP must prioritize small businesses, coordinate Small Business Administration outreach, send 30-day reports to finance and small business committees, and issue drawback guidance in 60 days."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3905?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 26,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Tariff Refund Act of 2026",
-        "updated_at": "2026-03-13T15:59:03Z"
-      },
-      "detailPath": "119/s/3905",
-      "identifier": "S 3905",
-      "impact": {
-        "generated_at": "2026-07-11T06:05:42.807094+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3905"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The CBP Commissioner must refund, with interest, all duties collected under the International Emergency Economic Powers Act to importers of covered articles, reliquidate pre-enactment entries, and complete refunds within 180 days. CBP must prioritize small business concerns, coordinate outreach with the Small Business Administration, issue drawback guidance under the Tariff Act (19 U.S.C. 1313), and report monthly to congressional finance and small-business committees."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Finance."
-      },
-      "members": [
-        {
-          "bioguideId": "W000779",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Wyden, Ron [D-OR]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "OR"
-        }
-      ],
-      "number": "3905",
-      "originChamber": "Senate",
-      "policyArea": "Foreign Trade and International Finance",
-      "sponsors": [
-        {
-          "bioguideId": "W000779",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Wyden, Ron [D-OR]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "OR"
-        }
-      ],
-      "title": "Tariff Refund Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-13T15:59:03Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3905"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:28.779806+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill requires foreign payment stablecoin issuers with over $50 billion in consolidated issuance and not subject to SEC Section 13(a) or 15(d) reporting to prepare GAAP annual financial statements that disclose related\u2011party transactions and to obtain annual audits conducted under PCAOB auditing standards by registered auditors. It amends section 18 of the GENIUS Act and clarifies this requirement does not alter PCAOB jurisdiction over permitted payment stablecoin issuers or auditors."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3907?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Foreign Stablecoin Transparency Act",
-        "updated_at": "2026-03-13T17:04:33Z"
-      },
-      "detailPath": "119/s/3907",
-      "identifier": "S 3907",
-      "impact": {
-        "generated_at": "2026-07-11T06:05:24.806471+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3907"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "Foreign payment stablecoin issuers with over $50,000,000,000 in consolidated outstanding issuance that do not file SEC reports under sections 13(a) or 15(d) must prepare GAAP annual financial statements disclosing related\u2011party transactions. They must engage a registered public accounting firm to audit those statements under PCAOB auditing standards, including auditor independence, internal controls, and related\u2011party rules."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs. (Sponsor introductory remarks on measure: CR S653-654)"
-      },
-      "members": [
-        {
-          "bioguideId": "R000122",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Reed, Jack [D-RI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "RI"
-        }
-      ],
-      "number": "3907",
-      "originChamber": "Senate",
-      "policyArea": "Finance and Financial Sector",
-      "sponsors": [
-        {
-          "bioguideId": "R000122",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Reed, Jack [D-RI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "RI"
-        }
-      ],
-      "title": "Foreign Stablecoin Transparency Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T17:04:33Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3907"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:55.298704+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill directs FEMA, within 120 days, to revise 44 C.F.R. \u00a7206.48 to apply fixed weighted criteria for Public Assistance (10/40/10/10/10/10/10: cost; localized impacts; insurance; mitigation; recent disasters; other Federal aid; economic) and Individual Assistance (20/20/20/10/20/5/5: concentration; trauma; special populations; voluntary agencies; insurance; state average aid; economic). It applies to Governors\u2019 requests for Stafford Act major disaster declarations denied on or after January 1, 2012."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3895?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3922?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Fairness in Federal Disaster Declarations Act of 2026",
-        "updated_at": "2026-03-13T21:50:12Z"
+        "text": "Traditional Cigar Manufacturing and Small Business Jobs Preservation Act of 2026",
+        "updated_at": "2026-03-16T18:34:05Z"
       },
-      "detailPath": "119/s/3895",
-      "identifier": "S 3895",
+      "detailPath": "119/s/3922",
+      "identifier": "S 3922",
       "impact": {
-        "generated_at": "2026-07-11T06:05:49.723921+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3895"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3922"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "FEMA's Administrator must amend 44 C.F.R. \u00a7206.48 within 120 days to assign weights when evaluating Public Assistance (localized impacts 40%, cost 10%) and Individual Assistance (damage concentration 20%, trauma 20%, insurance 20%). The change alters how FEMA decides Governors' Stafford Act requests and affects states, localities, survivors, voluntary agencies, and insurers for disasters denied on or after January 1, 2012."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs. (text: CR S652-653)"
+        "date": "2026-02-25",
+        "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
       },
       "members": [
         {
-          "bioguideId": "D000563",
+          "bioguideId": "M001244",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Durbin, Richard J. [D-IL]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "number": "3895",
-      "originChamber": "Senate",
-      "policyArea": "Emergency Management",
-      "sponsors": [
-        {
-          "bioguideId": "D000563",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Durbin, Richard J. [D-IL]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "title": "Fairness in Federal Disaster Declarations Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-13T21:50:12Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3895"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:05:52.996553+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This bill amends 5 U.S.C. 6103 to set Washington's Birthday on February 22 (instead of the third Monday in February) and to add Lincoln's Birthday to the list of legal public holidays. It revises the federal government's official holiday list under title 5, affecting federal employee leave and federal agency observances."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7663?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Restoring Washington's Birthday Act of 2026",
-        "updated_at": "2026-03-13T22:01:56Z"
-      },
-      "detailPath": "119/hr/7663",
-      "identifier": "HR 7663",
-      "impact": {
-        "generated_at": "2026-07-11T06:05:53.144469+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7663"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill would amend 5 U.S.C. \u00a76103 to move Washington's Birthday from the third Monday in February to February 22 and to add Lincoln's Birthday as a legal public holiday. That change would alter federal employee leave, pay, and agency closure schedules, affecting executive departments, the U.S. Postal Service, and federal courts; some states and private employers might follow suit."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Referred to the House Committee on Oversight and Government Reform."
-      },
-      "members": [
-        {
-          "bioguideId": "O000175",
-          "district": 5,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Ogles, Andrew [R-TN-5]",
+          "name": "Sen. Moody, Ashley [R-FL]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TN"
+          "state": "FL"
         }
       ],
-      "number": "7663",
+      "number": "3922",
+      "originChamber": "Senate",
+      "policyArea": "Health",
+      "sponsors": [
+        {
+          "bioguideId": "M001244",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Moody, Ashley [R-FL]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
+      "title": "Traditional Cigar Manufacturing and Small Business Jobs Preservation Act of 2026",
+      "type": "S",
+      "updatedAt": "2026-03-16T18:34:05Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3922"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7617?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This bill provides appropriations to the Department of Homeland Security (DHS) for the administrative expenses necessary to operate the department for the duration of a lapse in appropriations. This includes appropriations for the DHS Office of Legislative Affairs and U.S. Immigration and Customs Enforcement's Office of Congressional Relations. With respect to any lapse in appropriations during FY2026, DHS must use the funding provided by this bill to ensure that it performs all functions that would be performed in the absence of such a lapse, including responding to communications transmitted to DHS during the lapse by congressional offices. (There is currently a partial government shutdown in effect for DHS agencies and programs due to a lapse in FY2026 appropriations for DHS.)",
+        "updated_at": "2026-03-12T13:26:07Z"
+      },
+      "detailPath": "119/hr/7617",
+      "identifier": "HR 7617",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7617"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-20",
+        "text": "Referred to the House Committee on Appropriations."
+      },
+      "members": [
+        {
+          "bioguideId": "J000310",
+          "district": 32,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Johnson, Julie [D-TX-32]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "number": "7617",
       "originChamber": "House",
-      "policyArea": "Government Operations and Politics",
+      "policyArea": "Economics and Public Finance",
       "sponsors": [
         {
-          "bioguideId": "O000175",
-          "district": 5,
+          "bioguideId": "J000310",
+          "district": 32,
           "isOriginalCosponsor": null,
-          "name": "Rep. Ogles, Andrew [R-TN-5]",
-          "party": "R",
+          "name": "Rep. Johnson, Julie [D-TX-32]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TN"
+          "state": "TX"
         }
       ],
-      "title": "Restoring Washington's Birthday Act of 2026",
+      "title": "To provide funding for administrative expenses of the Department of Homeland Security during any lapse in appropriations during fiscal year 2026, to require that the Department be responsive to congressional offices during such a lapse in appropriations, and for other purposes.",
       "type": "HR",
-      "updatedAt": "2026-03-13T22:01:56Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7663"
+      "updatedAt": "2026-03-17T08:05:51Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7617"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:06:57.851949+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The RECEIPTS Act conditions DoD's transfer and reprogramming authority on the Department obtaining an unqualified audit after FY2028 and imposes Comptroller qualifications if DoD fails that audit by Dec 31, 2028. If audited clean, the Secretary's transfer cap becomes the greater of $10B or 1% of DoD budget; component reprogramming thresholds become $60M (procurement), $30M (research), $45M (O&M), $30M (military personnel); statutory audit-reporting requirements end."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3902?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1068?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 0,
       "description": {
-        "source": "Congress.gov bill detail",
-        "text": "RECEIPTS Act",
-        "updated_at": "2026-03-13T22:30:24Z"
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the joint resolution (H.J. Res. 143) enabling Congress to advance important policies.",
+        "updated_at": "2026-03-13T12:11:00Z"
       },
-      "detailPath": "119/s/3902",
-      "identifier": "S 3902",
+      "detailPath": "119/hres/1068",
+      "identifier": "HRES 1068",
       "impact": {
-        "generated_at": "2026-07-11T06:14:08.156756+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3902"
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1068"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill raises transfer and reprogramming thresholds and ends several DoD audit-reporting requirements once the Department of Defense, military departments, Defense Agencies, and Defense Field Activities obtain an unqualified audit after FY2028. If DoD misses a clean FY2028 audit, nominees for Under Secretary (Comptroller) must be CPAs with prior CFO-level experience at a government agency with an unqualified audit."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Armed Services."
+        "date": "2026-02-20",
+        "text": "Referred to the House Committee on Rules."
       },
       "members": [
         {
-          "bioguideId": "E000295",
-          "district": null,
+          "bioguideId": "M000312",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Sen. Ernst, Joni [R-IA]",
-          "party": "R",
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "IA"
+          "state": "MA"
         }
       ],
-      "number": "3902",
-      "originChamber": "Senate",
-      "policyArea": "Armed Forces and National Security",
+      "number": "1068",
+      "originChamber": "House",
+      "policyArea": "Congress",
       "sponsors": [
         {
-          "bioguideId": "E000295",
-          "district": null,
+          "bioguideId": "M000312",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Sen. Ernst, Joni [R-IA]",
-          "party": "R",
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "IA"
+          "state": "MA"
         }
       ],
-      "title": "RECEIPTS Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T22:30:24Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3902"
+      "title": "Providing for consideration of the joint resolution (H.J. Res. 143) enabling Congress to advance important policies.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:57:33Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1068"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:06:54.125600+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "Authorizes the Secretary of the Navy to transfer one or more F\u201114 Tomcat aircraft in Navy or DoD custody to the U.S. Space and Rocket Center Commission in Huntsville, AL, by sale, gift, loan, or otherwise under terms the Secretary sets, including demilitarization, indemnification, and limits on further disposition. Transfers are at the Commission's expense, and the Commission may hire nonprofits to restore and operate the aircraft for public display, airshows, and commemorations."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3899?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Maverick Act",
-        "updated_at": "2026-03-13T22:30:38Z"
-      },
-      "detailPath": "119/s/3899",
-      "identifier": "S 3899",
-      "impact": {
-        "generated_at": "2026-07-11T06:06:15.633857+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3899"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The Maverick Act authorizes the Secretary of the Navy to transfer F-14 Tomcat aircraft from Department of the Navy or Department of Defense custody to the U.S. Space and Rocket Center Commission in Huntsville, Alabama. The Commission would bear all transfer, restoration, operation, and maintenance costs, may face demilitarization or indemnification requirements, and may partner with nonprofits to display jets at museums, airshows, and commemorations."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Armed Services."
-      },
-      "members": [
-        {
-          "bioguideId": "S001232",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Sheehy, Tim [R-MT]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MT"
-        }
-      ],
-      "number": "3899",
-      "originChamber": "Senate",
-      "policyArea": "Armed Forces and National Security",
-      "sponsors": [
-        {
-          "bioguideId": "S001232",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Sheehy, Tim [R-MT]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MT"
-        }
-      ],
-      "title": "Maverick Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T22:30:38Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3899"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:06:09.272157+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The American Homeownership Act disallows federal income tax deductions for interest paid on residential rental property when an institutional investment entity or a \"large owner\" holds a majority interest. It covers single\u2011family rentals aggregated at 50+ units and institutional investment vehicles, and creates exceptions for sales to individuals or qualified nonprofits, certain new construction and rehabilitation, federally assisted and low\u2011income housing, and multi\u2011family properties."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3904?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7591?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 20,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "American Homeownership Act",
-        "updated_at": "2026-03-13T22:31:13Z"
+        "text": "Secure Firearm Storage and Suicide Prevention Act of 2026",
+        "updated_at": "2026-03-17T08:05:52Z"
       },
-      "detailPath": "119/s/3904",
-      "identifier": "S 3904",
+      "detailPath": "119/hr/7591",
+      "identifier": "HR 7591",
       "impact": {
-        "generated_at": "2026-07-11T06:06:23.889930+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3904"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7591"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill bars federal tax interest and depreciation deductions for residential rental properties majority\u2011owned by institutional investment entities (for example, 3(c) private funds) or by \u201clarge owners\u201d holding 50+ single\u2011family rental units. Exemptions apply to sales to individuals or qualified nonprofits (community land trusts, public\u2011housing agency subsidiaries), new construction after 2023, rehab of uninhabitable units, and HUD\u2011assisted or LIHTC properties."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Finance."
-      },
-      "members": [
-        {
-          "bioguideId": "W000817",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Warren, Elizabeth [D-MA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "number": "3904",
-      "originChamber": "Senate",
-      "policyArea": "Taxation",
-      "sponsors": [
-        {
-          "bioguideId": "W000817",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Warren, Elizabeth [D-MA]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "title": "American Homeownership Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T22:31:13Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3904"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:06:34.273377+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill amends 38 U.S.C. 8127(h) to remove paragraph (3), renumber paragraph (4) as paragraph (3), and insert the phrase \"established under the Small Business Act (15 U.S.C. 631 et seq.)\" into the redesignated paragraph. The change applies to the Department of Veterans Affairs' procurement preference hierarchy, clarifying that the referenced small-business preference covers entities established under the Small Business Act for VA contracting."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3896?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Veterans Affairs Opportunity for Small Businesses Act of 2026",
-        "updated_at": "2026-03-13T22:31:45Z"
-      },
-      "detailPath": "119/s/3896",
-      "identifier": "S 3896",
-      "impact": {
-        "generated_at": "2026-07-11T06:06:39.087971+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3896"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill amends 38 U.S.C. 8127(h) to require the Department of Veterans Affairs' procurement hierarchy to use small\u2011business categories \"established under the Small Business Act.\" It would affect VA contracting offices and firms bidding on VA contracts\u2014especially veterans\u2011owned and service\u2011disabled veteran\u2011owned small businesses and other Small Business Administration\u2013defined small business categories\u2014by aligning VA preferences with SBA definitions."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Veterans' Affairs."
-      },
-      "members": [
-        {
-          "bioguideId": "B001243",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Blackburn, Marsha [R-TN]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TN"
-        }
-      ],
-      "number": "3896",
-      "originChamber": "Senate",
-      "policyArea": "Armed Forces and National Security",
-      "sponsors": [
-        {
-          "bioguideId": "B001243",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Blackburn, Marsha [R-TN]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TN"
-        }
-      ],
-      "title": "Veterans Affairs Opportunity for Small Businesses Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-13T22:31:45Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3896"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:06:52.179389+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill amends the Elizabeth Dole 21st Century Veterans Healthcare and Benefits Improvement Act to extend VA burial benefits through 2030 for veterans who die at home while receiving VA\u2011furnished hospice care. It does so by changing the expiration year in section 301(c)(2) (38 U.S.C. 2303 note) from 2026 to 2030."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3898?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Gerald\u2019s Law Reauthorization Act of 2026",
-        "updated_at": "2026-03-13T22:32:02Z"
-      },
-      "detailPath": "119/s/3898",
-      "identifier": "S 3898",
-      "impact": {
-        "generated_at": "2026-07-11T06:06:49.316835+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3898"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This bill extends from 2026 to 2030 a provision that lets veterans who die at home while receiving VA\u2011furnished hospice care remain eligible for Department of Veterans Affairs burial benefits. It affects those veterans and their survivors who claim burial allowances and the VA offices that pay or provide those benefits, including the Veterans Health Administration and National Cemetery Administration."
-      },
-      "latestAction": {
-        "date": "2026-02-24",
-        "text": "Read twice and referred to the Committee on Veterans' Affairs."
-      },
-      "members": [
-        {
-          "bioguideId": "B001236",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Boozman, John [R-AR]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "AR"
-        }
-      ],
-      "number": "3898",
-      "originChamber": "Senate",
-      "policyArea": "Armed Forces and National Security",
-      "sponsors": [
-        {
-          "bioguideId": "B001236",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Boozman, John [R-AR]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "AR"
-        }
-      ],
-      "title": "Gerald\u2019s Law Reauthorization Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-13T22:32:02Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3898"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:07:13.878714+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill directs USDA Rural Development to reserve at least 2.5% of appropriated funds per discretionary grant program to provide technical and predevelopment assistance so low\u2011capacity rural communities can prepare and implement projects. Supports training, environmental review, outreach, and application development for broadband, water/wastewater, housing, and community projects; prioritizes persistent\u2011poverty, underserved, or low\u2011capacity areas and eligible local, Tribal, nonprofit, cooperative, extension, college, or private entities."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7579?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Empowering Rural Communities Act",
-        "updated_at": "2026-03-13T21:48:21Z"
-      },
-      "detailPath": "119/hr/7579",
-      "identifier": "HR 7579",
-      "impact": {
-        "generated_at": "2026-07-11T06:07:23.126736+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7579"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill requires USDA to reserve at least 2.5% of funds for Rural Development grants for technical assistance, pre\u2011development, outreach, and application support for broadband, water/wastewater, housing, and community projects. USDA Rural Development (RUS, RBCS, RHS) and State offices would fund technical\u2011assistance providers\u2014local and Tribal governments, nonprofits, co\u2011ops, land\u2011grant colleges, and private firms\u2014for low\u2011capacity and persistent\u2011poverty rural areas."
-      },
-      "latestAction": {
-        "date": "2026-02-13",
-        "text": "Referred to the House Committee on Agriculture."
-      },
-      "members": [
-        {
-          "bioguideId": "L000595",
-          "district": 5,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Letlow, Julia [R-LA-5]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "LA"
-        }
-      ],
-      "number": "7579",
-      "originChamber": "House",
-      "policyArea": "Agriculture and Food",
-      "sponsors": [
-        {
-          "bioguideId": "L000595",
-          "district": 5,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Letlow, Julia [R-LA-5]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "LA"
-        }
-      ],
-      "title": "Empowering Rural Communities Act",
-      "type": "HR",
-      "updatedAt": "2026-03-13T21:48:21Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7579"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:07:13.471446+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill permanently establishes an Emergency Safety and Security Grant Program in the U.S. Housing Act of 1937, authorizes $225 million annually, and directs HUD to award grants to public housing agencies for purchase, installation, repair, or replacement of security and safety items. Eligible items include cameras, fencing, lighting, alarms, locks, CO/smoke detectors, and heating fixes; per\u2011agency cap $250,000 (exceptions for extra\u2011large or >5,000 units)."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7360?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 4,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "To amend the United States Housing Act of 1937 to permanently authorize the emergency safety and security grant program, and for other purposes.",
-        "updated_at": "2026-03-13T08:05:37Z"
-      },
-      "detailPath": "119/hr/7360",
-      "identifier": "HR 7360",
-      "impact": {
-        "generated_at": "2026-07-11T06:07:15.838677+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7360"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill requires HUD to make permanent an Emergency Safety and Security Grant program, authorizes $225 million yearly plus a Capital Fund set\u2011aside, and awards grants to public housing agencies (PHAs). Grants fund security and safety items\u2014cameras, lighting, locks, CO/smoke detectors, heating fixes\u2014with a $250,000 cap per PHA unless extra\u2011large or >5,000 units, affecting HUD, PHAs, residents, and contractors."
-      },
-      "latestAction": {
-        "date": "2026-02-04",
-        "text": "Referred to the House Committee on Financial Services."
-      },
-      "members": [
-        {
-          "bioguideId": "G000599",
-          "district": 10,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Goldman, Daniel S. [D-NY-10]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "number": "7360",
-      "originChamber": "House",
-      "policyArea": "Housing and Community Development",
-      "sponsors": [
-        {
-          "bioguideId": "G000599",
-          "district": 10,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Goldman, Daniel S. [D-NY-10]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "title": "To amend the United States Housing Act of 1937 to permanently authorize the emergency safety and security grant program, and for other purposes.",
-      "type": "HR",
-      "updatedAt": "2026-03-13T08:05:37Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7360"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:07:27.361724+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill extends the Export\u2011Import Bank's statutory authorization by changing its termination date from 2026 to 2036 and extending the Bank's aggregate loan, guarantee, and insurance authority expiration from 2027 to 2037. It also renews the \"China and Transformational Exports\" program authorization through 2036, preserving Ex\u2011Im's authority to provide loans, guarantees, and export\u2011credit insurance to support U.S. exporters."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3772?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Export-Import Bank Reauthorization Act of 2026",
-        "updated_at": "2026-02-23T23:05:58Z"
-      },
-      "detailPath": "119/s/3772",
-      "identifier": "S 3772",
-      "impact": {
-        "generated_at": "2026-07-11T06:07:32.715053+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3772"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill extends the Export-Import Bank of the United States\u2019 charter and its loan, guarantee, and insurance authority by ten years (from 2026/2027 to 2036/2037). It keeps the EXIM China and Transformational Exports program active and affects U.S. exporters and manufacturers (for example aerospace, heavy equipment, and clean-energy firms) plus their foreign buyers who use EXIM financing."
-      },
-      "latestAction": {
-        "date": "2026-02-04",
-        "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
-      },
-      "members": [
-        {
-          "bioguideId": "C001096",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cramer, Kevin [R-ND]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "ND"
-        }
-      ],
-      "number": "3772",
-      "originChamber": "Senate",
-      "policyArea": "Foreign Trade and International Finance",
-      "sponsors": [
-        {
-          "bioguideId": "C001096",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cramer, Kevin [R-ND]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "ND"
-        }
-      ],
-      "title": "Export-Import Bank Reauthorization Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-02-23T23:05:58Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3772"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:07:46.244748+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill creates a Department of Education pilot to award competitive grants\u2014up to $200,000 for two years, with $10 million authorized for FY2026\u2014for buying, distributing, or donating books and hosting literacy programs and other book\u2011access activities. Grants cover nongovernmental and nonprofit groups serving children under 19, require a community leader letter and viewpoint\u2011neutral review, include report to Congress, and do not compel libraries to accept donations."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7327?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 3,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Empowering Young Readers Act of 2026",
-        "updated_at": "2026-03-13T08:05:36Z"
-      },
-      "detailPath": "119/hr/7327",
-      "identifier": "HR 7327",
-      "impact": {
-        "generated_at": "2026-07-11T06:07:53.313750+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7327"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the Department of Education to run a competitive pilot awarding nonprofit or nongovernmental organizations grants (up to $200,000; $10 million authorized for FY2026) to provide books and literacy programs for children under 19. It requires viewpoint-neutral review, lets libraries refuse donations, and directs the Secretary to report to Congress on books distributed and child literacy changes."
-      },
-      "latestAction": {
-        "date": "2026-02-03",
+        "date": "2026-02-17",
         "text": "Referred to the House Committee on Education and Workforce."
       },
       "members": [
         {
-          "bioguideId": "F000477",
-          "district": 4,
+          "bioguideId": "G000599",
+          "district": 10,
           "isOriginalCosponsor": null,
-          "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+          "name": "Rep. Goldman, Daniel S. [D-NY-10]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "NC"
+          "state": "NY"
         }
       ],
-      "number": "7327",
+      "number": "7591",
       "originChamber": "House",
       "policyArea": "Education",
       "sponsors": [
         {
-          "bioguideId": "F000477",
-          "district": 4,
+          "bioguideId": "G000599",
+          "district": 10,
           "isOriginalCosponsor": null,
-          "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+          "name": "Rep. Goldman, Daniel S. [D-NY-10]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "NC"
+          "state": "NY"
         }
       ],
-      "title": "Empowering Young Readers Act of 2026",
+      "title": "Secure Firearm Storage and Suicide Prevention Act of 2026",
       "type": "HR",
-      "updatedAt": "2026-03-13T08:05:36Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7327"
+      "updatedAt": "2026-03-17T08:05:52Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7591"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:07:44.851260+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The BO's Act directs HHS to study and report to Congress within one year on home cardiorespiratory monitors for infants and their role in preventing sudden unexpected infant death. The report must assess device accuracy and effectiveness\u2014especially for high\u2011risk infants\u2014outline care models using monitors, set medical\u2011coverage criteria, and recommend whether public or private insurers should cover them."
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1067?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 6856) to impose sanctions and other measures with respect to the Russian Federation if the Government of the Russian Federation refuses to negotiate a peace agreement with Ukraine, violates any such agreement, or initiates another military invasion of Ukraine, and for other purposes.",
+        "updated_at": "2026-03-13T12:10:50Z"
       },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3712?format=json",
+      "detailPath": "119/hres/1067",
+      "identifier": "HRES 1067",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1067"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-17",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "number": "1067",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "title": "Providing for consideration of the bill (H.R. 6856) to impose sanctions and other measures with respect to the Russian Federation if the Government of the Russian Federation refuses to negotiate a peace agreement with Ukraine, violates any such agreement, or initiates another military invasion of Ukraine, and for other purposes.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:57:42Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1067"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7421?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 17,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "SAFE Olympic Sports Act",
+        "updated_at": "2026-03-17T08:05:34Z"
+      },
+      "detailPath": "119/hr/7421",
+      "identifier": "HR 7421",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7421"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-09",
+        "text": "Referred to the House Committee on the Judiciary."
+      },
+      "members": [
+        {
+          "bioguideId": "C001115",
+          "district": 27,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Cloud, Michael [R-TX-27]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "number": "7421",
+      "originChamber": "House",
+      "policyArea": "Sports and Recreation",
+      "sponsors": [
+        {
+          "bioguideId": "C001115",
+          "district": 27,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Cloud, Michael [R-TX-27]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "title": "SAFE Olympic Sports Act",
+      "type": "HR",
+      "updatedAt": "2026-03-17T08:05:34Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7421"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1029?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 6636) to advance sensible priorities.",
+        "updated_at": "2026-03-13T12:11:02Z"
+      },
+      "detailPath": "119/hres/1029",
+      "identifier": "HRES 1029",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1029"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-02",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "number": "1029",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "title": "Providing for consideration of the bill (H.R. 6636) to advance sensible priorities.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:59:27Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1029"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7105?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Guaranteeing the States Protection Against Invasion Act of 2026",
+        "updated_at": "2026-03-16T12:30:06Z"
+      },
+      "detailPath": "119/hr/7105",
+      "identifier": "HR 7105",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7105"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-01-15",
+        "text": "Referred to the House Committee on the Judiciary."
+      },
+      "members": [
+        {
+          "bioguideId": "H001095",
+          "district": 38,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Hunt, Wesley [R-TX-38]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "number": "7105",
+      "originChamber": "House",
+      "policyArea": "Immigration",
+      "sponsors": [
+        {
+          "bioguideId": "H001095",
+          "district": 38,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Hunt, Wesley [R-TX-38]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "title": "Guaranteeing the States Protection Against Invasion Act of 2026",
+      "type": "HR",
+      "updatedAt": "2026-03-16T12:30:06Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7105"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/986?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 7007) to govern on behalf of the American people.",
+        "updated_at": "2026-03-13T12:10:55Z"
+      },
+      "detailPath": "119/hres/986",
+      "identifier": "HRES 986",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/986"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-01-12",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "M000312",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "number": "986",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "M000312",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "title": "Providing for consideration of the bill (H.R. 7007) to govern on behalf of the American people.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:55:29Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/986"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/910?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 185) to advance responsible policies.",
+        "updated_at": "2026-03-13T12:10:49Z"
+      },
+      "detailPath": "119/hres/910",
+      "identifier": "HRES 910",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/910"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-12-10",
+        "text": "Motion to Discharge Committee filed by Mr. Gottheimer. Petition No: 119-13. (<a href=\"https://clerk.house.gov/DischargePetition/2025121013\">Discharge petition</a> text with signatures.)"
+      },
+      "members": [
+        {
+          "bioguideId": "S001201",
+          "district": 3,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Suozzi, Thomas R. [D-NY-3]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "number": "910",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "S001201",
+          "district": 3,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Suozzi, Thomas R. [D-NY-3]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "title": "Providing for consideration of the bill (H.R. 185) to advance responsible policies.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:55:08Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/910"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/527?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution expresses support for the goals and ideals of a National Move Over Law Day. It also urges national, state, and regional incident management organizations to spread awareness and promote the existence of, and adherence to, state move over laws. Move over laws generally require motorists to move at least one lane over when an emergency or rescue activity is taking place, including on the shoulder or side of the roadway, or, if the motorist is unable to do so safely, to slow down and pass the scene with caution.",
+        "updated_at": "2026-03-14T19:54:52Z"
+      },
+      "detailPath": "119/sres/527",
+      "identifier": "SRES 527",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/527"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-12-03",
+        "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S8487; text: CR S8486)"
+      },
+      "members": [
+        {
+          "bioguideId": "B001277",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CT"
+        }
+      ],
+      "number": "527",
+      "originChamber": "Senate",
+      "policyArea": "Transportation and Public Works",
+      "sponsors": [
+        {
+          "bioguideId": "B001277",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CT"
+        }
+      ],
+      "title": "A resolution supporting the goals and ideals of a National Move Over Law Day.",
+      "type": "SRES",
+      "updatedAt": "2026-03-14T19:56:37Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/527"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6319?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 4,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "BO\u2019s Act",
-        "updated_at": "2026-03-13T11:03:18Z"
+        "text": "Benay Taub Lung Cancer Research Act",
+        "updated_at": "2026-03-17T08:05:40Z"
       },
-      "detailPath": "119/s/3712",
-      "identifier": "S 3712",
+      "detailPath": "119/hr/6319",
+      "identifier": "HR 6319",
       "impact": {
-        "generated_at": "2026-07-11T06:07:47.318582+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3712"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6319"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the Secretary of Health and Human Services to study and report within one year on the effectiveness and accuracy of home infant cardiorespiratory monitors for preventing SUID, focusing on high\u2011risk infants and home\u2011sleep care models. It would inform HHS (including CDC), pediatricians and families, monitor manufacturers, and public and private insurers, potentially shaping Medicaid and private coverage."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2026-01-28",
-        "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+        "date": "2025-11-28",
+        "text": "Referred to the House Committee on Energy and Commerce."
       },
       "members": [
         {
-          "bioguideId": "H001079",
-          "district": null,
+          "bioguideId": "G000583",
+          "district": 5,
           "isOriginalCosponsor": null,
-          "name": "Sen. Hyde-Smith, Cindy [R-MS]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MS"
-        }
-      ],
-      "number": "3712",
-      "originChamber": "Senate",
-      "policyArea": "Health",
-      "sponsors": [
-        {
-          "bioguideId": "H001079",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Hyde-Smith, Cindy [R-MS]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MS"
-        }
-      ],
-      "title": "BO\u2019s Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T11:03:18Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3712"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:00.396404+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The Affordable CHOICE Act creates a public insurance option under the ACA to be offered by HHS through the Exchanges beginning plan year Jan. 1, 2027, as metal-level (bronze, silver, gold) plans with geographically adjusted premiums to fund benefits and administration. The Secretary must negotiate provider and drug payment rates with fallback to Medicare rates, apply the option nationwide to Exchange enrollees and providers, and prohibit transferring insurance risk to contractors."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3599?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Affordable CHOICE Act",
-        "updated_at": "2026-03-13T15:59:41Z"
-      },
-      "detailPath": "119/s/3599",
-      "identifier": "S 3599",
-      "impact": {
-        "generated_at": "2026-07-11T06:07:56.242811+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3599"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs HHS to create a federal public health insurance option sold only through ACA Exchanges starting January 1, 2027, offering bronze, silver, and gold plans. It would affect Exchange enrollees, private insurers competing on Exchanges, hospitals/clinicians/pharmacies paid at Secretary\u2011negotiated or Medicare rates, the prescription drug market, and the Treasury via a dedicated account and startup appropriations."
-      },
-      "latestAction": {
-        "date": "2026-01-08",
-        "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
-      },
-      "members": [
-        {
-          "bioguideId": "W000802",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Whitehouse, Sheldon [D-RI]",
+          "name": "Rep. Gottheimer, Josh [D-NJ-5]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "RI"
+          "state": "NJ"
         }
       ],
-      "number": "3599",
-      "originChamber": "Senate",
-      "policyArea": "Health",
-      "sponsors": [
-        {
-          "bioguideId": "W000802",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Whitehouse, Sheldon [D-RI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "RI"
-        }
-      ],
-      "title": "Affordable CHOICE Act",
-      "type": "S",
-      "updatedAt": "2026-03-13T15:59:41Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3599"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:02.850541+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill requires the President to impose visa sanctions\u2014making them inadmissible and revoking visas\u2014against any foreign person the President finds performed or facilitated \"chemical or surgical mutilations\" of U.S. minors. It covers WPATH members, licensed physicians, and medical facilities; defines mutilation to include puberty blockers, sex hormones, and surgeries; exempts treatment for disorders of sexual development and detransition care; and allows whistleblower and national-security exceptions."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6876?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 10,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Protecting Children from Foreign Mutilation Act",
-        "updated_at": "2026-03-13T08:05:41Z"
-      },
-      "detailPath": "119/hr/6876",
-      "identifier": "HR 6876",
-      "impact": {
-        "generated_at": "2026-07-11T06:08:06.018166+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6876"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the President and State Department to bar entry and revoke visas for foreign persons\u2014including World Professional Association for Transgender Health (WPATH) members, foreign physicians, and foreign medical institutions\u2014that provide puberty blockers, sex hormones, or gender\u2011related surgeries to U.S. minors. It requires the State Department to accept public tips, report to Congress within 180 days, and allows UN, whistleblower, and presidential national\u2011security exceptions."
-      },
-      "latestAction": {
-        "date": "2025-12-18",
-        "text": "Referred to the House Committee on the Judiciary."
-      },
-      "members": [
-        {
-          "bioguideId": "M001240",
-          "district": 6,
-          "isOriginalCosponsor": null,
-          "name": "Rep. McDowell, Addison P. [R-NC-6]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NC"
-        }
-      ],
-      "number": "6876",
+      "number": "6319",
       "originChamber": "House",
-      "policyArea": "Immigration",
+      "policyArea": "Health",
       "sponsors": [
         {
-          "bioguideId": "M001240",
-          "district": 6,
+          "bioguideId": "G000583",
+          "district": 5,
           "isOriginalCosponsor": null,
-          "name": "Rep. McDowell, Addison P. [R-NC-6]",
-          "party": "R",
+          "name": "Rep. Gottheimer, Josh [D-NJ-5]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "NC"
+          "state": "NJ"
         }
       ],
-      "title": "Protecting Children from Foreign Mutilation Act",
+      "title": "Benay Taub Lung Cancer Research Act",
       "type": "HR",
-      "updatedAt": "2026-03-13T08:05:41Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6876"
+      "updatedAt": "2026-03-17T08:05:40Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6319"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:21.439030+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The Unauthorized Spending Accountability Act mandates automatic 302(a) allocation cuts for programs with expired authorizations starting in FY2026: a 10% reduction the first unauthorized year and 15% reductions in the second and third unauthorized years, terminating them on Oct. 1 following the third unauthorized year. It covers programs listed in CBO\u2019s annual expired-and-expiring authorizations report and restores cuts if reauthorized with a sunset no longer than three years."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/143?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6294?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 2,
       "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Unauthorized Spending Accountability Act This bill reduces budgetary levels for certain federal programs that are funded through the annual appropriations process and do not have an authorization of appropriations. Under the bill, budgetary levels are spending allocations provided to the congressional appropriations committees by a congressional budget resolution or a deeming resolution. The allocations are provided under the Congressional Budget Act of 1974 and are often referred to as 302(a) allocations. The bill applies to programs included in the Congressional Budget Office's (CBO's) annual report listing programs that are funded through the appropriations process and have an authorization of appropriations that has either expired or will expire during the year. If a program is listed in the CBO report, the bill requires specified reductions to be implemented over a three-year period and terminates the unauthorized programs at the end of the third unauthorized year.",
-        "updated_at": "2025-02-04T15:10:28Z"
+        "source": "Congress.gov bill detail",
+        "text": "Childhood Diabetes Reduction Act of 2025",
+        "updated_at": "2026-03-17T16:39:13Z"
       },
-      "detailPath": "119/hr/143",
-      "identifier": "HR 143",
+      "detailPath": "119/hr/6294",
+      "identifier": "HR 6294",
       "impact": {
-        "generated_at": "2026-07-11T06:08:21.579862+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/143"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6294"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill cuts 302(a) allocations for any program the CBO lists as having an expired authorization: \u221210% the first unauthorized year and \u221215% in years two and three. After year three the program terminates October 1, agencies may only close out prior obligations, and Congress can restore funding only by reauthorizing for up to three years."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2025-12-02",
-        "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 25 - 19."
+        "date": "2025-11-25",
+        "text": "Referred to the House Committee on Energy and Commerce."
       },
       "members": [
         {
-          "bioguideId": "C001039",
-          "district": 3,
+          "bioguideId": "B001292",
+          "district": 8,
           "isOriginalCosponsor": null,
-          "name": "Rep. Cammack, Kat [R-FL-3]",
-          "party": "R",
+          "name": "Rep. Beyer, Donald S. [D-VA-8]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "VA"
         }
       ],
-      "number": "143",
+      "number": "6294",
       "originChamber": "House",
-      "policyArea": "Economics and Public Finance",
+      "policyArea": "Health",
       "sponsors": [
         {
-          "bioguideId": "C001039",
-          "district": 3,
+          "bioguideId": "B001292",
+          "district": 8,
           "isOriginalCosponsor": null,
-          "name": "Rep. Cammack, Kat [R-FL-3]",
-          "party": "R",
+          "name": "Rep. Beyer, Donald S. [D-VA-8]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "VA"
         }
       ],
-      "title": "Unauthorized Spending Accountability Act",
+      "title": "Childhood Diabetes Reduction Act of 2025",
       "type": "HR",
-      "updatedAt": "2026-03-13T15:50:16Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/143"
+      "updatedAt": "2026-03-17T16:39:13Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6294"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:13.821071+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill awards a Congressional Gold Medal to Charles \"Charlie\" Kirk, authorizing two gold medals\u2014one presented to his family and one given to the Smithsonian for public display. It directs the Treasury Secretary to design and strike the medals, permits the U.S. Mint to sell bronze duplicates to cover costs, and charges costs and sale proceeds to the United States Mint Public Enterprise Fund."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6278?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6190?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 30,
+      "cosponsorCount": 7,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Charlie Kirk Congressional Gold Medal Act",
-        "updated_at": "2026-03-13T22:05:44Z"
+        "text": "Tax Cuts for Veterans Act of 2025",
+        "updated_at": "2026-03-17T08:05:29Z"
       },
-      "detailPath": "119/hr/6278",
-      "identifier": "HR 6278",
+      "detailPath": "119/hr/6190",
+      "identifier": "HR 6190",
       "impact": {
-        "generated_at": "2026-07-11T06:08:17.685369+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6278"
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6190"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the Speaker and President pro tempore to award two Congressional Gold Medals honoring Charles \"Charlie\" Kirk \u2014 one to his family and one to the Smithsonian Institution. The Treasury Secretary and United States Mint would strike the medal, may sell bronze duplicates to buyers, and use the U.S. Mint Public Enterprise Fund to cover costs and receive proceeds."
-      },
-      "latestAction": {
-        "date": "2025-11-21",
-        "text": "Referred to the Committee on Financial Services, and in addition to the Committee on House Administration, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-      },
-      "members": [
-        {
-          "bioguideId": "O000175",
-          "district": 5,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Ogles, Andrew [R-TN-5]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TN"
-        }
-      ],
-      "number": "6278",
-      "originChamber": "House",
-      "policyArea": "Government Operations and Politics",
-      "sponsors": [
-        {
-          "bioguideId": "O000175",
-          "district": 5,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Ogles, Andrew [R-TN-5]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TN"
-        }
-      ],
-      "title": "Charlie Kirk Congressional Gold Medal Act",
-      "type": "HR",
-      "updatedAt": "2026-03-13T22:05:44Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6278"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:16.997073+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This Senate resolution formally condemns use of \"congressionally directed spending\" and \"community project funding\" (earmarks) and calls for an immediate, permanent restoration of the ban on such earmarks. As a nonbinding Senate resolution, it expresses the chamber's opposition and urges Congress to stop directing taxpayer dollars to earmarks and to rein in federal overspending, but it does not itself change law or appropriations."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/517?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 3,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution expressing opposition to congressional spending on earmarks.",
-        "updated_at": "2026-03-13T11:18:30Z"
-      },
-      "detailPath": "119/sres/517",
-      "identifier": "SRES 517",
-      "impact": {
-        "generated_at": "2026-07-11T06:08:21.085741+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/517"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This Senate resolution condemns \"community project funding\" (earmarks) and urges an immediate permanent ban, targeting Members of Congress and the Senate and House Appropriations Committees. It would cut a congressional route of federal dollars to state and local governments, universities, and contractors and curb congressional inserts into agency appropriations such as Defense and Transportation."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
         "date": "2025-11-20",
-        "text": "Referred to the Committee on Appropriations."
+        "text": "Referred to the House Committee on Ways and Means."
       },
       "members": [
         {
-          "bioguideId": "S001217",
-          "district": null,
+          "bioguideId": "H001098",
+          "district": 8,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
+          "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "AZ"
+        }
+      ],
+      "number": "6190",
+      "originChamber": "House",
+      "policyArea": "Taxation",
+      "sponsors": [
+        {
+          "bioguideId": "H001098",
+          "district": 8,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "AZ"
+        }
+      ],
+      "title": "Tax Cuts for Veterans Act of 2025",
+      "type": "HR",
+      "updatedAt": "2026-03-17T08:05:29Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6190"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/883?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 2003) to amend the Higher Education Act of 1965 to lower the interest rate on Federal student loans to 2 percent.",
+        "updated_at": "2026-03-13T12:10:56Z"
+      },
+      "detailPath": "119/hres/883",
+      "identifier": "HRES 883",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/883"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-11-17",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "L000596",
+          "district": 13,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Luna, Anna Paulina [R-FL-13]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
           "state": "FL"
         }
       ],
-      "number": "517",
-      "originChamber": "Senate",
+      "number": "883",
+      "originChamber": "House",
       "policyArea": "Congress",
       "sponsors": [
         {
-          "bioguideId": "S001217",
-          "district": null,
+          "bioguideId": "L000596",
+          "district": 13,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
+          "name": "Rep. Luna, Anna Paulina [R-FL-13]",
           "party": "R",
           "role": "Sponsor",
           "sponsorshipDate": null,
           "state": "FL"
         }
       ],
-      "title": "A resolution expressing opposition to congressional spending on earmarks.",
-      "type": "SRES",
-      "updatedAt": "2026-03-13T11:18:30Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/517"
+      "title": "Providing for consideration of the bill (H.R. 2003) to amend the Higher Education Act of 1965 to lower the interest rate on Federal student loans to 2 percent.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:54:41Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/883"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:34.895858+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This bill renames the Kleptocracy Asset Recovery Rewards Pilot Program as the Kleptocracy Asset Recovery Rewards Program, removes a prior three-year limit, and makes section 9703 expire seven years after enactment. It amends section 9703 and the statutory table of contents and thus affects the federal authority that awards payments for information leading to the recovery of assets stolen by corrupt foreign officials."
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/884?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the bill (H.R. 6039) to advance commonsense priorities.",
+        "updated_at": "2026-03-13T12:10:50Z"
       },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5344?format=json",
+      "detailPath": "119/hres/884",
+      "identifier": "HRES 884",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/884"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-11-17",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "M000312",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "number": "884",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "M000312",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MA"
+        }
+      ],
+      "title": "Providing for consideration of the bill (H.R. 6039) to advance commonsense priorities.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:54:49Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/884"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/979?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 317,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "AM Radio for Every Vehicle Act of 2025 This bill requires the Department of Transportation (DOT) to issue a rule requiring AM radio capabilities to be standard in all new passenger vehicles. (AM radio is often used to deliver emergency alerts and news and entertainment programming; some newer vehicles do not include AM equipment.) Specifically, this bill applies to passenger vehicles (1) manufactured in the United States for sale in the United States, imported into the United States, or shipped in interstate commerce; and (2) manufactured after the rule's effective date. The rule must require all such vehicles to have devices that can receive signals and play content transmitted by AM stations or digital audio AM stations installed as standard equipment and made easily accessible to drivers. Prior to the rule's effective date, manufacturers that do not include devices that can access AM radio as standard equipment (1) must inform purchasers of this fact through clear and conspicuous labeling, and (2) may not charge an additional or separate fee for AM radio access. DOT may assess civil penalties for any violation of the rule. The Department of Justice may also bring a civil action to enjoin a violation. The rule, including DOT\u2019s authority to enforce it, must expire 10 years after the bill\u2019s enactment. Further, the Government Accountability Office must study and report on the dissemination of emergency alerts to the public, including by conducting an assessment of AM radio relative to other Integrated Public Alert and Warning System communication technologies.",
+        "updated_at": "2025-03-07T20:00:29Z"
+      },
+      "detailPath": "119/hr/979",
+      "identifier": "HR 979",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/979"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-11-12",
+        "text": "Placed on the Union Calendar, Calendar No. 330."
+      },
+      "members": [
+        {
+          "bioguideId": "B001257",
+          "district": 12,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
+      "number": "979",
+      "originChamber": "House",
+      "policyArea": "Science, Technology, Communications",
+      "sponsors": [
+        {
+          "bioguideId": "B001257",
+          "district": 12,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "FL"
+        }
+      ],
+      "title": "AM Radio for Every Vehicle Act of 2025",
+      "type": "HR",
+      "updatedAt": "2026-03-16T19:05:18Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/979"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3133?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 5,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Violent Juvenile Offender Accountability Act of 2025",
+        "updated_at": "2026-03-17T11:03:20Z"
+      },
+      "detailPath": "119/s/3133",
+      "identifier": "S 3133",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3133"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-11-06",
+        "text": "Read twice and referred to the Committee on the Judiciary."
+      },
+      "members": [
+        {
+          "bioguideId": "B001243",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blackburn, Marsha [R-TN]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TN"
+        }
+      ],
+      "number": "3133",
+      "originChamber": "Senate",
+      "policyArea": "Crime and Law Enforcement",
+      "sponsors": [
+        {
+          "bioguideId": "B001243",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blackburn, Marsha [R-TN]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TN"
+        }
+      ],
+      "title": "Violent Juvenile Offender Accountability Act of 2025",
+      "type": "S",
+      "updatedAt": "2026-03-17T11:03:20Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3133"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3075?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Kleptocracy Asset Recovery Rewards Program Act",
-        "updated_at": "2026-03-13T16:35:21Z"
-      },
-      "detailPath": "119/hr/5344",
-      "identifier": "HR 5344",
-      "impact": {
-        "generated_at": "2026-07-11T06:08:40.415382+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5344"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill renames and extends the Kleptocracy Asset Recovery Rewards Pilot Program, replacing its 3-year limit with a 7-year sunset from enactment. It affects the Department of Justice and Treasury and State Departments that run the program, and people or companies who provide information used to recover assets stolen by foreign officials in U.S. forfeiture or repatriation cases."
-      },
-      "latestAction": {
-        "date": "2025-11-04",
-        "text": "Placed on the Union Calendar, Calendar No. 322."
-      },
-      "members": [
-        {
-          "bioguideId": "L000562",
-          "district": 8,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lynch, Stephen F. [D-MA-8]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "number": "5344",
-      "originChamber": "House",
-      "policyArea": "Finance and Financial Sector",
-      "sponsors": [
-        {
-          "bioguideId": "L000562",
-          "district": 8,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lynch, Stephen F. [D-MA-8]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "title": "Kleptocracy Asset Recovery Rewards Program Act",
-      "type": "HR",
-      "updatedAt": "2026-03-13T16:35:21Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5344"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:08:45.622063+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill overhauls U.S. patent law by repealing key America Invents Act sections to restore a first\u2011to\u2011invent rule with a one\u2011year grace period and abolish inter partes/post\u2011grant review and the Patent Trial and Appeal Board. It reinstates the Board of Patent Appeals and Interferences, narrows ineligible subject matter to natural phenomena and mental processes, limits prior art, presumes irreparable harm for injunctions, and authorizes USPTO fee retention."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5811?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 6,
-      "description": {
         "source": "Congress.gov bill summary",
-        "text": "Restoring America's Leadership in Innovation Act of 2025 This bill revises several aspects of patent law. The bill changes the U.S. patent system back to a first-to-invent system, in which the first inventor to conceive of an invention is entitled to a patent. Currently, the first person to file an application that meets all the necessary requirements is entitled to the patent. Several types of administrative patent challenge proceedings are abolished, as well as the U.S. Patent and Trademark Office (USPTO) body that decides those proceedings. The bill relaxes the standard for what constitutes patent-eligible subject matter. The only ineligible inventions shall be those that exist in nature independent or prior to human activity or that exist solely in the human mind. The bill also makes it easier for a patent owner that has won an infringement case in court to secure a permanent injunction against the infringing defendant. Specifically, there shall be a presumption that further infringement would cause irreparable harm to the prevailing patent owner, and the burden shall be on the infringer to prove otherwise. (Currently, a prevailing patent owner seeking a permanent injunction must prove, among other things, that further infringement would cause irreparable harm.) The bill limits what types of publications shall be treated as prior art that could be used to make an invention be considered to be anticipated or obvious (and therefore not patentable). The bill authorizes the USPTO to keep and spend all the fees that it collects.",
-        "updated_at": "2026-03-13T20:22:15Z"
+        "text": "Strengthening Rural Cooperatives and Communities Act This bill reauthorizes through FY2029 and modifies the Rural Cooperative Development Grant (RCDG) Program. This Department of Agriculture (USDA) program provides grants to nonprofit institutions to help individuals and businesses start, expand, or improve rural cooperatives and other mutually-owned businesses through Rural Cooperative Development Centers. USDA may give an additional preference to grant applications that commit to providing a 25% matching contribution for the center with private funds and in-kind contributions. Specifically, USDA may award the maximum points in application scoring criteria to applicants that satisfy this requirement. Under the bill, cooperative development includes activities (e.g., outreach, education, training, and technical assistance) to support the startup, expansion, or ongoing sustainability of new and existing cooperatives. Current law does not define cooperative development. The bill directs the RCDG interagency working group to submit an annual report to Congress on its activities. Finally, the program currently includes cooperative research program requirements to collect data on the effects of all types of cooperatives on the national economy. Under the bill, USDA must analyze the data resulting from the research and include the data and analysis in the annual report to Congress.",
+        "updated_at": "2026-03-16T12:51:55Z"
       },
-      "detailPath": "119/hr/5811",
-      "identifier": "HR 5811",
+      "detailPath": "119/s/3075",
+      "identifier": "S 3075",
       "impact": {
-        "generated_at": "2026-07-11T06:08:41.219742+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5811"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3075"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill restores first-to-invent rules and a one-year filing grace, changing how the USPTO and inventors, startups, universities, and tech and pharmaceutical firms secure patents. It abolishes inter partes and post-grant review and the Patent Trial and Appeal Board, restores a Board of Patent Appeals and Interferences, and shifts patent invalidation disputes to federal courts, affecting generic drug makers."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2025-10-24",
-        "text": "Referred to the House Committee on the Judiciary."
+        "date": "2025-10-30",
+        "text": "Read twice and referred to the Committee on Agriculture, Nutrition, and Forestry."
       },
       "members": [
         {
-          "bioguideId": "M001184",
-          "district": 4,
+          "bioguideId": "C001113",
+          "district": null,
           "isOriginalCosponsor": null,
-          "name": "Rep. Massie, Thomas [R-KY-4]",
-          "party": "R",
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "KY"
+          "state": "NV"
         }
       ],
-      "number": "5811",
-      "originChamber": "House",
-      "policyArea": "Commerce",
+      "number": "3075",
+      "originChamber": "Senate",
+      "policyArea": "Agriculture and Food",
       "sponsors": [
         {
-          "bioguideId": "M001184",
-          "district": 4,
+          "bioguideId": "C001113",
+          "district": null,
           "isOriginalCosponsor": null,
-          "name": "Rep. Massie, Thomas [R-KY-4]",
-          "party": "R",
+          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "KY"
+          "state": "NV"
         }
       ],
-      "title": "Restoring America\u2019s Leadership in Innovation Act of 2025",
-      "type": "HR",
-      "updatedAt": "2026-03-13T20:22:21Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5811"
+      "title": "Strengthening Rural Cooperatives and Communities Act",
+      "type": "S",
+      "updatedAt": "2026-03-16T12:58:48Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3075"
     },
     {
       "aiDescription": {
@@ -2314,338 +2319,67 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/434"
     },
     {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:09:11.499775+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "This bill directs the Interior Secretary to award, for seven fiscal years after enactment, a grant to the National Law Enforcement Officers Memorial Fund to support the National Law Enforcement Museum's outreach, education, and officer safety and wellness programs. Funds may pay for memorializing line\u2011of\u2011duty deaths, compiling fatality data, exhibits, collections and research, and trainings for Federal, State, local, tribal law enforcement and the public."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/309?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/779?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 124,
+      "cosponsorCount": 0,
       "description": {
         "source": "Congress.gov bill summary",
-        "text": "National Law Enforcement Officers Remembrance, Support and Community Outreach Act. [ sic ] This bill temporarily directs the Department of the Interior to award a grant to the National Law Enforcement Officers Memorial Fund for the expenses associated with operating and enhancing the community outreach, public education, and officer safety and wellness programs of the National Law Enforcement Museum.",
-        "updated_at": "2025-04-22T20:05:15Z"
+        "text": "This resolution provides for the consideration of the bill (H.R. 1834) to advance policy priorities that will break the gridlock.",
+        "updated_at": "2026-03-13T12:10:56Z"
       },
-      "detailPath": "119/hr/309",
-      "identifier": "HR 309",
+      "detailPath": "119/hres/779",
+      "identifier": "HRES 779",
       "impact": {
-        "generated_at": "2026-07-11T06:09:16.483194+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/309"
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/779"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the Secretary of the Interior to award grants to the National Law Enforcement Officers Memorial Fund to support outreach, public education, and officer safety and wellness programs at the National Law Enforcement Museum for seven fiscal years. It affects the Memorial Fund and the National Law Enforcement Museum in Washington, D.C., and federal, tribal, state, and local law enforcement agencies that use the museum's programs."
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2025-09-18",
-        "text": "Subcommittee Hearings Held"
+        "date": "2025-09-30",
+        "text": "Referred to the House Committee on Rules."
       },
       "members": [
         {
-          "bioguideId": "N000026",
-          "district": 22,
+          "bioguideId": "M000312",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Rep. Nehls, Troy E. [R-TX-22]",
-          "party": "R",
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "MA"
         }
       ],
-      "number": "309",
+      "number": "779",
       "originChamber": "House",
-      "policyArea": "Crime and Law Enforcement",
+      "policyArea": "Congress",
       "sponsors": [
         {
-          "bioguideId": "N000026",
-          "district": 22,
+          "bioguideId": "M000312",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Rep. Nehls, Troy E. [R-TX-22]",
-          "party": "R",
+          "name": "Rep. McGovern, James P. [D-MA-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "MA"
         }
       ],
-      "title": "National Law Enforcement Officers Remembrance, Support and Community Outreach Act.",
-      "type": "HR",
-      "updatedAt": "2026-03-13T08:05:50Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/309"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:14:33.390435+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill requires NASA to provide any law\u2011required report or notice it sends to Congress to the Senate Commerce and House Science committees concurrently and within 10 days of any other congressional delivery, and to keep nonpublic items confidential. It also requires NASA to submit copies of any international agreement or nonbinding space instrument to those committees and to congressional foreign\u2011affairs committees within 15 days."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/1081?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Comprehensive NASA Reporting Act of 2025 This bill sets forth general requirements for the submission of reports and notices to Congress by the National Aeronautics and Space Administration (NASA). The bill also requires NASA to provide Congress with a copy of any international agreement or nonbinding instrument entered into by the United States that concerns NASA\u2019s activities in space.",
-        "updated_at": "2025-09-03T18:44:49Z"
-      },
-      "detailPath": "119/s/1081",
-      "identifier": "S 1081",
-      "impact": {
-        "generated_at": "2026-07-11T06:09:17.966635+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1081"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill requires NASA to give required reports, notifications, and budget reprogramming requests to the Senate Commerce Committee and the House Science Committee within 10 days and directs those items be kept confidential. It also requires NASA to provide copies of any international agreement or nonbinding instrument on NASA\u2019s outer\u2011space activities to Senate Commerce, Senate Foreign Relations, House Science, and House Foreign Affairs within 15 days."
-      },
-      "latestAction": {
-        "date": "2025-09-08",
-        "text": "Placed on Senate Legislative Calendar under General Orders. Calendar No. 150."
-      },
-      "members": [
-        {
-          "bioguideId": "C001098",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "number": "1081",
-      "originChamber": "Senate",
-      "policyArea": "Science, Technology, Communications",
-      "sponsors": [
-        {
-          "bioguideId": "C001098",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "title": "Comprehensive NASA Reporting Act of 2025",
-      "type": "S",
-      "updatedAt": "2026-03-13T14:23:56Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1081"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:09:20.462542+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The bill bars entities tied to the People\u2019s Republic of China from acquiring, leasing, or owning U.S. agricultural land. It also temporarily prohibits such entities from purchasing U.S. residential real estate and requires divestment of existing holdings within one year. Coverage includes corporations and organizations tied to the PRC or Chinese Communist Party, their agents and officers, and applies nationwide including U.S. territories."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/4706?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 21,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Protecting Our Farms and Homes from China Act",
-        "updated_at": "2026-03-13T08:05:45Z"
-      },
-      "detailPath": "119/hr/4706",
-      "identifier": "HR 4706",
-      "impact": {
-        "generated_at": "2026-07-11T06:09:53.055174+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/4706"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill prohibits entities tied to the People\u2019s Republic of China or the Chinese Communist Party from acquiring or leasing U.S. agricultural land and forces one\u2011year divestment, enforced by USDA and DOJ. It also establishes a two\u2011year ban on covered Chinese purchases of residential real estate, enforces that ban via Commerce and DOJ, and requires USDA to set up a compliance office."
-      },
-      "latestAction": {
-        "date": "2025-07-23",
-        "text": "Referred to the Committee on Agriculture, and in addition to the Committee on Foreign Affairs, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-      },
-      "members": [
-        {
-          "bioguideId": "M001211",
-          "district": 15,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Miller, Mary E. [R-IL-15]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "number": "4706",
-      "originChamber": "House",
-      "policyArea": "Agriculture and Food",
-      "sponsors": [
-        {
-          "bioguideId": "M001211",
-          "district": 15,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Miller, Mary E. [R-IL-15]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "title": "Protecting Our Farms and Homes from China Act",
-      "type": "HR",
-      "updatedAt": "2026-03-13T08:05:45Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/4706"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:09:31.085625+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The PROTECT Act of 2025 adds controlled\u2011substance offenses (drug trafficking, unlawful possession, paraphernalia) and specified firearms offenses to special tribal criminal jurisdiction, authorizes tribal courts to obtain warrants for stored electronic communications, and permits incarceration through the Bureau of Prisons Tribal Prisoner Program for convictions under that jurisdiction. It applies to participating Indian Tribes and their courts in Indian country and covers prosecution, conviction, and sentencing of Indian and non\u2011Indian defendants, including when neither party is Indian."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/1967?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Protection for Reservation Occupants against Trafficking and Evasive Communications Today Act of 2025 or the PROTECT Act of 2025 This bill expands special tribal criminal jurisdiction (STCJ) to include certain controlled substance-related offenses and firearms offenses. It also allows tribal courts to execute warrants for electronic material. STCJ allows participating tribes to investigate, prosecute, convict, and sentence both Indian and non-Indian offenders who commit covered crimes in Indian country against Indian victims. Covered crimes currently include assault of tribal justice personnel, child violence, dating violence, domestic violence, obstruction of justice, sexual violence, sex trafficking, stalking, and a violation of a protection order. The bill expands STCJ to allow participating tribes to prosecute individuals for controlled substance-related offenses (i.e., drug trafficking, unlawful drug possession, or unlawful possession of drug paraphernalia) and firearms offenses (i.e., use or possession of a firearm in furtherance of a covered crime or by a person who has been convicted of domestic violence). Additionally, the bill allows participating tribes to exercise STCJ over a controlled substance-related offense or a firearms offense if neither the defendant nor the alleged victim is an Indian. (Currently, this exception only applies in cases of obstruction of justice or assault of tribal justice personnel.) The bill allows offenders convicted pursuant to STCJ to be incarcerated through the Bureau of Prisons Tribal Prisoner Program. The bill gives tribal courts the same authority as state courts to compel service providers to disclose stored electronic communication information through court-issued warrants, court orders, or administrative subpoenas.",
-        "updated_at": "2026-03-13T19:16:51Z"
-      },
-      "detailPath": "119/s/1967",
-      "identifier": "S 1967",
-      "impact": {
-        "generated_at": "2026-07-11T06:09:58.799402+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1967"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill lets participating Indian Tribes and tribal courts prosecute controlled\u2011substance crimes (trafficking, possession, paraphernalia) and firearms crimes under special tribal criminal jurisdiction, including some non\u2011Indian cases. It amends the Stored Communications Act to let Tribal courts issue warrants compelling telecoms and online providers to disclose stored communications and allows Tribal convicts into the Bureau of Prisons Tribal Prisoner Program."
-      },
-      "latestAction": {
-        "date": "2025-06-05",
-        "text": "Read twice and referred to the Committee on Indian Affairs."
-      },
-      "members": [
-        {
-          "bioguideId": "D000618",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Daines, Steve [R-MT]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MT"
-        }
-      ],
-      "number": "1967",
-      "originChamber": "Senate",
-      "policyArea": "Native Americans",
-      "sponsors": [
-        {
-          "bioguideId": "D000618",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Daines, Steve [R-MT]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MT"
-        }
-      ],
-      "title": "PROTECT Act of 2025",
-      "type": "S",
-      "updatedAt": "2026-03-13T19:16:57Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1967"
-    },
-    {
-      "aiDescription": {
-        "generated_at": "2026-07-11T06:10:15.740545+00:00",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed_legacy",
-        "summary": "The PACE Act makes the Child and Dependent Care Tax Credit fully refundable, raises the credit rate from 35% (previously reducible to 20%) to 50% (not below 35%), and indexes the credit\u2019s dollar limits for inflation. It also raises the employer\u2011provided dependent care exclusion from $5,000 to $7,500, indexes that amount for inflation, and applies to taxable years beginning after December 31, 2025."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/2900?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 2,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Promoting Affordable Childcare for Everyone Act or the PACE Act This bill increases and makes refundable the tax credit for qualified child and dependent care expenses. The bill also increases the exclusion from gross income for employer-provided child and dependent care benefits. Under current law, a nonrefundable tax credit is allowed for up to 35% (maximum tax credit percentage) of qualified child and dependent care expenses incurred by an individual to work or look for work, up to a maximum amount. The percentage of such expenses allowed as a tax credit may be reduced, but not below 20% (minimum tax credit percentage), based on an individual\u2019s adjusted gross income. The bill generally increases the tax credit for qualified child and dependent care expenses by increasing the maximum tax credit percentage to 50%, increasing the minimum tax credit percentage to 35%, and adjusting the maximum credit amounts annually for inflation. The bill also makes the tax credit for qualified child and dependent care expenses refundable. Finally, the bill increases and adjusts for inflation the amount that may be excluded from gross income for employer-sponsored child and dependent care benefits (e.g., dependent care flexible spending arrangements) to $7,500 (from $5,000).",
-        "updated_at": "2026-03-13T13:25:55Z"
-      },
-      "detailPath": "119/hr/2900",
-      "identifier": "HR 2900",
-      "impact": {
-        "generated_at": "2026-07-11T06:10:10.704884+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2900"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The PACE Act raises the Child and Dependent Care Tax Credit to 50% (minimum 35%), makes it fully refundable, and indexes credit limits for inflation beginning in tax years after 2025. It also increases the employer dependent-care exclusion from $5,000 to $7,500, indexes it, and thereby affects taxpayers who pay for child/dependent care, employers offering dependent-care FSAs, and the IRS."
-      },
-      "latestAction": {
-        "date": "2025-04-10",
-        "text": "Referred to the House Committee on Ways and Means."
-      },
-      "members": [
-        {
-          "bioguideId": "T000478",
-          "district": 24,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Tenney, Claudia [R-NY-24]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "number": "2900",
-      "originChamber": "House",
-      "policyArea": "Taxation",
-      "sponsors": [
-        {
-          "bioguideId": "T000478",
-          "district": 24,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Tenney, Claudia [R-NY-24]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "title": "PACE Act",
-      "type": "HR",
-      "updatedAt": "2026-03-13T13:30:09Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/2900"
+      "title": "Providing for consideration of the bill (H.R. 1834) to advance policy priorities that will break the gridlock.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:54:28Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/779"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-07-11T13:57:45.626175+00:00",
+  "generated_at": "2026-07-12T04:02:01.489270+00:00",
   "impact_status": "cached",
   "source": "congress_api"
 }

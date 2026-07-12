@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001242",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Moreno, Bernie [R-OH]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-04",
+        "state": "OH"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "UASI Act",
+      "updated_at": "2026-03-16T17:53:50Z"
+    },
+    "detailPath": "119/s/3920",
+    "identifier": "S 3920",
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3920",
+    "originChamber": "Senate",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "S001217",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Scott, Rick [R-FL]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "UASI Act",
+    "type": "S",
+    "updatedAt": "2026-03-16T17:53:50Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:24.596040+00:00",
+  "source": "congress_api"
+}

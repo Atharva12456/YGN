@@ -1,0 +1,45 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution provides for the consideration of the joint resolution (H.J. Res. 143) enabling Congress to advance important policies.",
+      "updated_at": "2026-03-13T12:11:00Z"
+    },
+    "detailPath": "119/hres/1068",
+    "identifier": "HRES 1068",
+    "introducedDate": "2026-02-20",
+    "latestAction": {
+      "date": "2026-02-20",
+      "text": "Referred to the House Committee on Rules."
+    },
+    "number": "1068",
+    "originChamber": "House",
+    "policyArea": "Congress",
+    "sponsors": [
+      {
+        "bioguideId": "M000312",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. McGovern, James P. [D-MA-2]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MA"
+      }
+    ],
+    "title": "Providing for consideration of the joint resolution (H.J. Res. 143) enabling Congress to advance important policies.",
+    "type": "HRES",
+    "updatedAt": "2026-03-17T15:57:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1068",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:31.661765+00:00",
+  "source": "congress_api"
+}

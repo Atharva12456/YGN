@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "C001096",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cramer, Kevin [R-ND]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-12",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-12",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "D000618",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Daines, Steve [R-MT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-12",
+        "state": "MT"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Servicemembers\u2019 Credit Monitoring Enhancement Act",
+      "updated_at": "2026-03-17T11:29:12Z"
+    },
+    "detailPath": "119/s/2074",
+    "identifier": "S 2074",
+    "introducedDate": "2025-06-12",
+    "latestAction": {
+      "date": "2026-03-16",
+      "text": "Held at the desk."
+    },
+    "number": "2074",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MN"
+      }
+    ],
+    "title": "Servicemembers\u2019 Credit Monitoring Enhancement Act",
+    "type": "S",
+    "updatedAt": "2026-03-17T11:29:12Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2074",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:01.857702+00:00",
+  "source": "congress_api"
+}

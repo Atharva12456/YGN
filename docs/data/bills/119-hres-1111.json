@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "H001067",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hudson, Richard [R-NC-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "F000450",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Foxx, Virginia [R-NC-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Recognizing the 245th anniversary of the Battle of Guilford Courthouse and encouraging all United States citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina.",
+      "updated_at": "2026-03-17T18:16:50Z"
+    },
+    "detailPath": "119/hres/1111",
+    "identifier": "HRES 1111",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on Natural Resources."
+    },
+    "number": "1111",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "M001240",
+        "district": 6,
+        "isOriginalCosponsor": null,
+        "name": "Rep. McDowell, Addison P. [R-NC-6]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NC"
+      }
+    ],
+    "title": "Recognizing the 245th anniversary of the Battle of Guilford Courthouse and encouraging all United States citizens to visit the Guilford Courthouse National Military Park in Guilford County, North Carolina.",
+    "type": "HRES",
+    "updatedAt": "2026-03-17T18:16:50Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1111",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:03.329277+00:00",
+  "source": "congress_api"
+}

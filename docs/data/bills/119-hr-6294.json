@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "P000608",
+        "district": 50,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Peters, Scott H. [D-CA-50]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-25",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "L000599",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lawler, Michael [R-NY-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-25",
+        "state": "NY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Childhood Diabetes Reduction Act of 2025",
+      "updated_at": "2026-03-17T16:39:13Z"
+    },
+    "detailPath": "119/hr/6294",
+    "identifier": "HR 6294",
+    "introducedDate": "2025-11-25",
+    "latestAction": {
+      "date": "2025-11-25",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "6294",
+    "originChamber": "House",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "B001292",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Beyer, Donald S. [D-VA-8]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "VA"
+      }
+    ],
+    "title": "Childhood Diabetes Reduction Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-17T16:39:13Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6294",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:44.382531+00:00",
+  "source": "congress_api"
+}

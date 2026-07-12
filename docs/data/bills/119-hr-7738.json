@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "D000626",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davidson, Warren [R-OH-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OH"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Government Surveillance Transparency Act of 2026",
+      "updated_at": "2026-03-16T15:21:30Z"
+    },
+    "detailPath": "119/hr/7738",
+    "identifier": "HR 7738",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7738",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "L000582",
+        "district": 36,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Lieu, Ted [D-CA-36]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Government Surveillance Transparency Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-16T15:21:30Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:16.654373+00:00",
+  "source": "congress_api"
+}

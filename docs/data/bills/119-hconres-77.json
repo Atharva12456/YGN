@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001298",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bacon, Don [R-NE-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "D000032",
+        "district": 19,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Donalds, Byron [R-FL-19]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
+      "updated_at": "2026-03-16T15:58:00Z"
+    },
+    "detailPath": "119/hconres/77",
+    "identifier": "HCONRES 77",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on House Administration."
+    },
+    "number": "77",
+    "originChamber": "House",
+    "policyArea": "Congress",
+    "sponsors": [
+      {
+        "bioguideId": "M001199",
+        "district": 21,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Mast, Brian J. [R-FL-21]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
+    "type": "HCONRES",
+    "updatedAt": "2026-03-16T15:58:00Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:02.968210+00:00",
+  "source": "congress_api"
+}

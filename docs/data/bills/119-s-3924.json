@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "H001076",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hassan, Margaret Wood [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "NH"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "We Can't Wait Act of 2026",
+      "updated_at": "2026-03-16T18:05:41Z"
+    },
+    "detailPath": "119/s/3924",
+    "identifier": "S 3924",
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3924",
+    "originChamber": "Senate",
+    "policyArea": "Social Welfare",
+    "sponsors": [
+      {
+        "bioguideId": "C001035",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Collins, Susan M. [R-ME]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "ME"
+      }
+    ],
+    "title": "We Can't Wait Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-16T18:05:41Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924",
+    "votes": []
+  },
+  "generated_at": "2026-07-12T04:02:24.963368+00:00",
+  "source": "congress_api"
+}
