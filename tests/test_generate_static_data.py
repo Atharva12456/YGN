@@ -202,6 +202,42 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(unavailable["grade"], "N/A")
         self.assertEqual(unavailable["source"], "unavailable")
 
+    def test_fec_budget_advances_across_runs_and_preserves_prior_grade(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            self._run_ethics_only(output_dir, ["--fec-score-limit", "1"], backend)
+            first_manifest = json.loads(
+                (output_dir / "manifest.json").read_text(encoding="utf-8")
+            )
+
+            self._run_ethics_only(output_dir, ["--fec-score-limit", "1"], backend)
+            second_manifest = json.loads(
+                (output_dir / "manifest.json").read_text(encoding="utf-8")
+            )
+            score_index = json.loads(
+                (output_dir / "member-scores.json").read_text(encoding="utf-8")
+            )
+
+        self.assertEqual(backend.ethics_requests, ["A000001", "B000001"])
+        self.assertEqual(first_manifest["ethics_sweep_cursor"], "A000001")
+        self.assertEqual(second_manifest["ethics_sweep_cursor"], "B000001")
+        self.assertEqual(set(score_index["ethics"]), {"A000001", "B000001"})
+
+    def test_skip_ethics_keeps_existing_grades_in_score_index(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            self._run_ethics_only(output_dir, [], backend)
+            (output_dir / "member-scores.json").unlink()
+
+            self._run_ethics_only(output_dir, ["--skip-ethics"], backend)
+            score_index = json.loads(
+                (output_dir / "member-scores.json").read_text(encoding="utf-8")
+            )
+
+        self.assertEqual(set(score_index["ethics"]), {"A000001", "B000001"})
+
 
 if __name__ == "__main__":
     unittest.main()
