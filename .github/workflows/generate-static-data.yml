@@ -75,6 +75,9 @@ jobs:
       - name: Build civic data snapshots (laws, hearings, EOs, treaties, votes, weekly brief)
         run: python scripts/build_civic_data.py
 
+      - name: Snapshot AI member overviews (budgeted; no-ops without AI secrets)
+        run: python scripts/snapshot_member_ai.py --budget 20
+
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"

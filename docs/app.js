@@ -474,7 +474,7 @@ function initHomeStats() {
   updateStatCard('stat-debt', 'National Debt', '-', 'Treasury Fiscal Data');
   updateStatCard('stat-population', 'U.S. Population', '-', 'World Bank estimate');
   updateStatCard('stat-register', 'Federal Register', '-', 'Last 7 days');
-  updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'USAspending.gov');
+  updateStatCard('stat-election', 'Days to Election', '-', 'Federal general election');
   updateStatCard('stat-members', 'Members Tracked', '-', 'YGN static/API data');
   updateStatCard('stat-laws', 'Laws Enacted', '-', 'This Congress');
 }
@@ -585,17 +585,30 @@ async function loadFederalRegisterMetric() {
   }
 }
 
-async function loadAgencyMetric() {
-  try {
-    const payload = await fetchJson(
-      'https://api.usaspending.gov/api/v2/references/toptier_agencies/',
-      { cache: 'no-store' }
-    );
-    const agencies = Array.isArray(payload.results) ? payload.results : [];
-    updateStatCard('stat-agencies', 'Reporting Agencies', formatNumber(agencies.length), 'USAspending.gov');
-  } catch {
-    updateStatCard('stat-agencies', 'Reporting Agencies', '-', 'Live feed unavailable');
+// Federal general elections: the Tuesday after the first Monday of November in
+// even years (2 U.S.C. §7). Deterministic, so this card never has a blank state.
+function nextFederalElectionDate(from = new Date()) {
+  for (let year = from.getFullYear(); year <= from.getFullYear() + 2; year++) {
+    if (year % 2 !== 0) continue;
+    const firstOfNov = new Date(year, 10, 1);
+    const firstMonday = 1 + ((8 - firstOfNov.getDay()) % 7);
+    const electionDay = new Date(year, 10, firstMonday + 1);
+    if (electionDay >= from) return electionDay;
   }
+  return null;
+}
+
+function loadElectionCountdown() {
+  const election = nextFederalElectionDate();
+  if (!election) return;
+  const days = Math.ceil((election - new Date()) / 86400000);
+  const label = election.getFullYear() % 4 === 0 ? 'Presidential election' : 'Midterm election';
+  updateStatCard(
+    'stat-election',
+    days === 0 ? 'Election Day!' : 'Days to Election',
+    days === 0 ? 'Today' : formatNumber(days),
+    `${label} · Nov ${election.getDate()}, ${election.getFullYear()}`
+  );
 }
 
 async function loadMemberCount() {
@@ -621,7 +634,7 @@ async function refreshHomeMetrics() {
   loadDebtMetric();
   loadPopulationMetric();
   loadFederalRegisterMetric();
-  loadAgencyMetric();
+  loadElectionCountdown();
   loadMemberCount();
 }
 
@@ -815,12 +828,35 @@ let currentBillsDigest = null;
 const billFilterState = { policyArea: null, chamber: null };
 
 function billMatchesFilter(bill) {
+  if (showSavedBillsOnly && !isBillSaved(bill.detailPath)) return false;
   if (billFilterState.policyArea && bill.policyArea !== billFilterState.policyArea) return false;
   if (billFilterState.chamber) {
     const ch = String(bill.originChamber || '').toLowerCase();
     if (!ch.startsWith(billFilterState.chamber)) return false;
   }
   return true;
+}
+
+// Keep the bills-page URL shareable: ?topic=&chamber=&saved=1 mirror the active
+// filters, and arriving with those params pre-applies them.
+function syncBillFiltersToUrl() {
+  if (document.body.dataset.page !== 'bills') return;
+  const params = new URLSearchParams(window.location.search);
+  ['topic', 'chamber', 'saved'].forEach(k => params.delete(k));
+  if (billFilterState.policyArea) params.set('topic', billFilterState.policyArea);
+  if (billFilterState.chamber) params.set('chamber', billFilterState.chamber);
+  if (showSavedBillsOnly) params.set('saved', '1');
+  const qs = params.toString();
+  history.replaceState(null, '', `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`);
+}
+
+function applyBillFiltersFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const topic = (params.get('topic') || '').trim();
+  const chamber = (params.get('chamber') || '').trim().toLowerCase();
+  if (topic) billFilterState.policyArea = topic;
+  if (chamber === 'house' || chamber === 'senate') billFilterState.chamber = chamber;
+  showSavedBillsOnly = params.get('saved') === '1';
 }
 
 // Topic + chamber filter chips (standalone Recent Bills page only, gated on the
@@ -836,6 +872,15 @@ function renderBillFilterChips() {
   const chip = (label, active, group, value) =>
     `<button type="button" class="bill-chip${active ? ' active' : ''}" data-group="${group}" data-value="${esc(value == null ? '' : value)}">${esc(label)}</button>`;
 
+  const savedCount = savedBillPaths().length;
+  const savedChip = savedCount || showSavedBillsOnly
+    ? `<button type="button" class="bill-chip bill-chip--saved${showSavedBillsOnly ? ' active' : ''}" data-group="saved">★ Tracked (${savedCount})</button>`
+    : '';
+  const anyFilter = billFilterState.chamber || billFilterState.policyArea || showSavedBillsOnly;
+  const clearChip = anyFilter
+    ? `<button type="button" class="bill-chip bill-chip--clear" data-group="clear">✕ Clear filters</button>`
+    : '';
+
   const chamberChips = [
     chip('All chambers', !billFilterState.chamber, 'chamber', ''),
     chip('House', billFilterState.chamber === 'house', 'chamber', 'house'),
@@ -845,12 +890,21 @@ function renderBillFilterChips() {
     .concat(topAreas.map(([a, n]) => chip(`${a} (${n})`, billFilterState.policyArea === a, 'policyArea', a)))
     .join('');
 
-  host.innerHTML = `<div class="bill-chip-row">${chamberChips}</div><div class="bill-chip-row">${areaChips}</div>`;
+  host.innerHTML = `<div class="bill-chip-row">${chamberChips}${savedChip}${clearChip}</div><div class="bill-chip-row">${areaChips}</div>`;
   host.querySelectorAll('.bill-chip').forEach(btn => {
     btn.addEventListener('click', () => {
       const group = btn.dataset.group;
-      const value = btn.dataset.value || null;
-      billFilterState[group] = billFilterState[group] === value ? null : value;
+      if (group === 'saved') {
+        showSavedBillsOnly = !showSavedBillsOnly;
+      } else if (group === 'clear') {
+        billFilterState.chamber = null;
+        billFilterState.policyArea = null;
+        showSavedBillsOnly = false;
+      } else {
+        const value = btn.dataset.value || null;
+        billFilterState[group] = billFilterState[group] === value ? null : value;
+      }
+      syncBillFiltersToUrl();
       renderBillFilterChips();
       renderBillRows();
     });
@@ -884,9 +938,11 @@ function renderBillRows() {
   if (bills.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'bill-empty-state';
-    empty.textContent = (billFilterState.policyArea || billFilterState.chamber)
-      ? 'No bills match the selected filters.'
-      : 'No recent bills are available right now.';
+    empty.textContent = showSavedBillsOnly
+      ? 'No tracked bills in the current view — tap the ☆ on any bill to track it.'
+      : (billFilterState.policyArea || billFilterState.chamber)
+        ? 'No bills match the selected filters.'
+        : 'No recent bills are available right now.';
     recentBillsGrid.appendChild(empty);
     return;
   }
@@ -905,7 +961,15 @@ function renderBillRows() {
     const detailHref = bill.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(bill.detailPath)}`) : null;
 
     const titleCell = document.createElement('div');
-    appendText(titleCell, 'bill-kicker', bill.identifier || `${bill.type || ''} ${bill.number || ''}`.trim(), 'div');
+    const kicker = document.createElement('div');
+    kicker.className = 'bill-kicker';
+    kicker.textContent = bill.identifier || `${bill.type || ''} ${bill.number || ''}`.trim();
+    if (bill.detailPath) {
+      const starWrap = document.createElement('span');
+      starWrap.innerHTML = billSaveButtonHtml(bill.detailPath, true);
+      kicker.appendChild(starWrap.firstElementChild);
+    }
+    titleCell.appendChild(kicker);
     if (detailHref) {
       const titleLink = document.createElement('a');
       titleLink.className = 'bill-title bill-title-link';
@@ -991,6 +1055,7 @@ function renderBillRows() {
     });
     recentBillsGrid.appendChild(row);
   });
+  wireBillSaveButtons(recentBillsGrid);
 }
 
 // ─── Bill detail page (clickable bill w/ cosponsors + roll-call votes) ────────
@@ -1282,10 +1347,11 @@ function renderBillDetail(container, data) {
   container.innerHTML = `
     <article class="bill-detail">
       <header class="bill-detail-head">
-        <div class="bill-detail-kicker">${esc(bill.identifier || '')}</div>
+        <div class="bill-detail-kicker">${esc(bill.identifier || '')} ${billSaveButtonHtml(bill.detailPath, false)}</div>
         <h1>${esc(bill.title || 'Untitled bill')}</h1>
         <p class="bill-detail-meta">${headMeta}</p>
         ${billStepperHtml(bill)}
+        ${whatHappensNextHtml(bill)}
         <div class="bill-detail-links">
           ${bill.url ? `<a class="secondary-button" href="${esc(safeUrl(bill.url))}" target="_blank" rel="noopener">Open on Congress.gov</a>` : ''}
         </div>
@@ -1355,6 +1421,8 @@ async function initBillPage() {
       return;
     }
     renderBillDetail(container, result.data);
+    wireBillSaveButtons(container);
+    injectRelatedBills(container, (result.data && result.data.bill) || null);
 
   } catch (_) {
     container.innerHTML = `<div class="error-state"><span class="state-icon" aria-hidden="true">!</span><p>Could not load this bill. <a href="${withApiParam('recent-bills.html')}">Return to Recent Bills</a></p></div>`;
@@ -1462,6 +1530,7 @@ async function loadRecentBills(limit) {
     // Show up to `limit` bills (static fallback may hold fewer than requested).
     recentBillsGrid.dataset.limit = String(limit);
     renderRecentBills(digest, result.source);
+    renderTrendingTopics(digest);
     if (loadMoreBtn) {
       const available = Array.isArray(digest.bills) ? digest.bills.length : 0;
       const max = Number(recentBillsGrid.dataset.max || 40);
@@ -1482,6 +1551,7 @@ async function loadRecentBills(limit) {
 
 async function initRecentBills() {
   if (!recentBillsGrid) return;
+  applyBillFiltersFromUrl();
   const initialLimit = Number(recentBillsGrid.dataset.limit || 5);
   recentBillsGrid.innerHTML = '<div class="bill-empty-state">Loading recent bills</div>';
 
@@ -1957,7 +2027,18 @@ function createMemberTile(member) {
     <div class="tile-name">${safeName}</div>
     ${locationStr ? `<div class="tile-meta">${esc(locationStr)}</div>` : ''}
     ${chamberStr ? `<div class="tile-meta">${esc(chamberStr)}</div>` : ''}
+    <button type="button" class="member-compare-button${compareSelection.includes(bioguideId) ? ' is-selected' : ''}"
+      data-compare-id="${esc(bioguideId)}" aria-pressed="${compareSelection.includes(bioguideId) ? 'true' : 'false'}"
+      title="Select for side-by-side comparison">⚖ Compare</button>
   `;
+
+  const compareBtn = tile.querySelector('.member-compare-button');
+  if (compareBtn) {
+    compareBtn.addEventListener('click', event => {
+      event.stopPropagation();
+      compareToggle(bioguideId);
+    });
+  }
 
   const ethicsBadge = tile.querySelector('.ethics-badge');
   if (ethicsBadge) {
@@ -3059,6 +3140,7 @@ function applyFilters() {
 
   list = sortMembers(list, sortBy);
   updateMembersCount(list.length, savedRosterCount);
+  renderIdeologyStrip(list);
 
   if (list.length === 0) {
     showEmpty({ savedOnly: showSavedMembersOnly, savedRosterCount });
@@ -3099,7 +3181,7 @@ function applyInitialMemberQuery() {
 
 // ─── Member Detail Page ──────────────────────────────────────────────────────
 
-const DOSSIER_FAST_SECTIONS = 'wiki,nominate,history,committees,contact,legislation,stocks';
+const DOSSIER_FAST_SECTIONS = 'wiki,overview,nominate,history,committees,contact,legislation,stocks';
 const DOSSIER_SLOW_SECTIONS = 'ethics,funding';
 const DOSSIER_PREFETCH_SECTIONS = 'wiki,nominate,history,committees,contact';
 
@@ -3315,8 +3397,23 @@ function sectionNavHtml(data) {
 
 // ── Section cards ────────────────────────────────────────────────────────────
 
-function aboutHtml(wiki) {
-  if (!wiki) return '';
+function aboutHtml(wiki, overviewPayload) {
+  // The committed AI overview (member-ai snapshot / refresh cache) leads the
+  // About card; the Wikipedia extract follows. Either alone still renders the
+  // card; both absent renders nothing (no empty box).
+  const overview = overviewPayload && overviewPayload.overview && overviewPayload.overview.summary;
+  if (!wiki && !overview) return '';
+  const overviewHtml = overview
+    ? `<div class="member-overview">
+         <div class="bill-ai-label">At a glance <span class="ai-badge">AI</span></div>
+         <p>${esc(overview)}</p>
+       </div>` : '';
+  if (!wiki) {
+    return `<section class="dossier-card" id="about">
+      <h3><span><span class="card-icon">📖</span>About</span></h3>
+      ${overviewHtml}
+    </section>`;
+  }
   const thumbnailUrl = typeof wiki.thumbnail === 'string'
     ? wiki.thumbnail
     : (wiki.thumbnail && wiki.thumbnail.source);
@@ -3329,6 +3426,7 @@ function aboutHtml(wiki) {
     ? `<a class="wiki-more" href="${esc(safeUrl(wiki.wiki_url))}" target="_blank" rel="noopener">Read more on Wikipedia →</a>` : '';
   return `<section class="dossier-card" id="about">
     <h3><span><span class="card-icon">📖</span>About</span></h3>
+    ${overviewHtml}
     ${thumb}<div class="wiki-body">${text}</div>${more}${note}
   </section>`;
 }
@@ -3380,12 +3478,27 @@ function careerHtml(history) {
     ? `${esc(history.birthday)}${age ? ` (age ${age})` : ''}`
     : (history.birthYear ? esc(history.birthYear) : '—');
 
+  // Next election: a senator's current term runs to its endYear; a House seat
+  // is up every even year. Both are deterministic from the terms data.
+  const current = chrono[chrono.length - 1] || {};
+  const isSenate = String(current.chamber || '').toLowerCase().includes('senate');
+  const nowYear = new Date().getFullYear();
+  let nextElection = null;
+  if (isSenate) {
+    const end = parseInt(current.endYear, 10);
+    if (Number.isFinite(end)) nextElection = end % 2 === 0 ? end : end - 1;
+  } else if (chrono.length) {
+    nextElection = nowYear % 2 === 0 ? nowYear : nowYear + 1;
+  }
+  if (nextElection && nextElection < nowYear) nextElection = null;
+
   return `<section class="dossier-card" id="career">
     <h3><span><span class="card-icon">🏛️</span>Career History</span></h3>
     <div class="funding-totals" style="margin-bottom:1.25rem;">
       <div class="funding-stat"><span class="funding-stat-label">First elected</span><span class="funding-stat-value">${esc(history.firstElectedYear || '—')}</span></div>
       <div class="funding-stat"><span class="funding-stat-label">Years served</span><span class="funding-stat-value">${esc(history.yearsOfService || '—')}</span></div>
       <div class="funding-stat"><span class="funding-stat-label">Terms</span><span class="funding-stat-value">${esc(termCount)}</span></div>
+      <div class="funding-stat"><span class="funding-stat-label">Next election</span><span class="funding-stat-value">${nextElection ? esc(nextElection) : '—'}</span></div>
       <div class="funding-stat"><span class="funding-stat-label">Born</span><span class="funding-stat-value" style="font-size:1rem;">${born}</span></div>
     </div>
     ${tenureHtml ? `<ul class="tenure-list">${tenureHtml}</ul>` : ''}
@@ -3620,7 +3733,7 @@ function renderDossier(container, data, opts) {
       ${statRowHtml(data)}
       ${sectionNavHtml(data)}
       <div class="dossier-grid">
-        ${aboutHtml(data && data.wiki)}
+        ${aboutHtml(data && data.wiki, data && data.overview)}
         ${careerHtml(data && data.history)}
         ${fundingSectionHtml(data && data.funding, !!opts.fundingPending)}
         ${stocksHtml(data && data.stocks)}
@@ -3631,6 +3744,85 @@ function renderDossier(container, data, opts) {
       </div>
     </div>`;
   attachDossierInteractions(container);
+  injectMemberExtras(container, opts.id, data);
+}
+
+// Post-render, data-dependent dossier extras. Sections are appended ONLY when
+// their data resolves, so a miss never leaves an empty card in the grid.
+async function injectMemberExtras(container, bioguideId, data) {
+  if (!bioguideId) return;
+  const grid = container.querySelector('.dossier-grid');
+  if (!grid) return;
+
+  // Committed AI overview fallback: if the dossier payload lacked it (static
+  // mode or older cache), read the per-member snapshot directly.
+  if (!(data && data.overview && data.overview.overview) && !grid.querySelector('.member-overview')) {
+    try {
+      const res = await fetch(`data/member-ai/${encodeURIComponent(bioguideId)}.json`, { cache: 'default' });
+      if (res.ok) {
+        const snap = await res.json();
+        const summary = snap && snap.overview && snap.overview.summary;
+        const about = grid.querySelector('#about');
+        if (summary && about && !grid.querySelector('.member-overview')) {
+          const block = document.createElement('div');
+          block.className = 'member-overview';
+          block.innerHTML = `<div class="bill-ai-label">At a glance <span class="ai-badge">AI</span></div><p>${esc(summary)}</p>`;
+          const heading = about.querySelector('h3');
+          if (heading) heading.insertAdjacentElement('afterend', block);
+        }
+      }
+    } catch (_) { /* snapshot absent — nothing to show */ }
+  }
+
+  renderIdeologyNeighbors(grid, bioguideId);
+}
+
+// Ideological neighbors: the 3 same-chamber members closest on DW-NOMINATE
+// dim1. Pure client-side math over committed snapshots.
+async function renderIdeologyNeighbors(grid, bioguideId) {
+  try {
+    const [scores] = await Promise.all([loadMemberScoreIndex(), loadMemberDataOnly()]);
+    const nominate = (scores && scores.nominate) || {};
+    const me = nominate[bioguideId];
+    if (!me || !Number.isFinite(Number(me.dim1)) || !allMembers.length) return;
+
+    const my = allMembers.find(m => getMemberField(m, 'bioguideId', 'bioguide_id') === bioguideId);
+    const myChamber = my ? getMemberChamber(my).toLowerCase() : '';
+    const candidates = [];
+    allMembers.forEach(m => {
+      const id = getMemberField(m, 'bioguideId', 'bioguide_id');
+      if (!id || id === bioguideId) return;
+      if (myChamber && !getMemberChamber(m).toLowerCase().includes(myChamber.includes('senate') ? 'senate' : 'house')) return;
+      const score = nominate[id];
+      if (!score || !Number.isFinite(Number(score.dim1))) return;
+      candidates.push({ member: m, id, dist: Math.abs(Number(score.dim1) - Number(me.dim1)), dim1: Number(score.dim1) });
+    });
+    if (candidates.length < 3) return;
+    candidates.sort((a, b) => a.dist - b.dist);
+    const nearest = candidates.slice(0, 3);
+
+    const rows = nearest.map(n => {
+      const name = esc(formatMemberDisplayName(n.member) || 'Unknown');
+      const party = esc(memberPartyLabel(n.member));
+      const state = esc(getMemberField(n.member, 'state'));
+      const href = withApiParam(`member.html?id=${encodeURIComponent(n.id)}`);
+      return `<a class="neighbor-row" href="${href}">
+        <span class="neighbor-name">${name}</span>
+        <span class="neighbor-meta">${party}${state ? ` · ${state}` : ''} · scores ${n.dim1.toFixed(2)}</span>
+      </a>`;
+    }).join('');
+
+    const section = document.createElement('section');
+    section.className = 'dossier-card';
+    section.id = 'neighbors';
+    section.innerHTML = `
+      <h3><span><span class="card-icon">🧭</span>Ideological Neighbors</span></h3>
+      <p class="dossier-card-note">Closest current ${myChamber.includes('senate') ? 'senators' : 'House members'} on the DW-NOMINATE ideology scale (−1 left … +1 right). This member scores ${Number(me.dim1).toFixed(2)}.</p>
+      <div class="neighbor-list">${rows}</div>`;
+    const legislation = grid.querySelector('#legislation');
+    if (legislation) grid.insertBefore(section, legislation);
+    else grid.appendChild(section);
+  } catch (_) { /* neighbors are enrichment only */ }
 }
 
 function attachDossierInteractions(container) {
@@ -3931,6 +4123,465 @@ async function initForeignCivic() {
   }
 }
 
+// -- Presidential nominations (foreign affairs) ---------------------------------
+
+async function initNominations() {
+  const host = document.getElementById('nominations-live');
+  if (!host) return;
+  const data = await fetchCivic('nominations.json');
+  const noms = (data && data.nominations) || [];
+  if (!noms.length) { host.hidden = true; return; }
+  const rows = noms.slice(0, 6).map(n => `
+    <li class="nomination-item">
+      <span class="nomination-date">${esc(formatShortDate(n.actionDate || n.receivedDate))}</span>
+      <span class="nomination-body">
+        <strong>${esc(n.description || `Nomination ${n.number || ''}`)}</strong>
+        <span class="nomination-meta">${esc([n.organization, n.actionText].filter(Boolean).join(' · '))}</span>
+      </span>
+    </li>`).join('');
+  host.innerHTML = `
+    <div class="foreign-section-heading"><div><p class="eyebrow">Executive business in the Senate</p><h2>Nominations Tracker</h2></div>
+    <a class="secondary-button" href="https://www.congress.gov/nominations" target="_blank" rel="noopener">All nominations</a></div>
+    <p class="foreign-bills-note">Civilian nominations the Senate is (or was most recently) acting on — ambassadors, agency heads, and judges shape foreign and domestic policy long after a Congress ends.</p>
+    <ul class="nomination-list">${rows}</ul>
+    <p class="civic-meta">Source: Congress.gov nominations · refreshed with each data build</p>`;
+  host.hidden = false;
+}
+
+// -- Support spotlight: most-cosponsored recent bills (bills page) ---------------
+
+async function initSupportSpotlight() {
+  const host = document.getElementById('support-spotlight');
+  if (!host) return;
+  const data = await fetchCivic('support-spotlight.json');
+  const bills = (data && data.bills) || [];
+  if (!bills.length) { host.hidden = true; return; }
+  const rows = bills.map(b => {
+    const href = b.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(b.detailPath)}`) : null;
+    const title = esc(b.title || b.identifier || 'Untitled bill');
+    const d = Number(b.democrats) || 0;
+    const r = Number(b.republicans) || 0;
+    return `<li class="support-item">
+      <span class="support-count" title="${d} Democratic, ${r} Republican cosponsors">${esc(String(b.cosponsorCount))}</span>
+      <span class="support-body">
+        ${href ? `<a href="${href}">${title}</a>` : title}
+        <span class="support-meta">${esc(b.identifier || '')}${b.policyArea ? ` · ${esc(b.policyArea)}` : ''}${b.bipartisan ? ' · <strong class="bipartisan-tag">Bipartisan</strong>' : ''}</span>
+      </span>
+    </li>`;
+  }).join('');
+  host.innerHTML = `
+    <div class="section-heading"><div><p class="eyebrow">Where support is building</p><h2>Most-backed recent bills</h2></div></div>
+    <ul class="support-list">${rows}</ul>
+    <p class="civic-meta">Ranked by cosponsor count across the tracked recent bills. Cosponsoring is the clearest public signal a member puts their name behind a bill.</p>`;
+  host.hidden = false;
+}
+
+// -- Gerrymandering scoreboard (home, under the map) -----------------------------
+
+async function initGerryScoreboard() {
+  const host = document.getElementById('gerry-scoreboard');
+  if (!host) return;
+  try {
+    const res = await fetch('data/states.json', { cache: 'default' });
+    if (!res.ok) throw new Error('states unavailable');
+    const payload = await res.json();
+    const states = (payload.states || []).filter(s => s.gerrymanderingIndex && Number.isFinite(Number(s.gerrymanderingIndex.score)));
+    if (states.length < 6) { host.hidden = true; return; }
+    const sorted = states.slice().sort((a, b) => Number(b.gerrymanderingIndex.score) - Number(a.gerrymanderingIndex.score));
+    const multi = sorted.filter(s => !/single|at-large/i.test(s.gerrymanderingIndex.label || ''));
+    const highest = sorted.slice(0, 3);
+    const lowest = multi.slice(-3).reverse();
+    const chip = s => `<button type="button" class="gerry-chip" data-fips="${esc(s.fips)}" title="${esc(s.gerrymanderingIndex.label || '')}">
+      ${esc(s.abbreviation)} <strong>${esc(String(s.gerrymanderingIndex.score))}</strong></button>`;
+    host.innerHTML = `
+      <span class="gerry-scoreboard-label">Highest gerrymandering risk:</span> ${highest.map(chip).join('')}
+      <span class="gerry-scoreboard-label gerry-scoreboard-label--low">Fairest multi-district maps:</span> ${lowest.map(chip).join('')}`;
+    host.hidden = false;
+    host.querySelectorAll('.gerry-chip').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        // The map lazy-loads; make sure its state index exists before selecting.
+        if (!stateDataByFips.size) { try { await loadStateData(); } catch (_) { return; } }
+        const info = stateDataByFips.get(normalizeFips(btn.dataset.fips));
+        if (!info) return;
+        updateStatePanel(info, 'click');
+        renderMemberListForState(info);
+        const panel = document.getElementById('state-panel');
+        if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  } catch (_) { host.hidden = true; }
+}
+
+// -- Trending topics (home): what Congress is legislating about right now --------
+
+function renderTrendingTopics(digest) {
+  const host = document.getElementById('trending-topics');
+  if (!host || !digest) return;
+  const counts = {};
+  (digest.bills || []).forEach(b => { if (b.policyArea) counts[b.policyArea] = (counts[b.policyArea] || 0) + 1; });
+  const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  if (top.length < 2) { host.hidden = true; return; }
+  host.innerHTML = `<span class="trending-label">Trending in Congress:</span>` + top.map(([area, n]) =>
+    `<a class="trending-chip" href="${withApiParam(`recent-bills.html?topic=${encodeURIComponent(area)}`)}">${esc(area)} <strong>${n}</strong></a>`
+  ).join('');
+  host.hidden = false;
+}
+
+// -- Saved bills (mirrors saved members): star bills, filter to your list --------
+
+const SAVED_BILLS_STORAGE_KEY = 'ygn_saved_bills_v1';
+let showSavedBillsOnly = false;
+
+function savedBillPaths() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(SAVED_BILLS_STORAGE_KEY) || '[]');
+    return Array.isArray(raw) ? raw.filter(x => typeof x === 'string') : [];
+  } catch (_) { return []; }
+}
+
+function isBillSaved(detailPath) {
+  return !!detailPath && savedBillPaths().includes(detailPath);
+}
+
+function toggleSavedBill(detailPath) {
+  if (!detailPath) return false;
+  const paths = savedBillPaths();
+  const idx = paths.indexOf(detailPath);
+  if (idx >= 0) paths.splice(idx, 1); else paths.push(detailPath);
+  try { localStorage.setItem(SAVED_BILLS_STORAGE_KEY, JSON.stringify(paths)); } catch (_) { /* private mode */ }
+  return idx < 0;
+}
+
+function billSaveButtonHtml(detailPath, compact) {
+  if (!detailPath) return '';
+  const saved = isBillSaved(detailPath);
+  return `<button type="button" class="bill-save-button${compact ? ' bill-save-button--compact' : ''}${saved ? ' is-saved' : ''}"
+    data-bill-path="${esc(detailPath)}" aria-pressed="${saved ? 'true' : 'false'}"
+    title="${saved ? 'Remove from tracked bills' : 'Track this bill'}">${saved ? '★' : '☆'}</button>`;
+}
+
+function wireBillSaveButtons(scope) {
+  (scope || document).querySelectorAll('.bill-save-button').forEach(btn => {
+    if (btn.dataset.wired) return;
+    btn.dataset.wired = '1';
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      const saved = toggleSavedBill(btn.dataset.billPath);
+      btn.classList.toggle('is-saved', saved);
+      btn.setAttribute('aria-pressed', saved ? 'true' : 'false');
+      btn.textContent = saved ? '★' : '☆';
+      btn.title = saved ? 'Remove from tracked bills' : 'Track this bill';
+      // Keep the chip row's count fresh; drop rows immediately in saved-only view.
+      renderBillFilterChips();
+      if (showSavedBillsOnly) renderBillRows();
+    });
+  });
+}
+
+// -- Global quick search (all pages): members + recent bills ----------------------
+
+let quickSearchData = null;
+
+async function ensureQuickSearchData() {
+  if (quickSearchData) return quickSearchData;
+  const [membersLoadedOk, digestRes] = await Promise.all([
+    loadMemberDataOnly().then(() => true).catch(() => false),
+    fetch('data/recent-bills-digest.json', { cache: 'default' }).then(r => (r.ok ? r.json() : null)).catch(() => null),
+  ]);
+  const bills = (digestRes && digestRes.bills) || (currentBillsDigest && currentBillsDigest.bills) || [];
+  quickSearchData = {
+    members: membersLoadedOk ? allMembers : [],
+    bills,
+  };
+  return quickSearchData;
+}
+
+function quickSearchMatches(query) {
+  const q = query.trim().toLowerCase();
+  if (q.length < 2 || !quickSearchData) return [];
+  const results = [];
+  for (const m of quickSearchData.members) {
+    const name = getMemberField(m, 'name', 'directOrderName', 'invertedOrderName');
+    const state = getMemberField(m, 'state');
+    if (name.toLowerCase().includes(q) || state.toLowerCase() === q) {
+      const id = getMemberField(m, 'bioguideId', 'bioguide_id');
+      results.push({
+        kind: 'Member',
+        label: formatMemberDisplayName(m) || name,
+        meta: [memberPartyLabel(m), state, getMemberChamber(m)].filter(Boolean).join(' · '),
+        href: withApiParam(`member.html?id=${encodeURIComponent(id)}`),
+      });
+      if (results.length >= 5) break;
+    }
+  }
+  const memberCount = results.length;
+  for (const b of quickSearchData.bills) {
+    const title = String(b.title || '');
+    const ident = String(b.identifier || '');
+    if (title.toLowerCase().includes(q) || ident.toLowerCase().replace(/\s+/g, '').includes(q.replace(/\s+/g, ''))) {
+      results.push({
+        kind: 'Bill',
+        label: `${ident} — ${title.slice(0, 70)}${title.length > 70 ? '…' : ''}`,
+        meta: b.policyArea || b.originChamber || '',
+        href: b.detailPath ? withApiParam(`bill.html?id=${encodeURIComponent(b.detailPath)}`) : null,
+      });
+      if (results.length >= memberCount + 5) break;
+    }
+  }
+  return results.filter(r => r.href);
+}
+
+function initGlobalSearch() {
+  const nav = document.querySelector('.main-nav');
+  if (!nav || document.getElementById('global-search')) return;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'global-search';
+  wrap.innerHTML = `
+    <input id="global-search" type="search" placeholder="Search members & bills…"
+      autocomplete="off" aria-label="Search members and bills" role="combobox" aria-expanded="false">
+    <div id="global-search-results" class="global-search-results" role="listbox" hidden></div>`;
+  nav.appendChild(wrap);
+
+  const input = wrap.querySelector('#global-search');
+  const resultsEl = wrap.querySelector('#global-search-results');
+  let active = -1;
+
+  function close() { resultsEl.hidden = true; input.setAttribute('aria-expanded', 'false'); active = -1; }
+
+  function render(matches) {
+    if (!matches.length) {
+      resultsEl.innerHTML = `<div class="global-search-empty">No members or recent bills match.</div>`;
+      resultsEl.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    resultsEl.innerHTML = matches.map((m, i) => `
+      <a class="global-search-item" role="option" data-index="${i}" href="${m.href}">
+        <span class="gs-kind gs-kind--${m.kind.toLowerCase()}">${m.kind}</span>
+        <span class="gs-body"><span class="gs-label">${esc(m.label)}</span>${m.meta ? `<span class="gs-meta">${esc(m.meta)}</span>` : ''}</span>
+      </a>`).join('');
+    resultsEl.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+    active = -1;
+  }
+
+  let timer = null;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    const q = input.value;
+    if (q.trim().length < 2) { close(); return; }
+    timer = setTimeout(async () => {
+      await ensureQuickSearchData();
+      render(quickSearchMatches(q));
+    }, 160);
+  });
+  input.addEventListener('focus', () => { ensureQuickSearchData(); });
+  input.addEventListener('keydown', event => {
+    const items = [...resultsEl.querySelectorAll('.global-search-item')];
+    if (event.key === 'Escape') { close(); input.blur(); return; }
+    if (!items.length) return;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      active = event.key === 'ArrowDown'
+        ? (active + 1) % items.length
+        : (active - 1 + items.length) % items.length;
+      items.forEach((el, i) => el.classList.toggle('is-active', i === active));
+      items[active].scrollIntoView({ block: 'nearest' });
+    } else if (event.key === 'Enter' && active >= 0) {
+      event.preventDefault();
+      window.location.href = items[active].href;
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!wrap.contains(event.target)) close();
+  });
+}
+
+// -- Compare two members (members page) -------------------------------------------
+
+let compareSelection = [];
+
+function compareToggle(bioguideId) {
+  const idx = compareSelection.indexOf(bioguideId);
+  if (idx >= 0) compareSelection.splice(idx, 1);
+  else {
+    if (compareSelection.length >= 2) compareSelection.shift();
+    compareSelection = [...compareSelection, bioguideId];
+  }
+  document.querySelectorAll('.member-compare-button').forEach(btn => {
+    const on = compareSelection.includes(btn.dataset.compareId);
+    btn.classList.toggle('is-selected', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  renderCompareBar();
+}
+
+function renderCompareBar() {
+  let bar = document.getElementById('compare-bar');
+  if (!compareSelection.length) { if (bar) bar.remove(); return; }
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'compare-bar';
+    bar.className = 'compare-bar';
+    document.body.appendChild(bar);
+  }
+  const names = compareSelection.map(id => {
+    const m = allMembers.find(x => getMemberField(x, 'bioguideId', 'bioguide_id') === id);
+    return m ? esc(formatMemberDisplayName(m)) : esc(id);
+  });
+  bar.innerHTML = `
+    <span class="compare-bar-label">Compare:</span> ${names.join(' <span class="compare-vs">vs</span> ')}
+    ${compareSelection.length === 2
+      ? `<button type="button" class="primary-button compare-go">Compare</button>`
+      : `<span class="compare-hint">pick one more member</span>`}
+    <button type="button" class="compare-clear" aria-label="Clear comparison">✕</button>`;
+  const go = bar.querySelector('.compare-go');
+  if (go) go.addEventListener('click', openCompareModal);
+  bar.querySelector('.compare-clear').addEventListener('click', () => {
+    compareSelection = [];
+    document.querySelectorAll('.member-compare-button').forEach(btn => {
+      btn.classList.remove('is-selected');
+      btn.setAttribute('aria-pressed', 'false');
+    });
+    renderCompareBar();
+  });
+}
+
+async function openCompareModal() {
+  if (compareSelection.length !== 2) return;
+  const scores = await loadMemberScoreIndex();
+  const nominate = (scores && scores.nominate) || {};
+  const ethics = (scores && scores.ethics) || {};
+  const cols = compareSelection.map(id => {
+    const m = allMembers.find(x => getMemberField(x, 'bioguideId', 'bioguide_id') === id) || {};
+    const nom = nominate[id];
+    const eth = ethics[id];
+    return {
+      id,
+      name: formatMemberDisplayName(m) || id,
+      party: memberPartyLabel(m) || '—',
+      state: getMemberField(m, 'state') || '—',
+      chamber: getMemberChamber(m) || '—',
+      seat: formatDistrictLabel(m) || 'Statewide',
+      ideology: nom && Number.isFinite(Number(nom.dim1)) ? Number(nom.dim1).toFixed(2) : '—',
+      grade: eth && eth.grade && eth.grade !== 'N/A' ? eth.grade : '—',
+    };
+  });
+  const row = (label, key) => `<tr><th scope="row">${esc(label)}</th>${cols.map(c => `<td>${esc(String(c[key]))}</td>`).join('')}</tr>`;
+  const overlay = document.createElement('div');
+  overlay.className = 'compare-overlay';
+  overlay.innerHTML = `
+    <div class="compare-modal" role="dialog" aria-modal="true" aria-label="Compare members">
+      <button type="button" class="compare-close" aria-label="Close comparison">✕</button>
+      <h2>Side by side</h2>
+      <table class="compare-table">
+        <thead><tr><th></th>${cols.map(c => `<th><a href="${withApiParam(`member.html?id=${encodeURIComponent(c.id)}`)}">${esc(c.name)}</a></th>`).join('')}</tr></thead>
+        <tbody>
+          ${row('Party', 'party')}
+          ${row('State', 'state')}
+          ${row('Chamber', 'chamber')}
+          ${row('Seat', 'seat')}
+          ${row('Ideology (DW-NOMINATE)', 'ideology')}
+          ${row('Ethics grade', 'grade')}
+        </tbody>
+      </table>
+      <p class="civic-meta">Ideology: −1 most liberal … +1 most conservative (voting record). Ethics grade is YGN's campaign-finance + stock-trading measure; "—" means no evidence-backed grade yet.</p>
+    </div>`;
+  function close() { overlay.remove(); document.removeEventListener('keydown', onKey); }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  overlay.querySelector('.compare-close').addEventListener('click', close);
+  document.addEventListener('keydown', onKey);
+  document.body.appendChild(overlay);
+}
+
+// -- Ideology distribution strip (members page) -----------------------------------
+
+async function renderIdeologyStrip(list) {
+  const host = document.getElementById('ideology-strip');
+  if (!host) return;
+  const scores = await loadMemberScoreIndex();
+  const nominate = (scores && scores.nominate) || {};
+  const values = [];
+  (list || []).forEach(m => {
+    const id = getMemberField(m, 'bioguideId', 'bioguide_id');
+    const s = nominate[id];
+    if (s && Number.isFinite(Number(s.dim1))) values.push({ v: Number(s.dim1), party: memberPartyCode(m) });
+  });
+  if (values.length < 8) { host.hidden = true; host.innerHTML = ''; return; }
+
+  const BUCKETS = 22;
+  const counts = Array.from({ length: BUCKETS }, () => ({ D: 0, R: 0, I: 0 }));
+  values.forEach(({ v, party }) => {
+    const idx = Math.max(0, Math.min(BUCKETS - 1, Math.floor(((v + 1) / 2) * BUCKETS)));
+    counts[idx][party in counts[idx] ? party : 'I'] += 1;
+  });
+  const max = Math.max(...counts.map(c => c.D + c.R + c.I), 1);
+  const bars = counts.map(c => {
+    const total = c.D + c.R + c.I;
+    const height = total ? Math.max(8, (total / max) * 100) : 0;
+    const dominant = c.D >= c.R && c.D >= c.I ? 'd' : c.R >= c.I ? 'r' : 'i';
+    return `<span class="ideo-bar ideo-bar--${dominant}" style="height:${height}%" title="${total} member${total === 1 ? '' : 's'}"></span>`;
+  }).join('');
+  host.innerHTML = `
+    <div class="ideo-head"><span>Ideology of the ${values.length} member${values.length === 1 ? '' : 's'} shown</span>
+    <span class="ideo-scale"><span>← more liberal</span><span>more conservative →</span></span></div>
+    <div class="ideo-bars">${bars}</div>`;
+  host.hidden = false;
+}
+
+// -- Bill detail extras: what happens next + related bills --------------------------
+
+function whatHappensNextHtml(bill) {
+  const { stages, index } = billStage(bill);
+  const stage = stages[index] || '';
+  const isRes = /agreed to/i.test(stages[stages.length - 1] || '');
+  let text;
+  if (/became law/i.test(stage)) {
+    text = 'This bill is law. Agencies now implement it, and Congress can oversee, fund, or amend how it works in practice.';
+  } else if (/to president/i.test(stage)) {
+    text = 'The President has 10 days to sign it into law or veto it. A veto goes back to Congress, which can override with two-thirds of both chambers.';
+  } else if (isRes && index === stages.length - 1) {
+    text = 'This resolution has been agreed to — resolutions express the chamber\'s position or set its rules and do not go to the President.';
+  } else if (index >= 1 && index < stages.length - 2) {
+    const other = /house/i.test(stage) ? 'Senate' : 'House';
+    text = `One chamber has passed it. The ${other} must pass the same text next — most bills stall here; if versions differ, the chambers must reconcile them.`;
+  } else if (index === stages.length - 2 && !isRes) {
+    text = 'Both chambers have passed it; once any differences are resolved, it is enrolled and presented to the President.';
+  } else {
+    text = 'It sits with committee, which can hold hearings, amend ("mark up"), approve, or simply never act — the fate of roughly 9 in 10 bills. A floor vote only comes if leadership schedules one.';
+  }
+  return `<p class="what-next"><strong>What happens next:</strong> ${esc(text)}</p>`;
+}
+
+async function injectRelatedBills(container, bill) {
+  if (!bill || !bill.policyArea || !bill.detailPath) return;
+  try {
+    const res = await fetch('data/recent-bills-digest.json', { cache: 'default' });
+    if (!res.ok) return;
+    const digest = await res.json();
+    const related = (digest.bills || []).filter(b =>
+      b.policyArea === bill.policyArea && b.detailPath && b.detailPath !== bill.detailPath
+    ).slice(0, 3);
+    if (!related.length) return;
+    const rows = related.map(b => `
+      <a class="related-bill" href="${withApiParam(`bill.html?id=${encodeURIComponent(b.detailPath)}`)}">
+        <span class="related-ident">${esc(b.identifier || '')}</span>
+        <span class="related-title">${esc((b.title || '').slice(0, 90))}</span>
+      </a>`).join('');
+    const section = document.createElement('section');
+    section.className = 'bill-detail-card';
+    section.innerHTML = `
+      <h2>More ${esc(bill.policyArea)} bills</h2>
+      <div class="related-bills">${rows}</div>
+      <p class="civic-meta"><a href="${withApiParam(`recent-bills.html?topic=${encodeURIComponent(bill.policyArea)}`)}">See all recent ${esc(bill.policyArea)} bills →</a></p>`;
+    const article = container.querySelector('.bill-detail');
+    if (article) article.appendChild(section);
+  } catch (_) { /* enrichment only */ }
+}
+
 function initCivicFeatures() {
   initLawsStat();
   initWeeklyBrief();
@@ -3940,6 +4591,10 @@ function initCivicFeatures() {
   initHearings();
   initGlossary();
   initForeignCivic();
+  initNominations();
+  initSupportSpotlight();
+  initGerryScoreboard();
+  initGlobalSearch();
 }
 
 // ─── Initialisation ──────────────────────────────────────────────────────────

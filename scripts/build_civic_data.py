@@ -211,6 +211,70 @@ def build_treaties(backend, limit=8):
     return {**_stamp(), "treaties": treaties}
 
 
+# --- Presidential nominations before the Senate --------------------------------
+
+
+def build_nominations(backend, congress, keep=8):
+    data = backend._congress_get(f"/nomination/{congress}", params={"limit": 60})
+    items = []
+    for nom in data.get("nominations") or []:
+        latest = nom.get("latestAction") or {}
+        description = (nom.get("description") or "").strip()
+        items.append(
+            {
+                "number": nom.get("number"),
+                "organization": nom.get("organization"),
+                "description": description[:220] or None,
+                "isMilitary": bool(nom.get("nominationType", {}).get("isMilitary"))
+                if isinstance(nom.get("nominationType"), dict)
+                else False,
+                "actionDate": latest.get("actionDate"),
+                "actionText": (latest.get("text") or "")[:160] or None,
+                "receivedDate": nom.get("receivedDate"),
+            }
+        )
+    # Civilian nominations are the civic story; military lists are bulk batches.
+    items = [i for i in items if not i["isMilitary"]]
+    items.sort(key=lambda i: i.get("actionDate") or i.get("receivedDate") or "", reverse=True)
+    return {**_stamp({"congress": congress}), "nominations": items[:keep]}
+
+
+# --- Support spotlight: most-cosponsored recent bills (from COMMITTED files) ----
+
+
+def build_support_spotlight(backend, keep=5):
+    """Rank recent bills by cosponsor support with a bipartisan flag. Reads the
+    committed per-bill snapshots -- zero upstream calls."""
+    bills_dir = CIVIC_DIR.parent / "bills"
+    ranked = []
+    for path in sorted(bills_dir.glob("*.json")) if bills_dir.exists() else []:
+        payload = read_json(path, None)
+        bill = (payload or {}).get("bill") if isinstance(payload, dict) else None
+        if not isinstance(bill, dict):
+            continue
+        count = bill.get("cosponsorCount")
+        if not isinstance(count, int) or count < 2:
+            continue
+        parties = {}
+        for person in bill.get("cosponsors") or []:
+            party = (person.get("party") or "?").strip() or "?"
+            parties[party] = parties.get(party, 0) + 1
+        ranked.append(
+            {
+                "identifier": bill.get("identifier"),
+                "title": (bill.get("title") or "")[:160],
+                "detailPath": bill.get("detailPath"),
+                "cosponsorCount": count,
+                "democrats": parties.get("D", 0),
+                "republicans": parties.get("R", 0),
+                "bipartisan": parties.get("D", 0) >= 1 and parties.get("R", 0) >= 1,
+                "policyArea": bill.get("policyArea"),
+            }
+        )
+    ranked.sort(key=lambda b: (-b["cosponsorCount"], b.get("identifier") or ""))
+    return {**_stamp(), "bills": ranked[:keep]}
+
+
 # --- Vote spotlight: notable recent roll-calls --------------------------------
 
 
@@ -385,12 +449,17 @@ def main():
         ("hearings.json", lambda: build_hearings(backend, congress)),
         ("executive-orders.json", lambda: build_executive_orders(backend)),
         ("treaties.json", lambda: build_treaties(backend)),
+        ("nominations.json", lambda: build_nominations(backend, congress)),
+        ("support-spotlight.json", lambda: build_support_spotlight(backend)),
     ):
         try:
             payload = builder()
             built[name] = payload
             atomic_write_json(CIVIC_DIR / name, payload)
-            count = len(payload.get("laws") or payload.get("hearings") or payload.get("orders") or payload.get("treaties") or [])
+            count = len(
+                payload.get("laws") or payload.get("hearings") or payload.get("orders")
+                or payload.get("treaties") or payload.get("nominations") or payload.get("bills") or []
+            )
             print(f"  wrote civic/{name} ({count} items)")
         except Exception as exc:  # noqa: BLE001 - keep prior committed file on failure
             failures += 1

@@ -42,6 +42,7 @@ STATIC_PRECOMPUTED_ETHICS_DIR = Path(__file__).parent.parent / "docs" / "data" /
 # survives Heroku dyno restarts (the SQLite AI cache does not) and works even
 # when no AI provider is configured. Refreshed by scripts/snapshot_bill_ai.py.
 STATIC_BILL_AI_PATH = Path(__file__).parent.parent / "docs" / "data" / "bill-ai.json"
+STATIC_MEMBER_AI_DIR = Path(__file__).parent.parent / "docs" / "data" / "member-ai"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 CACHE_LOCK_STRIPES = 256
@@ -2285,6 +2286,182 @@ def generate_bill_description(bill_item, *, force=False):
     return result
 
 
+# =========================================================================
+# AI member overview: a short, nonpartisan "who is this legislator" synthesis
+# (role, focus areas, tenure) served from COMMITTED snapshots
+# (docs/data/member-ai/{id}.json). Public routes never call the model: misses
+# are queued and drained by the same refresh worker as bill AI, and the
+# snapshot script commits results so they survive restarts.
+# =========================================================================
+
+AI_MEMBER_CONTENT_VERSION = "member-ai-v1"
+AI_MEMBER_OVERVIEW_TTL_SECONDS = 45 * 24 * 60 * 60
+MEMBER_OVERVIEW_SYSTEM_PROMPT = (
+    "You are a nonpartisan congressional biographer for a civic-information site. "
+    "Given structured facts about a sitting member of Congress, write a compact overview "
+    "a first-time visitor can absorb at a glance. Rules: (1) Work ONLY from the provided "
+    "facts plus well-established public knowledge of this specific person; never invent "
+    "votes, positions, or biography. (2) Lead with their role (chamber, state, party, "
+    "tenure), then what they actually focus on legislatively (committees, bill subjects). "
+    "(3) Strictly neutral: no praise, criticism, or electoral prediction. (4) Plain "
+    "language, active voice, no honorifics beyond the first mention."
+)
+
+
+def _member_overview_seed(bioguide_id):
+    """Cheap, cached facts that feed the overview prompt."""
+    member = CongressMembersID(bioguide_id).get("member", {}) or {}
+    seed = {
+        "bioguideId": bioguide_id,
+        "name": _member_display_name(member) or bioguide_id,
+        "party": member.get("partyName") or _current_party_name(member),
+        "state": member.get("state") or _latest_member_term(member).get("stateName"),
+        "chamber": _member_chamber(member),
+        "district": _district_label(member),
+    }
+    try:
+        history = get_member_history(bioguide_id) or {}
+        seed["yearsOfService"] = history.get("yearsOfService")
+        seed["firstElectedYear"] = history.get("firstElectedYear")
+    except Exception:  # noqa: BLE001 - each fact is best-effort
+        pass
+    try:
+        committees = get_member_committees(bioguide_id) or {}
+        names = [c.get("name") for c in committees.get("committees", []) if c.get("name")]
+        seed["committees"] = names[:5]
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        legislation = get_member_legislation(bioguide_id, limit=10) or {}
+        seed["sponsoredCount"] = legislation.get("sponsoredCount")
+        areas = {}
+        for item in legislation.get("sponsored", []) or []:
+            area = item.get("policyArea")
+            if area:
+                areas[area] = areas.get(area, 0) + 1
+        seed["topPolicyAreas"] = [a for a, _ in sorted(areas.items(), key=lambda kv: -kv[1])[:3]]
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        wiki = get_wiki_summary(bioguide_id) or {}
+        if wiki.get("source") != "congress_fallback":
+            seed["wikiTeaser"] = (wiki.get("summary") or "")[:400]
+    except Exception:  # noqa: BLE001
+        pass
+    return seed
+
+
+def _member_ai_context(seed):
+    lines = [f"Member: {seed.get('name')}"]
+    role_bits = [seed.get("chamber"), seed.get("party"), seed.get("state"), seed.get("district")]
+    lines.append("Role: " + ", ".join(str(b) for b in role_bits if b))
+    if seed.get("firstElectedYear"):
+        lines.append(f"First elected: {seed['firstElectedYear']}")
+    if seed.get("yearsOfService") is not None:
+        lines.append(f"Years of service: {seed['yearsOfService']}")
+    if seed.get("committees"):
+        lines.append("Committees: " + "; ".join(seed["committees"]))
+    if seed.get("sponsoredCount") is not None:
+        lines.append(f"Bills sponsored: {seed['sponsoredCount']}")
+    if seed.get("topPolicyAreas"):
+        lines.append("Most-sponsored policy areas: " + ", ".join(seed["topPolicyAreas"]))
+    if seed.get("wikiTeaser"):
+        lines.append(f"Wikipedia teaser: {seed['wikiTeaser']}")
+    return "\n".join(lines)
+
+
+def _static_member_overview(bioguide_id):
+    """Committed member overview snapshot, if present and non-empty."""
+    payload = _read_json_file(STATIC_MEMBER_AI_DIR / f"{bioguide_id}.json", None)
+    if isinstance(payload, dict) and (payload.get("overview") or {}).get("summary"):
+        return {**payload["overview"], "source": "committed"}
+    return None
+
+
+def generate_member_overview(seed, *, force=False):
+    """Model path for the member overview. Guarded by the AI generation scope --
+    reachable only from refresh_member_ai / the refresh worker, never a request."""
+    bioguide_id = seed.get("bioguideId")
+    config = _ai_provider_config()
+    if not config or not bioguide_id:
+        return None
+
+    context = _member_ai_context(seed)
+    input_hash = hashlib.sha256(context.encode("utf-8")).hexdigest()[:24]
+    cache_key = _build_cache_key(
+        "member-overview-v1",
+        {
+            "id": bioguide_id,
+            "model": config["model"],
+            "content_version": AI_MEMBER_CONTENT_VERSION,
+            "input_hash": input_hash,
+        },
+    )
+
+    def fetch_json():
+        user_prompt = (
+            f"{context}\n\n"
+            "In 2-3 COMPLETE sentences totalling STRICTLY 55 words or fewer (hard limit -- "
+            "count them), write the overview: who this member is (chamber, state, party, "
+            "tenure) and what they focus on legislatively. Every sentence must carry "
+            "substance; no meta-commentary. Finish every sentence; never end with '...'. "
+            "If you approach the limit, stop at a complete sentence."
+        )
+        summary = _llm_chat(MEMBER_OVERVIEW_SYSTEM_PROMPT, user_prompt, max_tokens=240)
+        return {
+            "summary": summary,
+            "model": config["model"],
+            "provider": config["kind"],
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "content_version": AI_MEMBER_CONTENT_VERSION,
+            "input_hash": input_hash,
+        }
+
+    result = _cached_json(
+        cache_key,
+        f"member-overview:{bioguide_id}",
+        fetch_json,
+        ttl_seconds=AI_MEMBER_OVERVIEW_TTL_SECONDS,
+    )
+    _write_ai_result("member-overview", bioguide_id, result, AI_MEMBER_OVERVIEW_TTL_SECONDS)
+    return result
+
+
+def refresh_member_ai(bioguide_id, *, force=False):
+    """Explicit model-writing path for member overviews (refresh worker / CI only)."""
+    if not ai_insights_available():
+        return {"available": False, "bioguideId": bioguide_id, "reason": "No AI provider is configured."}
+    seed = _member_overview_seed(bioguide_id)
+    try:
+        overview = _run_in_ai_generation_scope(lambda: generate_member_overview(seed, force=force))
+    except UpstreamDataError as exc:
+        return {"available": False, "bioguideId": bioguide_id, "reason": str(exc)[:300]}
+    return {
+        "available": bool(overview and overview.get("summary")),
+        "bioguideId": bioguide_id,
+        "overview": overview,
+        "seedName": seed.get("name"),
+    }
+
+
+def get_member_overview(bioguide_id):
+    """Public read-only member overview: committed snapshot, then refresh cache,
+    with a queued job on miss. NEVER calls the model."""
+    committed = _static_member_overview(bioguide_id)
+    if committed:
+        return {"available": True, "pending": False, "overview": committed}
+    cached = _read_ai_result(
+        "member-overview", bioguide_id, queue_payload={"bioguide_id": bioguide_id}
+    )
+    if cached and cached.get("summary"):
+        return {
+            "available": True,
+            "pending": False,
+            "overview": {**cached, "source": cached.get("source") or "refresh_cache"},
+        }
+    return {"available": False, "pending": ai_insights_available(), "overview": None}
+
+
 def get_event_confidence(topic, context=None):
     """Return an honest no-poll response instead of inventing a percentage."""
     topic = (topic or "").strip()
@@ -2351,26 +2528,39 @@ def refresh_ai_generation_cache(limit=None):
         for job_key, job in _pending_ai_refresh_jobs(requested_limit):
             report["processed"] += 1
             try:
-                if job.get("kind") != "bill":
-                    raise ValueError("Unsupported AI refresh job kind.")
+                kind = job.get("kind")
                 payload = job.get("payload") or {}
-                result = refresh_bill_ai(
-                    payload.get("congress"),
-                    payload.get("bill_type"),
-                    payload.get("number"),
-                    force=True,
-                )
-                fields = [key for key in ("aiDescription", "impact") if result.get(key)]
-                if len(fields) == 2:
-                    _delete_cache_entry(job_key)
-                    report["completed"] += 1
-                elif fields:
-                    report["partial"] += 1
-                    _record_ai_job_failure(
-                        job_key, job, "Only one bill AI field completed; retrying the missing field."
+                if kind == "bill":
+                    result = refresh_bill_ai(
+                        payload.get("congress"),
+                        payload.get("bill_type"),
+                        payload.get("number"),
+                        force=True,
                     )
+                    fields = [key for key in ("aiDescription", "impact") if result.get(key)]
+                    if len(fields) == 2:
+                        _delete_cache_entry(job_key)
+                        report["completed"] += 1
+                    elif fields:
+                        report["partial"] += 1
+                        _record_ai_job_failure(
+                            job_key, job, "Only one bill AI field completed; retrying the missing field."
+                        )
+                    else:
+                        raise UpstreamDataError("No bill AI fields were generated.")
+                elif kind in ("member", "member-overview"):
+                    result = refresh_member_ai(
+                        payload.get("bioguide_id") or job.get("cache_id"), force=True
+                    )
+                    if result.get("available"):
+                        _delete_cache_entry(job_key)
+                        report["completed"] += 1
+                    else:
+                        raise UpstreamDataError(
+                            result.get("reason") or "Member overview was not generated."
+                        )
                 else:
-                    raise UpstreamDataError("No bill AI fields were generated.")
+                    raise ValueError("Unsupported AI refresh job kind.")
             except Exception as exc:  # noqa: BLE001 - preserve queue for retry
                 _record_ai_job_failure(job_key, job, exc)
                 report["errors"].append(
@@ -4718,6 +4908,7 @@ def get_member_dossier(bioguide_id, sections=None):
 
     section_fetchers = {
         "wiki": lambda: get_member_wiki_full(bioguide_id),
+        "overview": lambda: get_member_overview(bioguide_id),
         "nominate": lambda: get_nominate_score(bioguide_id),
         "ethics": lambda: get_ethics_score(bioguide_id),
         "funding": lambda: get_funding_summary(bioguide_id),
