@@ -11,8 +11,19 @@ on:
         description: "Congress number to snapshot; blank uses current Congress"
         required: false
         default: ""
+      ethics_only:
+        description: "Only run the fast ethics sweep (skip dossiers/bills/civic)"
+        type: boolean
+        default: false
   schedule:
-    - cron: "*/10 * * * *"
+    # Hourly (offset off :00 so it isn't stuck behind GitHub's top-of-hour
+    # scheduling backlog): a fast, bounded ethics checkpoint. At 40 members per
+    # run this refreshes every current member's grade within ~14h — inside the
+    # 19h target even if a few scheduled runs are delayed or dropped.
+    - cron: "17 * * * *"
+    # Once daily: a full refresh so member dossiers, the recent-bills digest,
+    # and the national-debt metric don't go stale under the ethics-only sweep.
+    - cron: "47 3 * * *"
 
 permissions:
   contents: write
@@ -43,10 +54,11 @@ jobs:
       YGN_WIKI_RETRY_DELAY_SECONDS: "1"
       YGN_WIKI_SEARCH_QUERY_LIMIT: "2"
       YGN_WIKI_SEARCH_RESULT_LIMIT: "3"
-      # A standard FEC key permits 1,000 calls/hour. At most 30 members x ~4
-      # calls every 10 minutes is <=720 calls/hour. Small batches finish and
-      # commit frequently, so one slow lookup cannot strand hours of progress.
-      YGN_FEC_SCORE_LIMIT: "30"
+      # 40 members x ~4 calls per hourly run is <=160 FEC calls/hour, well under a
+      # standard 1,000/hour key. ceil(537 / 40) = 14 runs, so the sweep cursor
+      # covers the whole roster within ~14 hours. Small, frequently-committed
+      # batches mean one slow lookup cannot strand hours of progress.
+      YGN_FEC_SCORE_LIMIT: "40"
       YGN_FEC_DELAY_SECONDS: "0"
       # Overlap slow HTTP responses without spending additional API calls.
       YGN_FEC_WORKERS: "6"
@@ -54,6 +66,19 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Decide run mode
+        id: mode
+        # The hourly cron is the fast ethics-only checkpoint. The daily cron and
+        # manual dispatch do a full refresh, unless ethics_only is requested.
+        run: |
+          if [ "${{ github.event.schedule }}" = "17 * * * *" ] || [ "${{ github.event.inputs.ethics_only }}" = "true" ]; then
+            echo "ethics_only=true" >> "$GITHUB_OUTPUT"
+            echo "Run mode: ethics-only checkpoint sweep."
+          else
+            echo "ethics_only=false" >> "$GITHUB_OUTPUT"
+            echo "Run mode: full data refresh."
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -68,25 +93,43 @@ jobs:
           python -m unittest discover -s tests -q
           node --check docs/app.js
 
-      - name: Generate static JSON snapshots
+      - name: Generate static JSON snapshots (ethics-only)
+        if: steps.mode.outputs.ethics_only == 'true'
         run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS" --ethics-only
 
+      - name: Generate static JSON snapshots (full)
+        if: steps.mode.outputs.ethics_only == 'false'
+        run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS"
+
       - name: Commit ethics checkpoint
+        # Commit the ethics progress before the heavier steps so a later failure
+        # never strands a run's FEC work. Push with a rebase-retry because main
+        # moves under us (other data commits, deploys) — a plain push would
+        # regularly fail non-fast-forward.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/ethics docs/data/member-scores.json docs/data/manifest.json
           if git diff --cached --quiet; then
             echo "No ethics data changes to commit."
-          else
-            git commit -m "update ethics grade checkpoint"
-            git push
+            exit 0
           fi
+          git commit -m "update ethics grade checkpoint"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $attempt/3); rebasing on origin/$GITHUB_REF_NAME"
+            git pull --rebase origin "$GITHUB_REF_NAME" || git rebase --abort || true
+            sleep 3
+          done
+          echo "::error::Could not push ethics checkpoint after 3 attempts"
+          exit 1
 
       - name: Snapshot AI bill descriptions/impacts
+        if: steps.mode.outputs.ethics_only == 'false'
         run: python scripts/snapshot_bill_ai.py --limit 40
 
       - name: Harvest AI bill content from the live site (CI has no AI key)
+        if: steps.mode.outputs.ethics_only == 'false'
         # The live app has the AI provider key and generates bill AI on its
         # background-refresh queue; this pulls that content into the committed
         # store so the digest never gets stuck on "queued" placeholders even
@@ -95,19 +138,29 @@ jobs:
         run: python scripts/harvest_bill_ai.py --limit 40 || echo "harvest skipped"
 
       - name: Build civic data snapshots (laws, hearings, EOs, treaties, votes, weekly brief)
+        if: steps.mode.outputs.ethics_only == 'false'
         run: python scripts/build_civic_data.py
 
       - name: Snapshot AI member overviews (budgeted; no-ops without AI secrets)
+        if: steps.mode.outputs.ethics_only == 'false'
         run: python scripts/snapshot_member_ai.py --budget 20
 
       - name: Commit generated data
+        if: steps.mode.outputs.ethics_only == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data
           if git diff --cached --quiet; then
             echo "No static data changes to commit."
-          else
-            git commit -m "update generated static data"
-            git push
+            exit 0
           fi
+          git commit -m "update generated static data"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $attempt/3); rebasing on origin/$GITHUB_REF_NAME"
+            git pull --rebase origin "$GITHUB_REF_NAME" || git rebase --abort || true
+            sleep 3
+          done
+          echo "::error::Could not push generated data after 3 attempts"
+          exit 1
