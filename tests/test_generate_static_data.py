@@ -28,6 +28,9 @@ class FakeBackend:
         self.wiki_requests = []
         self.nominate_requests = []
         self.ethics_requests = []
+        self.detail_requests = []
+        self.fallback_requests = []
+        self.debt_requests = 0
 
     def congress_api_key_available(self):
         return True
@@ -48,6 +51,7 @@ class FakeBackend:
         return {"bills": []}
 
     def get_national_debt_metric(self):
+        self.debt_requests += 1
         return None
 
     def _member_chamber(self, member):
@@ -60,6 +64,7 @@ class FakeBackend:
         return member.get("state") or "NY"
 
     def CongressMembersID(self, bioguide_id):
+        self.detail_requests.append(bioguide_id)
         return {"member": {"bioguideId": bioguide_id}}
 
     def get_wiki_summary(self, bioguide_id):
@@ -85,6 +90,7 @@ class FakeBackend:
         }
 
     def ethics_fallback_only(self, bioguide_id):
+        self.fallback_requests.append(bioguide_id)
         return {
             "bioguideId": bioguide_id,
             "available": False,
@@ -154,8 +160,7 @@ class GenerateStaticDataTests(unittest.TestCase):
     def _run_ethics_only(self, output_dir, extra_argv, backend):
         argv = [
             "generate_static_data.py", "--output-dir", str(output_dir),
-            "--max-members", "all", "--skip-details", "--skip-wiki",
-            "--skip-nominate", "--skip-recent-bills",
+            "--max-members", "all", "--ethics-only",
         ] + extra_argv
         with patch.object(sys, "argv", argv), patch.object(
             self.module, "load_backend", return_value=backend
@@ -201,6 +206,30 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertIsNone(unavailable["score"])
         self.assertEqual(unavailable["grade"], "N/A")
         self.assertEqual(unavailable["source"], "unavailable")
+
+    def test_ethics_only_reuses_unselected_fallback_without_full_rebuild(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            ethics_dir = output_dir / "ethics"
+            ethics_dir.mkdir(parents=True)
+            (ethics_dir / "B000001.json").write_text(json.dumps({
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "bioguideId": "B000001",
+                "score": None,
+                "grade": "N/A",
+                "source": "unavailable",
+                "method": backend.ETHICS_METHOD_VERSION,
+            }), encoding="utf-8")
+
+            self._run_ethics_only(
+                output_dir, ["--fec-score-limit", "1"], backend
+            )
+
+        self.assertEqual(backend.ethics_requests, ["A000001"])
+        self.assertEqual(backend.fallback_requests, [])
+        self.assertEqual(backend.detail_requests, [])
+        self.assertEqual(backend.debt_requests, 0)
 
     def test_fec_budget_advances_across_runs_and_preserves_prior_grade(self):
         backend = FakeBackend()

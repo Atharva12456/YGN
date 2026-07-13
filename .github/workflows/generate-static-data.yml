@@ -67,7 +67,19 @@ jobs:
           node --check docs/app.js
 
       - name: Generate static JSON snapshots
-        run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS"
+        run: python scripts/generate_static_data.py --max-members "$MAX_MEMBERS" --ethics-only
+
+      - name: Commit ethics checkpoint
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/ethics docs/data/member-scores.json docs/data/manifest.json
+          if git diff --cached --quiet; then
+            echo "No ethics data changes to commit."
+          else
+            git commit -m "update ethics grade checkpoint"
+            git push
+          fi
 
       - name: Snapshot AI bill descriptions/impacts
         run: python scripts/snapshot_bill_ai.py --limit 40
