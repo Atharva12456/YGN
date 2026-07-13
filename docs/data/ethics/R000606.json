@@ -1,19 +1,59 @@
 {
-    "available":  false,
-    "bioguideId":  "R000606",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "R000606",
+  "candidate": {
+    "candidate_id": "H6MD08457",
+    "district": "08",
+    "name": "RASKIN, JAMIE",
+    "office": "H",
+    "party": "DEM",
+    "state": "MD"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 88.9,
+      "value": 0.7225,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 83.9,
+      "value": 0.341,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 96.2,
+      "value": 0.9438,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 96.7,
+      "value": 0.4723,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+      "penalty": 10,
+      "ptr_filings": 1
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 93.6,
+  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "grade": "B",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 83.6,
+  "source": "fec_live",
+  "stockPenalty": 10,
+  "stockPtrCount": 1,
+  "updated_at": "2026-07-13T15:17:36.803796+00:00"
 }
