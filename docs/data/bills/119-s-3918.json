@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T15:21:40Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3918",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill creates a new Title 18 chapter that prohibits indefinite sealing of criminal surveillance orders, requires eventual notice to targets, and tightens nondisclosure and extension standards. It applies to federal, State, Tribal and military orders including wiretaps, pen registers, tracking orders, SCA delay/disclosure orders, search warrants, and related inventories.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:28:30.171432+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15432eb14d7cbc3646692abe",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars indefinite sealing of surveillance orders, limits nondisclosure to providers, and requires courts to unseal or redact orders after set periods. It affects DOJ/FBI, federal, state, territorial and Tribal courts, prosecutors, telecom and internet providers, and people targeted by surveillance.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:28:34.801084+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15432eb14d7cbc3646692abe",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:20.134805+00:00",
   "source": "congress_api"

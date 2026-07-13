@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T12:58:48Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3075",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill defines \"cooperative development\" and awards maximum points to RCDG applicants that provide a 25% private cash and in\u2011kind match. It reauthorizes the USDA Rural Cooperative Development Grant program for FY2025\u2013FY2029 and requires USDA and the RCDG interagency working group to analyze research data and submit annual reports to Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:08:33.981957+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "da9ef952aa6988e2a1d76286",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill reauthorizes the USDA Rural Cooperative Development Grant (RCDG) program through FY2029 and lets USDA favor nonprofits that pledge a 25 percent private match. It requires USDA and the RCDG interagency working group to analyze cooperative research data and submit annual reports to Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:08:48.110411+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "da9ef952aa6988e2a1d76286",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:51.247164+00:00",
   "source": "congress_api"

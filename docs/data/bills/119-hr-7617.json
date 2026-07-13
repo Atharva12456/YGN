@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T08:05:51Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7617",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill appropriates \"such amounts as may be necessary\" to fund Department of Homeland Security administrative expenses during any FY2026 lapse in appropriations and directs DHS to continue all functions and respond to congressional communications during the lapse. It covers DHS generally, including its Office of Legislative Affairs and ICE\u2019s Office of Congressional Relations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:23.995429+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "32ef376fc7b88f75c1af05c7",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would fund DHS during any FY2026 appropriations lapse, including the DHS Office of Legislative Affairs and ICE\u2019s Office of Congressional Relations. It requires the Secretary to keep DHS performing functions such as border security and disaster response and to respond to congressional offices.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:30.638231+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "32ef376fc7b88f75c1af05c7",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:29.348341+00:00",
   "source": "congress_api"

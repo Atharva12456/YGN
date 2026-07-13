@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T18:34:05Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3922",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill exempts \"traditional large and premium cigars\" from FDA tobacco authority and forbids FDA rulemaking on them (except section 907(d)(3)). Cigars wrapped and filled with 100% leaf tobacco, no filter, tip, or non\u2011tobacco mouthpiece, weigh \u22656 pounds per 1,000, meet specified binder/manufacture criteria; definition excludes cigarettes and little cigars.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:13.953874+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c58a03857e4e7d29dfa9c7cb",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill exempts defined \"traditional large and premium cigars\" from most FDA regulation under the FD&C Act. That change would affect the FDA and the premium cigar industry, including manufacturers, importers, retailers, distributors, tobacconists, and small businesses, by removing regulatory requirements and some user fees.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:08.356811+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c58a03857e4e7d29dfa9c7cb",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:28.195882+00:00",
   "source": "congress_api"

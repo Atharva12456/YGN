@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T17:13:05Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7689",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill adds basic and emergency living-assistance grants to the Student Support Services program to help undergraduate participants cover anticipated or unexpected living and related costs. Recipients may use up to 2% of SSS funds; emergency grants are capped at $500 for 2027\u201328 and thereafter indexed to CPI increases.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:21.186513+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d5cadc5de2f6ccab87ba6ee",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends the Higher Education Act to require institutions with Student Support Services (SSS/TRIO) grants to provide basic and emergency supplemental living assistance to current SSS participants. It permits 2% of SSS funds for these grants and caps emergency awards at $500 for 2027\u201328.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:22.989949+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d5cadc5de2f6ccab87ba6ee",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:22.898318+00:00",
   "source": "congress_api"

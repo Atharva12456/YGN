@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T17:20:50Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7701",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the U.S. Housing Act to set rent in public housing for families with full\u2011time police officers, firefighters, or emergency medical technicians at the higher of 15% of adjusted monthly income or 5% of monthly income. It applies to units under the Act and to such full\u2011time public employees.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:40.541349+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7e9aab653c83382f5920121e",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This bill cuts rents in public housing for families including a full\u2011time police officer, firefighter, or EMT. Rent becomes the greater of 15% of monthly adjusted income or 5% of monthly income, and public housing agencies verify federal, state, local, or tribal employment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:34.843031+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7e9aab653c83382f5920121e",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:23.757081+00:00",
   "source": "congress_api"

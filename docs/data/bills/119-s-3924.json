@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T18:05:41Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets disabled individuals under early\u2011retirement age elect to receive SSDI during the five\u2011month waiting period by writing on applications or appeal filings. Benefits start at 94.25% initially for 36 months with later actuarial adjustments to protect the Disability Insurance Trust Fund and updated SSA forms are required.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:30:23.232959+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "70a05f6495c28907c6c8d5d9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets SSDI applicants elect benefits during the five\u2011month waiting period and requires SSA to add an election option to applications. It sets 94.25% for 36 months and requires Chief Actuary and Commissioner reviews of effects on the Federal Disability Insurance Trust Fund.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:30:09.968004+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "70a05f6495c28907c6c8d5d9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:24.963368+00:00",
   "source": "congress_api"

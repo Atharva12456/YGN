@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 7,
@@ -109,7 +109,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T08:05:29Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6190",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill excludes military retirement and related benefits from federal gross income, making retired or retainer pay and disability or combat related pensions and allowances tax free. It covers members and former members of the Armed Forces and other uniformed services and applies for taxable years beginning after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:51:12.824576+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "540d26ae90d8a0bc81c677ad",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill excludes from federal gross income all retired and retainer pay plus monthly disability, pay, annuity, or survivor benefits paid under titles 10, 14, 37, or 38 to members and former uniformed services. It affects DoD retirees, Coast Guard, PHS and NOAA commissioned corps.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:51:25.367142+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "540d26ae90d8a0bc81c677ad",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:45.829535+00:00",
   "source": "congress_api"

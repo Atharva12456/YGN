@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 4,
@@ -79,7 +79,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T08:05:40Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6319",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs HHS to establish a Lung Cancer Task Force at NIH to study funding, disparities, screening and report to Congress within 180 days. The Secretary appoints members including at least one NCI and one CDC NCCCP representative; it will examine Federal lung cancer research, funding, access, and screening.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:45.068275+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e8106f5e7849191a40623dd0",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "HHS must set up a Lung Cancer Task Force at NIH with members from the National Cancer Institute and CDC\u2019s National Comprehensive Cancer Control Program. The task force will assess disparities, federal research funding, and screenings and must report recommendations to Congress within 180 days.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:32.020163+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e8106f5e7849191a40623dd0",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:43.369629+00:00",
   "source": "congress_api"

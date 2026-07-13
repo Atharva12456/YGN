@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T15:21:30Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires eventual notice to targets, forbids indefinite sealing, and limits nondisclosure to an initial 180\u2011day period plus one 180\u2011day extension with stricter review thereafter. It applies to federal, State, Tribal, and military orders including wiretaps, pen registers, mobile tracking, Section 2705 nondisclosure, search warrants, third\u2011party assistance, inventories.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:12:23.929710+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "324bc8005616e66bf57be902",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill stops indefinite sealing and requires eventual notice to targets of criminal-surveillance orders while limiting nondisclosure to providers with 180\u2011day seals and fewer extensions. It affects federal, State, and Tribal courts, the DOJ and local law enforcement, telecom and tech providers, and surveillance targets.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:12:20.057782+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "324bc8005616e66bf57be902",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:16.654373+00:00",
   "source": "congress_api"

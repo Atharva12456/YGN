@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T14:44:38Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7700",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires HUD and the Comptroller General to report to Congress within one year on how many HUD public housing inspections in a year were incomplete. It must also state how many inspectors are needed to ensure all required inspections can be completed annually.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:13:11.636544+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "fb99cc6a9dcf9b123b88db2f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Secretary of Housing and Urban Development and the Comptroller General to study and report how many HUD public housing inspections are incomplete in a year. It affects HUD, the GAO, local public housing authorities, inspection staff, and HUD public housing residents.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:12:41.284053+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "fb99cc6a9dcf9b123b88db2f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:18.590121+00:00",
   "source": "congress_api"

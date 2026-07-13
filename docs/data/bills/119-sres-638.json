@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "SRES",
     "updatedAt": "2026-03-16T17:46:20Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/638",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The resolution urges DOJ and DHS agents reassigned from counterterrorism, cybersecurity, or counterintelligence to civil immigration enforcement be returned to core missions during active hostilities with Iran. It covers those on temporary duty, detail, or reassignment, full- or part-time, since 1/20/2025 and applies to other state sponsors of terror.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:11:25.447094+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3a086bb9aed8866073a11bf9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution urges DOJ and DHS law enforcement staff reassigned to civil immigration enforcement since January 20, 2025, be returned to missions. Core missions include FBI counterterrorism, HSI, CISA cybersecurity, and DHS intelligence work during active hostility with Iran and other state sponsors of terror.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:11:27.278251+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3a086bb9aed8866073a11bf9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:03.706228+00:00",
   "source": "congress_api"

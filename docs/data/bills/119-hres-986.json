@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:55:29Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/986",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The resolution orders immediate consideration of H.R.7007, waives points of order, and deems a timely ranking-minority substitute adopted. Debate is one hour equally divided, one motion to recommit is allowed, clauses of Rules XIX and XX are suspended, and the Clerk must notify the Senate within three days.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:49:29.298683+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4c58f0d80ff506dc80081262",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution brings H.R.7007 to House floor, waives points of order, deems Rules Committee's ranking minority member substitute adopted, limits debate to one hour split between Majority and Minority Leaders, and allows one motion to recommit. The Clerk must notify the Senate within three days.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:42:22.359060+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4c58f0d80ff506dc80081262",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:38.883539+00:00",
   "source": "congress_api"

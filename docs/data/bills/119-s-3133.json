@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "S",
     "updatedAt": "2026-03-17T11:03:20Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3133",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets prosecution in U.S. district court begin without an Attorney General transfer motion for juveniles aged 16 or older alleged to have committed certain violent federal offenses. It applies to homicide, aggravated assault (111(b)), motor-vehicle theft/carjacking (2119), robbery (1951) involving 924(c), and aggravated sexual abuse (2241) involving 924(c).",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:08:13.167399+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f40277f615dd2fdf973c9dff",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets U.S. prosecutors start federal district prosecutions without an Attorney General transfer motion for juveniles 16+ accused of specified federal violent offenses (18 U.S.C. ch.51; 111(b); 2119; 1951/924(c); 2241/924(c)). This changes how the Department of Justice and federal courts process those juveniles.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:08:27.256744+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f40277f615dd2fdf973c9dff",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:50.020112+00:00",
   "source": "congress_api"

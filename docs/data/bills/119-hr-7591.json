@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 20,
@@ -239,7 +239,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T08:05:52Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7591",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the Elementary and Secondary Education Act to have the Secretary of Education produce best practices on secure firearm storage and suicide prevention and to require certain local educational agencies to create and distribute firearm-safety guidance. Guidance must be distributed to students, parents, and other community members.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:32:12.211376+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f3cdf261d6ac6376db5570d4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would require the Education Secretary to publish firearm secure\u2011storage and suicide\u2011prevention best practices and have covered school districts distribute guidance to students, parents, and communities. It requires consultation with ATF, HHS (CDC, NIH, SAMHSA), FBI, law enforcement, non\u2011industry nonprofits, educators, and mental\u2011health professionals.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:32:17.122681+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f3cdf261d6ac6376db5570d4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:32.024075+00:00",
   "source": "congress_api"

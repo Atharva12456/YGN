@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 317,
@@ -2539,7 +2539,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T19:05:18Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/979",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs DOT to require AM and digital\u2011AM receivers as standard, easily accessible equipment in new passenger vehicles and allows civil penalties. It covers passenger vehicles manufactured for sale in, imported into, or shipped in interstate commerce to the United States that are produced after the rule's effective date.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:52:51.206983+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "07f83a20bbb8b042da95c0f7",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The AM Radio for Every Vehicle Act of 2025 requires DOT to issue a rule requiring all new U.S.-market passenger vehicles to include standard, easily accessible AM or digital AM receivers. It authorizes DOT penalties, DOJ enforcement, a GAO study, impacts automakers and AM broadcasters.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:52:29.213735+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "07f83a20bbb8b042da95c0f7",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:48.722690+00:00",
   "source": "congress_api"

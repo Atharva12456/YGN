@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T18:08:00Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3921",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill bars jurisdictions that prohibit immigration-status data sharing or refuse DHS detainers from receiving SEAR funds and reallocates those funds to ICE. It defines \"sanctuary jurisdictions,\" triggers ineligibility after 30 days unless compliance is certified, prioritizes deportations and border removals, and requires semiannual DHS reports.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:30:42.091413+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7a327c7831c6686b3f350f52",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars DHS Special Event Assessment Rating (SEAR) support and Homeland Security Grant Program funds for events in \"sanctuary jurisdictions.\" Savings must go to ICE Enforcement and Removal Operations to prioritize arrests, detentions, and removals, with at least half for border-related enforcement.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:30:33.042661+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7a327c7831c6686b3f350f52",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:25.963228+00:00",
   "source": "congress_api"

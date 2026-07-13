@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T16:39:13Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6294",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill mandates front-of-package FDA-style warnings on sugar-sweetened beverages, products with non-sugar sweeteners, ultra-processed foods, and items high in certain nutrients and restricts child-directed advertising. Coverage includes packaged goods, multi-packs, vending and online sales, with statutory definitions and exemptions for infant formula, milk, 100% juice, medical, and meal-replacement beverages.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:38.748896+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "579ab3b325d3f8cc17931f95",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs HHS FDA to require front of package warnings on sugar sweetened beverages, foods with non sugar sweeteners, and ultra processed items, including vending machines and online retailers. It also restricts marketing to children, affecting manufacturers, advertisers, broadcasters and streaming platforms.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:57.916571+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "579ab3b325d3f8cc17931f95",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:44.382531+00:00",
   "source": "congress_api"

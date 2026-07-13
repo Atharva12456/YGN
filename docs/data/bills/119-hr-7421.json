@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 17,
@@ -209,7 +209,26 @@
     "type": "HR",
     "updatedAt": "2026-03-17T08:05:34Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7421",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The SAFE Olympic Sports Act would change Title 36 to require national governing bodies to limit athlete participation to events matching an athlete\u2019s biological sex as defined at conception. It covers Olympic, Paralympic, Pan\u2011American, Parapan\u2011American and other national, regional, State, local sanctioned competitions, preserving prior single\u2011sex event sanctions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:48:03.989597+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "581493dbacba66129b3f0f5a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The SAFE Olympic Sports Act would require national governing bodies under Title 36 to limit Olympic\u2011movement amateur competition by sex, defining sex biologically for Olympic, Paralympic, Pan\u2011American, and Parapan American events. It also compels NGBs to keep single\u2011sex competitions they sanctioned in the prior ten years sanctioned.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:48:20.808979+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "581493dbacba66129b3f0f5a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:35.342816+00:00",
   "source": "congress_api"

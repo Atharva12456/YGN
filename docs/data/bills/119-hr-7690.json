@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T16:36:07Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7690",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill amends HEA section 402C(f) to raise FY2027 Upward Bound stipends from $60 to $180, $300 to $900, and $40 to $120, and sets veteran project stipends up to $300. Future maximums will be indexed to the CPI and rounded to the nearest $10 for projects under section 402C.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:28:57.365462+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5c982d219aaee7d7371b88e9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill raises 2027 monthly stipend caps for Upward Bound (TRIO) participants\u2014tripling limits\u2014and allows veterans in subsection (d)(6) projects up to $300. Beginning 2028 the Secretary of Education must annually raise caps by estimated CPI, rounded to $10, affecting Upward Bound grantees (colleges, districts, nonprofits).",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:03.265914+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5c982d219aaee7d7371b88e9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:21.547139+00:00",
   "source": "congress_api"

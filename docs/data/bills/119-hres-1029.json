@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:59:27Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1029",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution orders immediate House consideration of H.R. 6636, waives all points of order, deems a specified amendment in the nature of a substitute adopted, treats the bill as read, limits debate to one hour equally divided, and allows one motion to recommit. Applies only to House consideration of HR6636.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:48:40.300133+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e36279c8e275fe0ef679aefd",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution brings H.R. 6636 to the House floor immediately, waives points of order, and deems Rep. Brian Fitzpatrick\u2019s printed substitute adopted. Debate is one hour split between Fitzpatrick and opponent; clause 1(c) of rule XIX is waived and one motion to recommit is allowed.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:48:39.474879+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e36279c8e275fe0ef679aefd",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:36.729914+00:00",
   "source": "congress_api"

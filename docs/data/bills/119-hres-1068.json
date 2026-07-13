@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:57:33Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1068",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution orders consideration of H.J. Res. 143, waives points of order, deems a Rules Committee minority substitute adopted, limits debate to one hour, and allows one motion to recommit. It applies to House floor procedure for that joint resolution, suspends rules XIX(1)(c) and XX(8), and requires Clerk to notify Senate in three days.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:59.415621+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "07bef5a2a213f175149d2f86",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "H. Res. 1068 forces immediate House consideration of H.J. Res. 143, waiving points of order and limiting debate to one hour. It deems a Rules Committee minority amendment adopted, allows one motion to recommit, and impacts House members, leadership, the Clerk, and the Senate.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:31:53.118965+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "07bef5a2a213f175149d2f86",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:31.661765+00:00",
   "source": "congress_api"

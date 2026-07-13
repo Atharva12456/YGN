@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:54:28Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/779",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "H.Res.779 brings H.R.1834 to the floor, adopts H.R.5450 as the substitute, and waives all points of order. It limits debate to one hour equally divided for the Appropriations chair and ranking minority member, allows one motion to recommit, and requires the Clerk to notify the Senate within one calendar day.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:09:40.786234+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "39cb425b6da817466e4f64b1",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution orders immediate House consideration of H.R.1834, adopts H.R.5450 as a substitute, and waives points of order. It restricts debate to one hour for Appropriations leaders, permits a motion to recommit, and directs the Clerk to notify the Senate within one day.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T01:09:39.513127+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "39cb425b6da817466e4f64b1",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:55.487709+00:00",
   "source": "congress_api"

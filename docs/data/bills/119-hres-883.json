@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:54:41Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/883",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution brings H.R.2003 to immediate House consideration; H.R.2003 would amend the Higher Education Act to set federal student loan interest at 2 percent. It waives points of order, deems the bill read, limits debate to one hour equally divided, allows one motion to recommit, and suspends Rule XIX(1)(c).",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:51:51.707387+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9c23908f490d371484e4d4da",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution brings H.R.2003 to the House floor immediately, waives points of order, limits debate to one hour, and allows one motion to recommit. H.R.2003 would cut student loan interest to 2%, affecting borrowers with Department of Education Direct loans, loan servicers, and the federal budget.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:51:31.972084+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9c23908f490d371484e4d4da",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:46.741771+00:00",
   "source": "congress_api"

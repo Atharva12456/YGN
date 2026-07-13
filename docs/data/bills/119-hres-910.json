@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:55:08Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/910",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The resolution orders immediate House consideration of H.R.185, waives points of order, deems a Rules Committee minority substitute amendment adopted, and limits debate to one hour and one motion to recommit. It suspends clauses of Rules XIX and XX and requires passage be sent to the Senate within one day.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:05.069639+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "295c3c67a1764c7ab65c6e4f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution orders immediate House consideration of H.R.185, waives points of order and some House rules, adopts a substitute submitted by the ranking minority member, and limits debate to one hour. It affects House members, the Rules Committee, leadership, the Clerk, and notifies the Senate.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:01.661328+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "295c3c67a1764c7ab65c6e4f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:39.915004+00:00",
   "source": "congress_api"

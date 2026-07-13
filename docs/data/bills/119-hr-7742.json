@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T17:17:34Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7742",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Keep It Moving Act imposes deadlines on FCC review of transfer or assignment applications, requiring completeness checks within 15 days and final action within 180 days or 1 year on foreign referral, and allows writs compelling action. It applies to all FCC licenses and authorizations for such transfers and assignments.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:12:56.846156+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5b3e838a83865918791e2670",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill makes the Federal Communications Commission decide completeness quickly and to approve or deny transfer\u2011of\u2011control or license\u2011assignment applications within fixed deadlines. It affects telecom, broadcast, wireless and cable firms that buy or sell FCC licenses and the Committee for the Assessment of Foreign Participation.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:12:44.640150+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5b3e838a83865918791e2670",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:18.228428+00:00",
   "source": "congress_api"

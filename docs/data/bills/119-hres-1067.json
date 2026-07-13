@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:57:42Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1067",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution orders immediate consideration of H.R. 6856, deems a printed substitute adopted, waives points of order, and limits debate to one hour. H.R. 6856 would impose sanctions on the Russian Federation if it refuses to negotiate, breaches a peace agreement, or launches another invasion of Ukraine.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:32:37.849519+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0796aea0f2f56fce49c972f4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution brings H.R. 6856 to the House floor immediately, waives points of order, deems a Fitzpatrick substitute adopted, and limits debate to one hour. It affects House members and the Rules Committee and enables consideration of sanctions on the Russian Federation related to Ukraine.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:32:33.065318+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0796aea0f2f56fce49c972f4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:33.146746+00:00",
   "source": "congress_api"

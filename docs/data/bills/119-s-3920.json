@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-16T17:53:50Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The UASI Act mandates 30% of Urban Areas Security Initiative awards be spent on five National Priority Areas, including minimums of 3% for election security and 10% for ICE\u2011coordinated border response. It applies to UASI applicants, including State administrative agencies and eligible urban areas, for fiscal year 2027 and thereafter.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:48.203294+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3e8119739089e74ed33a7405",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This bill would require State administrative agencies and eligible urban areas receiving Urban Areas Security Initiative (UASI) grants to allocate at least 30% of awards across specified National Priority Areas. Also mandates 3% for election security, 10% for border response, ICE cooperation, and grant penalties.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:29:54.108341+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3e8119739089e74ed33a7405",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:24.596040+00:00",
   "source": "congress_api"

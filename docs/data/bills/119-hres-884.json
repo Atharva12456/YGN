@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-17T15:54:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/884",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "H. Res. 884 orders immediate consideration of H.R. 6039, waives all points of order, deems a Rules Committee minority-filed substitute adopted, and limits debate to one hour. It allows one motion to recommit, suspends clause 1(c) of rule XIX and clause 8 of rule XX, and directs prompt Senate notification.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:52:19.197784+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "12b728f0f9d3fbaf42c91f4a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution orders immediate floor consideration of H.R. 6039, waives points of order, limits debate to one hour, and treats a Rules minority substitute as adopted. It affects House members, the Committee on Rules, majority and minority leaders (or designees), the Clerk, and the Senate.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:52:19.323474+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "12b728f0f9d3fbaf42c91f4a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:48.284458+00:00",
   "source": "congress_api"

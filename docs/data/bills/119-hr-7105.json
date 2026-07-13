@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-16T12:30:06Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7105",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets the President declare an \"invasion\" at the U.S. southern border and suspend entry and remove aliens who unlawfully cross the border. It bars them from asylum and other relief, requires pre-entry health and security information or removal, and bars judicial review except for U.S. nationality claims.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:49:05.328124+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7a1401a0275f29fda5d71b1c",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "President may proclaim an 'invasion' at the southern border and direct DHS, State, and the AG to repel, detain, expel, and block entrants. Migrants and asylum seekers crossing the southern border would be barred from entry and asylum, immediately removed, and largely denied judicial review.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:49:14.585067+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7a1401a0275f29fda5d71b1c",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:38.521772+00:00",
   "source": "congress_api"

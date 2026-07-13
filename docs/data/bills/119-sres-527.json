@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "SRES",
     "updatedAt": "2026-03-14T19:56:37Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/527",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution supports a National Move Over Law Day and urges national, State, and regional incident management organizations to promote State move over laws. It targets traffic incident management responders and motorists, asking organizations to educate the public to reduce roadside collisions and deaths.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:12.659589+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "06adb256c2aa13066c3616fd",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Senate resolution backs a National Move Over Law Day and urges federal, State, and regional incident\u2011management groups to promote State move over laws. That outreach targets FHWA, NHTSA, FMCSA, State DOTs, police, fire, EMS, tow\u2011truck operators, transportation workers, and motorists to protect roadside responders.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-13T00:50:12.623392+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "06adb256c2aa13066c3616fd",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-12T04:02:41.325880+00:00",
   "source": "congress_api"
