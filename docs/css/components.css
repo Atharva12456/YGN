@@ -1,0 +1,750 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Bill detail page, cosponsors, roll-call votes, opinion sourcing
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Bill list tweaks (clickable titles, cosponsor counts, load more) */
+.bill-title-link { color: var(--color-text); text-decoration: none; }
+.bill-title-link:hover { color: var(--color-accent); text-decoration: underline; }
+.bill-detail-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.bill-detail-link:hover { text-decoration: underline; }
+.bill-cosponsor-count { margin-top: 0.5rem; font-size: 0.82rem; color: var(--color-text-muted); }
+.bill-cosponsor-count a { color: var(--color-accent); text-decoration: none; }
+.bill-cosponsor-count a:hover { text-decoration: underline; }
+.bills-load-more-wrap { display: flex; justify-content: center; margin: 1.5rem 0 0.5rem; }
+#load-more-bills[hidden] { display: none; }
+
+/* Bill detail layout */
+.bill-detail { max-width: 1000px; margin: 0 auto; }
+.bill-detail-head { margin-bottom: 1.25rem; }
+.bill-detail-kicker {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.4rem;
+}
+.bill-detail-head h1 {
+  font-family: var(--font-display); font-size: 1.9rem; line-height: 1.2;
+  color: var(--color-text); margin-bottom: 0.5rem;
+}
+.bill-detail-meta { color: var(--color-text-muted); font-size: 0.95rem; }
+.bill-detail-links { margin-top: 0.85rem; }
+.bill-detail-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1.1rem;
+}
+.bill-detail-card h2 {
+  font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-text);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.bill-subhead { font-size: 0.95rem; margin: 0.9rem 0 0.3rem; }
+.bill-detail-summary { line-height: 1.7; color: var(--color-text); }
+.bill-detail-subnote { color: var(--color-text-muted); font-size: 0.88rem; margin-bottom: 1rem; }
+.bill-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.bill-count-badge {
+  background: var(--color-tint-blue); color: var(--color-accent-hover);
+  border-radius: 999px; padding: 0.1rem 0.6rem; font-size: 0.85rem; font-weight: 600;
+}
+.bill-empty-note { color: var(--color-text-muted); font-size: 0.9rem; font-style: italic; }
+
+/* AI blocks */
+.ai-badge {
+  background: linear-gradient(135deg, #6a4ff7, #4f8ef7); color: #fff;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.05em;
+  padding: 0.12rem 0.42rem; border-radius: 999px; vertical-align: middle;
+}
+.bill-ai-block {
+  margin-top: 1rem; padding: 0.9rem 1rem;
+  background: linear-gradient(180deg, rgba(79,142,247,0.06), rgba(106,79,247,0.04));
+  border: 1px solid rgba(79,142,247,0.25); border-radius: var(--radius-sm);
+}
+.bill-ai-block--pending { background: var(--color-bg); border-style: dashed; }
+.bill-ai-block--loading { background: var(--color-bg); }
+.ai-loading { color: var(--color-text-muted); font-style: italic; }
+.ai-loading::after {
+  content: ""; display: inline-block; width: 1em; text-align: left;
+  animation: ai-dots 1.2s steps(4, end) infinite;
+}
+@keyframes ai-dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
+.bill-ai-label {
+  font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--color-text-muted); margin-bottom: 0.4rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.bill-ai-block p { line-height: 1.65; }
+
+/* People (sponsor/cosponsor) chips */
+.bill-people { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.bill-person {
+  display: inline-flex; align-items: baseline; gap: 0.35rem;
+  padding: 0.35rem 0.65rem; border-radius: 999px; text-decoration: none;
+  font-size: 0.85rem; border: 1px solid var(--color-border);
+  background: var(--color-surface); color: var(--color-text);
+  border-left-width: 4px;
+}
+a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shadow-card); }
+.bill-person.party-d { border-left-color: #3b6fd4; }
+.bill-person.party-r { border-left-color: #d0453f; }
+.bill-person.party-i { border-left-color: #7a5bd0; }
+.bill-person-role { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted); }
+.bill-person-name { font-weight: 600; }
+.bill-person-meta { color: var(--color-text-muted); font-size: 0.78rem; }
+
+/* Roll-call vote cards */
+.bill-vote-card {
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem; margin-bottom: 1rem; background: var(--color-surface-alt);
+}
+.bill-vote-head h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+.bill-vote-meta { color: var(--color-text-muted); font-size: 0.82rem; margin-bottom: 0.7rem; }
+.vote-bar {
+  display: flex; height: 14px; border-radius: 7px; overflow: hidden;
+  background: var(--color-tint-gray); margin-bottom: 0.6rem;
+}
+.vote-bar-seg { height: 100%; }
+.vote-yea { background: #3b8f6d; }
+.vote-nay { background: #d95f5f; }
+.vote-present { background: #d5a642; }
+.vote-notvoting { background: #9aa4b2; }
+.vote-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.85rem; }
+.vote-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
+.vote-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.vote-dot.vote-yea { background: #3b8f6d; }
+.vote-dot.vote-nay { background: #d95f5f; }
+.vote-dot.vote-present { background: #d5a642; }
+.vote-dot.vote-notvoting { background: #9aa4b2; }
+.vote-groups { display: grid; gap: 0.5rem; }
+.vote-group > summary {
+  cursor: pointer; font-size: 0.9rem; padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm); background: var(--color-surface);
+  border: 1px solid var(--color-border); list-style: none;
+  display: flex; align-items: center; gap: 0.45rem;
+}
+.vote-group > summary::-webkit-details-marker { display: none; }
+.vote-group[open] > summary { border-color: var(--color-accent); }
+.vote-group-members { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.7rem 0.2rem 0.3rem; }
+.vote-group-members .bill-person { font-size: 0.8rem; padding: 0.25rem 0.5rem; }
+.bill-vote-source { display: inline-block; margin-top: 0.7rem; font-size: 0.82rem; color: var(--color-accent); text-decoration: none; }
+.bill-vote-source:hover { text-decoration: underline; }
+
+/* Public-opinion sourcing standard */
+.ai-confidence-panel {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+  padding: 1.5rem; margin-top: 1.5rem;
+}
+.ai-confidence-panel h2 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
+.ai-confidence-intro { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; max-width: 65ch; }
+
+@media (max-width: 700px) {
+  .bill-detail-grid { grid-template-columns: 1fr; }
+  .bill-detail-head h1 { font-size: 1.5rem; }
+}
+
+/* Funding grade explainer (finance score - stock deduction = final) */
+.grade-explainer { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; margin: 0.75rem 0 1rem; background: var(--color-surface-alt); }
+.grade-explainer-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.3rem 0; font-size: 0.86rem; border-bottom: 1px dashed var(--color-border); }
+.grade-explainer-row:last-child { border-bottom: none; font-weight: 600; }
+.grade-explainer-row small { color: var(--color-text-muted); font-weight: 400; }
+.grade-deduction { color: #c0453f; }
+
+/* AI descriptions are word-limited, so show them in full (no line-clamp/ellipsis). */
+.bill-description--ai { display: block; -webkit-line-clamp: none; line-clamp: none; overflow: visible; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Full-app feature pass: home balance, map color-by/components, bill filters,
+   vote party analysis, cosponsor split, foreign-affairs live bills
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Home: Congress party balance */
+.congress-balance { margin-top: 1.25rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.25rem 1.4rem; }
+/* Full-width variant (end of home): lay the two chambers side by side so the
+   block fills the row instead of leaving a blank column. */
+.congress-balance--full { margin-top: 2.5rem; }
+.congress-balance--full .cb-chambers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+@media (max-width: 640px) { .congress-balance--full .cb-chambers { grid-template-columns: 1fr; } }
+.cb-title { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.9rem; }
+.cb-chamber { margin-bottom: 1rem; }
+.cb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.35rem; }
+.cb-majority { font-size: 0.8rem; color: var(--color-text-muted); }
+.cb-bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--color-tint-gray); }
+.cb-seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.78rem; font-weight: 600; min-width: 1.4rem; }
+.cb-seg.party-d { background: #3b6fd4; }
+.cb-seg.party-r { background: #d0453f; }
+.cb-seg.party-i { background: #7a5bd0; }
+.cb-nums { font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+.cb-link { display: inline-block; margin-top: 0.4rem; font-size: 0.85rem; color: var(--color-accent); text-decoration: none; font-weight: 600; }
+.cb-link:hover { text-decoration: underline; }
+
+/* Map: color-by toggle + legend + gerry components */
+.map-colorby { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; overflow: hidden; }
+.map-colorby-btn { background: var(--color-surface); border: none; padding: 0.4rem 0.85rem; font-size: 0.82rem; font-family: var(--font-body); cursor: pointer; color: var(--color-text-muted); }
+.map-colorby-btn.active { background: var(--color-accent); color: #fff; }
+.map-legend { position: absolute; left: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; font-size: 0.75rem; }
+.map-legend-item { display: inline-flex; align-items: center; gap: 0.3rem; }
+.map-legend-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.gerry-components { display: grid; gap: 0.3rem; margin-top: 0.6rem; }
+.gerry-comp-row { display: grid; grid-template-columns: 8.5rem 1fr 1.6rem; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.gerry-comp-label { color: var(--color-text-muted); }
+.gerry-comp-track { height: 8px; background: var(--color-tint-gray); border-radius: 4px; overflow: hidden; }
+.gerry-comp-track > span { display: block; height: 100%; border-radius: 4px; }
+.gerry-comp-val { text-align: right; font-weight: 600; }
+
+/* Recent Bills: filter chips */
+.bill-filters { margin: 0.5rem 0 1rem; display: grid; gap: 0.5rem; }
+.bill-chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.bill-chip { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; font-family: var(--font-body); color: var(--color-text); }
+.bill-chip:hover { border-color: var(--color-accent); }
+.bill-chip.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+
+/* Bill detail: vote party analysis */
+.vote-party-analysis { margin: 0.4rem 0 0.9rem; padding: 0.7rem 0.8rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+.vote-party-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.5rem; border-radius: 999px; margin-bottom: 0.55rem; }
+.vote-tag--partyline { background: #f6dede; color: #b23a34; }
+.vote-tag--bipartisan { background: #dcefe4; color: #2f7d5c; }
+.vote-tag--mixed { background: #f3e9d3; color: #99772a; }
+.vote-party-row { display: grid; grid-template-columns: 6rem 1fr 3rem; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem; }
+.vote-party-label { font-size: 0.8rem; font-weight: 600; }
+.vote-party-label.party-d { color: #3b6fd4; }
+.vote-party-label.party-r { color: #d0453f; }
+.vote-party-bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--color-tint-gray); }
+.vote-party-bar > span { display: block; height: 100%; }
+.vote-party-nums { font-size: 0.8rem; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Bill detail: cosponsor split */
+.cosponsor-split { margin-bottom: 0.8rem; }
+.cosponsor-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.12rem 0.5rem; border-radius: 999px; margin-bottom: 0.4rem; }
+.cosponsor-tag.bipartisan { background: #dcefe4; color: #2f7d5c; }
+.cosponsor-tag.single { background: var(--color-tint-gray); color: var(--color-text-muted); }
+.cosponsor-split-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--color-tint-gray); }
+.cosponsor-split-bar > span { display: block; height: 100%; }
+.cosponsor-split-bar .party-d { background: #3b6fd4; }
+.cosponsor-split-bar .party-r { background: #d0453f; }
+.cosponsor-split-bar .party-i { background: #7a5bd0; }
+.cosponsor-split-nums { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+
+/* Foreign affairs: live bills */
+.foreign-bills-note { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: 1.1rem; max-width: 70ch; }
+.foreign-bills-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.foreign-bill-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.1rem 1.2rem; }
+.foreign-bill-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.3rem; }
+.foreign-bill-card h3 { font-size: 1rem; line-height: 1.35; margin-bottom: 0.4rem; }
+.foreign-bill-card h3 a { color: var(--color-text); text-decoration: none; }
+.foreign-bill-card h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.foreign-bill-meta { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Civic data features: weekly brief, vote spotlight,
+   on-this-day, recent laws, hearings, glossary, EOs, treaties, bill stepper
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.civic-meta { font-size: 0.76rem; color: var(--color-text-muted); margin-top: 0.7rem; font-style: italic; }
+
+/* On this day strip */
+.on-this-day {
+  margin: 1.75rem 0 0; padding: 0.75rem 1.1rem; border-left: 4px solid var(--color-accent);
+  background: var(--color-surface); border-radius: var(--radius-sm); box-shadow: var(--shadow-card);
+  font-size: 0.92rem; line-height: 1.55;
+}
+.otd-label { font-weight: 700; color: var(--color-accent); margin-right: 0.4rem; text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.04em; }
+
+/* Home civic row: weekly brief + vote spotlight. auto-fit so a single visible
+   card fills the width (weekly brief stays hidden until the AI brief is built),
+   avoiding a blank second column. */
+.home-civic-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; align-items: start; }
+.civic-card[hidden] { display: none; }
+.weekly-brief-text { line-height: 1.65; }
+
+/* Vote spotlight */
+.spotlight-row { padding: 0.7rem 0; border-bottom: 1px dashed var(--color-border); }
+.spotlight-row:last-of-type { border-bottom: none; }
+.spotlight-head { display: flex; flex-direction: column; gap: 0.1rem; margin-bottom: 0.4rem; }
+.spotlight-head a { color: var(--color-text); font-weight: 600; text-decoration: none; }
+.spotlight-head a:hover { color: var(--color-accent); text-decoration: underline; }
+.spotlight-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+.spotlight-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: #d95f5f; }
+.spotlight-bar .yea { background: #3b8f6d; height: 100%; }
+.spotlight-nums { font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.3rem; }
+.spotlight-nums .yea-n { color: #2f7d5c; }
+.spotlight-nums .nay-n { color: #c0453f; }
+
+/* Recent laws + hearings (bills page) */
+.civic-section { margin-top: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 1.4rem 1.5rem; }
+.civic-section[hidden] { display: none; }
+.law-total { font-size: 0.85rem; color: var(--color-text-muted); align-self: center; }
+.law-list { list-style: none; margin-top: 0.8rem; display: grid; gap: 0.45rem; }
+.law-item { display: grid; grid-template-columns: 110px 1fr auto; gap: 0.8rem; align-items: baseline; padding: 0.45rem 0; border-bottom: 1px dashed var(--color-border); }
+.law-item:last-child { border-bottom: none; }
+.law-no { font-weight: 700; font-size: 0.82rem; color: var(--color-accent); white-space: nowrap; }
+.law-title a { color: var(--color-text); text-decoration: none; }
+.law-title a:hover { color: var(--color-accent); text-decoration: underline; }
+.law-date { font-size: 0.8rem; color: var(--color-text-muted); white-space: nowrap; }
+@media (max-width: 640px) { .law-item { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+.hearing-list { list-style: none; margin-top: 0.8rem; display: grid; gap: 0.5rem; }
+.hearing-item { display: grid; grid-template-columns: 110px 1fr; gap: 0.8rem; padding: 0.45rem 0; border-bottom: 1px dashed var(--color-border); }
+.hearing-item:last-child { border-bottom: none; }
+.hearing-date { font-weight: 600; font-size: 0.85rem; white-space: nowrap; }
+.hearing-body strong { display: block; font-size: 0.92rem; line-height: 1.4; }
+.hearing-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+@media (max-width: 640px) { .hearing-item { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+/* Glossary */
+/* Term decoder (bills page) - searchable/selectable congressional glossary */
+.term-decoder {
+  margin: 0 0 0.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1rem 1.25rem 1.15rem;
+}
+.term-decoder[hidden] { display: none; }
+.decoder-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.decoder-head h3 { font-size: 1.15rem; margin-top: 0.1rem; }
+.decoder-head .eyebrow { margin: 0; }
+.decoder-count {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;
+  color: var(--color-accent); background: var(--color-tint-blue);
+  padding: 0.2rem 0.55rem; border-radius: 999px; white-space: nowrap;
+}
+.decoder-controls { display: flex; gap: 0.6rem; margin-top: 0.85rem; flex-wrap: wrap; }
+.decoder-search-wrap { position: relative; flex: 1 1 260px; display: flex; align-items: center; }
+.decoder-search-icon {
+  position: absolute; left: 0.7rem; width: 1.05rem; height: 1.05rem;
+  color: var(--color-text-muted); pointer-events: none;
+}
+.decoder-search {
+  width: 100%; font: inherit; font-size: 0.92rem;
+  padding: 0.6rem 0.7rem 0.6rem 2.2rem;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-bg); color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.decoder-search:focus {
+  outline: none; border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-tint-blue); background: var(--color-surface);
+}
+.decoder-select {
+  flex: 0 1 190px; font: inherit; font-size: 0.9rem; padding: 0.6rem;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-bg); color: var(--color-text); cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.decoder-select:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-tint-blue); }
+.decoder-results {
+  margin-top: 0.85rem; max-height: 320px; overflow-y: auto;
+  display: grid; gap: 0.55rem; padding-right: 0.2rem;
+}
+.decoder-term { border-left: 3px solid var(--color-border); padding: 0.15rem 0 0.15rem 0.7rem; transition: border-color var(--transition-fast); }
+.decoder-term.is-focus { border-left-color: var(--color-accent); }
+.decoder-term dt { font-weight: 700; font-size: 0.9rem; }
+.decoder-term dd { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin: 0.1rem 0 0; }
+.decoder-term mark { background: var(--color-tint-blue); color: inherit; border-radius: 3px; padding: 0 0.12rem; }
+.decoder-empty { font-size: 0.88rem; color: var(--color-text-muted); padding: 0.4rem 0; }
+@media (max-width: 560px) { .decoder-controls { flex-direction: column; } .decoder-select { flex-basis: auto; } }
+
+/* Executive orders + live treaties (foreign affairs) */
+.eo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.eo-card { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.9rem 1rem; background: var(--color-surface); }
+.eo-number { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.05em; color: var(--color-accent); text-transform: uppercase; }
+.eo-card h3 { font-size: 0.95rem; line-height: 1.4; margin: 0.3rem 0; }
+.eo-card h3 a { color: var(--color-text); text-decoration: none; }
+.eo-card h3 a:hover { color: var(--color-accent); text-decoration: underline; }
+.eo-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+.treaty-live-list { list-style: none; margin-top: 1rem; display: grid; gap: 0.55rem; }
+.treaty-item { padding: 0.5rem 0; border-bottom: 1px dashed var(--color-border); }
+.treaty-item:last-child { border-bottom: none; }
+.treaty-topic { display: block; font-weight: 600; }
+.treaty-meta { font-size: 0.8rem; color: var(--color-text-muted); }
+
+/* Bill status stepper (detail page) + stage chip (digest tiles) */
+.bill-stepper { list-style: none; display: flex; gap: 0; margin: 0.9rem 0 0.3rem; padding: 0; max-width: 720px; }
+.bill-stepper li { flex: 1; position: relative; text-align: center; font-size: 0.72rem; color: var(--color-text-muted); }
+.bill-stepper li::before { content: ''; position: absolute; top: 7px; left: -50%; width: 100%; height: 3px; background: var(--color-border); z-index: 0; }
+.bill-stepper li:first-child::before { display: none; }
+.stage-dot { position: relative; z-index: 1; display: block; width: 16px; height: 16px; margin: 0 auto 0.3rem; border-radius: 50%; background: var(--color-border); border: 3px solid var(--color-surface); }
+.bill-stepper .stage-done .stage-dot, .bill-stepper .stage-done::before { background: #3b8f6d; }
+.bill-stepper .stage-current .stage-dot { background: var(--color-accent); box-shadow: 0 0 0 3px rgba(79,142,247,0.25); }
+.bill-stepper .stage-current::before { background: #3b8f6d; }
+.bill-stepper .stage-current .stage-label { color: var(--color-text); font-weight: 700; }
+.stage-label small { display: block; font-weight: 400; color: var(--color-text-muted); }
+.stage-chip { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.74rem; font-weight: 600; color: var(--color-text-muted); margin: 0.35rem 0; }
+.stage-chip-bar { width: 56px; height: 7px; border-radius: 4px; background: var(--color-tint-gray); overflow: hidden; }
+.stage-chip-bar span { display: block; height: 100%; background: linear-gradient(90deg, #3b8f6d, var(--color-accent)); }
+@media (max-width: 640px) { .bill-stepper li { font-size: 0.62rem; } }
+
+/* State-panel delegation split */
+.delegation-split { margin-bottom: 0.6rem; }
+.delegation-bar { display: flex; height: 16px; border-radius: 5px; overflow: hidden; background: var(--color-tint-gray); }
+.delegation-seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.7rem; font-weight: 700; min-width: 1.1rem; }
+.delegation-seg.party-d { background: #3b6fd4; }
+.delegation-seg.party-r { background: #d0453f; }
+.delegation-seg.party-i { background: #7a5bd0; }
+.delegation-nums { font-size: 0.75rem; color: var(--color-text-muted); }
+
+/* =============================================================================
+   Feature pass 3: global search, saved bills, compare, ideology strip,
+   trending topics, scoreboard, nominations, support spotlight, overview
+   ============================================================================= */
+
+/* Global quick search (in the nav, right-aligned) */
+.main-nav { position: relative; display: flex; align-items: center; flex-wrap: wrap; }
+.global-search { position: relative; margin-left: auto; padding: 0.35rem 0.9rem; }
+.global-search input {
+  width: 230px; max-width: 56vw; padding: 0.45rem 0.75rem; font-size: 0.85rem;
+  font-family: var(--font-body); color: var(--color-header-text);
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px; outline: none; transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.global-search input::placeholder { color: rgba(232,234,240,0.55); }
+.global-search input:focus { background: rgba(255,255,255,0.14); border-color: var(--color-accent); }
+.global-search-results {
+  /* position:fixed + JS-set top/left/width so the nav's overflow-x:auto (mobile
+     scroll) can't clip the dropdown. */
+  position: fixed; width: 330px; max-width: 92vw;
+  max-height: 60vh; overflow-y: auto; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  box-shadow: 0 10px 32px rgba(26,31,46,0.22); z-index: 1000;
+}
+.global-search-item {
+  display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.55rem 0.8rem;
+  text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-border);
+}
+.global-search-item:last-child { border-bottom: none; }
+.global-search-item:hover, .global-search-item.is-active { background: var(--color-bg); }
+.gs-kind {
+  flex: none; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0.15rem 0.45rem; border-radius: 999px; margin-top: 0.15rem;
+}
+.gs-kind--member { background: var(--color-tint-blue); color: #2456b8; }
+.gs-kind--bill { background: rgba(59,143,109,0.16); color: #2f7d5c; }
+.gs-body { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.gs-label { font-size: 0.86rem; font-weight: 600; line-height: 1.35; }
+.gs-meta { font-size: 0.75rem; color: var(--color-text-muted); }
+.global-search-empty { padding: 0.8rem; font-size: 0.85rem; color: var(--color-text-muted); }
+
+/* Trending topics (home) */
+.trending-topics {
+  margin-top: 2.25rem; padding: 0.8rem 1.1rem; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+}
+.trending-topics[hidden] { display: none; }
+.trending-label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); margin-right: 0.25rem; }
+.trending-chip {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem;
+  border: 1px solid var(--color-border); border-radius: 999px; text-decoration: none;
+  font-size: 0.82rem; color: var(--color-text); background: var(--color-bg);
+}
+.trending-chip:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.trending-chip strong { color: var(--color-accent); }
+
+/* Gerrymandering scoreboard (under the map) */
+.gerry-scoreboard {
+  margin-top: 1rem; display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+.gerry-scoreboard[hidden] { display: none; }
+.gerry-scoreboard-label { font-weight: 700; color: #c0453f; }
+.gerry-scoreboard-label--low { color: #2f7d5c; margin-left: 0.8rem; }
+.gerry-chip {
+  border: 1px solid var(--color-border); background: var(--color-surface); cursor: pointer;
+  border-radius: 999px; padding: 0.25rem 0.7rem; font-family: var(--font-body); font-size: 0.8rem;
+  color: var(--color-text);
+}
+.gerry-chip:hover { border-color: var(--color-accent); }
+.gerry-chip strong { color: var(--color-accent); margin-left: 0.15rem; }
+
+/* Ideology distribution strip (members page) */
+.ideology-strip {
+  margin: 0 0 1.25rem; padding: 0.85rem 1.1rem 0.6rem; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+}
+.ideology-strip[hidden] { display: none; }
+.ideo-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: 0.45rem; }
+.ideo-scale { display: flex; gap: 1.5rem; }
+.ideo-bars { display: flex; align-items: flex-end; gap: 2px; height: 46px; }
+.ideo-bar { flex: 1; border-radius: 2px 2px 0 0; min-height: 2px; background: var(--color-tint-gray); }
+.ideo-bar--d { background: #3b6fd4; }
+.ideo-bar--r { background: #d0453f; }
+.ideo-bar--i { background: #7a5bd0; }
+
+/* Compare members */
+.member-compare-button {
+  margin-top: 0.5rem; width: 100%; padding: 0.3rem 0.5rem; font-size: 0.72rem; font-weight: 600;
+  font-family: var(--font-body); color: var(--color-text-muted); background: var(--color-bg);
+  border: 1px solid var(--color-border); border-radius: 999px; cursor: pointer;
+}
+.member-compare-button:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.member-compare-button.is-selected { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.compare-bar {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 18px; z-index: 250;
+  display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1rem;
+  background: var(--color-header-bg); color: var(--color-header-text);
+  border-radius: 999px; box-shadow: 0 8px 28px rgba(26,31,46,0.35); font-size: 0.85rem;
+  max-width: 94vw; flex-wrap: wrap; justify-content: center;
+}
+.compare-bar-label { font-weight: 700; }
+.compare-vs { color: rgba(232,234,240,0.6); font-size: 0.75rem; }
+.compare-hint { color: rgba(232,234,240,0.6); font-size: 0.78rem; }
+.compare-bar .primary-button { padding: 0.3rem 0.9rem; font-size: 0.8rem; }
+.compare-clear { background: none; border: none; color: rgba(232,234,240,0.7); font-size: 0.95rem; cursor: pointer; padding: 0.2rem 0.4rem; }
+.compare-clear:hover { color: #fff; }
+.compare-overlay {
+  position: fixed; inset: 0; z-index: 400; background: rgba(26,31,46,0.55);
+  display: flex; align-items: center; justify-content: center; padding: 1rem;
+}
+.compare-modal {
+  position: relative; background: var(--color-surface); border-radius: var(--radius-card);
+  box-shadow: 0 18px 60px rgba(26,31,46,0.4); padding: 1.6rem 1.8rem; max-width: 640px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+}
+.compare-modal h2 { font-family: var(--font-display); margin-bottom: 1rem; }
+.compare-close { position: absolute; top: 0.8rem; right: 0.9rem; background: none; border: none; font-size: 1rem; cursor: pointer; color: var(--color-text-muted); }
+.compare-close:hover { color: var(--color-text); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.compare-table th, .compare-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--color-border); }
+.compare-table thead th { font-size: 0.95rem; }
+.compare-table thead a { color: var(--color-accent); text-decoration: none; }
+.compare-table thead a:hover { text-decoration: underline; }
+.compare-table tbody th { font-weight: 600; color: var(--color-text-muted); white-space: nowrap; }
+
+/* Saved bills */
+.bill-save-button {
+  background: none; border: none; cursor: pointer; font-size: 1.05rem; line-height: 1;
+  color: var(--color-text-muted); padding: 0 0.3rem; vertical-align: middle;
+}
+.bill-save-button:hover { color: #d5a642; }
+.bill-save-button.is-saved { color: #d5a642; }
+.bill-save-button--compact { font-size: 0.95rem; }
+.bill-chip--saved.active { background: #d5a642; border-color: #d5a642; color: #fff; }
+.bill-chip--clear { border-style: dashed; color: var(--color-text-muted); }
+.bill-chip--clear:hover { color: #c0453f; border-color: #c0453f; }
+
+/* Member AI overview + ideological neighbors */
+.member-overview {
+  clear: both; margin: 0 0 1rem; padding: 0.85rem 1rem;
+  background: linear-gradient(180deg, rgba(79,142,247,0.06), rgba(106,79,247,0.04));
+  border: 1px solid rgba(79,142,247,0.25); border-radius: var(--radius-sm);
+}
+.member-overview p { line-height: 1.6; font-size: 0.92rem; }
+.neighbor-list { display: grid; gap: 0.5rem; }
+.neighbor-row {
+  display: flex; flex-direction: column; gap: 0.1rem; padding: 0.55rem 0.8rem;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--color-text); background: var(--color-bg);
+}
+.neighbor-row:hover { border-color: var(--color-accent); }
+.neighbor-name { font-weight: 600; }
+.neighbor-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+
+/* What happens next + related bills (bill detail) */
+.what-next {
+  margin: 0.75rem 0 0.25rem; padding: 0.7rem 0.9rem; max-width: 720px;
+  background: var(--color-bg); border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm); font-size: 0.88rem; line-height: 1.6; color: var(--color-text);
+}
+.related-bills { display: grid; gap: 0.5rem; }
+.related-bill {
+  display: flex; gap: 0.7rem; align-items: baseline; padding: 0.55rem 0.8rem;
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--color-text); background: var(--color-surface-alt);
+}
+.related-bill:hover { border-color: var(--color-accent); }
+.related-ident { flex: none; font-size: 0.78rem; font-weight: 700; color: var(--color-accent); }
+.related-title { font-size: 0.88rem; line-height: 1.4; }
+
+/* Support spotlight (bills page) */
+.support-list { list-style: none; margin-top: 0.8rem; display: grid; gap: 0.5rem; }
+.support-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px dashed var(--color-border); }
+.support-item:last-child { border-bottom: none; }
+.support-count {
+  flex: none; min-width: 2.6rem; text-align: center; font-weight: 700; font-size: 0.95rem;
+  background: var(--color-tint-blue); color: #2456b8; border-radius: 8px; padding: 0.3rem 0.4rem;
+}
+.support-body { display: flex; flex-direction: column; gap: 0.15rem; }
+.support-body a { color: var(--color-text); font-weight: 600; text-decoration: none; }
+.support-body a:hover { color: var(--color-accent); text-decoration: underline; }
+.support-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+.bipartisan-tag { color: #2f7d5c; }
+
+/* Nominations tracker (foreign affairs) */
+.nomination-list { list-style: none; margin-top: 1rem; display: grid; gap: 0.55rem; }
+.nomination-item { display: grid; grid-template-columns: 110px 1fr; gap: 0.8rem; padding: 0.5rem 0; border-bottom: 1px dashed var(--color-border); }
+.nomination-item:last-child { border-bottom: none; }
+.nomination-date { font-weight: 600; font-size: 0.85rem; white-space: nowrap; }
+.nomination-body strong { display: block; font-size: 0.92rem; line-height: 1.45; }
+.nomination-meta { font-size: 0.78rem; color: var(--color-text-muted); }
+@media (max-width: 640px) { .nomination-item { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+@media (max-width: 900px) {
+  .global-search { padding: 0.35rem 0.6rem; flex-basis: 100%; }
+  .global-search input { width: 100%; max-width: none; }
+  .global-search-results { left: 0.6rem; right: 0.6rem; width: auto; }
+}
+
+/* Tracked bills that live outside the current digest: one full-width row */
+.bill-row--orphan { display: block; min-width: 0; }
+.bill-cell--orphan { padding: 0.9rem 1rem; }
+.bill-cell--orphan h3 { margin: 0.2rem 0; }
+
+
+/* =========================================================================
+   Site enhancements: motion, reveal, hover, theme, helpers, print
+   (Injected chrome is gated off the economy page in JS; the economy page's
+   theme variables are pinned to light below so a dark preference never
+   alters it.)
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* Scroll-reveal (classes added by JS) */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Card hover lift (never on economy) */
+body:not([data-page="economy"]) .stat-card,
+body:not([data-page="economy"]) .pulse-card,
+body:not([data-page="economy"]) .eo-card,
+body:not([data-page="economy"]) .official-card,
+body:not([data-page="economy"]) .law-card {
+  transition: transform var(--transition-fast), box-shadow var(--transition-med);
+}
+body:not([data-page="economy"]) .stat-card:hover,
+body:not([data-page="economy"]) .pulse-card:hover,
+body:not([data-page="economy"]) .eo-card:hover,
+body:not([data-page="economy"]) .official-card:hover,
+body:not([data-page="economy"]) .law-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(26, 31, 46, 0.13);
+}
+
+/* Clearer keyboard focus site-wide */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+[tabindex]:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Skip-to-content link */
+.skip-link {
+  position: absolute; left: 0.5rem; top: -3rem; z-index: 1300;
+  background: var(--color-accent); color: #fff; padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus { top: 0.5rem; }
+
+/* Reading progress bar */
+.read-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--color-accent), #7bb0ff);
+  z-index: 1200; transition: width 0.08s linear; pointer-events: none;
+}
+
+/* Back to top */
+.back-to-top {
+  position: fixed; right: 1.1rem; bottom: 1.1rem; width: 2.6rem; height: 2.6rem;
+  border-radius: 50%; border: 1px solid var(--color-border);
+  background: var(--color-surface); color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(26, 31, 46, 0.18);
+  display: grid; place-items: center; font-size: 1.15rem; line-height: 1; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity var(--transition-med), transform var(--transition-med),
+              visibility var(--transition-med), background var(--transition-fast), color var(--transition-fast);
+  z-index: 1100;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover { background: var(--color-accent); color: #fff; }
+
+.stat-value.counting { font-variant-numeric: tabular-nums; }
+
+/* Theme toggle in header */
+.theme-toggle {
+  background: none; border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-header-text); border-radius: var(--radius-sm);
+  width: 2rem; height: 2rem; display: grid; place-items: center; cursor: pointer;
+  font-size: 0.95rem; line-height: 1; margin-left: 0.6rem;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.4); }
+
+/* Recently-viewed strip (home) */
+.recently-viewed { margin: 0.75rem 0 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.recently-viewed .rv-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); }
+.recently-viewed a {
+  font-size: 0.8rem; text-decoration: none; color: var(--color-accent);
+  border: 1px solid var(--color-border); border-radius: 999px; padding: 0.2rem 0.7rem;
+  background: var(--color-surface); transition: border-color var(--transition-fast), background var(--transition-fast);
+  max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.recently-viewed a:hover { border-color: var(--color-accent); background: var(--color-tint-blue); }
+
+/* Dark theme: variable overrides only (structural CSS is untouched) */
+:root[data-theme="dark"] {
+  --color-bg: #0f1420;
+  --color-surface: #171d2b;
+  --color-surface-alt: #1e2637;
+  --color-header-bg: #0b0f18;
+  --color-nav-bg: #10151f;
+  --color-text: #e6e9f0;
+  --color-text-muted: #9aa4b8;
+  --color-border: #2a3346;
+  --color-card-shadow: rgba(0, 0, 0, 0.45);
+  --color-skeleton: #222c3d;
+  --color-skeleton-shine: #2c384d;
+}
+:root[data-theme="dark"] .secondary-button { color: var(--color-text); }
+:root[data-theme="dark"] img.member-photo, :root[data-theme="dark"] .member-avatar { filter: brightness(0.92); }
+
+/* Pin the economy page to the light palette regardless of theme preference */
+body[data-page="economy"] {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f9fd;
+  --color-header-bg: #1a1f2e;
+  --color-nav-bg: #242938;
+  --color-text: #1a1f2e;
+  --color-text-muted: #5a6272;
+  --color-border: #dde2ec;
+  --color-card-shadow: rgba(26, 31, 46, 0.08);
+  --color-skeleton: #e2e8f0;
+  --color-skeleton-shine: #f1f5f9;
+}
+
+@media print {
+  .site-header, .main-nav, .back-to-top, .read-progress, .theme-toggle,
+  #load-more-bills, .decoder-controls, .skip-link { display: none !important; }
+  body { background: #fff; }
+  .recent-bills-grid, .stat-card, .pulse-card, .term-decoder { box-shadow: none; border-color: #ccc; }
+  a { color: #000; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+
+/* Dark-mode variants for semantic party/status chips (readability) */
+:root[data-theme="dark"] .chip--dem { background: rgba(59, 130, 246, 0.22); color: #9cc0ff; border-color: rgba(59, 130, 246, 0.4); }
+:root[data-theme="dark"] .chip--rep { background: rgba(239, 68, 68, 0.2); color: #ff9d9d; border-color: rgba(239, 68, 68, 0.4); }
+:root[data-theme="dark"] .chip--ind { background: rgba(132, 204, 22, 0.18); color: #c4ef86; border-color: rgba(132, 204, 22, 0.4); }
+:root[data-theme="dark"] .badge--report { background: rgba(99, 102, 241, 0.24); color: #bcbdff; }
+:root[data-theme="dark"] .badge--role { background: rgba(245, 158, 11, 0.2); color: #f6c977; }
+:root[data-theme="dark"] .vote-tag--partyline { background: rgba(239, 68, 68, 0.2); color: #ff9d9d; }
+:root[data-theme="dark"] .vote-tag--mixed { background: rgba(234, 179, 8, 0.18); color: #ecc879; }
