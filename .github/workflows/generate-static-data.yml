@@ -61,8 +61,11 @@ jobs:
       # run, so one slow lookup can't strand more than a single batch.
       YGN_FEC_SCORE_LIMIT: "50"
       YGN_FEC_DELAY_SECONDS: "0"
-      # Overlap slow HTTP responses without spending additional API calls.
-      YGN_FEC_WORKERS: "6"
+      # Sequential (1): the FEC backend throttles concurrent bursts even under the
+      # hourly budget, and parallel workers were silently dropping most of each
+      # batch to N/A. 50 members sequentially is still ~2 min/run. Raise only if a
+      # run's logs show ample X-RateLimit-Remaining.
+      YGN_FEC_WORKERS: "1"
 
     steps:
       - name: Check out repository

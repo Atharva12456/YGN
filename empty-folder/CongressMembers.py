@@ -606,6 +606,16 @@ def _fec_get(path, params=None, ttl_seconds=None):
                 continue
 
             if response.status_code == 429:
+                # Surface the key's actual budget so we can tell a throttled/demo
+                # key (limit ~40) from burst-limiting on a full 1,000/hr key.
+                LOGGER.warning(
+                    "FEC 429 for %s after %d attempts; X-RateLimit-Limit=%s "
+                    "X-RateLimit-Remaining=%s",
+                    path,
+                    attempts,
+                    response.headers.get("X-RateLimit-Limit"),
+                    response.headers.get("X-RateLimit-Remaining"),
+                )
                 raise UpstreamDataError(
                     f"FEC rate limit exceeded for {path}. The FEC_API_KEY is "
                     "throttled (the demo key allows only ~60 requests/hour)."
