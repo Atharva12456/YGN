@@ -6,6 +6,7 @@
 :root {
   --color-bg: #f4f6f9;
   --color-surface: #ffffff;
+  --color-surface-alt: #f7f9fd;
   --color-header-bg: #1a1f2e;
   --color-header-text: #e8eaf0;
   --color-nav-bg: #242938;
@@ -412,7 +413,7 @@ button {
 }
 
 .bill-row-header {
-  background: #edf4f1;
+  background: var(--color-surface-alt);
   color: var(--color-text);
   font-size: 0.73rem;
   font-weight: 800;
@@ -487,7 +488,7 @@ button {
 .bill-member-pill {
   border: 1px solid var(--color-border);
   border-radius: 8px;
-  background: #fbfcff;
+  background: var(--color-surface-alt);
   display: grid;
   gap: 0.1rem;
   padding: 0.45rem 0.55rem;
@@ -582,11 +583,11 @@ button {
 }
 .members-saved-toggle:hover {
   border-color: var(--color-accent);
-  background: #f4f7fc;
+  background: var(--color-surface-alt);
 }
 .members-saved-toggle.is-active {
   border-color: var(--color-accent);
-  background: #e8f0fe;
+  background: var(--color-tint-blue);
   color: #1a56b4;
 }
 .members-saved-toggle:focus-visible,
@@ -598,7 +599,7 @@ button {
   min-width: 1.35rem;
   padding: 0.05rem 0.3rem;
   border-radius: 999px;
-  background: #e7ebf2;
+  background: var(--color-surface-alt);
   color: var(--color-text-muted);
   font-size: 0.7rem;
   line-height: 1.35;
@@ -708,18 +709,18 @@ button {
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--color-surface);
   color: #39445a;
   box-shadow: 0 2px 8px rgba(26, 31, 46, 0.22);
   transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
 }
 .member-save-button--tile:hover {
   transform: translateY(-1px) scale(1.04);
-  background: #fff;
+  background: var(--color-surface);
   color: var(--color-accent-hover);
 }
 .member-save-button--tile.is-saved {
-  background: #e8f0fe;
+  background: var(--color-tint-blue);
   border-color: #fff;
   color: #1a56b4;
 }
@@ -817,7 +818,7 @@ button {
   position: fixed;
   z-index: 1000;
   max-width: 320px;
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-card);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   padding: 1rem;
@@ -1062,7 +1063,7 @@ button {
   height: 18px;
   min-height: 18px;
   border: 1px solid var(--color-border);
-  background: #ffffff;
+  background: var(--color-surface);
   color: var(--color-text-muted);
   font-size: 0.72rem;
   font-weight: 800;
@@ -1137,7 +1138,7 @@ button {
   max-width: 220px;
   border-radius: 6px;
   border: 1px solid rgba(26, 31, 46, 0.15);
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--color-surface);
   box-shadow: 0 12px 30px rgba(26, 31, 46, 0.18);
   padding: 0.65rem 0.75rem;
   pointer-events: none;
@@ -1167,7 +1168,7 @@ button {
   bottom: 12px;
   max-width: calc(100% - 24px);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
   padding: 0.55rem 0.7rem;
@@ -1240,7 +1241,7 @@ button {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 0.75rem;
-  background: #fbfcff;
+  background: var(--color-surface-alt);
 }
 
 .metric-label {
@@ -1261,7 +1262,7 @@ button {
   width: 100%;
   height: 9px;
   border-radius: 999px;
-  background: #e2e8f0;
+  background: var(--color-skeleton);
   overflow: hidden;
   margin-top: 0.55rem;
 }
@@ -1307,7 +1308,7 @@ button {
   border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 0.55rem 0.65rem;
-  background: #ffffff;
+  background: var(--color-surface);
   min-height: 54px;
 }
 
@@ -1471,7 +1472,7 @@ button {
 }
 
 .foreign-jump-nav a {
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 999px;
   color: var(--color-text);
@@ -1702,7 +1703,7 @@ button {
 }
 
 .consensus-meter {
-  background: #e2e8f0;
+  background: var(--color-skeleton);
   border-radius: 999px;
   height: 10px;
   overflow: hidden;
@@ -2021,7 +2022,7 @@ button {
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
-  background: #e2e8f0;
+  background: var(--color-skeleton);
   box-shadow: 0 0 0 4px #fff, 0 4px 14px rgba(26, 31, 46, 0.18);
 }
 .dossier-hero-photo { width: 100%; height: 100%; object-fit: cover; }
@@ -2060,7 +2061,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #eef1f7;
+  background: var(--color-surface-alt);
   color: var(--color-text);
   padding: 0.24rem 0.7rem;
   border-radius: 999px;
@@ -2068,7 +2069,7 @@ button {
   font-weight: 600;
   border: 1px solid var(--color-border);
 }
-.chip--dem { background: #e8f0fe; color: #1a56db; border-color: #c9dcfb; }
+.chip--dem { background: var(--color-tint-blue); color: #1a56db; border-color: #c9dcfb; }
 .chip--rep { background: #fdeaea; color: #c0392b; border-color: #f5c9c4; }
 .chip--ind { background: #eef2e9; color: #4d7c0f; border-color: #d7e3c6; }
 
@@ -2096,7 +2097,7 @@ button {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-surface);
   border: 3px solid var(--color-text);
   transform: translate(-50%, -50%);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -2139,7 +2140,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 0.4rem 0.75rem;
@@ -2148,14 +2149,14 @@ button {
   font-weight: 600;
   transition: background var(--transition-fast), border-color var(--transition-fast);
 }
-.ghost-btn:hover { background: #f4f6f9; border-color: var(--color-accent); }
+.ghost-btn:hover { background: var(--color-bg); border-color: var(--color-accent); }
 .member-save-button--detail {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
   min-width: 90px;
-  background: #fff;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 0.4rem 0.75rem;
@@ -2165,11 +2166,11 @@ button {
   transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 .member-save-button--detail:hover {
-  background: #f4f7fc;
+  background: var(--color-surface-alt);
   border-color: var(--color-accent);
 }
 .member-save-button--detail.is-saved {
-  background: #e8f0fe;
+  background: var(--color-tint-blue);
   border-color: var(--color-accent);
   color: #1a56b4;
 }
@@ -2300,7 +2301,7 @@ button {
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-accent);
   border-radius: 8px;
-  background: #fafbfd;
+  background: var(--color-surface-alt);
 }
 .tenure-item strong { display: block; font-size: 0.95rem; }
 .tenure-item span { font-size: 0.85rem; color: var(--color-text-muted); }
@@ -2363,7 +2364,7 @@ button {
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 0.9rem;
-  background: #eef1f7;
+  background: var(--color-surface-alt);
 }
 .funding-bar-segment { height: 100%; transition: width var(--transition-med); }
 .funding-legend { font-size: 0.85rem; line-height: 1.5; }
@@ -2393,7 +2394,7 @@ button {
 /* Legislation: 2-column bill grid (the card is full-width) + compact amendments */
 .bill-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
 .bill-title-text { font-size: 0.95rem; margin: 0.25rem 0 0.4rem; }
-.bill-item--amendment { align-self: start; background: #fafbfd; }
+.bill-item--amendment { align-self: start; background: var(--color-surface-alt); }
 .bill-item--amendment .dossier-list-item-title { font-weight: 600; }
 
 .badge {
@@ -2402,7 +2403,7 @@ button {
   border-radius: 4px;
   font-size: 0.72rem;
   font-weight: 700;
-  background: #eef1f7;
+  background: var(--color-surface-alt);
   color: var(--color-text-muted);
 }
 .enacted-badge, .badge--enacted { background: #dcfce7; color: #166534; }
@@ -2434,7 +2435,7 @@ button {
 /* ── Policy-area tags ─────────────────────────────────────────────────────── */
 .policy-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
 .policy-tag {
-  background: #eef1f7;
+  background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 0.2rem 0.65rem;
@@ -2646,7 +2647,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 /* Roll-call vote cards */
 .bill-vote-card {
   border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-  padding: 1rem 1.1rem; margin-bottom: 1rem; background: #fbfcff;
+  padding: 1rem 1.1rem; margin-bottom: 1rem; background: var(--color-surface-alt);
 }
 .bill-vote-head h4 { font-size: 1rem; margin-bottom: 0.2rem; }
 .bill-vote-meta { color: var(--color-text-muted); font-size: 0.82rem; margin-bottom: 0.7rem; }
@@ -2695,7 +2696,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 }
 
 /* Funding grade explainer (finance score - stock deduction = final) */
-.grade-explainer { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; margin: 0.75rem 0 1rem; background: #fbfcff; }
+.grade-explainer { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; margin: 0.75rem 0 1rem; background: var(--color-surface-alt); }
 .grade-explainer-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.3rem 0; font-size: 0.86rem; border-bottom: 1px dashed var(--color-border); }
 .grade-explainer-row:last-child { border-bottom: none; font-weight: 600; }
 .grade-explainer-row small { color: var(--color-text-muted); font-weight: 400; }
@@ -2733,7 +2734,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .map-colorby { display: inline-flex; border: 1px solid var(--color-border); border-radius: 999px; overflow: hidden; }
 .map-colorby-btn { background: var(--color-surface); border: none; padding: 0.4rem 0.85rem; font-size: 0.82rem; font-family: var(--font-body); cursor: pointer; color: var(--color-text-muted); }
 .map-colorby-btn.active { background: var(--color-accent); color: #fff; }
-.map-legend { position: absolute; left: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; background: rgba(255,255,255,0.9); border: 1px solid var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; font-size: 0.75rem; }
+.map-legend { position: absolute; left: 12px; bottom: 12px; display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 0.45rem 0.7rem; font-size: 0.75rem; }
 .map-legend-item { display: inline-flex; align-items: center; gap: 0.3rem; }
 .map-legend-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
 .gerry-components { display: grid; gap: 0.3rem; margin-top: 0.6rem; }
@@ -3102,7 +3103,7 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .related-bill {
   display: flex; gap: 0.7rem; align-items: baseline; padding: 0.55rem 0.8rem;
   border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-  text-decoration: none; color: var(--color-text); background: #fbfcff;
+  text-decoration: none; color: var(--color-text); background: var(--color-surface-alt);
 }
 .related-bill:hover { border-color: var(--color-accent); }
 .related-ident { flex: none; font-size: 0.78rem; font-weight: 700; color: var(--color-accent); }
@@ -3247,6 +3248,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 :root[data-theme="dark"] {
   --color-bg: #0f1420;
   --color-surface: #171d2b;
+  --color-surface-alt: #1e2637;
   --color-header-bg: #0b0f18;
   --color-nav-bg: #10151f;
   --color-text: #e6e9f0;
@@ -3263,6 +3265,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 body[data-page="economy"] {
   --color-bg: #f4f6f9;
   --color-surface: #ffffff;
+  --color-surface-alt: #f7f9fd;
   --color-header-bg: #1a1f2e;
   --color-nav-bg: #242938;
   --color-text: #1a1f2e;
@@ -3281,3 +3284,13 @@ body[data-page="economy"] {
   a { color: #000; }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
+
+
+/* Dark-mode variants for semantic party/status chips (readability) */
+:root[data-theme="dark"] .chip--dem { background: rgba(59, 130, 246, 0.22); color: #9cc0ff; border-color: rgba(59, 130, 246, 0.4); }
+:root[data-theme="dark"] .chip--rep { background: rgba(239, 68, 68, 0.2); color: #ff9d9d; border-color: rgba(239, 68, 68, 0.4); }
+:root[data-theme="dark"] .chip--ind { background: rgba(132, 204, 22, 0.18); color: #c4ef86; border-color: rgba(132, 204, 22, 0.4); }
+:root[data-theme="dark"] .badge--report { background: rgba(99, 102, 241, 0.24); color: #bcbdff; }
+:root[data-theme="dark"] .badge--role { background: rgba(245, 158, 11, 0.2); color: #f6c977; }
+:root[data-theme="dark"] .vote-tag--partyline { background: rgba(239, 68, 68, 0.2); color: #ff9d9d; }
+:root[data-theme="dark"] .vote-tag--mixed { background: rgba(234, 179, 8, 0.18); color: #ecc879; }
