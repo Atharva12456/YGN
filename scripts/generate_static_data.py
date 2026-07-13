@@ -320,6 +320,12 @@ def parse_args():
     parser.add_argument("--skip-ethics", action="store_true")
     parser.add_argument("--skip-recent-bills", action="store_true")
     parser.add_argument(
+        "--ethics-only",
+        action="store_true",
+        help="Refresh only the budgeted ethics slice. Reuses all other committed "
+        "snapshots and avoids rebuilding hundreds of member dossiers.",
+    )
+    parser.add_argument(
         "--wiki-static-ttl-days",
         type=int,
         default=int(os.getenv("YGN_WIKI_STATIC_TTL_DAYS", "30")),
@@ -363,6 +369,11 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if args.ethics_only:
+        args.skip_details = True
+        args.skip_wiki = True
+        args.skip_nominate = True
+        args.skip_recent_bills = True
     backend = load_backend()
 
     if not backend.congress_api_key_available():
@@ -534,13 +545,14 @@ def main():
         except Exception as exc:
             report["errors"].append({"stage": "recent-bills", "error": str(exc)})
 
-    try:
-        debt = backend.get_national_debt_metric()
-        if debt:
-            write_json(output_dir / "metrics" / "debt.json", debt)
-            report["debt_metric"] = True
-    except Exception as exc:
-        report["errors"].append({"stage": "debt-metric", "error": str(exc)})
+    if not args.ethics_only:
+        try:
+            debt = backend.get_national_debt_metric()
+            if debt:
+                write_json(output_dir / "metrics" / "debt.json", debt)
+                report["debt_metric"] = True
+        except Exception as exc:
+            report["errors"].append({"stage": "debt-metric", "error": str(exc)})
 
     fec_scored = 0  # members scored against live FEC this run (budget-limited)
 
@@ -679,6 +691,10 @@ def main():
                         and prior.get("grade")
                     ):
                         ethics = prior
+                    elif args.ethics_only and prior is not None:
+                        # A checkpoint sweep must not make another Congress API call
+                        # for every unselected member just to recreate the same N/A.
+                        ethics = prior
                     else:
                         ethics = backend.ethics_fallback_only(bioguide_id)
 
@@ -713,7 +729,7 @@ def main():
                     {"bioguideId": bioguide_id, "stage": "ethics", "error": str(exc)}
                 )
 
-        if detail:
+        if detail and not args.ethics_only:
             dossier_errors = []
 
             def dossier_section(stage, fetcher):
