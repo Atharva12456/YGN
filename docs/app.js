@@ -776,9 +776,19 @@ async function initCongressBalance() {
     congress = manifest.congress || congress;
     const compact = manifest.roster_summary && manifest.roster_summary.voting_by_chamber_party;
     if (compact && compact.House && compact.Senate) {
+      const partySeats = (chamber, shortCode, longCode) =>
+        Number(chamber[shortCode] ?? chamber[longCode] ?? 0) || 0;
       tally = {
-        House: { D: compact.House.D || 0, R: compact.House.R || 0, I: compact.House.I || 0 },
-        Senate: { D: compact.Senate.D || 0, R: compact.Senate.R || 0, I: compact.Senate.I || 0 },
+        House: {
+          D: partySeats(compact.House, 'D', 'DEM'),
+          R: partySeats(compact.House, 'R', 'REP'),
+          I: partySeats(compact.House, 'I', 'IND'),
+        },
+        Senate: {
+          D: partySeats(compact.Senate, 'D', 'DEM'),
+          R: partySeats(compact.Senate, 'R', 'REP'),
+          I: partySeats(compact.Senate, 'I', 'IND'),
+        },
       };
     }
   } catch (_) { /* older manifests fall back to the roster below */ }
@@ -808,7 +818,7 @@ async function initCongressBalance() {
       ? `<span class="cb-seg ${cls}" style="width:${(n / total) * 100}%" title="${label}: ${n}">${n}</span>` : '';
     // Independents in the modern Senate caucus with Democrats; fold them in so
     // the "who controls" label reflects governing control, not just raw D vs R.
-    const dCaucus = t.D + t.I;
+    const dCaucus = name === 'Senate' ? t.D + t.I : t.D;
     const majority = dCaucus > t.R ? 'Democratic' : t.R > dCaucus ? 'Republican' : 'Evenly split';
     return `<div class="cb-chamber">
       <div class="cb-head"><strong>${esc(name)}</strong><span class="cb-majority">${esc(majority)} majority</span></div>
@@ -818,7 +828,7 @@ async function initCongressBalance() {
   };
 
   host.innerHTML = `
-    <div class="cb-title">Who controls the ${esc(congress)}th Congress</div>
+    <div class="cb-title">Who runs the ${esc(congress)}th Congress</div>
     <div class="cb-chambers">
       ${chamberBar('House', tally.House)}
       ${chamberBar('Senate', tally.Senate)}

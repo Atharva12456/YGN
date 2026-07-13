@@ -116,6 +116,30 @@ function listen(serverApp) {
       'detail hero control should update the same persisted saved list',
     );
 
+    const homePage = await browser.newPage();
+    await homePage.goto(`${baseUrl}/index.html`, { waitUntil: 'domcontentloaded' });
+    await homePage.waitForSelector('#home-congress-balance:not([hidden])');
+    const balanceText = await homePage.$eval(
+      '#home-congress-balance',
+      element => element.textContent.replace(/\s+/g, ' ').trim(),
+    );
+    assert.match(balanceText, /Who runs the 119th Congress/i);
+    assert.match(balanceText, /212 Democrats/);
+    assert.match(balanceText, /218 Republicans/);
+    assert.match(balanceText, /45 Democrats/);
+    assert.match(balanceText, /53 Republicans/);
+
+    await homePage.waitForSelector('#on-this-day:not([hidden])');
+    const historyMapGap = await homePage.evaluate(() => {
+      const history = document.querySelector('#on-this-day').getBoundingClientRect();
+      const map = document.querySelector('#district-map').getBoundingClientRect();
+      return map.top - history.bottom;
+    });
+    assert.ok(
+      historyMapGap >= 24,
+      `history banner and map heading should have breathing room (received ${historyMapGap}px)`,
+    );
+
     console.log(`PASS: saved members (${first.name}, ${first.id})`);
   } finally {
     if (browser) await browser.close();
