@@ -140,7 +140,11 @@ ENV_PATHS = (
 )
 
 _cache_lock = threading.RLock()
-_cache_key_locks = tuple(threading.Lock() for _ in range(CACHE_LOCK_STRIPES))
+# Cached fetchers can call other cached fetchers while holding their stripe
+# (ethics -> member/FEC/disclosure is one example). Two different keys can hash
+# to the same stripe, so these locks must be reentrant or that collision
+# deadlocks the worker forever.
+_cache_key_locks = tuple(threading.RLock() for _ in range(CACHE_LOCK_STRIPES))
 _cache_writes_since_prune = 0
 _background_refresh_thread = None
 _background_refresh_stop = threading.Event()

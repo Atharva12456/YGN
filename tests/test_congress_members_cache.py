@@ -78,6 +78,20 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(requests_get.call_count, 1)
 
+    def test_cache_stripe_lock_is_reentrant_for_nested_cached_fetches(self):
+        lock = self.module._cache_lock_for_key("outer-cache-key")
+        lock.acquire()
+        try:
+            acquired_again = lock.acquire(timeout=0.1)
+            self.assertTrue(
+                acquired_again,
+                "nested cached requests must not deadlock on a stripe collision",
+            )
+            if acquired_again:
+                lock.release()
+        finally:
+            lock.release()
+
     def test_list_congress_members_can_filter_current_congress(self):
         with patch.object(self.module.requests, "get") as requests_get:
             requests_get.return_value = fake_response({"members": []})
