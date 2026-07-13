@@ -42,6 +42,13 @@ STATIC_PRECOMPUTED_ETHICS_DIR = Path(__file__).parent.parent / "docs" / "data" /
 # survives Heroku dyno restarts (the SQLite AI cache does not) and works even
 # when no AI provider is configured. Refreshed by scripts/snapshot_bill_ai.py.
 STATIC_BILL_AI_PATH = Path(__file__).parent.parent / "docs" / "data" / "bill-ai.json"
+# Committed 40-bill recent-bills digest (written by generate_static_data.py). The
+# background AI refresh reads it to enqueue generation for every bill in the feed,
+# not just the handful the live digest warms each cycle — see
+# _enqueue_committed_digest_ai_jobs.
+STATIC_RECENT_DIGEST_PATH = (
+    Path(__file__).parent.parent / "docs" / "data" / "recent-bills-digest.json"
+)
 STATIC_MEMBER_AI_DIR = Path(__file__).parent.parent / "docs" / "data" / "member-ai"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
@@ -2498,9 +2505,45 @@ def get_candidate_confidence(bioguide_id):
 
 def _ai_refresh_limit():
     try:
-        return max(0, min(40, int(os.getenv("YGN_AI_REFRESH_LIMIT", "6"))))
+        return max(0, min(40, int(os.getenv("YGN_AI_REFRESH_LIMIT", "12"))))
     except ValueError:
-        return 6
+        return 12
+
+
+def _enqueue_committed_digest_ai_jobs():
+    """Queue bill-AI generation for every bill in the committed recent-bills
+    digest whose committed AI is missing or stale.
+
+    The live digest only warms the top few bills each cycle, so bills deeper in
+    the 40-bill feed never reached the model on their own — CI can't generate
+    them (no AI key there) and page views only queued whatever was on screen.
+    This reads the committed snapshot (no upstream calls) and enqueues the gaps
+    so the background drain fills the whole digest, which the CI harvest then
+    commits. Idempotent: _queue_ai_refresh_job is insert-if-missing and bills
+    that already have complete, current committed AI are skipped.
+    """
+    digest = _read_json_file_cached(STATIC_RECENT_DIGEST_PATH, {})
+    bills = digest.get("bills") if isinstance(digest, dict) else None
+    if not isinstance(bills, list):
+        return {"scanned": 0, "queued": 0}
+    scanned = 0
+    queued = 0
+    for bill in bills:
+        if not isinstance(bill, dict):
+            continue
+        scanned += 1
+        record, _legacy = _static_bill_ai_record(bill)
+        record = record if isinstance(record, dict) else {}
+        has_desc = bool((record.get("description") or {}).get("summary"))
+        has_impact = bool((record.get("impact") or {}).get("summary"))
+        if has_desc and has_impact and _bill_ai_entry_is_current(record, bill):
+            continue
+        payload = _bill_ai_job_payload(bill)
+        if payload and _queue_ai_refresh_job(
+            "bill", _bill_ai_identifier(bill), payload
+        ):
+            queued += 1
+    return {"scanned": scanned, "queued": queued}
 
 
 def refresh_ai_generation_cache(limit=None):
@@ -4992,12 +5035,15 @@ def refresh_government_officials_cache(include_ethics=True, include_ai=False):
         "dossierDatasetsWarmed": prewarm_dossier_datasets(),
         "ethicsScoresRefreshed": 0,
         "ethicsErrors": [],
-        "aiRefresh": (
-            refresh_ai_generation_cache()
-            if include_ai
-            else {"enabled": ai_insights_available(), "skipped": True}
-        ),
     }
+
+    if include_ai:
+        # Enqueue any gaps across the whole committed digest first, then drain a
+        # bounded batch. This is the only runtime path allowed to call the model.
+        result["billAiQueued"] = _enqueue_committed_digest_ai_jobs()
+        result["aiRefresh"] = refresh_ai_generation_cache()
+    else:
+        result["aiRefresh"] = {"enabled": ai_insights_available(), "skipped": True}
 
     if include_ethics and fec_api_key_available():
         refresh_limit = _background_ethics_refresh_limit()
@@ -5188,7 +5234,19 @@ def get_cache_stats():
 def _background_refresh_loop(interval_seconds, stop_event):
     while not stop_event.is_set():
         try:
-            refresh_government_officials_cache(include_ai=True)
+            result = refresh_government_officials_cache(include_ai=True)
+            ai = result.get("aiRefresh") or {}
+            queued = result.get("billAiQueued") or {}
+            if ai.get("processed") or ai.get("errors") or queued.get("queued"):
+                LOGGER.info(
+                    "AI refresh cycle: queued=%s processed=%s completed=%s "
+                    "partial=%s errors=%s",
+                    queued.get("queued"),
+                    ai.get("processed"),
+                    ai.get("completed"),
+                    ai.get("partial"),
+                    (ai.get("errors") or [])[:3],
+                )
         except Exception:
             LOGGER.exception("Background cache refresh failed.")
 
