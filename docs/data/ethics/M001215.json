@@ -1,19 +1,58 @@
 {
-    "available":  false,
-    "bioguideId":  "M001215",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "M001215",
+  "candidate": {
+    "candidate_id": "H8IA02043",
+    "district": "01",
+    "name": "MILLER-MEEKS, MARIANNETTE JANE",
+    "office": "H",
+    "party": "REP",
+    "state": "IA"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 35.0,
+      "value": 0.0,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 70.4,
+      "value": 0.2031,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 68.8,
+      "value": 0.5401,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 0.9992,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 90.2,
+      "value": 0.3096,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 72.7,
+  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "grade": "C-",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 72.7,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-13T05:25:42.664550+00:00"
 }
