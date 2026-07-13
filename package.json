@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "check": "node --check docs/app.js && node --check test_saved_members.js",
+    "check": "node --check docs/config.js && node --check docs/js/core.js && node --check docs/js/features.js && node --check docs/js/enhancements.js && node --check test_saved_members.js",
     "test": "npm run check && node test_saved_members.js"
   },
   "devDependencies": {

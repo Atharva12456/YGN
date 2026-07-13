@@ -35,6 +35,7 @@ class MemberDossierBackendTests(unittest.TestCase):
 
         def fake_fec_get(path, params=None, ttl_seconds=None):
             captured["params"] = params
+            captured["ttl_seconds"] = ttl_seconds
             return {"results": []}
 
         member = {
@@ -46,6 +47,9 @@ class MemberDossierBackendTests(unittest.TestCase):
             self.gov._fec_search_candidates(member)
 
         self.assertEqual(captured["params"]["state"], "VT")
+        self.assertEqual(
+            captured["ttl_seconds"], self.gov.FEC_LIVE_CACHE_TTL_SECONDS
+        )
 
     def test_latest_candidate_total_prefers_recent_funded_cycle(self):
         # Regression: an ancient record with cycle=None must not shadow the recent
@@ -273,6 +277,26 @@ class MemberDossierBackendTests(unittest.TestCase):
         self.assertFalse(result["available"])
         self.assertEqual(result["grade"]["grade"], "B")
         self.assertIn("build time", result["note"])
+
+    def test_funding_reuses_committed_breakdown_without_fec_calls(self):
+        saved = {
+            "available": True,
+            "candidate": {"candidateId": "S1", "name": "Example"},
+            "cycle": 2026,
+            "totals": {"receipts": 1000.0},
+            "breakdown": [],
+        }
+        grade = {"grade": "A", "source": "fec_live", "funding": saved}
+        with patch.object(self.gov, "get_ethics_score", return_value=grade), patch.object(
+            self.gov,
+            "CongressMembersID",
+            side_effect=AssertionError("must not fetch member or call FEC"),
+        ):
+            result = self.gov.get_funding_summary("X0001")
+
+        self.assertTrue(result["available"])
+        self.assertEqual(result["source"], "fec_committed")
+        self.assertEqual(result["totals"]["receipts"], 1000.0)
 
     def test_funding_live_gate_on_with_real_key(self):
         with patch.object(self.gov, "_ethics_live_on_request", return_value=False), \

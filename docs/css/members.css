@@ -65,7 +65,7 @@
 .members-saved-toggle.is-active {
   border-color: var(--color-accent);
   background: var(--color-tint-blue);
-  color: #1a56b4;
+  color: var(--color-accent-hover);
 }
 .members-saved-toggle:focus-visible,
 .member-save-button:focus-visible {
@@ -187,7 +187,7 @@
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   background: var(--color-surface);
-  color: #39445a;
+  color: var(--color-text-muted);
   box-shadow: 0 2px 8px rgba(26, 31, 46, 0.22);
   transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
 }
@@ -199,7 +199,7 @@
 .member-save-button--tile.is-saved {
   background: var(--color-tint-blue);
   border-color: #fff;
-  color: #1a56b4;
+  color: var(--color-accent-hover);
 }
 
 /* Tile initials fallback */

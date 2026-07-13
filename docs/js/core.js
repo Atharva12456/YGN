@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   YGN — Civic Government Portal — app.js
+   YGN — Civic Government Portal — core runtime
    Vanilla JS, no framework, no build step.
    API_BASE_URL is declared in config.js, which is loaded before this script.
    ═══════════════════════════════════════════════════════════════════════════ */

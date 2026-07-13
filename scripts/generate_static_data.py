@@ -128,7 +128,13 @@ def read_existing_snapshot(path):
         return None
 
 
-def reusable_ethics_snapshot(path, generated_at, ttl_days, expected_method=None):
+def reusable_ethics_snapshot(
+    path,
+    generated_at,
+    ttl_days,
+    expected_method=None,
+    require_funding=False,
+):
     """Reuse a committed live (fec_live) ethics grade if it is still fresh, so a
     run doesn't re-spend FEC quota on members already scored. Returns the payload
     with its original data timestamp or None."""
@@ -139,10 +145,36 @@ def reusable_ethics_snapshot(path, generated_at, ttl_days, expected_method=None)
         return None
     if expected_method and payload.get("method") != expected_method:
         return None
+    if require_funding and not (payload.get("funding") or {}).get("available"):
+        return None
     snapshot_time = parse_generated_at(payload.get("generated_at"))
     if snapshot_time is None or generated_at - snapshot_time > timedelta(days=ttl_days):
         return None
     return payload
+
+
+def funding_snapshot_from_ethics(ethics):
+    """Expose FEC totals already saved with an ethics score to the static dossier."""
+    unavailable = {
+        "available": False,
+        "source": "static",
+        "note": "Campaign-funding detail is not available in this snapshot.",
+    }
+    if not isinstance(ethics, dict):
+        return unavailable
+    saved = ethics.get("funding")
+    if not isinstance(saved, dict) or not saved.get("available"):
+        return unavailable
+
+    # Avoid nesting the funding payload inside its own grade context.
+    grade = {key: value for key, value in ethics.items() if key != "funding"}
+    return {
+        "bioguideId": ethics.get("bioguideId"),
+        **saved,
+        "source": "fec_committed",
+        "note": None,
+        "grade": grade,
+    }
 
 
 def evidence_backed_ethics(payload, expected_method):
@@ -189,6 +221,7 @@ def ethics_refresh_selection(
             generated_at,
             ttl_days,
             expected_method=expected_method,
+            require_funding=True,
         ) is not None:
             continue
         selected.append(bioguide_id)
@@ -688,6 +721,7 @@ def main():
                     generated_at_dt,
                     args.ethics_static_ttl_days,
                     expected_method=backend.ETHICS_METHOD_VERSION,
+                    require_funding=True,
                 )
                 if reused is not None:
                     # Already have a fresh live grade committed — keep it, no FEC call.
@@ -787,11 +821,7 @@ def main():
                 "wiki": wiki,
                 "nominate": nominate,
                 "ethics": public_ethics,
-                "funding": {
-                    "available": False,
-                    "source": "static",
-                    "note": "Live campaign-funding detail is available on the hosted API.",
-                },
+                "funding": funding_snapshot_from_ethics(public_ethics),
                 "committees": dossier_section(
                     "committees", lambda: backend.get_member_committees(bioguide_id)
                 ),
