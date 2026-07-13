@@ -241,12 +241,7 @@ def congress_api_key_available():
 
 
 def fec_api_key_available():
-    _load_local_env()
-    return bool(
-        os.getenv("FEC_API_KEY")
-        or os.getenv("ECON_API_KEY")
-        or os.getenv("YGN_ECON_API_KEY")
-    )
+    return bool(_fec_api_key_pool())
 
 
 def _congress_api_key():
@@ -261,20 +256,51 @@ def _congress_api_key():
     return api_key
 
 
-def _fec_api_key():
-    _load_local_env()
-    api_key = (
-        os.getenv("FEC_API_KEY")
-        or os.getenv("ECON_API_KEY")
-        or os.getenv("YGN_ECON_API_KEY")
-    )
-    if not api_key:
-        raise MissingFecApiKey(
-            "FEC_API_KEY, ECON_API_KEY, or YGN_ECON_API_KEY is not set. Add it to "
-            "the backend environment before refreshing live ethics grades."
-        )
+_fec_key_cursor = 0
+_fec_key_cursor_lock = threading.Lock()
 
-    return api_key
+
+def _fec_api_key_pool():
+    """All configured FEC API keys, in order, de-duplicated.
+
+    Multiple keys let the ethics sweep clear a single key's hourly quota / burst
+    limit by round-robining requests (and rotating on a 429) across them. Supply
+    them as a comma/space/newline-separated ``FEC_API_KEYS`` and/or numbered
+    ``FEC_API_KEY``, ``FEC_API_KEY_2``, ``FEC_API_KEY_3`` ... . The legacy ECON
+    keys still count."""
+    _load_local_env()
+    sources = [os.getenv("FEC_API_KEYS"), os.getenv("FEC_API_KEY")]
+    sources += [os.getenv(f"FEC_API_KEY_{i}") for i in range(2, 21)]
+    sources += [os.getenv("ECON_API_KEY"), os.getenv("YGN_ECON_API_KEY")]
+    keys = []
+    seen = set()
+    for raw in sources:
+        for key in re.split(r"[,\s]+", raw or ""):
+            key = key.strip()
+            if key and key not in seen:
+                seen.add(key)
+                keys.append(key)
+    return keys
+
+
+def _next_fec_api_key():
+    """Round-robin the next FEC key so load spreads evenly across the pool."""
+    keys = _fec_api_key_pool()
+    if not keys:
+        raise MissingFecApiKey(
+            "No FEC API key is set. Add FEC_API_KEY (or FEC_API_KEYS / "
+            "FEC_API_KEY_2..N for several) to the backend environment before "
+            "refreshing live ethics grades."
+        )
+    global _fec_key_cursor
+    with _fec_key_cursor_lock:
+        key = keys[_fec_key_cursor % len(keys)]
+        _fec_key_cursor += 1
+    return key
+
+
+def _fec_api_key():
+    return _next_fec_api_key()
 
 
 _initialized_cache_paths = set()
@@ -489,14 +515,7 @@ def _congress_get(path, params=None, ttl_seconds=None):
 
 def _fec_api_key_source():
     """Which environment-backed FEC key is in play, or None."""
-    _load_local_env()
-    if (
-        os.getenv("FEC_API_KEY")
-        or os.getenv("ECON_API_KEY")
-        or os.getenv("YGN_ECON_API_KEY")
-    ):
-        return "env"
-    return None
+    return "env" if _fec_api_key_pool() else None
 
 
 def _fec_retry_delay(response, attempt):
@@ -585,11 +604,14 @@ def _fec_get(path, params=None, ttl_seconds=None):
     url = f"{FEC_BASE_URL}{path}"
 
     def fetch_json():
-        request_params = dict(cache_params)
-        request_params["api_key"] = _fec_api_key()
+        # Give every key in the pool a shot before giving up on a 429.
+        pool_size = max(1, len(_fec_api_key_pool()))
+        attempts = max(3, pool_size)
 
-        attempts = 3
         for attempt in range(attempts):
+            request_params = dict(cache_params)
+            request_params["api_key"] = _next_fec_api_key()  # rotate across the pool
+
             try:
                 response = requests.get(
                     url,
@@ -599,15 +621,16 @@ def _fec_get(path, params=None, ttl_seconds=None):
             except requests.RequestException:
                 raise UpstreamDataError(f"FEC request failed for {path}.") from None
 
-            # Rate limited: back off and retry (helps burst limits, e.g. the
-            # parallel dossier firing ethics + funding at once).
             if response.status_code == 429 and attempt + 1 < attempts:
-                time.sleep(_fec_retry_delay(response, attempt))
+                # Throttled key: rotate straight to the next key (fresh quota).
+                # Only back off once we've likely cycled the whole pool.
+                if attempt + 1 >= pool_size:
+                    time.sleep(_fec_retry_delay(response, attempt))
                 continue
 
             if response.status_code == 429:
-                # Surface the key's actual budget so we can tell a throttled/demo
-                # key (limit ~40) from burst-limiting on a full 1,000/hr key.
+                # Surface the key's actual budget: X-RateLimit-Limit ~60 means a
+                # demo/unregistered key; a registered key allows 1,000/hour.
                 LOGGER.warning(
                     "FEC 429 for %s after %d attempts; X-RateLimit-Limit=%s "
                     "X-RateLimit-Remaining=%s",
@@ -617,8 +640,9 @@ def _fec_get(path, params=None, ttl_seconds=None):
                     response.headers.get("X-RateLimit-Remaining"),
                 )
                 raise UpstreamDataError(
-                    f"FEC rate limit exceeded for {path}. The FEC_API_KEY is "
-                    "throttled (the demo key allows only ~60 requests/hour)."
+                    f"FEC rate limit exceeded for {path}. All configured FEC keys "
+                    "are throttled (a demo key allows only ~60 requests/hour; add "
+                    "more via FEC_API_KEYS, or use a registered 1,000/hour key)."
                 )
 
             try:
