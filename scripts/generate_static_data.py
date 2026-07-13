@@ -5,6 +5,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -358,6 +359,13 @@ def parse_args():
         help="Pause after each live FEC-scored member to spread the calls out.",
     )
     parser.add_argument(
+        "--fec-workers",
+        type=int,
+        default=int(os.getenv("YGN_FEC_WORKERS", "1")),
+        help="Concurrent live FEC member lookups in ethics-only mode. The number "
+        "of API calls is unchanged; only their wall-clock overlap changes.",
+    )
+    parser.add_argument(
         "--ethics-static-ttl-days",
         type=int,
         default=int(os.getenv("YGN_ETHICS_STATIC_TTL_DAYS", "25")),
@@ -555,6 +563,27 @@ def main():
             report["errors"].append({"stage": "debt-metric", "error": str(exc)})
 
     fec_scored = 0  # members scored against live FEC this run (budget-limited)
+    parallel_ethics = {}
+    parallel_ethics_errors = {}
+    if (
+        args.ethics_only
+        and args.fec_workers > 1
+        and args.fec_delay_seconds <= 0
+        and ethics_refresh_ids
+    ):
+        with ThreadPoolExecutor(
+            max_workers=min(args.fec_workers, len(ethics_refresh_ids))
+        ) as executor:
+            futures = {
+                executor.submit(backend.compute_ethics_score, bioguide_id): bioguide_id
+                for bioguide_id in ethics_refresh_ids
+            }
+            for future in as_completed(futures):
+                bioguide_id = futures[future]
+                try:
+                    parallel_ethics[bioguide_id] = future.result()
+                except Exception as exc:
+                    parallel_ethics_errors[bioguide_id] = exc
 
     for member in members:
         bioguide_id = safe_id(member_bioguide_id(member))
@@ -666,7 +695,11 @@ def main():
                 elif bioguide_id in ethics_refresh_ids:
                     # Spend this run's FEC budget trying to score this member live.
                     fec_scored += 1
-                    ethics = backend.compute_ethics_score(bioguide_id)
+                    if bioguide_id in parallel_ethics_errors:
+                        raise parallel_ethics_errors[bioguide_id]
+                    ethics = parallel_ethics.get(bioguide_id)
+                    if ethics is None:
+                        ethics = backend.compute_ethics_score(bioguide_id)
                     if (ethics or {}).get("source") != "fec_live":
                         # Rate-limited / no FEC match: prefer an older committed live
                         # grade over a fresh fallback so we never regress a real grade.

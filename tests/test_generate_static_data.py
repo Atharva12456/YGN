@@ -3,6 +3,8 @@ import io
 import json
 import sys
 import tempfile
+import threading
+import time
 import unittest
 from contextlib import redirect_stdout
 from datetime import datetime, timezone
@@ -230,6 +232,34 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(backend.fallback_requests, [])
         self.assertEqual(backend.detail_requests, [])
         self.assertEqual(backend.debt_requests, 0)
+
+    def test_ethics_only_can_overlap_live_lookups(self):
+        backend = FakeBackend()
+        active = 0
+        peak_active = 0
+        lock = threading.Lock()
+        original_compute = backend.compute_ethics_score
+
+        def slow_compute(bioguide_id):
+            nonlocal active, peak_active
+            with lock:
+                active += 1
+                peak_active = max(peak_active, active)
+            try:
+                time.sleep(0.03)
+                return original_compute(bioguide_id)
+            finally:
+                with lock:
+                    active -= 1
+
+        backend.compute_ethics_score = slow_compute
+        with tempfile.TemporaryDirectory() as temp_dir:
+            self._run_ethics_only(
+                Path(temp_dir), ["--fec-workers", "2"], backend
+            )
+
+        self.assertEqual(set(backend.ethics_requests), {"A000001", "B000001"})
+        self.assertEqual(peak_active, 2)
 
     def test_fec_budget_advances_across_runs_and_preserves_prior_grade(self):
         backend = FakeBackend()
