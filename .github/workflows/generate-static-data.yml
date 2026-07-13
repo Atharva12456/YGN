@@ -48,6 +48,8 @@ jobs:
       # commit frequently, so one slow lookup cannot strand hours of progress.
       YGN_FEC_SCORE_LIMIT: "30"
       YGN_FEC_DELAY_SECONDS: "0"
+      # Overlap slow HTTP responses without spending additional API calls.
+      YGN_FEC_WORKERS: "6"
 
     steps:
       - name: Check out repository
