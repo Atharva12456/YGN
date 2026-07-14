@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.0,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 160088.04,
+        "label": "Small individual (unitemized)",
+        "share": 0.08979516120602307
+      },
+      {
+        "amount": 837145.41,
+        "label": "Large individual (itemized)",
+        "share": 0.4695641663414224
+      },
+      {
+        "amount": 783350.0,
+        "label": "PAC / other committees",
+        "share": 0.4393897228721032
+      },
+      {
+        "amount": 2230.21,
+        "label": "Political party committees",
+        "share": 0.001250949580451386
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0IN01150",
+      "district": "01",
+      "name": "MRVAN, FRANK J.",
+      "office": "H",
+      "party": "DEM",
+      "state": "IN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1088950.49,
+      "debts": 0.0,
+      "disbursements": 873154.31,
+      "individualContributions": 997233.45,
+      "receipts": 1873645.08
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:30:47.269108+00:00"
+  "updated_at": "2026-07-14T21:16:58.156222+00:00"
 }

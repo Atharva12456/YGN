@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.0,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 106546.49,
+        "label": "Small individual (unitemized)",
+        "share": 0.09622629058043994
+      },
+      {
+        "amount": 817352.78,
+        "label": "Large individual (itemized)",
+        "share": 0.7381831735143072
+      },
+      {
+        "amount": 183350.0,
+        "label": "PAC / other committees",
+        "share": 0.16559053590525283
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NM03102",
+      "district": "03",
+      "name": "LEGER FERNANDEZ, TERESA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NM"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 645095.61,
+      "debts": 0.0,
+      "disbursements": 880956.72,
+      "individualContributions": 923899.27,
+      "receipts": 1118126.76
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:43.423338+00:00"
+  "updated_at": "2026-07-14T21:17:15.497333+00:00"
 }

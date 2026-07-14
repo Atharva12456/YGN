@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.9,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 23776.58,
+        "label": "Small individual (unitemized)",
+        "share": 0.050793307768960516
+      },
+      {
+        "amount": 130073.0,
+        "label": "Large individual (itemized)",
+        "share": 0.277871667053546
+      },
+      {
+        "amount": 314255.0,
+        "label": "PAC / other committees",
+        "share": 0.6713350251774934
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0GA05301",
+      "district": "05",
+      "name": "WILLIAMS, NIKEMA N.",
+      "office": "H",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 48490.25,
+      "debts": 0.0,
+      "disbursements": 442858.95,
+      "individualContributions": 153849.58,
+      "receipts": 478107.55
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:30:02.091070+00:00"
+  "updated_at": "2026-07-14T21:16:01.702872+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.1,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5950.95,
+        "label": "Small individual (unitemized)",
+        "share": 0.004000496923571178
+      },
+      {
+        "amount": 704124.75,
+        "label": "Large individual (itemized)",
+        "share": 0.4733444065544703
+      },
+      {
+        "amount": 777477.0,
+        "label": "PAC / other committees",
+        "share": 0.5226550965219585
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2LA05126",
+      "district": "05",
+      "name": "LETLOW, JULIA",
+      "office": "H",
+      "party": "REP",
+      "state": "LA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 0.0,
+      "debts": 0.0,
+      "disbursements": 3425607.37,
+      "individualContributions": 710075.7,
+      "receipts": 2078840.56
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T08:30:00.813580+00:00"
+  "updated_at": "2026-07-14T21:16:00.788560+00:00"
 }

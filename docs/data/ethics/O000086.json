@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 85.2,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 208751.56,
+        "label": "Small individual (unitemized)",
+        "share": 0.31413549189277656
+      },
+      {
+        "amount": 303065.37,
+        "label": "Large individual (itemized)",
+        "share": 0.4560616892185923
+      },
+      {
+        "amount": 152500.0,
+        "label": "PAC / other committees",
+        "share": 0.22948648869329852
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 210.21,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0003163301953325789
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0UT04076",
+      "district": "04",
+      "name": "OWENS, BURGESS",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 0.0,
+      "debts": 0.0,
+      "disbursements": 869102.6,
+      "individualContributions": 511816.93,
+      "receipts": 735673.75
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:30:42.866000+00:00"
+  "updated_at": "2026-07-14T21:16:48.960940+00:00"
 }

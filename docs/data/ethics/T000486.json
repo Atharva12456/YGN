@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 70.9,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 125566.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.04396486776322597
+      },
+      {
+        "amount": 2125993.26,
+        "label": "Large individual (itemized)",
+        "share": 0.7443798808199915
+      },
+      {
+        "amount": 604500.0,
+        "label": "PAC / other committees",
+        "share": 0.21165525141678243
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NY15160",
+      "district": "15",
+      "name": "TORRES, RITCHIE JOHN",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 14570751.75,
+      "debts": 0.0,
+      "disbursements": 3538208.41,
+      "individualContributions": 2251559.54,
+      "receipts": 6684978.19
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T08:30:03.989784+00:00"
+  "updated_at": "2026-07-14T21:16:17.246623+00:00"
 }

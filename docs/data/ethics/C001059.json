@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 65.8,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 8684.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.0075299594793551555
+      },
+      {
+        "amount": 456450.75,
+        "label": "Large individual (itemized)",
+        "share": 0.39575985950248943
+      },
+      {
+        "amount": 688217.37,
+        "label": "PAC / other committees",
+        "share": 0.5967101810181553
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA20082",
+      "district": "21",
+      "name": "COSTA, JIM",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 818142.23,
+      "debts": 0.0,
+      "disbursements": 552238.55,
+      "individualContributions": 465135.45,
+      "receipts": 1161498.68
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:33.491036+00:00"
+  "updated_at": "2026-07-14T21:15:07.158227+00:00"
 }

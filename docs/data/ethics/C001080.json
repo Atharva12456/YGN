@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.5,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 36154.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.0420748079650872
+      },
+      {
+        "amount": 486372.11,
+        "label": "Large individual (itemized)",
+        "share": 0.5660083005966889
+      },
+      {
+        "amount": 336775.0,
+        "label": "PAC / other committees",
+        "share": 0.39191689143822395
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA32101",
+      "district": "28",
+      "name": "CHU, JUDY",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3667076.48,
+      "debts": 431.75,
+      "disbursements": 794230.55,
+      "individualContributions": 522527.08,
+      "receipts": 859302.08
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T08:28:46.279491+00:00"
+  "updated_at": "2026-07-14T21:15:00.559559+00:00"
 }

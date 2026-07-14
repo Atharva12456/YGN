@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.9,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 125449.67,
+        "label": "Small individual (unitemized)",
+        "share": 0.1359281568446676
+      },
+      {
+        "amount": 262162.91,
+        "label": "Large individual (itemized)",
+        "share": 0.2840607005927913
+      },
+      {
+        "amount": 535299.0,
+        "label": "PAC / other committees",
+        "share": 0.580011142562541
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0MN07091",
+      "district": "07",
+      "name": "FISCHBACH, MICHELLE",
+      "office": "H",
+      "party": "REP",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 806897.36,
+      "debts": 0.0,
+      "disbursements": 591815.92,
+      "individualContributions": 387612.58,
+      "receipts": 987632.77
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:19:11.232126+00:00"
+  "updated_at": "2026-07-14T21:17:43.065153+00:00"
 }

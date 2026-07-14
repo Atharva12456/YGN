@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.4,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 383478.19,
+        "label": "Small individual (unitemized)",
+        "share": 0.3838287138963916
+      },
+      {
+        "amount": 570358.58,
+        "label": "Large individual (itemized)",
+        "share": 0.5708799246736096
+      },
+      {
+        "amount": 45250.0,
+        "label": "PAC / other committees",
+        "share": 0.04529136142999872
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 25000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.02502285161878382
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0IN05326",
+      "district": "05",
+      "name": "SPARTZ, VICTORIA",
+      "office": "H",
+      "party": "REP",
+      "state": "IN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 55968.24,
+      "debts": 200000.0,
+      "disbursements": 1287586.07,
+      "individualContributions": 953836.77,
+      "receipts": 1085504.13
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-14T03:33:37.067999+00:00"
+  "updated_at": "2026-07-14T21:16:34.607447+00:00"
 }

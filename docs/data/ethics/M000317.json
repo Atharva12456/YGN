@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.8,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 200585.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.09944189661156543
+      },
+      {
+        "amount": 840731.33,
+        "label": "Large individual (itemized)",
+        "share": 0.41679843309062886
+      },
+      {
+        "amount": 975800.0,
+        "label": "PAC / other committees",
+        "share": 0.4837596702978057
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NY11078",
+      "district": "11",
+      "name": "MALLIOTAKIS, NICOLE",
+      "office": "H",
+      "party": "REP",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2643081.81,
+      "debts": 0.0,
+      "disbursements": 1272730.96,
+      "individualContributions": 1041317.3,
+      "receipts": 2569566.31
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-14T03:33:42.139200+00:00"
+  "updated_at": "2026-07-14T21:17:04.414607+00:00"
 }

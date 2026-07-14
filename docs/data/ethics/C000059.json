@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.0,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 254216.62,
+        "label": "Small individual (unitemized)",
+        "share": 0.07181523226752418
+      },
+      {
+        "amount": 2011326.85,
+        "label": "Large individual (itemized)",
+        "share": 0.5681922169315986
+      },
+      {
+        "amount": 1274327.0,
+        "label": "PAC / other committees",
+        "share": 0.35999255080087716
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA37023",
+      "district": "40",
+      "name": "CALVERT, KEN",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2357018.56,
+      "debts": 29931.27,
+      "disbursements": 3619918.94,
+      "individualContributions": 2265543.47,
+      "receipts": 5714801.89
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:29:14.170162+00:00"
+  "updated_at": "2026-07-14T21:15:09.224123+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.9,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 110821.27,
+        "label": "Small individual (unitemized)",
+        "share": 0.09032328699187275
+      },
+      {
+        "amount": 490118.91,
+        "label": "Large individual (itemized)",
+        "share": 0.39946438953527463
+      },
+      {
+        "amount": 626000.0,
+        "label": "PAC / other committees",
+        "share": 0.5102123234728526
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MN01223",
+      "district": "01",
+      "name": "FINSTAD, BRAD",
+      "office": "H",
+      "party": "REP",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 833714.33,
+      "debts": 0.0,
+      "disbursements": 599941.5,
+      "individualContributions": 600940.18,
+      "receipts": 1372246.6
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:29:48.924548+00:00"
+  "updated_at": "2026-07-14T21:15:12.751073+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.7,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 252860.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.2193107992313881
+      },
+      {
+        "amount": 512416.88,
+        "label": "Large individual (itemized)",
+        "share": 0.4444293106774597
+      },
+      {
+        "amount": 387700.0,
+        "label": "PAC / other committees",
+        "share": 0.3362598900911522
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA48024",
+      "district": "48",
+      "name": "ISSA, DARRELL",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2798701.72,
+      "debts": 5024682.17,
+      "disbursements": 692755.7,
+      "individualContributions": 765277.24,
+      "receipts": 1846841.1
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T08:29:12.872551+00:00"
+  "updated_at": "2026-07-14T21:15:08.153367+00:00"
 }

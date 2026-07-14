@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 85.2,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 117564.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.6433664922574788
+      },
+      {
+        "amount": 53668.75,
+        "label": "Large individual (itemized)",
+        "share": 0.29370019478133985
+      },
+      {
+        "amount": 11500.0,
+        "label": "PAC / other committees",
+        "share": 0.06293331296118147
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0SC01394",
+      "district": "01",
+      "name": "MACE, NANCY",
+      "office": "H",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 184856.68,
+      "debts": 100.0,
+      "disbursements": 932642.94,
+      "individualContributions": 171233.11,
+      "receipts": 452863.38
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:18:01.143865+00:00"
+  "updated_at": "2026-07-14T21:17:14.544794+00:00"
 }

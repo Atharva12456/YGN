@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 91.7,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1027883.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.4695770606407672
+      },
+      {
+        "amount": 937972.29,
+        "label": "Large individual (itemized)",
+        "share": 0.4285021900740657
+      },
+      {
+        "amount": 223100.0,
+        "label": "PAC / other committees",
+        "share": 0.10192074928516712
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0TX13228",
+      "district": "13",
+      "name": "JACKSON, RONNY LYNN",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4679322.13,
+      "debts": 0.0,
+      "disbursements": 1515300.96,
+      "individualContributions": 1965855.65,
+      "receipts": 2792675.46
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:18:36.170377+00:00"
+  "updated_at": "2026-07-14T21:17:16.536639+00:00"
 }

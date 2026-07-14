@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 59.6,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 12619.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.01062985673671935
+      },
+      {
+        "amount": 265696.63,
+        "label": "Large individual (itemized)",
+        "share": 0.2237995786264598
+      },
+      {
+        "amount": 907250.0,
+        "label": "PAC / other committees",
+        "share": 0.7641879677166235
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 1641.43,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0013825969201974068
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA52089",
+      "district": "50",
+      "name": "PETERS, SCOTT",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2532282.52,
+      "debts": 170760.12,
+      "disbursements": 1185108.05,
+      "individualContributions": 278316.48,
+      "receipts": 1566869.76
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 19,
-  "updated_at": "2026-07-13T08:28:27.922922+00:00"
+  "updated_at": "2026-07-14T21:14:51.791337+00:00"
 }

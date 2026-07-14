@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.0,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 181711.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.053254173828942444
+      },
+      {
+        "amount": 1735456.14,
+        "label": "Large individual (itemized)",
+        "share": 0.5086109348048049
+      },
+      {
+        "amount": 1493161.0,
+        "label": "PAC / other committees",
+        "share": 0.437601385895052
+      },
+      {
+        "amount": 1820.4,
+        "label": "Political party committees",
+        "share": 0.0005335054712005957
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CA01109",
+      "district": "04",
+      "name": "THOMPSON, MIKE MR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1737427.5,
+      "debts": 29062.43,
+      "disbursements": 2954651.57,
+      "individualContributions": 1917167.3,
+      "receipts": 3482590.67
+    }
+  },
+  "generated_at": "2026-07-14T21:14:49.808383+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:28:50.802917+00:00"
+  "updated_at": "2026-07-14T21:15:05.134257+00:00"
 }
