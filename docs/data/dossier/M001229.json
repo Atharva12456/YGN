@@ -132,7 +132,7 @@
       "birthYear": "1986",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 628,
+        "count": 630,
         "url": "https://api.congress.gov/v3/member/M001229/cosponsored-legislation"
       },
       "currentMember": true,
@@ -207,7 +207,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-07-13T07:40:25Z"
+      "updateDate": "2026-07-14T07:40:31Z"
     },
     "request": {
       "bioguideId": "m001229",
@@ -261,7 +261,52 @@
     },
     "cycle": 2026,
     "financeScore": 93.2,
-    "generated_at": "2026-07-13T04:37:04.339111+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 999063.85,
+          "label": "Small individual (unitemized)",
+          "share": 0.5559501801422223
+        },
+        {
+          "amount": 377841.38,
+          "label": "Large individual (itemized)",
+          "share": 0.2102578161307567
+        },
+        {
+          "amount": 420100.0,
+          "label": "PAC / other committees",
+          "share": 0.23377351775639527
+        },
+        {
+          "amount": 33.22,
+          "label": "Political party committees",
+          "share": 1.8485970625725898e-05
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4NJ10176",
+        "district": "10",
+        "name": "MCIVER, LAMONICA",
+        "office": "H",
+        "party": "DEM",
+        "state": "NJ"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 587809.91,
+        "debts": 0.0,
+        "disbursements": 1373520.74,
+        "individualContributions": 1376905.23,
+        "receipts": 1798118.18
+      }
+    },
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -272,14 +317,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T04:37:11.299821+00:00"
+    "updated_at": "2026-07-14T17:46:30.976617+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001229",
+    "breakdown": [
+      {
+        "amount": 999063.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.5559501801422223
+      },
+      {
+        "amount": 377841.38,
+        "label": "Large individual (itemized)",
+        "share": 0.2102578161307567
+      },
+      {
+        "amount": 420100.0,
+        "label": "PAC / other committees",
+        "share": 0.23377351775639527
+      },
+      {
+        "amount": 33.22,
+        "label": "Political party committees",
+        "share": 1.8485970625725898e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NJ10176",
+      "district": "10",
+      "name": "MCIVER, LAMONICA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001229",
+      "candidate": {
+        "candidate_id": "H4NJ10176",
+        "district": "10",
+        "name": "MCIVER, LAMONICA",
+        "office": "H",
+        "party": "DEM",
+        "state": "NJ"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 91.4,
+          "value": 0.7678,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 85.8,
+          "value": 0.3807,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 88.5,
+          "value": 0.7662,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 99.3,
+          "value": 0.7256,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 93.2,
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 93.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:46:30.976617+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 587809.91,
+      "debts": 0.0,
+      "disbursements": 1373520.74,
+      "individualContributions": 1376905.23,
+      "receipts": 1798118.18
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "M001229",
     "birthYear": "1986",
@@ -343,7 +489,7 @@
     "birthYear": "1986",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 628,
+      "count": 630,
       "url": "https://api.congress.gov/v3/member/M001229/cosponsored-legislation"
     },
     "currentMember": true,
@@ -418,7 +564,7 @@
         "stateName": "New Jersey"
       }
     ],
-    "updateDate": "2026-07-13T07:40:25Z"
+    "updateDate": "2026-07-14T07:40:31Z"
   },
   "nominate": {
     "dim1": -0.539,

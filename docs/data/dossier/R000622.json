@@ -106,7 +106,7 @@
       "birthYear": "1981",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 376,
+        "count": 378,
         "url": "https://api.congress.gov/v3/member/R000622/cosponsored-legislation"
       },
       "currentMember": true,
@@ -158,7 +158,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 14,
+        "count": 15,
         "url": "https://api.congress.gov/v3/member/R000622/sponsored-legislation"
       },
       "state": "New York",
@@ -173,7 +173,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-07-13T07:40:26Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "r000622",
@@ -227,7 +227,52 @@
     },
     "cycle": 2026,
     "financeScore": 79.3,
-    "generated_at": "2026-07-12T23:30:52.026239+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 415805.88,
+          "label": "Small individual (unitemized)",
+          "share": 0.10871673855086764
+        },
+        {
+          "amount": 2750521.28,
+          "label": "Large individual (itemized)",
+          "share": 0.7191521747512511
+        },
+        {
+          "amount": 656121.0,
+          "label": "PAC / other committees",
+          "share": 0.17154960678943218
+        },
+        {
+          "amount": 2223.97,
+          "label": "Political party committees",
+          "share": 0.0005814799084490413
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8NY22177",
+        "district": "19",
+        "name": "RILEY, JOSH",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2920373.88,
+        "debts": 0.0,
+        "disbursements": 1484272.23,
+        "individualContributions": 3166327.16,
+        "receipts": 4336326.5
+      }
+    },
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -238,14 +283,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-12T23:31:23.009404+00:00"
+    "updated_at": "2026-07-14T17:44:29.330246+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "R000622",
+    "breakdown": [
+      {
+        "amount": 415805.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.10871673855086764
+      },
+      {
+        "amount": 2750521.28,
+        "label": "Large individual (itemized)",
+        "share": 0.7191521747512511
+      },
+      {
+        "amount": 656121.0,
+        "label": "PAC / other committees",
+        "share": 0.17154960678943218
+      },
+      {
+        "amount": 2223.97,
+        "label": "Political party committees",
+        "share": 0.0005814799084490413
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY22177",
+      "district": "19",
+      "name": "RILEY, JOSH",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "R000622",
+      "candidate": {
+        "candidate_id": "H8NY22177",
+        "district": "19",
+        "name": "RILEY, JOSH",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 55.0,
+          "value": 0.3038,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 89.7,
+          "value": 0.4652,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 92.0,
+          "value": 0.8279,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9995,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 73.0,
+          "value": 0.1313,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 79.3,
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 79.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:44:29.330246+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2920373.88,
+      "debts": 0.0,
+      "disbursements": 1484272.23,
+      "individualContributions": 3166327.16,
+      "receipts": 4336326.5
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "R000622",
     "birthYear": "1981",
@@ -300,7 +446,7 @@
     "birthYear": "1981",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 376,
+      "count": 378,
       "url": "https://api.congress.gov/v3/member/R000622/cosponsored-legislation"
     },
     "currentMember": true,
@@ -352,7 +498,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 14,
+      "count": 15,
       "url": "https://api.congress.gov/v3/member/R000622/sponsored-legislation"
     },
     "state": "New York",
@@ -367,7 +513,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-07-13T07:40:26Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": -0.2,

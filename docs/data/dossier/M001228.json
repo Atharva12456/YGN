@@ -230,7 +230,7 @@
           "stateName": "Utah"
         }
       ],
-      "updateDate": "2026-07-13T07:40:25Z"
+      "updateDate": "2026-07-14T07:40:31Z"
     },
     "request": {
       "bioguideId": "m001228",
@@ -284,7 +284,52 @@
     },
     "cycle": 2026,
     "financeScore": 62.9,
-    "generated_at": "2026-07-13T04:37:04.339111+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 6674.1,
+          "label": "Small individual (unitemized)",
+          "share": 0.005904077777672606
+        },
+        {
+          "amount": 584825.0,
+          "label": "Large individual (itemized)",
+          "share": 0.5173509965879117
+        },
+        {
+          "amount": 538923.0,
+          "label": "PAC / other committees",
+          "share": 0.4767449256344156
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4UT02296",
+        "district": "03",
+        "name": "MALOY, CELESTE",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 254672.69,
+        "debts": 135814.53,
+        "disbursements": 1029710.02,
+        "individualContributions": 591499.1,
+        "receipts": 1177361.28
+      }
+    },
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -295,14 +340,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T04:37:13.254874+00:00"
+    "updated_at": "2026-07-14T17:46:34.965890+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001228",
+    "breakdown": [
+      {
+        "amount": 6674.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.005904077777672606
+      },
+      {
+        "amount": 584825.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5173509965879117
+      },
+      {
+        "amount": 538923.0,
+        "label": "PAC / other committees",
+        "share": 0.4767449256344156
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4UT02296",
+      "district": "03",
+      "name": "MALOY, CELESTE",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001228",
+      "candidate": {
+        "candidate_id": "H4UT02296",
+        "district": "03",
+        "name": "MALOY, CELESTE",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 53.8,
+          "value": 0.2859,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 89.6,
+          "value": 0.4618,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 66.8,
+          "value": 0.5233,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 40.2,
+          "value": 0.0113,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 62.9,
+      "grade": "D-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 62.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:46:34.965890+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 254672.69,
+      "debts": 135814.53,
+      "disbursements": 1029710.02,
+      "individualContributions": 591499.1,
+      "receipts": 1177361.28
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "M001228",
     "birthYear": "1981",
@@ -460,7 +606,7 @@
         "stateName": "Utah"
       }
     ],
-    "updateDate": "2026-07-13T07:40:25Z"
+    "updateDate": "2026-07-14T07:40:31Z"
   },
   "nominate": {
     "dim1": 0.416,

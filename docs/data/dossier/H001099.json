@@ -113,7 +113,7 @@
       "birthYear": "1970",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 236,
+        "count": 237,
         "url": "https://api.congress.gov/v3/member/H001099/cosponsored-legislation"
       },
       "currentMember": true,
@@ -165,7 +165,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 3,
+        "count": 4,
         "url": "https://api.congress.gov/v3/member/H001099/sponsored-legislation"
       },
       "state": "Florida",
@@ -180,7 +180,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-07-13T07:40:25Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "h001099",
@@ -234,7 +234,52 @@
     },
     "cycle": 2026,
     "financeScore": 69.8,
-    "generated_at": "2026-07-12T23:37:37.655413+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 32121.75,
+          "label": "Small individual (unitemized)",
+          "share": 0.027324902914473415
+        },
+        {
+          "amount": 689176.8,
+          "label": "Large individual (itemized)",
+          "share": 0.5862597508201597
+        },
+        {
+          "amount": 454250.0,
+          "label": "PAC / other committees",
+          "share": 0.3864153462653669
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4FL08168",
+        "district": "08",
+        "name": "HARIDOPOLOS, MIKE",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 844111.96,
+        "debts": 0.0,
+        "disbursements": 664982.72,
+        "individualContributions": 721298.55,
+        "receipts": 1250931.85
+      }
+    },
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -245,14 +290,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-12T23:38:33.270838+00:00"
+    "updated_at": "2026-07-14T17:44:46.778553+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001099",
+    "breakdown": [
+      {
+        "amount": 32121.75,
+        "label": "Small individual (unitemized)",
+        "share": 0.027324902914473415
+      },
+      {
+        "amount": 689176.8,
+        "label": "Large individual (itemized)",
+        "share": 0.5862597508201597
+      },
+      {
+        "amount": 454250.0,
+        "label": "PAC / other committees",
+        "share": 0.3864153462653669
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4FL08168",
+      "district": "08",
+      "name": "HARIDOPOLOS, MIKE",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001099",
+      "candidate": {
+        "candidate_id": "H4FL08168",
+        "district": "08",
+        "name": "HARIDOPOLOS, MIKE",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 48.3,
+          "value": 0.2022,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.2,
+          "value": 0.7835,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 77.6,
+          "value": 0.6136,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 55.5,
+          "value": 0.0445,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 69.8,
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 69.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:44:46.778553+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 844111.96,
+      "debts": 0.0,
+      "disbursements": 664982.72,
+      "individualContributions": 721298.55,
+      "receipts": 1250931.85
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "H001099",
     "birthYear": "1970",
@@ -307,7 +453,7 @@
     "birthYear": "1970",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 236,
+      "count": 237,
       "url": "https://api.congress.gov/v3/member/H001099/cosponsored-legislation"
     },
     "currentMember": true,
@@ -359,7 +505,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 3,
+      "count": 4,
       "url": "https://api.congress.gov/v3/member/H001099/sponsored-legislation"
     },
     "state": "Florida",
@@ -374,7 +520,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-07-13T07:40:25Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": 0.438,

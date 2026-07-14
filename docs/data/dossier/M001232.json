@@ -177,7 +177,7 @@
           "stateName": "Maryland"
         }
       ],
-      "updateDate": "2026-07-13T07:40:26Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "m001232",
@@ -231,7 +231,52 @@
     },
     "cycle": 2026,
     "financeScore": 62.9,
-    "generated_at": "2026-07-12T23:37:37.655413+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 31973.17,
+          "label": "Small individual (unitemized)",
+          "share": 0.029279683594650198
+        },
+        {
+          "amount": 741165.71,
+          "label": "Large individual (itemized)",
+          "share": 0.6787283675658143
+        },
+        {
+          "amount": 318800.0,
+          "label": "PAC / other committees",
+          "share": 0.2919436242941968
+        },
+        {
+          "amount": 52.77,
+          "label": "Political party committees",
+          "share": 4.832454533878533e-05
+        },
+        {
+          "amount": 7400000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 1.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MD06340",
+        "district": "06",
+        "name": "DELANEY, APRIL MCCLAIN",
+        "office": "H",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 426334.81,
+        "debts": 11273000.0,
+        "disbursements": 8131885.96,
+        "individualContributions": 773138.88,
+        "receipts": 8545341.6
+      }
+    },
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -242,14 +287,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-12T23:38:07.971115+00:00"
+    "updated_at": "2026-07-14T17:44:37.931334+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001232",
+    "breakdown": [
+      {
+        "amount": 31973.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.029279683594650198
+      },
+      {
+        "amount": 741165.71,
+        "label": "Large individual (itemized)",
+        "share": 0.6787283675658143
+      },
+      {
+        "amount": 318800.0,
+        "label": "PAC / other committees",
+        "share": 0.2919436242941968
+      },
+      {
+        "amount": 52.77,
+        "label": "Political party committees",
+        "share": 4.832454533878533e-05
+      },
+      {
+        "amount": 7400000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 1.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MD06340",
+      "district": "06",
+      "name": "DELANEY, APRIL MCCLAIN",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001232",
+      "candidate": {
+        "candidate_id": "H4MD06340",
+        "district": "06",
+        "name": "DELANEY, APRIL MCCLAIN",
+        "office": "H",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 53.3,
+          "value": 0.2782,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 88.0,
+          "value": 0.4281,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 85.2,
+          "value": 0.708,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 39.4,
+          "value": 0.134,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 54.0,
+          "value": 0.0414,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 62.9,
+      "grade": "D-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 62.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:44:37.931334+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 426334.81,
+      "debts": 11273000.0,
+      "disbursements": 8131885.96,
+      "individualContributions": 773138.88,
+      "receipts": 8545341.6
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "M001232",
     "birthYear": "1964",
@@ -371,7 +517,7 @@
         "stateName": "Maryland"
       }
     ],
-    "updateDate": "2026-07-13T07:40:26Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": -0.285,

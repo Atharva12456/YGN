@@ -221,7 +221,7 @@
           "stateName": "Georgia"
         }
       ],
-      "updateDate": "2026-07-13T07:40:25Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "j000311",
@@ -275,7 +275,52 @@
     },
     "cycle": 2026,
     "financeScore": 74.3,
-    "generated_at": "2026-07-12T23:37:37.655413+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 196204.33,
+          "label": "Small individual (unitemized)",
+          "share": 0.1347848007894725
+        },
+        {
+          "amount": 549842.01,
+          "label": "Large individual (itemized)",
+          "share": 0.3777202357538855
+        },
+        {
+          "amount": 709639.53,
+          "label": "PAC / other committees",
+          "share": 0.4874949634566419
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4GA03126",
+        "district": "03",
+        "name": "JACK, BRIAN",
+        "office": "H",
+        "party": "REP",
+        "state": "GA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 900333.09,
+        "debts": 61921.99,
+        "disbursements": 1021445.33,
+        "individualContributions": 746046.34,
+        "receipts": 1681602.09
+      }
+    },
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -286,14 +331,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-12T23:38:23.867180+00:00"
+    "updated_at": "2026-07-14T17:44:43.008918+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "J000311",
+    "breakdown": [
+      {
+        "amount": 196204.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.1347848007894725
+      },
+      {
+        "amount": 549842.01,
+        "label": "Large individual (itemized)",
+        "share": 0.3777202357538855
+      },
+      {
+        "amount": 709639.53,
+        "label": "PAC / other committees",
+        "share": 0.4874949634566419
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4GA03126",
+      "district": "03",
+      "name": "JACK, BRIAN",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "J000311",
+      "candidate": {
+        "candidate_id": "H4GA03126",
+        "district": "03",
+        "name": "JACK, BRIAN",
+        "office": "H",
+        "party": "REP",
+        "state": "GA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 46.4,
+          "value": 0.1735,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 81.0,
+          "value": 0.2919,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 65.5,
+          "value": 0.5125,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 87.3,
+          "value": 0.263,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 74.3,
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 74.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:44:43.008918+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 900333.09,
+      "debts": 61921.99,
+      "disbursements": 1021445.33,
+      "individualContributions": 746046.34,
+      "receipts": 1681602.09
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "J000311",
     "birthYear": "1988",
@@ -415,7 +561,7 @@
         "stateName": "Georgia"
       }
     ],
-    "updateDate": "2026-07-13T07:40:25Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": 0.543,

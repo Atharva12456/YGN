@@ -192,7 +192,7 @@
           "stateName": "Louisiana"
         }
       ],
-      "updateDate": "2026-07-13T07:40:26Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "f000110",
@@ -246,7 +246,52 @@
     },
     "cycle": 2026,
     "financeScore": 67.1,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 4788.8,
+          "label": "Small individual (unitemized)",
+          "share": 0.01086366696853602
+        },
+        {
+          "amount": 285020.0,
+          "label": "Large individual (itemized)",
+          "share": 0.6465841879744688
+        },
+        {
+          "amount": 151000.0,
+          "label": "PAC / other committees",
+          "share": 0.3425521450569952
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4LA06211",
+        "district": "06",
+        "name": "FIELDS, CLEO",
+        "office": "H",
+        "party": "DEM",
+        "state": "LA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 249637.81,
+        "debts": 0.0,
+        "disbursements": 237836.64,
+        "individualContributions": 289808.8,
+        "receipts": 450034.59
+      }
+    },
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -258,14 +303,116 @@
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 18,
-    "updated_at": "2026-07-14T00:07:46.538420+00:00"
+    "updated_at": "2026-07-14T17:46:13.732390+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "F000110",
+    "breakdown": [
+      {
+        "amount": 4788.8,
+        "label": "Small individual (unitemized)",
+        "share": 0.01086366696853602
+      },
+      {
+        "amount": 285020.0,
+        "label": "Large individual (itemized)",
+        "share": 0.6465841879744688
+      },
+      {
+        "amount": 151000.0,
+        "label": "PAC / other committees",
+        "share": 0.3425521450569952
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4LA06211",
+      "district": "06",
+      "name": "FIELDS, CLEO",
+      "office": "H",
+      "party": "DEM",
+      "state": "LA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000110",
+      "candidate": {
+        "candidate_id": "H4LA06211",
+        "district": "06",
+        "name": "FIELDS, CLEO",
+        "office": "H",
+        "party": "DEM",
+        "state": "LA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 47.6,
+          "value": 0.1913,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 98.1,
+          "value": 0.9085,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.4,
+          "value": 0.6574,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 42.6,
+          "value": 0.0165,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "penalty": 42,
+          "ptr_filings": 18
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 67.1,
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 25.1,
+      "source": "fec_live",
+      "stockPenalty": 42,
+      "stockPtrCount": 18,
+      "updated_at": "2026-07-14T17:46:13.732390+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 249637.81,
+      "debts": 0.0,
+      "disbursements": 237836.64,
+      "individualContributions": 289808.8,
+      "receipts": 450034.59
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "F000110",
     "birthYear": "1962",
@@ -431,7 +578,7 @@
         "stateName": "Louisiana"
       }
     ],
-    "updateDate": "2026-07-13T07:40:26Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": -0.457,

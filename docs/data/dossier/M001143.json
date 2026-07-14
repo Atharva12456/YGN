@@ -93,7 +93,7 @@
       "birthYear": "1954",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 6935,
+        "count": 6937,
         "url": "https://api.congress.gov/v3/member/M001143/cosponsored-legislation"
       },
       "currentMember": true,
@@ -279,7 +279,7 @@
           "stateName": "Minnesota"
         }
       ],
-      "updateDate": "2026-07-13T07:40:20Z"
+      "updateDate": "2026-07-14T07:40:24Z"
     },
     "request": {
       "bioguideId": "m001143",
@@ -288,13 +288,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "M001143",
+    "candidate": {
+      "candidate_id": "H0MN04049",
+      "district": "04",
+      "name": "MCCOLLUM, BETTY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MN"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 53.0,
+        "value": 0.2732,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 89.0,
+        "value": 0.4506,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 81.0,
+        "value": 0.642,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.999,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 58.4,
+        "value": 0.0521,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 71.7,
+    "generated_at": "2026-07-14T06:24:27.711003+00:00",
+    "grade": "C-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 71.7,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-14T06:24:54.306199+00:00"
+  },
   "funding": {
     "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
+    "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "M001143",
     "birthYear": "1954",
@@ -457,7 +514,7 @@
     "birthYear": "1954",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 6935,
+      "count": 6937,
       "url": "https://api.congress.gov/v3/member/M001143/cosponsored-legislation"
     },
     "currentMember": true,
@@ -643,7 +700,7 @@
         "stateName": "Minnesota"
       }
     ],
-    "updateDate": "2026-07-13T07:40:20Z"
+    "updateDate": "2026-07-14T07:40:24Z"
   },
   "nominate": {
     "dim1": -0.419,

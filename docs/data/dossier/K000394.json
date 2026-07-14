@@ -216,7 +216,7 @@
       "birthYear": "1982",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 1962,
+        "count": 1969,
         "url": "https://api.congress.gov/v3/member/K000394/cosponsored-legislation"
       },
       "currentMember": true,
@@ -276,7 +276,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 224,
+        "count": 226,
         "url": "https://api.congress.gov/v3/member/K000394/sponsored-legislation"
       },
       "state": "New Jersey",
@@ -338,13 +338,65 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "K000394",
+    "candidate": {
+      "candidate_id": "S4NJ00466",
+      "district": "00",
+      "name": "KIM, ANDY",
+      "office": "S",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 96.7,
+        "value": 1.0,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": null,
+        "value": null,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 96.2,
+        "value": 0.9505,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 87.3,
+        "value": 0.2635,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "generated_at": "2026-07-14T06:24:27.711003+00:00",
+    "grade": "A",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 93.3,
+    "source": "fec_live",
+    "updated_at": "2026-07-14T06:25:10.320293+00:00"
+  },
   "funding": {
     "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
+    "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "K000394",
     "birthYear": "1982",
@@ -436,7 +488,7 @@
     "birthYear": "1982",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 1962,
+      "count": 1969,
       "url": "https://api.congress.gov/v3/member/K000394/cosponsored-legislation"
     },
     "currentMember": true,
@@ -496,7 +548,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 224,
+      "count": 226,
       "url": "https://api.congress.gov/v3/member/K000394/sponsored-legislation"
     },
     "state": "New Jersey",

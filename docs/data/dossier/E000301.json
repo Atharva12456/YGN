@@ -188,7 +188,7 @@
           "stateName": "Maryland"
         }
       ],
-      "updateDate": "2026-07-13T07:40:26Z"
+      "updateDate": "2026-07-14T07:40:32Z"
     },
     "request": {
       "bioguideId": "e000301",
@@ -242,7 +242,52 @@
     },
     "cycle": 2026,
     "financeScore": 79.1,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 61422.41,
+          "label": "Small individual (unitemized)",
+          "share": 0.05806902595271631
+        },
+        {
+          "amount": 600112.32,
+          "label": "Large individual (itemized)",
+          "share": 0.567348918491228
+        },
+        {
+          "amount": 395564.79,
+          "label": "PAC / other committees",
+          "share": 0.37396875271567454
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 648.72,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0006133028403809966
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MD03156",
+        "district": "03",
+        "name": "ELFRETH, SARAH KELLY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 314695.35,
+        "debts": 0.0,
+        "disbursements": 779931.59,
+        "individualContributions": 661534.73,
+        "receipts": 1063887.39
+      }
+    },
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -253,14 +298,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T23:14:12.498286+00:00"
+    "updated_at": "2026-07-14T17:45:19.809525+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "E000301",
+    "breakdown": [
+      {
+        "amount": 61422.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.05806902595271631
+      },
+      {
+        "amount": 600112.32,
+        "label": "Large individual (itemized)",
+        "share": 0.567348918491228
+      },
+      {
+        "amount": 395564.79,
+        "label": "PAC / other committees",
+        "share": 0.37396875271567454
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 648.72,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0006133028403809966
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MD03156",
+      "district": "03",
+      "name": "ELFRETH, SARAH KELLY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "E000301",
+      "candidate": {
+        "candidate_id": "H4MD03156",
+        "district": "03",
+        "name": "ELFRETH, SARAH KELLY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 77.2,
+          "value": 0.5503,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.1,
+          "value": 0.7697,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 79.1,
+          "value": 0.626,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9994,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 65.9,
+          "value": 0.0928,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 79.1,
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 79.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T17:45:19.809525+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 314695.35,
+      "debts": 0.0,
+      "disbursements": 779931.59,
+      "individualContributions": 661534.73,
+      "receipts": 1063887.39
+    }
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "E000301",
     "birthYear": "1988",
@@ -382,7 +528,7 @@
         "stateName": "Maryland"
       }
     ],
-    "updateDate": "2026-07-13T07:40:26Z"
+    "updateDate": "2026-07-14T07:40:32Z"
   },
   "nominate": {
     "dim1": -0.379,

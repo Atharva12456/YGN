@@ -153,7 +153,7 @@
       "birthYear": "1994",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 315,
+        "count": 316,
         "url": "https://api.congress.gov/v3/member/G000603/cosponsored-legislation"
       },
       "currentMember": true,
@@ -220,7 +220,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-07-13T07:40:26Z"
+      "updateDate": "2026-07-14T07:40:33Z"
     },
     "request": {
       "bioguideId": "g000603",
@@ -229,13 +229,71 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "G000603",
+    "candidate": {
+      "candidate_id": "H4TX26149",
+      "district": "26",
+      "name": "GILL, BRANDON",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 45.6,
+        "value": 0.161,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 95.0,
+        "value": 0.5796,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 94.4,
+        "value": 0.8712,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 74.3,
+        "value": 0.8361,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 98.2,
+        "value": 0.6239,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "4 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+        "penalty": 22,
+        "ptr_filings": 4
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 82.8,
+    "generated_at": "2026-07-14T06:24:27.711003+00:00",
+    "grade": "D-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 60.8,
+    "source": "fec_live",
+    "stockPenalty": 22,
+    "stockPtrCount": 4,
+    "updated_at": "2026-07-14T06:24:41.827836+00:00"
+  },
   "funding": {
     "available": false,
-    "note": "Live campaign-funding detail is available on the hosted API.",
+    "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "history": {
     "bioguideId": "G000603",
     "birthYear": "1994",
@@ -290,7 +348,7 @@
     "birthYear": "1994",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 315,
+      "count": 316,
       "url": "https://api.congress.gov/v3/member/G000603/cosponsored-legislation"
     },
     "currentMember": true,
@@ -357,7 +415,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-07-13T07:40:26Z"
+    "updateDate": "2026-07-14T07:40:33Z"
   },
   "nominate": {
     "dim1": 0.774,
