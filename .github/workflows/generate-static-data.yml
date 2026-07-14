@@ -95,7 +95,7 @@ jobs:
       - name: Verify backend and frontend syntax
         run: |
           python -m unittest discover -s tests -q
-          node --check docs/app.js
+          for f in docs/config.js docs/js/*.js; do node --check "$f"; done
 
       - name: Generate static JSON snapshots (ethics-only)
         if: steps.mode.outputs.ethics_only == 'true'

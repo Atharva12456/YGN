@@ -1,0 +1,522 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   YGN — Civic Government Portal — Stylesheet
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Custom Properties ─────────────────────────────────────────────────────── */
+:root {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f9fd;
+  --color-header-bg: #1a1f2e;
+  --color-header-text: #e8eaf0;
+  --color-nav-bg: #242938;
+  --color-nav-text: #b0b8cc;
+  --color-nav-active: #ffffff;
+  --color-nav-active-border: #4f8ef7;
+  --color-accent: #4f8ef7;
+  --color-accent-hover: #3a7de8;
+  --color-text: #1a1f2e;
+  --color-text-muted: #5a6272;
+  --color-border: #dde2ec;
+  --color-card-shadow: rgba(26, 31, 46, 0.08);
+  --color-tint-blue: rgba(59, 130, 246, 0.18);
+  --color-tint-red: rgba(239, 68, 68, 0.18);
+  --color-tint-gray: rgba(148, 163, 184, 0.15);
+  --color-connected: #22c55e;
+  --color-disconnected: #ef4444;
+  --color-skeleton: #e2e8f0;
+  --color-skeleton-shine: #f1f5f9;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --radius-card: 12px;
+  --radius-sm: 6px;
+  --shadow-card: 0 2px 8px var(--color-card-shadow);
+  --transition-fast: 0.15s ease;
+  --transition-med: 0.25s ease;
+}
+
+/* ── Global Reset & Base ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* ── Accessibility ─────────────────────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Site Header ───────────────────────────────────────────────────────────── */
+.site-header {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #ffffff;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-nav-text);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+#health-indicator {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background var(--transition-med), color var(--transition-med);
+  flex: 0 0 auto;
+}
+
+#health-indicator.connected {
+  background: rgba(34, 197, 94, 0.2);
+  color: var(--color-connected);
+  border: 1px solid var(--color-connected);
+}
+
+#health-indicator.disconnected {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--color-disconnected);
+  border: 1px solid var(--color-disconnected);
+}
+
+#health-indicator.checking {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+  border: 1px solid transparent;
+}
+
+/* ── Main Navigation ───────────────────────────────────────────────────────── */
+.main-nav {
+  background: var(--color-nav-bg);
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.main-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.main-nav a {
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--color-nav-text);
+  padding: 0 1.25rem;
+  height: 44px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.main-nav a:hover {
+  color: white;
+}
+
+.main-nav a.active {
+  color: var(--color-nav-active);
+  border-bottom: 3px solid var(--color-nav-active-border);
+}
+
+.main-nav a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Main Content ──────────────────────────────────────────────────────────── */
+#main-content {
+  padding: 2rem max(1rem, 5vw);
+}
+
+/* Sections: hidden by default, shown when active */
+#main-content section {
+  display: none;
+}
+
+#main-content section.active {
+  display: block;
+}
+
+/* Ensure .hidden doesn't override .active */
+#main-content section.hidden {
+  display: none;
+}
+
+/* Member-detail cards are <section> elements but are NOT SPA page sections,
+   so they must stay visible (override the display:none rule above). */
+#main-content .dossier-card { display: block; }
+
+/* ── Home Section ──────────────────────────────────────────────────────────── */
+.home-dashboard {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  min-height: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.home-copy h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 6rem);
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.04rem;
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  line-height: 1.7;
+}
+
+.daily-quote {
+  margin-top: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+  max-width: 52ch;
+}
+
+.daily-quote blockquote {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.24rem;
+  line-height: 1.45;
+}
+
+.daily-quote figcaption {
+  margin-top: 0.65rem;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.daily-quote figcaption::before {
+  content: "- ";
+}
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  min-height: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card .stat-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.stat-source {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 0.65rem;
+}
+
+.home-map-section {
+  margin-top: clamp(1.75rem, 4vw, 3rem);
+  scroll-margin-top: 120px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.section-status {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+}
+
+.recent-bills-section {
+  margin-top: 2.5rem;
+  scroll-margin-top: 120px;
+}
+
+.standalone-bills {
+  margin-top: 0;
+}
+
+.civic-pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.pulse-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  padding: 0.85rem;
+  box-shadow: var(--shadow-card);
+}
+
+.pulse-card .stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.pulse-card .stat-value {
+  color: #2f7d66;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 0.25rem;
+}
+
+.recent-bills-grid {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.bill-row {
+  display: grid;
+  /* Description + Impacts carry the AI prose, so give them the most room; the
+     text is shown in full (no clamp), and wider columns keep rows from getting
+     tall. Members + Other Info are narrower. */
+  grid-template-columns:
+    minmax(190px, 0.8fr)
+    minmax(300px, 1.55fr)
+    minmax(170px, 0.65fr)
+    minmax(300px, 1.55fr)
+    minmax(210px, 0.85fr);
+  min-width: 1320px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bill-row:first-child {
+  border-top: 0;
+}
+
+.bill-row-header {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-size: 0.73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.bill-cell,
+.bill-row-header > div {
+  padding: 0.85rem;
+  border-left: 1px solid var(--color-border);
+  min-width: 0;
+}
+
+.bill-cell:first-child,
+.bill-row-header > div:first-child {
+  border-left: 0;
+}
+
+.bill-kicker,
+.bill-meta,
+.bill-member-role {
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.bill-kicker,
+.bill-member-role {
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.bill-title {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0.25rem 0 0.45rem;
+  overflow-wrap: anywhere;
+}
+
+.bill-description {
+  color: var(--color-text);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  /* Clamp long official summaries so a single verbose bill doesn't create a
+     giant row; the full text is one click away on the linked bill page. */
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bill-cell a,
+.bill-source-links a {
+  color: var(--color-accent);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.bill-cell a:hover,
+.bill-source-links a:hover {
+  text-decoration: underline;
+}
+
+.bill-member-pill {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface-alt);
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.45rem 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.bill-member-pill strong {
+  color: var(--color-text);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.bill-impact-status {
+  color: #8a5f00;
+  display: block;
+  font-size: 0.84rem;
+  margin-bottom: 0.35rem;
+}
+
+.bill-source-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-empty-state {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 1rem;
+}

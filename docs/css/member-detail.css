@@ -1,0 +1,553 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Member Detail (Dossier) — clean UTF-8 rewrite
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dossier {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
+/* ── Hero / identity ──────────────────────────────────────────────────────── */
+.dossier-hero {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)),
+    var(--dossier-tint, var(--color-surface));
+  margin-bottom: 1.25rem;
+}
+
+.dossier-hero-photo-wrap {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-skeleton);
+  box-shadow: 0 0 0 4px #fff, 0 4px 14px rgba(26, 31, 46, 0.18);
+}
+.dossier-hero-photo { width: 100%; height: 100%; object-fit: cover; }
+.dossier-hero-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.dossier-hero-body { flex-grow: 1; min-width: 0; }
+.dossier-hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+.dossier-hero-name {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+  word-break: break-word;
+}
+
+.dossier-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  padding: 0.24rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+}
+.chip--dem { background: var(--color-tint-blue); color: #1a56db; border-color: #c9dcfb; }
+.chip--rep { background: #fdeaea; color: #c0392b; border-color: #f5c9c4; }
+.chip--ind { background: #eef2e9; color: #4d7c0f; border-color: #d7e3c6; }
+
+/* ── Ideology meter ───────────────────────────────────────────────────────── */
+.ideology-meter { max-width: 460px; }
+.ideology-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+.ideology-track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3b6fd4 0%, #dfe3ea 50%, #d1432f 100%);
+}
+.ideology-marker {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 3px solid var(--color-text);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.ideology-caption { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.4rem; }
+
+/* ── Hero side actions ────────────────────────────────────────────────────── */
+.dossier-hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+.grade-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 74px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  background: var(--grade-color, #94a3b8);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.grade-badge span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  opacity: 0.95;
+}
+.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.ghost-btn:hover { background: var(--color-bg); border-color: var(--color-accent); }
+.member-save-button--detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 90px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.member-save-button--detail:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--color-accent);
+}
+.member-save-button--detail.is-saved {
+  background: var(--color-tint-blue);
+  border-color: var(--color-accent);
+  color: #1a56b4;
+}
+
+/* ── At-a-glance stat row ─────────────────────────────────────────────────── */
+.dossier-statrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.dossier-stat {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+.dossier-stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+.dossier-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+}
+
+/* ── Sticky in-page section nav ───────────────────────────────────────────── */
+.dossier-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.6rem 0.4rem;
+  margin-bottom: 1.25rem;
+  background: rgba(244, 246, 249, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+.dossier-nav a {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.dossier-nav a:hover { background: #e8eef7; color: var(--color-accent); }
+
+/* ── Card grid ────────────────────────────────────────────────────────────── */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.dossier-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  scroll-margin-top: 4.5rem;
+}
+.dossier-card--wide { grid-column: 1 / -1; }
+.dossier-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #eef1f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.dossier-card h3 .card-icon { margin-right: 0.5rem; opacity: 0.8; }
+
+/* Loading placeholder inside a card */
+.card-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+.card-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #dbe2ee;
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: dossier-spin 0.7s linear infinite;
+}
+@keyframes dossier-spin { to { transform: rotate(360deg); } }
+
+/* ── Wikipedia / about ────────────────────────────────────────────────────── */
+.wiki-body { line-height: 1.65; color: #2b3240; }
+.wiki-thumb {
+  float: right;
+  margin: 0 0 0.75rem 1rem;
+  width: 110px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+.wiki-more { display: inline-block; margin-top: 0.85rem; font-weight: 600; color: var(--color-accent); }
+
+/* ── Career: tenure summary + collapsible timeline ────────────────────────── */
+.tenure-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.tenure-item {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 8px;
+  background: var(--color-surface-alt);
+}
+.tenure-item strong { display: block; font-size: 0.95rem; }
+.tenure-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+
+.timeline-details { margin-top: 0.85rem; }
+.timeline-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  padding: 0.35rem 0;
+  user-select: none;
+}
+.timeline-details > summary:hover { text-decoration: underline; }
+.timeline-details[open] > summary { margin-bottom: 0.6rem; }
+.timeline-details .timeline { max-height: 320px; overflow-y: auto; padding-right: 0.5rem; }
+
+/* ── Career timeline ──────────────────────────────────────────────────────── */
+.timeline { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.timeline-item {
+  position: relative;
+  padding: 0 0 1.1rem 1.35rem;
+  border-left: 2px solid var(--color-border);
+}
+.timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px #fff;
+}
+.timeline-item strong { display: block; font-size: 0.92rem; }
+.timeline-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+
+/* ── Funding ──────────────────────────────────────────────────────────────── */
+.funding-totals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+.funding-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.funding-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+.funding-stat-value { font-size: 1.25rem; font-weight: 700; color: var(--color-text); }
+.funding-subhead { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; }
+.funding-bar-container {
+  display: flex;
+  height: 26px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  background: var(--color-surface-alt);
+}
+.funding-bar-segment { height: 100%; transition: width var(--transition-med); }
+.funding-legend { font-size: 0.85rem; line-height: 1.5; }
+.funding-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+}
+.funding-legend-label { display: flex; align-items: center; gap: 0.5rem; }
+.funding-legend-color { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── Financial disclosures & generic lists ────────────────────────────────── */
+.dossier-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.dossier-list-item {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.dossier-list-item:hover { border-color: #c7d2e6; box-shadow: 0 2px 8px rgba(26, 31, 46, 0.06); }
+.dossier-list-item-title { font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.dossier-list-item-meta { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.45; }
+.dossier-list-item-meta a { color: var(--color-accent); font-weight: 600; }
+
+/* Legislation: 2-column bill grid (the card is full-width) + compact amendments */
+.bill-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
+.bill-title-text { font-size: 0.95rem; margin: 0.25rem 0 0.4rem; }
+.bill-item--amendment { align-self: start; background: var(--color-surface-alt); }
+.bill-item--amendment .dossier-list-item-title { font-weight: 600; }
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+.enacted-badge, .badge--enacted { background: #dcfce7; color: #166534; }
+.badge--report { background: #e0e7ff; color: #3730a3; }
+.badge--role { background: #fef3c7; color: #92400e; }
+
+.stock-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.stock-table th, .stock-table td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+.stock-table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); }
+.stock-asset { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Legislation tabs ─────────────────────────────────────────────────────── */
+.dossier-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--color-border); margin-bottom: 1rem; }
+.dossier-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.dossier-tab:hover { color: var(--color-text); }
+.dossier-tab[aria-selected="true"] { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+.dossier-tab-content { display: none; }
+.dossier-tab-content.active { display: block; }
+
+/* ── Policy-area tags ─────────────────────────────────────────────────────── */
+.policy-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+.policy-tag {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  color: var(--color-text);
+}
+.policy-tag span { color: var(--color-text-muted); font-weight: 700; margin-left: 0.25rem; }
+
+/* ── Committees ───────────────────────────────────────────────────────────── */
+.committee-sub { margin: 0.5rem 0 0 0; padding-left: 1.35rem; font-size: 0.88rem; color: var(--color-text-muted); }
+.committee-sub li { margin-bottom: 0.2rem; }
+
+/* ── Contact & links ──────────────────────────────────────────────────────── */
+.contact-cols { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-group-title { font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.contact-link:hover { background: #eef4ff; border-color: var(--color-accent); }
+.contact-line { font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.3rem; }
+
+.muted-text { color: var(--color-text-muted); font-size: 0.9rem; }
+.dossier-source { margin-top: 1rem; font-size: 0.78rem; color: var(--color-text-muted); }
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .dossier-grid { grid-template-columns: 1fr; }
+  .dossier-hero { flex-wrap: wrap; justify-content: center; text-align: center; }
+  .dossier-hero-body { flex-basis: 100%; }
+  .ideology-meter { margin: 0 auto; }
+  .dossier-chips { justify-content: center; }
+  .dossier-hero-side { flex-direction: row; flex-wrap: wrap; align-items: center; width: 100%; justify-content: center; }
+}
+@media (max-width: 600px) {
+  .dossier-hero { padding: 1.25rem; }
+  .dossier-hero-name { font-size: 1.7rem; }
+  .dossier-hero-photo-wrap { width: 104px; height: 104px; }
+  .dossier-card { padding: 1.1rem 1.15rem; }
+  .dossier-nav { overflow-x: auto; flex-wrap: nowrap; }
+}
+
+/* ── Economy dashboard ────────────────────────────────────────────────────── */
+.econ-header { max-width: 760px; margin: 0 0 2rem; }
+.econ-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.econ-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1.12;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.econ-subtitle { color: var(--color-text-muted); font-size: 1rem; line-height: 1.6; }
+.econ-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.econ-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 132px;
+}
+.econ-card--feature { border-left: 4px solid var(--color-accent); }
+.econ-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+}
+.econ-card-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+.econ-card--feature .econ-card-value { color: var(--color-text); }
+.econ-card-context { font-size: 0.82rem; color: var(--color-text-muted); margin-top: auto; }
+.econ-card--wide { grid-column: 1 / -1; }
+.econ-spark { width: 100%; height: 120px; display: block; margin: 0.5rem 0; }
+.econ-sources { margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; }
+@media (max-width: 600px) { .econ-title { font-size: 1.9rem; } }

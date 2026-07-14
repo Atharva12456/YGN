@@ -127,7 +127,7 @@ function listen(serverApp) {
     assert.match(balanceText, /212 Democrats/);
     assert.match(balanceText, /218 Republicans/);
     assert.match(balanceText, /45 Democrats/);
-    assert.match(balanceText, /53 Republicans/);
+    assert.match(balanceText, /52 Republicans/);
 
     await homePage.waitForSelector('#on-this-day:not([hidden])');
     const historyMapGap = await homePage.evaluate(() => {

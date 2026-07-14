@@ -89,6 +89,13 @@ class FakeBackend:
             "grade": "C-",
             "source": "fec_live",
             "method": self.ETHICS_METHOD_VERSION,
+            "funding": {
+                "available": True,
+                "candidate": {"candidateId": "H0XX00001"},
+                "cycle": 2026,
+                "totals": {"receipts": 1000.0},
+                "breakdown": [],
+            },
         }
 
     def ethics_fallback_only(self, bioguide_id):
@@ -180,6 +187,7 @@ class GenerateStaticDataTests(unittest.TestCase):
                 "generated_at": original_generated_at,
                 "source": "fec_live", "grade": "A", "score": 95.0,
                 "method": backend.ETHICS_METHOD_VERSION,
+                "funding": {"available": True},
             }), encoding="utf-8")
             self._run_ethics_only(output_dir, [], backend)
             score_index = json.loads((output_dir / "member-scores.json").read_text(encoding="utf-8"))
@@ -189,6 +197,35 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(score_index["ethics"]["A000001"]["grade"], "A")
         self.assertEqual(score_index["ethics"]["A000001"]["source"], "fec_live")
         self.assertEqual(persisted["generated_at"], original_generated_at)
+
+    def test_fresh_ethics_without_funding_is_selected_for_migration(self):
+        backend = FakeBackend()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            eth_path = output_dir / "ethics" / "A000001.json"
+            eth_path.parent.mkdir(parents=True, exist_ok=True)
+            eth_path.write_text(json.dumps({
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "source": "fec_live", "grade": "A", "score": 95.0,
+                "method": backend.ETHICS_METHOD_VERSION,
+            }), encoding="utf-8")
+
+            self._run_ethics_only(
+                output_dir, ["--fec-score-limit", "1"], backend
+            )
+            persisted = json.loads(eth_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(backend.ethics_requests, ["A000001"])
+        self.assertTrue(persisted["funding"]["available"])
+
+    def test_funding_snapshot_from_ethics_avoids_recursive_payload(self):
+        ethics = FakeBackend().compute_ethics_score("A000001")
+        funding = self.module.funding_snapshot_from_ethics(ethics)
+
+        self.assertTrue(funding["available"])
+        self.assertEqual(funding["source"], "fec_committed")
+        self.assertEqual(funding["grade"]["grade"], "C-")
+        self.assertNotIn("funding", funding["grade"])
 
     def test_fec_score_limit_caps_live_scoring_per_run(self):
         backend = FakeBackend()

@@ -469,8 +469,11 @@ def cache_stats():
     return _backend_response(government.get_cache_stats)
 
 
-@app.get("/{filename}", include_in_schema=False)
+@app.get("/{filename:path}", include_in_schema=False)
 def frontend_file(filename: str):
+    # `:path` (not a single segment) so subdirectory assets like js/core.js and
+    # css/base.css are served, not just top-level files. The resolve()+parents
+    # check below still blocks traversal outside docs/.
     requested = (DOCS_PATH / filename).resolve()
     docs_root = DOCS_PATH.resolve()
     if (

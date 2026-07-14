@@ -3600,7 +3600,9 @@ def _fec_search_candidates(member):
     # match ours (independents, minor parties, caucus mismatches), which would
     # drop a real candidate to zero results. It stays a +1 signal in scoring.
 
-    data = _fec_get("/candidates/search/", params=params)
+    data = _fec_get(
+        "/candidates/search/", params=params, ttl_seconds=FEC_LIVE_CACHE_TTL_SECONDS
+    )
     candidates = data.get("results", [])
     return sorted(candidates, key=lambda candidate: _fec_candidate_match_score(candidate, member), reverse=True)
 
@@ -3654,6 +3656,7 @@ def _latest_candidate_total(candidate_id):
             "per_page": 20,
             "sort": "-cycle",
         },
+        ttl_seconds=FEC_LIVE_CACHE_TTL_SECONDS,
     )
     totals = data.get("results", [])
     if not totals:
@@ -3691,6 +3694,7 @@ def _fec_candidate_rows(path, candidate_id, cycle):
             "cycle": cycle,
             "per_page": 100,
         },
+        ttl_seconds=FEC_LIVE_CACHE_TTL_SECONDS,
     )
     return data.get("results", [])
 
@@ -4000,7 +4004,14 @@ def _live_ethics_score(member):
         cycle,
     )
     result = _score_ethics_from_fec(member, candidate, totals, by_size, by_state)
-    return _apply_stock_penalty(result, member)
+    result = _apply_stock_penalty(result, member)
+    # Persist the funding breakdown built from the same totals so the funding
+    # metric can reuse it instead of re-calling FEC (saves rate-limited quota).
+    try:
+        result["funding"] = _build_funding_from_fec(candidate, totals)
+    except Exception:  # noqa: BLE001 - funding detail is optional context
+        pass
+    return result
 
 
 def _precomputed_fec_ethics(bioguide_id):
@@ -4661,6 +4672,58 @@ def _funding_line(label, amount, denominator):
     }
 
 
+def _build_funding_from_fec(candidate, totals):
+    """Build the campaign-funding breakdown from an FEC candidate + totals record.
+
+    Shared by the ethics sweep (which persists the result into the committed
+    ethics snapshot) and the live funding endpoint, so the money data fetched
+    once for scoring is reused for the funding metric instead of re-calling FEC.
+    """
+    candidate = candidate or {}
+    totals = totals or {}
+    receipts = _safe_amount(totals.get("receipts"))
+    contributions = _safe_amount(totals.get("contributions")) or _safe_amount(
+        totals.get("net_contributions")
+    )
+    individual = _safe_amount(totals.get("individual_contributions"))
+    itemized = _safe_amount(totals.get("individual_itemized_contributions"))
+    unitemized = _safe_amount(totals.get("individual_unitemized_contributions"))
+    pac = _safe_amount(totals.get("other_political_committee_contributions"))
+    party = _safe_amount(totals.get("political_party_committee_contributions"))
+    self_funding = _safe_amount(totals.get("candidate_contribution")) + _safe_amount(
+        totals.get("loans_made_by_candidate")
+    )
+    denominator = contributions or receipts or None
+    return {
+        "available": True,
+        "candidate": {
+            "candidateId": candidate.get("candidate_id"),
+            "name": candidate.get("name"),
+            "office": candidate.get("office"),
+            "state": candidate.get("state"),
+            "district": candidate.get("district"),
+            "party": candidate.get("party"),
+        },
+        "cycle": totals.get("cycle"),
+        "totals": {
+            "receipts": round(receipts, 2),
+            "disbursements": round(_safe_amount(totals.get("disbursements")), 2),
+            "cashOnHand": round(
+                _safe_amount(totals.get("last_cash_on_hand_end_period")), 2
+            ),
+            "debts": round(_safe_amount(totals.get("last_debts_owed_by_committee")), 2),
+            "individualContributions": round(individual, 2),
+        },
+        "breakdown": [
+            _funding_line("Small individual (unitemized)", unitemized, denominator),
+            _funding_line("Large individual (itemized)", itemized, denominator),
+            _funding_line("PAC / other committees", pac, denominator),
+            _funding_line("Political party committees", party, denominator),
+            _funding_line("Self-funding & candidate loans", self_funding, denominator),
+        ],
+    }
+
+
 def get_funding_summary(bioguide_id):
     cache_key = _build_cache_key("member-funding-v1", {"bioguideId": bioguide_id})
 
@@ -4677,13 +4740,25 @@ def get_funding_summary(bioguide_id):
             "grade": None,
         }
 
-        # Serve the live breakdown when a real FEC key can absorb per-view calls;
-        # otherwise fall back to grade-only to protect the rate-limited demo key.
+        try:
+            grade = get_ethics_score(bioguide_id)
+        except Exception:  # noqa: BLE001 - grade is optional context
+            grade = None
+        base["grade"] = grade
+
+        # Prefer the funding breakdown persisted alongside the ethics snapshot: it
+        # was built from the same FEC totals during scoring, so serving it spends
+        # no additional (rate-limited) FEC quota.
+        saved = grade.get("funding") if isinstance(grade, dict) else None
+        if isinstance(saved, dict) and saved.get("available"):
+            base.update(saved)
+            base["source"] = "fec_committed"
+            base["grade"] = grade
+            return base
+
+        # No saved breakdown yet: fetch live only when a real key can absorb it,
+        # otherwise return grade-only and let the sweep persist the detail.
         if not _funding_live_on_request():
-            try:
-                base["grade"] = get_ethics_score(bioguide_id)
-            except Exception:  # noqa: BLE001
-                base["grade"] = None
             base["note"] = (
                 "Campaign-finance detail is computed at build time; the grade above "
                 "reflects the latest snapshot."
@@ -4691,7 +4766,6 @@ def get_funding_summary(bioguide_id):
             return base
 
         member = CongressMembersID(bioguide_id).get("member", {})
-
         try:
             candidate = _fec_best_candidate(member)
             if not candidate:
@@ -4699,68 +4773,13 @@ def get_funding_summary(bioguide_id):
                     "No matching FEC campaign committee was found for this member."
                 )
                 return base
-
-            candidate_id = candidate.get("candidate_id")
-            totals = _latest_candidate_total(candidate_id) or {}
+            totals = _latest_candidate_total(candidate.get("candidate_id")) or {}
         except (MissingFecApiKey, MissingCongressApiKey, UpstreamDataError, requests.RequestException):
             base["note"] = "FEC campaign-finance data was temporarily unavailable."
             return base
 
-        cycle = totals.get("cycle")
-        receipts = _safe_amount(totals.get("receipts"))
-        contributions = _safe_amount(totals.get("contributions")) or _safe_amount(
-            totals.get("net_contributions")
-        )
-        individual = _safe_amount(totals.get("individual_contributions"))
-        itemized = _safe_amount(totals.get("individual_itemized_contributions"))
-        unitemized = _safe_amount(totals.get("individual_unitemized_contributions"))
-        pac = _safe_amount(totals.get("other_political_committee_contributions"))
-        party = _safe_amount(totals.get("political_party_committee_contributions"))
-        self_funding = (
-            _safe_amount(totals.get("candidate_contribution"))
-            + _safe_amount(totals.get("loans_made_by_candidate"))
-        )
-
-        denominator = contributions or receipts or None
-        breakdown = [
-            _funding_line("Small individual (unitemized)", unitemized, denominator),
-            _funding_line("Large individual (itemized)", itemized, denominator),
-            _funding_line("PAC / other committees", pac, denominator),
-            _funding_line("Political party committees", party, denominator),
-            _funding_line("Self-funding & candidate loans", self_funding, denominator),
-        ]
-
-        # Reuse the campaign-finance grade already computed for the ethics score.
-        try:
-            grade = get_ethics_score(bioguide_id)
-        except Exception:  # noqa: BLE001 - grade is optional context
-            grade = None
-
-        base.update(
-            {
-                "available": True,
-                "candidate": {
-                    "candidateId": candidate_id,
-                    "name": candidate.get("name"),
-                    "office": candidate.get("office"),
-                    "state": candidate.get("state"),
-                    "district": candidate.get("district"),
-                    "party": candidate.get("party"),
-                },
-                "cycle": cycle,
-                "totals": {
-                    "receipts": round(receipts, 2),
-                    "disbursements": round(_safe_amount(totals.get("disbursements")), 2),
-                    "cashOnHand": round(
-                        _safe_amount(totals.get("last_cash_on_hand_end_period")), 2
-                    ),
-                    "debts": round(_safe_amount(totals.get("last_debts_owed_by_committee")), 2),
-                    "individualContributions": round(individual, 2),
-                },
-                "breakdown": breakdown,
-                "grade": grade,
-            }
-        )
+        base.update(_build_funding_from_fec(candidate, totals))
+        base["grade"] = grade
         return base
 
     return _cached_json_dynamic(
