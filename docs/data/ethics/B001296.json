@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 57.4,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 16778.69,
+        "label": "Small individual (unitemized)",
+        "share": 0.013619076617986786
+      },
+      {
+        "amount": 443935.4,
+        "label": "Large individual (itemized)",
+        "share": 0.3603374414830128
+      },
+      {
+        "amount": 771285.0,
+        "label": "PAC / other committees",
+        "share": 0.6260434818990004
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4PA13199",
+      "district": "02",
+      "name": "BOYLE, BRENDAN F",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 5247621.97,
+      "debts": 0.0,
+      "disbursements": 688759.9,
+      "individualContributions": 460714.09,
+      "receipts": 2098098.52
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:18:34.869073+00:00"
+  "updated_at": "2026-07-14T23:11:51.736413+00:00"
 }

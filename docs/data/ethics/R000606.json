@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 93.6,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2740608.47,
+        "label": "Small individual (unitemized)",
+        "share": 0.4457414054500558
+      },
+      {
+        "amount": 3062217.53,
+        "label": "Large individual (itemized)",
+        "share": 0.498048940794523
+      },
+      {
+        "amount": 345527.67,
+        "label": "PAC / other committees",
+        "share": 0.05619773525974802
+      },
+      {
+        "amount": 73.28,
+        "label": "Political party committees",
+        "share": 1.1918495673108712e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6MD08457",
+      "district": "08",
+      "name": "RASKIN, JAMIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 7265603.58,
+      "debts": 0.0,
+      "disbursements": 4314797.77,
+      "individualContributions": 5802826.0,
+      "receipts": 6615198.31
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T15:17:36.803796+00:00"
+  "updated_at": "2026-07-14T23:13:10.084013+00:00"
 }

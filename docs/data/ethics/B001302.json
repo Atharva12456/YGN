@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.7,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 9957.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.39318749511367473
+      },
+      {
+        "amount": 8368.0,
+        "label": "Large individual (itemized)",
+        "share": 0.330414305107286
+      },
+      {
+        "amount": 7000.0,
+        "label": "PAC / other committees",
+        "share": 0.2763981997790394
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6AZ05083",
+      "district": "05",
+      "name": "BIGGS, ANDY",
+      "office": "H",
+      "party": "REP",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 364469.67,
+      "debts": 0.0,
+      "disbursements": 122653.72,
+      "individualContributions": 18325.78,
+      "receipts": 28245.83
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:18:26.231373+00:00"
+  "updated_at": "2026-07-14T23:13:46.219989+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 88.7,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 284626.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.3267156172220051
+      },
+      {
+        "amount": 417298.98,
+        "label": "Large individual (itemized)",
+        "share": 0.4790066912795361
+      },
+      {
+        "amount": 168250.0,
+        "label": "PAC / other committees",
+        "share": 0.19312981739802468
+      },
+      {
+        "amount": 1000.0,
+        "label": "Political party committees",
+        "share": 0.001147874100434025
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8TX27049",
+      "district": "27",
+      "name": "CLOUD, MICHAEL",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 279836.64,
+      "debts": 5000.0,
+      "disbursements": 759610.9,
+      "individualContributions": 701925.68,
+      "receipts": 902570.25
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:17:14.595369+00:00"
+  "updated_at": "2026-07-14T23:12:25.744980+00:00"
 }

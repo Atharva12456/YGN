@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.0,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1189901.54,
+        "label": "Small individual (unitemized)",
+        "share": 0.3778052663553844
+      },
+      {
+        "amount": 1363981.66,
+        "label": "Large individual (itemized)",
+        "share": 0.4330773908908121
+      },
+      {
+        "amount": 590627.0,
+        "label": "PAC / other committees",
+        "share": 0.18752979431531924
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0015875484384841806
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2PA04135",
+      "district": "10",
+      "name": "PERRY, SCOTT",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2340895.83,
+      "debts": 157923.67,
+      "disbursements": 2156940.93,
+      "individualContributions": 2553883.2,
+      "receipts": 4415917.78
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:18:35.673690+00:00"
+  "updated_at": "2026-07-14T23:11:54.372266+00:00"
 }

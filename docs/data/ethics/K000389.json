@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.5,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1468624.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.1262117791081715
+      },
+      {
+        "amount": 10166565.26,
+        "label": "Large individual (itemized)",
+        "share": 0.873702282105251
+      },
+      {
+        "amount": 1000.0,
+        "label": "PAC / other committees",
+        "share": 8.59387865774887e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA12055",
+      "district": "17",
+      "name": "KHANNA, ROHIT",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 16737637.24,
+      "debts": 89348.3,
+      "disbursements": 6615233.33,
+      "individualContributions": 11635189.43,
+      "receipts": 12643779.17
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 18,
-  "updated_at": "2026-07-13T15:18:27.144680+00:00"
+  "updated_at": "2026-07-14T23:13:56.175846+00:00"
 }

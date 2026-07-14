@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 15165.84,
+        "label": "Small individual (unitemized)",
+        "share": 0.018648530224303878
+      },
+      {
+        "amount": 364982.6,
+        "label": "Large individual (itemized)",
+        "share": 0.44879736614951843
+      },
+      {
+        "amount": 433097.42,
+        "label": "PAC / other committees",
+        "share": 0.5325541036261777
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2HI02128",
+      "district": "01",
+      "name": "CASE, EDWARD",
+      "office": "H",
+      "party": "DEM",
+      "state": "HI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 890340.38,
+      "debts": 0.0,
+      "disbursements": 239563.56,
+      "individualContributions": 380148.44,
+      "receipts": 813245.86
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 4,
-  "updated_at": "2026-07-13T17:23:48.413315+00:00"
+  "updated_at": "2026-07-14T23:12:01.877014+00:00"
 }

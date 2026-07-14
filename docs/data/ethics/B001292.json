@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.7,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 81720.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.05024387784588711
+      },
+      {
+        "amount": 1123499.84,
+        "label": "Large individual (itemized)",
+        "share": 0.690759645121029
+      },
+      {
+        "amount": 421250.0,
+        "label": "PAC / other committees",
+        "share": 0.2589964770330839
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4VA08224",
+      "district": "08",
+      "name": "BEYER, DONALD STERNOFF JR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 755403.17,
+      "debts": 0.0,
+      "disbursements": 1429766.06,
+      "individualContributions": 1205220.0,
+      "receipts": 1628106.55
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 10,
-  "updated_at": "2026-07-13T17:23:56.039781+00:00"
+  "updated_at": "2026-07-14T23:14:24.934581+00:00"
 }

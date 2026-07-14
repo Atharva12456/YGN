@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5539.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.0036008793488576784
+      },
+      {
+        "amount": 566738.21,
+        "label": "Large individual (itemized)",
+        "share": 0.3683821228636455
+      },
+      {
+        "amount": 966174.0,
+        "label": "PAC / other committees",
+        "share": 0.6280169977874968
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NC07096",
+      "district": "07",
+      "name": "ROUZER, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2005910.45,
+      "debts": 0.0,
+      "disbursements": 968178.9,
+      "individualContributions": 572277.99,
+      "receipts": 1538563.64
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T17:24:17.821998+00:00"
+  "updated_at": "2026-07-14T23:14:33.644745+00:00"
 }

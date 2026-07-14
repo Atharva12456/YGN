@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 57.7,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 7936.35,
+        "label": "Small individual (unitemized)",
+        "share": 0.007285522608542706
+      },
+      {
+        "amount": 233295.25,
+        "label": "Large individual (itemized)",
+        "share": 0.21416366696789113
+      },
+      {
+        "amount": 848100.0,
+        "label": "PAC / other committees",
+        "share": 0.7785508104235661
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8KS04112",
+      "district": "04",
+      "name": "ESTES, RON",
+      "office": "H",
+      "party": "REP",
+      "state": "KS"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1622846.43,
+      "debts": 0.0,
+      "disbursements": 1077173.09,
+      "individualContributions": 241231.6,
+      "receipts": 1501743.48
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:17:17.021393+00:00"
+  "updated_at": "2026-07-14T23:12:55.200365+00:00"
 }

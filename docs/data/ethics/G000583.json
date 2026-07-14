@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 65.2,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 18205.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.006152272517816877
+      },
+      {
+        "amount": 2262427.25,
+        "label": "Large individual (itemized)",
+        "share": 0.7645445653688139
+      },
+      {
+        "amount": 678550.01,
+        "label": "PAC / other committees",
+        "share": 0.2293031621133693
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NJ05171",
+      "district": "05",
+      "name": "GOTTHEIMER, JOSH",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 11553157.64,
+      "debts": 0.0,
+      "disbursements": 12628177.86,
+      "individualContributions": 2280632.95,
+      "receipts": 3468842.44
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 19,
-  "updated_at": "2026-07-13T15:17:34.813404+00:00"
+  "updated_at": "2026-07-14T23:13:04.837426+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.9,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6234.93,
+        "label": "Small individual (unitemized)",
+        "share": 0.018896956361724965
+      },
+      {
+        "amount": 131758.68,
+        "label": "Large individual (itemized)",
+        "share": 0.3993369654893453
+      },
+      {
+        "amount": 191950.0,
+        "label": "PAC / other committees",
+        "share": 0.5817660781489298
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6OH08315",
+      "district": "08",
+      "name": "DAVIDSON, WARREN",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 449026.56,
+      "debts": 0.0,
+      "disbursements": 451202.31,
+      "individualContributions": 137993.61,
+      "receipts": 505527.76
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T15:18:33.819481+00:00"
+  "updated_at": "2026-07-14T23:14:02.794898+00:00"
 }

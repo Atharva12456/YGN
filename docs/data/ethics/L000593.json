@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.9,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 202887.55,
+        "label": "Small individual (unitemized)",
+        "share": 0.07563913529701097
+      },
+      {
+        "amount": 2131637.12,
+        "label": "Large individual (itemized)",
+        "share": 0.7947022304907858
+      },
+      {
+        "amount": 346098.0,
+        "label": "PAC / other committees",
+        "share": 0.12902986628812319
+      },
+      {
+        "amount": 1686.55,
+        "label": "Political party committees",
+        "share": 0.0006287679240799836
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CA49058",
+      "district": "49",
+      "name": "LEVIN, MIKE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1383634.38,
+      "debts": 0.0,
+      "disbursements": 1779935.38,
+      "individualContributions": 2334524.67,
+      "receipts": 2893832.78
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:16:45.850789+00:00"
+  "updated_at": "2026-07-14T23:12:16.949327+00:00"
 }

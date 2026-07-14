@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 76.4,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6976.34,
+        "label": "Small individual (unitemized)",
+        "share": 0.029864297867469424
+      },
+      {
+        "amount": 119125.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5099499857321024
+      },
+      {
+        "amount": 107500.0,
+        "label": "PAC / other committees",
+        "share": 0.4601857164004282
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6PA02171",
+      "district": "03",
+      "name": "EVANS, DWIGHT",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 20194.46,
+      "debts": 0.0,
+      "disbursements": 289786.88,
+      "individualContributions": 126101.34,
+      "receipts": 233844.15
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 7,
-  "updated_at": "2026-07-13T15:18:27.964470+00:00"
+  "updated_at": "2026-07-14T23:11:49.319785+00:00"
 }

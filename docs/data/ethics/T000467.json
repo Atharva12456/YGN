@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.8,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 34129.48,
+        "label": "Small individual (unitemized)",
+        "share": 0.021767116797686767
+      },
+      {
+        "amount": 612740.08,
+        "label": "Large individual (itemized)",
+        "share": 0.3907936742072815
+      },
+      {
+        "amount": 921068.0,
+        "label": "PAC / other committees",
+        "share": 0.5874392089950317
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA05071",
+      "district": "15",
+      "name": "THOMPSON, GLENN MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 738849.49,
+      "debts": 0.0,
+      "disbursements": 1685774.76,
+      "individualContributions": 646869.56,
+      "receipts": 1632830.35
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:23:47.429896+00:00"
+  "updated_at": "2026-07-14T23:11:59.717393+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.1,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 23215.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.011226038718074973
+      },
+      {
+        "amount": 1629785.06,
+        "label": "Large individual (itemized)",
+        "share": 0.7881066641209238
+      },
+      {
+        "amount": 414975.0,
+        "label": "PAC / other committees",
+        "share": 0.2006672971610013
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY13096",
+      "district": "13",
+      "name": "ESPAILLAT, ADRIANO",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 963433.53,
+      "debts": 0.0,
+      "disbursements": 1537250.19,
+      "individualContributions": 1653000.23,
+      "receipts": 2104259.03
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:17:33.559871+00:00"
+  "updated_at": "2026-07-14T23:13:02.670525+00:00"
 }

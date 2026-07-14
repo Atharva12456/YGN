@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 91.5,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 829019.71,
+        "label": "Small individual (unitemized)",
+        "share": 0.4249600322802013
+      },
+      {
+        "amount": 887298.36,
+        "label": "Large individual (itemized)",
+        "share": 0.4548339866464329
+      },
+      {
+        "amount": 234500.0,
+        "label": "PAC / other committees",
+        "share": 0.1202059810733658
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6WA07458",
+      "district": "07",
+      "name": "JAYAPAL, PRAMILA",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1973933.78,
+      "debts": 0.0,
+      "disbursements": 2053008.72,
+      "individualContributions": 1716318.07,
+      "receipts": 2014217.73
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T15:17:18.382720+00:00"
+  "updated_at": "2026-07-14T23:12:57.365057+00:00"
 }

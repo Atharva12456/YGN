@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.1,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 25776.44,
+        "label": "Small individual (unitemized)",
+        "share": 0.017572173645479416
+      },
+      {
+        "amount": 984096.78,
+        "label": "Large individual (itemized)",
+        "share": 0.6708730725467581
+      },
+      {
+        "amount": 457016.45,
+        "label": "PAC / other committees",
+        "share": 0.31155475380776254
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CA24303",
+      "district": "24",
+      "name": "CARBAJAL, SALUD O.",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3305803.76,
+      "debts": 2630.66,
+      "disbursements": 809950.99,
+      "individualContributions": 1009873.22,
+      "receipts": 1471885.24
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T05:59:11.621039+00:00"
+  "updated_at": "2026-07-14T23:13:37.369722+00:00"
 }

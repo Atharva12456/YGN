@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 60.8,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6160.92,
+        "label": "Small individual (unitemized)",
+        "share": 0.004973112394800477
+      },
+      {
+        "amount": 347185.0,
+        "label": "Large individual (itemized)",
+        "share": 0.2802487334340981
+      },
+      {
+        "amount": 885500.0,
+        "label": "PAC / other committees",
+        "share": 0.7147781541711015
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL09179",
+      "district": "09",
+      "name": "SOTO, DARREN",
+      "office": "H",
+      "party": "DEM",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 832605.6,
+      "debts": 0.0,
+      "disbursements": 422928.05,
+      "individualContributions": 353345.92,
+      "receipts": 1241415.11
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T05:59:07.291538+00:00"
+  "updated_at": "2026-07-14T23:13:24.256037+00:00"
 }

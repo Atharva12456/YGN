@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.1,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 10390.99,
+        "label": "Small individual (unitemized)",
+        "share": 0.01659409398523161
+      },
+      {
+        "amount": 234841.05,
+        "label": "Large individual (itemized)",
+        "share": 0.37503399149556255
+      },
+      {
+        "amount": 380954.0,
+        "label": "PAC / other committees",
+        "share": 0.6083719145192058
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WA04104",
+      "district": "04",
+      "name": "NEWHOUSE, DAN",
+      "office": "H",
+      "party": "REP",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 174755.06,
+      "debts": 1593.25,
+      "disbursements": 648908.06,
+      "individualContributions": 245232.04,
+      "receipts": 718855.67
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 3,
-  "updated_at": "2026-07-13T17:23:54.572079+00:00"
+  "updated_at": "2026-07-14T23:14:09.229267+00:00"
 }

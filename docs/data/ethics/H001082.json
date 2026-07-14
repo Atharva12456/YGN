@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.4,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 24451.95,
+        "label": "Small individual (unitemized)",
+        "share": 0.01463208185652847
+      },
+      {
+        "amount": 490008.09,
+        "label": "Large individual (itemized)",
+        "share": 0.29322154197277395
+      },
+      {
+        "amount": 1156658.96,
+        "label": "PAC / other committees",
+        "share": 0.6921463761706976
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8OK01157",
+      "district": "01",
+      "name": "HERN, KEVIN",
+      "office": "H",
+      "party": "REP",
+      "state": "OK"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 206987.05,
+      "debts": 0.0,
+      "disbursements": 3454363.12,
+      "individualContributions": 514460.04,
+      "receipts": 2512684.19
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 12,
-  "updated_at": "2026-07-13T15:16:52.272234+00:00"
+  "updated_at": "2026-07-14T23:12:19.130299+00:00"
 }

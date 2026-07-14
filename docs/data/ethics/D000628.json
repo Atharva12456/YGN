@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 65.2,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 17914.13,
+        "label": "Small individual (unitemized)",
+        "share": 0.02615586619302612
+      },
+      {
+        "amount": 208485.0,
+        "label": "Large individual (itemized)",
+        "share": 0.3044024891665434
+      },
+      {
+        "amount": 458500.0,
+        "label": "PAC / other committees",
+        "share": 0.6694416446404304
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL02208",
+      "district": "02",
+      "name": "DUNN, NEAL PATRICK MD, FACS",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 445051.29,
+      "debts": 0.0,
+      "disbursements": 475438.12,
+      "individualContributions": 226399.13,
+      "receipts": 831031.43
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-07-14T05:59:08.857894+00:00"
+  "updated_at": "2026-07-14T23:13:26.531111+00:00"
 }

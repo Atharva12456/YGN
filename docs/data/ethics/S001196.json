@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.1,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1453897.89,
+        "label": "Small individual (unitemized)",
+        "share": 0.5299405258902091
+      },
+      {
+        "amount": 980020.68,
+        "label": "Large individual (itemized)",
+        "share": 0.3572139956420739
+      },
+      {
+        "amount": 289592.86,
+        "label": "PAC / other committees",
+        "share": 0.10555555075635313
+      },
+      {
+        "amount": 20000.0,
+        "label": "Political party committees",
+        "share": 0.0072899277113636805
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NY21079",
+      "district": "21",
+      "name": "STEFANIK, ELISE M.",
+      "office": "H",
+      "party": "REP",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 10825811.28,
+      "debts": 0.0,
+      "disbursements": 2879666.88,
+      "individualContributions": 2433918.57,
+      "receipts": 4957560.68
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:24:08.677887+00:00"
+  "updated_at": "2026-07-14T23:14:29.315228+00:00"
 }

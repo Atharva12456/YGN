@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 79.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 428950.07,
+        "label": "Small individual (unitemized)",
+        "share": 0.16180066445801788
+      },
+      {
+        "amount": 1714501.96,
+        "label": "Large individual (itemized)",
+        "share": 0.646712929415244
+      },
+      {
+        "amount": 507400.0,
+        "label": "PAC / other committees",
+        "share": 0.19139210571989945
+      },
+      {
+        "amount": 250.0,
+        "label": "Political party committees",
+        "share": 9.430040683873642e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MA06090",
+      "district": "06",
+      "name": "MOULTON, SETH",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 1850338.06,
+      "debts": 0.0,
+      "disbursements": 1827201.45,
+      "individualContributions": 2143452.03,
+      "receipts": 2908225.26
+    }
+  },
+  "generated_at": "2026-07-14T23:11:41.322189+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T17:24:19.583720+00:00"
+  "updated_at": "2026-07-14T23:14:36.726778+00:00"
 }
