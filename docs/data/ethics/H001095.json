@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 82.4,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 719422.44,
+        "label": "Small individual (unitemized)",
+        "share": 0.40266745152840244
+      },
+      {
+        "amount": 648919.21,
+        "label": "Large individual (itemized)",
+        "share": 0.36320613593666085
+      },
+      {
+        "amount": 418300.0,
+        "label": "PAC / other committees",
+        "share": 0.2341264125349367
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0TX07170",
+      "district": "38",
+      "name": "HUNT, WESLEY",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 2487176.16,
+      "debts": 0.0,
+      "disbursements": 2065226.84,
+      "individualContributions": 1368341.65,
+      "receipts": 2777569.46
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:08:21.946203+00:00"
+  "updated_at": "2026-07-14T18:17:05.079718+00:00"
 }

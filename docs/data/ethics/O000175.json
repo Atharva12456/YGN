@@ -43,7 +43,53 @@
   },
   "cycle": 2002,
   "financeScore": 85.9,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5232.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.3043557425331915
+      },
+      {
+        "amount": 8051.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4683425235349244
+      },
+      {
+        "amount": 3907.41,
+        "label": "PAC / other committees",
+        "share": 0.2273017339318841
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 79842.39,
+        "label": "Self-funding & candidate loans",
+        "share": 1.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TN04191",
+      "district": "04",
+      "name": "OGLES, WILLIAM ANDREW IV",
+      "office": "H",
+      "party": "REP",
+      "state": "TN"
+    },
+    "cycle": 2002,
+    "totals": {
+      "cashOnHand": 0.0,
+      "debts": 72778.38,
+      "disbursements": 93908.59,
+      "individualContributions": 13283.0,
+      "receipts": 97032.8
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:38:32.239948+00:00"
+  "updated_at": "2026-07-14T18:16:52.747084+00:00"
 }

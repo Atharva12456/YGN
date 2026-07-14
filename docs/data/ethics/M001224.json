@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.7,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 156726.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.1398261033941388
+      },
+      {
+        "amount": 350488.72,
+        "label": "Large individual (itemized)",
+        "share": 0.31269488689221053
+      },
+      {
+        "amount": 613650.0,
+        "label": "PAC / other committees",
+        "share": 0.5474790097136507
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX01112",
+      "district": "01",
+      "name": "MORAN, NATHANIEL QUENTIN",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 634250.67,
+      "debts": 0.0,
+      "disbursements": 1131996.71,
+      "individualContributions": 507214.89,
+      "receipts": 1385301.26
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:08:09.556366+00:00"
+  "updated_at": "2026-07-14T18:16:54.374176+00:00"
 }

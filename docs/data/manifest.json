@@ -1,28 +1,22 @@
 {
-  "bill_details": 40,
+  "bill_details": 0,
   "congress": 119,
   "current_member": true,
-  "debt_metric": true,
-  "descriptions": 536,
-  "details": 535,
-  "dossiers": 535,
-  "errors": [
-    {
-      "bioguideId": "P000595",
-      "error": "Congress.gov request failed for /member/P000595.",
-      "stage": "detail"
-    }
-  ],
+  "debt_metric": false,
+  "descriptions": 0,
+  "details": 0,
+  "dossiers": 0,
+  "errors": [],
   "ethics": 536,
   "ethics_fallback": 127,
-  "ethics_sweep_cursor": "V000135",
-  "fallback_descriptions": 3,
+  "ethics_sweep_cursor": "H001093",
+  "fallback_descriptions": 0,
   "fec_scored_this_run": 50,
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "member_score_index": true,
   "members": 536,
-  "nominate": 535,
-  "recent_bills": true,
+  "nominate": 0,
+  "recent_bills": false,
   "roster_summary": {
     "by_chamber": {
       "House": 437,
@@ -59,6 +53,6 @@
       }
     }
   },
-  "wiki": 533,
-  "wiki_reused": 533
+  "wiki": 0,
+  "wiki_reused": 0
 }

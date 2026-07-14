@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.6,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 10385.21,
+        "label": "Small individual (unitemized)",
+        "share": 0.006752034759461236
+      },
+      {
+        "amount": 949211.54,
+        "label": "Large individual (itemized)",
+        "share": 0.617138152445808
+      },
+      {
+        "amount": 578489.23,
+        "label": "PAC / other committees",
+        "share": 0.37610981279473077
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NJ13075",
+      "district": "08",
+      "name": "MENENDEZ, ROBERT",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 748335.37,
+      "debts": 0.0,
+      "disbursements": 1078528.01,
+      "individualContributions": 959596.75,
+      "receipts": 1550177.82
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:17.562532+00:00"
+  "updated_at": "2026-07-14T18:18:52.373817+00:00"
 }

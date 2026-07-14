@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 88.4,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 350262.22,
+        "label": "Small individual (unitemized)",
+        "share": 0.28042440835536464
+      },
+      {
+        "amount": 716681.05,
+        "label": "Large individual (itemized)",
+        "share": 0.5737840050969572
+      },
+      {
+        "amount": 182100.0,
+        "label": "PAC / other committees",
+        "share": 0.1457915865476782
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2PA18200",
+      "district": "12",
+      "name": "LEE, SUMMER",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1691816.63,
+      "debts": 0.0,
+      "disbursements": 668865.18,
+      "individualContributions": 1066943.27,
+      "receipts": 1349102.7
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:08:12.867520+00:00"
+  "updated_at": "2026-07-14T18:17:00.404951+00:00"
 }

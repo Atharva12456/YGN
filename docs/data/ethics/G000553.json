@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.7,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 296967.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.24583688928437153
+      },
+      {
+        "amount": 832019.03,
+        "label": "Large individual (itemized)",
+        "share": 0.6887650413179622
+      },
+      {
+        "amount": 79000.0,
+        "label": "PAC / other committees",
+        "share": 0.06539806939766632
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 300000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.24834709897847967
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4TX09095",
+      "district": "18",
+      "name": "GREEN, ALEXANDER",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 325834.13,
+      "debts": 300000.0,
+      "disbursements": 1404064.79,
+      "individualContributions": 1128986.73,
+      "receipts": 1510813.93
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:08.325299+00:00"
+  "updated_at": "2026-07-14T18:18:20.659357+00:00"
 }

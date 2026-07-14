@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.6,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 223813.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.08680942482636404
+      },
+      {
+        "amount": 1680254.13,
+        "label": "Large individual (itemized)",
+        "share": 0.6517130617284921
+      },
+      {
+        "amount": 672810.91,
+        "label": "PAC / other committees",
+        "share": 0.26096032159161126
+      },
+      {
+        "amount": 1333.43,
+        "label": "Political party committees",
+        "share": 0.0005171918535326696
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2WA03217",
+      "district": "03",
+      "name": "GLUESENKAMP PEREZ, MARIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3455825.48,
+      "debts": 0.0,
+      "disbursements": 1119396.21,
+      "individualContributions": 1904067.19,
+      "receipts": 4548761.32
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:08:06.948820+00:00"
+  "updated_at": "2026-07-14T18:16:48.312317+00:00"
 }

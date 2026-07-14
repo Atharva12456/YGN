@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.4,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 159348.83,
+        "label": "Small individual (unitemized)",
+        "share": 0.0896100613869699
+      },
+      {
+        "amount": 933498.25,
+        "label": "Large individual (itemized)",
+        "share": 0.524954186906355
+      },
+      {
+        "amount": 685400.0,
+        "label": "PAC / other committees",
+        "share": 0.3854357517066751
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2IL17147",
+      "district": "17",
+      "name": "SORENSEN, ERIC",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1178741.78,
+      "debts": 0.0,
+      "disbursements": 784997.4,
+      "individualContributions": 1092847.08,
+      "receipts": 1850944.9
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:13.095826+00:00"
+  "updated_at": "2026-07-14T18:18:27.837160+00:00"
 }

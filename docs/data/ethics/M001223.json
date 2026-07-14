@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.0,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 41333.03,
+        "label": "Small individual (unitemized)",
+        "share": 0.042817600562163306
+      },
+      {
+        "amount": 524995.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5438513994046148
+      },
+      {
+        "amount": 399000.0,
+        "label": "PAC / other committees",
+        "share": 0.4133310000332219
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2RI02184",
+      "district": "02",
+      "name": "MAGAZINER, SETH",
+      "office": "H",
+      "party": "DEM",
+      "state": "RI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1492754.42,
+      "debts": 0.0,
+      "disbursements": 419690.89,
+      "individualContributions": 566328.03,
+      "receipts": 1035480.08
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:10.347601+00:00"
+  "updated_at": "2026-07-14T18:16:56.829599+00:00"
 }

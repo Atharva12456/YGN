@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 88.1,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 250252.62,
+        "label": "Small individual (unitemized)",
+        "share": 0.24416654425131523
+      },
+      {
+        "amount": 547643.3,
+        "label": "Large individual (itemized)",
+        "share": 0.5343247636863355
+      },
+      {
+        "amount": 227030.0,
+        "label": "PAC / other committees",
+        "share": 0.22150869206234924
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX35144",
+      "district": "37",
+      "name": "CASAR, GREG",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 722935.59,
+      "debts": 10000.0,
+      "disbursements": 705499.35,
+      "individualContributions": 797895.92,
+      "receipts": 1057595.98
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:10.238745+00:00"
+  "updated_at": "2026-07-14T18:17:13.619016+00:00"
 }

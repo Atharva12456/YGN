@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 66.7,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 44352.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.03281886925779783
+      },
+      {
+        "amount": 1027170.98,
+        "label": "Large individual (itemized)",
+        "share": 0.7600661365016121
+      },
+      {
+        "amount": 274500.0,
+        "label": "PAC / other committees",
+        "share": 0.2031192065703536
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 5305400.0,
+        "label": "Self-funding & candidate loans",
+        "share": 1.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MI13204",
+      "district": "13",
+      "name": "THANEDAR, SHRI",
+      "office": "H",
+      "party": "DEM",
+      "state": "MI"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 6904567.7,
+      "debts": 11470000.0,
+      "disbursements": 2873299.51,
+      "individualContributions": 1071523.16,
+      "receipts": 9660670.47
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T04:37:14.255085+00:00"
+  "updated_at": "2026-07-14T18:18:26.215559+00:00"
 }

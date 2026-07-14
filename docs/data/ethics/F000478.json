@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 70.9,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 85273.43,
+        "label": "Small individual (unitemized)",
+        "share": 0.0636415747392502
+      },
+      {
+        "amount": 645214.07,
+        "label": "Large individual (itemized)",
+        "share": 0.4815384986709319
+      },
+      {
+        "amount": 609163.82,
+        "label": "PAC / other committees",
+        "share": 0.4546333456854867
+      },
+      {
+        "amount": 250.0,
+        "label": "Political party committees",
+        "share": 0.00018658090433107416
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2SC07280",
+      "district": "07",
+      "name": "FRY, RUSSELL",
+      "office": "H",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 957318.09,
+      "debts": 0.0,
+      "disbursements": 1187907.07,
+      "individualContributions": 730487.5,
+      "receipts": 1584042.47
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:08:28.826034+00:00"
+  "updated_at": "2026-07-14T18:17:07.952330+00:00"
 }

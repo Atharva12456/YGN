@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.5,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2054.21,
+        "label": "Small individual (unitemized)",
+        "share": 0.0037104436740250757
+      },
+      {
+        "amount": 270075.0,
+        "label": "Large individual (itemized)",
+        "share": 0.48782650033946007
+      },
+      {
+        "amount": 281500.0,
+        "label": "PAC / other committees",
+        "share": 0.5084630559865149
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0FL15104",
+      "district": "18",
+      "name": "FRANKLIN, SCOTT MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 819491.81,
+      "debts": 298500.0,
+      "disbursements": 297386.91,
+      "individualContributions": 272129.21,
+      "receipts": 634983.24
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 11,
-  "updated_at": "2026-07-14T00:09:08.306900+00:00"
+  "updated_at": "2026-07-14T18:17:43.654472+00:00"
 }

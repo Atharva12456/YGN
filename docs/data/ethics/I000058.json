@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 31613.63,
+        "label": "Small individual (unitemized)",
+        "share": 0.05027743804335364
+      },
+      {
+        "amount": 296920.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4722133112784759
+      },
+      {
+        "amount": 300250.0,
+        "label": "PAC / other committees",
+        "share": 0.47750925067817046
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MD04232",
+      "district": "04",
+      "name": "IVEY, GLENN FREDERICK",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 447415.83,
+      "debts": 0.0,
+      "disbursements": 487017.99,
+      "individualContributions": 328533.63,
+      "receipts": 629045.5
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:31.407531+00:00"
+  "updated_at": "2026-07-14T18:19:24.588166+00:00"
 }

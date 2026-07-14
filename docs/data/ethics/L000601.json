@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 198478.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.06839080568885873
+      },
+      {
+        "amount": 1976841.25,
+        "label": "Large individual (itemized)",
+        "share": 0.6811722089564068
+      },
+      {
+        "amount": 726507.21,
+        "label": "PAC / other committees",
+        "share": 0.25033700660508584
+      },
+      {
+        "amount": 290.15,
+        "label": "Political party committees",
+        "share": 9.997874964856254e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OH01194",
+      "district": "01",
+      "name": "LANDSMAN, GREG",
+      "office": "H",
+      "party": "DEM",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2939405.33,
+      "debts": 2407.35,
+      "disbursements": 885776.12,
+      "individualContributions": 2175319.35,
+      "receipts": 3645066.54
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 4,
-  "updated_at": "2026-07-13T05:24:24.780745+00:00"
+  "updated_at": "2026-07-14T18:17:02.652827+00:00"
 }

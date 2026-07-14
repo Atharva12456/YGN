@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.6,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 4668.52,
+        "label": "Small individual (unitemized)",
+        "share": 0.025429951446622228
+      },
+      {
+        "amount": 92407.0,
+        "label": "Large individual (itemized)",
+        "share": 0.503351281204326
+      },
+      {
+        "amount": 86508.0,
+        "label": "PAC / other committees",
+        "share": 0.4712187673490518
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OK02315",
+      "district": "02",
+      "name": "BRECHEEN, JOSH",
+      "office": "H",
+      "party": "REP",
+      "state": "OK"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 47872.81,
+      "debts": 0.0,
+      "disbursements": 206406.59,
+      "individualContributions": 97075.52,
+      "receipts": 183583.52
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:26.946675+00:00"
+  "updated_at": "2026-07-14T18:17:15.240974+00:00"
 }

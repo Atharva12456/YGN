@@ -43,7 +43,53 @@
   },
   "cycle": 2014,
   "financeScore": 35.0,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 0.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Large individual (itemized)",
+        "share": 0.0
+      },
+      {
+        "amount": 5000.0,
+        "label": "PAC / other committees",
+        "share": 1.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NJ07089",
+      "district": "07",
+      "name": "KEAN, THOMAS H JR",
+      "office": "H",
+      "party": "REP",
+      "state": "NJ"
+    },
+    "cycle": 2014,
+    "totals": {
+      "cashOnHand": 7181.49,
+      "debts": 259750.0,
+      "disbursements": 6000.0,
+      "individualContributions": 0.0,
+      "receipts": 5000.0
+    }
+  },
+  "generated_at": "2026-07-14T18:16:37.253479+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 18,
-  "updated_at": "2026-07-13T05:24:28.000380+00:00"
+  "updated_at": "2026-07-14T18:19:18.970248+00:00"
 }
