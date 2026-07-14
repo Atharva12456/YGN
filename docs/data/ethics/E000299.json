@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 70.0,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 17005.98,
+        "label": "Small individual (unitemized)",
+        "share": 0.023290036994992252
+      },
+      {
+        "amount": 419308.2,
+        "label": "Large individual (itemized)",
+        "share": 0.5742511452032527
+      },
+      {
+        "amount": 293868.43,
+        "label": "PAC / other committees",
+        "share": 0.4024588178017551
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8TX16109",
+      "district": "16",
+      "name": "ESCOBAR, VERONICA",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 288262.7,
+      "debts": 0.0,
+      "disbursements": 557794.53,
+      "individualContributions": 436314.18,
+      "receipts": 730212.61
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:20:18.842353+00:00"
+  "updated_at": "2026-07-14T22:14:45.496102+00:00"
 }

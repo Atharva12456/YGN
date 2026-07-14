@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 64.2,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 7197.27,
+        "label": "Small individual (unitemized)",
+        "share": 0.006339978265710229
+      },
+      {
+        "amount": 805622.71,
+        "label": "Large individual (itemized)",
+        "share": 0.7096622013294727
+      },
+      {
+        "amount": 322400.0,
+        "label": "PAC / other committees",
+        "share": 0.283997820404817
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8SD01055",
+      "district": "00",
+      "name": "JOHNSON, DUSTY",
+      "office": "H",
+      "party": "REP",
+      "state": "SD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2590564.34,
+      "debts": 0.0,
+      "disbursements": 4344048.18,
+      "individualContributions": 812819.98,
+      "receipts": 1689487.52
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:20:27.111376+00:00"
+  "updated_at": "2026-07-14T22:15:12.106467+00:00"
 }

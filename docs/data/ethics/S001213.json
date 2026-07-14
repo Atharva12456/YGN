@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.8,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 162285.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.06519201180969511
+      },
+      {
+        "amount": 976013.49,
+        "label": "Large individual (itemized)",
+        "share": 0.392075431892335
+      },
+      {
+        "amount": 1351052.0,
+        "label": "PAC / other committees",
+        "share": 0.5427325562979698
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8WI01156",
+      "district": "01",
+      "name": "STEIL, BRYAN GEORGE",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 5564127.31,
+      "debts": 0.0,
+      "disbursements": 1031407.81,
+      "individualContributions": 1138299.31,
+      "receipts": 4376364.75
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:19:49.028616+00:00"
+  "updated_at": "2026-07-14T22:14:34.723618+00:00"
 }

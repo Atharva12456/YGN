@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.2,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 98345.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.09063962654980788
+      },
+      {
+        "amount": 383466.09,
+        "label": "Large individual (itemized)",
+        "share": 0.3534213553522296
+      },
+      {
+        "amount": 603200.0,
+        "label": "PAC / other committees",
+        "share": 0.5559390180979624
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA04116",
+      "district": "04",
+      "name": "DEAN, MADELEINE",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1158178.34,
+      "debts": 0.0,
+      "disbursements": 922768.92,
+      "individualContributions": 481811.09,
+      "receipts": 1112206.11
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:21:23.095051+00:00"
+  "updated_at": "2026-07-14T22:15:34.857350+00:00"
 }

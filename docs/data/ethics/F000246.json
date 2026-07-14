@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.1,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2377.09,
+        "label": "Small individual (unitemized)",
+        "share": 0.005240973459520261
+      },
+      {
+        "amount": 208601.78,
+        "label": "Large individual (itemized)",
+        "share": 0.45992217063244734
+      },
+      {
+        "amount": 242580.0,
+        "label": "PAC / other committees",
+        "share": 0.5348368559080324
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0TX04219",
+      "district": "04",
+      "name": "FALLON, PATRICK",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1062355.62,
+      "debts": 25000.0,
+      "disbursements": 283211.67,
+      "individualContributions": 210978.87,
+      "receipts": 685489.02
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:19:12.720244+00:00"
+  "updated_at": "2026-07-14T22:14:01.710401+00:00"
 }

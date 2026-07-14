@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 91.8,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 958783.47,
+        "label": "Small individual (unitemized)",
+        "share": 0.32759206720697875
+      },
+      {
+        "amount": 1353965.42,
+        "label": "Large individual (itemized)",
+        "share": 0.46261574666547517
+      },
+      {
+        "amount": 613990.0,
+        "label": "PAC / other committees",
+        "share": 0.20978485720494627
+      },
+      {
+        "amount": 21.45,
+        "label": "Political party committees",
+        "share": 7.328922599791687e-06
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8KS03155",
+      "district": "03",
+      "name": "DAVIDS, SHARICE",
+      "office": "H",
+      "party": "DEM",
+      "state": "KS"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1435681.5,
+      "debts": 0.0,
+      "disbursements": 1905382.38,
+      "individualContributions": 2312748.89,
+      "receipts": 2937808.09
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:15:38.274555+00:00"
+  "updated_at": "2026-07-14T22:16:23.685929+00:00"
 }

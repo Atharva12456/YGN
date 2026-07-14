@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.8,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 896031.46,
+        "label": "Small individual (unitemized)",
+        "share": 0.28920232974249604
+      },
+      {
+        "amount": 1248254.3,
+        "label": "Large individual (itemized)",
+        "share": 0.40288546528387364
+      },
+      {
+        "amount": 954000.0,
+        "label": "PAC / other committees",
+        "share": 0.30791220497363037
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA18199",
+      "district": "14",
+      "name": "RESCHENTHALER, GUY MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 739459.98,
+      "debts": 0.0,
+      "disbursements": 3419788.3,
+      "individualContributions": 2144285.76,
+      "receipts": 3610168.12
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 3,
-  "updated_at": "2026-07-13T12:21:16.328455+00:00"
+  "updated_at": "2026-07-14T22:15:20.364582+00:00"
 }

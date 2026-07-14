@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 67.3,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 4856.45,
+        "label": "Small individual (unitemized)",
+        "share": 0.006374704513028795
+      },
+      {
+        "amount": 416474.94,
+        "label": "Large individual (itemized)",
+        "share": 0.5466760039908568
+      },
+      {
+        "amount": 340500.0,
+        "label": "PAC / other committees",
+        "share": 0.4469492914961144
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MS03125",
+      "district": "03",
+      "name": "GUEST, MICHAEL PATRICK",
+      "office": "H",
+      "party": "REP",
+      "state": "MS"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 941929.6,
+      "debts": 0.0,
+      "disbursements": 332196.9,
+      "individualContributions": 421331.39,
+      "receipts": 762781.06
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-14T05:58:43.023124+00:00"
+  "updated_at": "2026-07-14T22:16:08.415521+00:00"
 }

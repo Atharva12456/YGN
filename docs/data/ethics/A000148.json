@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.1,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 21872.59,
+        "label": "Small individual (unitemized)",
+        "share": 0.009274924792214022
+      },
+      {
+        "amount": 1778127.26,
+        "label": "Large individual (itemized)",
+        "share": 0.7540029144918635
+      },
+      {
+        "amount": 556250.0,
+        "label": "PAC / other committees",
+        "share": 0.23587407415715514
+      },
+      {
+        "amount": 2000.0,
+        "label": "Political party committees",
+        "share": 0.0008480865587672994
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0MA04192",
+      "district": "04",
+      "name": "AUCHINCLOSS, JAKE",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 6984162.97,
+      "debts": 0.0,
+      "disbursements": 914678.35,
+      "individualContributions": 1799999.85,
+      "receipts": 2915614.55
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-07-13T12:19:45.842895+00:00"
+  "updated_at": "2026-07-14T22:14:12.616915+00:00"
 }

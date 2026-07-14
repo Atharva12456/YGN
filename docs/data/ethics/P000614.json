@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 77.9,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 258982.74,
+        "label": "Small individual (unitemized)",
+        "share": 0.06458175293870175
+      },
+      {
+        "amount": 2463918.41,
+        "label": "Large individual (itemized)",
+        "share": 0.6144199803266382
+      },
+      {
+        "amount": 1277252.31,
+        "label": "PAC / other committees",
+        "share": 0.318504596579703
+      },
+      {
+        "amount": 10000.0,
+        "label": "Political party committees",
+        "share": 0.002493670154957112
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NH01210",
+      "district": "01",
+      "name": "PAPPAS, CHRIS",
+      "office": "H",
+      "party": "DEM",
+      "state": "NH"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 407584.23,
+      "debts": 0.0,
+      "disbursements": 3774742.48,
+      "individualContributions": 2722901.15,
+      "receipts": 4069100.41
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:21:48.242503+00:00"
+  "updated_at": "2026-07-14T22:16:04.454059+00:00"
 }

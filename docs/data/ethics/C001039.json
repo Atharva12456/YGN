@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.2,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 280040.43,
+        "label": "Small individual (unitemized)",
+        "share": 0.2366347037645047
+      },
+      {
+        "amount": 361388.82,
+        "label": "Large individual (itemized)",
+        "share": 0.3053742502984441
+      },
+      {
+        "amount": 542000.0,
+        "label": "PAC / other committees",
+        "share": 0.45799104593705114
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0FL03175",
+      "district": "03",
+      "name": "CAMMACK, KAT",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 842581.65,
+      "debts": 0.0,
+      "disbursements": 1232248.27,
+      "individualContributions": 641429.25,
+      "receipts": 1519279.02
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:19:43.065175+00:00"
+  "updated_at": "2026-07-14T22:14:07.340927+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.6,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 178368.34,
+        "label": "Small individual (unitemized)",
+        "share": 0.07431210512213149
+      },
+      {
+        "amount": 1496391.21,
+        "label": "Large individual (itemized)",
+        "share": 0.6234289162603269
+      },
+      {
+        "amount": 725500.0,
+        "label": "PAC / other committees",
+        "share": 0.30225897861754164
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8WA08189",
+      "district": "08",
+      "name": "SCHRIER, KIM DR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3287787.61,
+      "debts": 0.0,
+      "disbursements": 982947.87,
+      "individualContributions": 1674759.55,
+      "receipts": 2449112.81
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:19:49.997812+00:00"
+  "updated_at": "2026-07-14T22:14:36.890890+00:00"
 }

@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 39.0,
-      "value": 0.061,
+      "score": 46.0,
+      "value": 0.167,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 68.7,
-      "value": 0.5392,
+      "score": 67.5,
+      "value": 0.5294,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 38.5,
-      "value": 0.0076,
+      "score": 38.4,
+      "value": 0.0075,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,8 +42,54 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 60.6,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "financeScore": 61.7,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6654.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.003954444266782235
+      },
+      {
+        "amount": 884251.55,
+        "label": "Large individual (itemized)",
+        "share": 0.525431177992175
+      },
+      {
+        "amount": 792000.0,
+        "label": "PAC / other committees",
+        "share": 0.4706143777410428
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA10147",
+      "district": "09",
+      "name": "MEUSER, DANIEL",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 170733.23,
+      "debts": 250000.0,
+      "disbursements": 1765991.01,
+      "individualContributions": 890906.51,
+      "receipts": 1903077.51
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -51,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 28.6,
+  "score": 29.7,
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 7,
-  "updated_at": "2026-07-13T12:21:21.123654+00:00"
+  "updated_at": "2026-07-14T22:15:27.013318+00:00"
 }

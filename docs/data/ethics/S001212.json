@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.7,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 102297.86,
+        "label": "Small individual (unitemized)",
+        "share": 0.07442437038066352
+      },
+      {
+        "amount": 564013.55,
+        "label": "Large individual (itemized)",
+        "share": 0.41033461838706
+      },
+      {
+        "amount": 708209.59,
+        "label": "PAC / other committees",
+        "share": 0.5152410112322765
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MN08043",
+      "district": "08",
+      "name": "STAUBER, PETER ALLEN",
+      "office": "H",
+      "party": "REP",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1006585.62,
+      "debts": 0.0,
+      "disbursements": 991440.35,
+      "individualContributions": 666311.41,
+      "receipts": 1469532.42
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-14T05:58:44.410052+00:00"
+  "updated_at": "2026-07-14T22:16:13.976595+00:00"
 }

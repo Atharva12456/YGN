@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.8,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 177681.77,
+        "label": "Small individual (unitemized)",
+        "share": 0.10117586560776465
+      },
+      {
+        "amount": 984803.09,
+        "label": "Large individual (itemized)",
+        "share": 0.5607683055158182
+      },
+      {
+        "amount": 593650.0,
+        "label": "PAC / other committees",
+        "share": 0.3380372258676255
+      },
+      {
+        "amount": 32.67,
+        "label": "Political party committees",
+        "share": 1.8603008791535965e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8IL06139",
+      "district": "06",
+      "name": "CASTEN, SEAN",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1181226.85,
+      "debts": 455694.37,
+      "disbursements": 1307539.58,
+      "individualContributions": 1162484.86,
+      "receipts": 1794623.93
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:16:01.572156+00:00"
+  "updated_at": "2026-07-14T22:16:39.731047+00:00"
 }

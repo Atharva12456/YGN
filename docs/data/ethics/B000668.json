@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.2,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 43892.77,
+        "label": "Small individual (unitemized)",
+        "share": 0.054655848339032156
+      },
+      {
+        "amount": 324391.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4039358941927561
+      },
+      {
+        "amount": 434791.68,
+        "label": "PAC / other committees",
+        "share": 0.5414082574682118
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0OR02127",
+      "district": "02",
+      "name": "BENTZ, CLIFF",
+      "office": "H",
+      "party": "REP",
+      "state": "OR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1390101.01,
+      "debts": 0.0,
+      "disbursements": 469467.44,
+      "individualContributions": 368283.77,
+      "receipts": 803223.65
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T12:19:44.572367+00:00"
+  "updated_at": "2026-07-14T22:14:10.499162+00:00"
 }

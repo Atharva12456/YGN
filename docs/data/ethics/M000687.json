@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.4,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 7270.04,
+        "label": "Small individual (unitemized)",
+        "share": 0.019919874321902575
+      },
+      {
+        "amount": 164444.11,
+        "label": "Large individual (itemized)",
+        "share": 0.4505760634297916
+      },
+      {
+        "amount": 193250.0,
+        "label": "PAC / other committees",
+        "share": 0.5295040622483057
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6MD07020",
+      "district": "07",
+      "name": "MFUME, KWEISI",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 756167.84,
+      "debts": 0.0,
+      "disbursements": 303037.65,
+      "individualContributions": 171714.15,
+      "receipts": 365280.03
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T12:20:50.117933+00:00"
+  "updated_at": "2026-07-14T22:14:21.886192+00:00"
 }

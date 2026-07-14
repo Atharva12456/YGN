@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 91.6,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 265283.43,
+        "label": "Small individual (unitemized)",
+        "share": 0.3264662956458662
+      },
+      {
+        "amount": 503307.13,
+        "label": "Large individual (itemized)",
+        "share": 0.6193858934319887
+      },
+      {
+        "amount": 44000.0,
+        "label": "PAC / other committees",
+        "share": 0.054147810922145094
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MA07032",
+      "district": "07",
+      "name": "PRESSLEY, AYANNA",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 138065.23,
+      "debts": 0.0,
+      "disbursements": 894648.84,
+      "individualContributions": 768590.56,
+      "receipts": 914492.66
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:15:36.052264+00:00"
+  "updated_at": "2026-07-14T22:16:19.335884+00:00"
 }

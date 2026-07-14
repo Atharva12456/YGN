@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 87.9,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 322830.19,
+        "label": "Small individual (unitemized)",
+        "share": 0.5492036543193142
+      },
+      {
+        "amount": 208184.89,
+        "label": "Large individual (itemized)",
+        "share": 0.35416731738151397
+      },
+      {
+        "amount": 56800.0,
+        "label": "PAC / other committees",
+        "share": 0.09662902829917192
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2FL14186",
+      "district": "19",
+      "name": "DONALDS, BYRON",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 418538.66,
+      "debts": 0.0,
+      "disbursements": 2057060.69,
+      "individualContributions": 531015.08,
+      "receipts": 735588.89
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 13,
-  "updated_at": "2026-07-14T03:33:45.909178+00:00"
+  "updated_at": "2026-07-14T22:14:04.126415+00:00"
 }

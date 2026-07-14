@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.1,
-  "generated_at": "2026-07-13T15:15:07.996530+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 15010.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.026262465690641324
+      },
+      {
+        "amount": 311707.03,
+        "label": "Large individual (itemized)",
+        "share": 0.5453544173525098
+      },
+      {
+        "amount": 243850.0,
+        "label": "PAC / other committees",
+        "share": 0.42663354327109493
+      },
+      {
+        "amount": 1000.0,
+        "label": "Political party committees",
+        "share": 0.0017495736857539264
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8ID01124",
+      "district": "01",
+      "name": "FULCHER, RUSSELL",
+      "office": "H",
+      "party": "REP",
+      "state": "ID"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 259074.78,
+      "debts": 0.0,
+      "disbursements": 498678.27,
+      "individualContributions": 326717.81,
+      "receipts": 577744.33
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T15:16:19.342640+00:00"
+  "updated_at": "2026-07-14T22:16:42.827948+00:00"
 }

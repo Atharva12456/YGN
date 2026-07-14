@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.2,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 123441.57,
+        "label": "Small individual (unitemized)",
+        "share": 0.1222651566702471
+      },
+      {
+        "amount": 364373.79,
+        "label": "Large individual (itemized)",
+        "share": 0.36090126300954944
+      },
+      {
+        "amount": 518870.0,
+        "label": "PAC / other committees",
+        "share": 0.5139251051448155
+      },
+      {
+        "amount": 2936.46,
+        "label": "Political party committees",
+        "share": 0.0029084751753879487
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CT05245",
+      "district": "05",
+      "name": "HAYES, JAHANA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 985738.05,
+      "debts": 0.0,
+      "disbursements": 641190.75,
+      "individualContributions": 487815.36,
+      "receipts": 1104377.78
+    }
+  },
+  "generated_at": "2026-07-14T22:13:53.911703+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T05:58:54.091160+00:00"
+  "updated_at": "2026-07-14T22:16:44.974770+00:00"
 }
