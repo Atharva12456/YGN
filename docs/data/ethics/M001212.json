@@ -1,19 +1,58 @@
 {
-    "available":  false,
-    "bioguideId":  "M001212",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "M001212",
+  "candidate": {
+    "candidate_id": "H8AL02171",
+    "district": "01",
+    "name": "MOORE, FELIX BARRY",
+    "office": "H",
+    "party": "REP",
+    "state": "AL"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 52.4,
+      "value": 0.2646,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 96.7,
+      "value": 0.7103,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 79.0,
+      "value": 0.6252,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 92.1,
+      "value": 0.9646,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 48.2,
+      "value": 0.0288,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2024,
+  "financeScore": 68.2,
+  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "grade": "D+",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 68.2,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-14T00:09:03.620940+00:00"
 }
