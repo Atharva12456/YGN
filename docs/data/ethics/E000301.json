@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.1,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 61422.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.05806902595271631
+      },
+      {
+        "amount": 600112.32,
+        "label": "Large individual (itemized)",
+        "share": 0.567348918491228
+      },
+      {
+        "amount": 395564.79,
+        "label": "PAC / other committees",
+        "share": 0.37396875271567454
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 648.72,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0006133028403809966
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MD03156",
+      "district": "03",
+      "name": "ELFRETH, SARAH KELLY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 314695.35,
+      "debts": 0.0,
+      "disbursements": 779931.59,
+      "individualContributions": 661534.73,
+      "receipts": 1063887.39
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:14:12.498286+00:00"
+  "updated_at": "2026-07-14T17:45:19.809525+00:00"
 }

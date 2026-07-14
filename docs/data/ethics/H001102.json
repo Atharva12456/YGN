@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.2,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 44761.51,
+        "label": "Small individual (unitemized)",
+        "share": 0.06247066291153795
+      },
+      {
+        "amount": 503008.97,
+        "label": "Large individual (itemized)",
+        "share": 0.7020161698376552
+      },
+      {
+        "amount": 168500.01,
+        "label": "PAC / other committees",
+        "share": 0.2351642588755557
+      },
+      {
+        "amount": 250.0,
+        "label": "Political party committees",
+        "share": 0.00034890837525106925
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC08066",
+      "district": "08",
+      "name": "HARRIS, MARK E",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 399538.91,
+      "debts": 0.0,
+      "disbursements": 457379.59,
+      "individualContributions": 547770.48,
+      "receipts": 749385.78
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:38:27.086457+00:00"
+  "updated_at": "2026-07-14T17:44:44.280671+00:00"
 }

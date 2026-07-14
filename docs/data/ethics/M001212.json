@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 68.2,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 18686.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.017983410065020945
+      },
+      {
+        "amount": 630930.57,
+        "label": "Large individual (itemized)",
+        "share": 0.6071810593170696
+      },
+      {
+        "amount": 389496.99,
+        "label": "PAC / other committees",
+        "share": 0.3748355306179094
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 20000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.01924715929732394
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8AL02171",
+      "district": "01",
+      "name": "MOORE, FELIX BARRY",
+      "office": "H",
+      "party": "REP",
+      "state": "AL"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 125131.66,
+      "debts": 0.0,
+      "disbursements": 1467853.12,
+      "individualContributions": 649617.39,
+      "receipts": 1130187.3
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:09:03.620940+00:00"
+  "updated_at": "2026-07-14T17:45:53.302428+00:00"
 }

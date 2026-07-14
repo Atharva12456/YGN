@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.4,
-  "generated_at": "2026-07-12T23:30:52.026239+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 58376.75,
+        "label": "Small individual (unitemized)",
+        "share": 0.09807129326530054
+      },
+      {
+        "amount": 281371.34,
+        "label": "Large individual (itemized)",
+        "share": 0.47269591406836775
+      },
+      {
+        "amount": 255500.0,
+        "label": "PAC / other committees",
+        "share": 0.4292327926663318
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MO09146",
+      "district": "03",
+      "name": "ONDER JR, ROBERT FRANK",
+      "office": "H",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 367424.18,
+      "debts": 894000.0,
+      "disbursements": 439795.37,
+      "individualContributions": 339748.09,
+      "receipts": 656775.41
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:31:28.597398+00:00"
+  "updated_at": "2026-07-14T17:46:21.120802+00:00"
 }

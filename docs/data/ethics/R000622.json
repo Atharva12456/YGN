@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.3,
-  "generated_at": "2026-07-12T23:30:52.026239+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 415805.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.10871673855086764
+      },
+      {
+        "amount": 2750521.28,
+        "label": "Large individual (itemized)",
+        "share": 0.7191521747512511
+      },
+      {
+        "amount": 656121.0,
+        "label": "PAC / other committees",
+        "share": 0.17154960678943218
+      },
+      {
+        "amount": 2223.97,
+        "label": "Political party committees",
+        "share": 0.0005814799084490413
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY22177",
+      "district": "19",
+      "name": "RILEY, JOSH",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2920373.88,
+      "debts": 0.0,
+      "disbursements": 1484272.23,
+      "individualContributions": 3166327.16,
+      "receipts": 4336326.5
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:31:23.009404+00:00"
+  "updated_at": "2026-07-14T17:44:29.330246+00:00"
 }

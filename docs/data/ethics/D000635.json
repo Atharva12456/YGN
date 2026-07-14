@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.3,
-  "generated_at": "2026-07-14T06:24:27.711003+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 83625.52,
+        "label": "Small individual (unitemized)",
+        "share": 0.0934601795501659
+      },
+      {
+        "amount": 520174.35,
+        "label": "Large individual (itemized)",
+        "share": 0.5813487096808586
+      },
+      {
+        "amount": 290971.79,
+        "label": "PAC / other committees",
+        "share": 0.3251911107689754
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4OR03192",
+      "district": "03",
+      "name": "DEXTER, MAXINE",
+      "office": "H",
+      "party": "DEM",
+      "state": "OR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 180833.6,
+      "debts": 0.0,
+      "disbursements": 750310.65,
+      "individualContributions": 603799.87,
+      "receipts": 908657.88
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T06:24:44.110496+00:00"
+  "updated_at": "2026-07-14T17:45:26.965406+00:00"
 }

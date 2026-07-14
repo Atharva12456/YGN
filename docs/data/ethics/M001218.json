@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.8,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 11662.39,
+        "label": "Small individual (unitemized)",
+        "share": 0.01652693943461873
+      },
+      {
+        "amount": 349247.0,
+        "label": "Large individual (itemized)",
+        "share": 0.49492291174641634
+      },
+      {
+        "amount": 344750.0,
+        "label": "PAC / other committees",
+        "share": 0.4885501488189649
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0GA07273",
+      "district": "07",
+      "name": "MCCORMICK, RICHARD DEAN DR.",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 836449.63,
+      "debts": 1000.0,
+      "disbursements": 1214183.69,
+      "individualContributions": 360909.39,
+      "receipts": 1352810.41
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-07-13T04:37:14.645634+00:00"
+  "updated_at": "2026-07-14T17:45:42.570656+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.3,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 196204.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.1347848007894725
+      },
+      {
+        "amount": 549842.01,
+        "label": "Large individual (itemized)",
+        "share": 0.3777202357538855
+      },
+      {
+        "amount": 709639.53,
+        "label": "PAC / other committees",
+        "share": 0.4874949634566419
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4GA03126",
+      "district": "03",
+      "name": "JACK, BRIAN",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 900333.09,
+      "debts": 61921.99,
+      "disbursements": 1021445.33,
+      "individualContributions": 746046.34,
+      "receipts": 1681602.09
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:38:23.867180+00:00"
+  "updated_at": "2026-07-14T17:44:43.008918+00:00"
 }

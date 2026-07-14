@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.9,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 476096.49,
+        "label": "Small individual (unitemized)",
+        "share": 0.29110620691129385
+      },
+      {
+        "amount": 587099.47,
+        "label": "Large individual (itemized)",
+        "share": 0.35897828146418587
+      },
+      {
+        "amount": 572277.55,
+        "label": "PAC / other committees",
+        "share": 0.34991551162452034
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MT02098",
+      "district": "02",
+      "name": "DOWNING, TROY",
+      "office": "H",
+      "party": "REP",
+      "state": "MT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 393570.28,
+      "debts": 2021752.09,
+      "disbursements": 1512717.48,
+      "individualContributions": 1063195.96,
+      "receipts": 1794757.26
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:14:22.230594+00:00"
+  "updated_at": "2026-07-14T17:45:28.232499+00:00"
 }

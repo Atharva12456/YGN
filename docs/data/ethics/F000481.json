@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.9,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 60639.55,
+        "label": "Small individual (unitemized)",
+        "share": 0.07453756772302697
+      },
+      {
+        "amount": 176531.25,
+        "label": "Large individual (itemized)",
+        "share": 0.2169905614752353
+      },
+      {
+        "amount": 576372.65,
+        "label": "PAC / other committees",
+        "share": 0.7084718708017378
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4AL02170",
+      "district": "02",
+      "name": "FIGURES, SHOMARI C.",
+      "office": "H",
+      "party": "DEM",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 320930.79,
+      "debts": 12000.0,
+      "disbursements": 525227.08,
+      "individualContributions": 237170.8,
+      "receipts": 827549.0
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:07:52.366012+00:00"
+  "updated_at": "2026-07-14T17:45:16.532731+00:00"
 }

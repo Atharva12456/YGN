@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.6,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 20500.87,
+        "label": "Small individual (unitemized)",
+        "share": 0.014313675837333527
+      },
+      {
+        "amount": 1036556.66,
+        "label": "Large individual (itemized)",
+        "share": 0.7237222624341867
+      },
+      {
+        "amount": 375200.0,
+        "label": "PAC / other committees",
+        "share": 0.2619640617284798
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC14015",
+      "district": "14",
+      "name": "MOORE, TIM",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1574662.76,
+      "debts": 0.0,
+      "disbursements": 782550.04,
+      "individualContributions": 1057057.53,
+      "receipts": 1433646.24
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 50,
   "stockPtrCount": 20,
-  "updated_at": "2026-07-13T23:13:29.998577+00:00"
+  "updated_at": "2026-07-14T17:44:34.861483+00:00"
 }

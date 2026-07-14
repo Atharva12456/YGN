@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.1,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1166733.73,
+        "label": "Small individual (unitemized)",
+        "share": 0.28969613080325585
+      },
+      {
+        "amount": 2042464.13,
+        "label": "Large individual (itemized)",
+        "share": 0.5071370961096995
+      },
+      {
+        "amount": 808241.95,
+        "label": "PAC / other committees",
+        "share": 0.20068380612248057
+      },
+      {
+        "amount": 10000.0,
+        "label": "Political party committees",
+        "share": 0.0024829669645640216
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0WI03175",
+      "district": "03",
+      "name": "VAN ORDEN, DERRICK F. MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3808823.62,
+      "debts": 193779.68,
+      "disbursements": 2385497.22,
+      "individualContributions": 3209197.86,
+      "receipts": 5677514.78
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:12.057028+00:00"
+  "updated_at": "2026-07-14T17:46:37.400869+00:00"
 }

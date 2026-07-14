@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.1,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 76000.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.08722292702432533
+      },
+      {
+        "amount": 480414.12,
+        "label": "Large individual (itemized)",
+        "share": 0.5513509687160674
+      },
+      {
+        "amount": 314925.0,
+        "label": "PAC / other committees",
+        "share": 0.36142610425960736
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NC13243",
+      "district": "10",
+      "name": "HARRIGAN, PAT",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 440280.06,
+      "debts": 0.0,
+      "disbursements": 586537.64,
+      "individualContributions": 556414.94,
+      "receipts": 973976.35
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:38:30.179706+00:00"
+  "updated_at": "2026-07-14T17:44:45.523058+00:00"
 }

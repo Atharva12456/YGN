@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 64.0,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 16627.37,
+        "label": "Small individual (unitemized)",
+        "share": 0.011342727711618188
+      },
+      {
+        "amount": 693281.2,
+        "label": "Large individual (itemized)",
+        "share": 0.4729370838072354
+      },
+      {
+        "amount": 755997.2,
+        "label": "PAC / other committees",
+        "share": 0.5157201884811463
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA20181",
+      "district": "20",
+      "name": "FONG, VINCE",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 314212.78,
+      "debts": 0.0,
+      "disbursements": 1317278.41,
+      "individualContributions": 709908.57,
+      "receipts": 1592259.79
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:10.183165+00:00"
+  "updated_at": "2026-07-14T17:46:32.908734+00:00"
 }

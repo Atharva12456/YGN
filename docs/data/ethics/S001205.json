@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.1,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 68359.32,
+        "label": "Small individual (unitemized)",
+        "share": 0.08148659539323896
+      },
+      {
+        "amount": 396564.15,
+        "label": "Large individual (itemized)",
+        "share": 0.47271772800714995
+      },
+      {
+        "amount": 373200.0,
+        "label": "PAC / other committees",
+        "share": 0.44486687990396595
+      },
+      {
+        "amount": 779.17,
+        "label": "Political party committees",
+        "share": 0.0009287966956451585
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA07200",
+      "district": "05",
+      "name": "SCANLON, MARY GAY",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 400101.56,
+      "debts": 0.0,
+      "disbursements": 756595.96,
+      "individualContributions": 464923.47,
+      "receipts": 838951.75
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:09:10.847641+00:00"
+  "updated_at": "2026-07-14T17:46:00.964239+00:00"
 }

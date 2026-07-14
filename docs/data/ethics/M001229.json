@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 93.2,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 999063.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.5559501801422223
+      },
+      {
+        "amount": 377841.38,
+        "label": "Large individual (itemized)",
+        "share": 0.2102578161307567
+      },
+      {
+        "amount": 420100.0,
+        "label": "PAC / other committees",
+        "share": 0.23377351775639527
+      },
+      {
+        "amount": 33.22,
+        "label": "Political party committees",
+        "share": 1.8485970625725898e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NJ10176",
+      "district": "10",
+      "name": "MCIVER, LAMONICA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 587809.91,
+      "debts": 0.0,
+      "disbursements": 1373520.74,
+      "individualContributions": 1376905.23,
+      "receipts": 1798118.18
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:11.299821+00:00"
+  "updated_at": "2026-07-14T17:46:30.976617+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 62.9,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6674.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.005904077777672606
+      },
+      {
+        "amount": 584825.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5173509965879117
+      },
+      {
+        "amount": 538923.0,
+        "label": "PAC / other committees",
+        "share": 0.4767449256344156
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4UT02296",
+      "district": "03",
+      "name": "MALOY, CELESTE",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 254672.69,
+      "debts": 135814.53,
+      "disbursements": 1029710.02,
+      "individualContributions": 591499.1,
+      "receipts": 1177361.28
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T04:37:13.254874+00:00"
+  "updated_at": "2026-07-14T17:46:34.965890+00:00"
 }

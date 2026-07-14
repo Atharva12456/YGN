@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.6,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 328427.8,
+        "label": "Small individual (unitemized)",
+        "share": 0.08241138197160064
+      },
+      {
+        "amount": 2444179.45,
+        "label": "Large individual (itemized)",
+        "share": 0.6133104635511574
+      },
+      {
+        "amount": 1209328.87,
+        "label": "PAC / other committees",
+        "share": 0.3034531895133548
+      },
+      {
+        "amount": 3287.67,
+        "label": "Political party committees",
+        "share": 0.0008249649638872601
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MI08218",
+      "district": "08",
+      "name": "MCDONALD RIVET, KRISTEN",
+      "office": "H",
+      "party": "DEM",
+      "state": "MI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3435066.74,
+      "debts": 0.0,
+      "disbursements": 966935.95,
+      "individualContributions": 2772607.25,
+      "receipts": 4384972.17
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:28.363730+00:00"
+  "updated_at": "2026-07-14T17:44:33.765652+00:00"
 }

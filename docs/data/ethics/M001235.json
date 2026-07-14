@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.5,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 187367.56,
+        "label": "Small individual (unitemized)",
+        "share": 0.21981384925529038
+      },
+      {
+        "amount": 241274.41,
+        "label": "Large individual (itemized)",
+        "share": 0.2830557049944992
+      },
+      {
+        "amount": 423750.0,
+        "label": "PAC / other committees",
+        "share": 0.4971304457502104
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WV02205",
+      "district": "02",
+      "name": "MOORE, RILEY",
+      "office": "H",
+      "party": "REP",
+      "state": "WV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 685114.29,
+      "debts": 60882.19,
+      "disbursements": 571785.15,
+      "individualContributions": 428641.97,
+      "receipts": 1133936.61
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:31.699853+00:00"
+  "updated_at": "2026-07-14T17:44:36.089854+00:00"
 }

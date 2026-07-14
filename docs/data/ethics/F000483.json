@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.4,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 52293.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.07012521197878964
+      },
+      {
+        "amount": 454868.23,
+        "label": "Large individual (itemized)",
+        "share": 0.6099789140946483
+      },
+      {
+        "amount": 238550.0,
+        "label": "PAC / other committees",
+        "share": 0.31989587392656194
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA30149",
+      "district": "30",
+      "name": "FRIEDMAN, LAURA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 435166.4,
+      "debts": 0.0,
+      "disbursements": 610923.76,
+      "individualContributions": 507161.4,
+      "receipts": 749341.92
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 4,
-  "updated_at": "2026-07-12T23:38:42.564639+00:00"
+  "updated_at": "2026-07-14T17:45:07.157224+00:00"
 }

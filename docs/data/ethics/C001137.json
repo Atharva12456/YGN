@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.7,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 139234.55,
+        "label": "Small individual (unitemized)",
+        "share": 0.08595069535871287
+      },
+      {
+        "amount": 728700.57,
+        "label": "Large individual (itemized)",
+        "share": 0.4498331822079392
+      },
+      {
+        "amount": 752000.0,
+        "label": "PAC / other committees",
+        "share": 0.4642161224333478
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CO05142",
+      "district": "05",
+      "name": "CRANK, JEFF",
+      "office": "H",
+      "party": "REP",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1294118.76,
+      "debts": 0.0,
+      "disbursements": 771383.73,
+      "individualContributions": 867935.12,
+      "receipts": 1998949.35
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:07:54.985838+00:00"
+  "updated_at": "2026-07-14T17:45:29.492861+00:00"
 }

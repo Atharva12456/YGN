@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.0,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 27678.9,
+        "label": "Small individual (unitemized)",
+        "share": 0.028893555304645328
+      },
+      {
+        "amount": 409682.13,
+        "label": "Large individual (itemized)",
+        "share": 0.4276605385502999
+      },
+      {
+        "amount": 520600.0,
+        "label": "PAC / other committees",
+        "share": 0.5434459061450547
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC13116",
+      "district": "13",
+      "name": "KNOTT, BRAD",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 588189.02,
+      "debts": 760482.71,
+      "disbursements": 511911.55,
+      "individualContributions": 437361.03,
+      "receipts": 1082840.47
+    }
+  },
+  "generated_at": "2026-07-14T17:43:38.351434+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-12T23:38:17.669470+00:00"
+  "updated_at": "2026-07-14T17:44:41.750437+00:00"
 }
