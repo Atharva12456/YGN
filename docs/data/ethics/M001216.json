@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 85.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 449017.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.6559349321806786
+      },
+      {
+        "amount": 189028.39,
+        "label": "Large individual (itemized)",
+        "share": 0.27613684203898803
+      },
+      {
+        "amount": 46500.0,
+        "label": "PAC / other committees",
+        "share": 0.06792822578033353
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2FL07156",
+      "district": "07",
+      "name": "MILLS, CORY",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 115511.35,
+      "debts": 2010517.78,
+      "disbursements": 730689.6,
+      "individualContributions": 638046.07,
+      "receipts": 805308.94
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:15.016530+00:00"
+  "updated_at": "2026-07-14T19:47:59.448459+00:00"
 }

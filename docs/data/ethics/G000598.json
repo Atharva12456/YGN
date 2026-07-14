@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 92.1,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 969928.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.4454673407499952
+      },
+      {
+        "amount": 726416.13,
+        "label": "Large individual (itemized)",
+        "share": 0.33362744621875284
+      },
+      {
+        "amount": 480982.94,
+        "label": "PAC / other committees",
+        "share": 0.22090521303125196
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA47188",
+      "district": "42",
+      "name": "GARCIA, ROBERT",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1148481.48,
+      "debts": 0.0,
+      "disbursements": 1467657.69,
+      "individualContributions": 1696344.31,
+      "receipts": 2203711.27
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:17.283847+00:00"
+  "updated_at": "2026-07-14T19:48:13.072666+00:00"
 }

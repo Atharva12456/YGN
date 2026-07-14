@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 57.3,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1327.09,
+        "label": "Small individual (unitemized)",
+        "share": 0.0011920653427398725
+      },
+      {
+        "amount": 450071.2,
+        "label": "Large individual (itemized)",
+        "share": 0.4042787446860015
+      },
+      {
+        "amount": 661871.22,
+        "label": "PAC / other committees",
+        "share": 0.5945291899712586
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA08135",
+      "district": "23",
+      "name": "OBERNOLTE, JAY",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1529188.1,
+      "debts": 1125000.0,
+      "disbursements": 668110.75,
+      "individualContributions": 451398.29,
+      "receipts": 1199459.09
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:22.730526+00:00"
+  "updated_at": "2026-07-14T19:48:35.420749+00:00"
 }

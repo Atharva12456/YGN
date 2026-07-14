@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.3,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 240855.77,
+        "label": "Small individual (unitemized)",
+        "share": 0.06851621597176431
+      },
+      {
+        "amount": 1505854.11,
+        "label": "Large individual (itemized)",
+        "share": 0.4283701628685455
+      },
+      {
+        "amount": 1768600.57,
+        "label": "PAC / other committees",
+        "share": 0.5031136211596902
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA31125",
+      "district": "33",
+      "name": "AGUILAR, PETE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3339947.96,
+      "debts": 0.0,
+      "disbursements": 3503428.18,
+      "individualContributions": 1746709.88,
+      "receipts": 4194304.97
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:28:23.089949+00:00"
+  "updated_at": "2026-07-14T19:49:14.516660+00:00"
 }

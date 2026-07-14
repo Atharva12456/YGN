@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 86.1,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 362301.74,
+        "label": "Small individual (unitemized)",
+        "share": 0.20424114078146816
+      },
+      {
+        "amount": 1002840.33,
+        "label": "Large individual (itemized)",
+        "share": 0.5653333407144663
+      },
+      {
+        "amount": 408750.0,
+        "label": "PAC / other committees",
+        "share": 0.23042551850406545
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2FL14053",
+      "district": "23",
+      "name": "FRANKEL, LOIS J.",
+      "office": "H",
+      "party": "DEM",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1464968.6,
+      "debts": 0.0,
+      "disbursements": 678246.06,
+      "individualContributions": 1365142.07,
+      "receipts": 1855772.41
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:28:26.228870+00:00"
+  "updated_at": "2026-07-14T19:49:33.976688+00:00"
 }

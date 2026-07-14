@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 67.5,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 52385.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.03891147239588766
+      },
+      {
+        "amount": 624682.01,
+        "label": "Large individual (itemized)",
+        "share": 0.46401112048379
+      },
+      {
+        "amount": 669198.0,
+        "label": "PAC / other committees",
+        "share": 0.4970774071203224
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MI07103",
+      "district": "05",
+      "name": "WALBERG, TIMOTHY L REP",
+      "office": "H",
+      "party": "REP",
+      "state": "MI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 952739.81,
+      "debts": 0.0,
+      "disbursements": 1395521.12,
+      "individualContributions": 677067.17,
+      "receipts": 1438809.13
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T08:28:48.201495+00:00"
+  "updated_at": "2026-07-14T19:47:36.151338+00:00"
 }

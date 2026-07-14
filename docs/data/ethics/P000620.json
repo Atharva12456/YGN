@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 179538.37,
+        "label": "Small individual (unitemized)",
+        "share": 0.10768410044336754
+      },
+      {
+        "amount": 587980.7,
+        "label": "Large individual (itemized)",
+        "share": 0.3526609535196379
+      },
+      {
+        "amount": 899750.0,
+        "label": "PAC / other committees",
+        "share": 0.5396549460369945
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CO07045",
+      "district": "07",
+      "name": "PETTERSEN, BRITTANY LOUISE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 985233.87,
+      "debts": 0.0,
+      "disbursements": 1274437.48,
+      "individualContributions": 767519.07,
+      "receipts": 1698739.12
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:09.585266+00:00"
+  "updated_at": "2026-07-14T19:47:55.698242+00:00"
 }

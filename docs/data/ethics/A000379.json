@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 67.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 14750.24,
+        "label": "Small individual (unitemized)",
+        "share": 0.013972173661157187
+      },
+      {
+        "amount": 600375.7,
+        "label": "Large individual (itemized)",
+        "share": 0.5687062408705762
+      },
+      {
+        "amount": 440560.91,
+        "label": "PAC / other committees",
+        "share": 0.4173215854682664
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MO04207",
+      "district": "04",
+      "name": "ALFORD, MARK",
+      "office": "H",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 742113.48,
+      "debts": 0.0,
+      "disbursements": 581581.52,
+      "individualContributions": 615125.94,
+      "receipts": 1105826.7
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T05:25:39.535665+00:00"
+  "updated_at": "2026-07-14T19:46:56.888870+00:00"
 }

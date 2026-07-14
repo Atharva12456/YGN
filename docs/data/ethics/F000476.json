@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 93.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1550112.48,
+        "label": "Small individual (unitemized)",
+        "share": 0.5577029928107083
+      },
+      {
+        "amount": 988596.3,
+        "label": "Large individual (itemized)",
+        "share": 0.3556794247547719
+      },
+      {
+        "amount": 234500.0,
+        "label": "PAC / other committees",
+        "share": 0.08436894322282412
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 6250.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.002248639211695739
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2FL10259",
+      "district": "10",
+      "name": "FROST, MAXWELL ALEJANDRO",
+      "office": "H",
+      "party": "DEM",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1434530.7,
+      "debts": 0.0,
+      "disbursements": 2475654.79,
+      "individualContributions": 2538708.78,
+      "receipts": 2818459.77
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:08.550168+00:00"
+  "updated_at": "2026-07-14T19:48:14.853321+00:00"
 }

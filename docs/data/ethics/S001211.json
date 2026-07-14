@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.9,
-  "generated_at": "2026-07-13T12:17:17.615063+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 90791.69,
+        "label": "Small individual (unitemized)",
+        "share": 0.04289392351111226
+      },
+      {
+        "amount": 1387101.85,
+        "label": "Large individual (itemized)",
+        "share": 0.6553269429836839
+      },
+      {
+        "amount": 638725.0,
+        "label": "PAC / other committees",
+        "share": 0.30176133184254167
+      },
+      {
+        "amount": 37.68,
+        "label": "Political party committees",
+        "share": 1.7801662662064223e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8AZ09040",
+      "district": "04",
+      "name": "STANTON, GREG",
+      "office": "H",
+      "party": "DEM",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2020288.72,
+      "debts": 0.0,
+      "disbursements": 1112555.97,
+      "individualContributions": 1477893.54,
+      "receipts": 2117114.23
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T12:20:29.796402+00:00"
+  "updated_at": "2026-07-14T19:48:51.798753+00:00"
 }

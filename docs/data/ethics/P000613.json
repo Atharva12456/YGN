@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.6,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 78350.58,
+        "label": "Small individual (unitemized)",
+        "share": 0.03244718054310008
+      },
+      {
+        "amount": 994754.12,
+        "label": "Large individual (itemized)",
+        "share": 0.4119556808339216
+      },
+      {
+        "amount": 1341606.8,
+        "label": "PAC / other committees",
+        "share": 0.5555971386229783
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CA20152",
+      "district": "19",
+      "name": "PANETTA, JIMMY",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4849968.43,
+      "debts": 0.0,
+      "disbursements": 1304897.69,
+      "individualContributions": 1073104.7,
+      "receipts": 2440227.51
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:28.475044+00:00"
+  "updated_at": "2026-07-14T19:49:06.072714+00:00"
 }

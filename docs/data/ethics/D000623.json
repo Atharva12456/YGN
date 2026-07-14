@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.2,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 38019.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.07404190805060129
+      },
+      {
+        "amount": 202855.05,
+        "label": "Large individual (itemized)",
+        "share": 0.3950579394473926
+      },
+      {
+        "amount": 272607.55,
+        "label": "PAC / other committees",
+        "share": 0.5309001525020061
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA10073",
+      "district": "10",
+      "name": "DESAULNIER, MARK",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 627906.13,
+      "debts": 0.0,
+      "disbursements": 516173.13,
+      "individualContributions": 240874.22,
+      "receipts": 515091.94
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:28:24.393767+00:00"
+  "updated_at": "2026-07-14T19:49:25.383056+00:00"
 }

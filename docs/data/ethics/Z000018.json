@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 88.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 3732130.09,
+        "label": "Small individual (unitemized)",
+        "share": 0.4037474032209206
+      },
+      {
+        "amount": 4220628.66,
+        "label": "Large individual (itemized)",
+        "share": 0.4565939075920031
+      },
+      {
+        "amount": 1290717.56,
+        "label": "PAC / other committees",
+        "share": 0.13963175199545172
+      },
+      {
+        "amount": 249.0,
+        "label": "Political party committees",
+        "share": 2.69371916245313e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MT01041",
+      "district": "01",
+      "name": "ZINKE, RYAN K",
+      "office": "H",
+      "party": "REP",
+      "state": "MT"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 680531.01,
+      "debts": 0.0,
+      "disbursements": 9546737.64,
+      "individualContributions": 7952758.75,
+      "receipts": 10117220.53
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:26:22.798636+00:00"
+  "updated_at": "2026-07-14T19:47:25.596535+00:00"
 }

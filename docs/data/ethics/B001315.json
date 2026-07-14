@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 98384.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.04092038048229029
+      },
+      {
+        "amount": 1312393.22,
+        "label": "Large individual (itemized)",
+        "share": 0.5458520276348957
+      },
+      {
+        "amount": 991534.0,
+        "label": "PAC / other committees",
+        "share": 0.41239990889997025
+      },
+      {
+        "amount": 1990.0,
+        "label": "Political party committees",
+        "share": 0.0008276829828436956
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2IL13153",
+      "district": "13",
+      "name": "BUDZINSKI, NIKKI",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2609951.45,
+      "debts": 0.0,
+      "disbursements": 1633383.24,
+      "individualContributions": 1410778.18,
+      "receipts": 2458602.34
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:19.180036+00:00"
+  "updated_at": "2026-07-14T19:46:55.674448+00:00"
 }

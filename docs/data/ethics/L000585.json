@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 63.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 70538.99,
+        "label": "Small individual (unitemized)",
+        "share": 0.03241054048139063
+      },
+      {
+        "amount": 651909.92,
+        "label": "Large individual (itemized)",
+        "share": 0.2995329654192685
+      },
+      {
+        "amount": 1453872.37,
+        "label": "PAC / other committees",
+        "share": 0.6680105471124599
+      },
+      {
+        "amount": 100.0,
+        "label": "Political party committees",
+        "share": 4.5946986881142795e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6IL18088",
+      "district": "16",
+      "name": "LAHOOD, DARIN MCKAY",
+      "office": "H",
+      "party": "REP",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 6682463.2,
+      "debts": 0.0,
+      "disbursements": 1952628.27,
+      "individualContributions": 722448.91,
+      "receipts": 3113808.4
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:26:14.717157+00:00"
+  "updated_at": "2026-07-14T19:47:24.180098+00:00"
 }

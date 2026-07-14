@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 64.1,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 70744.86,
+        "label": "Small individual (unitemized)",
+        "share": 0.0337832835961106
+      },
+      {
+        "amount": 608436.72,
+        "label": "Large individual (itemized)",
+        "share": 0.29055100627872243
+      },
+      {
+        "amount": 1414897.28,
+        "label": "PAC / other committees",
+        "share": 0.6756657101251669
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NC08185",
+      "district": "09",
+      "name": "HUDSON, RICHARD L. JR.",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1536361.67,
+      "debts": 0.0,
+      "disbursements": 1872758.6,
+      "individualContributions": 679181.58,
+      "receipts": 2777386.98
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:09:18.299821+00:00"
+  "updated_at": "2026-07-14T19:47:34.040930+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 60.5,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6326.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.005282796045746123
+      },
+      {
+        "amount": 632977.74,
+        "label": "Large individual (itemized)",
+        "share": 0.5285365675497997
+      },
+      {
+        "amount": 558300.0,
+        "label": "PAC / other committees",
+        "share": 0.46618063640445423
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2AL05102",
+      "district": "05",
+      "name": "STRONG, DALE WHITNEY",
+      "office": "H",
+      "party": "REP",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1339722.22,
+      "debts": 240000.0,
+      "disbursements": 641503.96,
+      "individualContributions": 639304.44,
+      "receipts": 1352248.76
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:29:21.030355+00:00"
+  "updated_at": "2026-07-14T19:47:53.959517+00:00"
 }

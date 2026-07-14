@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 339.44,
+        "label": "Small individual (unitemized)",
+        "share": 0.0006429096183173026
+      },
+      {
+        "amount": 190135.24,
+        "label": "Large individual (itemized)",
+        "share": 0.3601218906936976
+      },
+      {
+        "amount": 337500.0,
+        "label": "PAC / other committees",
+        "share": 0.6392351996879849
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL04105",
+      "district": "05",
+      "name": "RUTHERFORD, JOHN",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 406796.42,
+      "debts": 0.0,
+      "disbursements": 299106.25,
+      "individualContributions": 190474.68,
+      "receipts": 528233.02
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:26:10.064398+00:00"
+  "updated_at": "2026-07-14T19:48:57.535678+00:00"
 }

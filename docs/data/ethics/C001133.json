@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.6,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 500508.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.12650934567102368
+      },
+      {
+        "amount": 1800381.23,
+        "label": "Large individual (itemized)",
+        "share": 0.4550669537884978
+      },
+      {
+        "amount": 1650409.54,
+        "label": "PAC / other committees",
+        "share": 0.4171598933361885
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0012638072042899986
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2AZ02360",
+      "district": "06",
+      "name": "CISCOMANI, JUAN",
+      "office": "H",
+      "party": "REP",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4135162.85,
+      "debts": 0.0,
+      "disbursements": 2274264.76,
+      "individualContributions": 2300890.11,
+      "receipts": 6172866.72
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:29:30.516923+00:00"
+  "updated_at": "2026-07-14T19:48:23.883942+00:00"
 }

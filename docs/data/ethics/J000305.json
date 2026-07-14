@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.2,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 139882.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.09490487688194003
+      },
+      {
+        "amount": 230691.0,
+        "label": "Large individual (itemized)",
+        "share": 0.15651529703620312
+      },
+      {
+        "amount": 174000.0,
+        "label": "PAC / other committees",
+        "share": 0.11805255378102891
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 929346.65,
+        "label": "Self-funding & candidate loans",
+        "share": 0.630527272300828
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CA49074",
+      "district": "51",
+      "name": "JACOBS, SARA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 270111.23,
+      "debts": 350000.0,
+      "disbursements": 1368637.97,
+      "individualContributions": 370573.18,
+      "receipts": 1561377.04
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T05:25:49.310449+00:00"
+  "updated_at": "2026-07-14T19:48:42.603213+00:00"
 }

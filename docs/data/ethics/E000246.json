@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.0,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 10711.84,
+        "label": "Small individual (unitemized)",
+        "share": 0.014023134354276923
+      },
+      {
+        "amount": 429907.33,
+        "label": "Large individual (itemized)",
+        "share": 0.5628023055309327
+      },
+      {
+        "amount": 323250.0,
+        "label": "PAC / other committees",
+        "share": 0.4231745601147903
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NC14050",
+      "district": "11",
+      "name": "EDWARDS, CHUCK",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 487217.61,
+      "debts": 0.0,
+      "disbursements": 406384.93,
+      "individualContributions": 440619.17,
+      "receipts": 784838.5
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:14.584130+00:00"
+  "updated_at": "2026-07-14T19:46:44.689242+00:00"
 }

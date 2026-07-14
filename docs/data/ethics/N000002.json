@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.0,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 25808.72,
+        "label": "Small individual (unitemized)",
+        "share": 0.10266800068756364
+      },
+      {
+        "amount": 155071.65,
+        "label": "Large individual (itemized)",
+        "share": 0.6168805066203061
+      },
+      {
+        "amount": 70500.0,
+        "label": "PAC / other committees",
+        "share": 0.28045149269213027
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY17071",
+      "district": "12",
+      "name": "NADLER, JERROLD L",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 143330.29,
+      "debts": 0.0,
+      "disbursements": 308715.3,
+      "individualContributions": 180880.37,
+      "receipts": 257455.09
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:09:40.680654+00:00"
+  "updated_at": "2026-07-14T19:47:46.213791+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.7,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 4238.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.002995938302138251
+      },
+      {
+        "amount": 549330.31,
+        "label": "Large individual (itemized)",
+        "share": 0.3882964876579848
+      },
+      {
+        "amount": 861150.0,
+        "label": "PAC / other committees",
+        "share": 0.608707574039877
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2FL04211",
+      "district": "04",
+      "name": "BEAN, AARON P.",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1237230.25,
+      "debts": 15643.29,
+      "disbursements": 746428.82,
+      "individualContributions": 553568.72,
+      "receipts": 1508938.08
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:34.713392+00:00"
+  "updated_at": "2026-07-14T19:48:25.534278+00:00"
 }

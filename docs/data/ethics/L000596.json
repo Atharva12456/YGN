@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.5,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 578249.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.5084221986930801
+      },
+      {
+        "amount": 483591.77,
+        "label": "Large individual (itemized)",
+        "share": 0.4251949175118812
+      },
+      {
+        "amount": 75500.0,
+        "label": "PAC / other committees",
+        "share": 0.0663828837950386
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0FL13158",
+      "district": "13",
+      "name": "PAULINA LUNA, ANNA",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1375442.45,
+      "debts": 0.0,
+      "disbursements": 1054588.53,
+      "individualContributions": 1061841.37,
+      "receipts": 2298615.43
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:20.374676+00:00"
+  "updated_at": "2026-07-14T19:48:01.141421+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.6,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 358363.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.11570458829067498
+      },
+      {
+        "amount": 2308048.16,
+        "label": "Large individual (itemized)",
+        "share": 0.7451984536692764
+      },
+      {
+        "amount": 428622.0,
+        "label": "PAC / other committees",
+        "share": 0.13838898907925412
+      },
+      {
+        "amount": 2192.74,
+        "label": "Political party committees",
+        "share": 0.0007079689607944615
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CA10126",
+      "district": "09",
+      "name": "HARDER, JOSH",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4427277.2,
+      "debts": 0.0,
+      "disbursements": 976060.18,
+      "individualContributions": 2666411.44,
+      "receipts": 3714505.66
+    }
+  },
+  "generated_at": "2026-07-14T19:46:25.427771+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:26.587556+00:00"
+  "updated_at": "2026-07-14T19:48:44.158022+00:00"
 }
