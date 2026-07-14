@@ -273,7 +273,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-07-12T07:40:21Z"
+      "updateDate": "2026-07-13T07:40:20Z"
     },
     "request": {
       "bioguideId": "f000450",
@@ -282,13 +282,71 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "F000450",
+    "candidate": {
+      "candidate_id": "H4NC05146",
+      "district": "05",
+      "name": "FOXX, VIRGINIA ANN",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 56.4,
+        "value": 0.3251,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 92.4,
+        "value": 0.5233,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 86.3,
+        "value": 0.7268,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 46.2,
+        "value": 0.0243,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "penalty": 42,
+        "ptr_filings": 12
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 70.4,
+    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 28.4,
+    "source": "fec_live",
+    "stockPenalty": 42,
+    "stockPtrCount": 12,
+    "updated_at": "2026-07-13T21:13:20.300030+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "F000450",
     "birthYear": "1943",
@@ -591,7 +649,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-07-12T07:40:21Z"
+    "updateDate": "2026-07-13T07:40:20Z"
   },
   "nominate": {
     "dim1": 0.624,

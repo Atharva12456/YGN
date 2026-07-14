@@ -126,21 +126,6 @@
         "congress": 119,
         "latestAction": {
           "actionDate": "2026-02-26",
-          "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S716; text: CR S712)"
-        },
-        "number": "622",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "A resolution expressing support for the designation of February 21 through February 28, 2026, as \"National FFA Week\", recognizing the important role of the National FFA Organization in developing the next generation of globally conscious leaders who will change the world, and celebrating the 50th anniversary of the chartering of the State of Alaska as a State FFA  Association.",
-        "type": "SRES",
-        "updateDate": "2026-03-14",
-        "updateDateIncludingText": "2026-03-14",
-        "url": "https://api.congress.gov/v3/bill/119/sres/622?format=json"
-      },
-      {
-        "congress": 119,
-        "latestAction": {
-          "actionDate": "2026-02-26",
           "text": "Referred to the House Committee on the Judiciary."
         },
         "number": "7738",
@@ -305,6 +290,21 @@
       {
         "congress": 119,
         "latestAction": {
+          "actionDate": "2026-02-25",
+          "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+        },
+        "number": "3910",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "ReSCUE Oceans Act",
+        "type": "S",
+        "updateDate": "2026-03-17",
+        "updateDateIncludingText": "2026-03-17",
+        "url": "https://api.congress.gov/v3/bill/119/s/3910?format=json"
+      },
+      {
+        "congress": 119,
+        "latestAction": {
           "actionDate": "2026-02-20",
           "text": "Referred to the House Committee on Appropriations."
         },
@@ -440,17 +440,17 @@
       {
         "congress": 119,
         "latestAction": {
-          "actionDate": "2025-12-03",
-          "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S8487; text: CR S8486)"
+          "actionDate": "2025-12-02",
+          "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 37 - 6."
         },
-        "number": "527",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "A resolution supporting the goals and ideals of a National Move Over Law Day.",
-        "type": "SRES",
-        "updateDate": "2026-03-14",
-        "updateDateIncludingText": "2026-03-14",
-        "url": "https://api.congress.gov/v3/bill/119/sres/527?format=json"
+        "number": "6330",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "Federal Relocation Payment Improvement Act",
+        "type": "HR",
+        "updateDate": "2026-03-17",
+        "updateDateIncludingText": "2026-03-17",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6330?format=json"
       },
       {
         "congress": 119,
@@ -571,21 +571,6 @@
         "updateDate": "2026-03-16",
         "updateDateIncludingText": "2026-03-16",
         "url": "https://api.congress.gov/v3/bill/119/s/3075?format=json"
-      },
-      {
-        "congress": 119,
-        "latestAction": {
-          "actionDate": "2025-10-06",
-          "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S6959; text: CR S6958)"
-        },
-        "number": "434",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "A resolution expressing support for the designation of October 5 through October 11, 2025, as \"National 4-H Week\".",
-        "type": "SRES",
-        "updateDate": "2026-03-14",
-        "updateDateIncludingText": "2026-03-14",
-        "url": "https://api.congress.gov/v3/bill/119/sres/434?format=json"
       },
       {
         "congress": 119,
@@ -811,6 +796,21 @@
         "updateDate": "2026-03-16",
         "updateDateIncludingText": "2026-03-16",
         "url": "https://api.congress.gov/v3/bill/119/hr/3685?format=json"
+      },
+      {
+        "congress": 119,
+        "latestAction": {
+          "actionDate": "2025-04-28",
+          "text": "Placed on Senate Legislative Calendar under General Orders. Calendar No. 58."
+        },
+        "number": "106",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "A resolution supporting the goals of International Women's Day.",
+        "type": "SRES",
+        "updateDate": "2026-03-17",
+        "updateDateIncludingText": "2026-03-17",
+        "url": "https://api.congress.gov/v3/bill/119/sres/106?format=json"
       },
       {
         "congress": 119,
@@ -1204,13 +1204,13 @@
       }
     ],
     "pagination": {
-      "count": 32217,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-03-14T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 32223,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-03-16T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-07-12T19:35:57.730954+00:00"
+  "generated_at": "2026-07-14T05:56:26.221118+00:00"
 }

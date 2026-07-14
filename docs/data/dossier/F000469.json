@@ -233,7 +233,7 @@
           "stateName": "Idaho"
         }
       ],
-      "updateDate": "2026-07-12T07:40:23Z"
+      "updateDate": "2026-07-13T07:40:22Z"
     },
     "request": {
       "bioguideId": "f000469",
@@ -242,13 +242,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "F000469",
+    "candidate": {
+      "candidate_id": "H8ID01124",
+      "district": "01",
+      "name": "FULCHER, RUSSELL",
+      "office": "H",
+      "party": "REP",
+      "state": "ID"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 64.6,
+        "value": 0.4189,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.9,
+        "value": 0.8894,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 72.6,
+        "value": 0.5716,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9983,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 56.1,
+        "value": 0.0459,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 72.1,
+    "generated_at": "2026-07-13T15:15:07.996530+00:00",
+    "grade": "C-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 72.1,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-13T15:16:19.342640+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "F000469",
     "birthYear": "1962",
@@ -427,7 +484,7 @@
         "stateName": "Idaho"
       }
     ],
-    "updateDate": "2026-07-12T07:40:23Z"
+    "updateDate": "2026-07-13T07:40:22Z"
   },
   "nominate": {
     "dim1": 0.644,

@@ -285,7 +285,7 @@
           "stateName": "Wisconsin"
         }
       ],
-      "updateDate": "2026-07-12T07:40:22Z"
+      "updateDate": "2026-07-13T07:40:21Z"
     },
     "request": {
       "bioguideId": "g000576",
@@ -294,13 +294,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "G000576",
+    "candidate": {
+      "candidate_id": "H4WI06048",
+      "district": "06",
+      "name": "GROTHMAN, GLENN S.",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 77.4,
+        "value": 0.5524,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.7,
+        "value": 0.8539,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 84.3,
+        "value": 0.6908,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 77.8,
+        "value": 0.157,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 84.1,
+    "generated_at": "2026-07-13T17:23:40.529702+00:00",
+    "grade": "B",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 84.1,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-13T17:23:52.339944+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "G000576",
     "birthYear": "1955",
@@ -526,7 +583,7 @@
         "stateName": "Wisconsin"
       }
     ],
-    "updateDate": "2026-07-12T07:40:22Z"
+    "updateDate": "2026-07-13T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.601,

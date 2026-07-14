@@ -197,7 +197,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-07-12T07:40:23Z"
+      "updateDate": "2026-07-13T07:40:22Z"
     },
     "request": {
       "bioguideId": "e000296",
@@ -206,13 +206,71 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "E000296",
+    "candidate": {
+      "candidate_id": "H6PA02171",
+      "district": "03",
+      "name": "EVANS, DWIGHT",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 86.3,
+        "value": 0.6768,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.9,
+        "value": 0.8852,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 68.8,
+        "value": 0.5398,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 59.0,
+        "value": 0.0553,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "7 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+        "penalty": 32,
+        "ptr_filings": 7
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 76.4,
+    "generated_at": "2026-07-13T15:15:07.996530+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 44.4,
+    "source": "fec_live",
+    "stockPenalty": 32,
+    "stockPtrCount": 7,
+    "updated_at": "2026-07-13T15:18:27.964470+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "E000296",
     "birthYear": "1954",
@@ -420,7 +478,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-07-12T07:40:23Z"
+    "updateDate": "2026-07-13T07:40:22Z"
   },
   "nominate": {
     "dim1": -0.472,

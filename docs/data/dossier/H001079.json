@@ -337,13 +337,65 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "H001079",
+    "candidate": {
+      "candidate_id": "S8MS00261",
+      "district": "00",
+      "name": "HYDE-SMITH, CINDY",
+      "office": "S",
+      "party": "REP",
+      "state": "MS"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 51.1,
+        "value": 0.2451,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 88.6,
+        "value": 0.4405,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 83.6,
+        "value": 0.6784,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 95.6,
+        "value": 0.9875,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 81.1,
+        "value": 0.1751,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 78.6,
+    "source": "fec_live",
+    "updated_at": "2026-07-13T22:10:55.538990+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "H001079",
     "birthYear": "1959",

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001153",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Murkowski, Lisa [R-AK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "AK"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "ReSCUE Oceans Act",
+      "updated_at": "2026-03-17T18:46:33Z"
+    },
+    "detailPath": "119/s/3910",
+    "identifier": "S 3910",
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "3910",
+    "originChamber": "Senate",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "S001194",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Schatz, Brian [D-HI]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "HI"
+      }
+    ],
+    "title": "ReSCUE Oceans Act",
+    "type": "S",
+    "updatedAt": "2026-03-17T18:46:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3910",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The ReSCUE Oceans Act requires NOAA to establish a Program to advance marine carbon dioxide removal through research, field trials, monitoring, protocols, standards, validation, and reporting. It applies to activities across U.S. marine waters and EEZ and involves States, Tribes, Native Hawaiian entities, Federal agencies, and voluntary carbon markets.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-14T05:15:59.593100+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "749d3a88abe1f7866b588923",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs NOAA to establish a Program advancing, monitoring, standardizing, and reporting marine carbon dioxide removal, coordinating NSF, NASA, and NIST. It affects coastal States, territories, the National Sea Grant program, Tribal and Native Hawaiian governments, ocean CDR companies, and voluntary carbon markets.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-14T05:15:43.785996+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "749d3a88abe1f7866b588923",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-14T05:56:37.604216+00:00",
+  "source": "congress_api"
+}

@@ -363,13 +363,65 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "L000570",
+    "candidate": {
+      "candidate_id": "S0NM00058",
+      "district": "00",
+      "name": "LUJAN, BEN RAY",
+      "office": "S",
+      "party": "DEM",
+      "state": "NM"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 64.8,
+        "value": 0.4213,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 68.8,
+        "value": 0.1897,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 85.8,
+        "value": 0.7175,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 93.2,
+        "value": 0.3562,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "grade": "B",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 83.6,
+    "source": "fec_live",
+    "updated_at": "2026-07-13T22:10:09.584650+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "L000570",
     "birthYear": "1972",

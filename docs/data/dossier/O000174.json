@@ -235,13 +235,65 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "O000174",
+    "candidate": {
+      "candidate_id": "S8GA00180",
+      "district": "00",
+      "name": "OSSOFF, T. JONATHAN",
+      "office": "S",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 85.6,
+        "value": 0.6649,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 66.4,
+        "value": 0.1701,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 96.4,
+        "value": 0.9868,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9968,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 98.0,
+        "value": 0.6019,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "grade": "A-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 91.7,
+    "source": "fec_live",
+    "updated_at": "2026-07-13T22:09:45.823797+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-11T13:57:36.096334+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "O000174",
     "birthYear": "1987",

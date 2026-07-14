@@ -294,7 +294,7 @@
           "stateName": "Tennessee"
         }
       ],
-      "updateDate": "2026-07-12T07:40:21Z"
+      "updateDate": "2026-07-13T07:40:20Z"
     },
     "request": {
       "bioguideId": "c001068",
@@ -303,13 +303,71 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "C001068",
+    "candidate": {
+      "candidate_id": "H6TN09068",
+      "district": "09",
+      "name": "COHEN, STEVE I MR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "TN"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 56.7,
+        "value": 0.3301,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.3,
+        "value": 0.795,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 62.9,
+        "value": 0.4904,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9988,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 52.7,
+        "value": 0.0385,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "14 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "penalty": 42,
+        "ptr_filings": 14
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 67.0,
+    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 25.0,
+    "source": "fec_live",
+    "stockPenalty": 42,
+    "stockPtrCount": 14,
+    "updated_at": "2026-07-13T19:51:43.795412+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "C001068",
     "birthYear": "1949",
@@ -602,7 +660,7 @@
         "stateName": "Tennessee"
       }
     ],
-    "updateDate": "2026-07-12T07:40:21Z"
+    "updateDate": "2026-07-13T07:40:20Z"
   },
   "nominate": {
     "dim1": -0.388,

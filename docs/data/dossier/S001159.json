@@ -217,7 +217,7 @@
           "stateName": "Washington"
         }
       ],
-      "updateDate": "2026-07-12T07:40:24Z"
+      "updateDate": "2026-07-13T07:40:23Z"
     },
     "request": {
       "bioguideId": "s001159",
@@ -226,13 +226,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "S001159",
+    "candidate": {
+      "candidate_id": "H0WA10034",
+      "district": "10",
+      "name": "STRICKLAND, MARILYN",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 78.1,
+        "value": 0.5589,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 96.6,
+        "value": 0.6863,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 75.3,
+        "value": 0.5941,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 63.9,
+        "value": 0.082,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 77.7,
+    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 77.7,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-13T08:30:05.312231+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "S001159",
     "birthYear": "1962",
@@ -401,7 +458,7 @@
         "stateName": "Washington"
       }
     ],
-    "updateDate": "2026-07-12T07:40:24Z"
+    "updateDate": "2026-07-13T07:40:23Z"
   },
   "nominate": {
     "dim1": -0.442,

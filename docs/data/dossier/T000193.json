@@ -300,7 +300,7 @@
           "stateName": "Mississippi"
         }
       ],
-      "updateDate": "2026-07-12T07:40:21Z"
+      "updateDate": "2026-07-13T07:40:20Z"
     },
     "request": {
       "bioguideId": "t000193",
@@ -309,13 +309,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "T000193",
+    "candidate": {
+      "candidate_id": "H4MS02068",
+      "district": "02",
+      "name": "THOMPSON, BENNIE G.",
+      "office": "H",
+      "party": "DEM",
+      "state": "MS"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 68.2,
+        "value": 0.4561,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 67.7,
+        "value": 0.1811,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 47.6,
+        "value": 0.2473,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9926,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 50.5,
+        "value": 0.0336,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 61.9,
+    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "grade": "D-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 61.9,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-13T21:13:06.512625+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "T000193",
     "birthYear": "1948",
@@ -743,7 +800,7 @@
         "stateName": "Mississippi"
       }
     ],
-    "updateDate": "2026-07-12T07:40:21Z"
+    "updateDate": "2026-07-13T07:40:20Z"
   },
   "nominate": {
     "dim1": -0.519,

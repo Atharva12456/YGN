@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-13T03:30:44.228461+00:00",
-  "count": 78,
+  "generated_at": "2026-07-14T06:04:37.936683+00:00",
+  "count": 81,
   "bills": {
     "SRES 630": {
       "description": {
@@ -1405,6 +1405,75 @@
       "identifier": "HRES 779",
       "title": "Providing for consideration of the bill (H.R. 1834) to advance policy priorities that will break the gridlock.",
       "source_updated_at": "2026-03-17T15:54:28Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3910": {
+      "description": {
+        "summary": "The ReSCUE Oceans Act requires NOAA to establish a Program to advance marine carbon dioxide removal through research, field trials, monitoring, protocols, standards, validation, and reporting. It applies to activities across U.S. marine waters and EEZ and involves States, Tribes, Native Hawaiian entities, Federal agencies, and voluntary carbon markets.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:15:59.593100+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "749d3a88abe1f7866b588923"
+      },
+      "impact": {
+        "summary": "The bill directs NOAA to establish a Program advancing, monitoring, standardizing, and reporting marine carbon dioxide removal, coordinating NSF, NASA, and NIST. It affects coastal States, territories, the National Sea Grant program, Tribal and Native Hawaiian governments, ocean CDR companies, and voluntary carbon markets.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:15:43.785996+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "749d3a88abe1f7866b588923"
+      },
+      "canonical_id": "119/s/3910",
+      "identifier": "S 3910",
+      "title": "ReSCUE Oceans Act",
+      "source_updated_at": "2026-03-17T18:46:33Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6330": {
+      "description": {
+        "summary": "The bill lets agencies pay a single lump\u2011sum relocation payment to federal employees moved in the interest of the Government instead of current subchapter II reimbursements. GSA must issue regulations on calculation, eligibility, disputes, and appeals to the Civilian Board of Contract Appeals.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:35:44.949444+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3b449c3e9215a53bb8eb462f"
+      },
+      "impact": {
+        "summary": "Federal agencies may pay a one-time lump sum to employees relocated in the interest of the Government instead of 5 U.S.C. chapter 57 reimbursements. GSA must issue rules for lump-sum calculation and dispute handling, and employees may appeal agency decisions to the Civilian Board of Contract Appeals.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:35:56.465604+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3b449c3e9215a53bb8eb462f"
+      },
+      "canonical_id": "119/hr/6330",
+      "identifier": "HR 6330",
+      "title": "Federal Relocation Payment Improvement Act",
+      "source_updated_at": "2026-03-17T18:50:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/731": {
+      "description": {
+        "summary": "This resolution orders immediate House consideration of H.R.155, which would require States to allow unaffiliated voters in federal primaries. It prescribes House floor terms, waiving points of order, adopting a printed substitute, limiting debate to one hour equally divided, allowing one motion to recommit, and exempting Rule XIX(1)(c).",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:55:30.582311+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "09b9fe9e41eb5d557dcea2cf"
+      },
+      "impact": {
+        "summary": "This resolution orders immediate consideration of H.R. 155, waives points of order, adopts Fitzpatrick\u2019s substitute, limits debate to one hour, allows one motion to recommit, and suspends clause 1(c) of House Rule XIX. H.R. 155 would require States to let unaffiliated voters join Federal primaries.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-14T05:55:28.338518+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "09b9fe9e41eb5d557dcea2cf"
+      },
+      "canonical_id": "119/hres/731",
+      "identifier": "HRES 731",
+      "title": "Providing for consideration of the bill (H.R. 155) to require States to permit unaffiliated voters to vote in primary elections for Federal office, and for other purposes.",
+      "source_updated_at": "2026-03-17T15:53:54Z",
       "content_version": "bill-ai-v6"
     }
   }

@@ -213,7 +213,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-07-12T07:40:25Z"
+      "updateDate": "2026-07-13T07:40:25Z"
     },
     "request": {
       "bioguideId": "k000398",
@@ -222,13 +222,71 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "K000398",
+    "candidate": {
+      "candidate_id": "H0NJ07089",
+      "district": "07",
+      "name": "KEAN, THOMAS H JR",
+      "office": "H",
+      "party": "REP",
+      "state": "NJ"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": null,
+        "value": null,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": null,
+        "value": null,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 35.0,
+        "value": 0.0,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 35.0,
+        "value": 0.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": null,
+        "value": null,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "penalty": 42,
+        "ptr_filings": 18
+      }
+    },
+    "cycle": 2014,
+    "financeScore": 35.0,
+    "generated_at": "2026-07-13T05:23:39.955035+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 0.0,
+    "source": "fec_live",
+    "stockPenalty": 42,
+    "stockPtrCount": 18,
+    "updated_at": "2026-07-13T05:24:28.000380+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "K000398",
     "birthYear": "1968",
@@ -373,7 +431,7 @@
         "stateName": "New Jersey"
       }
     ],
-    "updateDate": "2026-07-12T07:40:25Z"
+    "updateDate": "2026-07-13T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.202,

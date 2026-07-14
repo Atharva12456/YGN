@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Federal Relocation Payment Improvement Act",
+      "updated_at": "2026-03-17T18:50:17Z"
+    },
+    "detailPath": "119/hr/6330",
+    "identifier": "HR 6330",
+    "introducedDate": "2025-12-01",
+    "latestAction": {
+      "date": "2025-12-02",
+      "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 37 - 6."
+    },
+    "number": "6330",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "J000311",
+        "district": 3,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Jack, Brian [R-GA-3]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "GA"
+      }
+    ],
+    "title": "Federal Relocation Payment Improvement Act",
+    "type": "HR",
+    "updatedAt": "2026-03-17T18:50:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6330",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets agencies pay a single lump\u2011sum relocation payment to federal employees moved in the interest of the Government instead of current subchapter II reimbursements. GSA must issue regulations on calculation, eligibility, disputes, and appeals to the Civilian Board of Contract Appeals.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-14T05:35:44.949444+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3b449c3e9215a53bb8eb462f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Federal agencies may pay a one-time lump sum to employees relocated in the interest of the Government instead of 5 U.S.C. chapter 57 reimbursements. GSA must issue rules for lump-sum calculation and dispute handling, and employees may appeal agency decisions to the Civilian Board of Contract Appeals.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-14T05:35:56.465604+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3b449c3e9215a53bb8eb462f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-14T05:56:39.796317+00:00",
+  "source": "congress_api"
+}

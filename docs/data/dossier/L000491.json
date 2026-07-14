@@ -367,7 +367,7 @@
           "stateName": "Oklahoma"
         }
       ],
-      "updateDate": "2026-07-12T07:40:21Z"
+      "updateDate": "2026-07-13T07:40:20Z"
     },
     "request": {
       "bioguideId": "l000491",
@@ -376,13 +376,70 @@
     }
   },
   "errors": [],
-  "ethics": null,
+  "ethics": {
+    "bioguideId": "L000491",
+    "candidate": {
+      "candidate_id": "H4OK06056",
+      "district": "03",
+      "name": "LUCAS, FRANK D.",
+      "office": "H",
+      "party": "REP",
+      "state": "OK"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 56.7,
+        "value": 0.3296,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 95.2,
+        "value": 0.5836,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 47.1,
+        "value": 0.2374,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 42.5,
+        "value": 0.0163,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 59.8,
+    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 59.8,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-13T21:13:13.580476+00:00"
+  },
   "funding": {
     "available": false,
     "note": "Live campaign-funding detail is available on the hosted API.",
     "source": "static"
   },
-  "generated_at": "2026-07-12T08:32:58.470317+00:00",
+  "generated_at": "2026-07-14T05:56:26.221118+00:00",
   "history": {
     "bioguideId": "L000491",
     "birthYear": "1960",
@@ -811,7 +868,7 @@
         "stateName": "Oklahoma"
       }
     ],
-    "updateDate": "2026-07-12T07:40:21Z"
+    "updateDate": "2026-07-13T07:40:20Z"
   },
   "nominate": {
     "dim1": 0.361,
