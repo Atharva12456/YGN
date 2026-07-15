@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 66430.45,
+        "label": "Small individual (unitemized)",
+        "share": 0.039950645800851725
+      },
+      {
+        "amount": 1040282.47,
+        "label": "Large individual (itemized)",
+        "share": 0.625616061486941
+      },
+      {
+        "amount": 556100.0,
+        "label": "PAC / other committees",
+        "share": 0.33443329271220723
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4AK00099",
+      "district": "00",
+      "name": "MURKOWSKI, LISA",
+      "office": "S",
+      "party": "REP",
+      "state": "AK"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1379057.22,
+      "debts": 0.0,
+      "disbursements": 1041190.2,
+      "individualContributions": 1106712.92,
+      "receipts": 1762560.96
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 80.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:50.055750+00:00"
+  "updated_at": "2026-07-15T06:28:04.477856+00:00"
 }

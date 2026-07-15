@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 560581.37,
+        "label": "Small individual (unitemized)",
+        "share": 0.0663200210837005
+      },
+      {
+        "amount": 5494260.99,
+        "label": "Large individual (itemized)",
+        "share": 0.650002879503743
+      },
+      {
+        "amount": 2335829.41,
+        "label": "PAC / other committees",
+        "share": 0.2763421405158857
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.007334958896670845
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2TX00106",
+      "district": "00",
+      "name": "CORNYN, JOHN SEN",
+      "office": "S",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4078081.2,
+      "debts": 0.0,
+      "disbursements": 10130088.29,
+      "individualContributions": 6054842.36,
+      "receipts": 13574708.8
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 72.2,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:31.908751+00:00"
+  "updated_at": "2026-07-15T06:30:34.674407+00:00"
 }

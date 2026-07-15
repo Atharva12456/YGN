@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1898259.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.22618822996553523
+      },
+      {
+        "amount": 5419851.08,
+        "label": "Large individual (itemized)",
+        "share": 0.6458056157048399
+      },
+      {
+        "amount": 1012277.27,
+        "label": "PAC / other committees",
+        "share": 0.12061850703402803
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.007387647295596924
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0CO00575",
+      "district": "00",
+      "name": "HICKENLOOPER, JOHN W.",
+      "office": "S",
+      "party": "DEM",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2964562.08,
+      "debts": 0.0,
+      "disbursements": 8561825.74,
+      "individualContributions": 7318110.39,
+      "receipts": 9884304.8
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 83.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:11:01.173926+00:00"
+  "updated_at": "2026-07-15T06:29:38.497410+00:00"
 }

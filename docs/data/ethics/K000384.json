@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 94595.49,
+        "label": "Small individual (unitemized)",
+        "share": 0.20564568671955535
+      },
+      {
+        "amount": 265538.59,
+        "label": "Large individual (itemized)",
+        "share": 0.5772671159173915
+      },
+      {
+        "amount": 99858.5,
+        "label": "PAC / other committees",
+        "share": 0.2170871973630531
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2VA00142",
+      "district": "00",
+      "name": "KAINE, TIMOTHY MICHAEL",
+      "office": "S",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2263989.55,
+      "debts": 0.0,
+      "disbursements": 1259593.88,
+      "individualContributions": 360134.08,
+      "receipts": 724073.43
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 91.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:45.851896+00:00"
+  "updated_at": "2026-07-15T06:29:10.469933+00:00"
 }

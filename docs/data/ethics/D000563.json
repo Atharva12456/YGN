@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 402903.84,
+        "label": "Small individual (unitemized)",
+        "share": 0.2718170906595066
+      },
+      {
+        "amount": 715332.04,
+        "label": "Large individual (itemized)",
+        "share": 0.48259523654162695
+      },
+      {
+        "amount": 364025.0,
+        "label": "PAC / other committees",
+        "share": 0.24558767279886656
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6IL00151",
+      "district": "00",
+      "name": "DURBIN, RICHARD J.",
+      "office": "S",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 976472.97,
+      "debts": 0.0,
+      "disbursements": 2476789.1,
+      "individualContributions": 1118235.88,
+      "receipts": 2376775.51
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 83.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:12:04.107188+00:00"
+  "updated_at": "2026-07-15T06:30:20.806242+00:00"
 }

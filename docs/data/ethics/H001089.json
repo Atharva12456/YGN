@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 61502.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.1942367531145804
+      },
+      {
+        "amount": 234633.45,
+        "label": "Large individual (itemized)",
+        "share": 0.7410200838029187
+      },
+      {
+        "amount": 20500.0,
+        "label": "PAC / other committees",
+        "share": 0.06474316308250094
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8MO00160",
+      "district": "00",
+      "name": "HAWLEY, JOSHUA DAVID SEN",
+      "office": "S",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 899694.0,
+      "debts": 0.0,
+      "disbursements": 917519.64,
+      "individualContributions": 296135.75,
+      "receipts": 1518950.76
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 92.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:11:13.445118+00:00"
+  "updated_at": "2026-07-15T06:29:39.982563+00:00"
 }

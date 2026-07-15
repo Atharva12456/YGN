@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1687920.35,
+        "label": "Small individual (unitemized)",
+        "share": 0.25557731562948705
+      },
+      {
+        "amount": 3050742.83,
+        "label": "Large individual (itemized)",
+        "share": 0.46192977243701366
+      },
+      {
+        "amount": 1865680.19,
+        "label": "PAC / other committees",
+        "share": 0.2824929119334993
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0NM00058",
+      "district": "00",
+      "name": "LUJAN, BEN RAY",
+      "office": "S",
+      "party": "DEM",
+      "state": "NM"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4165906.94,
+      "debts": 0.0,
+      "disbursements": 3583405.43,
+      "individualContributions": 4738663.18,
+      "receipts": 7669988.92
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 83.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:09.584650+00:00"
+  "updated_at": "2026-07-15T06:28:33.693207+00:00"
 }

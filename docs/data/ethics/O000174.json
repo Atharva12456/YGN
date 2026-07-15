@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 43352270.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.5939424764844897
+      },
+      {
+        "amount": 28672552.7,
+        "label": "Large individual (itemized)",
+        "share": 0.3928247976553288
+      },
+      {
+        "amount": 958546.93,
+        "label": "PAC / other committees",
+        "share": 0.013132454851862096
+      },
+      {
+        "amount": 7318.85,
+        "label": "Political party committees",
+        "share": 0.00010027100831938495
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8GA00180",
+      "district": "00",
+      "name": "OSSOFF, T. JONATHAN",
+      "office": "S",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 32504436.28,
+      "debts": 0.0,
+      "disbursements": 52973406.68,
+      "individualContributions": 72024823.38,
+      "receipts": 81146109.47
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 91.7,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:45.823797+00:00"
+  "updated_at": "2026-07-15T06:28:01.998028+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 3770068.05,
+        "label": "Small individual (unitemized)",
+        "share": 0.5378877136121324
+      },
+      {
+        "amount": 2946706.24,
+        "label": "Large individual (itemized)",
+        "share": 0.4204160405327972
+      },
+      {
+        "amount": 292250.0,
+        "label": "PAC / other committees",
+        "share": 0.04169624585507036
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0UT00165",
+      "district": "00",
+      "name": "LEE, MIKE",
+      "office": "S",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 846399.24,
+      "debts": 0.0,
+      "disbursements": 7302136.08,
+      "individualContributions": 6716774.29,
+      "receipts": 7186375.4
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.8,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:14.341516+00:00"
+  "updated_at": "2026-07-15T06:28:34.455222+00:00"
 }

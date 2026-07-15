@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 26197.65,
+        "label": "Small individual (unitemized)",
+        "share": 0.03593850753881244
+      },
+      {
+        "amount": 341590.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4686006107487863
+      },
+      {
+        "amount": 359150.0,
+        "label": "PAC / other committees",
+        "share": 0.492689801664061
+      },
+      {
+        "amount": 2020.0,
+        "label": "Political party committees",
+        "share": 0.0027710800483402567
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0ND00093",
+      "district": "00",
+      "name": "HOEVEN, JOHN",
+      "office": "S",
+      "party": "REP",
+      "state": "ND"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 651732.04,
+      "debts": 100000.0,
+      "disbursements": 735111.19,
+      "individualContributions": 367787.65,
+      "receipts": 866280.03
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 76.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:58.295154+00:00"
+  "updated_at": "2026-07-15T06:29:31.191364+00:00"
 }

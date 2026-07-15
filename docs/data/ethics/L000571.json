@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 127908.93,
+        "label": "Small individual (unitemized)",
+        "share": 0.05945870353495989
+      },
+      {
+        "amount": 733829.42,
+        "label": "Large individual (itemized)",
+        "share": 0.3411219680206188
+      },
+      {
+        "amount": 1227484.64,
+        "label": "PAC / other committees",
+        "share": 0.5705985133600677
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.02882081508435348
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0WY00137",
+      "district": "00",
+      "name": "LUMMIS, CYNTHIA MARIE MRS.",
+      "office": "S",
+      "party": "REP",
+      "state": "WY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1608754.71,
+      "debts": 0.0,
+      "disbursements": 1223712.1,
+      "individualContributions": 861738.35,
+      "receipts": 2718016.58
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 62.9,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:04.970718+00:00"
+  "updated_at": "2026-07-15T06:28:32.912743+00:00"
 }

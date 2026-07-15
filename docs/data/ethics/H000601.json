@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2619449.91,
+        "label": "Small individual (unitemized)",
+        "share": 0.21823425370822228
+      },
+      {
+        "amount": 6708078.32,
+        "label": "Large individual (itemized)",
+        "share": 0.5588701888869123
+      },
+      {
+        "amount": 2612399.2,
+        "label": "PAC / other committees",
+        "share": 0.21764683784312444
+      },
+      {
+        "amount": 63000.0,
+        "label": "Political party committees",
+        "share": 0.005248719561741114
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0TN00169",
+      "district": "00",
+      "name": "HAGERTY, BILL",
+      "office": "S",
+      "party": "REP",
+      "state": "TN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 5674879.45,
+      "debts": 0.0,
+      "disbursements": 9065411.36,
+      "individualContributions": 9327528.23,
+      "receipts": 14685232.22
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 77.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:11:16.225305+00:00"
+  "updated_at": "2026-07-15T06:29:41.517566+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 651413.2,
+        "label": "Small individual (unitemized)",
+        "share": 0.41307237884602444
+      },
+      {
+        "amount": 567027.1,
+        "label": "Large individual (itemized)",
+        "share": 0.359561693050068
+      },
+      {
+        "amount": 355055.0,
+        "label": "PAC / other committees",
+        "share": 0.22514651755778853
+      },
+      {
+        "amount": 3500.0,
+        "label": "Political party committees",
+        "share": 0.002219410546118939
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2CA00955",
+      "district": "00",
+      "name": "PADILLA, ALEX",
+      "office": "S",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 7202297.34,
+      "debts": 0.0,
+      "disbursements": 2300220.79,
+      "individualContributions": 1218440.3,
+      "receipts": 2049291.47
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 94.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:44.416624+00:00"
+  "updated_at": "2026-07-15T06:28:01.221085+00:00"
 }

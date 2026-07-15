@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 24787.42,
+        "label": "Small individual (unitemized)",
+        "share": 0.0213899029943303
+      },
+      {
+        "amount": 348750.0,
+        "label": "Large individual (itemized)",
+        "share": 0.30094816924362006
+      },
+      {
+        "amount": 785300.0,
+        "label": "PAC / other committees",
+        "share": 0.6776619277620497
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0KS00091",
+      "district": "00",
+      "name": "MORAN, JERRY",
+      "office": "S",
+      "party": "REP",
+      "state": "KS"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 5515291.6,
+      "debts": 61238.33,
+      "disbursements": 659963.55,
+      "individualContributions": 373537.42,
+      "receipts": 2796529.81
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 72.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:53.582011+00:00"
+  "updated_at": "2026-07-15T06:28:05.995147+00:00"
 }

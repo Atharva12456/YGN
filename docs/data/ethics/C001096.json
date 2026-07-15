@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 473982.66,
+        "label": "Small individual (unitemized)",
+        "share": 0.5011581458893648
+      },
+      {
+        "amount": 340291.97,
+        "label": "Large individual (itemized)",
+        "share": 0.35980238759417765
+      },
+      {
+        "amount": 131500.0,
+        "label": "PAC / other committees",
+        "share": 0.13903946651645752
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8ND00120",
+      "district": "00",
+      "name": "CRAMER, KEVIN MR.",
+      "office": "S",
+      "party": "REP",
+      "state": "ND"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2331656.99,
+      "debts": 0.0,
+      "disbursements": 1013079.59,
+      "individualContributions": 814274.63,
+      "receipts": 989847.21
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:27.860347+00:00"
+  "updated_at": "2026-07-15T06:30:32.889220+00:00"
 }

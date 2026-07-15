@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1441023.84,
+        "label": "Small individual (unitemized)",
+        "share": 0.3434939859035833
+      },
+      {
+        "amount": 2254469.95,
+        "label": "Large individual (itemized)",
+        "share": 0.5373935168382449
+      },
+      {
+        "amount": 499700.01,
+        "label": "PAC / other committees",
+        "share": 0.11911249725817197
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2WA00189",
+      "district": "00",
+      "name": "MURRAY, PATTY",
+      "office": "S",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1567249.95,
+      "debts": 0.0,
+      "disbursements": 3318912.9,
+      "individualContributions": 3695493.79,
+      "receipts": 4327822.67
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 95.7,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:47.216984+00:00"
+  "updated_at": "2026-07-15T06:28:02.734699+00:00"
 }

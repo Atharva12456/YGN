@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 231424.65,
+        "label": "Small individual (unitemized)",
+        "share": 0.19304917802718063
+      },
+      {
+        "amount": 625939.95,
+        "label": "Large individual (itemized)",
+        "share": 0.5221448659072166
+      },
+      {
+        "amount": 341421.39,
+        "label": "PAC / other committees",
+        "share": 0.28480595606560266
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2NM00088",
+      "district": "00",
+      "name": "HEINRICH, MARTIN",
+      "office": "S",
+      "party": "DEM",
+      "state": "NM"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 477020.39,
+      "debts": 0.0,
+      "disbursements": 1053651.63,
+      "individualContributions": 857364.6,
+      "receipts": 1211120.87
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 90.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:11:08.900848+00:00"
+  "updated_at": "2026-07-15T06:29:39.238549+00:00"
 }

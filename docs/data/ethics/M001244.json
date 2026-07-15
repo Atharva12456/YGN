@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 741558.42,
+        "label": "Small individual (unitemized)",
+        "share": 0.17184951790031272
+      },
+      {
+        "amount": 2007103.06,
+        "label": "Large individual (itemized)",
+        "share": 0.46512814625885096
+      },
+      {
+        "amount": 1504500.0,
+        "label": "PAC / other committees",
+        "share": 0.34865439149220434
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.014367944348631883
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6FL00640",
+      "district": "00",
+      "name": "MOODY, ASHLEY",
+      "office": "S",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 7129392.15,
+      "debts": 0.0,
+      "disbursements": 1277671.65,
+      "individualContributions": 2748661.48,
+      "receipts": 8407063.8
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 77.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:54.948865+00:00"
+  "updated_at": "2026-07-15T06:28:09.243096+00:00"
 }

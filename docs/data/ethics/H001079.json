@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 521376.81,
+        "label": "Small individual (unitemized)",
+        "share": 0.11879514735372974
+      },
+      {
+        "amount": 2455852.5,
+        "label": "Large individual (itemized)",
+        "share": 0.5595633599747667
+      },
+      {
+        "amount": 1348600.0,
+        "label": "PAC / other committees",
+        "share": 0.3072770645883539
+      },
+      {
+        "amount": 63043.65,
+        "label": "Political party committees",
+        "share": 0.014364428083149621
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8MS00261",
+      "district": "00",
+      "name": "HYDE-SMITH, CINDY",
+      "office": "S",
+      "party": "REP",
+      "state": "MS"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2458624.57,
+      "debts": 60000.0,
+      "disbursements": 2729948.81,
+      "individualContributions": 2977229.31,
+      "receipts": 5027030.87
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 78.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:55.538990+00:00"
+  "updated_at": "2026-07-15T06:29:17.218951+00:00"
 }

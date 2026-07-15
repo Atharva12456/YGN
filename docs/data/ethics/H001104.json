@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1172180.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.19171246295125466
+      },
+      {
+        "amount": 3124697.08,
+        "label": "Large individual (itemized)",
+        "share": 0.5110505382008157
+      },
+      {
+        "amount": 1755385.0,
+        "label": "PAC / other committees",
+        "share": 0.2870967732333397
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.010140225614589998
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6OH00304",
+      "district": "00",
+      "name": "HUSTED, JON",
+      "office": "S",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 8161653.3,
+      "debts": 0.0,
+      "disbursements": 2366568.03,
+      "individualContributions": 4296877.38,
+      "receipts": 10528221.33
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 78.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:56.902881+00:00"
+  "updated_at": "2026-07-15T06:29:30.425373+00:00"
 }

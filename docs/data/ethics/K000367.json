@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 702212.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.40421961973268306
+      },
+      {
+        "amount": 875993.15,
+        "label": "Large individual (itemized)",
+        "share": 0.5042540929073442
+      },
+      {
+        "amount": 159000.0,
+        "label": "PAC / other committees",
+        "share": 0.09152628735997276
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6MN00267",
+      "district": "00",
+      "name": "KLOBUCHAR, AMY",
+      "office": "S",
+      "party": "DFL",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1308966.28,
+      "debts": 0.0,
+      "disbursements": 2988157.73,
+      "individualContributions": 1578205.83,
+      "receipts": 2515566.99
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.3,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:20.313523+00:00"
+  "updated_at": "2026-07-15T06:28:35.980740+00:00"
 }

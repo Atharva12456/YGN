@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2071031.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.46033686386342293
+      },
+      {
+        "amount": 2127396.36,
+        "label": "Large individual (itemized)",
+        "share": 0.47286523110250794
+      },
+      {
+        "amount": 299020.34,
+        "label": "PAC / other committees",
+        "share": 0.06646449379957128
+      },
+      {
+        "amount": 1500.0,
+        "label": "Political party committees",
+        "share": 0.0003334112344978168
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6NV00200",
+      "district": "00",
+      "name": "CORTEZ MASTO, CATHERINE",
+      "office": "S",
+      "party": "DEM",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3339755.42,
+      "debts": 0.0,
+      "disbursements": 4785591.98,
+      "individualContributions": 4198428.24,
+      "receipts": 5124165.42
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:30.212612+00:00"
+  "updated_at": "2026-07-15T06:30:33.902634+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1452202.61,
+        "label": "Small individual (unitemized)",
+        "share": 0.3199221272785535
+      },
+      {
+        "amount": 2059704.04,
+        "label": "Large individual (itemized)",
+        "share": 0.45375548391352283
+      },
+      {
+        "amount": 1027331.14,
+        "label": "PAC / other committees",
+        "share": 0.22632238880792363
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6NH00091",
+      "district": "00",
+      "name": "HASSAN, MARGARET WOOD",
+      "office": "S",
+      "party": "DEM",
+      "state": "NH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1495997.46,
+      "debts": 0.0,
+      "disbursements": 3511186.5,
+      "individualContributions": 3511906.65,
+      "receipts": 4883083.83
+    }
+  },
+  "generated_at": "2026-07-15T06:27:55.682997+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 94.2,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:11:14.779139+00:00"
+  "updated_at": "2026-07-15T06:29:40.745660+00:00"
 }
