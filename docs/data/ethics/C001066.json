@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.9,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 50038.59,
+        "label": "Small individual (unitemized)",
+        "share": 0.057622706860550814
+      },
+      {
+        "amount": 390794.6,
+        "label": "Large individual (itemized)",
+        "share": 0.45002552387040107
+      },
+      {
+        "amount": 427550.0,
+        "label": "PAC / other committees",
+        "share": 0.49235176926904817
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL11126",
+      "district": "14",
+      "name": "CASTOR, KATHY",
+      "office": "H",
+      "party": "DEM",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 716584.33,
+      "debts": 0.0,
+      "disbursements": 386157.72,
+      "individualContributions": 440833.19,
+      "receipts": 876012.18
+    }
+  },
+  "generated_at": "2026-07-15T14:09:09.363635+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:02.910787+00:00"
+  "updated_at": "2026-07-15T14:09:43.768242+00:00"
 }

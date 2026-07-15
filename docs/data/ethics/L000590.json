@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 73.7,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 222276.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.06091395204378948
+      },
+      {
+        "amount": 2289766.15,
+        "label": "Large individual (itemized)",
+        "share": 0.6274999193689872
+      },
+      {
+        "amount": 1133938.33,
+        "label": "PAC / other committees",
+        "share": 0.3107506024772023
+      },
+      {
+        "amount": 3048.86,
+        "label": "Political party committees",
+        "share": 0.00083552611002103
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NV04020",
+      "district": "03",
+      "name": "LEE, SUSIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3310177.95,
+      "debts": 0.0,
+      "disbursements": 1018875.88,
+      "individualContributions": 2512043.0,
+      "receipts": 3862399.29
+    }
+  },
+  "generated_at": "2026-07-15T14:09:09.363635+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-07-14T05:58:40.799959+00:00"
+  "updated_at": "2026-07-15T14:09:24.904452+00:00"
 }

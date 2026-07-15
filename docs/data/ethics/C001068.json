@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 67.0,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 10452.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.01886816260550051
+      },
+      {
+        "amount": 261235.0,
+        "label": "Large individual (itemized)",
+        "share": 0.47157183692515703
+      },
+      {
+        "amount": 281500.0,
+        "label": "PAC / other committees",
+        "share": 0.5081534713741716
+      },
+      {
+        "amount": 779.17,
+        "label": "Political party committees",
+        "share": 0.0014065290951709173
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6TN09068",
+      "district": "09",
+      "name": "COHEN, STEVE I MR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "TN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1982620.28,
+      "debts": 0.0,
+      "disbursements": 395281.05,
+      "individualContributions": 271687.33,
+      "receipts": 658568.64
+    }
+  },
+  "generated_at": "2026-07-15T14:09:09.363635+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 14,
-  "updated_at": "2026-07-13T19:51:43.795412+00:00"
+  "updated_at": "2026-07-15T14:10:16.863534+00:00"
 }

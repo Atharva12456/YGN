@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 70.0,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 17495.01,
+        "label": "Small individual (unitemized)",
+        "share": 0.01863681973436427
+      },
+      {
+        "amount": 235721.99,
+        "label": "Large individual (itemized)",
+        "share": 0.251106357473109
+      },
+      {
+        "amount": 684016.66,
+        "label": "PAC / other committees",
+        "share": 0.7286589254720024
+      },
+      {
+        "amount": 1500.0,
+        "label": "Political party committees",
+        "share": 0.0015978973205243326
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OH03125",
+      "district": "03",
+      "name": "BEATTY, JOYCE",
+      "office": "H",
+      "party": "DEM",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2730576.58,
+      "debts": 2500.0,
+      "disbursements": 926537.63,
+      "individualContributions": 253217.0,
+      "receipts": 944540.71
+    }
+  },
+  "generated_at": "2026-07-15T14:09:09.363635+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T05:59:37.279774+00:00"
+  "updated_at": "2026-07-15T14:09:40.017282+00:00"
 }

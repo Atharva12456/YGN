@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.5,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 222805.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.062119386651826716
+      },
+      {
+        "amount": 1076601.53,
+        "label": "Large individual (itemized)",
+        "share": 0.30016223430658034
+      },
+      {
+        "amount": 2287325.0,
+        "label": "PAC / other committees",
+        "share": 0.637718379041593
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MO08162",
+      "district": "08",
+      "name": "SMITH, JASON T",
+      "office": "H",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4884151.41,
+      "debts": 0.0,
+      "disbursements": 2593542.85,
+      "individualContributions": 1299407.13,
+      "receipts": 4460550.3
+    }
+  },
+  "generated_at": "2026-07-15T14:09:09.363635+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:25:49.678763+00:00"
+  "updated_at": "2026-07-15T14:09:37.445130+00:00"
 }
