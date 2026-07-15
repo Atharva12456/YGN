@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 164568.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.05180083664781205
+      },
+      {
+        "amount": 1588884.04,
+        "label": "Large individual (itemized)",
+        "share": 0.5001299315296707
+      },
+      {
+        "amount": 1315602.65,
+        "label": "PAC / other committees",
+        "share": 0.4141096811978508
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.019515619122739494
+      },
+      {
+        "amount": 45887.54,
+        "label": "Self-funding & candidate loans",
+        "share": 0.014443931501926991
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6NE00129",
+      "district": "00",
+      "name": "RICKETTS, PETE",
+      "office": "S",
+      "party": "REP",
+      "state": "NE"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1072534.52,
+      "debts": 0.0,
+      "disbursements": 4281083.75,
+      "individualContributions": 1753452.32,
+      "receipts": 4866649.16
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 67.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:40.280466+00:00"
+  "updated_at": "2026-07-15T15:50:31.990973+00:00"
 }

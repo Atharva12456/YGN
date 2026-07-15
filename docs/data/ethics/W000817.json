@@ -1,53 +1,99 @@
 {
   "bioguideId": "W000817",
-  "score": 97.3,
-  "grade": "A",
-  "source": "fec_live",
-  "method": "campaign_finance_stock_v4",
-  "updated_at": "2026-07-11T04:21:56.107643+00:00",
-  "cycle": 2026,
   "candidate": {
     "candidate_id": "S2MA00170",
+    "district": "00",
     "name": "WARREN, ELIZABETH",
     "office": "S",
-    "state": "MA",
-    "district": "00",
-    "party": "DEM"
+    "party": "DEM",
+    "state": "MA"
   },
   "components": {
-    "small_donor": {
-      "value": 0.7053,
-      "score": 99.1,
-      "weight": 0.3
-    },
-    "pac_independence": {
-      "value": 0.9959,
-      "score": 96.4,
-      "weight": 0.25
-    },
     "donor_diversity": {
-      "value": 1.0,
       "score": 96.7,
+      "value": 1.0,
       "weight": 0.2
     },
+    "in_state_support": {
+      "score": null,
+      "value": null,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 96.4,
+      "value": 0.9959,
+      "weight": 0.25
+    },
     "self_party_independence": {
-      "value": 1.0,
       "score": 96.0,
+      "value": 1.0,
       "weight": 0.15
     },
-    "in_state_support": {
-      "value": null,
-      "score": null,
-      "weight": 0.1
+    "small_donor": {
+      "score": 99.1,
+      "value": 0.7053,
+      "weight": 0.3
     },
     "stock_conflict": {
       "measurable": false,
       "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
     }
   },
+  "cycle": 2026,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2541865.99,
+        "label": "Small individual (unitemized)",
+        "share": 0.7023519494937341
+      },
+      {
+        "amount": 1062211.3,
+        "label": "Large individual (itemized)",
+        "share": 0.29350334764472524
+      },
+      {
+        "amount": 15000.0,
+        "label": "PAC / other committees",
+        "share": 0.00414470286154071
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2MA00170",
+      "district": "00",
+      "name": "WARREN, ELIZABETH",
+      "office": "S",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3723063.38,
+      "debts": 0.0,
+      "disbursements": 3499344.25,
+      "individualContributions": 3604077.29,
+      "receipts": 3772360.96
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
+  "grade": "A",
+  "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "generated_at": "2026-07-11T04:21:56.107744+00:00"
+  "score": 97.3,
+  "source": "fec_live",
+  "updated_at": "2026-07-15T15:50:23.188563+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 104680.35,
+        "label": "Small individual (unitemized)",
+        "share": 0.03650207554124607
+      },
+      {
+        "amount": 1754251.37,
+        "label": "Large individual (itemized)",
+        "share": 0.6117080810875624
+      },
+      {
+        "amount": 1007860.0,
+        "label": "PAC / other committees",
+        "share": 0.35144114301299395
+      },
+      {
+        "amount": 1000.0,
+        "label": "Political party committees",
+        "share": 0.00034870035819756115
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6IN00191",
+      "district": "00",
+      "name": "YOUNG, TODD CHRISTOPHER",
+      "office": "S",
+      "party": "REP",
+      "state": "IN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 7205565.85,
+      "debts": 0.0,
+      "disbursements": 2687345.48,
+      "individualContributions": 1858931.72,
+      "receipts": 6156016.37
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 79.9,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:35.885020+00:00"
+  "updated_at": "2026-07-15T15:50:19.985811+00:00"
 }

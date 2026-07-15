@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2018,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 16366.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.014010554657792457
+      },
+      {
+        "amount": 350042.47,
+        "label": "Large individual (itemized)",
+        "share": 0.29966327498983725
+      },
+      {
+        "amount": 801710.88,
+        "label": "PAC / other committees",
+        "share": 0.6863261703523702
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6KS01179",
+      "district": "00",
+      "name": "MARSHALL, ROGER W",
+      "office": "S",
+      "party": "REP",
+      "state": "KS"
+    },
+    "cycle": 2018,
+    "totals": {
+      "cashOnHand": 608285.86,
+      "debts": 35000.0,
+      "disbursements": 753188.46,
+      "individualContributions": 366408.47,
+      "receipts": 1343114.41
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 65.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:58.445922+00:00"
+  "updated_at": "2026-07-15T15:50:37.091813+00:00"
 }

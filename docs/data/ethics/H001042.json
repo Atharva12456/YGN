@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 174012.05,
+        "label": "Small individual (unitemized)",
+        "share": 0.3658411723918282
+      },
+      {
+        "amount": 269137.12,
+        "label": "Large individual (itemized)",
+        "share": 0.5658311566064543
+      },
+      {
+        "amount": 32500.0,
+        "label": "PAC / other committees",
+        "share": 0.06832767100171751
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2HI00106",
+      "district": "00",
+      "name": "HIRONO, MAZIE K.",
+      "office": "S",
+      "party": "DEM",
+      "state": "HI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1393689.22,
+      "debts": 0.0,
+      "disbursements": 499060.49,
+      "individualContributions": 443149.17,
+      "receipts": 486874.86
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:10:59.699815+00:00"
+  "updated_at": "2026-07-15T15:51:20.224180+00:00"
 }

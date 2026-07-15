@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1609733.01,
+        "label": "Small individual (unitemized)",
+        "share": 0.26940614625342857
+      },
+      {
+        "amount": 2839124.24,
+        "label": "Large individual (itemized)",
+        "share": 0.47515800165711597
+      },
+      {
+        "amount": 1526258.88,
+        "label": "PAC / other committees",
+        "share": 0.2554358520894555
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4IA00129",
+      "district": "00",
+      "name": "ERNST, JONI K",
+      "office": "S",
+      "party": "REP",
+      "state": "IA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1997164.76,
+      "debts": 0.0,
+      "disbursements": 5485942.8,
+      "individualContributions": 4448857.25,
+      "receipts": 6954692.63
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 84.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:12:02.534650+00:00"
+  "updated_at": "2026-07-15T15:51:48.072951+00:00"
 }

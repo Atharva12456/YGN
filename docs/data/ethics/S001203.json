@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1110322.24,
+        "label": "Small individual (unitemized)",
+        "share": 0.37030722370510016
+      },
+      {
+        "amount": 1395810.02,
+        "label": "Large individual (itemized)",
+        "share": 0.4655211925917654
+      },
+      {
+        "amount": 492249.0,
+        "label": "PAC / other committees",
+        "share": 0.16417158370313456
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8MN00578",
+      "district": "00",
+      "name": "SMITH, TINA",
+      "office": "S",
+      "party": "DEM",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 270257.23,
+      "debts": 0.0,
+      "disbursements": 3588468.57,
+      "individualContributions": 2506132.26,
+      "receipts": 3056970.44
+    }
+  },
+  "generated_at": "2026-07-15T15:49:46.765621+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 94.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:15:05.874746+00:00"
+  "updated_at": "2026-07-15T15:50:27.564577+00:00"
 }
