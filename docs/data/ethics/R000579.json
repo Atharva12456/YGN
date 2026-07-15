@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.9,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 225985.66,
+        "label": "Small individual (unitemized)",
+        "share": 0.057583907389375716
+      },
+      {
+        "amount": 3239426.32,
+        "label": "Large individual (itemized)",
+        "share": 0.8254454074899539
+      },
+      {
+        "amount": 459046.61,
+        "label": "PAC / other committees",
+        "share": 0.11697068512067037
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY19223",
+      "district": "18",
+      "name": "RYAN, PATRICK",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2948337.22,
+      "debts": 0.0,
+      "disbursements": 1684536.86,
+      "individualContributions": 3465411.98,
+      "receipts": 4465682.72
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T05:25:41.090108+00:00"
+  "updated_at": "2026-07-15T11:48:12.576829+00:00"
 }

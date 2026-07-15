@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.1,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 37548.94,
+        "label": "Small individual (unitemized)",
+        "share": 0.01855204205423475
+      },
+      {
+        "amount": 627779.87,
+        "label": "Large individual (itemized)",
+        "share": 0.3101711672564398
+      },
+      {
+        "amount": 1358150.0,
+        "label": "PAC / other committees",
+        "share": 0.6710297525298696
+      },
+      {
+        "amount": 500.0,
+        "label": "Political party committees",
+        "share": 0.0002470381594558295
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OH15228",
+      "district": "15",
+      "name": "CAREY, MIKE",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1521999.77,
+      "debts": 0.0,
+      "disbursements": 1206608.55,
+      "individualContributions": 665328.81,
+      "receipts": 2567314.01
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:29:55.615685+00:00"
+  "updated_at": "2026-07-15T11:48:46.938639+00:00"
 }

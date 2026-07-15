@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.6,
-  "generated_at": "2026-07-13T08:28:14.627855+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 32235.52,
+        "label": "Small individual (unitemized)",
+        "share": 0.025043081407028208
+      },
+      {
+        "amount": 802487.93,
+        "label": "Large individual (itemized)",
+        "share": 0.62343559400151
+      },
+      {
+        "amount": 452479.17,
+        "label": "PAC / other committees",
+        "share": 0.35152132459146174
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA33119",
+      "district": "36",
+      "name": "LIEU, TED",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 957142.62,
+      "debts": 1170.38,
+      "disbursements": 1211263.13,
+      "individualContributions": 834723.45,
+      "receipts": 1493399.0
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T08:28:21.595726+00:00"
+  "updated_at": "2026-07-15T11:48:37.477438+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.0,
-  "generated_at": "2026-07-13T04:37:04.339111+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2683.24,
+        "label": "Small individual (unitemized)",
+        "share": 0.0018768180135695302
+      },
+      {
+        "amount": 418603.29,
+        "label": "Large individual (itemized)",
+        "share": 0.2927960954709493
+      },
+      {
+        "amount": 1008388.58,
+        "label": "PAC / other committees",
+        "share": 0.705327086515481
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8WV03097",
+      "district": "01",
+      "name": "MILLER, CAROL DEVINE",
+      "office": "H",
+      "party": "REP",
+      "state": "WV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 729464.08,
+      "debts": 417992.72,
+      "disbursements": 941654.18,
+      "individualContributions": 421286.53,
+      "receipts": 1431576.28
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T04:37:12.375808+00:00"
+  "updated_at": "2026-07-15T11:48:15.074169+00:00"
 }

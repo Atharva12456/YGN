@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.8,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 146930.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.11331305680823911
+      },
+      {
+        "amount": 709436.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5471179030767581
+      },
+      {
+        "amount": 440311.86,
+        "label": "PAC / other committees",
+        "share": 0.3395690401150028
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2KY03206",
+      "district": "03",
+      "name": "MCGARVEY, MORGAN",
+      "office": "H",
+      "party": "DEM",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1725862.76,
+      "debts": 0.0,
+      "disbursements": 986553.4,
+      "individualContributions": 856366.6,
+      "receipts": 1448999.06
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:24:19.010980+00:00"
+  "updated_at": "2026-07-15T11:48:21.131902+00:00"
 }

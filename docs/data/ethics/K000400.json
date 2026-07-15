@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 88.6,
-  "generated_at": "2026-07-14T03:32:54.495501+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 241894.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.267739585259474
+      },
+      {
+        "amount": 326339.96,
+        "label": "Large individual (itemized)",
+        "share": 0.36120770853693285
+      },
+      {
+        "amount": 333842.46,
+        "label": "PAC / other committees",
+        "share": 0.3695118121266322
+      },
+      {
+        "amount": 1392.15,
+        "label": "Political party committees",
+        "share": 0.0015408940769610043
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA37304",
+      "district": "37",
+      "name": "KAMLAGER-DOVE, SYDNEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 333602.56,
+      "debts": 0.0,
+      "disbursements": 632437.89,
+      "individualContributions": 568234.37,
+      "receipts": 904042.47
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T03:33:13.627455+00:00"
+  "updated_at": "2026-07-15T11:48:35.342278+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2024,
   "financeScore": 80.4,
-  "generated_at": "2026-07-13T05:23:39.955035+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 888903.63,
+        "label": "Small individual (unitemized)",
+        "share": 0.185920266558836
+      },
+      {
+        "amount": 2364391.16,
+        "label": "Large individual (itemized)",
+        "share": 0.4945285629180697
+      },
+      {
+        "amount": 1522306.52,
+        "label": "PAC / other committees",
+        "share": 0.31840080795108694
+      },
+      {
+        "amount": 5500.0,
+        "label": "Political party committees",
+        "share": 0.0011503625720074944
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0IA01174",
+      "district": "02",
+      "name": "ARENHOLZ, ASHLEY HINSON",
+      "office": "H",
+      "party": "REP",
+      "state": "IA"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 1928075.4,
+      "debts": 0.0,
+      "disbursements": 3740906.41,
+      "individualContributions": 3253294.79,
+      "receipts": 5600532.3
+    }
+  },
+  "generated_at": "2026-07-15T11:47:52.898811+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T05:25:50.739195+00:00"
+  "updated_at": "2026-07-15T11:48:28.920299+00:00"
 }
