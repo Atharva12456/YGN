@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.0,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 67337.22,
+        "label": "Small individual (unitemized)",
+        "share": 0.07233108233378621
+      },
+      {
+        "amount": 590965.5,
+        "label": "Large individual (itemized)",
+        "share": 0.6347926783571869
+      },
+      {
+        "amount": 270485.0,
+        "label": "PAC / other committees",
+        "share": 0.290544706256869
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 2170.56,
+        "label": "Self-funding & candidate loans",
+        "share": 0.002331533052157826
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4VA10279",
+      "district": "10",
+      "name": "SUBRAMANYAM, SUHAS",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 606565.96,
+      "debts": 0.0,
+      "disbursements": 476146.5,
+      "individualContributions": 658302.72,
+      "receipts": 991879.02
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:22.453783+00:00"
+  "updated_at": "2026-07-15T09:21:42.927464+00:00"
 }

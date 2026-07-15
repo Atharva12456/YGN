@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.3,
-  "generated_at": "2026-07-12T23:37:37.655413+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 316824.04,
+        "label": "Small individual (unitemized)",
+        "share": 0.08729846317537003
+      },
+      {
+        "amount": 2424795.42,
+        "label": "Large individual (itemized)",
+        "share": 0.6681340017022569
+      },
+      {
+        "amount": 883600.0,
+        "label": "PAC / other committees",
+        "share": 0.24346928364955187
+      },
+      {
+        "amount": 3985.78,
+        "label": "Political party committees",
+        "share": 0.0010982514728210852
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY04244",
+      "district": "04",
+      "name": "GILLEN, LAURA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3421462.14,
+      "debts": 0.0,
+      "disbursements": 1188925.83,
+      "individualContributions": 2741619.46,
+      "receipts": 4587184.65
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-12T23:38:39.477767+00:00"
+  "updated_at": "2026-07-15T09:22:17.393125+00:00"
 }

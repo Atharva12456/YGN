@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 84.1,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 408873.62,
+        "label": "Small individual (unitemized)",
+        "share": 0.20671406307299992
+      },
+      {
+        "amount": 1076188.5,
+        "label": "Large individual (itemized)",
+        "share": 0.5440881646202491
+      },
+      {
+        "amount": 485600.0,
+        "label": "PAC / other committees",
+        "share": 0.2455045865474245
+      },
+      {
+        "amount": 7305.0,
+        "label": "Political party committees",
+        "share": 0.0036931857593264744
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6TN07161",
+      "district": "07",
+      "name": "VAN EPPS, MATTHEW ROBERT",
+      "office": "H",
+      "party": "REP",
+      "state": "TN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 135155.31,
+      "debts": 148237.23,
+      "disbursements": 1846901.87,
+      "individualContributions": 1485062.12,
+      "receipts": 1982057.18
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T23:13:05.469755+00:00"
+  "updated_at": "2026-07-15T09:21:37.737125+00:00"
 }

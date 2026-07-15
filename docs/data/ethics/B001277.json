@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 105199.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.24325609485440974
+      },
+      {
+        "amount": 213209.0,
+        "label": "Large individual (itemized)",
+        "share": 0.49301171519351256
+      },
+      {
+        "amount": 114054.24,
+        "label": "PAC / other committees",
+        "share": 0.2637321899520777
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0CT00177",
+      "district": "00",
+      "name": "BLUMENTHAL, RICHARD",
+      "office": "S",
+      "party": "DEM",
+      "state": "CT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1311528.75,
+      "debts": 0.0,
+      "disbursements": 687611.38,
+      "individualContributions": 318408.1,
+      "receipts": 749251.37
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 92.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:15:08.634249+00:00"
+  "updated_at": "2026-07-15T09:23:08.004206+00:00"
 }

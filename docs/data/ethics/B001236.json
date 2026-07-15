@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 24158.34,
+        "label": "Small individual (unitemized)",
+        "share": 0.0258797346939239
+      },
+      {
+        "amount": 263426.5,
+        "label": "Large individual (itemized)",
+        "share": 0.2821968699566669
+      },
+      {
+        "amount": 645900.0,
+        "label": "PAC / other committees",
+        "share": 0.6919233953494093
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0AR00150",
+      "district": "00",
+      "name": "BOOZMAN, SEN. JOHN",
+      "office": "S",
+      "party": "REP",
+      "state": "AR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1270501.58,
+      "debts": 0.0,
+      "disbursements": 708216.11,
+      "individualContributions": 287584.84,
+      "receipts": 1086498.01
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 73.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:54.138348+00:00"
+  "updated_at": "2026-07-15T09:22:51.630200+00:00"
 }

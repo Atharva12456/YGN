@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 40720.83,
+        "label": "Small individual (unitemized)",
+        "share": 0.05439107190355815
+      },
+      {
+        "amount": 341197.38,
+        "label": "Large individual (itemized)",
+        "share": 0.4557395128951363
+      },
+      {
+        "amount": 366749.33,
+        "label": "PAC / other committees",
+        "share": 0.4898694152013055
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6WY00068",
+      "district": "00",
+      "name": "BARRASSO, JOHN A",
+      "office": "S",
+      "party": "REP",
+      "state": "WY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 8408868.14,
+      "debts": 0.0,
+      "disbursements": 873912.06,
+      "individualContributions": 381918.21,
+      "receipts": 1554351.61
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 78.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:15:43.099943+00:00"
+  "updated_at": "2026-07-15T09:23:12.705899+00:00"
 }

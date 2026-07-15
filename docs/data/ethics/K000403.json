@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.4,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2465.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.0032624164872277605
+      },
+      {
+        "amount": 381158.78,
+        "label": "Large individual (itemized)",
+        "share": 0.5044292005888539
+      },
+      {
+        "amount": 372000.0,
+        "label": "PAC / other committees",
+        "share": 0.4923083829239185
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4UT03260",
+      "district": "04",
+      "name": "KENNEDY, MIKE",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 370846.88,
+      "debts": 225000.0,
+      "disbursements": 556573.87,
+      "individualContributions": 383623.94,
+      "receipts": 802218.94
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T23:13:35.577332+00:00"
+  "updated_at": "2026-07-15T09:21:46.693335+00:00"
 }

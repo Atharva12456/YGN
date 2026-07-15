@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.6,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5736.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.017694339606578176
+      },
+      {
+        "amount": 67476.62,
+        "label": "Large individual (itemized)",
+        "share": 0.2081401303599925
+      },
+      {
+        "amount": 250975.5,
+        "label": "PAC / other committees",
+        "share": 0.7741655300334294
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4SC01313",
+      "district": "03",
+      "name": "BIGGS, SHERI",
+      "office": "H",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 174494.83,
+      "debts": 395000.0,
+      "disbursements": 348017.78,
+      "individualContributions": 73212.92,
+      "receipts": 418427.35
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 10,
-  "updated_at": "2026-07-14T00:07:41.295449+00:00"
+  "updated_at": "2026-07-15T09:21:55.334614+00:00"
 }

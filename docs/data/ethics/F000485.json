@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.2,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 156932.67,
+        "label": "Small individual (unitemized)",
+        "share": 0.12866578515473476
+      },
+      {
+        "amount": 859339.46,
+        "label": "Large individual (itemized)",
+        "share": 0.7045542928400171
+      },
+      {
+        "amount": 203420.19,
+        "label": "PAC / other committees",
+        "share": 0.166779922005248
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 450000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.36894550586331476
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0GA14030",
+      "district": "14",
+      "name": "FULLER, CLAY",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 77174.07,
+      "debts": 424922.24,
+      "disbursements": 1592518.25,
+      "individualContributions": 1016272.13,
+      "receipts": 1669692.32
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:03.438063+00:00"
+  "updated_at": "2026-07-15T09:21:35.168072+00:00"
 }

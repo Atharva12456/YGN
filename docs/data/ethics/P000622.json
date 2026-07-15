@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.5,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 432439.2,
+        "label": "Small individual (unitemized)",
+        "share": 0.14232167998317333
+      },
+      {
+        "amount": 2139724.09,
+        "label": "Large individual (itemized)",
+        "share": 0.7042125856982132
+      },
+      {
+        "amount": 461300.0,
+        "label": "PAC / other committees",
+        "share": 0.15182016564695766
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0016455686716557302
+      },
+      {
+        "amount": 12000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0039493648119737525
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL01390",
+      "district": "01",
+      "name": "PATRONIS, JIMMY JR.",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 507115.6,
+      "debts": 0.0,
+      "disbursements": 2624960.99,
+      "individualContributions": 2572163.29,
+      "receipts": 3132076.59
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:06.914067+00:00"
+  "updated_at": "2026-07-15T09:21:39.437253+00:00"
 }

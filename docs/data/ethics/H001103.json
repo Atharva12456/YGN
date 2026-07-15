@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 85.3,
-  "generated_at": "2026-07-14T06:24:27.711003+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 42960.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.07497421030911557
+      },
+      {
+        "amount": 461899.0,
+        "label": "Large individual (itemized)",
+        "share": 0.8060924315156331
+      },
+      {
+        "amount": 68150.0,
+        "label": "PAC / other committees",
+        "share": 0.1189333581752513
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4PR01010",
+      "district": "00",
+      "name": "HERNANDEZ RIVERA, PABLO JOSE",
+      "office": "H",
+      "party": "DEM",
+      "state": "PR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 319853.86,
+      "debts": 1140.8,
+      "disbursements": 266142.55,
+      "individualContributions": 504859.97,
+      "receipts": 574030.18
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T06:24:39.852427+00:00"
+  "updated_at": "2026-07-15T09:21:49.816979+00:00"
 }

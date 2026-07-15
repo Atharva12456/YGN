@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 176260.79,
+        "label": "Small individual (unitemized)",
+        "share": 0.03428547605410361
+      },
+      {
+        "amount": 3087564.64,
+        "label": "Large individual (itemized)",
+        "share": 0.6005795363235183
+      },
+      {
+        "amount": 1877150.0,
+        "label": "PAC / other committees",
+        "share": 0.3651349876223781
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0DE00092",
+      "district": "00",
+      "name": "COONS, CHRISTOPHER A.",
+      "office": "S",
+      "party": "DEM",
+      "state": "DE"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4129671.39,
+      "debts": 0.0,
+      "disbursements": 3484548.05,
+      "individualContributions": 3263825.43,
+      "receipts": 5773706.18
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 68.3,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:36.867602+00:00"
+  "updated_at": "2026-07-15T09:22:32.724086+00:00"
 }

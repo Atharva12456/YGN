@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 92.0,
-      "value": 0.8292,
+      "score": 92.1,
+      "value": 0.8296,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 92.1,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 552714.5,
+        "label": "Small individual (unitemized)",
+        "share": 0.36242174228432583
+      },
+      {
+        "amount": 705408.61,
+        "label": "Large individual (itemized)",
+        "share": 0.4625451611248927
+      },
+      {
+        "amount": 254335.78,
+        "label": "PAC / other committees",
+        "share": 0.16677112055653143
+      },
+      {
+        "amount": 5600.0,
+        "label": "Political party committees",
+        "share": 0.003671989348555583
+      },
+      {
+        "amount": 7000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0045899866856944785
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NJ11286",
+      "district": "11",
+      "name": "MEJIA, ANALILIA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 134395.13,
+      "debts": 49601.96,
+      "disbursements": 1406663.76,
+      "individualContributions": 1258123.11,
+      "receipts": 1541058.89
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:01.998421+00:00"
+  "updated_at": "2026-07-15T09:21:33.736221+00:00"
 }

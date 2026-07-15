@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.3,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 73968.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.090816557691278
+      },
+      {
+        "amount": 289010.83,
+        "label": "Large individual (itemized)",
+        "share": 0.354841348213504
+      },
+      {
+        "amount": 451500.0,
+        "label": "PAC / other committees",
+        "share": 0.554342094095218
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WI08119",
+      "district": "08",
+      "name": "WIED, TONY",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 427379.15,
+      "debts": 631910.58,
+      "disbursements": 449391.49,
+      "individualContributions": 362979.01,
+      "receipts": 831540.14
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 10,
-  "updated_at": "2026-07-14T00:07:56.527825+00:00"
+  "updated_at": "2026-07-15T09:22:24.302830+00:00"
 }

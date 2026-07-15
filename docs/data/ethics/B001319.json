@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1913465.91,
+        "label": "Small individual (unitemized)",
+        "share": 0.30840049415681214
+      },
+      {
+        "amount": 3071368.02,
+        "label": "Large individual (itemized)",
+        "share": 0.4950239302175129
+      },
+      {
+        "amount": 1219650.0,
+        "label": "PAC / other committees",
+        "share": 0.19657557562567496
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2AL00145",
+      "district": "00",
+      "name": "BRITT, KATIE BOYD",
+      "office": "S",
+      "party": "REP",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 5223597.3,
+      "debts": 30327.0,
+      "disbursements": 2746365.13,
+      "individualContributions": 4984833.93,
+      "receipts": 6261230.95
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 94.3,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:49.315678+00:00"
+  "updated_at": "2026-07-15T09:22:46.860658+00:00"
 }

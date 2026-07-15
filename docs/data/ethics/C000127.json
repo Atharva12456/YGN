@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 366073.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.5456329544150695
+      },
+      {
+        "amount": 304841.73,
+        "label": "Large individual (itemized)",
+        "share": 0.4543670455849304
+      },
+      {
+        "amount": 0.0,
+        "label": "PAC / other committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8WA00194",
+      "district": "00",
+      "name": "CANTWELL, MARIA",
+      "office": "S",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 134951.29,
+      "debts": 2071350.9,
+      "disbursements": 1147976.64,
+      "individualContributions": 670915.14,
+      "receipts": 671716.74
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 93.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:43.765150+00:00"
+  "updated_at": "2026-07-15T09:22:41.363193+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1150510.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.5198517218277595
+      },
+      {
+        "amount": 968376.69,
+        "label": "Large individual (itemized)",
+        "share": 0.43755561470701204
+      },
+      {
+        "amount": 94264.0,
+        "label": "PAC / other committees",
+        "share": 0.04259266346522838
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2WI00219",
+      "district": "00",
+      "name": "BALDWIN, TAMMY",
+      "office": "S",
+      "party": "DEM",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 567364.11,
+      "debts": 0.0,
+      "disbursements": 1812160.5,
+      "individualContributions": 2118887.1,
+      "receipts": 2354257.76
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.7,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:15:45.062471+00:00"
+  "updated_at": "2026-07-15T09:23:19.438529+00:00"
 }

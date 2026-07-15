@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1055538.21,
+        "label": "Small individual (unitemized)",
+        "share": 0.10011144271737807
+      },
+      {
+        "amount": 7890124.53,
+        "label": "Large individual (itemized)",
+        "share": 0.7483307969666723
+      },
+      {
+        "amount": 1535969.25,
+        "label": "PAC / other committees",
+        "share": 0.14567743368288785
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.005880326633061858
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6ME00159",
+      "district": "00",
+      "name": "COLLINS, SUSAN M.",
+      "office": "S",
+      "party": "REP",
+      "state": "ME"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 9672914.33,
+      "debts": 0.0,
+      "disbursements": 6547574.47,
+      "individualContributions": 8945662.74,
+      "receipts": 14925296.32
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 71.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:39.778187+00:00"
+  "updated_at": "2026-07-15T09:22:34.312250+00:00"
 }

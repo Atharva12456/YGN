@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.4,
-  "generated_at": "2026-07-14T00:07:23.961477+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 151370.03,
+        "label": "Small individual (unitemized)",
+        "share": 0.1104464253551262
+      },
+      {
+        "amount": 926608.98,
+        "label": "Large individual (itemized)",
+        "share": 0.6760958529436746
+      },
+      {
+        "amount": 292550.0,
+        "label": "PAC / other committees",
+        "share": 0.21345772170119917
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WA05234",
+      "district": "05",
+      "name": "BAUMGARTNER, MICHAEL JAMES",
+      "office": "H",
+      "party": "REP",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 972786.34,
+      "debts": 0.0,
+      "disbursements": 632015.22,
+      "individualContributions": 1077979.01,
+      "receipts": 1413236.89
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T00:07:43.235603+00:00"
+  "updated_at": "2026-07-15T09:22:01.531057+00:00"
 }

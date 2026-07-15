@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 162673.76,
+        "label": "Small individual (unitemized)",
+        "share": 0.25221155599909784
+      },
+      {
+        "amount": 242815.56,
+        "label": "Large individual (itemized)",
+        "share": 0.37646446610929934
+      },
+      {
+        "amount": 239500.0,
+        "label": "PAC / other committees",
+        "share": 0.37132397789160293
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4DE00060",
+      "district": "00",
+      "name": "BLUNT ROCHESTER, LISA",
+      "office": "S",
+      "party": "DEM",
+      "state": "DE"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 109896.03,
+      "debts": 0.0,
+      "disbursements": 884380.44,
+      "individualContributions": 405489.32,
+      "receipts": 849819.29
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 91.5,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:15:03.669575+00:00"
+  "updated_at": "2026-07-15T09:23:03.030125+00:00"
 }

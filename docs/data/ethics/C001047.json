@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 102184.52,
+        "label": "Small individual (unitemized)",
+        "share": 0.019118107645661367
+      },
+      {
+        "amount": 2721865.71,
+        "label": "Large individual (itemized)",
+        "share": 0.5092446648554448
+      },
+      {
+        "amount": 2458857.43,
+        "label": "PAC / other committees",
+        "share": 0.46003740128225157
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.011599826216642253
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4WV00159",
+      "district": "00",
+      "name": "CAPITO, SHELLEY MOORE",
+      "office": "S",
+      "party": "REP",
+      "state": "WV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4064753.28,
+      "debts": 0.0,
+      "disbursements": 4176660.13,
+      "individualContributions": 2824050.23,
+      "receipts": 5770883.07
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 64.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:14:42.152872+00:00"
+  "updated_at": "2026-07-15T09:22:36.514285+00:00"
 }

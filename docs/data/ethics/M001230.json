@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.8,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 506594.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.22634280880042443
+      },
+      {
+        "amount": 805860.91,
+        "label": "Large individual (itemized)",
+        "share": 0.36005257192321916
+      },
+      {
+        "amount": 920719.8,
+        "label": "PAC / other committees",
+        "share": 0.4113706570165216
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0022339622598347595
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA15195",
+      "district": "07",
+      "name": "MACKENZIE, RYAN EDWARD",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2594247.39,
+      "debts": 39140.69,
+      "disbursements": 1235340.95,
+      "individualContributions": 1312455.88,
+      "receipts": 3726348.43
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T23:13:33.974804+00:00"
+  "updated_at": "2026-07-15T09:21:45.133919+00:00"
 }

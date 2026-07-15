@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T23:12:53.357327+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 443334.65,
+        "label": "Small individual (unitemized)",
+        "share": 0.3801150805563209
+      },
+      {
+        "amount": 645885.35,
+        "label": "Large individual (itemized)",
+        "share": 0.5537820286444957
+      },
+      {
+        "amount": 77096.92,
+        "label": "PAC / other committees",
+        "share": 0.06610289079918347
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0CO00211",
+      "district": "00",
+      "name": "BENNET, MICHAEL F.",
+      "office": "S",
+      "party": "DEM",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 220650.23,
+      "debts": 374819.0,
+      "disbursements": 1908907.87,
+      "individualContributions": 1089220.0,
+      "receipts": 1388764.94
+    }
+  },
+  "generated_at": "2026-07-15T09:21:18.795182+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.2,
   "source": "fec_live",
-  "updated_at": "2026-07-13T23:15:38.421073+00:00"
+  "updated_at": "2026-07-15T09:23:11.169214+00:00"
 }
