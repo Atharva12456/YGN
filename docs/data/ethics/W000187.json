@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.8,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 20032.57,
+        "label": "Small individual (unitemized)",
+        "share": 0.03282679441004045
+      },
+      {
+        "amount": 277218.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4542691373479586
+      },
+      {
+        "amount": 313000.0,
+        "label": "PAC / other committees",
+        "share": 0.5129040682420011
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA23011",
+      "district": "43",
+      "name": "WATERS, MAXINE MS",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 324042.54,
+      "debts": 104096.34,
+      "disbursements": 527178.26,
+      "individualContributions": 297250.57,
+      "receipts": 734764.32
+    }
+  },
+  "generated_at": "2026-07-15T19:36:27.895810+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:19.801147+00:00"
+  "updated_at": "2026-07-15T19:36:58.642355+00:00"
 }
