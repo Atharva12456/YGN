@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.7,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5346.53,
+        "label": "Small individual (unitemized)",
+        "share": 0.03491229302836796
+      },
+      {
+        "amount": 39521.59,
+        "label": "Large individual (itemized)",
+        "share": 0.25807193282877244
+      },
+      {
+        "amount": 108273.64,
+        "label": "PAC / other committees",
+        "share": 0.7070157741428594
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0FL17068",
+      "district": "24",
+      "name": "WILSON, FREDERICA S.",
+      "office": "H",
+      "party": "DEM",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 390206.66,
+      "debts": 15250.0,
+      "disbursements": 260134.72,
+      "individualContributions": 44868.12,
+      "receipts": 153141.76
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:26:09.916692+00:00"
+  "updated_at": "2026-07-15T00:06:13.064171+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 77.1,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 12384.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.03354576897641422
+      },
+      {
+        "amount": 82510.0,
+        "label": "Large individual (itemized)",
+        "share": 0.22350193702581683
+      },
+      {
+        "amount": 271275.0,
+        "label": "PAC / other committees",
+        "share": 0.7348259358463031
+      },
+      {
+        "amount": 3000.0,
+        "label": "Political party committees",
+        "share": 0.008126358151465889
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC12100",
+      "district": "12",
+      "name": "ADAMS, ALMA SHEALEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 456593.63,
+      "debts": 0.0,
+      "disbursements": 487322.17,
+      "individualContributions": 94894.06,
+      "receipts": 370506.43
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:24:55.484036+00:00"
+  "updated_at": "2026-07-15T00:05:32.415557+00:00"
 }

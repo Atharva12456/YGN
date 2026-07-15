@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 64.3,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 9531.63,
+        "label": "Small individual (unitemized)",
+        "share": 0.012376241866187429
+      },
+      {
+        "amount": 218523.81,
+        "label": "Large individual (itemized)",
+        "share": 0.2837398772382884
+      },
+      {
+        "amount": 542100.0,
+        "label": "PAC / other committees",
+        "share": 0.7038838808955242
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX33073",
+      "district": "33",
+      "name": "VEASEY, MARC ALLISON",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 692049.03,
+      "debts": 0.0,
+      "disbursements": 1087606.79,
+      "individualContributions": 228055.44,
+      "receipts": 770175.39
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:24:58.077492+00:00"
+  "updated_at": "2026-07-15T00:05:35.618040+00:00"
 }

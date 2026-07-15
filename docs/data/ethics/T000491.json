@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.5,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 745166.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.187958719213854
+      },
+      {
+        "amount": 2342206.17,
+        "label": "Large individual (itemized)",
+        "share": 0.5907919468252528
+      },
+      {
+        "amount": 874120.6,
+        "label": "PAC / other committees",
+        "share": 0.2204858896064039
+      },
+      {
+        "amount": 3026.69,
+        "label": "Political party committees",
+        "share": 0.0007634443544893081
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA45170",
+      "district": "45",
+      "name": "TRAN, DEREK",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2754337.97,
+      "debts": 25000.0,
+      "disbursements": 1773751.07,
+      "individualContributions": 3087372.17,
+      "receipts": 4200766.25
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:50:07.923922+00:00"
+  "updated_at": "2026-07-15T00:07:26.968244+00:00"
 }

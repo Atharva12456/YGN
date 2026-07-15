@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.6,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 323413.93,
+        "label": "Small individual (unitemized)",
+        "share": 0.11027667174066401
+      },
+      {
+        "amount": 2060662.68,
+        "label": "Large individual (itemized)",
+        "share": 0.7026383246095707
+      },
+      {
+        "amount": 540129.23,
+        "label": "PAC / other committees",
+        "share": 0.18417157787312255
+      },
+      {
+        "amount": 8544.35,
+        "label": "Political party committees",
+        "share": 0.0029134257766427764
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA47085",
+      "district": "47",
+      "name": "MIN, DAVE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1821700.89,
+      "debts": 0.0,
+      "disbursements": 1470265.31,
+      "individualContributions": 2384076.61,
+      "receipts": 3118900.42
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T17:23:49.374340+00:00"
+  "updated_at": "2026-07-15T00:05:10.206662+00:00"
 }

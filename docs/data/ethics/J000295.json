@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 65.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 19916.53,
+        "label": "Small individual (unitemized)",
+        "share": 0.01903256208307473
+      },
+      {
+        "amount": 288427.5,
+        "label": "Large individual (itemized)",
+        "share": 0.27562604028995197
+      },
+      {
+        "amount": 738101.0,
+        "label": "PAC / other committees",
+        "share": 0.7053413976269732
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OH14064",
+      "district": "14",
+      "name": "JOYCE, DAVID P.",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2916263.87,
+      "debts": 0.0,
+      "disbursements": 924621.21,
+      "individualContributions": 308344.03,
+      "receipts": 1098009.63
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T17:25:01.631348+00:00"
+  "updated_at": "2026-07-15T00:05:40.271262+00:00"
 }

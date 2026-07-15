@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.0,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 43346.71,
+        "label": "Small individual (unitemized)",
+        "share": 0.037090818606868366
+      },
+      {
+        "amount": 521409.06,
+        "label": "Large individual (itemized)",
+        "share": 0.44615817127615326
+      },
+      {
+        "amount": 602600.0,
+        "label": "PAC / other committees",
+        "share": 0.5156314583620967
+      },
+      {
+        "amount": 1308.38,
+        "label": "Political party committees",
+        "share": 0.0011195517548818455
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NV03036",
+      "district": "01",
+      "name": "TITUS, DINA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1096964.19,
+      "debts": 0.0,
+      "disbursements": 311402.4,
+      "individualContributions": 564755.77,
+      "receipts": 1253003.03
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:08.727968+00:00"
+  "updated_at": "2026-07-15T00:06:39.596706+00:00"
 }

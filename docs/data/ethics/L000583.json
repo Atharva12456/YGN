@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 61.0,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2235.67,
+        "label": "Small individual (unitemized)",
+        "share": 0.01127715649823274
+      },
+      {
+        "amount": 31762.0,
+        "label": "Large individual (itemized)",
+        "share": 0.1602137366860352
+      },
+      {
+        "amount": 164250.0,
+        "label": "PAC / other committees",
+        "share": 0.828509106815732
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4GA11061",
+      "district": "11",
+      "name": "LOUDERMILK, BARRY",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 175204.22,
+      "debts": 0.0,
+      "disbursements": 260582.55,
+      "individualContributions": 33997.67,
+      "receipts": 262802.92
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T05:59:26.063183+00:00"
+  "updated_at": "2026-07-15T00:05:13.990719+00:00"
 }

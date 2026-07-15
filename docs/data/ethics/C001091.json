@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 80.8,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 31895.03,
+        "label": "Small individual (unitemized)",
+        "share": 0.08026042552253464
+      },
+      {
+        "amount": 265999.2,
+        "label": "Large individual (itemized)",
+        "share": 0.6693584856528995
+      },
+      {
+        "amount": 99500.0,
+        "label": "PAC / other committees",
+        "share": 0.250381088824566
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX35011",
+      "district": "20",
+      "name": "CASTRO, JOAQUIN",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 170365.41,
+      "debts": 0.0,
+      "disbursements": 365689.34,
+      "individualContributions": 297894.23,
+      "receipts": 397397.23
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:25:00.029667+00:00"
+  "updated_at": "2026-07-15T00:05:38.159304+00:00"
 }

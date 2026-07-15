@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.4,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 338588.59,
+        "label": "Small individual (unitemized)",
+        "share": 0.10998517813700334
+      },
+      {
+        "amount": 2180674.83,
+        "label": "Large individual (itemized)",
+        "share": 0.708357920851466
+      },
+      {
+        "amount": 552337.62,
+        "label": "PAC / other committees",
+        "share": 0.17941818868576895
+      },
+      {
+        "amount": 6891.86,
+        "label": "Political party committees",
+        "share": 0.0022387123257617387
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA27111",
+      "district": "27",
+      "name": "WHITESIDES, GEORGE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2321566.76,
+      "debts": 1310000.0,
+      "disbursements": 1541320.51,
+      "individualContributions": 2519263.42,
+      "receipts": 3536153.91
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-14T05:59:53.441329+00:00"
+  "updated_at": "2026-07-15T00:07:16.244633+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 90.0,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 147188.47,
+        "label": "Small individual (unitemized)",
+        "share": 0.194651751647915
+      },
+      {
+        "amount": 410374.62,
+        "label": "Large individual (itemized)",
+        "share": 0.5427064947060561
+      },
+      {
+        "amount": 198600.0,
+        "label": "PAC / other committees",
+        "share": 0.26264175364602893
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MA03022",
+      "district": "02",
+      "name": "MCGOVERN, JAMES P",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 332099.81,
+      "debts": 0.0,
+      "disbursements": 821499.26,
+      "individualContributions": 557563.09,
+      "receipts": 759434.72
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:16.474321+00:00"
+  "updated_at": "2026-07-15T00:06:44.131451+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 25298.39,
+        "label": "Small individual (unitemized)",
+        "share": 0.028458086827121396
+      },
+      {
+        "amount": 353379.32,
+        "label": "Large individual (itemized)",
+        "share": 0.39751539016787696
+      },
+      {
+        "amount": 510292.45,
+        "label": "PAC / other committees",
+        "share": 0.5740265230050017
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NY11138",
+      "district": "09",
+      "name": "CLARKE, YVETTE D",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 63325.23,
+      "debts": 115530.69,
+      "disbursements": 940581.9,
+      "individualContributions": 378677.71,
+      "receipts": 893852.39
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:26:11.067466+00:00"
+  "updated_at": "2026-07-15T00:06:17.602183+00:00"
 }

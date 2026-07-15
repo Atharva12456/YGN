@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 60.7,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 32254.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.01971284126402532
+      },
+      {
+        "amount": 735891.33,
+        "label": "Large individual (itemized)",
+        "share": 0.44975761116158625
+      },
+      {
+        "amount": 868050.0,
+        "label": "PAC / other committees",
+        "share": 0.5305295475743884
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4AR04048",
+      "district": "04",
+      "name": "WESTERMAN, BRUCE",
+      "office": "H",
+      "party": "REP",
+      "state": "AR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4457970.66,
+      "debts": 0.0,
+      "disbursements": 773457.76,
+      "individualContributions": 768145.39,
+      "receipts": 2197868.02
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T17:24:48.208669+00:00"
+  "updated_at": "2026-07-15T00:05:16.581716+00:00"
 }

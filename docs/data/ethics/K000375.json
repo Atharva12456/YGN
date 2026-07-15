@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 86.4,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 41656.54,
+        "label": "Small individual (unitemized)",
+        "share": 0.13761815256896717
+      },
+      {
+        "amount": 144940.01,
+        "label": "Large individual (itemized)",
+        "share": 0.4788294085281118
+      },
+      {
+        "amount": 116100.0,
+        "label": "PAC / other committees",
+        "share": 0.3835524389029211
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0MA10082",
+      "district": "09",
+      "name": "KEATING, WILLIAM R",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 517844.83,
+      "debts": 0.0,
+      "disbursements": 450719.22,
+      "individualContributions": 186596.55,
+      "receipts": 302696.55
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 11,
-  "updated_at": "2026-07-13T17:26:08.900097+00:00"
+  "updated_at": "2026-07-15T00:06:11.609104+00:00"
 }

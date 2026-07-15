@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 53.9,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 721.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.0015842790561219299
+      },
+      {
+        "amount": 53389.15,
+        "label": "Large individual (itemized)",
+        "share": 0.11718710987995253
+      },
+      {
+        "amount": 401478.0,
+        "label": "PAC / other committees",
+        "share": 0.8812286110639256
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX33040",
+      "district": "25",
+      "name": "WILLIAMS, ROGER",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1105819.81,
+      "debts": 0.0,
+      "disbursements": 767016.44,
+      "individualContributions": 54110.93,
+      "receipts": 1301335.29
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T17:24:59.053802+00:00"
+  "updated_at": "2026-07-15T00:05:36.888761+00:00"
 }

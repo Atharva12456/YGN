@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 83.9,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 93827.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.11397555483980802
+      },
+      {
+        "amount": 213443.67,
+        "label": "Large individual (itemized)",
+        "share": 0.25927701415291193
+      },
+      {
+        "amount": 515955.0,
+        "label": "PAC / other committees",
+        "share": 0.6267474310072801
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY21203",
+      "district": "20",
+      "name": "TONKO, PAUL DAVID",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 381401.31,
+      "debts": 0.0,
+      "disbursements": 1043496.79,
+      "individualContributions": 307271.35,
+      "receipts": 825396.19
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:06.969403+00:00"
+  "updated_at": "2026-07-15T00:06:35.172353+00:00"
 }

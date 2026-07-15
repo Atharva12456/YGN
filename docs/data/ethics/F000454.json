@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.3,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 112098.52,
+        "label": "Small individual (unitemized)",
+        "share": 0.0678454208647735
+      },
+      {
+        "amount": 854165.09,
+        "label": "Large individual (itemized)",
+        "share": 0.516966593484438
+      },
+      {
+        "amount": 686000.0,
+        "label": "PAC / other committees",
+        "share": 0.41518798565078846
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8IL14067",
+      "district": "11",
+      "name": "FOSTER, G. WILLIAM (BILL)",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2276627.48,
+      "debts": 1017994.89,
+      "disbursements": 1043650.12,
+      "individualContributions": 966263.61,
+      "receipts": 1769712.94
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:11.425753+00:00"
+  "updated_at": "2026-07-15T00:06:40.947927+00:00"
 }

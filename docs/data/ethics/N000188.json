@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 62.3,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 10272.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.007552830350411312
+      },
+      {
+        "amount": 651695.0,
+        "label": "Large individual (itemized)",
+        "share": 0.47917300501659826
+      },
+      {
+        "amount": 698073.98,
+        "label": "PAC / other committees",
+        "share": 0.5132741646329905
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NJ01084",
+      "district": "01",
+      "name": "NORCROSS, DONALD W",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2175361.48,
+      "debts": 0.0,
+      "disbursements": 965685.18,
+      "individualContributions": 661967.16,
+      "receipts": 1433558.33
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T17:24:54.509838+00:00"
+  "updated_at": "2026-07-15T00:05:30.925157+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.8,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6410.37,
+        "label": "Small individual (unitemized)",
+        "share": 0.035562454606397946
+      },
+      {
+        "amount": 109346.31,
+        "label": "Large individual (itemized)",
+        "share": 0.6066144677689614
+      },
+      {
+        "amount": 64500.0,
+        "label": "PAC / other committees",
+        "share": 0.3578230776246406
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY00010",
+      "district": "07",
+      "name": "VELAZQUEZ, NYDIA M.",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 113788.4,
+      "debts": 7736.52,
+      "disbursements": 226034.71,
+      "individualContributions": 115756.68,
+      "receipts": 180256.68
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:34.256758+00:00"
+  "updated_at": "2026-07-15T00:07:02.186096+00:00"
 }

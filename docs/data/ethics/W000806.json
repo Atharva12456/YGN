@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.7,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1822.99,
+        "label": "Small individual (unitemized)",
+        "share": 0.00484926845471321
+      },
+      {
+        "amount": 146107.94,
+        "label": "Large individual (itemized)",
+        "share": 0.3886563417380954
+      },
+      {
+        "amount": 228000.0,
+        "label": "PAC / other committees",
+        "share": 0.6064943898071915
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0FL08208",
+      "district": "11",
+      "name": "WEBSTER, DANIEL",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 101286.7,
+      "debts": 0.0,
+      "disbursements": 385954.25,
+      "individualContributions": 147930.93,
+      "receipts": 387212.41
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T17:23:46.291503+00:00"
+  "updated_at": "2026-07-15T00:05:08.691490+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 56.8,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2281.02,
+        "label": "Small individual (unitemized)",
+        "share": 0.0014543323684072507
+      },
+      {
+        "amount": 341650.0,
+        "label": "Large individual (itemized)",
+        "share": 0.2178291526011772
+      },
+      {
+        "amount": 1224500.0,
+        "label": "PAC / other committees",
+        "share": 0.7807165150304155
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MA02041",
+      "district": "01",
+      "name": "NEAL, RICHARD E",
+      "office": "H",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4147527.91,
+      "debts": 0.0,
+      "disbursements": 1580414.0,
+      "individualContributions": 343931.02,
+      "receipts": 1840071.96
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:35.942012+00:00"
+  "updated_at": "2026-07-15T00:07:11.203728+00:00"
 }

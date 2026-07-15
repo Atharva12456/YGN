@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 86.6,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 105097.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.1734055556602361
+      },
+      {
+        "amount": 197369.6,
+        "label": "Large individual (itemized)",
+        "share": 0.32565121382499695
+      },
+      {
+        "amount": 303610.0,
+        "label": "PAC / other committees",
+        "share": 0.5009432305147669
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2WI02124",
+      "district": "02",
+      "name": "POCAN, MARK",
+      "office": "H",
+      "party": "DEM",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 972382.02,
+      "debts": 0.0,
+      "disbursements": 672984.03,
+      "individualContributions": 302466.66,
+      "receipts": 643149.09
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:24:56.949837+00:00"
+  "updated_at": "2026-07-15T00:05:34.334485+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 58.6,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 25314.29,
+        "label": "Small individual (unitemized)",
+        "share": 0.008934199607835695
+      },
+      {
+        "amount": 1535760.31,
+        "label": "Large individual (itemized)",
+        "share": 0.5420175386839459
+      },
+      {
+        "amount": 1272339.82,
+        "label": "PAC / other committees",
+        "share": 0.4490482617082185
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4AR02141",
+      "district": "02",
+      "name": "HILL, JAMES FRENCH",
+      "office": "H",
+      "party": "REP",
+      "state": "AR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2662031.09,
+      "debts": 0.0,
+      "disbursements": 2504432.62,
+      "individualContributions": 1561074.6,
+      "receipts": 3790111.52
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 3,
-  "updated_at": "2026-07-13T17:24:49.221343+00:00"
+  "updated_at": "2026-07-15T00:05:17.904066+00:00"
 }

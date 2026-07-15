@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 55.6,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1857.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.0013877672983559333
+      },
+      {
+        "amount": 518298.65,
+        "label": "Large individual (itemized)",
+        "share": 0.38716232856360006
+      },
+      {
+        "amount": 818555.0,
+        "label": "PAC / other committees",
+        "share": 0.611449904138044
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY06048",
+      "district": "05",
+      "name": "MEEKS, GREGORY W.",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1949283.4,
+      "debts": 0.0,
+      "disbursements": 1854341.85,
+      "individualContributions": 520156.47,
+      "receipts": 1575073.18
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:13.869904+00:00"
+  "updated_at": "2026-07-15T00:06:42.885978+00:00"
 }

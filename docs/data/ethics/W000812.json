@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.2,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 492061.59,
+        "label": "Small individual (unitemized)",
+        "share": 0.18724147358068866
+      },
+      {
+        "amount": 1166250.97,
+        "label": "Large individual (itemized)",
+        "share": 0.4437870271233882
+      },
+      {
+        "amount": 969639.36,
+        "label": "PAC / other committees",
+        "share": 0.3689714992959232
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MO02102",
+      "district": "02",
+      "name": "WAGNER, ANN L.",
+      "office": "H",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4519824.93,
+      "debts": 0.0,
+      "disbursements": 1476952.68,
+      "individualContributions": 1658312.56,
+      "receipts": 2885548.21
+    }
+  },
+  "generated_at": "2026-07-15T00:05:00.822627+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-07-14T05:59:40.000351+00:00"
+  "updated_at": "2026-07-15T00:07:40.814794+00:00"
 }
