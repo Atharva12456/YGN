@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-14T06:24:27.711003+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 313695.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.25049683072104073
+      },
+      {
+        "amount": 876592.36,
+        "label": "Large individual (itemized)",
+        "share": 0.699989977582957
+      },
+      {
+        "amount": 62005.01,
+        "label": "PAC / other committees",
+        "share": 0.04951319169600226
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4NJ00466",
+      "district": "00",
+      "name": "KIM, ANDY",
+      "office": "S",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1081722.52,
+      "debts": 0.0,
+      "disbursements": 895740.35,
+      "individualContributions": 1190287.72,
+      "receipts": 1355762.79
+    }
+  },
+  "generated_at": "2026-07-15T22:14:28.603785+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 93.3,
   "source": "fec_live",
-  "updated_at": "2026-07-14T06:25:10.320293+00:00"
+  "updated_at": "2026-07-15T22:15:27.788386+00:00"
 }
