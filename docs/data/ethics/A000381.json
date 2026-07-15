@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.3,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 145331.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.10496971060281228
+      },
+      {
+        "amount": 977438.62,
+        "label": "Large individual (itemized)",
+        "share": 0.705982859263219
+      },
+      {
+        "amount": 226033.0,
+        "label": "PAC / other committees",
+        "share": 0.1632587667017323
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 65704.6,
+        "label": "Self-funding & candidate loans",
+        "share": 0.04745701717284928
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4AZ03109",
+      "district": "03",
+      "name": "ANSARI, YASSAMIN",
+      "office": "H",
+      "party": "DEM",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 549682.98,
+      "debts": 70000.0,
+      "disbursements": 896440.91,
+      "individualContributions": 1122769.98,
+      "receipts": 1435713.18
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:50:19.602515+00:00"
+  "updated_at": "2026-07-15T03:36:33.700114+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.7,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 98928.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.11105141800335748
+      },
+      {
+        "amount": 189514.76,
+        "label": "Large individual (itemized)",
+        "share": 0.21273851293643528
+      },
+      {
+        "amount": 602391.11,
+        "label": "PAC / other committees",
+        "share": 0.6762100690602072
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MO05234",
+      "district": "05",
+      "name": "CLEAVER II, EMANUEL",
+      "office": "H",
+      "party": "DEM",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1012981.16,
+      "debts": 0.0,
+      "disbursements": 767494.75,
+      "individualContributions": 288443.17,
+      "receipts": 890849.09
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:13:21.956469+00:00"
+  "updated_at": "2026-07-15T03:35:40.698117+00:00"
 }

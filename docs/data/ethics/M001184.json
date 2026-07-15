@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 87.1,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1874603.23,
+        "label": "Small individual (unitemized)",
+        "share": 0.3405314508573054
+      },
+      {
+        "amount": 3538343.32,
+        "label": "Large individual (itemized)",
+        "share": 0.6427585128992095
+      },
+      {
+        "amount": 91987.65,
+        "label": "PAC / other committees",
+        "share": 0.01671003624348498
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2KY04121",
+      "district": "04",
+      "name": "MASSIE, THOMAS H.",
+      "office": "H",
+      "party": "REP",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 608243.93,
+      "debts": 0.0,
+      "disbursements": 5840666.14,
+      "individualContributions": 5412946.55,
+      "receipts": 5541899.88
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:26:03.465474+00:00"
+  "updated_at": "2026-07-15T03:33:46.033905+00:00"
 }

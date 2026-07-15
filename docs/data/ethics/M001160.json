@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 69.9,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 29581.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.03521040430757683
+      },
+      {
+        "amount": 297797.0,
+        "label": "Large individual (itemized)",
+        "share": 0.35446582337151933
+      },
+      {
+        "amount": 512050.0,
+        "label": "PAC / other committees",
+        "share": 0.6094897693979002
+      },
+      {
+        "amount": 32.67,
+        "label": "Political party committees",
+        "share": 3.8886887542680206e-05
+      },
+      {
+        "amount": 668.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.000795116035460985
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WI04183",
+      "district": "04",
+      "name": "MOORE, GWEN S",
+      "office": "H",
+      "party": "DEM",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 71558.16,
+      "debts": 4880.0,
+      "disbursements": 795038.2,
+      "individualContributions": 327378.28,
+      "receipts": 844348.91
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:49:37.616544+00:00"
+  "updated_at": "2026-07-15T03:35:24.427298+00:00"
 }

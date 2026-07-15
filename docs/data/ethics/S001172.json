@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 49.2,
-      "value": 0.2167,
+      "score": 53.0,
+      "value": 0.2745,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 48.5,
-      "value": 0.264,
+      "score": 46.7,
+      "value": 0.2295,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 39.4,
-      "value": 0.0095,
+      "score": 39.3,
+      "value": 0.0094,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,8 +42,54 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 57.7,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "financeScore": 57.9,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 3630.38,
+        "label": "Small individual (unitemized)",
+        "share": 0.0021545333940361506
+      },
+      {
+        "amount": 383115.55,
+        "label": "Large individual (itemized)",
+        "share": 0.2273688281253
+      },
+      {
+        "amount": 1298250.0,
+        "label": "PAC / other committees",
+        "share": 0.770476638480664
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NE03115",
+      "district": "03",
+      "name": "SMITH, ADRIAN",
+      "office": "H",
+      "party": "REP",
+      "state": "NE"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1023354.46,
+      "debts": 0.0,
+      "disbursements": 1682292.07,
+      "individualContributions": 386745.93,
+      "receipts": 1777413.53
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -51,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 35.7,
+  "score": 35.9,
   "source": "fec_live",
   "stockPenalty": 22,
   "stockPtrCount": 3,
-  "updated_at": "2026-07-13T19:51:49.189931+00:00"
+  "updated_at": "2026-07-15T03:34:33.327830+00:00"
 }

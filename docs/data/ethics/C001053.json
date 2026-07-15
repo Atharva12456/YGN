@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.8,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 103224.8,
+        "label": "Small individual (unitemized)",
+        "share": 0.030363533131033713
+      },
+      {
+        "amount": 1877326.92,
+        "label": "Large individual (itemized)",
+        "share": 0.552214953511186
+      },
+      {
+        "amount": 1419079.0,
+        "label": "PAC / other committees",
+        "share": 0.4174215133577802
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OK04055",
+      "district": "04",
+      "name": "COLE, TOM",
+      "office": "H",
+      "party": "REP",
+      "state": "OK"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2573274.67,
+      "debts": 0.0,
+      "disbursements": 2799380.07,
+      "individualContributions": 1980551.72,
+      "receipts": 3592381.31
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:13:30.537769+00:00"
+  "updated_at": "2026-07-15T03:35:44.964304+00:00"
 }

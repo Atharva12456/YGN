@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.6,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 26403.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.02042401875311246
+      },
+      {
+        "amount": 757910.29,
+        "label": "Large individual (itemized)",
+        "share": 0.5862786557690917
+      },
+      {
+        "amount": 492600.0,
+        "label": "PAC / other committees",
+        "share": 0.38104887826744577
+      },
+      {
+        "amount": 4584.15,
+        "label": "Political party committees",
+        "share": 0.003546052000222719
+      },
+      {
+        "amount": 249250.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.19280640054437853
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX23082",
+      "district": "28",
+      "name": "CUELLAR, HENRY R.",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 764036.94,
+      "debts": 238000.0,
+      "disbursements": 904427.24,
+      "individualContributions": 784313.39,
+      "receipts": 1620505.27
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:13:17.584297+00:00"
+  "updated_at": "2026-07-15T03:35:31.228817+00:00"
 }

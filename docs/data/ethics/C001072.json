@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 74.5,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 32566.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.04531626981424018
+      },
+      {
+        "amount": 269102.25,
+        "label": "Large individual (itemized)",
+        "share": 0.3744602567890879
+      },
+      {
+        "amount": 412550.0,
+        "label": "PAC / other committees",
+        "share": 0.5740701868465916
+      },
+      {
+        "amount": 3692.0,
+        "label": "Political party committees",
+        "share": 0.005137479408162929
+      },
+      {
+        "amount": 730.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0010158071419173722
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8IN07184",
+      "district": "07",
+      "name": "CARSON, ANDRE",
+      "office": "H",
+      "party": "DEM",
+      "state": "IN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 558905.23,
+      "debts": 0.0,
+      "disbursements": 682772.08,
+      "individualContributions": 301668.35,
+      "receipts": 792254.1
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:52:25.628676+00:00"
+  "updated_at": "2026-07-15T03:35:12.438729+00:00"
 }

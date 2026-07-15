@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.5,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 562669.47,
+        "label": "Small individual (unitemized)",
+        "share": 0.22853183052308476
+      },
+      {
+        "amount": 762098.32,
+        "label": "Large individual (itemized)",
+        "share": 0.3095311428717958
+      },
+      {
+        "amount": 1137300.0,
+        "label": "PAC / other committees",
+        "share": 0.4619217226303469
+      },
+      {
+        "amount": 37.68,
+        "label": "Political party committees",
+        "share": 1.5303974772453594e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0WA08046",
+      "district": "01",
+      "name": "DELBENE, SUZAN K",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1374708.7,
+      "debts": 495000.0,
+      "disbursements": 2427787.77,
+      "individualContributions": 1324767.79,
+      "receipts": 2738775.86
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 50,
   "stockPtrCount": 22,
-  "updated_at": "2026-07-13T17:25:53.795878+00:00"
+  "updated_at": "2026-07-15T03:33:43.871914+00:00"
 }

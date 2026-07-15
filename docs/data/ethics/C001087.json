@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 65.4,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5506.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.007606902600902372
+      },
+      {
+        "amount": 255899.0,
+        "label": "Large individual (itemized)",
+        "share": 0.3534977098121401
+      },
+      {
+        "amount": 462500.0,
+        "label": "PAC / other committees",
+        "share": 0.6388953875869574
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0AR01083",
+      "district": "01",
+      "name": "CRAWFORD, ERIC ALAN RICK",
+      "office": "H",
+      "party": "REP",
+      "state": "AR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1101852.67,
+      "debts": 0.0,
+      "disbursements": 491849.83,
+      "individualContributions": 261405.68,
+      "receipts": 762875.64
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:51:40.373305+00:00"
+  "updated_at": "2026-07-15T03:34:06.718413+00:00"
 }

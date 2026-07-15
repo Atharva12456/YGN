@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 64.6,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 15129.25,
+        "label": "Small individual (unitemized)",
+        "share": 0.010477590954308964
+      },
+      {
+        "amount": 396656.4,
+        "label": "Large individual (itemized)",
+        "share": 0.2746999030757479
+      },
+      {
+        "amount": 1032177.0,
+        "label": "PAC / other committees",
+        "share": 0.7148225059699432
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0VA09055",
+      "district": "09",
+      "name": "GRIFFITH, H MORGAN",
+      "office": "H",
+      "party": "REP",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 925194.87,
+      "debts": 0.0,
+      "disbursements": 1001098.41,
+      "individualContributions": 411785.65,
+      "receipts": 1462404.58
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:51:08.782393+00:00"
+  "updated_at": "2026-07-15T03:33:57.442261+00:00"
 }

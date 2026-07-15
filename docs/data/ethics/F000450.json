@@ -36,14 +36,60 @@
     },
     "stock_conflict": {
       "measurable": true,
-      "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+      "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
       "penalty": 42,
-      "ptr_filings": 12
+      "ptr_filings": 13
     }
   },
   "cycle": 2026,
   "financeScore": 70.4,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 22541.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.01764545172614901
+      },
+      {
+        "amount": 905901.34,
+        "label": "Large individual (itemized)",
+        "share": 0.7091435316205255
+      },
+      {
+        "amount": 349015.7,
+        "label": "PAC / other committees",
+        "share": 0.2732110166533254
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC05146",
+      "district": "05",
+      "name": "FOXX, VIRGINIA ANN",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3246770.0,
+      "debts": 0.0,
+      "disbursements": 1073520.71,
+      "individualContributions": 928442.67,
+      "receipts": 1409022.13
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,6 +100,6 @@
   "score": 28.4,
   "source": "fec_live",
   "stockPenalty": 42,
-  "stockPtrCount": 12,
-  "updated_at": "2026-07-13T21:13:20.300030+00:00"
+  "stockPtrCount": 13,
+  "updated_at": "2026-07-15T03:35:38.567355+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.1,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 977.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.0018609823177176672
+      },
+      {
+        "amount": 338640.0,
+        "label": "Large individual (itemized)",
+        "share": 0.6445771218900591
+      },
+      {
+        "amount": 185750.0,
+        "label": "PAC / other committees",
+        "share": 0.35356189579222325
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NV02395",
+      "district": "02",
+      "name": "AMODEI, MARK EUGENE",
+      "office": "H",
+      "party": "REP",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 437571.55,
+      "debts": 9000.0,
+      "disbursements": 448836.76,
+      "individualContributions": 339617.7,
+      "receipts": 525367.7
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:26:07.718967+00:00"
+  "updated_at": "2026-07-15T03:33:50.393981+00:00"
 }

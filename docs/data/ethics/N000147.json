@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 68.7,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 774.8,
+        "label": "Small individual (unitemized)",
+        "share": 0.05624764061910155
+      },
+      {
+        "amount": 1000.0,
+        "label": "Large individual (itemized)",
+        "share": 0.0725963353369922
+      },
+      {
+        "amount": 12000.0,
+        "label": "PAC / other committees",
+        "share": 0.8711560240439064
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 40000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 1.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0DC00058",
+      "district": "00",
+      "name": "NORTON, ELEANOR HOLMES",
+      "office": "H",
+      "party": "DEM",
+      "state": "DC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 0.0,
+      "debts": 90000.0,
+      "disbursements": 86859.94,
+      "individualContributions": 1774.8,
+      "receipts": 53774.8
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T21:13:15.662760+00:00"
+  "updated_at": "2026-07-15T03:35:21.904721+00:00"
 }

@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 68.4,
-      "value": 0.4588,
+      "score": 69.2,
+      "value": 0.4664,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 57.1,
-      "value": 0.4318,
+      "score": 57.2,
+      "value": 0.435,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 59.8,
-      "value": 0.0596,
+      "score": 59.6,
+      "value": 0.0588,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,8 +42,54 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 69.9,
-  "generated_at": "2026-07-14T05:56:26.221118+00:00",
+  "financeScore": 70.0,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 30939.2,
+        "label": "Small individual (unitemized)",
+        "share": 0.025574919464612333
+      },
+      {
+        "amount": 495358.5,
+        "label": "Large individual (itemized)",
+        "share": 0.4094725701896354
+      },
+      {
+        "amount": 683450.0,
+        "label": "PAC / other committees",
+        "share": 0.5649525103457523
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8OH05036",
+      "district": "05",
+      "name": "LATTA, ROBERT EDWARD",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 910094.32,
+      "debts": 0.0,
+      "disbursements": 936271.75,
+      "individualContributions": 526297.7,
+      "receipts": 1249570.99
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -51,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 37.9,
+  "score": 38.0,
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 8,
-  "updated_at": "2026-07-14T06:00:00.432025+00:00"
+  "updated_at": "2026-07-15T03:33:54.875600+00:00"
 }

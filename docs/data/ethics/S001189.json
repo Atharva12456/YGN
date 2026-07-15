@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 62.8,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1321.67,
+        "label": "Small individual (unitemized)",
+        "share": 0.0014748567977176106
+      },
+      {
+        "amount": 309562.79,
+        "label": "Large individual (itemized)",
+        "share": 0.34544234578368965
+      },
+      {
+        "amount": 585250.0,
+        "label": "PAC / other committees",
+        "share": 0.6530827974185928
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0GA08099",
+      "district": "08",
+      "name": "SCOTT, JAMES AUSTIN",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1256978.73,
+      "debts": 0.0,
+      "disbursements": 648825.68,
+      "individualContributions": 310884.46,
+      "receipts": 925638.86
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T19:51:20.281389+00:00"
+  "updated_at": "2026-07-15T03:34:03.596670+00:00"
 }

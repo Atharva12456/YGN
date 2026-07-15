@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.7,
-  "generated_at": "2026-07-14T06:24:27.711003+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 34840.42,
+        "label": "Small individual (unitemized)",
+        "share": 0.033415392196688834
+      },
+      {
+        "amount": 634505.43,
+        "label": "Large individual (itemized)",
+        "share": 0.608553163089845
+      },
+      {
+        "amount": 372300.0,
+        "label": "PAC / other committees",
+        "share": 0.357072346281338
+      },
+      {
+        "amount": 1000.0,
+        "label": "Political party committees",
+        "share": 0.0009590984321282246
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0MN04049",
+      "district": "04",
+      "name": "MCCOLLUM, BETTY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 669540.9,
+      "debts": 0.0,
+      "disbursements": 930092.47,
+      "individualContributions": 669345.85,
+      "receipts": 1044714.6
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T06:24:54.306199+00:00"
+  "updated_at": "2026-07-15T03:35:55.366622+00:00"
 }

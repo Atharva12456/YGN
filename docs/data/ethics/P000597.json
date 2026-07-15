@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.2,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 65727.92,
+        "label": "Small individual (unitemized)",
+        "share": 0.17481065967593393
+      },
+      {
+        "amount": 103717.0,
+        "label": "Large individual (itemized)",
+        "share": 0.2758468119728852
+      },
+      {
+        "amount": 206550.0,
+        "label": "PAC / other committees",
+        "share": 0.5493425283511809
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8ME01120",
+      "district": "01",
+      "name": "PINGREE, CHELLIE M",
+      "office": "H",
+      "party": "DEM",
+      "state": "ME"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 445439.31,
+      "debts": 20000.0,
+      "disbursements": 358424.79,
+      "individualContributions": 169444.92,
+      "receipts": 388185.87
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T19:51:57.273863+00:00"
+  "updated_at": "2026-07-15T03:35:04.980540+00:00"
 }

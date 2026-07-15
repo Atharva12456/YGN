@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 71.0,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 32615.29,
+        "label": "Small individual (unitemized)",
+        "share": 0.021029500945526056
+      },
+      {
+        "amount": 215065.0,
+        "label": "Large individual (itemized)",
+        "share": 0.13866838592726174
+      },
+      {
+        "amount": 1303250.0,
+        "label": "PAC / other committees",
+        "share": 0.8403021131272121
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0AL07086",
+      "district": "07",
+      "name": "SEWELL, TERRI A.",
+      "office": "H",
+      "party": "DEM",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3619926.32,
+      "debts": 0.0,
+      "disbursements": 1402783.21,
+      "individualContributions": 247680.29,
+      "receipts": 1552148.63
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-07-13T19:51:42.038214+00:00"
+  "updated_at": "2026-07-15T03:34:08.803939+00:00"
 }

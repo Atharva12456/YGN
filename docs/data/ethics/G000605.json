@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 79.8,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 459365.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.14183146125492976
+      },
+      {
+        "amount": 1698844.24,
+        "label": "Large individual (itemized)",
+        "share": 0.5245274009384183
+      },
+      {
+        "amount": 1079075.01,
+        "label": "PAC / other committees",
+        "share": 0.3331702795854302
+      },
+      {
+        "amount": 1525.02,
+        "label": "Political party committees",
+        "share": 0.00047085822122168577
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA13115",
+      "district": "13",
+      "name": "GRAY, ADAM C.",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1744282.76,
+      "debts": 0.0,
+      "disbursements": 2035689.46,
+      "individualContributions": 2158209.3,
+      "receipts": 3588014.5
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:50:17.217206+00:00"
+  "updated_at": "2026-07-15T03:36:30.547484+00:00"
 }

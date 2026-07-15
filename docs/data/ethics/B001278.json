@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 78.8,
-  "generated_at": "2026-07-13T17:23:40.529702+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 50757.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.07944262815275097
+      },
+      {
+        "amount": 291160.5,
+        "label": "Large individual (itemized)",
+        "share": 0.45570884931193256
+      },
+      {
+        "amount": 297000.0,
+        "label": "PAC / other committees",
+        "share": 0.46484852253531633
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OR01133",
+      "district": "01",
+      "name": "BONAMICI, SUZANNE MS.",
+      "office": "H",
+      "party": "DEM",
+      "state": "OR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 545548.23,
+      "debts": 0.0,
+      "disbursements": 640487.85,
+      "individualContributions": 341917.81,
+      "receipts": 640071.96
+    }
+  },
+  "generated_at": "2026-07-15T03:33:30.569516+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T17:26:04.463695+00:00"
+  "updated_at": "2026-07-15T03:33:48.215419+00:00"
 }
