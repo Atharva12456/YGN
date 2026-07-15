@@ -277,7 +277,53 @@
     },
     "cycle": 2026,
     "financeScore": 62.9,
-    "generated_at": "2026-07-14T03:32:54.495501+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 16242.23,
+          "label": "Small individual (unitemized)",
+          "share": 0.01960277627961037
+        },
+        {
+          "amount": 388404.29,
+          "label": "Large individual (itemized)",
+          "share": 0.4687658285168297
+        },
+        {
+          "amount": 421428.55,
+          "label": "PAC / other committees",
+          "share": 0.5086228666562777
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 2492.77,
+          "label": "Self-funding & candidate loans",
+          "share": 0.00300852854728226
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8FL27185",
+        "district": "27",
+        "name": "SALAZAR, MARIA ELVIRA",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1937339.79,
+        "debts": 14300.0,
+        "disbursements": 846727.53,
+        "individualContributions": 404646.52,
+        "receipts": 1373240.18
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -289,14 +335,117 @@
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 4,
-    "updated_at": "2026-07-14T03:33:38.368061+00:00"
+    "updated_at": "2026-07-14T21:16:46.598396+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "S000168",
+    "breakdown": [
+      {
+        "amount": 16242.23,
+        "label": "Small individual (unitemized)",
+        "share": 0.01960277627961037
+      },
+      {
+        "amount": 388404.29,
+        "label": "Large individual (itemized)",
+        "share": 0.4687658285168297
+      },
+      {
+        "amount": 421428.55,
+        "label": "PAC / other committees",
+        "share": 0.5086228666562777
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 2492.77,
+        "label": "Self-funding & candidate loans",
+        "share": 0.00300852854728226
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8FL27185",
+      "district": "27",
+      "name": "SALAZAR, MARIA ELVIRA",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S000168",
+      "candidate": {
+        "candidate_id": "H8FL27185",
+        "district": "27",
+        "name": "SALAZAR, MARIA ELVIRA",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.5,
+          "value": 0.8222,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 63.0,
+          "value": 0.4914,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9982,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 53.5,
+          "value": 0.0401,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "4 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+          "penalty": 22,
+          "ptr_filings": 4
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 62.9,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 40.9,
+      "source": "fec_live",
+      "stockPenalty": 22,
+      "stockPtrCount": 4,
+      "updated_at": "2026-07-14T21:16:46.598396+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1937339.79,
+      "debts": 14300.0,
+      "disbursements": 846727.53,
+      "individualContributions": 404646.52,
+      "receipts": 1373240.18
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "S000168",
     "birthYear": "1961",

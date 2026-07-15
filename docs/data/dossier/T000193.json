@@ -321,8 +321,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 68.2,
-        "value": 0.4561,
+        "score": 81.8,
+        "value": 0.5983,
         "weight": 0.2
       },
       "in_state_support": {
@@ -331,18 +331,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 47.6,
-        "value": 0.2473,
+        "score": 48.5,
+        "value": 0.2637,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9926,
+        "value": 0.9942,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 50.5,
-        "value": 0.0336,
+        "score": 49.5,
+        "value": 0.0316,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -353,26 +353,174 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.9,
-    "generated_at": "2026-07-13T21:12:51.615831+00:00",
-    "grade": "D-",
+    "financeScore": 64.5,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 6418.53,
+          "label": "Small individual (unitemized)",
+          "share": 0.008338875560016504
+        },
+        {
+          "amount": 196548.79,
+          "label": "Large individual (itemized)",
+          "share": 0.25535378058244124
+        },
+        {
+          "amount": 562244.37,
+          "label": "PAC / other committees",
+          "share": 0.730460998974824
+        },
+        {
+          "amount": 4500.0,
+          "label": "Political party committees",
+          "share": 0.005846344882718359
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MS02068",
+        "district": "02",
+        "name": "THOMPSON, BENNIE G.",
+        "office": "H",
+        "party": "DEM",
+        "state": "MS"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1449521.62,
+        "debts": 0.0,
+        "disbursements": 947613.34,
+        "individualContributions": 202967.32,
+        "receipts": 770970.73
+      }
+    },
+    "generated_at": "2026-07-15T03:33:30.569516+00:00",
+    "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 61.9,
+    "score": 64.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T21:13:06.512625+00:00"
+    "updated_at": "2026-07-15T03:35:14.622784+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "T000193",
+    "breakdown": [
+      {
+        "amount": 6418.53,
+        "label": "Small individual (unitemized)",
+        "share": 0.008338875560016504
+      },
+      {
+        "amount": 196548.79,
+        "label": "Large individual (itemized)",
+        "share": 0.25535378058244124
+      },
+      {
+        "amount": 562244.37,
+        "label": "PAC / other committees",
+        "share": 0.730460998974824
+      },
+      {
+        "amount": 4500.0,
+        "label": "Political party committees",
+        "share": 0.005846344882718359
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MS02068",
+      "district": "02",
+      "name": "THOMPSON, BENNIE G.",
+      "office": "H",
+      "party": "DEM",
+      "state": "MS"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "T000193",
+      "candidate": {
+        "candidate_id": "H4MS02068",
+        "district": "02",
+        "name": "THOMPSON, BENNIE G.",
+        "office": "H",
+        "party": "DEM",
+        "state": "MS"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 81.8,
+          "value": 0.5983,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 67.7,
+          "value": 0.1811,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 48.5,
+          "value": 0.2637,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9942,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 49.5,
+          "value": 0.0316,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 64.5,
+      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 64.5,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T03:35:14.622784+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1449521.62,
+      "debts": 0.0,
+      "disbursements": 947613.34,
+      "individualContributions": 202967.32,
+      "receipts": 770970.73
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "T000193",
     "birthYear": "1948",

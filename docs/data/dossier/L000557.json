@@ -353,7 +353,52 @@
     },
     "cycle": 2026,
     "financeScore": 72.7,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 92705.88,
+          "label": "Small individual (unitemized)",
+          "share": 0.04735498594588566
+        },
+        {
+          "amount": 878256.0,
+          "label": "Large individual (itemized)",
+          "share": 0.44862095626393655
+        },
+        {
+          "amount": 986717.51,
+          "label": "PAC / other committees",
+          "share": 0.5040240577901778
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8CT01046",
+        "district": "01",
+        "name": "LARSON, JOHN B",
+        "office": "H",
+        "party": "DEM",
+        "state": "CT"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1027530.79,
+        "debts": 11992.27,
+        "disbursements": 1198120.04,
+        "individualContributions": 970961.88,
+        "receipts": 1976921.58
+      }
+    },
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -364,14 +409,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:52:58.736460+00:00"
+    "updated_at": "2026-07-15T06:08:16.556659+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "L000557",
+    "breakdown": [
+      {
+        "amount": 92705.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.04735498594588566
+      },
+      {
+        "amount": 878256.0,
+        "label": "Large individual (itemized)",
+        "share": 0.44862095626393655
+      },
+      {
+        "amount": 986717.51,
+        "label": "PAC / other committees",
+        "share": 0.5040240577901778
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CT01046",
+      "district": "01",
+      "name": "LARSON, JOHN B",
+      "office": "H",
+      "party": "DEM",
+      "state": "CT"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "L000557",
+      "candidate": {
+        "candidate_id": "H8CT01046",
+        "district": "01",
+        "name": "LARSON, JOHN B",
+        "office": "H",
+        "party": "DEM",
+        "state": "CT"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 64.1,
+          "value": 0.4138,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.8,
+          "value": 0.721,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 63.5,
+          "value": 0.496,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 66.4,
+          "value": 0.0955,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.7,
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T06:08:16.556659+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1027530.79,
+      "debts": 11992.27,
+      "disbursements": 1198120.04,
+      "individualContributions": 970961.88,
+      "receipts": 1976921.58
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "L000557",
     "birthYear": "1948",

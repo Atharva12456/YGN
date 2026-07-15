@@ -338,7 +338,53 @@
     },
     "cycle": 2026,
     "financeScore": 82.7,
-    "generated_at": "2026-07-14T03:32:54.495501+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 296967.7,
+          "label": "Small individual (unitemized)",
+          "share": 0.24583688928437153
+        },
+        {
+          "amount": 832019.03,
+          "label": "Large individual (itemized)",
+          "share": 0.6887650413179622
+        },
+        {
+          "amount": 79000.0,
+          "label": "PAC / other committees",
+          "share": 0.06539806939766632
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 300000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.24834709897847967
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4TX09095",
+        "district": "18",
+        "name": "GREEN, ALEXANDER",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 325834.13,
+        "debts": 300000.0,
+        "disbursements": 1404064.79,
+        "individualContributions": 1128986.73,
+        "receipts": 1510813.93
+      }
+    },
+    "generated_at": "2026-07-14T18:16:37.253479+00:00",
     "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -349,14 +395,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T03:33:08.325299+00:00"
+    "updated_at": "2026-07-14T18:18:20.659357+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "G000553",
+    "breakdown": [
+      {
+        "amount": 296967.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.24583688928437153
+      },
+      {
+        "amount": 832019.03,
+        "label": "Large individual (itemized)",
+        "share": 0.6887650413179622
+      },
+      {
+        "amount": 79000.0,
+        "label": "PAC / other committees",
+        "share": 0.06539806939766632
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 300000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.24834709897847967
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4TX09095",
+      "district": "18",
+      "name": "GREEN, ALEXANDER",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000553",
+      "candidate": {
+        "candidate_id": "H4TX09095",
+        "district": "18",
+        "name": "GREEN, ALEXANDER",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 61.1,
+          "value": 0.382,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.3,
+          "value": 0.7935,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.2,
+          "value": 0.9346,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 70.2,
+          "value": 0.8014,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 87.3,
+          "value": 0.263,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 82.7,
+      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 82.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T18:18:20.659357+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 325834.13,
+      "debts": 300000.0,
+      "disbursements": 1404064.79,
+      "individualContributions": 1128986.73,
+      "receipts": 1510813.93
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "G000553",
     "birthYear": "1947",

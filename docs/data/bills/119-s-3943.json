@@ -1,0 +1,125 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "B001303",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blunt Rochester, Lisa [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "K000384",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kaine, Tim [D-VA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "A000382",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Alsobrooks, Angela D. [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "H001046",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Heinrich, Martin [D-NM]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Housing Tariff Exclusion Act",
+      "updated_at": "2026-03-18T18:03:38Z"
+    },
+    "detailPath": "119/s/3943",
+    "identifier": "S 3943",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3943",
+    "originChamber": "Senate",
+    "policyArea": "Foreign Trade and International Finance",
+    "sponsors": [
+      {
+        "bioguideId": "R000608",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Rosen, Jacky [D-NV]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NV"
+      }
+    ],
+    "title": "Housing Tariff Exclusion Act",
+    "type": "S",
+    "updatedAt": "2026-03-18T18:03:38Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3943",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs Commerce to establish an exclusion process for covered building products from duties above rates in effect on January 19, 2025, with 15\u2011day rulings for critical products and 60\u2011day rulings for others. It covers products and inputs used in single\u2011family and multi\u2011family housing, and excludes AD/CVD, section\u2011201 duties.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T04:39:36.497667+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3fd2f2213343f68584e2485b",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Commerce Secretary to set an exclusion process letting U.S. homebuilders and suppliers seek removal of tariffs above 1/19/2025 rates on building materials. CBP will administer exclusions and reliquidations; the Secretary must report quarterly to Senate Finance and House Ways and Means.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T04:39:52.093250+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3fd2f2213343f68584e2485b",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:49.305773+00:00",
+  "source": "congress_api"
+}

@@ -374,7 +374,52 @@
     },
     "cycle": 2026,
     "financeScore": 66.4,
-    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 8548.98,
+          "label": "Small individual (unitemized)",
+          "share": 0.011221001374533225
+        },
+        {
+          "amount": 376546.0,
+          "label": "Large individual (itemized)",
+          "share": 0.4942371117460782
+        },
+        {
+          "amount": 376778.2,
+          "label": "PAC / other committees",
+          "share": 0.4945418868793885
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6AL04098",
+        "district": "04",
+        "name": "ADERHOLT, ROBERT B. REP.",
+        "office": "H",
+        "party": "REP",
+        "state": "AL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 776474.52,
+        "debts": 0.0,
+        "disbursements": 1022690.28,
+        "individualContributions": 385094.98,
+        "receipts": 832268.46
+      }
+    },
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -386,14 +431,116 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-13T21:13:04.692231+00:00"
+    "updated_at": "2026-07-15T06:08:22.455155+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "A000055",
+    "breakdown": [
+      {
+        "amount": 8548.98,
+        "label": "Small individual (unitemized)",
+        "share": 0.011221001374533225
+      },
+      {
+        "amount": 376546.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4942371117460782
+      },
+      {
+        "amount": 376778.2,
+        "label": "PAC / other committees",
+        "share": 0.4945418868793885
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6AL04098",
+      "district": "04",
+      "name": "ADERHOLT, ROBERT B. REP.",
+      "office": "H",
+      "party": "REP",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "A000055",
+      "candidate": {
+        "candidate_id": "H6AL04098",
+        "district": "04",
+        "name": "ADERHOLT, ROBERT B. REP.",
+        "office": "H",
+        "party": "REP",
+        "state": "AL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 63.2,
+          "value": 0.404,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.5,
+          "value": 0.6773,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 64.7,
+          "value": 0.5055,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 45.2,
+          "value": 0.0222,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 66.4,
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 56.4,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-15T06:08:22.455155+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 776474.52,
+      "debts": 0.0,
+      "disbursements": 1022690.28,
+      "individualContributions": 385094.98,
+      "receipts": 832268.46
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "A000055",
     "birthYear": "1965",

@@ -327,7 +327,53 @@
     },
     "cycle": 2026,
     "financeScore": 69.9,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 29581.28,
+          "label": "Small individual (unitemized)",
+          "share": 0.03521040430757683
+        },
+        {
+          "amount": 297797.0,
+          "label": "Large individual (itemized)",
+          "share": 0.35446582337151933
+        },
+        {
+          "amount": 512050.0,
+          "label": "PAC / other committees",
+          "share": 0.6094897693979002
+        },
+        {
+          "amount": 32.67,
+          "label": "Political party committees",
+          "share": 3.8886887542680206e-05
+        },
+        {
+          "amount": 668.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.000795116035460985
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4WI04183",
+        "district": "04",
+        "name": "MOORE, GWEN S",
+        "office": "H",
+        "party": "DEM",
+        "state": "WI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 71558.16,
+        "debts": 4880.0,
+        "disbursements": 795038.2,
+        "individualContributions": 327378.28,
+        "receipts": 844348.91
+      }
+    },
+    "generated_at": "2026-07-15T03:33:30.569516+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -338,14 +384,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:49:37.616544+00:00"
+    "updated_at": "2026-07-15T03:35:24.427298+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001160",
+    "breakdown": [
+      {
+        "amount": 29581.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.03521040430757683
+      },
+      {
+        "amount": 297797.0,
+        "label": "Large individual (itemized)",
+        "share": 0.35446582337151933
+      },
+      {
+        "amount": 512050.0,
+        "label": "PAC / other committees",
+        "share": 0.6094897693979002
+      },
+      {
+        "amount": 32.67,
+        "label": "Political party committees",
+        "share": 3.8886887542680206e-05
+      },
+      {
+        "amount": 668.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.000795116035460985
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WI04183",
+      "district": "04",
+      "name": "MOORE, GWEN S",
+      "office": "H",
+      "party": "DEM",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001160",
+      "candidate": {
+        "candidate_id": "H4WI04183",
+        "district": "04",
+        "name": "MOORE, GWEN S",
+        "office": "H",
+        "party": "DEM",
+        "state": "WI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 70.7,
+          "value": 0.4822,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 79.2,
+          "value": 0.2766,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 55.0,
+          "value": 0.3905,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9992,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 65.5,
+          "value": 0.0904,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 69.9,
+      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 69.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T03:35:24.427298+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 71558.16,
+      "debts": 4880.0,
+      "disbursements": 795038.2,
+      "individualContributions": 327378.28,
+      "receipts": 844348.91
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "M001160",
     "birthYear": "1951",

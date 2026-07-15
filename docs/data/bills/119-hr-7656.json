@@ -1,0 +1,85 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "C001103",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carter, Earl L. \"Buddy\" [R-GA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-24",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "T000469",
+        "district": 20,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tonko, Paul [D-NY-20]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-24",
+        "state": "NY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "ReSCUE Oceans Act",
+      "updated_at": "2026-03-17T18:59:19Z"
+    },
+    "detailPath": "119/hr/7656",
+    "identifier": "HR 7656",
+    "introducedDate": "2026-02-24",
+    "latestAction": {
+      "date": "2026-02-24",
+      "text": "Referred to the Committee on Science, Space, and Technology, and in addition to the Committee on Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "7656",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OR"
+      }
+    ],
+    "title": "ReSCUE Oceans Act",
+    "type": "HR",
+    "updatedAt": "2026-03-17T18:59:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7656",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The ReSCUE Oceans Act directs NOAA to fund a program to research, monitor, validate marine carbon removal and develop standards and protocols for voluntary carbon credits. It covers U.S. internal and coastal waters, territorial seas, the contiguous zone, and the exclusive economic zone, and requires Tribal and coastal community engagement.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:25.901657+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "41317b30b97a769e735fb3cf",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The ReSCUE Oceans Act directs NOAA to create a Program funding research, monitoring, and standards for marine carbon dioxide removal. It would affect coastal States, coastal communities, National Sea Grant, Regional Ocean Partnerships, Indian Tribes, Native Hawaiian organizations, marine\u2011CDR developers, and voluntary carbon market participants.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:43.420567+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "41317b30b97a769e735fb3cf",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:50.066057+00:00",
+  "source": "congress_api"
+}

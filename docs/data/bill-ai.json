@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-14T17:50:32.190677+00:00",
-  "count": 81,
+  "generated_at": "2026-07-15T06:12:01.098092+00:00",
+  "count": 90,
   "bills": {
     "SRES 630": {
       "description": {
@@ -1474,6 +1474,213 @@
       "identifier": "HRES 731",
       "title": "Providing for consideration of the bill (H.R. 155) to require States to permit unaffiliated voters to vote in primary elections for Federal office, and for other purposes.",
       "source_updated_at": "2026-03-17T15:53:54Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/sres/640": {
+      "description": {
+        "summary": "This nonbinding Senate resolution declares support for International Women's Day and reaffirms U.S. commitment to advance and empower women and girls worldwide. It highlights gender\u2011based violence, child marriage, education and economic barriers worldwide and Taliban restrictions in Afghanistan, and is a congressional statement not new law.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:21.834202+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "dc7519c53685846daaf744cd"
+      },
+      "impact": {
+        "summary": "S.Res.640 would have the Senate endorse International Women's Day and the U.S. Women, Peace, and Security agenda. It frames U.S. foreign policy and programs affecting women and girls worldwide, naming the State Department, USAID, UN Women, UNICEF, WHO, and Afghan women under Taliban rule.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:24.385624+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "dc7519c53685846daaf744cd"
+      },
+      "canonical_id": "119/sres/640",
+      "identifier": "SRES 640",
+      "title": "A resolution supporting the goals of International Women's Day.",
+      "source_updated_at": "2026-03-17T19:03:50Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3927": {
+      "description": {
+        "summary": "The End Warehouse Detention Act forbids funds from Public Law 119\u201121 being used to buy or contract for warehouses to detain noncitizens. It also bars those funds from repurposing, operating, staffing, or maintaining any ICE or CBP\u2011owned warehouse for detention.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:33.996921+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "50be0743ef4ba99e9e591e69"
+      },
+      "impact": {
+        "summary": "The bill bars money from Public Law 119-21 (One Big Beautiful Bill Act) being used to buy or lease warehouses to detain noncitizens. It also bars funds from repurposing, staffing, operating, or maintaining any ICE or CBP warehouse, affecting DHS operations and private warehouse owners.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:36.830708+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "50be0743ef4ba99e9e591e69"
+      },
+      "canonical_id": "119/s/3927",
+      "identifier": "S 3927",
+      "title": "End Warehouse Detention Act",
+      "source_updated_at": "2026-03-18T15:12:05Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3932": {
+      "description": {
+        "summary": "Requires DHS\u2019s Office of Detention Oversight to audit ICE facilities and the ICE Director to report results and remediation to four congressional committees within 30 days. Bars new housing of aliens at ICE facilities until audited deficiencies are remediated and the report submitted, covering new facilities and audited existing ones.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:38:21.784326+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "87e887fd67442a42c64d3f77"
+      },
+      "impact": {
+        "summary": "The bill forces DHS\u2019s Office of Detention Oversight to audit ICE detention facilities and requires the ICE Director to send findings and remediation to Congressional Homeland Security and Judiciary committees within 30 days. It blocks new detainees at ICE and privately run facilities until remediated.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:38:15.165599+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "87e887fd67442a42c64d3f77"
+      },
+      "canonical_id": "119/s/3932",
+      "identifier": "S 3932",
+      "title": "Private Detention Accountability Act",
+      "source_updated_at": "2026-03-18T17:00:57Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3943": {
+      "description": {
+        "summary": "The bill directs Commerce to establish an exclusion process for covered building products from duties above rates in effect on January 19, 2025, with 15\u2011day rulings for critical products and 60\u2011day rulings for others. It covers products and inputs used in single\u2011family and multi\u2011family housing, and excludes AD/CVD, section\u2011201 duties.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T04:39:36.497667+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3fd2f2213343f68584e2485b"
+      },
+      "impact": {
+        "summary": "The bill directs the Commerce Secretary to set an exclusion process letting U.S. homebuilders and suppliers seek removal of tariffs above 1/19/2025 rates on building materials. CBP will administer exclusions and reliquidations; the Secretary must report quarterly to Senate Finance and House Ways and Means.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T04:39:52.093250+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3fd2f2213343f68584e2485b"
+      },
+      "canonical_id": "119/s/3943",
+      "identifier": "S 3943",
+      "title": "Housing Tariff Exclusion Act",
+      "source_updated_at": "2026-03-18T18:03:38Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3930": {
+      "description": {
+        "summary": "The bill imposes a 15% excise tax on purchases of newly acquired 1\u20134 unit single\u2011family residences by qualifying hedge fund taxpayers and adds a 5\u2011point corporate surtax plus limits on mortgage interest, depreciation, and QBI benefits. It targets pooled\u2011fund entities with $50M+ AUM, applies after enactment, and excludes 501(c)(3)s, homebuilders, and owner\u2011occupied, never\u2011rented homes.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:57:44.931781+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4d793dab0047cc7666526b03"
+      },
+      "impact": {
+        "summary": "The bill imposes a 15% excise on purchases of 1\u20134\u2011unit homes by \"hedge fund taxpayers\"\u2014pooled\u2011investor entities (partnerships, corporations, REITs) with $50,000,000+ AUM. It also adds a 5\u2011point corporate surtax for those corporations and disallows mortgage\u2011interest, depreciation, and the 199A qualified business income deduction for hedge\u2011fund landlords.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:57:45.384558+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4d793dab0047cc7666526b03"
+      },
+      "canonical_id": "119/s/3930",
+      "identifier": "S 3930",
+      "title": "HOPE (Humans over Private Equity) for Homeownership Act",
+      "source_updated_at": "2026-03-18T18:16:13Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7671": {
+      "description": {
+        "summary": "The bill creates a Student Loan Borrower Advocate at the CFPB, an Office for Students and Young Consumers, and requires an MOU with the Department of Education to access ED systems and resolve student loan complaints. It mandates annual reports and prohibits collecting consumers' personally identifiable financial information.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:40:37.114499+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8b6b5f991bb06a51082da552"
+      },
+      "impact": {
+        "summary": "The bill creates a Student Loan Borrower Advocate at the Consumer Financial Protection Bureau to take complaints and publish annual reports. It requires an MOU with the Department of Education and Student Loan Ombudsman and affects borrowers, lenders and servicers, colleges, campus banking providers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:40:45.519780+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8b6b5f991bb06a51082da552"
+      },
+      "canonical_id": "119/hr/7671",
+      "identifier": "HR 7671",
+      "title": "Students and Young Consumers Empowerment Act",
+      "source_updated_at": "2026-03-18T17:34:48Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7656": {
+      "description": {
+        "summary": "The ReSCUE Oceans Act directs NOAA to fund a program to research, monitor, validate marine carbon removal and develop standards and protocols for voluntary carbon credits. It covers U.S. internal and coastal waters, territorial seas, the contiguous zone, and the exclusive economic zone, and requires Tribal and coastal community engagement.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:25.901657+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "41317b30b97a769e735fb3cf"
+      },
+      "impact": {
+        "summary": "The ReSCUE Oceans Act directs NOAA to create a Program funding research, monitoring, and standards for marine carbon dioxide removal. It would affect coastal States, coastal communities, National Sea Grant, Regional Ocean Partnerships, Indian Tribes, Native Hawaiian organizations, marine\u2011CDR developers, and voluntary carbon market participants.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:43.420567+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "41317b30b97a769e735fb3cf"
+      },
+      "canonical_id": "119/hr/7656",
+      "identifier": "HR 7656",
+      "title": "ReSCUE Oceans Act",
+      "source_updated_at": "2026-03-17T18:59:19Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7667": {
+      "description": {
+        "summary": "The bill lets Retired Reserve members under 60 who receive retired pay enroll in regular TRICARE for retirees instead of TRICARE Retired Reserve. It covers Reserve Component members qualified under chapter 1223, takes effect 18 months after enactment, and preserves exceptions tied to 38 U.S.C. 5304 or 5305.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:31.828988+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b235ffccbf32f2011e07f33f"
+      },
+      "impact": {
+        "summary": "The bill lets Retired Reserve members (National Guard and Reserve) under 60 who are receiving retired pay enroll in regular TRICARE retired-military coverage instead of TRICARE Retired Reserve. It changes eligibility for the Defense Health Agency's TRICARE program and takes effect 18 months after enactment.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:24.282851+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b235ffccbf32f2011e07f33f"
+      },
+      "canonical_id": "119/hr/7667",
+      "identifier": "HR 7667",
+      "title": "TRICARE Fairness for National Guard and Reserve Retirees Act",
+      "source_updated_at": "2026-03-18T17:44:08Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7650": {
+      "description": {
+        "summary": "The bill adds the District of Columbia to the McIntire\u2011Stennis Cooperative Forestry Act's list of entities eligible for federal forestry research funds. It makes D.C. eligible alongside states, land\u2011grant institutions, and territories for McIntire\u2011Stennis formula and competitive grants supporting forestry research and education.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:40.375234+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "deb21d1641c9c578ab980fa8"
+      },
+      "impact": {
+        "summary": "The bill would amend the McIntire\u2011Stennis Cooperative Forestry Act to add the District of Columbia to the list of jurisdictions eligible for McIntire\u2011Stennis research grant funds. It would let District government and District forestry or university research programs apply for grants administered by USDA NIFA.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:42.967965+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "deb21d1641c9c578ab980fa8"
+      },
+      "canonical_id": "119/hr/7650",
+      "identifier": "HR 7650",
+      "title": "McIntire-Stennis Act District of Columbia Equality Act",
+      "source_updated_at": "2026-03-17T19:03:18Z",
       "content_version": "bill-ai-v6"
     }
   }

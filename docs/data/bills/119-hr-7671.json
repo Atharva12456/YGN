@@ -1,0 +1,105 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "L000602",
+        "district": 12,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lee, Summer L. [D-PA-12]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "B001326",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bynum, Janelle S. [D-OR-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "N000147",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "DC"
+      },
+      {
+        "bioguideId": "T000488",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Thanedar, Shri [D-MI-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "MI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Students and Young Consumers Empowerment Act",
+      "updated_at": "2026-03-18T17:34:48Z"
+    },
+    "detailPath": "119/hr/7671",
+    "identifier": "HR 7671",
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Referred to the Committee on Education and Workforce, and in addition to the Committees on Financial Services, and Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "7671",
+    "originChamber": "House",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OR"
+      }
+    ],
+    "title": "Students and Young Consumers Empowerment Act",
+    "type": "HR",
+    "updatedAt": "2026-03-18T17:34:48Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7671",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill creates a Student Loan Borrower Advocate at the CFPB, an Office for Students and Young Consumers, and requires an MOU with the Department of Education to access ED systems and resolve student loan complaints. It mandates annual reports and prohibits collecting consumers' personally identifiable financial information.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:40:37.114499+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8b6b5f991bb06a51082da552",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill creates a Student Loan Borrower Advocate at the Consumer Financial Protection Bureau to take complaints and publish annual reports. It requires an MOU with the Department of Education and Student Loan Ombudsman and affects borrowers, lenders and servicers, colleges, campus banking providers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:40:45.519780+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8b6b5f991bb06a51082da552",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:49.876135+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-15",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "ACCESS Act of 2026",
+      "updated_at": "2026-03-18T20:13:02Z"
+    },
+    "detailPath": "119/s/3662",
+    "identifier": "S 3662",
+    "introducedDate": "2026-01-15",
+    "latestAction": {
+      "date": "2026-01-15",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3662",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "M001243",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. McCormick, David [R-PA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "ACCESS Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-18T20:13:02Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3662",
+    "votes": []
+  },
+  "generated_at": "2026-07-15T05:58:55.719620+00:00",
+  "source": "congress_api"
+}

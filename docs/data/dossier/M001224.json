@@ -256,7 +256,53 @@
     },
     "cycle": 2026,
     "financeScore": 72.7,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 156726.17,
+          "label": "Small individual (unitemized)",
+          "share": 0.1398261033941388
+        },
+        {
+          "amount": 350488.72,
+          "label": "Large individual (itemized)",
+          "share": 0.31269488689221053
+        },
+        {
+          "amount": 613650.0,
+          "label": "PAC / other committees",
+          "share": 0.5474790097136507
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2TX01112",
+        "district": "01",
+        "name": "MORAN, NATHANIEL QUENTIN",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 634250.67,
+        "debts": 0.0,
+        "disbursements": 1131996.71,
+        "individualContributions": 507214.89,
+        "receipts": 1385301.26
+      }
+    },
+    "generated_at": "2026-07-14T18:16:37.253479+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -267,14 +313,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T00:08:09.556366+00:00"
+    "updated_at": "2026-07-14T18:16:54.374176+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001224",
+    "breakdown": [
+      {
+        "amount": 156726.17,
+        "label": "Small individual (unitemized)",
+        "share": 0.1398261033941388
+      },
+      {
+        "amount": 350488.72,
+        "label": "Large individual (itemized)",
+        "share": 0.31269488689221053
+      },
+      {
+        "amount": 613650.0,
+        "label": "PAC / other committees",
+        "share": 0.5474790097136507
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX01112",
+      "district": "01",
+      "name": "MORAN, NATHANIEL QUENTIN",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001224",
+      "candidate": {
+        "candidate_id": "H2TX01112",
+        "district": "01",
+        "name": "MORAN, NATHANIEL QUENTIN",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.7,
+          "value": 0.7036,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 58.3,
+          "value": 0.4525,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 90.2,
+          "value": 0.309,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.7,
+      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T18:16:54.374176+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 634250.67,
+      "debts": 0.0,
+      "disbursements": 1131996.71,
+      "individualContributions": 507214.89,
+      "receipts": 1385301.26
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "M001224",
     "birthYear": "1974",

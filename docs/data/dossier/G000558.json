@@ -272,7 +272,53 @@
     },
     "cycle": 2026,
     "financeScore": 58.2,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 8209.14,
+          "label": "Small individual (unitemized)",
+          "share": 0.0019617876194093875
+        },
+        {
+          "amount": 1513281.1,
+          "label": "Large individual (itemized)",
+          "share": 0.3616378971081282
+        },
+        {
+          "amount": 2663030.0,
+          "label": "PAC / other committees",
+          "share": 0.6364003152724623
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8KY02031",
+        "district": "02",
+        "name": "GUTHRIE, S. BRETT BRETT HON.",
+        "office": "H",
+        "party": "REP",
+        "state": "KY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1661176.11,
+        "debts": 0.0,
+        "disbursements": 2898393.1,
+        "individualContributions": 1521490.24,
+        "receipts": 4193324.77
+      }
+    },
+    "generated_at": "2026-07-15T03:33:30.569516+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -283,14 +329,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:51:58.926997+00:00"
+    "updated_at": "2026-07-15T03:35:07.116890+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "G000558",
+    "breakdown": [
+      {
+        "amount": 8209.14,
+        "label": "Small individual (unitemized)",
+        "share": 0.0019617876194093875
+      },
+      {
+        "amount": 1513281.1,
+        "label": "Large individual (itemized)",
+        "share": 0.3616378971081282
+      },
+      {
+        "amount": 2663030.0,
+        "label": "PAC / other committees",
+        "share": 0.6364003152724623
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8KY02031",
+      "district": "02",
+      "name": "GUTHRIE, S. BRETT BRETT HON.",
+      "office": "H",
+      "party": "REP",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000558",
+      "candidate": {
+        "candidate_id": "H8KY02031",
+        "district": "02",
+        "name": "GUTHRIE, S. BRETT BRETT HON.",
+        "office": "H",
+        "party": "REP",
+        "state": "KY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 63.7,
+          "value": 0.409,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 63.9,
+          "value": 0.1496,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 53.6,
+          "value": 0.3636,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 37.5,
+          "value": 0.0054,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 58.2,
+      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 58.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T03:35:07.116890+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1661176.11,
+      "debts": 0.0,
+      "disbursements": 2898393.1,
+      "individualContributions": 1521490.24,
+      "receipts": 4193324.77
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "G000558",
     "birthYear": "1964",

@@ -373,7 +373,53 @@
     },
     "cycle": 2026,
     "financeScore": 71.0,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 254216.62,
+          "label": "Small individual (unitemized)",
+          "share": 0.07181523226752418
+        },
+        {
+          "amount": 2011326.85,
+          "label": "Large individual (itemized)",
+          "share": 0.5681922169315986
+        },
+        {
+          "amount": 1274327.0,
+          "label": "PAC / other committees",
+          "share": 0.35999255080087716
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2CA37023",
+        "district": "40",
+        "name": "CALVERT, KEN",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2357018.56,
+        "debts": 29931.27,
+        "disbursements": 3619918.94,
+        "individualContributions": 2265543.47,
+        "receipts": 5714801.89
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -384,14 +430,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T08:29:14.170162+00:00"
+    "updated_at": "2026-07-14T21:15:09.224123+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C000059",
+    "breakdown": [
+      {
+        "amount": 254216.62,
+        "label": "Small individual (unitemized)",
+        "share": 0.07181523226752418
+      },
+      {
+        "amount": 2011326.85,
+        "label": "Large individual (itemized)",
+        "share": 0.5681922169315986
+      },
+      {
+        "amount": 1274327.0,
+        "label": "PAC / other committees",
+        "share": 0.35999255080087716
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA37023",
+      "district": "40",
+      "name": "CALVERT, KEN",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C000059",
+      "candidate": {
+        "candidate_id": "H2CA37023",
+        "district": "40",
+        "name": "CALVERT, KEN",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 85.5,
+          "value": 0.3744,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 80.8,
+          "value": 0.64,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 69.5,
+          "value": 0.1122,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 71.0,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 71.0,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T21:15:09.224123+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2357018.56,
+      "debts": 29931.27,
+      "disbursements": 3619918.94,
+      "individualContributions": 2265543.47,
+      "receipts": 5714801.89
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "C000059",
     "birthYear": "1953",

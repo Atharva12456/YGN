@@ -391,7 +391,53 @@
     },
     "cycle": 2026,
     "financeScore": 78.7,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 252860.36,
+          "label": "Small individual (unitemized)",
+          "share": 0.2193107992313881
+        },
+        {
+          "amount": 512416.88,
+          "label": "Large individual (itemized)",
+          "share": 0.4444293106774597
+        },
+        {
+          "amount": 387700.0,
+          "label": "PAC / other committees",
+          "share": 0.3362598900911522
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0CA48024",
+        "district": "48",
+        "name": "ISSA, DARRELL",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2798701.72,
+        "debts": 5024682.17,
+        "disbursements": 692755.7,
+        "individualContributions": 765277.24,
+        "receipts": 1846841.1
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -403,14 +449,117 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-13T08:29:12.872551+00:00"
+    "updated_at": "2026-07-14T21:15:08.153367+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "I000056",
+    "breakdown": [
+      {
+        "amount": 252860.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.2193107992313881
+      },
+      {
+        "amount": 512416.88,
+        "label": "Large individual (itemized)",
+        "share": 0.4444293106774597
+      },
+      {
+        "amount": 387700.0,
+        "label": "PAC / other committees",
+        "share": 0.3362598900911522
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA48024",
+      "district": "48",
+      "name": "ISSA, DARRELL",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "I000056",
+      "candidate": {
+        "candidate_id": "H0CA48024",
+        "district": "48",
+        "name": "ISSA, DARRELL",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.3,
+          "value": 0.6504,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.8,
+          "value": 0.6637,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 92.8,
+          "value": 0.9693,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 91.6,
+          "value": 0.3304,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 78.7,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 68.7,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-14T21:15:08.153367+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2798701.72,
+      "debts": 5024682.17,
+      "disbursements": 692755.7,
+      "individualContributions": 765277.24,
+      "receipts": 1846841.1
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "I000056",
     "birthYear": "1953",

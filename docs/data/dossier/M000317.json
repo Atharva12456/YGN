@@ -245,7 +245,53 @@
     },
     "cycle": 2026,
     "financeScore": 71.8,
-    "generated_at": "2026-07-14T03:32:54.495501+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 200585.97,
+          "label": "Small individual (unitemized)",
+          "share": 0.09944189661156543
+        },
+        {
+          "amount": 840731.33,
+          "label": "Large individual (itemized)",
+          "share": 0.41679843309062886
+        },
+        {
+          "amount": 975800.0,
+          "label": "PAC / other committees",
+          "share": 0.4837596702978057
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0NY11078",
+        "district": "11",
+        "name": "MALLIOTAKIS, NICOLE",
+        "office": "H",
+        "party": "REP",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2643081.81,
+        "debts": 0.0,
+        "disbursements": 1272730.96,
+        "individualContributions": 1041317.3,
+        "receipts": 2569566.31
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -257,14 +303,117 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-07-14T03:33:42.139200+00:00"
+    "updated_at": "2026-07-14T21:17:04.414607+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M000317",
+    "breakdown": [
+      {
+        "amount": 200585.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.09944189661156543
+      },
+      {
+        "amount": 840731.33,
+        "label": "Large individual (itemized)",
+        "share": 0.41679843309062886
+      },
+      {
+        "amount": 975800.0,
+        "label": "PAC / other committees",
+        "share": 0.4837596702978057
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NY11078",
+      "district": "11",
+      "name": "MALLIOTAKIS, NICOLE",
+      "office": "H",
+      "party": "REP",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M000317",
+      "candidate": {
+        "candidate_id": "H0NY11078",
+        "district": "11",
+        "name": "MALLIOTAKIS, NICOLE",
+        "office": "H",
+        "party": "REP",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 90.8,
+          "value": 0.4881,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 65.9,
+          "value": 0.5162,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 82.8,
+          "value": 0.1926,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 2
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 71.8,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "D-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 61.8,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 2,
+      "updated_at": "2026-07-14T21:17:04.414607+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2643081.81,
+      "debts": 0.0,
+      "disbursements": 1272730.96,
+      "individualContributions": 1041317.3,
+      "receipts": 2569566.31
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "M000317",
     "birthYear": "1980",

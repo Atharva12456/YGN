@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Private Detention Accountability Act",
+      "updated_at": "2026-03-18T17:00:57Z"
+    },
+    "detailPath": "119/s/3932",
+    "identifier": "S 3932",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3932",
+    "originChamber": "Senate",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "Private Detention Accountability Act",
+    "type": "S",
+    "updatedAt": "2026-03-18T17:00:57Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3932",
+    "votes": [],
+    "aiDescription": {
+      "summary": "Requires DHS\u2019s Office of Detention Oversight to audit ICE facilities and the ICE Director to report results and remediation to four congressional committees within 30 days. Bars new housing of aliens at ICE facilities until audited deficiencies are remediated and the report submitted, covering new facilities and audited existing ones.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:38:21.784326+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "87e887fd67442a42c64d3f77",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill forces DHS\u2019s Office of Detention Oversight to audit ICE detention facilities and requires the ICE Director to send findings and remediation to Congressional Homeland Security and Judiciary committees within 30 days. It blocks new detainees at ICE and privately run facilities until remediated.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:38:15.165599+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "87e887fd67442a42c64d3f77",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:49.117674+00:00",
+  "source": "congress_api"
+}

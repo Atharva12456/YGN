@@ -242,7 +242,53 @@
     },
     "cycle": 2026,
     "financeScore": 51.1,
-    "generated_at": "2026-07-13T12:17:17.615063+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1673.92,
+          "label": "Small individual (unitemized)",
+          "share": 0.0010838364089729576
+        },
+        {
+          "amount": 375397.63,
+          "label": "Large individual (itemized)",
+          "share": 0.24306395719996116
+        },
+        {
+          "amount": 1167368.17,
+          "label": "PAC / other committees",
+          "share": 0.7558522063910659
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8PA13125",
+        "district": "13",
+        "name": "JOYCE, JOHN",
+        "office": "H",
+        "party": "REP",
+        "state": "PA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3571066.02,
+        "debts": 0.0,
+        "disbursements": 1131245.81,
+        "individualContributions": 377071.55,
+        "receipts": 2102173.74
+      }
+    },
+    "generated_at": "2026-07-14T22:13:53.911703+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -253,14 +299,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T12:21:20.117590+00:00"
+    "updated_at": "2026-07-14T22:15:23.601793+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "J000302",
+    "breakdown": [
+      {
+        "amount": 1673.92,
+        "label": "Small individual (unitemized)",
+        "share": 0.0010838364089729576
+      },
+      {
+        "amount": 375397.63,
+        "label": "Large individual (itemized)",
+        "share": 0.24306395719996116
+      },
+      {
+        "amount": 1167368.17,
+        "label": "PAC / other committees",
+        "share": 0.7558522063910659
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA13125",
+      "district": "13",
+      "name": "JOYCE, JOHN",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "J000302",
+      "candidate": {
+        "candidate_id": "H8PA13125",
+        "district": "13",
+        "name": "JOYCE, JOHN",
+        "office": "H",
+        "party": "REP",
+        "state": "PA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.0,
+          "value": 0.6027,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 47.5,
+          "value": 0.2441,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 76.8,
+          "value": 0.8563,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 37.0,
+          "value": 0.0044,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 51.1,
+      "generated_at": "2026-07-14T22:13:53.911703+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 51.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T22:15:23.601793+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3571066.02,
+      "debts": 0.0,
+      "disbursements": 1131245.81,
+      "individualContributions": 377071.55,
+      "receipts": 2102173.74
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "J000302",
     "birthYear": "1957",

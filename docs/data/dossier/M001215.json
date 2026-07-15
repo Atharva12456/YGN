@@ -267,7 +267,53 @@
     },
     "cycle": 2026,
     "financeScore": 72.7,
-    "generated_at": "2026-07-13T05:23:39.955035+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 766903.36,
+          "label": "Small individual (unitemized)",
+          "share": 0.1671914953815214
+        },
+        {
+          "amount": 1710340.59,
+          "label": "Large individual (itemized)",
+          "share": 0.37286888514064354
+        },
+        {
+          "amount": 2104731.95,
+          "label": "PAC / other committees",
+          "share": 0.4588495766895135
+        },
+        {
+          "amount": 5000.0,
+          "label": "Political party committees",
+          "share": 0.0010900427883216042
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8IA02043",
+        "district": "01",
+        "name": "MILLER-MEEKS, MARIANNETTE JANE",
+        "office": "H",
+        "party": "REP",
+        "state": "IA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4255364.33,
+        "debts": 0.0,
+        "disbursements": 2298792.12,
+        "individualContributions": 2477243.95,
+        "receipts": 6180413.05
+      }
+    },
+    "generated_at": "2026-07-14T19:46:25.427771+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -278,14 +324,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T05:25:42.664550+00:00"
+    "updated_at": "2026-07-14T19:46:58.300112+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001215",
+    "breakdown": [
+      {
+        "amount": 766903.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.1671914953815214
+      },
+      {
+        "amount": 1710340.59,
+        "label": "Large individual (itemized)",
+        "share": 0.37286888514064354
+      },
+      {
+        "amount": 2104731.95,
+        "label": "PAC / other committees",
+        "share": 0.4588495766895135
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0010900427883216042
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8IA02043",
+      "district": "01",
+      "name": "MILLER-MEEKS, MARIANNETTE JANE",
+      "office": "H",
+      "party": "REP",
+      "state": "IA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001215",
+      "candidate": {
+        "candidate_id": "H8IA02043",
+        "district": "01",
+        "name": "MILLER-MEEKS, MARIANNETTE JANE",
+        "office": "H",
+        "party": "REP",
+        "state": "IA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 70.4,
+          "value": 0.2031,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 68.8,
+          "value": 0.5401,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9992,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 90.2,
+          "value": 0.3096,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.7,
+      "generated_at": "2026-07-14T19:46:25.427771+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T19:46:58.300112+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4255364.33,
+      "debts": 0.0,
+      "disbursements": 2298792.12,
+      "individualContributions": 2477243.95,
+      "receipts": 6180413.05
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "M001215",
     "birthYear": "1955",

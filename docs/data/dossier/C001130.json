@@ -243,7 +243,53 @@
     },
     "cycle": 2026,
     "financeScore": 93.2,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 5803023.71,
+          "label": "Small individual (unitemized)",
+          "share": 0.739873817592313
+        },
+        {
+          "amount": 1871187.63,
+          "label": "Large individual (itemized)",
+          "share": 0.2385726484029155
+        },
+        {
+          "amount": 169050.0,
+          "label": "PAC / other committees",
+          "share": 0.02155353400477154
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2TX30178",
+        "district": "30",
+        "name": "CROCKETT, JASMINE",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 72538.2,
+        "debts": 0.0,
+        "disbursements": 9445643.5,
+        "individualContributions": 7674211.34,
+        "receipts": 7906948.49
+      }
+    },
+    "generated_at": "2026-07-14T18:16:37.253479+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -254,14 +300,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T00:08:43.580843+00:00"
+    "updated_at": "2026-07-14T18:17:11.900709+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001130",
+    "breakdown": [
+      {
+        "amount": 5803023.71,
+        "label": "Small individual (unitemized)",
+        "share": 0.739873817592313
+      },
+      {
+        "amount": 1871187.63,
+        "label": "Large individual (itemized)",
+        "share": 0.2385726484029155
+      },
+      {
+        "amount": 169050.0,
+        "label": "PAC / other committees",
+        "share": 0.02155353400477154
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX30178",
+      "district": "30",
+      "name": "CROCKETT, JASMINE",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001130",
+      "candidate": {
+        "candidate_id": "H2TX30178",
+        "district": "30",
+        "name": "CROCKETT, JASMINE",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 89.1,
+          "value": 0.7261,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 70.6,
+          "value": 0.2048,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.3,
+          "value": 0.9784,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 99.6,
+          "value": 0.7562,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 93.2,
+      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 93.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T18:17:11.900709+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 72538.2,
+      "debts": 0.0,
+      "disbursements": 9445643.5,
+      "individualContributions": 7674211.34,
+      "receipts": 7906948.49
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "C001130",
     "birthYear": "1981",

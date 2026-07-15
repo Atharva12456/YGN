@@ -360,7 +360,52 @@
     },
     "cycle": 2026,
     "financeScore": 70.3,
-    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 42291.11,
+          "label": "Small individual (unitemized)",
+          "share": 0.029772456753931233
+        },
+        {
+          "amount": 544167.0,
+          "label": "Large individual (itemized)",
+          "share": 0.3830873314608318
+        },
+        {
+          "amount": 834000.01,
+          "label": "PAC / other committees",
+          "share": 0.5871264488092939
+        },
+        {
+          "amount": 19.55,
+          "label": "Political party committees",
+          "share": 1.37629759431558e-05
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6CO01141",
+        "district": "01",
+        "name": "DEGETTE, DIANA L",
+        "office": "H",
+        "party": "DEM",
+        "state": "CO"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 459043.86,
+        "debts": 0.0,
+        "disbursements": 1234560.75,
+        "individualContributions": 586458.11,
+        "receipts": 1424135.43
+      }
+    },
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -371,14 +416,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T21:12:58.968465+00:00"
+    "updated_at": "2026-07-15T06:08:19.427355+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "D000197",
+    "breakdown": [
+      {
+        "amount": 42291.11,
+        "label": "Small individual (unitemized)",
+        "share": 0.029772456753931233
+      },
+      {
+        "amount": 544167.0,
+        "label": "Large individual (itemized)",
+        "share": 0.3830873314608318
+      },
+      {
+        "amount": 834000.01,
+        "label": "PAC / other committees",
+        "share": 0.5871264488092939
+      },
+      {
+        "amount": 19.55,
+        "label": "Political party committees",
+        "share": 1.37629759431558e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CO01141",
+      "district": "01",
+      "name": "DEGETTE, DIANA L",
+      "office": "H",
+      "party": "DEM",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "D000197",
+      "candidate": {
+        "candidate_id": "H6CO01141",
+        "district": "01",
+        "name": "DEGETTE, DIANA L",
+        "office": "H",
+        "party": "DEM",
+        "state": "CO"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 72.4,
+          "value": 0.5002,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 88.1,
+          "value": 0.4304,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 56.1,
+          "value": 0.4129,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 62.1,
+          "value": 0.0721,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 70.3,
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 70.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T06:08:19.427355+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 459043.86,
+      "debts": 0.0,
+      "disbursements": 1234560.75,
+      "individualContributions": 586458.11,
+      "receipts": 1424135.43
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "D000197",
     "birthYear": "1957",

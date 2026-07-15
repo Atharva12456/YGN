@@ -1,7 +1,7 @@
 {
-  "ai_cached": 40,
+  "ai_cached": 29,
   "ai_mode": "cache_refresh_only",
-  "ai_queued": 0,
+  "ai_queued": 11,
   "bills": [
     {
       "aiDescription": {
@@ -79,225 +79,6 @@
     {
       "aiDescription": {
         "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-12T23:11:34.616867+00:00",
-        "input_hash": "365e7081b7e576993487e2f4",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This concurrent resolution expresses support for recognizing March 10, 2026, as \"Abortion Provider Appreciation Day\" to honor abortion providers and staff. It applauds their courage and care, affirms Congress's commitment to their safety and ability to provide care, and highlights impacts of state restrictions on access nationwide."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/78?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 22,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
-        "updated_at": "2026-03-16T12:17:00Z"
-      },
-      "detailPath": "119/hconres/78",
-      "identifier": "HCONRES 78",
-      "impact": {
-        "generated_at": "2026-07-12T23:11:43.442820+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This concurrent resolution recognizes March 10, 2026, as \"Abortion Provider Appreciation Day\" for abortion providers and staff at independent clinics, Planned Parenthood centers, hospitals, and private physician offices. It references patients, communities, roughly 20 States with abortion bans, and the FACE Act.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "365e7081b7e576993487e2f4",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-03-12",
-        "text": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-      },
-      "members": [
-        {
-          "bioguideId": "P000617",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Pressley, Ayanna [D-MA-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "number": "78",
-      "originChamber": "House",
-      "policyArea": "Health",
-      "sponsors": [
-        {
-          "bioguideId": "P000617",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Pressley, Ayanna [D-MA-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MA"
-        }
-      ],
-      "title": "Expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
-      "type": "HCONRES",
-      "updatedAt": "2026-03-16T12:17:00Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/78"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-12T23:11:50.093197+00:00",
-        "input_hash": "bf50c6a46528fab093fcfa34",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This House resolution censures Representative Andrew Ogles and requires him to appear in the House well for a public reading of the censure. It also removes him from the House Committee on Homeland Security, applying only to Representative Ogles and his membership on that standing committee."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1113?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Censuring Representative Andrew Ogles and Removing Him from the House Committee on Homeland Security.",
-        "updated_at": "2026-03-16T12:21:10Z"
-      },
-      "detailPath": "119/hres/1113",
-      "identifier": "HRES 1113",
-      "impact": {
-        "generated_at": "2026-07-12T23:12:01.799133+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This resolution would censure Representative Andrew Ogles for publicly making Islamophobic and anti\u2011immigrant statements and require him to appear in the well of the U.S. House for a public reading of the censure by the Speaker. It removes him from the House Homeland Security Committee.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "bf50c6a46528fab093fcfa34",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-03-12",
-        "text": "Referred to the House Committee on Ethics."
-      },
-      "members": [
-        {
-          "bioguideId": "T000488",
-          "district": 13,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Thanedar, Shri [D-MI-13]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MI"
-        }
-      ],
-      "number": "1113",
-      "originChamber": "House",
-      "policyArea": "Congress",
-      "sponsors": [
-        {
-          "bioguideId": "T000488",
-          "district": 13,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Thanedar, Shri [D-MI-13]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MI"
-        }
-      ],
-      "title": "Censuring Representative Andrew Ogles and Removing Him from the House Committee on Homeland Security.",
-      "type": "HRES",
-      "updatedAt": "2026-03-16T12:21:10Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1113"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-12T23:12:12.375241+00:00",
-        "input_hash": "b4dd0e0ecb8434cfdb431df1",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This resolution authorizes the U.S. Capitol rotunda for the lying in state of seven named Army service members. The President pro tempore, the Speaker, and the Architect of the Capitol will set the date and arrange the ceremonies for those who served in support of Operation Epic Fury."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hconres/77?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 2,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
-        "updated_at": "2026-03-16T15:58:00Z"
-      },
-      "detailPath": "119/hconres/77",
-      "identifier": "HCONRES 77",
-      "impact": {
-        "generated_at": "2026-07-12T23:12:20.935340+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This resolution authorizes the U.S. Capitol Rotunda to serve for the lying in state of seven named Army service members, including Major Jeffrey R. O'Brien. It directs the President pro tempore, Speaker, and Architect of the Capitol to set the date and arrange the event.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "b4dd0e0ecb8434cfdb431df1",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-03-12",
-        "text": "Referred to the House Committee on House Administration."
-      },
-      "members": [
-        {
-          "bioguideId": "M001199",
-          "district": 21,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Mast, Brian J. [R-FL-21]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "number": "77",
-      "originChamber": "House",
-      "policyArea": "Congress",
-      "sponsors": [
-        {
-          "bioguideId": "M001199",
-          "district": 21,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Mast, Brian J. [R-FL-21]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "title": "Authorizing the use of the rotunda of the Capitol for the lying in state of the remains of Army Major Jeffrey R. O'Brien, Captain Cody A. Khork, Chief Warrant Officer 3 Robert M. Marzan, Sergeant First Class Noah L. Tietjens, Sergeant First Class Nicole M. Amor, Sergeant Declan J. Coady, and Sergeant Benjamin N. Pennington.",
-      "type": "HCONRES",
-      "updatedAt": "2026-03-16T15:58:00Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/77"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
         "generated_at": "2026-07-12T23:11:55.392717+00:00",
         "input_hash": "654036de3eb0ca9fa022b677",
         "model": "gpt-5-mini",
@@ -370,1025 +151,368 @@
     },
     {
       "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:11:25.447094+00:00",
-        "input_hash": "3a086bb9aed8866073a11bf9",
+        "summary": "This nonbinding Senate resolution declares support for International Women's Day and reaffirms U.S. commitment to advance and empower women and girls worldwide. It highlights gender\u2011based violence, child marriage, education and economic barriers worldwide and Taliban restrictions in Afghanistan, and is a congressional statement not new law.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "source": "committed",
-        "summary": "The resolution urges DOJ and DHS agents reassigned from counterterrorism, cybersecurity, or counterintelligence to civil immigration enforcement be returned to core missions during active hostilities with Iran. It covers those on temporary duty, detail, or reassignment, full- or part-time, since 1/20/2025 and applies to other state sponsors of terror."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/638?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution expressing the sense of the Senate that the law enforcement agents and other personnel of the Department of Justice and the Department of Homeland Security, who have been temporarily engaging in civil immigration enforcement operations, should be returned to their primary missions during periods of active hostility with Iran.",
-        "updated_at": "2026-03-16T17:46:20Z"
-      },
-      "detailPath": "119/sres/638",
-      "identifier": "SRES 638",
-      "impact": {
-        "generated_at": "2026-07-13T00:11:27.278251+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/638"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The resolution urges DOJ and DHS law enforcement staff reassigned to civil immigration enforcement since January 20, 2025, be returned to missions. Core missions include FBI counterterrorism, HSI, CISA cybersecurity, and DHS intelligence work during active hostility with Iran and other state sponsors of terror.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:21.834202+00:00",
         "content_version": "bill-ai-v6",
-        "input_hash": "3a086bb9aed8866073a11bf9",
+        "input_hash": "dc7519c53685846daaf744cd",
         "source": "committed"
       },
-      "latestAction": {
-        "date": "2026-03-11",
-        "text": "Referred to the Committee on Homeland Security and Governmental Affairs. (text: CR S1015)"
-      },
-      "members": [
-        {
-          "bioguideId": "G000574",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Gallego, Ruben [D-AZ]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "AZ"
-        }
-      ],
-      "number": "638",
-      "originChamber": "Senate",
-      "policyArea": "Immigration",
-      "sponsors": [
-        {
-          "bioguideId": "G000574",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Gallego, Ruben [D-AZ]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "AZ"
-        }
-      ],
-      "title": "A resolution expressing the sense of the Senate that the law enforcement agents and other personnel of the Department of Justice and the Department of Homeland Security, who have been temporarily engaging in civil immigration enforcement operations, should be returned to their primary missions during periods of active hostility with Iran.",
-      "type": "SRES",
-      "updatedAt": "2026-03-16T17:46:20Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/638"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:11:36.601082+00:00",
-        "input_hash": "f6ca0969855f8d7cd40b9568",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The resolution directs the Senate Committee on Rules and Administration to establish an annual academic civics competition, promulgate necessary regulations, and permit partnerships with public or nonprofit organizations and acceptance of private donations to offset costs. It applies to secondary school students as defined in ESEA section 8101."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/639?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A resolution establishing an annual Senate academic civics competition for secondary school students.",
-        "updated_at": "2026-03-16T18:10:22Z"
-      },
-      "detailPath": "119/sres/639",
-      "identifier": "SRES 639",
-      "impact": {
-        "generated_at": "2026-07-13T00:11:34.543080+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/639"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The Senate Committee on Rules and Administration would establish an annual academic civics competition for secondary school students nationwide. The Committee may partner with iCivics or the National Constitution Center, accept private donations, and issue regulations for judging and operations.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "f6ca0969855f8d7cd40b9568",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-03-11",
-        "text": "Referred to the Committee on Rules and Administration. (text: CR S1015-1016)"
-      },
-      "members": [
-        {
-          "bioguideId": "K000394",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kim, Andy [D-NJ]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NJ"
-        }
-      ],
-      "number": "639",
-      "originChamber": "Senate",
-      "policyArea": "Congress",
-      "sponsors": [
-        {
-          "bioguideId": "K000394",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Kim, Andy [D-NJ]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NJ"
-        }
-      ],
-      "title": "A resolution establishing an annual Senate academic civics competition for secondary school students.",
-      "type": "SRES",
-      "updatedAt": "2026-03-16T18:10:22Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/639"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:11:45.574537+00:00",
-        "input_hash": "0087ecf1c575763fe291eb84",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The resolution designates March 10, 2026, as \"Abortion Provider Appreciation Day\" and expresses support for abortion providers and their staff. It applies nationwide, lauds host communities, affirms Congress's commitment to provider safety and patient access, and condemns actions that restrict or stigmatize abortion care."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/sconres/28?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 12,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "A concurrent resolution expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
-        "updated_at": "2026-03-16T12:16:23Z"
-      },
-      "detailPath": "119/sconres/28",
-      "identifier": "SCONRES 28",
-      "impact": {
-        "generated_at": "2026-07-13T00:11:49.206596+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-concurrent-resolution/28"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The concurrent resolution recognizes March 10, 2026, as \"Abortion Provider Appreciation Day\" to celebrate abortion providers and staff at independent clinics, Planned Parenthood health centers, hospitals, and private physician offices. It cites 20 States with bans and asks Congress to affirm provider safety and access.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "0087ecf1c575763fe291eb84",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-03-10",
-        "text": "Referred to the Committee on Health, Education, Labor, and Pensions. (text: CR S966)"
-      },
-      "members": [
-        {
-          "bioguideId": "H001042",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Hirono, Mazie K. [D-HI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "HI"
-        }
-      ],
-      "number": "28",
-      "originChamber": "Senate",
-      "policyArea": "Health",
-      "sponsors": [
-        {
-          "bioguideId": "H001042",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Hirono, Mazie K. [D-HI]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "HI"
-        }
-      ],
-      "title": "A concurrent resolution expressing support for the recognition of March 10, 2026, as \"Abortion Provider Appreciation Day\".",
-      "type": "SCONRES",
-      "updatedAt": "2026-03-16T12:16:23Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-concurrent-resolution/28"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:12:23.929710+00:00",
-        "input_hash": "324bc8005616e66bf57be902",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill requires eventual notice to targets, forbids indefinite sealing, and limits nondisclosure to an initial 180\u2011day period plus one 180\u2011day extension with stricter review thereafter. It applies to federal, State, Tribal, and military orders including wiretaps, pen registers, mobile tracking, Section 2705 nondisclosure, search warrants, third\u2011party assistance, inventories."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7738?format=json",
+      "apiUrl": "https://api.congress.gov/v3/bill/119/sres/640?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Government Surveillance Transparency Act of 2026",
-        "updated_at": "2026-03-16T15:21:30Z"
+        "text": "A resolution supporting the goals of International Women's Day.",
+        "updated_at": "2026-03-17T19:03:50Z"
       },
-      "detailPath": "119/hr/7738",
-      "identifier": "HR 7738",
+      "detailPath": "119/sres/640",
+      "identifier": "SRES 640",
       "impact": {
-        "generated_at": "2026-07-13T00:12:20.057782+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/640"
           }
         ],
         "status": "AI impact analysis",
-        "summary": "The bill stops indefinite sealing and requires eventual notice to targets of criminal-surveillance orders while limiting nondisclosure to providers with 180\u2011day seals and fewer extensions. It affects federal, State, and Tribal courts, the DOJ and local law enforcement, telecom and tech providers, and surveillance targets.",
+        "summary": "S.Res.640 would have the Senate endorse International Women's Day and the U.S. Women, Peace, and Security agenda. It frames U.S. foreign policy and programs affecting women and girls worldwide, naming the State Department, USAID, UN Women, UNICEF, WHO, and Afghan women under Taliban rule.",
         "model": "gpt-5-mini",
         "provider": "azure",
+        "generated_at": "2026-07-15T03:37:24.385624+00:00",
         "content_version": "bill-ai-v6",
-        "input_hash": "324bc8005616e66bf57be902",
+        "input_hash": "dc7519c53685846daaf744cd",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-03-12",
+        "text": "Referred to the Committee on Foreign Relations. (text: CR S1049-1050)"
+      },
+      "members": [
+        {
+          "bioguideId": "S001181",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Shaheen, Jeanne [D-NH]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NH"
+        }
+      ],
+      "number": "640",
+      "originChamber": "Senate",
+      "policyArea": "International Affairs",
+      "sponsors": [
+        {
+          "bioguideId": "S001181",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Shaheen, Jeanne [D-NH]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NH"
+        }
+      ],
+      "title": "A resolution supporting the goals of International Women's Day.",
+      "type": "SRES",
+      "updatedAt": "2026-03-17T19:03:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/640"
+    },
+    {
+      "aiDescription": {
+        "summary": "The End Warehouse Detention Act forbids funds from Public Law 119\u201121 being used to buy or contract for warehouses to detain noncitizens. It also bars those funds from repurposing, operating, staffing, or maintaining any ICE or CBP\u2011owned warehouse for detention.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:33.996921+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "50be0743ef4ba99e9e591e69",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3927?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "End Warehouse Detention Act",
+        "updated_at": "2026-03-18T15:12:05Z"
+      },
+      "detailPath": "119/s/3927",
+      "identifier": "S 3927",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3927"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill bars money from Public Law 119-21 (One Big Beautiful Bill Act) being used to buy or lease warehouses to detain noncitizens. It also bars funds from repurposing, staffing, operating, or maintaining any ICE or CBP warehouse, affecting DHS operations and private warehouse owners.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T03:37:36.830708+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "50be0743ef4ba99e9e591e69",
         "source": "committed"
       },
       "latestAction": {
         "date": "2026-02-26",
-        "text": "Referred to the House Committee on the Judiciary."
-      },
-      "members": [
-        {
-          "bioguideId": "L000582",
-          "district": 36,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lieu, Ted [D-CA-36]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CA"
-        }
-      ],
-      "number": "7738",
-      "originChamber": "House",
-      "policyArea": "Crime and Law Enforcement",
-      "sponsors": [
-        {
-          "bioguideId": "L000582",
-          "district": 36,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lieu, Ted [D-CA-36]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CA"
-        }
-      ],
-      "title": "Government Surveillance Transparency Act of 2026",
-      "type": "HR",
-      "updatedAt": "2026-03-16T15:21:30Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7738"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:12:56.846156+00:00",
-        "input_hash": "5b3e838a83865918791e2670",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The Keep It Moving Act imposes deadlines on FCC review of transfer or assignment applications, requiring completeness checks within 15 days and final action within 180 days or 1 year on foreign referral, and allows writs compelling action. It applies to all FCC licenses and authorizations for such transfers and assignments."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7742?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Keep It Moving Act",
-        "updated_at": "2026-03-16T17:17:34Z"
-      },
-      "detailPath": "119/hr/7742",
-      "identifier": "HR 7742",
-      "impact": {
-        "generated_at": "2026-07-13T00:12:44.640150+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7742"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill makes the Federal Communications Commission decide completeness quickly and to approve or deny transfer\u2011of\u2011control or license\u2011assignment applications within fixed deadlines. It affects telecom, broadcast, wireless and cable firms that buy or sell FCC licenses and the Committee for the Assessment of Foreign Participation.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "5b3e838a83865918791e2670",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-26",
-        "text": "Referred to the House Committee on Energy and Commerce."
-      },
-      "members": [
-        {
-          "bioguideId": "P000048",
-          "district": 11,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Pfluger, August [R-TX-11]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "number": "7742",
-      "originChamber": "House",
-      "policyArea": "Science, Technology, Communications",
-      "sponsors": [
-        {
-          "bioguideId": "P000048",
-          "district": 11,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Pfluger, August [R-TX-11]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "title": "Keep It Moving Act",
-      "type": "HR",
-      "updatedAt": "2026-03-16T17:17:34Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7742"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:13:11.636544+00:00",
-        "input_hash": "fb99cc6a9dcf9b123b88db2f",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill requires HUD and the Comptroller General to report to Congress within one year on how many HUD public housing inspections in a year were incomplete. It must also state how many inspectors are needed to ensure all required inspections can be completed annually."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7700?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Annual Public Housing Inspections Accountability Act",
-        "updated_at": "2026-03-16T14:44:38Z"
-      },
-      "detailPath": "119/hr/7700",
-      "identifier": "HR 7700",
-      "impact": {
-        "generated_at": "2026-07-13T00:12:41.284053+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7700"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill directs the Secretary of Housing and Urban Development and the Comptroller General to study and report how many HUD public housing inspections are incomplete in a year. It affects HUD, the GAO, local public housing authorities, inspection staff, and HUD public housing residents.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "fb99cc6a9dcf9b123b88db2f",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Referred to the House Committee on Financial Services."
-      },
-      "members": [
-        {
-          "bioguideId": "L000599",
-          "district": 17,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lawler, Michael [R-NY-17]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "number": "7700",
-      "originChamber": "House",
-      "policyArea": "Housing and Community Development",
-      "sponsors": [
-        {
-          "bioguideId": "L000599",
-          "district": 17,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lawler, Michael [R-NY-17]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "title": "Annual Public Housing Inspections Accountability Act",
-      "type": "HR",
-      "updatedAt": "2026-03-16T14:44:38Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7700"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:28:30.171432+00:00",
-        "input_hash": "15432eb14d7cbc3646692abe",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill creates a new Title 18 chapter that prohibits indefinite sealing of criminal surveillance orders, requires eventual notice to targets, and tightens nondisclosure and extension standards. It applies to federal, State, Tribal and military orders including wiretaps, pen registers, tracking orders, SCA delay/disclosure orders, search warrants, and related inventories."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3918?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 3,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Government Surveillance Transparency Act of 2026",
-        "updated_at": "2026-03-16T15:21:40Z"
-      },
-      "detailPath": "119/s/3918",
-      "identifier": "S 3918",
-      "impact": {
-        "generated_at": "2026-07-13T00:28:34.801084+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3918"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill bars indefinite sealing of surveillance orders, limits nondisclosure to providers, and requires courts to unseal or redact orders after set periods. It affects DOJ/FBI, federal, state, territorial and Tribal courts, prosecutors, telecom and internet providers, and people targeted by surveillance.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "15432eb14d7cbc3646692abe",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Read twice and referred to the Committee on the Judiciary."
-      },
-      "members": [
-        {
-          "bioguideId": "W000779",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Wyden, Ron [D-OR]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "OR"
-        }
-      ],
-      "number": "3918",
-      "originChamber": "Senate",
-      "policyArea": "Crime and Law Enforcement",
-      "sponsors": [
-        {
-          "bioguideId": "W000779",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Wyden, Ron [D-OR]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "OR"
-        }
-      ],
-      "title": "Government Surveillance Transparency Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-16T15:21:40Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3918"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:28:57.365462+00:00",
-        "input_hash": "5c982d219aaee7d7371b88e9",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This bill amends HEA section 402C(f) to raise FY2027 Upward Bound stipends from $60 to $180, $300 to $900, and $40 to $120, and sets veteran project stipends up to $300. Future maximums will be indexed to the CPI and rounded to the nearest $10 for projects under section 402C."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7690?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Dr. William W. Sullivan TRIO Upward Bound Student Stipend Support Act",
-        "updated_at": "2026-03-16T16:36:07Z"
-      },
-      "detailPath": "119/hr/7690",
-      "identifier": "HR 7690",
-      "impact": {
-        "generated_at": "2026-07-13T00:29:03.265914+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7690"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill raises 2027 monthly stipend caps for Upward Bound (TRIO) participants\u2014tripling limits\u2014and allows veterans in subsection (d)(6) projects up to $300. Beginning 2028 the Secretary of Education must annually raise caps by estimated CPI, rounded to $10, affecting Upward Bound grantees (colleges, districts, nonprofits).",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "5c982d219aaee7d7371b88e9",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Referred to the House Committee on Education and Workforce."
-      },
-      "members": [
-        {
-          "bioguideId": "D000096",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Davis, Danny K. [D-IL-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "number": "7690",
-      "originChamber": "House",
-      "policyArea": "Education",
-      "sponsors": [
-        {
-          "bioguideId": "D000096",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Davis, Danny K. [D-IL-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "title": "Dr. William W. Sullivan TRIO Upward Bound Student Stipend Support Act",
-      "type": "HR",
-      "updatedAt": "2026-03-16T16:36:07Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7690"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:29:21.186513+00:00",
-        "input_hash": "4d5cadc5de2f6ccab87ba6ee",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This bill adds basic and emergency living-assistance grants to the Student Support Services program to help undergraduate participants cover anticipated or unexpected living and related costs. Recipients may use up to 2% of SSS funds; emergency grants are capped at $500 for 2027\u201328 and thereafter indexed to CPI increases."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7689?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Earl N. Williams, Sr., First Chance Act",
-        "updated_at": "2026-03-16T17:13:05Z"
-      },
-      "detailPath": "119/hr/7689",
-      "identifier": "HR 7689",
-      "impact": {
-        "generated_at": "2026-07-13T00:29:22.989949+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7689"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill amends the Higher Education Act to require institutions with Student Support Services (SSS/TRIO) grants to provide basic and emergency supplemental living assistance to current SSS participants. It permits 2% of SSS funds for these grants and caps emergency awards at $500 for 2027\u201328.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "4d5cadc5de2f6ccab87ba6ee",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Referred to the House Committee on Education and Workforce."
-      },
-      "members": [
-        {
-          "bioguideId": "D000096",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Davis, Danny K. [D-IL-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "number": "7689",
-      "originChamber": "House",
-      "policyArea": "Education",
-      "sponsors": [
-        {
-          "bioguideId": "D000096",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Davis, Danny K. [D-IL-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "IL"
-        }
-      ],
-      "title": "Earl N. Williams, Sr., First Chance Act",
-      "type": "HR",
-      "updatedAt": "2026-03-16T17:13:05Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7689"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:29:40.541349+00:00",
-        "input_hash": "7e9aab653c83382f5920121e",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill amends the U.S. Housing Act to set rent in public housing for families with full\u2011time police officers, firefighters, or emergency medical technicians at the higher of 15% of adjusted monthly income or 5% of monthly income. It applies to units under the Act and to such full\u2011time public employees."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7701?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 0,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Public Housing Rent Reduction for First Responders Act",
-        "updated_at": "2026-03-16T17:20:50Z"
-      },
-      "detailPath": "119/hr/7701",
-      "identifier": "HR 7701",
-      "impact": {
-        "generated_at": "2026-07-13T00:29:34.843031+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7701"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This bill cuts rents in public housing for families including a full\u2011time police officer, firefighter, or EMT. Rent becomes the greater of 15% of monthly adjusted income or 5% of monthly income, and public housing agencies verify federal, state, local, or tribal employment.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7e9aab653c83382f5920121e",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Referred to the House Committee on Financial Services."
-      },
-      "members": [
-        {
-          "bioguideId": "L000599",
-          "district": 17,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lawler, Michael [R-NY-17]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "number": "7701",
-      "originChamber": "House",
-      "policyArea": "Housing and Community Development",
-      "sponsors": [
-        {
-          "bioguideId": "L000599",
-          "district": 17,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Lawler, Michael [R-NY-17]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "NY"
-        }
-      ],
-      "title": "Public Housing Rent Reduction for First Responders Act",
-      "type": "HR",
-      "updatedAt": "2026-03-16T17:20:50Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7701"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:29:48.203294+00:00",
-        "input_hash": "3e8119739089e74ed33a7405",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The UASI Act mandates 30% of Urban Areas Security Initiative awards be spent on five National Priority Areas, including minimums of 3% for election security and 10% for ICE\u2011coordinated border response. It applies to UASI applicants, including State administrative agencies and eligible urban areas, for fiscal year 2027 and thereafter."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3920?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "UASI Act",
-        "updated_at": "2026-03-16T17:53:50Z"
-      },
-      "detailPath": "119/s/3920",
-      "identifier": "S 3920",
-      "impact": {
-        "generated_at": "2026-07-13T00:29:54.108341+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "This bill would require State administrative agencies and eligible urban areas receiving Urban Areas Security Initiative (UASI) grants to allocate at least 30% of awards across specified National Priority Areas. Also mandates 3% for election security, 10% for border response, ICE cooperation, and grant penalties.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "3e8119739089e74ed33a7405",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
         "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
       },
       "members": [
         {
-          "bioguideId": "S001217",
+          "bioguideId": "K000394",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
-          "party": "R",
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "NJ"
         }
       ],
-      "number": "3920",
+      "number": "3927",
       "originChamber": "Senate",
       "policyArea": "Immigration",
       "sponsors": [
         {
-          "bioguideId": "S001217",
+          "bioguideId": "K000394",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
-          "party": "R",
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "NJ"
         }
       ],
-      "title": "UASI Act",
+      "title": "End Warehouse Detention Act",
       "type": "S",
-      "updatedAt": "2026-03-16T17:53:50Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3920"
+      "updatedAt": "2026-03-18T15:12:05Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3927"
     },
     {
       "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:30:23.232959+00:00",
-        "input_hash": "70a05f6495c28907c6c8d5d9",
+        "summary": "Requires DHS\u2019s Office of Detention Oversight to audit ICE facilities and the ICE Director to report results and remediation to four congressional committees within 30 days. Bars new housing of aliens at ICE facilities until audited deficiencies are remediated and the report submitted, covering new facilities and audited existing ones.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "source": "committed",
-        "summary": "The bill lets disabled individuals under early\u2011retirement age elect to receive SSDI during the five\u2011month waiting period by writing on applications or appeal filings. Benefits start at 94.25% initially for 36 months with later actuarial adjustments to protect the Disability Insurance Trust Fund and updated SSA forms are required."
+        "generated_at": "2026-07-15T03:38:21.784326+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "87e887fd67442a42c64d3f77",
+        "source": "committed"
       },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3924?format=json",
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3932?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 1,
+      "cosponsorCount": 0,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "We Can't Wait Act of 2026",
-        "updated_at": "2026-03-16T18:05:41Z"
+        "text": "Private Detention Accountability Act",
+        "updated_at": "2026-03-18T17:00:57Z"
       },
-      "detailPath": "119/s/3924",
-      "identifier": "S 3924",
+      "detailPath": "119/s/3932",
+      "identifier": "S 3932",
       "impact": {
-        "generated_at": "2026-07-13T00:30:09.968004+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3932"
           }
         ],
         "status": "AI impact analysis",
-        "summary": "The bill lets SSDI applicants elect benefits during the five\u2011month waiting period and requires SSA to add an election option to applications. It sets 94.25% for 36 months and requires Chief Actuary and Commissioner reviews of effects on the Federal Disability Insurance Trust Fund.",
+        "summary": "The bill forces DHS\u2019s Office of Detention Oversight to audit ICE detention facilities and requires the ICE Director to send findings and remediation to Congressional Homeland Security and Judiciary committees within 30 days. It blocks new detainees at ICE and privately run facilities until remediated.",
         "model": "gpt-5-mini",
         "provider": "azure",
+        "generated_at": "2026-07-15T03:38:15.165599+00:00",
         "content_version": "bill-ai-v6",
-        "input_hash": "70a05f6495c28907c6c8d5d9",
+        "input_hash": "87e887fd67442a42c64d3f77",
         "source": "committed"
       },
       "latestAction": {
-        "date": "2026-02-25",
+        "date": "2026-02-26",
+        "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+      },
+      "members": [
+        {
+          "bioguideId": "K000394",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "number": "3932",
+      "originChamber": "Senate",
+      "policyArea": "Immigration",
+      "sponsors": [
+        {
+          "bioguideId": "K000394",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Kim, Andy [D-NJ]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "title": "Private Detention Accountability Act",
+      "type": "S",
+      "updatedAt": "2026-03-18T17:00:57Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3932"
+    },
+    {
+      "aiDescription": {
+        "summary": "The bill directs Commerce to establish an exclusion process for covered building products from duties above rates in effect on January 19, 2025, with 15\u2011day rulings for critical products and 60\u2011day rulings for others. It covers products and inputs used in single\u2011family and multi\u2011family housing, and excludes AD/CVD, section\u2011201 duties.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T04:39:36.497667+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3fd2f2213343f68584e2485b",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3943?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 6,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Housing Tariff Exclusion Act",
+        "updated_at": "2026-03-18T18:03:38Z"
+      },
+      "detailPath": "119/s/3943",
+      "identifier": "S 3943",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3943"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill directs the Commerce Secretary to set an exclusion process letting U.S. homebuilders and suppliers seek removal of tariffs above 1/19/2025 rates on building materials. CBP will administer exclusions and reliquidations; the Secretary must report quarterly to Senate Finance and House Ways and Means.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T04:39:52.093250+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3fd2f2213343f68584e2485b",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-02-26",
         "text": "Read twice and referred to the Committee on Finance."
       },
       "members": [
         {
-          "bioguideId": "C001035",
+          "bioguideId": "R000608",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Collins, Susan M. [R-ME]",
-          "party": "R",
+          "name": "Sen. Rosen, Jacky [D-NV]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "ME"
+          "state": "NV"
         }
       ],
-      "number": "3924",
+      "number": "3943",
       "originChamber": "Senate",
-      "policyArea": "Social Welfare",
+      "policyArea": "Foreign Trade and International Finance",
       "sponsors": [
         {
-          "bioguideId": "C001035",
+          "bioguideId": "R000608",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Collins, Susan M. [R-ME]",
-          "party": "R",
+          "name": "Sen. Rosen, Jacky [D-NV]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "ME"
+          "state": "NV"
         }
       ],
-      "title": "We Can't Wait Act of 2026",
+      "title": "Housing Tariff Exclusion Act",
       "type": "S",
-      "updatedAt": "2026-03-16T18:05:41Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3924"
+      "updatedAt": "2026-03-18T18:03:38Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3943"
     },
     {
       "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:30:42.091413+00:00",
-        "input_hash": "7a327c7831c6686b3f350f52",
+        "summary": "The bill imposes a 15% excise tax on purchases of newly acquired 1\u20134 unit single\u2011family residences by qualifying hedge fund taxpayers and adds a 5\u2011point corporate surtax plus limits on mortgage interest, depreciation, and QBI benefits. It targets pooled\u2011fund entities with $50M+ AUM, applies after enactment, and excludes 501(c)(3)s, homebuilders, and owner\u2011occupied, never\u2011rented homes.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "source": "committed",
-        "summary": "The bill bars jurisdictions that prohibit immigration-status data sharing or refuse DHS detainers from receiving SEAR funds and reallocates those funds to ICE. It defines \"sanctuary jurisdictions,\" triggers ineligibility after 30 days unless compliance is certified, prioritizes deportations and border removals, and requires semiannual DHS reports."
+        "generated_at": "2026-07-15T05:57:44.931781+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4d793dab0047cc7666526b03",
+        "source": "committed"
       },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3921?format=json",
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3930?format=json",
       "committees": [],
       "congress": 119,
       "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Sanctuary Jurisdiction Event Security Enhancement Act",
-        "updated_at": "2026-03-16T18:08:00Z"
+        "text": "HOPE (Humans over Private Equity) for Homeownership Act",
+        "updated_at": "2026-03-18T18:16:13Z"
       },
-      "detailPath": "119/s/3921",
-      "identifier": "S 3921",
+      "detailPath": "119/s/3930",
+      "identifier": "S 3930",
       "impact": {
-        "generated_at": "2026-07-13T00:30:33.042661+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3921"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3930"
           }
         ],
         "status": "AI impact analysis",
-        "summary": "The bill bars DHS Special Event Assessment Rating (SEAR) support and Homeland Security Grant Program funds for events in \"sanctuary jurisdictions.\" Savings must go to ICE Enforcement and Removal Operations to prioritize arrests, detentions, and removals, with at least half for border-related enforcement.",
+        "summary": "The bill imposes a 15% excise on purchases of 1\u20134\u2011unit homes by \"hedge fund taxpayers\"\u2014pooled\u2011investor entities (partnerships, corporations, REITs) with $50,000,000+ AUM. It also adds a 5\u2011point corporate surtax for those corporations and disallows mortgage\u2011interest, depreciation, and the 199A qualified business income deduction for hedge\u2011fund landlords.",
         "model": "gpt-5-mini",
         "provider": "azure",
+        "generated_at": "2026-07-15T05:57:45.384558+00:00",
         "content_version": "bill-ai-v6",
-        "input_hash": "7a327c7831c6686b3f350f52",
+        "input_hash": "4d793dab0047cc7666526b03",
         "source": "committed"
       },
       "latestAction": {
-        "date": "2026-02-25",
-        "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+        "date": "2026-02-26",
+        "text": "Read twice and referred to the Committee on Finance."
       },
       "members": [
         {
-          "bioguideId": "S001217",
+          "bioguideId": "M001176",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
-          "party": "R",
+          "name": "Sen. Merkley, Jeff [D-OR]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "OR"
         }
       ],
-      "number": "3921",
+      "number": "3930",
       "originChamber": "Senate",
-      "policyArea": "Immigration",
+      "policyArea": "Taxation",
       "sponsors": [
         {
-          "bioguideId": "S001217",
+          "bioguideId": "M001176",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Scott, Rick [R-FL]",
-          "party": "R",
+          "name": "Sen. Merkley, Jeff [D-OR]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "FL"
+          "state": "OR"
         }
       ],
-      "title": "Sanctuary Jurisdiction Event Security Enhancement Act",
+      "title": "HOPE (Humans over Private Equity) for Homeownership Act",
       "type": "S",
-      "updatedAt": "2026-03-16T18:08:00Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3921"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:31:13.953874+00:00",
-        "input_hash": "c58a03857e4e7d29dfa9c7cb",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "This bill exempts \"traditional large and premium cigars\" from FDA tobacco authority and forbids FDA rulemaking on them (except section 907(d)(3)). Cigars wrapped and filled with 100% leaf tobacco, no filter, tip, or non\u2011tobacco mouthpiece, weigh \u22656 pounds per 1,000, meet specified binder/manufacture criteria; definition excludes cigarettes and little cigars."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3922?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 1,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Traditional Cigar Manufacturing and Small Business Jobs Preservation Act of 2026",
-        "updated_at": "2026-03-16T18:34:05Z"
-      },
-      "detailPath": "119/s/3922",
-      "identifier": "S 3922",
-      "impact": {
-        "generated_at": "2026-07-13T00:31:08.356811+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3922"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The bill exempts defined \"traditional large and premium cigars\" from most FDA regulation under the FD&C Act. That change would affect the FDA and the premium cigar industry, including manufacturers, importers, retailers, distributors, tobacconists, and small businesses, by removing regulatory requirements and some user fees.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "c58a03857e4e7d29dfa9c7cb",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2026-02-25",
-        "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
-      },
-      "members": [
-        {
-          "bioguideId": "M001244",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Moody, Ashley [R-FL]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "number": "3922",
-      "originChamber": "Senate",
-      "policyArea": "Health",
-      "sponsors": [
-        {
-          "bioguideId": "M001244",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Moody, Ashley [R-FL]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "title": "Traditional Cigar Manufacturing and Small Business Jobs Preservation Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-03-16T18:34:05Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3922"
+      "updatedAt": "2026-03-18T18:16:13Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3930"
     },
     {
       "aiDescription": {
@@ -1462,6 +586,298 @@
       "type": "S",
       "updatedAt": "2026-03-17T18:46:33Z",
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3910"
+    },
+    {
+      "aiDescription": {
+        "summary": "The bill creates a Student Loan Borrower Advocate at the CFPB, an Office for Students and Young Consumers, and requires an MOU with the Department of Education to access ED systems and resolve student loan complaints. It mandates annual reports and prohibits collecting consumers' personally identifiable financial information.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:40:37.114499+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8b6b5f991bb06a51082da552",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7671?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 4,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Students and Young Consumers Empowerment Act",
+        "updated_at": "2026-03-18T17:34:48Z"
+      },
+      "detailPath": "119/hr/7671",
+      "identifier": "HR 7671",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7671"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill creates a Student Loan Borrower Advocate at the Consumer Financial Protection Bureau to take complaints and publish annual reports. It requires an MOU with the Department of Education and Student Loan Ombudsman and affects borrowers, lenders and servicers, colleges, campus banking providers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:40:45.519780+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8b6b5f991bb06a51082da552",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-02-25",
+        "text": "Referred to the Committee on Education and Workforce, and in addition to the Committees on Financial Services, and Ways and Means, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+      },
+      "members": [
+        {
+          "bioguideId": "B001278",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "number": "7671",
+      "originChamber": "House",
+      "policyArea": "Finance and Financial Sector",
+      "sponsors": [
+        {
+          "bioguideId": "B001278",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "title": "Students and Young Consumers Empowerment Act",
+      "type": "HR",
+      "updatedAt": "2026-03-18T17:34:48Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7671"
+    },
+    {
+      "aiDescription": {
+        "summary": "The ReSCUE Oceans Act directs NOAA to fund a program to research, monitor, validate marine carbon removal and develop standards and protocols for voluntary carbon credits. It covers U.S. internal and coastal waters, territorial seas, the contiguous zone, and the exclusive economic zone, and requires Tribal and coastal community engagement.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:25.901657+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "41317b30b97a769e735fb3cf",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7656?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 2,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "ReSCUE Oceans Act",
+        "updated_at": "2026-03-17T18:59:19Z"
+      },
+      "detailPath": "119/hr/7656",
+      "identifier": "HR 7656",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7656"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The ReSCUE Oceans Act directs NOAA to create a Program funding research, monitoring, and standards for marine carbon dioxide removal. It would affect coastal States, coastal communities, National Sea Grant, Regional Ocean Partnerships, Indian Tribes, Native Hawaiian organizations, marine\u2011CDR developers, and voluntary carbon market participants.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:43.420567+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "41317b30b97a769e735fb3cf",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-02-24",
+        "text": "Referred to the Committee on Science, Space, and Technology, and in addition to the Committee on Natural Resources, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+      },
+      "members": [
+        {
+          "bioguideId": "B001278",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "number": "7656",
+      "originChamber": "House",
+      "policyArea": "Public Lands and Natural Resources",
+      "sponsors": [
+        {
+          "bioguideId": "B001278",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "OR"
+        }
+      ],
+      "title": "ReSCUE Oceans Act",
+      "type": "HR",
+      "updatedAt": "2026-03-17T18:59:19Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7656"
+    },
+    {
+      "aiDescription": {
+        "summary": "The bill lets Retired Reserve members under 60 who receive retired pay enroll in regular TRICARE for retirees instead of TRICARE Retired Reserve. It covers Reserve Component members qualified under chapter 1223, takes effect 18 months after enactment, and preserves exceptions tied to 38 U.S.C. 5304 or 5305.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:31.828988+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b235ffccbf32f2011e07f33f",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7667?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "TRICARE Fairness for National Guard and Reserve Retirees Act This bill aligns eligibility for TRICARE health coverage with the age at which personnel of the Retired Reserve (former National Guard and Reserve members) begin receiving retired pay. Specifically, personnel of the Retired Reserve who are not yet age 60 but are receiving their retirement pay may purchase TRICARE health coverage for retired military personnel, rather than the presently allowed TRICARE Retired Reserve. Under current law, Reserve Component personnel may retire below age 60, but not below 50, based on active duty performance.",
+        "updated_at": "2026-03-18T17:43:50Z"
+      },
+      "detailPath": "119/hr/7667",
+      "identifier": "HR 7667",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7667"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill lets Retired Reserve members (National Guard and Reserve) under 60 who are receiving retired pay enroll in regular TRICARE retired-military coverage instead of TRICARE Retired Reserve. It changes eligibility for the Defense Health Agency's TRICARE program and takes effect 18 months after enactment.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:24.282851+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b235ffccbf32f2011e07f33f",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-02-24",
+        "text": "Referred to the House Committee on Armed Services."
+      },
+      "members": [
+        {
+          "bioguideId": "V000133",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Van Drew, Jefferson [R-NJ-2]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "number": "7667",
+      "originChamber": "House",
+      "policyArea": "Armed Forces and National Security",
+      "sponsors": [
+        {
+          "bioguideId": "V000133",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Van Drew, Jefferson [R-NJ-2]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "title": "TRICARE Fairness for National Guard and Reserve Retirees Act",
+      "type": "HR",
+      "updatedAt": "2026-03-18T17:44:08Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7667"
+    },
+    {
+      "aiDescription": {
+        "summary": "The bill adds the District of Columbia to the McIntire\u2011Stennis Cooperative Forestry Act's list of entities eligible for federal forestry research funds. It makes D.C. eligible alongside states, land\u2011grant institutions, and territories for McIntire\u2011Stennis formula and competitive grants supporting forestry research and education.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:40.375234+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "deb21d1641c9c578ab980fa8",
+        "source": "committed"
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7650?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "McIntire-Stennis Act District of Columbia Equality Act",
+        "updated_at": "2026-03-17T19:03:18Z"
+      },
+      "detailPath": "119/hr/7650",
+      "identifier": "HR 7650",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7650"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill would amend the McIntire\u2011Stennis Cooperative Forestry Act to add the District of Columbia to the list of jurisdictions eligible for McIntire\u2011Stennis research grant funds. It would let District government and District forestry or university research programs apply for grants administered by USDA NIFA.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-15T05:41:42.967965+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "deb21d1641c9c578ab980fa8",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2026-02-23",
+        "text": "Referred to the House Committee on Agriculture."
+      },
+      "members": [
+        {
+          "bioguideId": "N000147",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "DC"
+        }
+      ],
+      "number": "7650",
+      "originChamber": "House",
+      "policyArea": "Agriculture and Food",
+      "sponsors": [
+        {
+          "bioguideId": "N000147",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "DC"
+        }
+      ],
+      "title": "McIntire-Stennis Act District of Columbia Equality Act",
+      "type": "HR",
+      "updatedAt": "2026-03-17T19:03:18Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7650"
     },
     {
       "aiDescription": {
@@ -1756,6 +1172,183 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1067"
     },
     {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7372?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Safety is Not For Sale Act",
+        "updated_at": "2026-03-18T15:32:10Z"
+      },
+      "detailPath": "119/hr/7372",
+      "identifier": "HR 7372",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7372"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-10",
+        "text": "Forwarded by Subcommittee to Full Committee by Voice Vote."
+      },
+      "members": [
+        {
+          "bioguideId": "P000034",
+          "district": 6,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pallone, Frank [D-NJ-6]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "number": "7372",
+      "originChamber": "House",
+      "policyArea": "Transportation and Public Works",
+      "sponsors": [
+        {
+          "bioguideId": "P000034",
+          "district": 6,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Pallone, Frank [D-NJ-6]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NJ"
+        }
+      ],
+      "title": "Safety is Not For Sale Act",
+      "type": "HR",
+      "updatedAt": "2026-03-18T15:32:10Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7372"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7353?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Magnus White and Safe Streets for Everyone Act of 2026",
+        "updated_at": "2026-03-18T15:42:49Z"
+      },
+      "detailPath": "119/hr/7353",
+      "identifier": "HR 7353",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7353"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-10",
+        "text": "Forwarded by Subcommittee to Full Committee by Voice Vote."
+      },
+      "members": [
+        {
+          "bioguideId": "C001067",
+          "district": 9,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Clarke, Yvette D. [D-NY-9]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "number": "7353",
+      "originChamber": "House",
+      "policyArea": "Transportation and Public Works",
+      "sponsors": [
+        {
+          "bioguideId": "C001067",
+          "district": 9,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Clarke, Yvette D. [D-NY-9]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NY"
+        }
+      ],
+      "title": "Magnus White and Safe Streets for Everyone Act of 2026",
+      "type": "HR",
+      "updatedAt": "2026-03-18T15:42:49Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7353"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6947?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "SAFE Exit Act of 2026",
+        "updated_at": "2026-03-18T16:14:34Z"
+      },
+      "detailPath": "119/hr/6947",
+      "identifier": "HR 6947",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/6947"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-10",
+        "text": "Forwarded by Subcommittee to Full Committee by Voice Vote."
+      },
+      "members": [
+        {
+          "bioguideId": "K000385",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Kelly, Robin L. [D-IL-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "number": "6947",
+      "originChamber": "House",
+      "policyArea": "Transportation and Public Works",
+      "sponsors": [
+        {
+          "bioguideId": "K000385",
+          "district": 2,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Kelly, Robin L. [D-IL-2]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "title": "SAFE Exit Act of 2026",
+      "type": "HR",
+      "updatedAt": "2026-03-18T16:14:34Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6947"
+    },
+    {
       "aiDescription": {
         "content_version": "bill-ai-v6",
         "generated_at": "2026-07-13T00:48:03.989597+00:00",
@@ -1827,6 +1420,65 @@
       "type": "HR",
       "updatedAt": "2026-03-17T08:05:34Z",
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7421"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7398?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 18,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Passports for Purple Hearts and Medals of Honor Act",
+        "updated_at": "2026-03-18T08:06:50Z"
+      },
+      "detailPath": "119/hr/7398",
+      "identifier": "HR 7398",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7398"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-02-05",
+        "text": "Referred to the House Committee on Foreign Affairs."
+      },
+      "members": [
+        {
+          "bioguideId": "L000593",
+          "district": 49,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Levin, Mike [D-CA-49]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
+      "number": "7398",
+      "originChamber": "House",
+      "policyArea": "Armed Forces and National Security",
+      "sponsors": [
+        {
+          "bioguideId": "L000593",
+          "district": 49,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Levin, Mike [D-CA-49]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
+      "title": "Passports for Purple Hearts and Medals of Honor Act",
+      "type": "HR",
+      "updatedAt": "2026-03-18T08:06:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7398"
     },
     {
       "aiDescription": {
@@ -1902,77 +1554,240 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1029"
     },
     {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:49:05.328124+00:00",
-        "input_hash": "7a1401a0275f29fda5d71b1c",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill lets the President declare an \"invasion\" at the U.S. southern border and suspend entry and remove aliens who unlawfully cross the border. It bars them from asylum and other relief, requires pre-entry health and security information or removal, and bars judicial review except for U.S. nationality claims."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7105?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3671?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 0,
+      "cosponsorCount": 1,
       "description": {
         "source": "Congress.gov bill detail",
-        "text": "Guaranteeing the States Protection Against Invasion Act of 2026",
-        "updated_at": "2026-03-16T12:30:06Z"
+        "text": "Increasing Investor Opportunities Act",
+        "updated_at": "2026-03-18T19:37:49Z"
       },
-      "detailPath": "119/hr/7105",
-      "identifier": "HR 7105",
+      "detailPath": "119/s/3671",
+      "identifier": "S 3671",
       "impact": {
-        "generated_at": "2026-07-13T00:49:14.585067+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/7105"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3671"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "President may proclaim an 'invasion' at the southern border and direct DHS, State, and the AG to repel, detain, expel, and block entrants. Migrants and asylum seekers crossing the southern border would be barred from entry and asylum, immediately removed, and largely denied judicial review.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7a1401a0275f29fda5d71b1c",
-        "source": "committed"
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
         "date": "2026-01-15",
+        "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+      },
+      "members": [
+        {
+          "bioguideId": "D000618",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Daines, Steve [R-MT]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MT"
+        }
+      ],
+      "number": "3671",
+      "originChamber": "Senate",
+      "policyArea": "Finance and Financial Sector",
+      "sponsors": [
+        {
+          "bioguideId": "D000618",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Daines, Steve [R-MT]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "MT"
+        }
+      ],
+      "title": "Increasing Investor Opportunities Act",
+      "type": "S",
+      "updatedAt": "2026-03-18T19:37:49Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3671"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3662?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "ACCESS Act of 2026",
+        "updated_at": "2026-03-18T20:13:02Z"
+      },
+      "detailPath": "119/s/3662",
+      "identifier": "S 3662",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3662"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-01-15",
+        "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+      },
+      "members": [
+        {
+          "bioguideId": "M001243",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. McCormick, David [R-PA]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "number": "3662",
+      "originChamber": "Senate",
+      "policyArea": "Finance and Financial Sector",
+      "sponsors": [
+        {
+          "bioguideId": "M001243",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. McCormick, David [R-PA]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "title": "ACCESS Act of 2026",
+      "type": "S",
+      "updatedAt": "2026-03-18T20:13:02Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3662"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/996?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 187,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Impeaching Kristi Lynn Arnold Noem, Secretary of Homeland Security, for high crimes and misdemeanors.",
+        "updated_at": "2026-03-18T20:25:26Z"
+      },
+      "detailPath": "119/hres/996",
+      "identifier": "HRES 996",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/996"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-01-14",
         "text": "Referred to the House Committee on the Judiciary."
       },
       "members": [
         {
-          "bioguideId": "H001095",
-          "district": 38,
+          "bioguideId": "K000385",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Rep. Hunt, Wesley [R-TX-38]",
-          "party": "R",
+          "name": "Rep. Kelly, Robin L. [D-IL-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "IL"
         }
       ],
-      "number": "7105",
+      "number": "996",
       "originChamber": "House",
-      "policyArea": "Immigration",
+      "policyArea": "Government Operations and Politics",
       "sponsors": [
         {
-          "bioguideId": "H001095",
-          "district": 38,
+          "bioguideId": "K000385",
+          "district": 2,
           "isOriginalCosponsor": null,
-          "name": "Rep. Hunt, Wesley [R-TX-38]",
-          "party": "R",
+          "name": "Rep. Kelly, Robin L. [D-IL-2]",
+          "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "TX"
+          "state": "IL"
         }
       ],
-      "title": "Guaranteeing the States Protection Against Invasion Act of 2026",
-      "type": "HR",
-      "updatedAt": "2026-03-16T12:30:06Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/7105"
+      "title": "Impeaching Kristi Lynn Arnold Noem, Secretary of Homeland Security, for high crimes and misdemeanors.",
+      "type": "HRES",
+      "updatedAt": "2026-03-18T20:25:26Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/996"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/994?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 5,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Expressing the sense of the House of Representatives that the Secretary of Defense should review section 504 of title 10, United States Code, for purposes related to enlisting certain aliens in the Armed Forces.",
+        "updated_at": "2026-03-18T08:06:54Z"
+      },
+      "detailPath": "119/hres/994",
+      "identifier": "HRES 994",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/994"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-01-13",
+        "text": "Referred to the House Committee on Armed Services."
+      },
+      "members": [
+        {
+          "bioguideId": "F000454",
+          "district": 11,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Foster, Bill [D-IL-11]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "number": "994",
+      "originChamber": "House",
+      "policyArea": "Armed Forces and National Security",
+      "sponsors": [
+        {
+          "bioguideId": "F000454",
+          "district": 11,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Foster, Bill [D-IL-11]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "IL"
+        }
+      ],
+      "title": "Expressing the sense of the House of Representatives that the Secretary of Defense should review section 504 of title 10, United States Code, for purposes related to enlisting certain aliens in the Armed Forces.",
+      "type": "HRES",
+      "updatedAt": "2026-03-18T08:06:54Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/994"
     },
     {
       "aiDescription": {
@@ -2561,79 +2376,6 @@
     {
       "aiDescription": {
         "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T00:52:51.206983+00:00",
-        "input_hash": "07f83a20bbb8b042da95c0f7",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill directs DOT to require AM and digital\u2011AM receivers as standard, easily accessible equipment in new passenger vehicles and allows civil penalties. It covers passenger vehicles manufactured for sale in, imported into, or shipped in interstate commerce to the United States that are produced after the rule's effective date."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/979?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 317,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "AM Radio for Every Vehicle Act of 2025 This bill requires the Department of Transportation (DOT) to issue a rule requiring AM radio capabilities to be standard in all new passenger vehicles. (AM radio is often used to deliver emergency alerts and news and entertainment programming; some newer vehicles do not include AM equipment.) Specifically, this bill applies to passenger vehicles (1) manufactured in the United States for sale in the United States, imported into the United States, or shipped in interstate commerce; and (2) manufactured after the rule's effective date. The rule must require all such vehicles to have devices that can receive signals and play content transmitted by AM stations or digital audio AM stations installed as standard equipment and made easily accessible to drivers. Prior to the rule's effective date, manufacturers that do not include devices that can access AM radio as standard equipment (1) must inform purchasers of this fact through clear and conspicuous labeling, and (2) may not charge an additional or separate fee for AM radio access. DOT may assess civil penalties for any violation of the rule. The Department of Justice may also bring a civil action to enjoin a violation. The rule, including DOT\u2019s authority to enforce it, must expire 10 years after the bill\u2019s enactment. Further, the Government Accountability Office must study and report on the dissemination of emergency alerts to the public, including by conducting an assessment of AM radio relative to other Integrated Public Alert and Warning System communication technologies.",
-        "updated_at": "2025-03-07T20:00:29Z"
-      },
-      "detailPath": "119/hr/979",
-      "identifier": "HR 979",
-      "impact": {
-        "generated_at": "2026-07-13T00:52:29.213735+00:00",
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-bill/979"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The AM Radio for Every Vehicle Act of 2025 requires DOT to issue a rule requiring all new U.S.-market passenger vehicles to include standard, easily accessible AM or digital AM receivers. It authorizes DOT penalties, DOJ enforcement, a GAO study, impacts automakers and AM broadcasters.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "07f83a20bbb8b042da95c0f7",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2025-11-12",
-        "text": "Placed on the Union Calendar, Calendar No. 330."
-      },
-      "members": [
-        {
-          "bioguideId": "B001257",
-          "district": 12,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "number": "979",
-      "originChamber": "House",
-      "policyArea": "Science, Technology, Communications",
-      "sponsors": [
-        {
-          "bioguideId": "B001257",
-          "district": 12,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "FL"
-        }
-      ],
-      "title": "AM Radio for Every Vehicle Act of 2025",
-      "type": "HR",
-      "updatedAt": "2026-03-16T19:05:18Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-bill/979"
-    },
-    {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
         "generated_at": "2026-07-13T01:08:13.167399+00:00",
         "input_hash": "f40277f615dd2fdf973c9dff",
         "model": "gpt-5-mini",
@@ -2705,77 +2447,63 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3133"
     },
     {
-      "aiDescription": {
-        "content_version": "bill-ai-v6",
-        "generated_at": "2026-07-13T01:08:33.981957+00:00",
-        "input_hash": "da9ef952aa6988e2a1d76286",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "source": "committed",
-        "summary": "The bill defines \"cooperative development\" and awards maximum points to RCDG applicants that provide a 25% private cash and in\u2011kind match. It reauthorizes the USDA Rural Cooperative Development Grant program for FY2025\u2013FY2029 and requires USDA and the RCDG interagency working group to analyze research data and submit annual reports to Congress."
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3075?format=json",
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/976?format=json",
       "committees": [],
       "congress": 119,
-      "cosponsorCount": 1,
+      "cosponsorCount": 11,
       "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Strengthening Rural Cooperatives and Communities Act This bill reauthorizes through FY2029 and modifies the Rural Cooperative Development Grant (RCDG) Program. This Department of Agriculture (USDA) program provides grants to nonprofit institutions to help individuals and businesses start, expand, or improve rural cooperatives and other mutually-owned businesses through Rural Cooperative Development Centers. USDA may give an additional preference to grant applications that commit to providing a 25% matching contribution for the center with private funds and in-kind contributions. Specifically, USDA may award the maximum points in application scoring criteria to applicants that satisfy this requirement. Under the bill, cooperative development includes activities (e.g., outreach, education, training, and technical assistance) to support the startup, expansion, or ongoing sustainability of new and existing cooperatives. Current law does not define cooperative development. The bill directs the RCDG interagency working group to submit an annual report to Congress on its activities. Finally, the program currently includes cooperative research program requirements to collect data on the effects of all types of cooperatives on the national economy. Under the bill, USDA must analyze the data resulting from the research and include the data and analysis in the annual report to Congress.",
-        "updated_at": "2026-03-16T12:51:55Z"
+        "source": "Congress.gov bill detail",
+        "text": "Insurance Fraud Accountability Act",
+        "updated_at": "2026-03-18T11:03:17Z"
       },
-      "detailPath": "119/s/3075",
-      "identifier": "S 3075",
+      "detailPath": "119/s/976",
+      "identifier": "S 976",
       "impact": {
-        "generated_at": "2026-07-13T01:08:48.110411+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3075"
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/976"
           }
         ],
-        "status": "AI impact analysis",
-        "summary": "The bill reauthorizes the USDA Rural Cooperative Development Grant (RCDG) program through FY2029 and lets USDA favor nonprofits that pledge a 25 percent private match. It requires USDA and the RCDG interagency working group to analyze cooperative research data and submit annual reports to Congress.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "content_version": "bill-ai-v6",
-        "input_hash": "da9ef952aa6988e2a1d76286",
-        "source": "committed"
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
       },
       "latestAction": {
-        "date": "2025-10-30",
-        "text": "Read twice and referred to the Committee on Agriculture, Nutrition, and Forestry."
+        "date": "2025-11-06",
+        "text": "Committee on Homeland Security and Governmental Affairs Senate Permanent Subcommittee on Investigations. Hearings held."
       },
       "members": [
         {
-          "bioguideId": "C001113",
+          "bioguideId": "W000779",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "name": "Sen. Wyden, Ron [D-OR]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "NV"
+          "state": "OR"
         }
       ],
-      "number": "3075",
+      "number": "976",
       "originChamber": "Senate",
-      "policyArea": "Agriculture and Food",
+      "policyArea": "Health",
       "sponsors": [
         {
-          "bioguideId": "C001113",
+          "bioguideId": "W000779",
           "district": null,
           "isOriginalCosponsor": null,
-          "name": "Sen. Cortez Masto, Catherine [D-NV]",
+          "name": "Sen. Wyden, Ron [D-OR]",
           "party": "D",
           "role": "Sponsor",
           "sponsorshipDate": null,
-          "state": "NV"
+          "state": "OR"
         }
       ],
-      "title": "Strengthening Rural Cooperatives and Communities Act",
+      "title": "Insurance Fraud Accountability Act",
       "type": "S",
-      "updatedAt": "2026-03-16T12:58:48Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3075"
+      "updatedAt": "2026-03-18T11:03:17Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/976"
     },
     {
       "aiDescription": {
@@ -2922,10 +2650,128 @@
       "type": "HRES",
       "updatedAt": "2026-03-17T15:53:54Z",
       "url": "https://www.congress.gov/bill/119th-congress/house-resolution/731"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/730?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 0,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution provides for the consideration of the joint resolution (H.J.Res.4) proposing an amendment to the Constitution of the United States to provide that debate upon legislation pending before the Senate may not be brought to a close without the concurrence of a minimum of three-fifths of the Senators.",
+        "updated_at": "2026-03-13T12:10:59Z"
+      },
+      "detailPath": "119/hres/730",
+      "identifier": "HRES 730",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/730"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-09-17",
+        "text": "Referred to the House Committee on Rules."
+      },
+      "members": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "number": "730",
+      "originChamber": "House",
+      "policyArea": "Congress",
+      "sponsors": [
+        {
+          "bioguideId": "F000466",
+          "district": 1,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "PA"
+        }
+      ],
+      "title": "Providing for consideration of the joint resolution (H.J.Res.4) proposing an amendment to the Constitution of the United States to provide that debate upon legislation pending before the Senate may not be brought to a close without the concurrence of a minimum of three-fifths of the Senators.",
+      "type": "HRES",
+      "updatedAt": "2026-03-17T15:54:07Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/730"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/2842?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 4,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Stop CMV Act of 2025",
+        "updated_at": "2026-03-18T11:03:18Z"
+      },
+      "detailPath": "119/s/2842",
+      "identifier": "S 2842",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2842"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-09-17",
+        "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+      },
+      "members": [
+        {
+          "bioguideId": "B001277",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CT"
+        }
+      ],
+      "number": "2842",
+      "originChamber": "Senate",
+      "policyArea": "Health",
+      "sponsors": [
+        {
+          "bioguideId": "B001277",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Blumenthal, Richard [D-CT]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CT"
+        }
+      ],
+      "title": "Stop CMV Act of 2025",
+      "type": "S",
+      "updatedAt": "2026-03-18T11:03:18Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2842"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-07-14T17:43:43.162459+00:00",
+  "generated_at": "2026-07-15T05:58:47.953906+00:00",
   "impact_status": "cached",
   "source": "congress_api"
 }

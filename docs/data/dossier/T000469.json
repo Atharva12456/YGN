@@ -324,7 +324,53 @@
     },
     "cycle": 2026,
     "financeScore": 83.9,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 93827.68,
+          "label": "Small individual (unitemized)",
+          "share": 0.11397555483980802
+        },
+        {
+          "amount": 213443.67,
+          "label": "Large individual (itemized)",
+          "share": 0.25927701415291193
+        },
+        {
+          "amount": 515955.0,
+          "label": "PAC / other committees",
+          "share": 0.6267474310072801
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8NY21203",
+        "district": "20",
+        "name": "TONKO, PAUL DAVID",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 381401.31,
+        "debts": 0.0,
+        "disbursements": 1043496.79,
+        "individualContributions": 307271.35,
+        "receipts": 825396.19
+      }
+    },
+    "generated_at": "2026-07-15T00:05:00.822627+00:00",
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -335,14 +381,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:49:06.969403+00:00"
+    "updated_at": "2026-07-15T00:06:35.172353+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "T000469",
+    "breakdown": [
+      {
+        "amount": 93827.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.11397555483980802
+      },
+      {
+        "amount": 213443.67,
+        "label": "Large individual (itemized)",
+        "share": 0.25927701415291193
+      },
+      {
+        "amount": 515955.0,
+        "label": "PAC / other committees",
+        "share": 0.6267474310072801
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NY21203",
+      "district": "20",
+      "name": "TONKO, PAUL DAVID",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "T000469",
+      "candidate": {
+        "candidate_id": "H8NY21203",
+        "district": "20",
+        "name": "TONKO, PAUL DAVID",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.0,
+          "value": 0.8571,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.5,
+          "value": 0.8307,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 54.1,
+          "value": 0.3733,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 90.0,
+          "value": 0.3054,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 83.9,
+      "generated_at": "2026-07-15T00:05:00.822627+00:00",
+      "grade": "B",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 83.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T00:06:35.172353+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 381401.31,
+      "debts": 0.0,
+      "disbursements": 1043496.79,
+      "individualContributions": 307271.35,
+      "receipts": 825396.19
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "T000469",
     "birthYear": "1949",

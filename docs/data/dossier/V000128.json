@@ -438,7 +438,52 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 147135.31,
+          "label": "Small individual (unitemized)",
+          "share": 0.0953999738325753
+        },
+        {
+          "amount": 1282913.96,
+          "label": "Large individual (itemized)",
+          "share": 0.8318190800933206
+        },
+        {
+          "amount": 112250.0,
+          "label": "PAC / other committees",
+          "share": 0.07278094607410403
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S6MD03441",
+        "district": "00",
+        "name": "VAN HOLLEN, CHRIS",
+        "office": "S",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3022508.66,
+        "debts": 2209.56,
+        "disbursements": 1053854.84,
+        "individualContributions": 1430049.27,
+        "receipts": 1846239.55
+      }
+    },
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -447,14 +492,110 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 86.8,
     "source": "fec_live",
-    "updated_at": "2026-07-13T21:14:46.482135+00:00"
+    "updated_at": "2026-07-15T06:09:29.011507+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "V000128",
+    "breakdown": [
+      {
+        "amount": 147135.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.0953999738325753
+      },
+      {
+        "amount": 1282913.96,
+        "label": "Large individual (itemized)",
+        "share": 0.8318190800933206
+      },
+      {
+        "amount": 112250.0,
+        "label": "PAC / other committees",
+        "share": 0.07278094607410403
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6MD03441",
+      "district": "00",
+      "name": "VAN HOLLEN, CHRIS",
+      "office": "S",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "V000128",
+      "candidate": {
+        "candidate_id": "S6MD03441",
+        "district": "00",
+        "name": "VAN HOLLEN, CHRIS",
+        "office": "S",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.1,
+          "value": 0.9272,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 67.8,
+          "value": 0.1029,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "grade": "B",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 86.8,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:09:29.011507+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3022508.66,
+      "debts": 2209.56,
+      "disbursements": 1053854.84,
+      "individualContributions": 1430049.27,
+      "receipts": 1846239.55
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "V000128",
     "birthYear": "1959",

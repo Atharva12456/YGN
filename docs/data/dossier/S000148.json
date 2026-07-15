@@ -413,7 +413,52 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-11T04:21:40.733592+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1615735.95,
+          "label": "Small individual (unitemized)",
+          "share": 0.511654856390826
+        },
+        {
+          "amount": 1256952.07,
+          "label": "Large individual (itemized)",
+          "share": 0.3980388199358945
+        },
+        {
+          "amount": 285175.0,
+          "label": "PAC / other committees",
+          "share": 0.09030632367327954
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S8NY00082",
+        "district": "00",
+        "name": "SCHUMER, CHARLES E.",
+        "office": "S",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 8251229.86,
+        "debts": 0.0,
+        "disbursements": 5222289.93,
+        "individualContributions": 2872688.02,
+        "receipts": 3591476.13
+      }
+    },
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -422,14 +467,110 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 96.7,
     "source": "fec_live",
-    "updated_at": "2026-07-11T04:21:40.733519+00:00"
+    "updated_at": "2026-07-15T06:10:13.234561+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "S000148",
+    "breakdown": [
+      {
+        "amount": 1615735.95,
+        "label": "Small individual (unitemized)",
+        "share": 0.511654856390826
+      },
+      {
+        "amount": 1256952.07,
+        "label": "Large individual (itemized)",
+        "share": 0.3980388199358945
+      },
+      {
+        "amount": 285175.0,
+        "label": "PAC / other committees",
+        "share": 0.09030632367327954
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8NY00082",
+      "district": "00",
+      "name": "SCHUMER, CHARLES E.",
+      "office": "S",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S000148",
+      "candidate": {
+        "candidate_id": "S8NY00082",
+        "district": "00",
+        "name": "SCHUMER, CHARLES E.",
+        "office": "S",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.0,
+          "value": 0.9097,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 97.6,
+          "value": 0.5624,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.7,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:10:13.234561+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 8251229.86,
+      "debts": 0.0,
+      "disbursements": 5222289.93,
+      "individualContributions": 2872688.02,
+      "receipts": 3591476.13
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "S000148",
     "birthYear": "1950",

@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "TRICARE Fairness for National Guard and Reserve Retirees Act This bill aligns eligibility for TRICARE health coverage with the age at which personnel of the Retired Reserve (former National Guard and Reserve members) begin receiving retired pay. Specifically, personnel of the Retired Reserve who are not yet age 60 but are receiving their retirement pay may purchase TRICARE health coverage for retired military personnel, rather than the presently allowed TRICARE Retired Reserve. Under current law, Reserve Component personnel may retire below age 60, but not below 50, based on active duty performance.",
+      "updated_at": "2026-03-18T17:43:50Z"
+    },
+    "detailPath": "119/hr/7667",
+    "identifier": "HR 7667",
+    "introducedDate": "2026-02-24",
+    "latestAction": {
+      "date": "2026-02-24",
+      "text": "Referred to the House Committee on Armed Services."
+    },
+    "number": "7667",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "V000133",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Van Drew, Jefferson [R-NJ-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "TRICARE Fairness for National Guard and Reserve Retirees Act",
+    "type": "HR",
+    "updatedAt": "2026-03-18T17:44:08Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7667",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets Retired Reserve members under 60 who receive retired pay enroll in regular TRICARE for retirees instead of TRICARE Retired Reserve. It covers Reserve Component members qualified under chapter 1223, takes effect 18 months after enactment, and preserves exceptions tied to 38 U.S.C. 5304 or 5305.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:31.828988+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b235ffccbf32f2011e07f33f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets Retired Reserve members (National Guard and Reserve) under 60 who are receiving retired pay enroll in regular TRICARE retired-military coverage instead of TRICARE Retired Reserve. It changes eligibility for the Defense Health Agency's TRICARE program and takes effect 18 months after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:24.282851+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b235ffccbf32f2011e07f33f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:50.261884+00:00",
+  "source": "congress_api"
+}

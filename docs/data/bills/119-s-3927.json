@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "End Warehouse Detention Act",
+      "updated_at": "2026-03-18T15:12:05Z"
+    },
+    "detailPath": "119/s/3927",
+    "identifier": "S 3927",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3927",
+    "originChamber": "Senate",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "End Warehouse Detention Act",
+    "type": "S",
+    "updatedAt": "2026-03-18T15:12:05Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3927",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The End Warehouse Detention Act forbids funds from Public Law 119\u201121 being used to buy or contract for warehouses to detain noncitizens. It also bars those funds from repurposing, operating, staffing, or maintaining any ICE or CBP\u2011owned warehouse for detention.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:37:33.996921+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "50be0743ef4ba99e9e591e69",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars money from Public Law 119-21 (One Big Beautiful Bill Act) being used to buy or lease warehouses to detain noncitizens. It also bars funds from repurposing, staffing, operating, or maintaining any ICE or CBP warehouse, affecting DHS operations and private warehouse owners.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:37:36.830708+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "50be0743ef4ba99e9e591e69",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:48.929099+00:00",
+  "source": "congress_api"
+}

@@ -276,7 +276,53 @@
     },
     "cycle": 2026,
     "financeScore": 78.4,
-    "generated_at": "2026-07-13T12:17:17.615063+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 121846.82,
+          "label": "Small individual (unitemized)",
+          "share": 0.09000387680488521
+        },
+        {
+          "amount": 854698.42,
+          "label": "Large individual (itemized)",
+          "share": 0.63133507545794
+        },
+        {
+          "amount": 377250.0,
+          "label": "PAC / other committees",
+          "share": 0.2786610477371748
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8PA06087",
+        "district": "06",
+        "name": "HOULAHAN, CHRISSY",
+        "office": "H",
+        "party": "DEM",
+        "state": "PA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3989067.8,
+        "debts": 0.0,
+        "disbursements": 899191.62,
+        "individualContributions": 976545.24,
+        "receipts": 1482646.19
+      }
+    },
+    "generated_at": "2026-07-14T22:13:53.911703+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -287,14 +333,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T12:21:22.128497+00:00"
+    "updated_at": "2026-07-14T22:15:32.515160+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001085",
+    "breakdown": [
+      {
+        "amount": 121846.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.09000387680488521
+      },
+      {
+        "amount": 854698.42,
+        "label": "Large individual (itemized)",
+        "share": 0.63133507545794
+      },
+      {
+        "amount": 377250.0,
+        "label": "PAC / other committees",
+        "share": 0.2786610477371748
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA06087",
+      "district": "06",
+      "name": "HOULAHAN, CHRISSY",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001085",
+      "candidate": {
+        "candidate_id": "H8PA06087",
+        "district": "06",
+        "name": "HOULAHAN, CHRISSY",
+        "office": "H",
+        "party": "DEM",
+        "state": "PA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.0,
+          "value": 0.36,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 91.8,
+          "value": 0.5108,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 86.0,
+          "value": 0.7213,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 71.8,
+          "value": 0.1248,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 78.4,
+      "generated_at": "2026-07-14T22:13:53.911703+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 78.4,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T22:15:32.515160+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3989067.8,
+      "debts": 0.0,
+      "disbursements": 899191.62,
+      "individualContributions": 976545.24,
+      "receipts": 1482646.19
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "H001085",
     "birthYear": "1967",

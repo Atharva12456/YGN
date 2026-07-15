@@ -278,7 +278,53 @@
     },
     "cycle": 2026,
     "financeScore": 64.6,
-    "generated_at": "2026-07-13T15:15:07.996530+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 861.68,
+          "label": "Small individual (unitemized)",
+          "share": 0.010367736520306172
+        },
+        {
+          "amount": 11750.0,
+          "label": "Large individual (itemized)",
+          "share": 0.14137603763995626
+        },
+        {
+          "amount": 63500.0,
+          "label": "PAC / other committees",
+          "share": 0.7640322034159339
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 7000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.08422402242380374
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8SC05158",
+        "district": "05",
+        "name": "NORMAN, RALPH W. JR.",
+        "office": "H",
+        "party": "REP",
+        "state": "SC"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 90290.12,
+        "debts": 0.0,
+        "disbursements": 587584.94,
+        "individualContributions": 12611.68,
+        "receipts": 83264.38
+      }
+    },
+    "generated_at": "2026-07-14T23:11:41.322189+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -289,14 +335,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T15:17:16.207272+00:00"
+    "updated_at": "2026-07-14T23:12:52.955549+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "N000190",
+    "breakdown": [
+      {
+        "amount": 861.68,
+        "label": "Small individual (unitemized)",
+        "share": 0.010367736520306172
+      },
+      {
+        "amount": 11750.0,
+        "label": "Large individual (itemized)",
+        "share": 0.14137603763995626
+      },
+      {
+        "amount": 63500.0,
+        "label": "PAC / other committees",
+        "share": 0.7640322034159339
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 7000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.08422402242380374
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8SC05158",
+      "district": "05",
+      "name": "NORMAN, RALPH W. JR.",
+      "office": "H",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "N000190",
+      "candidate": {
+        "candidate_id": "H8SC05158",
+        "district": "05",
+        "name": "NORMAN, RALPH W. JR.",
+        "office": "H",
+        "party": "REP",
+        "state": "SC"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 64.8,
+          "value": 0.4213,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 87.9,
+          "value": 0.4255,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 47.1,
+          "value": 0.236,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 84.5,
+          "value": 0.9159,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 61.4,
+          "value": 0.0683,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 64.6,
+      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 64.6,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T23:12:52.955549+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 90290.12,
+      "debts": 0.0,
+      "disbursements": 587584.94,
+      "individualContributions": 12611.68,
+      "receipts": 83264.38
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "N000190",
     "birthYear": "1953",

@@ -303,7 +303,53 @@
     },
     "cycle": 2026,
     "financeScore": 69.1,
-    "generated_at": "2026-07-14T05:56:26.221118+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 25776.44,
+          "label": "Small individual (unitemized)",
+          "share": 0.017572173645479416
+        },
+        {
+          "amount": 984096.78,
+          "label": "Large individual (itemized)",
+          "share": 0.6708730725467581
+        },
+        {
+          "amount": 457016.45,
+          "label": "PAC / other committees",
+          "share": 0.31155475380776254
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6CA24303",
+        "district": "24",
+        "name": "CARBAJAL, SALUD O.",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3305803.76,
+        "debts": 2630.66,
+        "disbursements": 809950.99,
+        "individualContributions": 1009873.22,
+        "receipts": 1471885.24
+      }
+    },
+    "generated_at": "2026-07-14T23:11:41.322189+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -314,14 +360,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T05:59:11.621039+00:00"
+    "updated_at": "2026-07-14T23:13:37.369722+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001112",
+    "breakdown": [
+      {
+        "amount": 25776.44,
+        "label": "Small individual (unitemized)",
+        "share": 0.017572173645479416
+      },
+      {
+        "amount": 984096.78,
+        "label": "Large individual (itemized)",
+        "share": 0.6708730725467581
+      },
+      {
+        "amount": 457016.45,
+        "label": "PAC / other committees",
+        "share": 0.31155475380776254
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CA24303",
+      "district": "24",
+      "name": "CARBAJAL, SALUD O.",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001112",
+      "candidate": {
+        "candidate_id": "H6CA24303",
+        "district": "24",
+        "name": "CARBAJAL, SALUD O.",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 49.0,
+          "value": 0.2134,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 98.0,
+          "value": 0.8962,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 84.2,
+          "value": 0.6884,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 46.7,
+          "value": 0.0255,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 69.1,
+      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 69.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T23:13:37.369722+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3305803.76,
+      "debts": 2630.66,
+      "disbursements": 809950.99,
+      "individualContributions": 1009873.22,
+      "receipts": 1471885.24
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "C001112",
     "birthYear": "1964",

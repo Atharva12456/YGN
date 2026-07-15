@@ -339,7 +339,53 @@
     },
     "cycle": 2026,
     "financeScore": 73.9,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 110821.27,
+          "label": "Small individual (unitemized)",
+          "share": 0.09032328699187275
+        },
+        {
+          "amount": 490118.91,
+          "label": "Large individual (itemized)",
+          "share": 0.39946438953527463
+        },
+        {
+          "amount": 626000.0,
+          "label": "PAC / other committees",
+          "share": 0.5102123234728526
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2MN01223",
+        "district": "01",
+        "name": "FINSTAD, BRAD",
+        "office": "H",
+        "party": "REP",
+        "state": "MN"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 833714.33,
+        "debts": 0.0,
+        "disbursements": 599941.5,
+        "individualContributions": 600940.18,
+        "receipts": 1372246.6
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -350,14 +396,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T08:29:48.924548+00:00"
+    "updated_at": "2026-07-14T21:15:12.751073+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "F000475",
+    "breakdown": [
+      {
+        "amount": 110821.27,
+        "label": "Small individual (unitemized)",
+        "share": 0.09032328699187275
+      },
+      {
+        "amount": 490118.91,
+        "label": "Large individual (itemized)",
+        "share": 0.39946438953527463
+      },
+      {
+        "amount": 626000.0,
+        "label": "PAC / other committees",
+        "share": 0.5102123234728526
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2MN01223",
+      "district": "01",
+      "name": "FINSTAD, BRAD",
+      "office": "H",
+      "party": "REP",
+      "state": "MN"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000475",
+      "candidate": {
+        "candidate_id": "H2MN01223",
+        "district": "01",
+        "name": "FINSTAD, BRAD",
+        "office": "H",
+        "party": "REP",
+        "state": "MN"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 47.1,
+          "value": 0.1837,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.0,
+          "value": 0.7453,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 62.8,
+          "value": 0.4898,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 82.3,
+          "value": 0.1844,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 73.9,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 73.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T21:15:12.751073+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 833714.33,
+      "debts": 0.0,
+      "disbursements": 599941.5,
+      "individualContributions": 600940.18,
+      "receipts": 1372246.6
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "F000475",
     "birthYear": "1976",

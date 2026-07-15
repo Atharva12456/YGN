@@ -270,7 +270,53 @@
     },
     "cycle": 2026,
     "financeScore": 72.0,
-    "generated_at": "2026-07-13T17:23:40.529702+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 21017.63,
+          "label": "Small individual (unitemized)",
+          "share": 0.012602648514375942
+        },
+        {
+          "amount": 1176647.69,
+          "label": "Large individual (itemized)",
+          "share": 0.7055446909248275
+        },
+        {
+          "amount": 470050.0,
+          "label": "PAC / other committees",
+          "share": 0.28185266056079644
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2NY06116",
+        "district": "06",
+        "name": "MENG, GRACE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1035287.72,
+        "debts": 0.0,
+        "disbursements": 1626255.13,
+        "individualContributions": 1197665.32,
+        "receipts": 1692657.04
+      }
+    },
+    "generated_at": "2026-07-15T00:05:00.822627+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -281,14 +327,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T17:25:27.751744+00:00"
+    "updated_at": "2026-07-15T00:07:39.581041+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001188",
+    "breakdown": [
+      {
+        "amount": 21017.63,
+        "label": "Small individual (unitemized)",
+        "share": 0.012602648514375942
+      },
+      {
+        "amount": 1176647.69,
+        "label": "Large individual (itemized)",
+        "share": 0.7055446909248275
+      },
+      {
+        "amount": 470050.0,
+        "label": "PAC / other committees",
+        "share": 0.28185266056079644
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY06116",
+      "district": "06",
+      "name": "MENG, GRACE",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001188",
+      "candidate": {
+        "candidate_id": "H2NY06116",
+        "district": "06",
+        "name": "MENG, GRACE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 67.9,
+          "value": 0.4534,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.9,
+          "value": 0.7353,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 85.8,
+          "value": 0.7181,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 43.1,
+          "value": 0.0175,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.0,
+      "generated_at": "2026-07-15T00:05:00.822627+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.0,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T00:07:39.581041+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1035287.72,
+      "debts": 0.0,
+      "disbursements": 1626255.13,
+      "individualContributions": 1197665.32,
+      "receipts": 1692657.04
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "M001188",
     "birthYear": "1975",

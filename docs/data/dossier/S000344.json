@@ -405,7 +405,53 @@
     },
     "cycle": 2026,
     "financeScore": 69.6,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 6918.8,
+          "label": "Small individual (unitemized)",
+          "share": 0.0038473268085144055
+        },
+        {
+          "amount": 1210045.76,
+          "label": "Large individual (itemized)",
+          "share": 0.6728683430619743
+        },
+        {
+          "amount": 581375.0,
+          "label": "PAC / other committees",
+          "share": 0.32328433012951124
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6CA24113",
+        "district": "32",
+        "name": "SHERMAN, BRAD",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4233461.3,
+        "debts": 4629.34,
+        "disbursements": 1805207.04,
+        "individualContributions": 1216964.56,
+        "receipts": 2116723.64
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -417,14 +463,117 @@
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 3,
-    "updated_at": "2026-07-13T08:28:52.092006+00:00"
+    "updated_at": "2026-07-14T21:15:06.178988+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "S000344",
+    "breakdown": [
+      {
+        "amount": 6918.8,
+        "label": "Small individual (unitemized)",
+        "share": 0.0038473268085144055
+      },
+      {
+        "amount": 1210045.76,
+        "label": "Large individual (itemized)",
+        "share": 0.6728683430619743
+      },
+      {
+        "amount": 581375.0,
+        "label": "PAC / other committees",
+        "share": 0.32328433012951124
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CA24113",
+      "district": "32",
+      "name": "SHERMAN, BRAD",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S000344",
+      "candidate": {
+        "candidate_id": "H6CA24113",
+        "district": "32",
+        "name": "SHERMAN, BRAD",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 66.8,
+          "value": 0.4413,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.6,
+          "value": 0.6918,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 83.5,
+          "value": 0.6767,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 37.6,
+          "value": 0.0057,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "3 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+          "penalty": 22,
+          "ptr_filings": 3
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 69.6,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 47.6,
+      "source": "fec_live",
+      "stockPenalty": 22,
+      "stockPtrCount": 3,
+      "updated_at": "2026-07-14T21:15:06.178988+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4233461.3,
+      "debts": 4629.34,
+      "disbursements": 1805207.04,
+      "individualContributions": 1216964.56,
+      "receipts": 2116723.64
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "S000344",
     "birthYear": "1954",

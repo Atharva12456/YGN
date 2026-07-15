@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "H001089",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hawley, Josh [R-MO]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "HOPE (Humans over Private Equity) for Homeownership Act",
+      "updated_at": "2026-03-18T18:16:13Z"
+    },
+    "detailPath": "119/s/3930",
+    "identifier": "S 3930",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3930",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "M001176",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Merkley, Jeff [D-OR]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OR"
+      }
+    ],
+    "title": "HOPE (Humans over Private Equity) for Homeownership Act",
+    "type": "S",
+    "updatedAt": "2026-03-18T18:16:13Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3930",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill imposes a 15% excise tax on purchases of newly acquired 1\u20134 unit single\u2011family residences by qualifying hedge fund taxpayers and adds a 5\u2011point corporate surtax plus limits on mortgage interest, depreciation, and QBI benefits. It targets pooled\u2011fund entities with $50M+ AUM, applies after enactment, and excludes 501(c)(3)s, homebuilders, and owner\u2011occupied, never\u2011rented homes.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:57:44.931781+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d793dab0047cc7666526b03",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill imposes a 15% excise on purchases of 1\u20134\u2011unit homes by \"hedge fund taxpayers\"\u2014pooled\u2011investor entities (partnerships, corporations, REITs) with $50,000,000+ AUM. It also adds a 5\u2011point corporate surtax for those corporations and disallows mortgage\u2011interest, depreciation, and the 199A qualified business income deduction for hedge\u2011fund landlords.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:57:45.384558+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d793dab0047cc7666526b03",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:49.494448+00:00",
+  "source": "congress_api"
+}

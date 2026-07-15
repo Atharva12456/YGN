@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001035",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Collins, Susan M. [R-ME]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "ME"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution supporting the goals of International Women's Day.",
+      "updated_at": "2026-03-17T19:03:50Z"
+    },
+    "detailPath": "119/sres/640",
+    "identifier": "SRES 640",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the Committee on Foreign Relations. (text: CR S1049-1050)"
+    },
+    "number": "640",
+    "originChamber": "Senate",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NH"
+      }
+    ],
+    "title": "A resolution supporting the goals of International Women's Day.",
+    "type": "SRES",
+    "updatedAt": "2026-03-17T19:03:50Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/640",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This nonbinding Senate resolution declares support for International Women's Day and reaffirms U.S. commitment to advance and empower women and girls worldwide. It highlights gender\u2011based violence, child marriage, education and economic barriers worldwide and Taliban restrictions in Afghanistan, and is a congressional statement not new law.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:37:21.834202+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "dc7519c53685846daaf744cd",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "S.Res.640 would have the Senate endorse International Women's Day and the U.S. Women, Peace, and Security agenda. It frames U.S. foreign policy and programs affecting women and girls worldwide, naming the State Department, USAID, UN Women, UNICEF, WHO, and Afghan women under Taliban rule.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T03:37:24.385624+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "dc7519c53685846daaf744cd",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:48.738105+00:00",
+  "source": "congress_api"
+}

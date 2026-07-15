@@ -322,7 +322,53 @@
     },
     "cycle": 2026,
     "financeScore": 68.1,
-    "generated_at": "2026-07-13T17:23:40.529702+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 977.7,
+          "label": "Small individual (unitemized)",
+          "share": 0.0018609823177176672
+        },
+        {
+          "amount": 338640.0,
+          "label": "Large individual (itemized)",
+          "share": 0.6445771218900591
+        },
+        {
+          "amount": 185750.0,
+          "label": "PAC / other committees",
+          "share": 0.35356189579222325
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2NV02395",
+        "district": "02",
+        "name": "AMODEI, MARK EUGENE",
+        "office": "H",
+        "party": "REP",
+        "state": "NV"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 437571.55,
+        "debts": 9000.0,
+        "disbursements": 448836.76,
+        "individualContributions": 339617.7,
+        "receipts": 525367.7
+      }
+    },
+    "generated_at": "2026-07-15T03:33:30.569516+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -333,14 +379,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T17:26:07.718967+00:00"
+    "updated_at": "2026-07-15T03:33:50.393981+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "A000369",
+    "breakdown": [
+      {
+        "amount": 977.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.0018609823177176672
+      },
+      {
+        "amount": 338640.0,
+        "label": "Large individual (itemized)",
+        "share": 0.6445771218900591
+      },
+      {
+        "amount": 185750.0,
+        "label": "PAC / other committees",
+        "share": 0.35356189579222325
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NV02395",
+      "district": "02",
+      "name": "AMODEI, MARK EUGENE",
+      "office": "H",
+      "party": "REP",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "A000369",
+      "candidate": {
+        "candidate_id": "H2NV02395",
+        "district": "02",
+        "name": "AMODEI, MARK EUGENE",
+        "office": "H",
+        "party": "REP",
+        "state": "NV"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 63.8,
+          "value": 0.41,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.4,
+          "value": 0.6658,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 81.6,
+          "value": 0.6464,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 36.3,
+          "value": 0.0029,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 68.1,
+      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 68.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T03:33:50.393981+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 437571.55,
+      "debts": 9000.0,
+      "disbursements": 448836.76,
+      "individualContributions": 339617.7,
+      "receipts": 525367.7
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "A000369",
     "birthYear": "1958",

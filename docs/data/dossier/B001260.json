@@ -315,7 +315,53 @@
     },
     "cycle": 2026,
     "financeScore": 57.0,
-    "generated_at": "2026-07-13T17:23:40.529702+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 2555.26,
+          "label": "Small individual (unitemized)",
+          "share": 0.0028860675244429
+        },
+        {
+          "amount": 293813.0,
+          "label": "Large individual (itemized)",
+          "share": 0.3318504408784788
+        },
+        {
+          "amount": 589009.5,
+          "label": "PAC / other committees",
+          "share": 0.6652634915970783
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6FL13148",
+        "district": "16",
+        "name": "BUCHANAN, VERNON",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1085758.89,
+        "debts": 0.0,
+        "disbursements": 893272.66,
+        "individualContributions": 296368.26,
+        "receipts": 929818.2
+      }
+    },
+    "generated_at": "2026-07-15T00:05:00.822627+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -326,14 +372,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T17:26:12.016922+00:00"
+    "updated_at": "2026-07-15T00:06:18.861892+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "B001260",
+    "breakdown": [
+      {
+        "amount": 2555.26,
+        "label": "Small individual (unitemized)",
+        "share": 0.0028860675244429
+      },
+      {
+        "amount": 293813.0,
+        "label": "Large individual (itemized)",
+        "share": 0.3318504408784788
+      },
+      {
+        "amount": 589009.5,
+        "label": "PAC / other committees",
+        "share": 0.6652634915970783
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL13148",
+      "district": "16",
+      "name": "BUCHANAN, VERNON",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "B001260",
+      "candidate": {
+        "candidate_id": "H6FL13148",
+        "district": "16",
+        "name": "BUCHANAN, VERNON",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 41.0,
+          "value": 0.0909,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.4,
+          "value": 0.6654,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 52.1,
+          "value": 0.3347,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 39.0,
+          "value": 0.0086,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 57.0,
+      "generated_at": "2026-07-15T00:05:00.822627+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 57.0,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T00:06:18.861892+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1085758.89,
+      "debts": 0.0,
+      "disbursements": 893272.66,
+      "individualContributions": 296368.26,
+      "receipts": 929818.2
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "B001260",
     "birthYear": "1951",

@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "M001198",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Marshall, Roger [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "K000377",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kelly, Mark [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "M001169",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Murphy, Christopher [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-14",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-17",
+        "state": "MN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Stop CMV Act of 2025",
+      "updated_at": "2026-03-18T11:03:18Z"
+    },
+    "detailPath": "119/s/2842",
+    "identifier": "S 2842",
+    "introducedDate": "2025-09-17",
+    "latestAction": {
+      "date": "2025-09-17",
+      "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+    },
+    "number": "2842",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CT"
+      }
+    ],
+    "title": "Stop CMV Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-18T11:03:18Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2842",
+    "votes": []
+  },
+  "generated_at": "2026-07-15T05:59:10.126950+00:00",
+  "source": "congress_api"
+}

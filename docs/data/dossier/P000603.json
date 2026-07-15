@@ -373,7 +373,52 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 5341889.82,
+          "label": "Small individual (unitemized)",
+          "share": 0.47981774561695034
+        },
+        {
+          "amount": 5596328.38,
+          "label": "Large individual (itemized)",
+          "share": 0.5026718553741641
+        },
+        {
+          "amount": 194946.15,
+          "label": "PAC / other committees",
+          "share": 0.017510399008885555
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S0KY00156",
+        "district": "00",
+        "name": "PAUL, RAND",
+        "office": "S",
+        "party": "REP",
+        "state": "KY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 6744711.14,
+        "debts": 0.0,
+        "disbursements": 11040250.99,
+        "individualContributions": 10938218.2,
+        "receipts": 12419526.96
+      }
+    },
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -382,14 +427,110 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 96.6,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:09:43.009184+00:00"
+    "updated_at": "2026-07-15T06:11:00.893685+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "P000603",
+    "breakdown": [
+      {
+        "amount": 5341889.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.47981774561695034
+      },
+      {
+        "amount": 5596328.38,
+        "label": "Large individual (itemized)",
+        "share": 0.5026718553741641
+      },
+      {
+        "amount": 194946.15,
+        "label": "PAC / other committees",
+        "share": 0.017510399008885555
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0KY00156",
+      "district": "00",
+      "name": "PAUL, RAND",
+      "office": "S",
+      "party": "REP",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "P000603",
+      "candidate": {
+        "candidate_id": "S0KY00156",
+        "district": "00",
+        "name": "PAUL, RAND",
+        "office": "S",
+        "party": "REP",
+        "state": "KY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.4,
+          "value": 0.9825,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 96.9,
+          "value": 0.4884,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.6,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:11:00.893685+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 6744711.14,
+      "debts": 0.0,
+      "disbursements": 11040250.99,
+      "individualContributions": 10938218.2,
+      "receipts": 12419526.96
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "P000603",
     "birthYear": "1963",

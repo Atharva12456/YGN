@@ -284,7 +284,53 @@
     },
     "cycle": 2026,
     "financeScore": 90.7,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 88099.11,
+          "label": "Small individual (unitemized)",
+          "share": 0.2707258229564296
+        },
+        {
+          "amount": 151719.09,
+          "label": "Large individual (itemized)",
+          "share": 0.46622804133266055
+        },
+        {
+          "amount": 85600.0,
+          "label": "PAC / other committees",
+          "share": 0.26304613571090985
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2TX08182",
+        "district": "08",
+        "name": "LUTTRELL, MORGAN JOE",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 396904.88,
+        "debts": 0.0,
+        "disbursements": 636769.03,
+        "individualContributions": 239818.2,
+        "receipts": 333122.24
+      }
+    },
+    "generated_at": "2026-07-14T18:16:37.253479+00:00",
     "grade": "A-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -295,14 +341,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T00:08:11.506087+00:00"
+    "updated_at": "2026-07-14T18:16:58.769470+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "L000603",
+    "breakdown": [
+      {
+        "amount": 88099.11,
+        "label": "Small individual (unitemized)",
+        "share": 0.2707258229564296
+      },
+      {
+        "amount": 151719.09,
+        "label": "Large individual (itemized)",
+        "share": 0.46622804133266055
+      },
+      {
+        "amount": 85600.0,
+        "label": "PAC / other committees",
+        "share": 0.26304613571090985
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX08182",
+      "district": "08",
+      "name": "LUTTRELL, MORGAN JOE",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "L000603",
+      "candidate": {
+        "candidate_id": "H2TX08182",
+        "district": "08",
+        "name": "LUTTRELL, MORGAN JOE",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 86.2,
+          "value": 0.6755,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 91.5,
+          "value": 0.5042,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 86.9,
+          "value": 0.737,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 93.9,
+          "value": 0.3674,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 90.7,
+      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "grade": "A-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 90.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T18:16:58.769470+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 396904.88,
+      "debts": 0.0,
+      "disbursements": 636769.03,
+      "individualContributions": 239818.2,
+      "receipts": 333122.24
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "L000603",
     "birthYear": "1975",

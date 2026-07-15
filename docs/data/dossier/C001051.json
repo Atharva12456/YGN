@@ -329,7 +329,53 @@
     },
     "cycle": 2026,
     "financeScore": 55.7,
-    "generated_at": "2026-07-13T21:12:51.615831+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 2648.31,
+          "label": "Small individual (unitemized)",
+          "share": 0.003238474462341348
+        },
+        {
+          "amount": 341805.26,
+          "label": "Large individual (itemized)",
+          "share": 0.41797508811428596
+        },
+        {
+          "amount": 473311.1,
+          "label": "PAC / other committees",
+          "share": 0.5787864374233727
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2TX31044",
+        "district": "31",
+        "name": "CARTER, JOHN R REP.",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 246498.5,
+        "debts": 0.0,
+        "disbursements": 1142502.71,
+        "individualContributions": 344453.57,
+        "receipts": 1347562.26
+      }
+    },
+    "generated_at": "2026-07-15T03:33:30.569516+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -340,14 +386,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T21:13:23.660307+00:00"
+    "updated_at": "2026-07-15T03:35:42.860801+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001051",
+    "breakdown": [
+      {
+        "amount": 2648.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.003238474462341348
+      },
+      {
+        "amount": 341805.26,
+        "label": "Large individual (itemized)",
+        "share": 0.41797508811428596
+      },
+      {
+        "amount": 473311.1,
+        "label": "PAC / other committees",
+        "share": 0.5787864374233727
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2TX31044",
+      "district": "31",
+      "name": "CARTER, JOHN R REP.",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001051",
+      "candidate": {
+        "candidate_id": "H2TX31044",
+        "district": "31",
+        "name": "CARTER, JOHN R REP.",
+        "office": "H",
+        "party": "REP",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 86.6,
+          "value": 0.3984,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 56.5,
+          "value": 0.4212,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 38.5,
+          "value": 0.0077,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 55.7,
+      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 55.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T03:35:42.860801+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 246498.5,
+      "debts": 0.0,
+      "disbursements": 1142502.71,
+      "individualContributions": 344453.57,
+      "receipts": 1347562.26
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "C001051",
     "birthYear": "1941",

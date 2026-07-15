@@ -238,7 +238,52 @@
     },
     "cycle": 2026,
     "financeScore": 72.2,
-    "generated_at": "2026-07-14T06:24:27.711003+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 34902.85,
+          "label": "Small individual (unitemized)",
+          "share": 0.018499536889455746
+        },
+        {
+          "amount": 1424989.25,
+          "label": "Large individual (itemized)",
+          "share": 0.75528620721382
+        },
+        {
+          "amount": 426795.67,
+          "label": "PAC / other committees",
+          "share": 0.22621425589672423
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MO01134",
+        "district": "01",
+        "name": "BELL, WESLEY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MO"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1237271.04,
+        "debts": 0.0,
+        "disbursements": 1100409.21,
+        "individualContributions": 1459892.1,
+        "receipts": 1903759.36
+      }
+    },
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -249,14 +294,115 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T06:25:01.233661+00:00"
+    "updated_at": "2026-07-15T06:08:33.570607+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "B001324",
+    "breakdown": [
+      {
+        "amount": 34902.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.018499536889455746
+      },
+      {
+        "amount": 1424989.25,
+        "label": "Large individual (itemized)",
+        "share": 0.75528620721382
+      },
+      {
+        "amount": 426795.67,
+        "label": "PAC / other committees",
+        "share": 0.22621425589672423
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MO01134",
+      "district": "01",
+      "name": "BELL, WESLEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "B001324",
+      "candidate": {
+        "candidate_id": "H4MO01134",
+        "district": "01",
+        "name": "BELL, WESLEY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MO"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 69.9,
+          "value": 0.474,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 78.3,
+          "value": 0.2691,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 88.9,
+          "value": 0.7738,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 46.0,
+          "value": 0.0239,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.2,
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T06:08:33.570607+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1237271.04,
+      "debts": 0.0,
+      "disbursements": 1100409.21,
+      "individualContributions": 1459892.1,
+      "receipts": 1903759.36
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "B001324",
     "birthYear": "1974",

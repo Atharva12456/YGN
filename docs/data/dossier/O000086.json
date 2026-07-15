@@ -288,7 +288,53 @@
     },
     "cycle": 2026,
     "financeScore": 85.2,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 208751.56,
+          "label": "Small individual (unitemized)",
+          "share": 0.31413549189277656
+        },
+        {
+          "amount": 303065.37,
+          "label": "Large individual (itemized)",
+          "share": 0.4560616892185923
+        },
+        {
+          "amount": 152500.0,
+          "label": "PAC / other committees",
+          "share": 0.22948648869329852
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 210.21,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0003163301953325789
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0UT04076",
+        "district": "04",
+        "name": "OWENS, BURGESS",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 0.0,
+        "debts": 0.0,
+        "disbursements": 869102.6,
+        "individualContributions": 511816.93,
+        "receipts": 735673.75
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -299,14 +345,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T08:30:42.866000+00:00"
+    "updated_at": "2026-07-14T21:16:48.960940+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "O000086",
+    "breakdown": [
+      {
+        "amount": 208751.56,
+        "label": "Small individual (unitemized)",
+        "share": 0.31413549189277656
+      },
+      {
+        "amount": 303065.37,
+        "label": "Large individual (itemized)",
+        "share": 0.4560616892185923
+      },
+      {
+        "amount": 152500.0,
+        "label": "PAC / other committees",
+        "share": 0.22948648869329852
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 210.21,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0003163301953325789
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0UT04076",
+      "district": "04",
+      "name": "OWENS, BURGESS",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "O000086",
+      "candidate": {
+        "candidate_id": "H0UT04076",
+        "district": "04",
+        "name": "OWENS, BURGESS",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 57.4,
+          "value": 0.3414,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 83.4,
+          "value": 0.3295,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 88.7,
+          "value": 0.7705,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9997,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 96.1,
+          "value": 0.4079,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 85.2,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "B",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 85.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T21:16:48.960940+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 0.0,
+      "debts": 0.0,
+      "disbursements": 869102.6,
+      "individualContributions": 511816.93,
+      "receipts": 735673.75
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "O000086",
     "birthYear": "1951",

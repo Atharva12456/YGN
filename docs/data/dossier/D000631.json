@@ -256,7 +256,53 @@
     },
     "cycle": 2026,
     "financeScore": 80.2,
-    "generated_at": "2026-07-13T12:17:17.615063+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 98345.0,
+          "label": "Small individual (unitemized)",
+          "share": 0.09063962654980788
+        },
+        {
+          "amount": 383466.09,
+          "label": "Large individual (itemized)",
+          "share": 0.3534213553522296
+        },
+        {
+          "amount": 603200.0,
+          "label": "PAC / other committees",
+          "share": 0.5559390180979624
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8PA04116",
+        "district": "04",
+        "name": "DEAN, MADELEINE",
+        "office": "H",
+        "party": "DEM",
+        "state": "PA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1158178.34,
+        "debts": 0.0,
+        "disbursements": 922768.92,
+        "individualContributions": 481811.09,
+        "receipts": 1112206.11
+      }
+    },
+    "generated_at": "2026-07-14T22:13:53.911703+00:00",
     "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -267,14 +313,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T12:21:23.095051+00:00"
+    "updated_at": "2026-07-14T22:15:34.857350+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "D000631",
+    "breakdown": [
+      {
+        "amount": 98345.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.09063962654980788
+      },
+      {
+        "amount": 383466.09,
+        "label": "Large individual (itemized)",
+        "share": 0.3534213553522296
+      },
+      {
+        "amount": 603200.0,
+        "label": "PAC / other committees",
+        "share": 0.5559390180979624
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA04116",
+      "district": "04",
+      "name": "DEAN, MADELEINE",
+      "office": "H",
+      "party": "DEM",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "D000631",
+      "candidate": {
+        "candidate_id": "H8PA04116",
+        "district": "04",
+        "name": "DEAN, MADELEINE",
+        "office": "H",
+        "party": "DEM",
+        "state": "PA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 83.1,
+          "value": 0.6199,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.3,
+          "value": 0.7884,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 57.7,
+          "value": 0.4441,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 83.5,
+          "value": 0.2041,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 80.2,
+      "generated_at": "2026-07-14T22:13:53.911703+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 80.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-14T22:15:34.857350+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1158178.34,
+      "debts": 0.0,
+      "disbursements": 922768.92,
+      "individualContributions": 481811.09,
+      "receipts": 1112206.11
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "D000631",
     "birthYear": "1959",

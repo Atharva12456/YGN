@@ -381,7 +381,53 @@
     },
     "cycle": 2026,
     "financeScore": 87.2,
-    "generated_at": "2026-07-13T08:28:14.627855+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 405384.7,
+          "label": "Small individual (unitemized)",
+          "share": 0.28074805712276496
+        },
+        {
+          "amount": 643247.12,
+          "label": "Large individual (itemized)",
+          "share": 0.4454790207667286
+        },
+        {
+          "amount": 394700.0,
+          "label": "PAC / other committees",
+          "share": 0.27334839757483526
+        },
+        {
+          "amount": 612.99,
+          "label": "Political party committees",
+          "share": 0.00042452453567113827
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4CA16049",
+        "district": "18",
+        "name": "LOFGREN, ZOE",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 616355.98,
+        "debts": 6679.0,
+        "disbursements": 1237078.36,
+        "individualContributions": 1048631.82,
+        "receipts": 1613681.99
+      }
+    },
+    "generated_at": "2026-07-14T21:14:49.808383+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -393,14 +439,117 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-13T08:29:15.476830+00:00"
+    "updated_at": "2026-07-14T21:15:10.445069+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "L000397",
+    "breakdown": [
+      {
+        "amount": 405384.7,
+        "label": "Small individual (unitemized)",
+        "share": 0.28074805712276496
+      },
+      {
+        "amount": 643247.12,
+        "label": "Large individual (itemized)",
+        "share": 0.4454790207667286
+      },
+      {
+        "amount": 394700.0,
+        "label": "PAC / other committees",
+        "share": 0.27334839757483526
+      },
+      {
+        "amount": 612.99,
+        "label": "Political party committees",
+        "share": 0.00042452453567113827
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA16049",
+      "district": "18",
+      "name": "LOFGREN, ZOE",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "L000397",
+      "candidate": {
+        "candidate_id": "H4CA16049",
+        "district": "18",
+        "name": "LOFGREN, ZOE",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 64.9,
+          "value": 0.4221,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.0,
+          "value": 0.7548,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 86.3,
+          "value": 0.7262,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9996,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 95.1,
+          "value": 0.3866,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 87.2,
+      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 77.2,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-14T21:15:10.445069+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 616355.98,
+      "debts": 6679.0,
+      "disbursements": 1237078.36,
+      "individualContributions": 1048631.82,
+      "receipts": 1613681.99
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "history": {
     "bioguideId": "L000397",
     "birthYear": "1947",

@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "R000605",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Rounds, Mike [R-SD]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-15",
+        "state": "SD"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Increasing Investor Opportunities Act",
+      "updated_at": "2026-03-18T19:37:49Z"
+    },
+    "detailPath": "119/s/3671",
+    "identifier": "S 3671",
+    "introducedDate": "2026-01-15",
+    "latestAction": {
+      "date": "2026-01-15",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3671",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "D000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Daines, Steve [R-MT]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MT"
+      }
+    ],
+    "title": "Increasing Investor Opportunities Act",
+    "type": "S",
+    "updatedAt": "2026-03-18T19:37:49Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3671",
+    "votes": []
+  },
+  "generated_at": "2026-07-15T05:58:55.344542+00:00",
+  "source": "congress_api"
+}

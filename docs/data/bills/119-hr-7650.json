@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "McIntire-Stennis Act District of Columbia Equality Act",
+      "updated_at": "2026-03-17T19:03:18Z"
+    },
+    "detailPath": "119/hr/7650",
+    "identifier": "HR 7650",
+    "introducedDate": "2026-02-23",
+    "latestAction": {
+      "date": "2026-02-23",
+      "text": "Referred to the House Committee on Agriculture."
+    },
+    "number": "7650",
+    "originChamber": "House",
+    "policyArea": "Agriculture and Food",
+    "sponsors": [
+      {
+        "bioguideId": "N000147",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "DC"
+      }
+    ],
+    "title": "McIntire-Stennis Act District of Columbia Equality Act",
+    "type": "HR",
+    "updatedAt": "2026-03-17T19:03:18Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7650",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill adds the District of Columbia to the McIntire\u2011Stennis Cooperative Forestry Act's list of entities eligible for federal forestry research funds. It makes D.C. eligible alongside states, land\u2011grant institutions, and territories for McIntire\u2011Stennis formula and competitive grants supporting forestry research and education.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:40.375234+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "deb21d1641c9c578ab980fa8",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would amend the McIntire\u2011Stennis Cooperative Forestry Act to add the District of Columbia to the list of jurisdictions eligible for McIntire\u2011Stennis research grant funds. It would let District government and District forestry or university research programs apply for grants administered by USDA NIFA.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-15T05:41:42.967965+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "deb21d1641c9c578ab980fa8",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-15T05:58:50.473027+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,96 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "T000468",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Titus, Dina [D-NV-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "E000297",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Espaillat, Adriano [D-NY-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "V000131",
+        "district": 33,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Veasey, Marc A. [D-TX-33]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "C001110",
+        "district": 46,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Correa, J. Luis [D-CA-46]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "T000472",
+        "district": 39,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Takano, Mark [D-CA-39]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-17",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Expressing the sense of the House of Representatives that the Secretary of Defense should review section 504 of title 10, United States Code, for purposes related to enlisting certain aliens in the Armed Forces.",
+      "updated_at": "2026-03-18T08:06:54Z"
+    },
+    "detailPath": "119/hres/994",
+    "identifier": "HRES 994",
+    "introducedDate": "2026-01-13",
+    "latestAction": {
+      "date": "2026-01-13",
+      "text": "Referred to the House Committee on Armed Services."
+    },
+    "number": "994",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "F000454",
+        "district": 11,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Foster, Bill [D-IL-11]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "Expressing the sense of the House of Representatives that the Secretary of Defense should review section 504 of title 10, United States Code, for purposes related to enlisting certain aliens in the Armed Forces.",
+    "type": "HRES",
+    "updatedAt": "2026-03-18T08:06:54Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/994",
+    "votes": []
+  },
+  "generated_at": "2026-07-15T05:59:03.737183+00:00",
+  "source": "congress_api"
+}
