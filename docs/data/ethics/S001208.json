@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2611623.66,
+        "label": "Small individual (unitemized)",
+        "share": 0.6278148216524688
+      },
+      {
+        "amount": 1535239.36,
+        "label": "Large individual (itemized)",
+        "share": 0.3690600754445035
+      },
+      {
+        "amount": 13000.0,
+        "label": "PAC / other committees",
+        "share": 0.003125102903027802
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4MI00470",
+      "district": "00",
+      "name": "SLOTKIN, ELISSA",
+      "office": "S",
+      "party": "DEM",
+      "state": "MI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2364965.95,
+      "debts": 15340.0,
+      "disbursements": 2296328.03,
+      "individualContributions": 4146863.02,
+      "receipts": 4378578.6
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 97.0,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:15:08.967822+00:00"
+  "updated_at": "2026-07-15T06:10:05.110574+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.7,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 92705.88,
+        "label": "Small individual (unitemized)",
+        "share": 0.04735498594588566
+      },
+      {
+        "amount": 878256.0,
+        "label": "Large individual (itemized)",
+        "share": 0.44862095626393655
+      },
+      {
+        "amount": 986717.51,
+        "label": "PAC / other committees",
+        "share": 0.5040240577901778
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8CT01046",
+      "district": "01",
+      "name": "LARSON, JOHN B",
+      "office": "H",
+      "party": "DEM",
+      "state": "CT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1027530.79,
+      "debts": 11992.27,
+      "disbursements": 1198120.04,
+      "individualContributions": 970961.88,
+      "receipts": 1976921.58
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T19:52:58.736460+00:00"
+  "updated_at": "2026-07-15T06:08:16.556659+00:00"
 }

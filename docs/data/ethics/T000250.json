@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 438962.55,
+        "label": "Small individual (unitemized)",
+        "share": 0.12090398838308257
+      },
+      {
+        "amount": 1980008.0,
+        "label": "Large individual (itemized)",
+        "share": 0.545356008685503
+      },
+      {
+        "amount": 1211700.0,
+        "label": "PAC / other committees",
+        "share": 0.3337400029314144
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2SD00068",
+      "district": "00",
+      "name": "THUNE, JOHN R.",
+      "office": "S",
+      "party": "REP",
+      "state": "SD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 17391646.65,
+      "debts": 0.0,
+      "disbursements": 7174494.12,
+      "individualContributions": 2418970.55,
+      "receipts": 7623908.13
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 87.9,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:54.291328+00:00"
+  "updated_at": "2026-07-15T06:09:37.703763+00:00"
 }

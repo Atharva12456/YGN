@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 3131327.34,
+        "label": "Small individual (unitemized)",
+        "share": 0.2069227413181203
+      },
+      {
+        "amount": 8968055.91,
+        "label": "Large individual (itemized)",
+        "share": 0.5926223967345969
+      },
+      {
+        "amount": 3033450.0,
+        "label": "PAC / other committees",
+        "share": 0.20045486194728274
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6VA00093",
+      "district": "00",
+      "name": "WARNER, MARK ROBERT",
+      "office": "S",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 14605034.02,
+      "debts": 0.0,
+      "disbursements": 7774286.24,
+      "individualContributions": 12099383.25,
+      "receipts": 21990910.08
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 78.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:44.570317+00:00"
+  "updated_at": "2026-07-15T06:09:24.087515+00:00"
 }

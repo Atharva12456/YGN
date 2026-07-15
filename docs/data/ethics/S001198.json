@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 342221.56,
+        "label": "Small individual (unitemized)",
+        "share": 0.05607557504558426
+      },
+      {
+        "amount": 3632741.58,
+        "label": "Large individual (itemized)",
+        "share": 0.5952520147780997
+      },
+      {
+        "amount": 2065900.0,
+        "label": "PAC / other committees",
+        "share": 0.3385132441295415
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.010159166046774564
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4AK00214",
+      "district": "00",
+      "name": "SULLIVAN, DAN",
+      "office": "S",
+      "party": "REP",
+      "state": "AK"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 7086052.55,
+      "debts": 0.0,
+      "disbursements": 2745469.13,
+      "individualContributions": 3974963.14,
+      "receipts": 9099778.66
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "D+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 67.8,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:56.093714+00:00"
+  "updated_at": "2026-07-15T06:09:39.414220+00:00"
 }

@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 147135.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.0953999738325753
+      },
+      {
+        "amount": 1282913.96,
+        "label": "Large individual (itemized)",
+        "share": 0.8318190800933206
+      },
+      {
+        "amount": 112250.0,
+        "label": "PAC / other committees",
+        "share": 0.07278094607410403
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6MD03441",
+      "district": "00",
+      "name": "VAN HOLLEN, CHRIS",
+      "office": "S",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3022508.66,
+      "debts": 2209.56,
+      "disbursements": 1053854.84,
+      "individualContributions": 1430049.27,
+      "receipts": 1846239.55
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 86.8,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:46.482135+00:00"
+  "updated_at": "2026-07-15T06:09:29.011507+00:00"
 }

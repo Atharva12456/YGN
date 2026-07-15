@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 67.8,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1134.74,
+        "label": "Small individual (unitemized)",
+        "share": 0.0017787712893641754
+      },
+      {
+        "amount": 380150.0,
+        "label": "Large individual (itemized)",
+        "share": 0.595907349394391
+      },
+      {
+        "amount": 256650.0,
+        "label": "PAC / other committees",
+        "share": 0.4023138793162448
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0KY05015",
+      "district": "05",
+      "name": "ROGERS, HAROLD DALLAS",
+      "office": "H",
+      "party": "REP",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 860086.12,
+      "debts": 0.0,
+      "disbursements": 858906.11,
+      "individualContributions": 381284.74,
+      "receipts": 747740.5
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 17,
-  "updated_at": "2026-07-13T21:14:10.218260+00:00"
+  "updated_at": "2026-07-15T06:08:25.895352+00:00"
 }

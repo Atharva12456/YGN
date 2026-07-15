@@ -1,53 +1,99 @@
 {
   "bioguideId": "S000033",
-  "score": 97.4,
-  "grade": "A",
-  "source": "fec_live",
-  "method": "campaign_finance_stock_v4",
-  "updated_at": "2026-07-11T04:21:33.677509+00:00",
-  "cycle": 2026,
   "candidate": {
     "candidate_id": "S4VT00033",
+    "district": "00",
     "name": "SANDERS, BERNARD",
     "office": "S",
-    "state": "VT",
-    "district": "00",
-    "party": "IND"
+    "party": "IND",
+    "state": "VT"
   },
   "components": {
-    "small_donor": {
-      "value": 0.7452,
-      "score": 99.5,
-      "weight": 0.3
-    },
-    "pac_independence": {
-      "value": 1.0,
-      "score": 96.4,
-      "weight": 0.25
-    },
     "donor_diversity": {
-      "value": 1.0,
       "score": 96.7,
+      "value": 1.0,
       "weight": 0.2
     },
-    "self_party_independence": {
+    "in_state_support": {
+      "score": null,
+      "value": null,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 96.4,
       "value": 1.0,
+      "weight": 0.25
+    },
+    "self_party_independence": {
       "score": 96.0,
+      "value": 1.0,
       "weight": 0.15
     },
-    "in_state_support": {
-      "value": null,
-      "score": null,
-      "weight": 0.1
+    "small_donor": {
+      "score": 99.5,
+      "value": 0.7452,
+      "weight": 0.3
     },
     "stock_conflict": {
       "measurable": false,
       "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
     }
   },
+  "cycle": 2026,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 16744406.32,
+        "label": "Small individual (unitemized)",
+        "share": 0.7451755767332761
+      },
+      {
+        "amount": 5725984.18,
+        "label": "Large individual (itemized)",
+        "share": 0.25482322168691346
+      },
+      {
+        "amount": 27.0,
+        "label": "PAC / other committees",
+        "share": 1.2015798104329836e-06
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4VT00033",
+      "district": "00",
+      "name": "SANDERS, BERNARD",
+      "office": "S",
+      "party": "IND",
+      "state": "VT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 22877129.65,
+      "debts": 0.0,
+      "disbursements": 11332584.7,
+      "individualContributions": 22470390.5,
+      "receipts": 23468953.69
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "grade": "A",
+  "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "generated_at": "2026-07-11T04:21:33.677598+00:00"
+  "score": 97.4,
+  "source": "fec_live",
+  "updated_at": "2026-07-15T06:10:17.793507+00:00"
 }

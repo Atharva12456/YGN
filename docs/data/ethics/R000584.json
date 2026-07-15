@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 199255.71,
+        "label": "Small individual (unitemized)",
+        "share": 0.056595151636135696
+      },
+      {
+        "amount": 2145835.78,
+        "label": "Large individual (itemized)",
+        "share": 0.6094876847210327
+      },
+      {
+        "amount": 1113629.0,
+        "label": "PAC / other committees",
+        "share": 0.31630713178256303
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.017610031860268462
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8ID00092",
+      "district": "00",
+      "name": "RISCH, JAMES E MR.",
+      "office": "S",
+      "party": "UNK",
+      "state": "ID"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3729779.9,
+      "debts": 0.0,
+      "disbursements": 2402936.49,
+      "individualContributions": 2345091.49,
+      "receipts": 3937857.3
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 72.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:38.945880+00:00"
+  "updated_at": "2026-07-15T06:10:37.205694+00:00"
 }

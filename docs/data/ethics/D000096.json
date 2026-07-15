@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 81.5,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 6834.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.10250095687637158
+      },
+      {
+        "amount": 31740.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4760384958263392
+      },
+      {
+        "amount": 26101.0,
+        "label": "PAC / other committees",
+        "share": 0.3914644227965747
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 19264.14,
+        "label": "Self-funding & candidate loans",
+        "share": 0.2889247709195972
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4IL07037",
+      "district": "07",
+      "name": "DAVIS, DANNY K. MR.",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 66448.88,
+      "debts": 66454.71,
+      "disbursements": 125380.41,
+      "individualContributions": 38574.28,
+      "receipts": 101077.38
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:13:02.092838+00:00"
+  "updated_at": "2026-07-15T06:08:20.741380+00:00"
 }

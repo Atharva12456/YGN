@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 86422.1,
+        "label": "Small individual (unitemized)",
+        "share": 0.05600825853525321
+      },
+      {
+        "amount": 1068454.92,
+        "label": "Large individual (itemized)",
+        "share": 0.6924420882230734
+      },
+      {
+        "amount": 388147.21,
+        "label": "PAC / other committees",
+        "share": 0.25154965324167333
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4HI00136",
+      "district": "00",
+      "name": "SCHATZ, BRIAN",
+      "office": "S",
+      "party": "DEM",
+      "state": "HI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 2333473.53,
+      "debts": 0.0,
+      "disbursements": 1488028.1,
+      "individualContributions": 1154877.02,
+      "receipts": 1710751.28
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 82.7,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:15:40.144238+00:00"
+  "updated_at": "2026-07-15T06:10:16.371708+00:00"
 }

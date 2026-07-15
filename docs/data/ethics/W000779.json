@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 552350.27,
+        "label": "Small individual (unitemized)",
+        "share": 0.2941887427021614
+      },
+      {
+        "amount": 794336.8,
+        "label": "Large individual (itemized)",
+        "share": 0.4230738304410682
+      },
+      {
+        "amount": 530850.0,
+        "label": "PAC / other committees",
+        "share": 0.2827374268567704
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6OR00110",
+      "district": "00",
+      "name": "WYDEN, RONALD L.",
+      "office": "S",
+      "party": "DEM",
+      "state": "OR"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1415984.72,
+      "debts": 0.0,
+      "disbursements": 4662914.88,
+      "individualContributions": 1346687.07,
+      "receipts": 2732974.61
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 93.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:37.591452+00:00"
+  "updated_at": "2026-07-15T06:09:05.825506+00:00"
 }

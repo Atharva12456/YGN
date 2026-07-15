@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 5341889.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.47981774561695034
+      },
+      {
+        "amount": 5596328.38,
+        "label": "Large individual (itemized)",
+        "share": 0.5026718553741641
+      },
+      {
+        "amount": 194946.15,
+        "label": "PAC / other committees",
+        "share": 0.017510399008885555
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0KY00156",
+      "district": "00",
+      "name": "PAUL, RAND",
+      "office": "S",
+      "party": "REP",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 6744711.14,
+      "debts": 0.0,
+      "disbursements": 11040250.99,
+      "individualContributions": 10938218.2,
+      "receipts": 12419526.96
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.6,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:43.009184+00:00"
+  "updated_at": "2026-07-15T06:11:00.893685+00:00"
 }

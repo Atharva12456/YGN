@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 0.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.0
+      },
+      {
+        "amount": 388382.11,
+        "label": "Large individual (itemized)",
+        "share": 0.9099390610294298
+      },
+      {
+        "amount": 38440.0,
+        "label": "PAC / other committees",
+        "share": 0.0900609389705702
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6RI00221",
+      "district": "00",
+      "name": "WHITEHOUSE, SHELDON",
+      "office": "S",
+      "party": "DEM",
+      "state": "RI"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1117498.08,
+      "debts": 0.0,
+      "disbursements": 579233.4,
+      "individualContributions": 388382.11,
+      "receipts": 431343.76
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 75.8,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:14:40.287663+00:00"
+  "updated_at": "2026-07-15T06:09:12.488228+00:00"
 }

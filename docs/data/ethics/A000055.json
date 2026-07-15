@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 66.4,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 8548.98,
+        "label": "Small individual (unitemized)",
+        "share": 0.011221001374533225
+      },
+      {
+        "amount": 376546.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4942371117460782
+      },
+      {
+        "amount": 376778.2,
+        "label": "PAC / other committees",
+        "share": 0.4945418868793885
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6AL04098",
+      "district": "04",
+      "name": "ADERHOLT, ROBERT B. REP.",
+      "office": "H",
+      "party": "REP",
+      "state": "AL"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 776474.52,
+      "debts": 0.0,
+      "disbursements": 1022690.28,
+      "individualContributions": 385094.98,
+      "receipts": 832268.46
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T21:13:04.692231+00:00"
+  "updated_at": "2026-07-15T06:08:22.455155+00:00"
 }

@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 82.8,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 72448.47,
+        "label": "Small individual (unitemized)",
+        "share": 0.14301717657759125
+      },
+      {
+        "amount": 246565.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4867325720315941
+      },
+      {
+        "amount": 185058.34,
+        "label": "PAC / other committees",
+        "share": 0.3653151169229097
+      },
+      {
+        "amount": 2500.0,
+        "label": "Political party committees",
+        "share": 0.004935134467904955
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8NJ04014",
+      "district": "04",
+      "name": "SMITH, CHRISTOPHER H",
+      "office": "H",
+      "party": "REP",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 446623.49,
+      "debts": 0.0,
+      "disbursements": 443489.22,
+      "individualContributions": 319013.47,
+      "receipts": 526047.54
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:13:09.251979+00:00"
+  "updated_at": "2026-07-15T06:08:24.293089+00:00"
 }

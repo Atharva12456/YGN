@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 264064.41,
+        "label": "Small individual (unitemized)",
+        "share": 0.18694243020435164
+      },
+      {
+        "amount": 745504.6,
+        "label": "Large individual (itemized)",
+        "share": 0.5277744231133725
+      },
+      {
+        "amount": 395375.0,
+        "label": "PAC / other committees",
+        "share": 0.2799027833476141
+      },
+      {
+        "amount": 7600.0,
+        "label": "Political party committees",
+        "share": 0.005380363334661693
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4MT00183",
+      "district": "00",
+      "name": "SHEEHY, TIM",
+      "office": "S",
+      "party": "REP",
+      "state": "MT"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 951381.84,
+      "debts": 609018.77,
+      "disbursements": 1856246.33,
+      "individualContributions": 1009569.01,
+      "receipts": 1418620.23
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "B-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 81.4,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:15:14.485176+00:00"
+  "updated_at": "2026-07-15T06:10:06.643331+00:00"
 }

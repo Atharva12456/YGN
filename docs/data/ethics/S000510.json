@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 75.0,
-  "generated_at": "2026-07-13T19:48:54.661573+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 66260.89,
+        "label": "Small individual (unitemized)",
+        "share": 0.05873870354483403
+      },
+      {
+        "amount": 641475.75,
+        "label": "Large individual (itemized)",
+        "share": 0.5686530004418906
+      },
+      {
+        "amount": 420250.0,
+        "label": "PAC / other committees",
+        "share": 0.3725416330012546
+      },
+      {
+        "amount": 75.2,
+        "label": "Political party committees",
+        "share": 6.66630120206885e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6WA09025",
+      "district": "09",
+      "name": "SMITH, D. ADAM",
+      "office": "H",
+      "party": "DEM",
+      "state": "WA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 847127.52,
+      "debts": 0.0,
+      "disbursements": 852274.96,
+      "individualContributions": 707736.64,
+      "receipts": 1128649.66
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "D",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -55,5 +101,5 @@
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-13T19:53:00.643468+00:00"
+  "updated_at": "2026-07-15T06:08:17.987250+00:00"
 }

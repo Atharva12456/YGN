@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T22:09:29.287011+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 429220.72,
+        "label": "Small individual (unitemized)",
+        "share": 0.43509181854299184
+      },
+      {
+        "amount": 434285.35,
+        "label": "Large individual (itemized)",
+        "share": 0.4402257251189544
+      },
+      {
+        "amount": 123000.0,
+        "label": "PAC / other committees",
+        "share": 0.12468245633805376
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S8NV00156",
+      "district": "00",
+      "name": "ROSEN, JACKY",
+      "office": "S",
+      "party": "DEM",
+      "state": "NV"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1015905.5,
+      "debts": 0.0,
+      "disbursements": 1965602.58,
+      "individualContributions": 863506.07,
+      "receipts": 1201412.28
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.1,
   "source": "fec_live",
-  "updated_at": "2026-07-13T22:09:37.392778+00:00"
+  "updated_at": "2026-07-15T06:10:35.784055+00:00"
 }

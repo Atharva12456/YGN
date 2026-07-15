@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 72.2,
-  "generated_at": "2026-07-14T06:24:27.711003+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 34902.85,
+        "label": "Small individual (unitemized)",
+        "share": 0.018499536889455746
+      },
+      {
+        "amount": 1424989.25,
+        "label": "Large individual (itemized)",
+        "share": 0.75528620721382
+      },
+      {
+        "amount": 426795.67,
+        "label": "PAC / other committees",
+        "share": 0.22621425589672423
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MO01134",
+      "district": "01",
+      "name": "BELL, WESLEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1237271.04,
+      "debts": 0.0,
+      "disbursements": 1100409.21,
+      "individualContributions": 1459892.1,
+      "receipts": 1903759.36
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-14T06:25:01.233661+00:00"
+  "updated_at": "2026-07-15T06:08:33.570607+00:00"
 }

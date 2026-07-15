@@ -40,7 +40,53 @@
     }
   },
   "cycle": 2026,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 7914405.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.381579260792658
+      },
+      {
+        "amount": 11943077.3,
+        "label": "Large individual (itemized)",
+        "share": 0.5758146613648374
+      },
+      {
+        "amount": 883700.0,
+        "label": "PAC / other committees",
+        "share": 0.042606055664406256
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4SC00240",
+      "district": "00",
+      "name": "SCOTT, TIMOTHY E.",
+      "office": "S",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 4968320.21,
+      "debts": 0.0,
+      "disbursements": 40073635.63,
+      "individualContributions": 19857483.06,
+      "receipts": 23263532.43
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -49,5 +95,5 @@
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
   "score": 96.2,
   "source": "fec_live",
-  "updated_at": "2026-07-13T21:15:29.685140+00:00"
+  "updated_at": "2026-07-15T06:10:11.854769+00:00"
 }

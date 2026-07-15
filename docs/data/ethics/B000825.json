@@ -43,7 +43,53 @@
   },
   "cycle": 2026,
   "financeScore": 90.5,
-  "generated_at": "2026-07-13T21:12:51.615831+00:00",
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 388228.65,
+        "label": "Small individual (unitemized)",
+        "share": 0.4400243371491955
+      },
+      {
+        "amount": 379060.39,
+        "label": "Large individual (itemized)",
+        "share": 0.4296328899200652
+      },
+      {
+        "amount": 115000.0,
+        "label": "PAC / other committees",
+        "share": 0.13034277293073934
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CO03165",
+      "district": "04",
+      "name": "BOEBERT, LAUREN",
+      "office": "H",
+      "party": "REP",
+      "state": "CO"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 210898.35,
+      "debts": 0.0,
+      "disbursements": 898346.25,
+      "individualContributions": 767289.04,
+      "receipts": 950099.55
+    }
+  },
+  "generated_at": "2026-07-15T05:58:43.161956+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -54,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-13T21:14:32.632945+00:00"
+  "updated_at": "2026-07-15T06:08:35.517135+00:00"
 }
