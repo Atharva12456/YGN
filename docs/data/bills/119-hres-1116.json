@@ -1,0 +1,165 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 10,
+    "cosponsors": [
+      {
+        "bioguideId": "C001080",
+        "district": 28,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Chu, Judy [D-CA-28]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001208",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McBath, Lucy [D-GA-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "W000788",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Williams, Nikema [D-GA-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "N000147",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "DC"
+      },
+      {
+        "bioguideId": "K000391",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Krishnamoorthi, Raja [D-IL-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "S001185",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sewell, Terri A. [D-AL-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "M001241",
+        "district": 47,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Min, Dave [D-CA-47]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "T000488",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Thanedar, Shri [D-MI-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "T000472",
+        "district": 39,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Takano, Mark [D-CA-39]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001055",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Case, Ed [D-HI-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-17",
+        "state": "HI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Commemorating the 5-year remembrance of the March 16, 2021, shootings in the Atlanta, Georgia, region and denouncing continuing anti-Asian hate, including the resurgence of xenophobic and anti-immigrant rhetoric.",
+      "updated_at": "2026-03-19T15:24:45Z"
+    },
+    "detailPath": "119/hres/1116",
+    "identifier": "HRES 1116",
+    "introducedDate": "2026-03-16",
+    "latestAction": {
+      "date": "2026-03-16",
+      "text": "Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "1116",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "M001188",
+        "district": 6,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Meng, Grace [D-NY-6]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "Commemorating the 5-year remembrance of the March 16, 2021, shootings in the Atlanta, Georgia, region and denouncing continuing anti-Asian hate, including the resurgence of xenophobic and anti-immigrant rhetoric.",
+    "type": "HRES",
+    "updatedAt": "2026-03-19T15:24:45Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1116",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution commemorates the fifth anniversary of the March 16, 2021 Atlanta spa shootings, condemns xenophobic anti\u2011Asian rhetoric, and urges restoration and expansion of DOJ hate\u2011crime grants. It addresses federal hate\u2011crime reporting and grant programs, online disinformation, AANHPI mental\u2011health and education supports, and honors victims, families, and communities.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T04:30:35.866470+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e84d7cf8c62bd152cbf96450",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution commemorates the eight Atlanta spa shooting victims and condemns anti-Asian, xenophobic, and anti-immigrant rhetoric. It urges DOJ to restore and expand BJA, COVID\u201119 Hate Crimes Act, and Jabara\u2011Heyer NO HATE Act programs and to support community services, online\u2011hate responses, and AANHPI education.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T04:30:44.754690+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e84d7cf8c62bd152cbf96450",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:29.488175+00:00",
+  "source": "congress_api"
+}

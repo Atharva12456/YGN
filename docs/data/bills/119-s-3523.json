@@ -1,0 +1,96 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "H001046",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Heinrich, Martin [D-NM]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "S001194",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schatz, Brian [D-HI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "W000800",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Welch, Peter [D-VT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "V000128",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Van Hollen, Chris [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "MD"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Clean Competition Act",
+      "updated_at": "2026-03-19T15:15:56Z"
+    },
+    "detailPath": "119/s/3523",
+    "identifier": "S 3523",
+    "introducedDate": "2025-12-17",
+    "latestAction": {
+      "date": "2025-12-17",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3523",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "W000802",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Whitehouse, Sheldon [D-RI]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "RI"
+      }
+    ],
+    "title": "Clean Competition Act",
+    "type": "S",
+    "updatedAt": "2026-03-19T15:15:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3523",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:43.589844+00:00",
+  "source": "congress_api"
+}

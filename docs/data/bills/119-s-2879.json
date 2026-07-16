@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001243",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blackburn, Marsha [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-18",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Medicare Advantage Prompt Pay Act",
+      "updated_at": "2026-03-19T11:03:27Z"
+    },
+    "detailPath": "119/s/2879",
+    "identifier": "S 2879",
+    "introducedDate": "2025-09-18",
+    "latestAction": {
+      "date": "2025-09-18",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "2879",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NV"
+      }
+    ],
+    "title": "Medicare Advantage Prompt Pay Act",
+    "type": "S",
+    "updatedAt": "2026-03-19T11:03:27Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2879",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:50.284193+00:00",
+  "source": "congress_api"
+}

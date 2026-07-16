@@ -9,7 +9,7 @@
         "committeeUrl": "https://edlabor.house.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 20,
+        "rank": 21,
         "role": null,
         "subcommittee": null
       },
@@ -20,7 +20,7 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 27,
+        "rank": 26,
         "role": null,
         "subcommittee": null
       },
@@ -37,6 +37,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSFA07",
+        "committee": "House Committee on Foreign Affairs",
+        "committeeUrl": "https://foreignaffairs.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": null,
+        "subcommittee": "Western Hemisphere"
+      },
+      {
+        "chamber": "house",
         "code": "HSFA14",
         "committee": "House Committee on Foreign Affairs",
         "committeeUrl": "https://foreignaffairs.house.gov/",
@@ -48,28 +59,6 @@
       },
       {
         "chamber": "house",
-        "code": "HSFA07",
-        "committee": "House Committee on Foreign Affairs",
-        "committeeUrl": "https://foreignaffairs.house.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 8,
-        "role": null,
-        "subcommittee": "Western Hemisphere"
-      },
-      {
-        "chamber": "house",
-        "code": "HSED13",
-        "committee": "House Committee on Education and Workforce",
-        "committeeUrl": "https://edlabor.house.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 11,
-        "role": null,
-        "subcommittee": "Higher Education and Workforce Development"
-      },
-      {
-        "chamber": "house",
         "code": "HSED02",
         "committee": "House Committee on Education and Workforce",
         "committeeUrl": "https://edlabor.house.gov/",
@@ -78,6 +67,17 @@
         "rank": 11,
         "role": null,
         "subcommittee": "Health, Employment, Labor, and Pensions"
+      },
+      {
+        "chamber": "house",
+        "code": "HSED13",
+        "committee": "House Committee on Education and Workforce",
+        "committeeUrl": "https://edlabor.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 12,
+        "role": null,
+        "subcommittee": "Higher Education and Workforce Development"
       }
     ],
     "bioguideId": "F000484",
@@ -118,7 +118,7 @@
       "birthYear": "1974",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 190,
+        "count": 192,
         "url": "https://api.congress.gov/v3/member/F000484/cosponsored-legislation"
       },
       "currentMember": true,
@@ -193,7 +193,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "f000484",
@@ -247,7 +247,53 @@
     },
     "cycle": 2026,
     "financeScore": 78.7,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 518543.73,
+          "label": "Small individual (unitemized)",
+          "share": 0.2035928328739682
+        },
+        {
+          "amount": 1631560.64,
+          "label": "Large individual (itemized)",
+          "share": 0.6405902404861102
+        },
+        {
+          "amount": 396860.19,
+          "label": "PAC / other committees",
+          "share": 0.15581692663992153
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 950000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.37299301879567576
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6FL06258",
+        "district": "06",
+        "name": "FINE, RANDY",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 761561.49,
+        "debts": 950000.0,
+        "disbursements": 2957460.97,
+        "individualContributions": 2150104.37,
+        "receipts": 3719022.46
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -258,14 +304,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T23:13:19.856663+00:00"
+    "updated_at": "2026-07-15T09:21:41.015373+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "F000484",
+    "breakdown": [
+      {
+        "amount": 518543.73,
+        "label": "Small individual (unitemized)",
+        "share": 0.2035928328739682
+      },
+      {
+        "amount": 1631560.64,
+        "label": "Large individual (itemized)",
+        "share": 0.6405902404861102
+      },
+      {
+        "amount": 396860.19,
+        "label": "PAC / other committees",
+        "share": 0.15581692663992153
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 950000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.37299301879567576
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6FL06258",
+      "district": "06",
+      "name": "FINE, RANDY",
+      "office": "H",
+      "party": "REP",
+      "state": "FL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000484",
+      "candidate": {
+        "candidate_id": "H6FL06258",
+        "district": "06",
+        "name": "FINE, RANDY",
+        "office": "H",
+        "party": "REP",
+        "state": "FL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 52.8,
+          "value": 0.2714,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.1,
+          "value": 0.6195,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 92.9,
+          "value": 0.8442,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 63.3,
+          "value": 0.7446,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 85.9,
+          "value": 0.2412,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 78.7,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 78.7,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:21:41.015373+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 761561.49,
+      "debts": 950000.0,
+      "disbursements": 2957460.97,
+      "individualContributions": 2150104.37,
+      "receipts": 3719022.46
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "F000484",
     "birthYear": "1974",
@@ -320,7 +468,7 @@
     "birthYear": "1974",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 190,
+      "count": 192,
       "url": "https://api.congress.gov/v3/member/F000484/cosponsored-legislation"
     },
     "currentMember": true,
@@ -395,7 +543,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": 0.6,

@@ -20,7 +20,7 @@
         "committeeUrl": "https://oversight.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 17,
+        "rank": 16,
         "role": null,
         "subcommittee": null
       },
@@ -37,17 +37,6 @@
       },
       {
         "chamber": "house",
-        "code": "HSGO33",
-        "committee": "House Committee on Oversight and Government Reform",
-        "committeeUrl": "https://oversight.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 3,
-        "role": null,
-        "subcommittee": "Federal Law Enforcement"
-      },
-      {
-        "chamber": "house",
         "code": "HSSM24",
         "committee": "House Committee on Small Business",
         "committeeUrl": "https://smallbusiness.house.gov/",
@@ -59,6 +48,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSGO33",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Federal Law Enforcement"
+      },
+      {
+        "chamber": "house",
         "code": "HSGO27",
         "committee": "House Committee on Oversight and Government Reform",
         "committeeUrl": "https://oversight.house.gov/",
@@ -67,10 +67,21 @@
         "rank": 4,
         "role": null,
         "subcommittee": "Health Care and Financial Services"
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO06",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Military and Foreign Affairs"
       }
     ],
     "bioguideId": "S001231",
-    "count": 6,
+    "count": 7,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -121,7 +132,7 @@
       "birthYear": "1977",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 595,
+        "count": 596,
         "url": "https://api.congress.gov/v3/member/S001231/cosponsored-legislation"
       },
       "currentMember": true,
@@ -188,7 +199,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-14T07:40:23Z"
+      "updateDate": "2026-07-15T07:40:25Z"
     },
     "request": {
       "bioguideId": "s001231",
@@ -242,7 +253,53 @@
     },
     "cycle": 2026,
     "financeScore": 78.5,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 76192.96,
+          "label": "Small individual (unitemized)",
+          "share": 0.06230305825155432
+        },
+        {
+          "amount": 936747.97,
+          "label": "Large individual (itemized)",
+          "share": 0.7659797354235254
+        },
+        {
+          "amount": 210000.0,
+          "label": "PAC / other committees",
+          "share": 0.17171720632492038
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4CA12154",
+        "district": "12",
+        "name": "SIMON, LATEEFAH",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 687139.61,
+        "debts": 0.0,
+        "disbursements": 861269.88,
+        "individualContributions": 1012940.93,
+        "receipts": 1262754.78
+      }
+    },
+    "generated_at": "2026-07-15T15:49:46.765621+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -253,14 +310,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:50:09.512044+00:00"
+    "updated_at": "2026-07-15T15:50:08.670815+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "S001231",
+    "breakdown": [
+      {
+        "amount": 76192.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.06230305825155432
+      },
+      {
+        "amount": 936747.97,
+        "label": "Large individual (itemized)",
+        "share": 0.7659797354235254
+      },
+      {
+        "amount": 210000.0,
+        "label": "PAC / other committees",
+        "share": 0.17171720632492038
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA12154",
+      "district": "12",
+      "name": "SIMON, LATEEFAH",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S001231",
+      "candidate": {
+        "candidate_id": "H4CA12154",
+        "district": "12",
+        "name": "SIMON, LATEEFAH",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 62.6,
+          "value": 0.3982,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.7,
+          "value": 0.8586,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 92.0,
+          "value": 0.8283,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 62.7,
+          "value": 0.0752,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 78.5,
+      "generated_at": "2026-07-15T15:49:46.765621+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 78.5,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T15:50:08.670815+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 687139.61,
+      "debts": 0.0,
+      "disbursements": 861269.88,
+      "individualContributions": 1012940.93,
+      "receipts": 1262754.78
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "S001231",
     "birthYear": "1977",
@@ -315,7 +474,7 @@
     "birthYear": "1977",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 595,
+      "count": 596,
       "url": "https://api.congress.gov/v3/member/S001231/cosponsored-legislation"
     },
     "currentMember": true,
@@ -382,7 +541,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-14T07:40:23Z"
+    "updateDate": "2026-07-15T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.56,

@@ -48,6 +48,17 @@
       },
       {
         "chamber": "house",
+        "code": "HLIG06",
+        "committee": "House Permanent Select Committee on Intelligence",
+        "committeeUrl": "https://intelligence.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "National Intelligence Enterprise"
+      },
+      {
+        "chamber": "house",
         "code": "HLIG01",
         "committee": "House Permanent Select Committee on Intelligence",
         "committeeUrl": "https://intelligence.house.gov/",
@@ -59,8 +70,8 @@
       }
     ],
     "bioguideId": "K000391",
-    "count": 5,
-    "leadershipCount": 1,
+    "count": 6,
+    "leadershipCount": 2,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -111,7 +122,7 @@
       "birthYear": "1973",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 2603,
+        "count": 2605,
         "url": "https://api.congress.gov/v3/member/K000391/cosponsored-legislation"
       },
       "currentMember": true,
@@ -218,7 +229,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-07-14T07:40:26Z"
+      "updateDate": "2026-07-15T07:40:29Z"
     },
     "request": {
       "bioguideId": "k000391",
@@ -438,7 +449,7 @@
       "receipts": 3915985.37
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "K000391",
     "birthYear": "1973",
@@ -529,7 +540,7 @@
     "birthYear": "1973",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 2603,
+      "count": 2605,
       "url": "https://api.congress.gov/v3/member/K000391/cosponsored-legislation"
     },
     "currentMember": true,
@@ -636,7 +647,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-07-14T07:40:26Z"
+    "updateDate": "2026-07-15T07:40:29Z"
   },
   "nominate": {
     "dim1": -0.349,

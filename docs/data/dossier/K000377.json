@@ -213,7 +213,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 282,
+        "count": 284,
         "url": "https://api.congress.gov/v3/member/K000377/sponsored-legislation"
       },
       "state": "Arizona",
@@ -305,7 +305,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 30052322.6,
+          "label": "Small individual (unitemized)",
+          "share": 0.6570024042328639
+        },
+        {
+          "amount": 15614628.8,
+          "label": "Large individual (itemized)",
+          "share": 0.3413662497687856
+        },
+        {
+          "amount": 74596.92,
+          "label": "PAC / other committees",
+          "share": 0.001630834210077547
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 23.41,
+          "label": "Self-funding & candidate loans",
+          "share": 5.117882729999492e-07
+        }
+      ],
+      "candidate": {
+        "candidateId": "S0AZ00350",
+        "district": "00",
+        "name": "KELLY, MARK",
+        "office": "S",
+        "party": "DEM",
+        "state": "AZ"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 22308538.42,
+        "debts": 0.0,
+        "disbursements": 25290802.68,
+        "individualContributions": 45666951.4,
+        "receipts": 46141465.92
+      }
+    },
+    "generated_at": "2026-07-15T15:49:46.765621+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -314,14 +360,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 97.1,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:10:44.475094+00:00"
+    "updated_at": "2026-07-15T15:51:11.257502+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "K000377",
+    "breakdown": [
+      {
+        "amount": 30052322.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.6570024042328639
+      },
+      {
+        "amount": 15614628.8,
+        "label": "Large individual (itemized)",
+        "share": 0.3413662497687856
+      },
+      {
+        "amount": 74596.92,
+        "label": "PAC / other committees",
+        "share": 0.001630834210077547
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 23.41,
+        "label": "Self-funding & candidate loans",
+        "share": 5.117882729999492e-07
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0AZ00350",
+      "district": "00",
+      "name": "KELLY, MARK",
+      "office": "S",
+      "party": "DEM",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "K000377",
+      "candidate": {
+        "candidate_id": "S0AZ00350",
+        "district": "00",
+        "name": "KELLY, MARK",
+        "office": "S",
+        "party": "DEM",
+        "state": "AZ"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.4,
+          "value": 0.9984,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 98.6,
+          "value": 0.6581,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T15:49:46.765621+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 97.1,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T15:51:11.257502+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 22308538.42,
+      "debts": 0.0,
+      "disbursements": 25290802.68,
+      "individualContributions": 45666951.4,
+      "receipts": 46141465.92
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "K000377",
     "birthYear": "1964",
@@ -436,7 +579,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 282,
+      "count": 284,
       "url": "https://api.congress.gov/v3/member/K000377/sponsored-legislation"
     },
     "state": "Arizona",

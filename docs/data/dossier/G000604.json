@@ -4,6 +4,17 @@
     "assignments": [
       {
         "chamber": "house",
+        "code": "HSVR",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 11,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
         "code": "HSSM",
         "committee": "House Committee on Small Business",
         "committeeUrl": "https://smallbusiness.house.gov/",
@@ -23,6 +34,17 @@
         "rank": 21,
         "role": null,
         "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSVR11",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Technology Modernization"
       },
       {
         "chamber": "house",
@@ -59,6 +81,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSVR03",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Health"
+      },
+      {
+        "chamber": "house",
         "code": "HSAS25",
         "committee": "House Committee on Armed Services",
         "committeeUrl": "https://armedservices.house.gov/",
@@ -81,7 +114,7 @@
       }
     ],
     "bioguideId": "G000604",
-    "count": 7,
+    "count": 10,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -199,7 +232,7 @@
           "stateName": "New Hampshire"
         }
       ],
-      "updateDate": "2026-07-14T07:40:32Z"
+      "updateDate": "2026-07-15T07:40:35Z"
     },
     "request": {
       "bioguideId": "g000604",
@@ -253,7 +286,53 @@
     },
     "cycle": 2026,
     "financeScore": 68.8,
-    "generated_at": "2026-07-12T23:37:37.655413+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 70621.02,
+          "label": "Small individual (unitemized)",
+          "share": 0.027260282092519985
+        },
+        {
+          "amount": 2265248.54,
+          "label": "Large individual (itemized)",
+          "share": 0.8744041676269904
+        },
+        {
+          "amount": 254750.0,
+          "label": "PAC / other committees",
+          "share": 0.09833555028048965
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4NH02399",
+        "district": "02",
+        "name": "GOODLANDER, MAGGIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NH"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2046131.14,
+        "debts": 0.0,
+        "disbursements": 984208.3,
+        "individualContributions": 2335869.56,
+        "receipts": 2972341.59
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -264,14 +343,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-12T23:38:36.363439+00:00"
+    "updated_at": "2026-07-15T09:22:09.479060+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "G000604",
+    "breakdown": [
+      {
+        "amount": 70621.02,
+        "label": "Small individual (unitemized)",
+        "share": 0.027260282092519985
+      },
+      {
+        "amount": 2265248.54,
+        "label": "Large individual (itemized)",
+        "share": 0.8744041676269904
+      },
+      {
+        "amount": 254750.0,
+        "label": "PAC / other committees",
+        "share": 0.09833555028048965
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NH02399",
+      "district": "02",
+      "name": "GOODLANDER, MAGGIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "NH"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000604",
+      "candidate": {
+        "candidate_id": "H4NH02399",
+        "district": "02",
+        "name": "GOODLANDER, MAGGIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NH"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 46.0,
+          "value": 0.1668,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 64.8,
+          "value": 0.1566,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.0,
+          "value": 0.9017,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 48.9,
+          "value": 0.0302,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 68.8,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 68.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:22:09.479060+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2046131.14,
+      "debts": 0.0,
+      "disbursements": 984208.3,
+      "individualContributions": 2335869.56,
+      "receipts": 2972341.59
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "G000604",
     "birthYear": "1986",
@@ -393,7 +574,7 @@
         "stateName": "New Hampshire"
       }
     ],
-    "updateDate": "2026-07-14T07:40:32Z"
+    "updateDate": "2026-07-15T07:40:35Z"
   },
   "nominate": {
     "dim1": -0.203,

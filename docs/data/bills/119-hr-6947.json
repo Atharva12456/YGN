@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-18T16:14:34Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6947",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The SAFE Exit Act directs the Secretary of Transportation to amend FMVSS No. 206 within two years to require power\u2011independent, easy\u2011to\u2011find manual door releases that mechanically disengage electronic latches and labeled performance and emergency\u2011responder access provisions when vehicle electrical power is lost. It covers new vehicles with electronic door latches.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:44.370518+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6811cdf81bfae3567ca9ad7f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Mandates DOT (Secretary/NHTSA) to amend FMVSS No.206 within two years to require intuitive, power\u2011independent manual door releases and emergency responder access when vehicle electrical power is lost. U.S. automakers and motor\u2011vehicle manufacturers must install these devices on new vehicles and comply with DOT/NHTSA rules.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:54.255683+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6811cdf81bfae3567ca9ad7f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:58:52.598763+00:00",
   "source": "congress_api"

@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "C001132",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Crane, Elijah [R-AZ-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-09",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "F000478",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fry, Russell [R-SC-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-09",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "L000596",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Luna, Anna Paulina [R-FL-13]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-09",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Stop Gender Trafficking of Minors Act",
+      "updated_at": "2026-03-19T15:14:49Z"
+    },
+    "detailPath": "119/hr/7420",
+    "identifier": "HR 7420",
+    "introducedDate": "2026-02-09",
+    "latestAction": {
+      "date": "2026-02-09",
+      "text": "Referred to the Committee on the Judiciary, and in addition to the Committee on Oversight and Government Reform, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "7420",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "C001120",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Crenshaw, Dan [R-TX-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "Stop Gender Trafficking of Minors Act",
+    "type": "HR",
+    "updatedAt": "2026-03-19T15:14:49Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7420",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:42.014397+00:00",
+  "source": "congress_api"
+}

@@ -1,9 +1,43 @@
 {
   "bioguideId": "G000607",
   "committees": {
-    "assignments": [],
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSSY",
+        "committee": "House Committee on Science, Space, and Technology",
+        "committeeUrl": "https://science.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 22,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSFA",
+        "committee": "House Committee on Foreign Affairs",
+        "committeeUrl": "https://foreignaffairs.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 28,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSPW",
+        "committee": "House Committee on Transportation and Infrastructure",
+        "committeeUrl": "https://transportation.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 36,
+        "role": null,
+        "subcommittee": null
+      }
+    ],
     "bioguideId": "G000607",
-    "count": 0,
+    "count": 3,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -12,7 +46,7 @@
     "official": {
       "contactForm": null,
       "office": "408 Cannon House Office Building",
-      "phone": "(202) 225-3076",
+      "phone": "202-225-3076",
       "website": "https://gallagher.house.gov"
     },
     "profiles": {
@@ -37,7 +71,7 @@
       "birthYear": "1981",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 15,
+        "count": 18,
         "url": "https://api.congress.gov/v3/member/G000607/cosponsored-legislation"
       },
       "currentMember": true,
@@ -85,7 +119,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "g000607",
@@ -139,7 +173,53 @@
     },
     "cycle": 2026,
     "financeScore": 80.1,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 73481.13,
+          "label": "Small individual (unitemized)",
+          "share": 0.06633790127640267
+        },
+        {
+          "amount": 793835.32,
+          "label": "Large individual (itemized)",
+          "share": 0.7166652049020138
+        },
+        {
+          "amount": 233363.0,
+          "label": "PAC / other committees",
+          "share": 0.21067737602245848
+        },
+        {
+          "amount": 7000.0,
+          "label": "Political party committees",
+          "share": 0.0063195177991250085
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6CA01285",
+        "district": "01",
+        "name": "GALLAGHER, JAMES",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 314857.85,
+        "debts": 45034.56,
+        "disbursements": 794267.33,
+        "individualContributions": 867316.45,
+        "receipts": 1109125.18
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -150,14 +230,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T23:13:00.076014+00:00"
+    "updated_at": "2026-07-15T09:21:31.859494+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "G000607",
+    "breakdown": [
+      {
+        "amount": 73481.13,
+        "label": "Small individual (unitemized)",
+        "share": 0.06633790127640267
+      },
+      {
+        "amount": 793835.32,
+        "label": "Large individual (itemized)",
+        "share": 0.7166652049020138
+      },
+      {
+        "amount": 233363.0,
+        "label": "PAC / other committees",
+        "share": 0.21067737602245848
+      },
+      {
+        "amount": 7000.0,
+        "label": "Political party committees",
+        "share": 0.0063195177991250085
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6CA01285",
+      "district": "01",
+      "name": "GALLAGHER, JAMES",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000607",
+      "candidate": {
+        "candidate_id": "H6CA01285",
+        "district": "01",
+        "name": "GALLAGHER, JAMES",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 71.0,
+          "value": 0.4852,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 98.1,
+          "value": 0.9218,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 89.4,
+          "value": 0.783,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9937,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 64.4,
+          "value": 0.0847,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 80.1,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 80.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:21:31.859494+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 314857.85,
+      "debts": 45034.56,
+      "disbursements": 794267.33,
+      "individualContributions": 867316.45,
+      "receipts": 1109125.18
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "G000607",
     "birthYear": "1981",
@@ -212,7 +394,7 @@
     "birthYear": "1981",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 15,
+      "count": 18,
       "url": "https://api.congress.gov/v3/member/G000607/cosponsored-legislation"
     },
     "currentMember": true,
@@ -260,7 +442,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": null,
   "stocks": {

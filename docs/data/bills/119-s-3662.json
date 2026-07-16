@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-18T20:13:02Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3662",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The ACCESS Act of 2026 raises the crowdfunding threshold requiring financial statements reviewed by an independent accountant from $100,000 to $250,000 and lets the SEC raise it to $400,000 on recommendation of the small-business and investor advocates. It covers issuers using the Regulation Crowdfunding exemption and corrects section 4(a)(6) cross-references.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:41:49.513512+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d81ca1b544ce4c6c06d52e0",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill raises the crowdfunding threshold requiring an independent public-accountant review from $100,000 to $250,000 for issuers using Section 4A. It lets the SEC, after recommendations by the Office of the Advocate for Small Business Capital Formation and the Investor Advocate, raise it to $400,000.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:58:27.880220+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4d81ca1b544ce4c6c06d52e0",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:58:55.719620+00:00",
   "source": "congress_api"

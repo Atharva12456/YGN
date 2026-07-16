@@ -37,6 +37,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSSM23",
+        "committee": "House Committee on Small Business",
+        "committeeUrl": "https://smallbusiness.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": "Contracting and Infrastructure"
+      },
+      {
+        "chamber": "house",
         "code": "HSSM22",
         "committee": "House Committee on Small Business",
         "committeeUrl": "https://smallbusiness.house.gov/",
@@ -125,8 +136,8 @@
       }
     ],
     "bioguideId": "W000829",
-    "count": 11,
-    "leadershipCount": 0,
+    "count": 12,
+    "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -244,7 +255,7 @@
           "stateName": "Wisconsin"
         }
       ],
-      "updateDate": "2026-07-14T07:40:32Z"
+      "updateDate": "2026-07-15T07:40:35Z"
     },
     "request": {
       "bioguideId": "w000829",
@@ -298,7 +309,53 @@
     },
     "cycle": 2026,
     "financeScore": 75.3,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 73968.18,
+          "label": "Small individual (unitemized)",
+          "share": 0.090816557691278
+        },
+        {
+          "amount": 289010.83,
+          "label": "Large individual (itemized)",
+          "share": 0.354841348213504
+        },
+        {
+          "amount": 451500.0,
+          "label": "PAC / other committees",
+          "share": 0.554342094095218
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4WI08119",
+        "district": "08",
+        "name": "WIED, TONY",
+        "office": "H",
+        "party": "REP",
+        "state": "WI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 427379.15,
+        "debts": 631910.58,
+        "disbursements": 449391.49,
+        "individualContributions": 362979.01,
+        "receipts": 831540.14
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -310,14 +367,117 @@
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 10,
-    "updated_at": "2026-07-14T00:07:56.527825+00:00"
+    "updated_at": "2026-07-15T09:22:24.302830+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "W000829",
+    "breakdown": [
+      {
+        "amount": 73968.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.090816557691278
+      },
+      {
+        "amount": 289010.83,
+        "label": "Large individual (itemized)",
+        "share": 0.354841348213504
+      },
+      {
+        "amount": 451500.0,
+        "label": "PAC / other committees",
+        "share": 0.554342094095218
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4WI08119",
+      "district": "08",
+      "name": "WIED, TONY",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "W000829",
+      "candidate": {
+        "candidate_id": "H4WI08119",
+        "district": "08",
+        "name": "WIED, TONY",
+        "office": "H",
+        "party": "REP",
+        "state": "WI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.0,
+          "value": 0.3609,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.5,
+          "value": 0.6773,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 57.8,
+          "value": 0.4457,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 83.5,
+          "value": 0.2038,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "10 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "penalty": 42,
+          "ptr_filings": 10
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 75.3,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 33.3,
+      "source": "fec_live",
+      "stockPenalty": 42,
+      "stockPtrCount": 10,
+      "updated_at": "2026-07-15T09:22:24.302830+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 427379.15,
+      "debts": 631910.58,
+      "disbursements": 449391.49,
+      "individualContributions": 362979.01,
+      "receipts": 831540.14
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "W000829",
     "birthYear": "1976",
@@ -449,7 +609,7 @@
         "stateName": "Wisconsin"
       }
     ],
-    "updateDate": "2026-07-14T07:40:32Z"
+    "updateDate": "2026-07-15T07:40:35Z"
   },
   "nominate": {
     "dim1": 0.538,

@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "D000629",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davids, Sharice [D-KS-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-02",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "E000298",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Estes, Ron [R-KS-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-02",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "M000871",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Mann, Tracey [R-KS-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-02",
+        "state": "KS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Kelsey Smith Act",
+      "updated_at": "2026-03-19T15:27:50Z"
+    },
+    "detailPath": "119/hr/7752",
+    "identifier": "HR 7752",
+    "introducedDate": "2026-03-02",
+    "latestAction": {
+      "date": "2026-03-02",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7752",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "S001228",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Schmidt, Derek [R-KS-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "Kelsey Smith Act",
+    "type": "HR",
+    "updatedAt": "2026-03-19T15:27:50Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7752",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:36.387044+00:00",
+  "source": "congress_api"
+}

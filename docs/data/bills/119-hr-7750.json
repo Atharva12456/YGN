@@ -1,0 +1,45 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "POINT Act",
+      "updated_at": "2026-03-19T19:45:25Z"
+    },
+    "detailPath": "119/hr/7750",
+    "identifier": "HR 7750",
+    "introducedDate": "2026-03-02",
+    "latestAction": {
+      "date": "2026-03-05",
+      "text": "Sponsor introductory remarks on measure. (CR H2453)"
+    },
+    "number": "7750",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "L000606",
+        "district": 16,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Latimer, George [D-NY-16]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "POINT Act",
+    "type": "HR",
+    "updatedAt": "2026-03-19T19:45:25Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7750",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:31.956628+00:00",
+  "source": "congress_api"
+}

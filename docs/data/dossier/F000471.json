@@ -203,7 +203,7 @@
           "stateName": "Wisconsin"
         }
       ],
-      "updateDate": "2026-07-14T07:40:28Z"
+      "updateDate": "2026-07-15T07:40:31Z"
     },
     "request": {
       "bioguideId": "f000471",
@@ -257,7 +257,53 @@
     },
     "cycle": 2026,
     "financeScore": 70.5,
-    "generated_at": "2026-07-13T12:17:17.615063+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 33807.33,
+          "label": "Small individual (unitemized)",
+          "share": 0.032369933086609834
+        },
+        {
+          "amount": 350097.98,
+          "label": "Large individual (itemized)",
+          "share": 0.3352127537536169
+        },
+        {
+          "amount": 660000.0,
+          "label": "PAC / other committees",
+          "share": 0.6319385718174871
+        },
+        {
+          "amount": 500.0,
+          "label": "Political party committees",
+          "share": 0.00047874134228597515
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0WI05113",
+        "district": "05",
+        "name": "FITZGERALD, SCOTT",
+        "office": "H",
+        "party": "REP",
+        "state": "WI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1463426.9,
+        "debts": 0.0,
+        "disbursements": 432835.64,
+        "individualContributions": 383905.31,
+        "receipts": 1058656.74
+      }
+    },
+    "generated_at": "2026-07-15T11:47:52.898811+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -268,14 +314,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T12:19:09.901095+00:00"
+    "updated_at": "2026-07-15T11:49:08.525430+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "F000471",
+    "breakdown": [
+      {
+        "amount": 33807.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.032369933086609834
+      },
+      {
+        "amount": 350097.98,
+        "label": "Large individual (itemized)",
+        "share": 0.3352127537536169
+      },
+      {
+        "amount": 660000.0,
+        "label": "PAC / other committees",
+        "share": 0.6319385718174871
+      },
+      {
+        "amount": 500.0,
+        "label": "Political party committees",
+        "share": 0.00047874134228597515
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0WI05113",
+      "district": "05",
+      "name": "FITZGERALD, SCOTT",
+      "office": "H",
+      "party": "REP",
+      "state": "WI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000471",
+      "candidate": {
+        "candidate_id": "H0WI05113",
+        "district": "05",
+        "name": "FITZGERALD, SCOTT",
+        "office": "H",
+        "party": "REP",
+        "state": "WI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 72.1,
+          "value": 0.4971,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 87.4,
+          "value": 0.4157,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 53.8,
+          "value": 0.3676,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9995,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 65.0,
+          "value": 0.0881,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 70.5,
+      "generated_at": "2026-07-15T11:47:52.898811+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 70.5,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T11:49:08.525430+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1463426.9,
+      "debts": 0.0,
+      "disbursements": 432835.64,
+      "individualContributions": 383905.31,
+      "receipts": 1058656.74
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "F000471",
     "birthYear": "1963",
@@ -435,7 +583,7 @@
         "stateName": "Wisconsin"
       }
     ],
-    "updateDate": "2026-07-14T07:40:28Z"
+    "updateDate": "2026-07-15T07:40:31Z"
   },
   "nominate": {
     "dim1": 0.602,

@@ -1,9 +1,43 @@
 {
   "bioguideId": "M001246",
   "committees": {
-    "assignments": [],
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSSM",
+        "committee": "House Committee on Small Business",
+        "committeeUrl": "https://smallbusiness.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 12,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSHM",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": false,
+        "party": "minority",
+        "rank": 13,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSHM11",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Border Security and Enforcement"
+      }
+    ],
     "bioguideId": "M001246",
-    "count": 0,
+    "count": 3,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -39,7 +73,7 @@
       "birthYear": "1977",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 76,
+        "count": 78,
         "url": "https://api.congress.gov/v3/member/M001246/cosponsored-legislation"
       },
       "currentMember": true,
@@ -84,7 +118,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "m001246",
@@ -115,8 +149,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 92.0,
-        "value": 0.8292,
+        "score": 92.1,
+        "value": 0.8296,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -138,7 +172,53 @@
     },
     "cycle": 2026,
     "financeScore": 92.1,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 552714.5,
+          "label": "Small individual (unitemized)",
+          "share": 0.36242174228432583
+        },
+        {
+          "amount": 705408.61,
+          "label": "Large individual (itemized)",
+          "share": 0.4625451611248927
+        },
+        {
+          "amount": 254335.78,
+          "label": "PAC / other committees",
+          "share": 0.16677112055653143
+        },
+        {
+          "amount": 5600.0,
+          "label": "Political party committees",
+          "share": 0.003671989348555583
+        },
+        {
+          "amount": 7000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0045899866856944785
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6NJ11286",
+        "district": "11",
+        "name": "MEJIA, ANALILIA",
+        "office": "H",
+        "party": "DEM",
+        "state": "NJ"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 134395.13,
+        "debts": 49601.96,
+        "disbursements": 1406663.76,
+        "individualContributions": 1258123.11,
+        "receipts": 1541058.89
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "A-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -149,14 +229,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T23:13:01.998421+00:00"
+    "updated_at": "2026-07-15T09:21:33.736221+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001246",
+    "breakdown": [
+      {
+        "amount": 552714.5,
+        "label": "Small individual (unitemized)",
+        "share": 0.36242174228432583
+      },
+      {
+        "amount": 705408.61,
+        "label": "Large individual (itemized)",
+        "share": 0.4625451611248927
+      },
+      {
+        "amount": 254335.78,
+        "label": "PAC / other committees",
+        "share": 0.16677112055653143
+      },
+      {
+        "amount": 5600.0,
+        "label": "Political party committees",
+        "share": 0.003671989348555583
+      },
+      {
+        "amount": 7000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0045899866856944785
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NJ11286",
+      "district": "11",
+      "name": "MEJIA, ANALILIA",
+      "office": "H",
+      "party": "DEM",
+      "state": "NJ"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001246",
+      "candidate": {
+        "candidate_id": "H6NJ11286",
+        "district": "11",
+        "name": "MEJIA, ANALILIA",
+        "office": "H",
+        "party": "DEM",
+        "state": "NJ"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 84.6,
+          "value": 0.6469,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 88.7,
+          "value": 0.4445,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 92.1,
+          "value": 0.8296,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9918,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 96.4,
+          "value": 0.4393,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 92.1,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "A-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 92.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:21:33.736221+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 134395.13,
+      "debts": 49601.96,
+      "disbursements": 1406663.76,
+      "individualContributions": 1258123.11,
+      "receipts": 1541058.89
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "M001246",
     "birthYear": "1977",
@@ -211,7 +393,7 @@
     "birthYear": "1977",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 76,
+      "count": 78,
       "url": "https://api.congress.gov/v3/member/M001246/cosponsored-legislation"
     },
     "currentMember": true,
@@ -256,7 +438,7 @@
         "stateName": "New Jersey"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": -0.382,

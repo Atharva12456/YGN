@@ -20,7 +20,7 @@
         "committeeUrl": "https://edlabor.house.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 16,
+        "rank": 17,
         "role": null,
         "subcommittee": null
       },
@@ -31,7 +31,7 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 26,
+        "rank": 25,
         "role": null,
         "subcommittee": null
       },
@@ -53,20 +53,9 @@
         "committeeUrl": "https://homeland.house.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 4,
+        "rank": 3,
         "role": null,
         "subcommittee": "Emergency Management and Technology"
-      },
-      {
-        "chamber": "house",
-        "code": "HSHM05",
-        "committee": "House Committee on Homeland Security",
-        "committeeUrl": "https://homeland.house.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 4,
-        "role": null,
-        "subcommittee": "Counterterrorism and Intelligence"
       },
       {
         "chamber": "house",
@@ -75,9 +64,20 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": "Western Hemisphere"
+      },
+      {
+        "chamber": "house",
+        "code": "HSHM05",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Counterterrorism and Intelligence"
       },
       {
         "chamber": "house",
@@ -165,7 +165,7 @@
       "birthYear": "1982",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 241,
+        "count": 242,
         "url": "https://api.congress.gov/v3/member/M001230/cosponsored-legislation"
       },
       "currentMember": true,
@@ -232,7 +232,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "m001230",
@@ -286,7 +286,53 @@
     },
     "cycle": 2026,
     "financeScore": 75.8,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 506594.97,
+          "label": "Small individual (unitemized)",
+          "share": 0.22634280880042443
+        },
+        {
+          "amount": 805860.91,
+          "label": "Large individual (itemized)",
+          "share": 0.36005257192321916
+        },
+        {
+          "amount": 920719.8,
+          "label": "PAC / other committees",
+          "share": 0.4113706570165216
+        },
+        {
+          "amount": 5000.0,
+          "label": "Political party committees",
+          "share": 0.0022339622598347595
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8PA15195",
+        "district": "07",
+        "name": "MACKENZIE, RYAN EDWARD",
+        "office": "H",
+        "party": "REP",
+        "state": "PA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2594247.39,
+        "debts": 39140.69,
+        "disbursements": 1235340.95,
+        "individualContributions": 1312455.88,
+        "receipts": 3726348.43
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -297,14 +343,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T23:13:33.974804+00:00"
+    "updated_at": "2026-07-15T09:21:45.133919+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001230",
+    "breakdown": [
+      {
+        "amount": 506594.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.22634280880042443
+      },
+      {
+        "amount": 805860.91,
+        "label": "Large individual (itemized)",
+        "share": 0.36005257192321916
+      },
+      {
+        "amount": 920719.8,
+        "label": "PAC / other committees",
+        "share": 0.4113706570165216
+      },
+      {
+        "amount": 5000.0,
+        "label": "Political party committees",
+        "share": 0.0022339622598347595
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8PA15195",
+      "district": "07",
+      "name": "MACKENZIE, RYAN EDWARD",
+      "office": "H",
+      "party": "REP",
+      "state": "PA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001230",
+      "candidate": {
+        "candidate_id": "H8PA15195",
+        "district": "07",
+        "name": "MACKENZIE, RYAN EDWARD",
+        "office": "H",
+        "party": "REP",
+        "state": "PA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 73.1,
+          "value": 0.2254,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 74.4,
+          "value": 0.5864,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9987,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 95.1,
+          "value": 0.386,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 75.8,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 75.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:21:45.133919+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2594247.39,
+      "debts": 39140.69,
+      "disbursements": 1235340.95,
+      "individualContributions": 1312455.88,
+      "receipts": 3726348.43
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "M001230",
     "birthYear": "1982",
@@ -359,7 +507,7 @@
     "birthYear": "1982",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 241,
+      "count": 242,
       "url": "https://api.congress.gov/v3/member/M001230/cosponsored-legislation"
     },
     "currentMember": true,
@@ -426,7 +574,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": 0.318,

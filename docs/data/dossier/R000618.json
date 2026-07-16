@@ -20,18 +20,7 @@
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 7,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "senate",
-        "code": "SSBK",
-        "committee": "Senate Committee on Banking, Housing, and Urban Affairs",
-        "committeeUrl": "http://banking.senate.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 9,
+        "rank": 6,
         "role": null,
         "subcommittee": null
       },
@@ -40,6 +29,17 @@
         "code": "SSBU",
         "committee": "Senate Committee on the Budget",
         "committeeUrl": "http://www.budget.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 8,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSBK",
+        "committee": "Senate Committee on Banking, Housing, and Urban Affairs",
+        "committeeUrl": "http://banking.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 9,
@@ -103,6 +103,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
+      },
+      {
+        "chamber": "senate",
         "code": "SSFR14",
         "committee": "Senate Committee on Foreign Relations",
         "committeeUrl": "http://www.foreign.senate.gov/",
@@ -114,23 +125,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSEV10",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 5,
-        "role": null,
-        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
-      },
-      {
-        "chamber": "senate",
         "code": "SSEV08",
         "committee": "Senate Committee on Environment and Public Works",
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": "Transportation and Infrastructure"
       },
@@ -203,7 +203,7 @@
       "birthYear": "1964",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 743,
+        "count": 746,
         "url": "https://api.congress.gov/v3/member/R000618/cosponsored-legislation"
       },
       "currentMember": true,
@@ -319,7 +319,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 164568.28,
+          "label": "Small individual (unitemized)",
+          "share": 0.05180083664781205
+        },
+        {
+          "amount": 1588884.04,
+          "label": "Large individual (itemized)",
+          "share": 0.5001299315296707
+        },
+        {
+          "amount": 1315602.65,
+          "label": "PAC / other committees",
+          "share": 0.4141096811978508
+        },
+        {
+          "amount": 62000.0,
+          "label": "Political party committees",
+          "share": 0.019515619122739494
+        },
+        {
+          "amount": 45887.54,
+          "label": "Self-funding & candidate loans",
+          "share": 0.014443931501926991
+        }
+      ],
+      "candidate": {
+        "candidateId": "S6NE00129",
+        "district": "00",
+        "name": "RICKETTS, PETE",
+        "office": "S",
+        "party": "REP",
+        "state": "NE"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1072534.52,
+        "debts": 0.0,
+        "disbursements": 4281083.75,
+        "individualContributions": 1753452.32,
+        "receipts": 4866649.16
+      }
+    },
+    "generated_at": "2026-07-15T15:49:46.765621+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -328,14 +374,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 67.6,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:09:40.280466+00:00"
+    "updated_at": "2026-07-15T15:50:31.990973+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "R000618",
+    "breakdown": [
+      {
+        "amount": 164568.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.05180083664781205
+      },
+      {
+        "amount": 1588884.04,
+        "label": "Large individual (itemized)",
+        "share": 0.5001299315296707
+      },
+      {
+        "amount": 1315602.65,
+        "label": "PAC / other committees",
+        "share": 0.4141096811978508
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.019515619122739494
+      },
+      {
+        "amount": 45887.54,
+        "label": "Self-funding & candidate loans",
+        "share": 0.014443931501926991
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6NE00129",
+      "district": "00",
+      "name": "RICKETTS, PETE",
+      "office": "S",
+      "party": "REP",
+      "state": "NE"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "R000618",
+      "candidate": {
+        "candidate_id": "S6NE00129",
+        "district": "00",
+        "name": "RICKETTS, PETE",
+        "office": "S",
+        "party": "REP",
+        "state": "NE"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 86.3,
+          "value": 0.3926,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 72.0,
+          "value": 0.5664,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 94.1,
+          "value": 0.9778,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 66.1,
+          "value": 0.0939,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T15:49:46.765621+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 67.6,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T15:50:31.990973+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1072534.52,
+      "debts": 0.0,
+      "disbursements": 4281083.75,
+      "individualContributions": 1753452.32,
+      "receipts": 4866649.16
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "R000618",
     "birthYear": "1964",
@@ -399,7 +542,7 @@
     "birthYear": "1964",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 743,
+      "count": 746,
       "url": "https://api.congress.gov/v3/member/R000618/cosponsored-legislation"
     },
     "currentMember": true,

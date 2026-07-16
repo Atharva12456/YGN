@@ -59,6 +59,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSAG15",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": null,
+        "subcommittee": "Forestry and Horticulture"
+      },
+      {
+        "chamber": "house",
         "code": "HSAP02",
         "committee": "House Committee on Appropriations",
         "committeeUrl": "https://appropriations.house.gov/",
@@ -67,10 +78,21 @@
         "rank": 10,
         "role": null,
         "subcommittee": "Defense"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAG16",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 14,
+        "role": null,
+        "subcommittee": "General Farm Commodities, Risk Management, and Credit"
       }
     ],
     "bioguideId": "V000129",
-    "count": 6,
+    "count": 8,
     "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
@@ -229,7 +251,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-14T07:40:29Z"
+      "updateDate": "2026-07-15T07:40:32Z"
     },
     "request": {
       "bioguideId": "v000129",
@@ -244,7 +266,7 @@
     "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "V000129",
     "birthYear": "1977",
@@ -455,7 +477,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-14T07:40:29Z"
+    "updateDate": "2026-07-15T07:40:32Z"
   },
   "nominate": {
     "dim1": 0.256,

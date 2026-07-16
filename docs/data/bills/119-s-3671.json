@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-18T19:37:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3671",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill bars the SEC and exchanges from prohibiting or conditioning closed-end funds' investments in private funds or limiting listing or sales because of such investments. It defines private fund by reference to the Investment Advisers Act, covers closed-end companies including BDCs, and preserves fiduciary, valuation, liquidity, and redemption obligations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:41:23.912362+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "cb845fb651f3e5c3ae346120",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars the SEC from forbidding closed-end investment companies, including business development companies, to invest any or all assets in private funds as defined by the Investment Advisers Act. It prevents national securities exchanges from refusing to list or trade those closed-end company securities.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:41:18.431331+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "cb845fb651f3e5c3ae346120",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:58:55.344542+00:00",
   "source": "congress_api"

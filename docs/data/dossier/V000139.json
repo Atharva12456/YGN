@@ -37,18 +37,29 @@
       },
       {
         "chamber": "house",
+        "code": "HSSY18",
+        "committee": "House Committee on Science, Space, and Technology",
+        "committeeUrl": "https://science.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Environment"
+      },
+      {
+        "chamber": "house",
         "code": "HSHM05",
         "committee": "House Committee on Homeland Security",
         "committeeUrl": "https://homeland.house.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 5,
+        "rank": 6,
         "role": null,
         "subcommittee": "Counterterrorism and Intelligence"
       }
     ],
     "bioguideId": "V000139",
-    "count": 4,
+    "count": 5,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -133,7 +144,7 @@
           "stateName": "Tennessee"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "v000139",
@@ -187,7 +198,53 @@
     },
     "cycle": 2026,
     "financeScore": 84.1,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 408873.62,
+          "label": "Small individual (unitemized)",
+          "share": 0.20671406307299992
+        },
+        {
+          "amount": 1076188.5,
+          "label": "Large individual (itemized)",
+          "share": 0.5440881646202491
+        },
+        {
+          "amount": 485600.0,
+          "label": "PAC / other committees",
+          "share": 0.2455045865474245
+        },
+        {
+          "amount": 7305.0,
+          "label": "Political party committees",
+          "share": 0.0036931857593264744
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6TN07161",
+        "district": "07",
+        "name": "VAN EPPS, MATTHEW ROBERT",
+        "office": "H",
+        "party": "REP",
+        "state": "TN"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 135155.31,
+        "debts": 148237.23,
+        "disbursements": 1846901.87,
+        "individualContributions": 1485062.12,
+        "receipts": 1982057.18
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -199,14 +256,117 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-13T23:13:05.469755+00:00"
+    "updated_at": "2026-07-15T09:21:37.737125+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "V000139",
+    "breakdown": [
+      {
+        "amount": 408873.62,
+        "label": "Small individual (unitemized)",
+        "share": 0.20671406307299992
+      },
+      {
+        "amount": 1076188.5,
+        "label": "Large individual (itemized)",
+        "share": 0.5440881646202491
+      },
+      {
+        "amount": 485600.0,
+        "label": "PAC / other committees",
+        "share": 0.2455045865474245
+      },
+      {
+        "amount": 7305.0,
+        "label": "Political party committees",
+        "share": 0.0036931857593264744
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6TN07161",
+      "district": "07",
+      "name": "VAN EPPS, MATTHEW ROBERT",
+      "office": "H",
+      "party": "REP",
+      "state": "TN"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "V000139",
+      "candidate": {
+        "candidate_id": "H6TN07161",
+        "district": "07",
+        "name": "VAN EPPS, MATTHEW ROBERT",
+        "office": "H",
+        "party": "REP",
+        "state": "TN"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 58.5,
+          "value": 0.3548,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.0,
+          "value": 0.7485,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 87.6,
+          "value": 0.7508,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9963,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 88.1,
+          "value": 0.2753,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 84.1,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 74.1,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-15T09:21:37.737125+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 135155.31,
+      "debts": 148237.23,
+      "disbursements": 1846901.87,
+      "individualContributions": 1485062.12,
+      "receipts": 1982057.18
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "V000139",
     "birthYear": "1983",
@@ -310,7 +470,7 @@
         "stateName": "Tennessee"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": 0.657,

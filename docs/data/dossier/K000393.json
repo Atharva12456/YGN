@@ -20,7 +20,7 @@
         "committeeUrl": "http://www.budget.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 8,
+        "rank": 7,
         "role": null,
         "subcommittee": null
       },
@@ -31,7 +31,7 @@
         "committeeUrl": "http://www.judiciary.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 8,
+        "rank": 7,
         "role": null,
         "subcommittee": null
       },
@@ -42,7 +42,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 9,
+        "rank": 8,
         "role": null,
         "subcommittee": null
       },
@@ -67,6 +67,17 @@
         "rank": 1,
         "role": "Chairman",
         "subcommittee": "Economic Policy"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP18",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
       },
       {
         "chamber": "senate",
@@ -103,23 +114,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP18",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 4,
-        "role": null,
-        "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
-      },
-      {
-        "chamber": "senate",
         "code": "SSJU25",
         "committee": "Senate Committee on the Judiciary",
         "committeeUrl": "http://www.judiciary.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": "Federal Courts, Oversight, Agency Action, and Federal Rights"
       },
@@ -130,7 +130,7 @@
         "committeeUrl": "http://www.judiciary.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": "Border Security and Immigration"
       },
@@ -141,7 +141,7 @@
         "committeeUrl": "http://www.judiciary.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": "Privacy, Technology, and the Law"
       },
@@ -152,9 +152,20 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": "Commerce, Justice, Science, and Related Agencies"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSAP24",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
       },
       {
         "chamber": "senate",
@@ -169,23 +180,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP24",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 7,
-        "role": null,
-        "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
-      },
-      {
-        "chamber": "senate",
         "code": "SSAP02",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 9,
+        "rank": 8,
         "role": null,
         "subcommittee": "Department of Defense"
       }
@@ -381,7 +381,7 @@
       },
       "pac_independence": {
         "score": 96.4,
-        "value": 0.9916,
+        "value": 0.991,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -390,8 +390,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 97.2,
-        "value": 0.5153,
+        "score": 97.1,
+        "value": 0.5108,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -400,23 +400,166 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 11394120.69,
+          "label": "Small individual (unitemized)",
+          "share": 0.5062071823132576
+        },
+        {
+          "amount": 10911913.13,
+          "label": "Large individual (itemized)",
+          "share": 0.48478412239675334
+        },
+        {
+          "amount": 202775.0,
+          "label": "PAC / other committees",
+          "share": 0.00900869528998914
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S4LA00065",
+        "district": "00",
+        "name": "KENNEDY, JOHN NEELY",
+        "office": "S",
+        "party": "REP",
+        "state": "LA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 18589497.03,
+        "debts": 0.0,
+        "disbursements": 16894227.03,
+        "individualContributions": 22306033.82,
+        "receipts": 25577144.39
+      }
+    },
+    "generated_at": "2026-07-15T22:14:28.603785+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 96.7,
+    "score": 96.6,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:10:39.868281+00:00"
+    "updated_at": "2026-07-15T22:15:32.687171+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "K000393",
+    "breakdown": [
+      {
+        "amount": 11394120.69,
+        "label": "Small individual (unitemized)",
+        "share": 0.5062071823132576
+      },
+      {
+        "amount": 10911913.13,
+        "label": "Large individual (itemized)",
+        "share": 0.48478412239675334
+      },
+      {
+        "amount": 202775.0,
+        "label": "PAC / other committees",
+        "share": 0.00900869528998914
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4LA00065",
+      "district": "00",
+      "name": "KENNEDY, JOHN NEELY",
+      "office": "S",
+      "party": "REP",
+      "state": "LA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "K000393",
+      "candidate": {
+        "candidate_id": "S4LA00065",
+        "district": "00",
+        "name": "KENNEDY, JOHN NEELY",
+        "office": "S",
+        "party": "REP",
+        "state": "LA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.4,
+          "value": 0.991,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 97.1,
+          "value": 0.5108,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T22:14:28.603785+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.6,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T22:15:32.687171+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 18589497.03,
+      "debts": 0.0,
+      "disbursements": 16894227.03,
+      "individualContributions": 22306033.82,
+      "receipts": 25577144.39
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "K000393",
     "birthYear": "1951",

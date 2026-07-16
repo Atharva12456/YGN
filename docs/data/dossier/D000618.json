@@ -203,7 +203,7 @@
       "birthYear": "1962",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 2510,
+        "count": 2511,
         "url": "https://api.congress.gov/v3/member/D000618/cosponsored-legislation"
       },
       "currentMember": true,
@@ -355,7 +355,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 645872.31,
+          "label": "Small individual (unitemized)",
+          "share": 0.11771680368346077
+        },
+        {
+          "amount": 2333914.66,
+          "label": "Large individual (itemized)",
+          "share": 0.42537970678007714
+        },
+        {
+          "amount": 2444875.0,
+          "label": "PAC / other committees",
+          "share": 0.4456033583567023
+        },
+        {
+          "amount": 62000.0,
+          "label": "Political party committees",
+          "share": 0.011300131179759924
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S2MT00096",
+        "district": "00",
+        "name": "DAINES, STEVE",
+        "office": "S",
+        "party": "REP",
+        "state": "MT"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4275067.25,
+        "debts": 44813.08,
+        "disbursements": 4168226.25,
+        "individualContributions": 2979786.97,
+        "receipts": 8335510.53
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -364,14 +410,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 70.1,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:12:07.632010+00:00"
+    "updated_at": "2026-07-15T06:30:29.668540+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "D000618",
+    "breakdown": [
+      {
+        "amount": 645872.31,
+        "label": "Small individual (unitemized)",
+        "share": 0.11771680368346077
+      },
+      {
+        "amount": 2333914.66,
+        "label": "Large individual (itemized)",
+        "share": 0.42537970678007714
+      },
+      {
+        "amount": 2444875.0,
+        "label": "PAC / other committees",
+        "share": 0.4456033583567023
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.011300131179759924
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2MT00096",
+      "district": "00",
+      "name": "DAINES, STEVE",
+      "office": "S",
+      "party": "REP",
+      "state": "MT"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "D000618",
+      "candidate": {
+        "candidate_id": "S2MT00096",
+        "district": "00",
+        "name": "DAINES, STEVE",
+        "office": "S",
+        "party": "REP",
+        "state": "MT"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 61.1,
+          "value": 0.1261,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 69.2,
+          "value": 0.5431,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9926,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 84.3,
+          "value": 0.2168,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 70.1,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:30:29.668540+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4275067.25,
+      "debts": 44813.08,
+      "disbursements": 4168226.25,
+      "individualContributions": 2979786.97,
+      "receipts": 8335510.53
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "D000618",
     "birthYear": "1962",
@@ -481,7 +624,7 @@
     "birthYear": "1962",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 2510,
+      "count": 2511,
       "url": "https://api.congress.gov/v3/member/D000618/cosponsored-legislation"
     },
     "currentMember": true,

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 187,
@@ -1909,7 +1909,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-18T20:25:26Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/996",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution impeaches DHS Secretary Kristi Lynn Arnold Noem, alleging obstruction of Congress and breach of public trust for denying Member oversight, withholding FEMA funds, and directing ICE warrantless arrests and raids. If adopted it would formally impeach Noem and send articles to the Senate, targeting her DHS conduct.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:42:11.830891+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1392ac92138d46d4f5d99b32",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution impeaches Kristi Lynn Arnold Noem, Secretary of Homeland Security. It says she blocked oversight of DHS and ICE detention sites, oversaw ICE warrantless arrests and Chicago raids, and directed FEMA to withhold Emergency Food and Shelter and Shelter and Services Program funds.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:42:18.330718+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1392ac92138d46d4f5d99b32",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:59:03.213688+00:00",
   "source": "congress_api"

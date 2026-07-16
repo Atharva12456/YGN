@@ -20,7 +20,7 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 18,
+        "rank": 17,
         "role": null,
         "subcommittee": null
       },
@@ -48,6 +48,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSFA13",
+        "committee": "House Committee on Foreign Affairs",
+        "committeeUrl": "https://foreignaffairs.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Middle East and North Africa"
+      },
+      {
+        "chamber": "house",
         "code": "HSFA19",
         "committee": "House Committee on Foreign Affairs",
         "committeeUrl": "https://foreignaffairs.house.gov/",
@@ -56,17 +67,6 @@
         "rank": 5,
         "role": null,
         "subcommittee": "South and Central Asia"
-      },
-      {
-        "chamber": "house",
-        "code": "HSFA13",
-        "committee": "House Committee on Foreign Affairs",
-        "committeeUrl": "https://foreignaffairs.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 5,
-        "role": null,
-        "subcommittee": "Middle East and North Africa"
       }
     ],
     "bioguideId": "L000606",
@@ -121,7 +121,7 @@
       "birthYear": "1953",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 436,
+        "count": 438,
         "url": "https://api.congress.gov/v3/member/L000606/cosponsored-legislation"
       },
       "currentMember": true,
@@ -188,7 +188,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-07-14T07:40:32Z"
+      "updateDate": "2026-07-15T07:40:35Z"
     },
     "request": {
       "bioguideId": "l000606",
@@ -408,7 +408,7 @@
       "receipts": 489299.57
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "L000606",
     "birthYear": "1953",
@@ -463,7 +463,7 @@
     "birthYear": "1953",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 436,
+      "count": 438,
       "url": "https://api.congress.gov/v3/member/L000606/cosponsored-legislation"
     },
     "currentMember": true,
@@ -530,7 +530,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-07-14T07:40:32Z"
+    "updateDate": "2026-07-15T07:40:35Z"
   },
   "nominate": {
     "dim1": -0.391,

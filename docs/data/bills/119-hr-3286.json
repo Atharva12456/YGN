@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "B001282",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Barr, Andy [R-KY-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-04",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "B000668",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Bentz, Cliff [R-OR-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-23",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "C001108",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Comer, James [R-KY-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-06-26",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "M001220",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McGarvey, Morgan [D-KY-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-07-14",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "R000395",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Rogers, Harold [R-KY-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-07-21",
+        "state": "KY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Mammoth Cave National Park Boundary Adjustment Act of 2025",
+      "updated_at": "2026-03-19T08:07:21Z"
+    },
+    "detailPath": "119/hr/3286",
+    "identifier": "HR 3286",
+    "introducedDate": "2025-05-08",
+    "latestAction": {
+      "date": "2026-03-18",
+      "text": "Subcommittee Hearings Held"
+    },
+    "number": "3286",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "G000558",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Guthrie, Brett [R-KY-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KY"
+      }
+    ],
+    "title": "Mammoth Cave National Park Boundary Adjustment Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-19T08:07:21Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/3286",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets the Interior Secretary acquire 551.14 acres labeled \"Proposed Addition\" on a May 2025 map into Mammoth Cave National Park. It makes a $350,000 figure CPI-adjustable, amends section 11 of the 1942 Act, and covers land in Edmonson and Barren Counties, Kentucky.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:36.927451+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "70cd1862de8db2176347df8d",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill authorizes Secretary of the Interior and National Park Service to acquire 551.14 acres in Edmonson and Barren Counties, Kentucky, for Mammoth Cave National Park. It makes the $350,000 acquisition cap annually adjusted by the Consumer Price Index from the Bureau of Labor Statistics.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:36.577531+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "70cd1862de8db2176347df8d",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:28.119405+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001125",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carter, Troy A. [D-LA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-17",
+        "state": "LA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "State Offices of Rural Health Program Reauthorization Act of 2026",
+      "updated_at": "2026-03-19T15:30:52Z"
+    },
+    "detailPath": "119/hr/7956",
+    "identifier": "HR 7956",
+    "introducedDate": "2026-03-17",
+    "latestAction": {
+      "date": "2026-03-17",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "7956",
+    "originChamber": "House",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "F000482",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Fedorchak, Julie [R-ND-At Large]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "ND"
+      }
+    ],
+    "title": "State Offices of Rural Health Program Reauthorization Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-19T15:30:52Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7956",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends 42 U.S.C. 254r(i)(1) to authorize $12.5 million annually for FY2023\u20132027 and $13.5 million annually for FY2028\u20132032 for the State Offices of Rural Health program. It applies to grants made under subsection (a), funding State Offices of Rural Health that support rural health services in States and U.S. territories.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:05.565749+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "869a246893d569fc56657e7e",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill reauthorizes the State Offices of Rural Health program and authorizes $12.5 million annually for FY2023\u20132027 and $13.5 million annually for FY2028\u20132032. Those grants fund HRSA's State Offices of Rural Health and help state health departments, rural hospitals, clinics, and other rural health providers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:09.131875+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "869a246893d569fc56657e7e",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:28.918466+00:00",
+  "source": "congress_api"
+}

@@ -4,17 +4,6 @@
     "assignments": [
       {
         "chamber": "house",
-        "code": "HSGO",
-        "committee": "House Committee on Oversight and Government Reform",
-        "committeeUrl": "https://oversight.house.gov/",
-        "isSubcommittee": false,
-        "party": "minority",
-        "rank": 10,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "house",
         "code": "HSED",
         "committee": "House Committee on Education and Workforce",
         "committeeUrl": "https://edlabor.house.gov/",
@@ -26,14 +15,14 @@
       },
       {
         "chamber": "house",
-        "code": "HSGO33",
-        "committee": "House Committee on Oversight and Government Reform",
-        "committeeUrl": "https://oversight.house.gov/",
-        "isSubcommittee": true,
+        "code": "HSJU",
+        "committee": "House Committee on the Judiciary",
+        "committeeUrl": "https://judiciary.house.gov/",
+        "isSubcommittee": false,
         "party": "minority",
-        "rank": 1,
-        "role": "Ranking Member",
-        "subcommittee": "Federal Law Enforcement"
+        "rank": 19,
+        "role": null,
+        "subcommittee": null
       },
       {
         "chamber": "house",
@@ -59,8 +48,8 @@
       }
     ],
     "bioguideId": "L000602",
-    "count": 5,
-    "leadershipCount": 1,
+    "count": 4,
+    "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -114,7 +103,7 @@
       "birthYear": "1987",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 985,
+        "count": 987,
         "url": "https://api.congress.gov/v3/member/L000602/cosponsored-legislation"
       },
       "currentMember": true,
@@ -204,7 +193,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-07-14T07:40:31Z"
+      "updateDate": "2026-07-15T07:40:34Z"
     },
     "request": {
       "bioguideId": "l000602",
@@ -424,7 +413,7 @@
       "receipts": 1349102.7
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "L000602",
     "birthYear": "1987",
@@ -488,7 +477,7 @@
     "birthYear": "1987",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 985,
+      "count": 987,
       "url": "https://api.congress.gov/v3/member/L000602/cosponsored-legislation"
     },
     "currentMember": true,
@@ -578,7 +567,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-07-14T07:40:31Z"
+    "updateDate": "2026-07-15T07:40:34Z"
   },
   "nominate": {
     "dim1": -0.45,

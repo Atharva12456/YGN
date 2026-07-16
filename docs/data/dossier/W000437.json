@@ -53,7 +53,7 @@
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 8,
+        "rank": 7,
         "role": null,
         "subcommittee": null
       },
@@ -108,9 +108,20 @@
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 4,
+        "rank": 3,
         "role": null,
         "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
       },
       {
         "chamber": "senate",
@@ -136,14 +147,14 @@
       },
       {
         "chamber": "senate",
-        "code": "SSEV10",
+        "code": "SSEV08",
         "committee": "Senate Committee on Environment and Public Works",
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
         "rank": 6,
         "role": null,
-        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
+        "subcommittee": "Transportation and Infrastructure"
       },
       {
         "chamber": "senate",
@@ -177,17 +188,6 @@
         "rank": 7,
         "role": "Ex Officio",
         "subcommittee": "Strategic Forces"
-      },
-      {
-        "chamber": "senate",
-        "code": "SSEV08",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 7,
-        "role": null,
-        "subcommittee": "Transportation and Infrastructure"
       },
       {
         "chamber": "senate",
@@ -269,7 +269,7 @@
       "birthYear": "1951",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 4504,
+        "count": 4505,
         "url": "https://api.congress.gov/v3/member/W000437/cosponsored-legislation"
       },
       "currentMember": true,
@@ -314,7 +314,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 755,
+        "count": 756,
         "url": "https://api.congress.gov/v3/member/W000437/sponsored-legislation"
       },
       "state": "Mississippi",
@@ -494,7 +494,7 @@
     "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "W000437",
     "birthYear": "1951",
@@ -694,7 +694,7 @@
     "birthYear": "1951",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 4504,
+      "count": 4505,
       "url": "https://api.congress.gov/v3/member/W000437/cosponsored-legislation"
     },
     "currentMember": true,
@@ -739,7 +739,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 755,
+      "count": 756,
       "url": "https://api.congress.gov/v3/member/W000437/sponsored-legislation"
     },
     "state": "Mississippi",

@@ -188,7 +188,7 @@
       "birthYear": "1979",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 2757,
+        "count": 2761,
         "url": "https://api.congress.gov/v3/member/G000574/cosponsored-legislation"
       },
       "currentMember": true,
@@ -248,7 +248,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 274,
+        "count": 275,
         "url": "https://api.congress.gov/v3/member/G000574/sponsored-legislation"
       },
       "state": "Arizona",
@@ -363,7 +363,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1624578.18,
+          "label": "Small individual (unitemized)",
+          "share": 0.4650450116144877
+        },
+        {
+          "amount": 1511137.35,
+          "label": "Large individual (itemized)",
+          "share": 0.43257191013228813
+        },
+        {
+          "amount": 357662.83,
+          "label": "PAC / other committees",
+          "share": 0.10238307825322421
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S4AZ00139",
+        "district": "00",
+        "name": "GALLEGO, RUBEN",
+        "office": "S",
+        "party": "DEM",
+        "state": "AZ"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1928406.68,
+        "debts": 0.0,
+        "disbursements": 2108123.24,
+        "individualContributions": 3135715.53,
+        "receipts": 3825377.22
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -372,14 +418,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 96.5,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:11:58.138771+00:00"
+    "updated_at": "2026-07-15T06:29:55.266144+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "G000574",
+    "breakdown": [
+      {
+        "amount": 1624578.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.4650450116144877
+      },
+      {
+        "amount": 1511137.35,
+        "label": "Large individual (itemized)",
+        "share": 0.43257191013228813
+      },
+      {
+        "amount": 357662.83,
+        "label": "PAC / other committees",
+        "share": 0.10238307825322421
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4AZ00139",
+      "district": "00",
+      "name": "GALLEGO, RUBEN",
+      "office": "S",
+      "party": "DEM",
+      "state": "AZ"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000574",
+      "candidate": {
+        "candidate_id": "S4AZ00139",
+        "district": "00",
+        "name": "GALLEGO, RUBEN",
+        "office": "S",
+        "party": "DEM",
+        "state": "AZ"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 95.9,
+          "value": 0.8976,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 97.2,
+          "value": 0.5181,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.5,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:29:55.266144+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1928406.68,
+      "debts": 0.0,
+      "disbursements": 2108123.24,
+      "individualContributions": 3135715.53,
+      "receipts": 3825377.22
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "G000574",
     "birthYear": "1979",
@@ -480,7 +623,7 @@
     "birthYear": "1979",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 2757,
+      "count": 2761,
       "url": "https://api.congress.gov/v3/member/G000574/cosponsored-legislation"
     },
     "currentMember": true,
@@ -540,7 +683,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 274,
+      "count": 275,
       "url": "https://api.congress.gov/v3/member/G000574/sponsored-legislation"
     },
     "state": "Arizona",

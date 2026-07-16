@@ -20,9 +20,20 @@
         "committeeUrl": "https://financialservices.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 15,
+        "rank": 14,
         "role": null,
         "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSBA16",
+        "committee": "House Committee on Financial Services",
+        "committeeUrl": "https://financialservices.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Capital Markets"
       },
       {
         "chamber": "house",
@@ -37,23 +48,12 @@
       },
       {
         "chamber": "house",
-        "code": "HSBA16",
-        "committee": "House Committee on Financial Services",
-        "committeeUrl": "https://financialservices.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 7,
-        "role": null,
-        "subcommittee": "Capital Markets"
-      },
-      {
-        "chamber": "house",
         "code": "HSBA20",
         "committee": "House Committee on Financial Services",
         "committeeUrl": "https://financialservices.house.gov/",
         "isSubcommittee": true,
         "party": "minority",
-        "rank": 8,
+        "rank": 7,
         "role": null,
         "subcommittee": "Financial Institutions"
       }
@@ -110,7 +110,7 @@
       "birthYear": "1971",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1802,
+        "count": 1803,
         "url": "https://api.congress.gov/v3/member/C001117/cosponsored-legislation"
       },
       "currentMember": true,
@@ -198,7 +198,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-07-14T07:40:27Z"
+      "updateDate": "2026-07-15T07:40:29Z"
     },
     "request": {
       "bioguideId": "c001117",
@@ -418,7 +418,7 @@
       "receipts": 1794623.93
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "C001117",
     "birthYear": "1971",
@@ -500,7 +500,7 @@
     "birthYear": "1971",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1802,
+      "count": 1803,
       "url": "https://api.congress.gov/v3/member/C001117/cosponsored-legislation"
     },
     "currentMember": true,
@@ -588,7 +588,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-07-14T07:40:27Z"
+    "updateDate": "2026-07-15T07:40:29Z"
   },
   "nominate": {
     "dim1": -0.627,

@@ -15,6 +15,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSHM",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 18,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
         "code": "HSAP23",
         "committee": "House Committee on Appropriations",
         "committeeUrl": "https://appropriations.house.gov/",
@@ -23,6 +34,28 @@
         "rank": 1,
         "role": "Chair",
         "subcommittee": "Financial Services and General Government"
+      },
+      {
+        "chamber": "house",
+        "code": "HSHM12",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Emergency Management and Technology"
+      },
+      {
+        "chamber": "house",
+        "code": "HSHM09",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Oversight, Investigations, and Accountability"
       },
       {
         "chamber": "house",
@@ -48,7 +81,7 @@
       }
     ],
     "bioguideId": "J000295",
-    "count": 4,
+    "count": 7,
     "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
@@ -225,7 +258,7 @@
           "stateName": "Ohio"
         }
       ],
-      "updateDate": "2026-07-14T07:40:25Z"
+      "updateDate": "2026-07-15T07:40:27Z"
     },
     "request": {
       "bioguideId": "j000295",
@@ -447,7 +480,7 @@
       "receipts": 1098009.63
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "J000295",
     "birthYear": "1957",
@@ -677,7 +710,7 @@
         "stateName": "Ohio"
       }
     ],
-    "updateDate": "2026-07-14T07:40:25Z"
+    "updateDate": "2026-07-15T07:40:27Z"
   },
   "nominate": {
     "dim1": 0.25,

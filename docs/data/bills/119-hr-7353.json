@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "HR",
     "updatedAt": "2026-03-18T15:42:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7353",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires DOT to amend the automatic emergency braking standard so AEB systems detect and respond to pedestrians, bicyclists, motorcyclists and other vulnerable road users in daylight and low light across skin, clothing, and gear. It applies to passenger motor vehicles made for sale in the United States.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:33.636944+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c93b33d4375e0eed4c4d10c6",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Secretary of Transportation (NHTSA) to amend the Federal Motor Vehicle Safety Standard for automatic emergency braking so AEB on passenger motor vehicles operates in daylight and low light and detects pedestrians, bicyclists, motorcyclists, wheelchair users, and ATV/tractor riders. It affects automakers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:04.236860+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c93b33d4375e0eed4c4d10c6",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:58:52.178001+00:00",
   "source": "congress_api"

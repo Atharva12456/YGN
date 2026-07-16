@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-18T08:06:54Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/994",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The House resolution urges the Secretary of Defense to review 10 U.S.C. \u00a7504 to determine whether to authorize enlistment under subsection (b)(2) for aliens holding DACA employment authorization documents. It would cover DACA recipients with DHS-issued work permits seeking to enlist in the U.S. Armed Forces under that enlistment authority.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:42:26.641896+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "fbb57237b2a53b8dbfe9a546",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This resolution urges the Secretary of Defense to review 10 U.S.C. \u00a7504 for authorizing enlistment of aliens with DHS DACA EADs. The review would involve the Department of Defense and could affect DACA recipients seeking to join the U.S. Armed Forces.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:42:30.343010+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "fbb57237b2a53b8dbfe9a546",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:59:03.737183+00:00",
   "source": "congress_api"

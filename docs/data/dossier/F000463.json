@@ -86,7 +86,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 13,
+        "rank": 12,
         "role": null,
         "subcommittee": null
       },
@@ -240,7 +240,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 9,
+        "rank": 8,
         "role": null,
         "subcommittee": "Commerce, Justice, Science, and Related Agencies"
       }
@@ -463,7 +463,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 12000.96,
+          "label": "Small individual (unitemized)",
+          "share": 0.020481849881927316
+        },
+        {
+          "amount": 288776.33,
+          "label": "Large individual (itemized)",
+          "share": 0.49285002537412875
+        },
+        {
+          "amount": 285154.16,
+          "label": "PAC / other committees",
+          "share": 0.486668124743944
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S2NE00094",
+        "district": "00",
+        "name": "FISCHER, DEBRA S.",
+        "office": "S",
+        "party": "REP",
+        "state": "NE"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 307133.85,
+        "debts": 0.0,
+        "disbursements": 401868.6,
+        "individualContributions": 300777.29,
+        "receipts": 683790.62
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -472,14 +518,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 73.4,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:11:59.793722+00:00"
+    "updated_at": "2026-07-15T06:30:03.060250+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "F000463",
+    "breakdown": [
+      {
+        "amount": 12000.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.020481849881927316
+      },
+      {
+        "amount": 288776.33,
+        "label": "Large individual (itemized)",
+        "share": 0.49285002537412875
+      },
+      {
+        "amount": 285154.16,
+        "label": "PAC / other committees",
+        "share": 0.486668124743944
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2NE00094",
+      "district": "00",
+      "name": "FISCHER, DEBRA S.",
+      "office": "S",
+      "party": "REP",
+      "state": "NE"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000463",
+      "candidate": {
+        "candidate_id": "S2NE00094",
+        "district": "00",
+        "name": "FISCHER, DEBRA S.",
+        "office": "S",
+        "party": "REP",
+        "state": "NE"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 65.6,
+          "value": 0.5133,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 95.4,
+          "value": 0.9863,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 53.4,
+          "value": 0.0399,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 73.4,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:30:03.060250+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 307133.85,
+      "debts": 0.0,
+      "disbursements": 401868.6,
+      "individualContributions": 300777.29,
+      "receipts": 683790.62
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "F000463",
     "birthYear": "1951",

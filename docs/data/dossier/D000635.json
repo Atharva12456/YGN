@@ -4,20 +4,20 @@
     "assignments": [
       {
         "chamber": "house",
-        "code": "HSII",
-        "committee": "House Committee on Natural Resources",
-        "committeeUrl": "https://naturalresources.house.gov/",
+        "code": "HSVR",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 9,
+        "rank": 8,
         "role": null,
         "subcommittee": null
       },
       {
         "chamber": "house",
-        "code": "HSVR",
-        "committee": "House Committee on Veterans' Affairs",
-        "committeeUrl": "https://veterans.house.gov/",
+        "code": "HSII",
+        "committee": "House Committee on Natural Resources",
+        "committeeUrl": "https://naturalresources.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
         "rank": 9,
@@ -37,6 +37,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSVR03",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Health"
+      },
+      {
+        "chamber": "house",
         "code": "HSVR09",
         "committee": "House Committee on Veterans' Affairs",
         "committeeUrl": "https://veterans.house.gov/",
@@ -45,17 +56,6 @@
         "rank": 3,
         "role": null,
         "subcommittee": "Disability Assistance and Memorial Affairs"
-      },
-      {
-        "chamber": "house",
-        "code": "HSVR03",
-        "committee": "House Committee on Veterans' Affairs",
-        "committeeUrl": "https://veterans.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 3,
-        "role": null,
-        "subcommittee": "Health"
       },
       {
         "chamber": "house",
@@ -188,7 +188,7 @@
           "stateName": "Oregon"
         }
       ],
-      "updateDate": "2026-07-14T07:40:32Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "d000635",
@@ -408,7 +408,7 @@
       "receipts": 908657.88
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "D000635",
     "birthYear": "1972",
@@ -530,7 +530,7 @@
         "stateName": "Oregon"
       }
     ],
-    "updateDate": "2026-07-14T07:40:32Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": -0.456,

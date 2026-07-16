@@ -9,7 +9,7 @@
         "committeeUrl": "https://agriculture.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 10,
+        "rank": 9,
         "role": null,
         "subcommittee": null
       },
@@ -37,6 +37,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSAG16",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 3,
+        "role": null,
+        "subcommittee": "General Farm Commodities, Risk Management, and Credit"
+      },
+      {
+        "chamber": "house",
         "code": "HSAG29",
         "committee": "House Committee on Agriculture",
         "committeeUrl": "https://agriculture.house.gov/",
@@ -45,17 +56,6 @@
         "rank": 3,
         "role": null,
         "subcommittee": "Livestock, Dairy, and Poultry"
-      },
-      {
-        "chamber": "house",
-        "code": "HSAG16",
-        "committee": "House Committee on Agriculture",
-        "committeeUrl": "https://agriculture.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 4,
-        "role": null,
-        "subcommittee": "General Farm Commodities, Risk Management, and Credit"
       },
       {
         "chamber": "house",
@@ -132,7 +132,7 @@
       "birthYear": "1971",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1515,
+        "count": 1516,
         "url": "https://api.congress.gov/v3/member/D000230/cosponsored-legislation"
       },
       "currentMember": true,
@@ -187,7 +187,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 54,
+        "count": 55,
         "url": "https://api.congress.gov/v3/member/D000230/sponsored-legislation"
       },
       "state": "North Carolina",
@@ -212,7 +212,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-07-14T07:40:30Z"
+      "updateDate": "2026-07-15T07:40:33Z"
     },
     "request": {
       "bioguideId": "d000230",
@@ -227,7 +227,7 @@
     "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "D000230",
     "birthYear": "1971",
@@ -291,7 +291,7 @@
     "birthYear": "1971",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1515,
+      "count": 1516,
       "url": "https://api.congress.gov/v3/member/D000230/cosponsored-legislation"
     },
     "currentMember": true,
@@ -346,7 +346,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 54,
+      "count": 55,
       "url": "https://api.congress.gov/v3/member/D000230/sponsored-legislation"
     },
     "state": "North Carolina",
@@ -371,7 +371,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-07-14T07:40:30Z"
+    "updateDate": "2026-07-15T07:40:33Z"
   },
   "nominate": {
     "dim1": -0.243,

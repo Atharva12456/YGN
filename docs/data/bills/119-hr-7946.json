@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Jury Duty Exemption for Breastfeeding Act of 2026",
+      "updated_at": "2026-03-19T15:17:12Z"
+    },
+    "detailPath": "119/hr/7946",
+    "identifier": "HR 7946",
+    "introducedDate": "2026-03-16",
+    "latestAction": {
+      "date": "2026-03-16",
+      "text": "Referred to the Committee on the Judiciary, and in addition to the Committee on Oversight and Government Reform, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "7946",
+    "originChamber": "House",
+    "policyArea": "Law",
+    "sponsors": [
+      {
+        "bioguideId": "N000147",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Del. Norton, Eleanor Holmes [D-DC-At Large]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "DC"
+      }
+    ],
+    "title": "Jury Duty Exemption for Breastfeeding Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-19T15:17:12Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7946",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill requires U.S. federal courts and the D.C. courts to excuse individuals who are breastfeeding from jury service upon request. It amends 28 U.S.C. \u00a71866 and D.C. Code \u00a711-1908 to authorize courts or supervising clerks to excuse summoned breastfeeding individuals in federal courts and in the District of Columbia.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:41.398336+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6fae508e9b3e22cfa8c2a331",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This bill excuses breastfeeding people from jury service in U.S. federal courts (28 U.S.C. \u00a71866) and in D.C. courts (D.C. Code \u00a711\u20111908). It lets summoned breastfeeding jurors be excused upon request and changes how federal and D.C. courts and their clerks handle jury selection.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:51.826499+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6fae508e9b3e22cfa8c2a331",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:29.188868+00:00",
+  "source": "congress_api"
+}

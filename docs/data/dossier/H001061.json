@@ -31,7 +31,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": null
       },
@@ -103,6 +103,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSAP22",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Energy and Water Development"
+      },
+      {
+        "chamber": "senate",
         "code": "SSAP17",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
@@ -125,23 +136,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP22",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 5,
-        "role": null,
-        "subcommittee": "Energy and Water Development"
-      },
-      {
-        "chamber": "senate",
         "code": "SSAP02",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": "Department of Defense"
       },
@@ -152,7 +152,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
       },
@@ -258,7 +258,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 503,
+        "count": 506,
         "url": "https://api.congress.gov/v3/member/H001061/sponsored-legislation"
       },
       "state": "North Dakota",
@@ -386,7 +386,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 26197.65,
+          "label": "Small individual (unitemized)",
+          "share": 0.03593850753881244
+        },
+        {
+          "amount": 341590.0,
+          "label": "Large individual (itemized)",
+          "share": 0.4686006107487863
+        },
+        {
+          "amount": 359150.0,
+          "label": "PAC / other committees",
+          "share": 0.492689801664061
+        },
+        {
+          "amount": 2020.0,
+          "label": "Political party committees",
+          "share": 0.0027710800483402567
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S0ND00093",
+        "district": "00",
+        "name": "HOEVEN, JOHN",
+        "office": "S",
+        "party": "REP",
+        "state": "ND"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 651732.04,
+        "debts": 100000.0,
+        "disbursements": 735111.19,
+        "individualContributions": 367787.65,
+        "receipts": 866280.03
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -395,14 +441,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 76.0,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:10:58.295154+00:00"
+    "updated_at": "2026-07-15T06:29:31.191364+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001061",
+    "breakdown": [
+      {
+        "amount": 26197.65,
+        "label": "Small individual (unitemized)",
+        "share": 0.03593850753881244
+      },
+      {
+        "amount": 341590.0,
+        "label": "Large individual (itemized)",
+        "share": 0.4686006107487863
+      },
+      {
+        "amount": 359150.0,
+        "label": "PAC / other committees",
+        "share": 0.492689801664061
+      },
+      {
+        "amount": 2020.0,
+        "label": "Political party committees",
+        "share": 0.0027710800483402567
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0ND00093",
+      "district": "00",
+      "name": "HOEVEN, JOHN",
+      "office": "S",
+      "party": "REP",
+      "state": "ND"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001061",
+      "candidate": {
+        "candidate_id": "S0ND00093",
+        "district": "00",
+        "name": "HOEVEN, JOHN",
+        "office": "S",
+        "party": "REP",
+        "state": "ND"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 64.5,
+          "value": 0.5045,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9977,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 61.9,
+          "value": 0.0712,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 76.0,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:29:31.191364+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 651732.04,
+      "debts": 100000.0,
+      "disbursements": 735111.19,
+      "individualContributions": 367787.65,
+      "receipts": 866280.03
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "H001061",
     "birthYear": "1957",
@@ -553,7 +696,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 503,
+      "count": 506,
       "url": "https://api.congress.gov/v3/member/H001061/sponsored-legislation"
     },
     "state": "North Dakota",

@@ -136,6 +136,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 7,
+        "role": "Ex Officio",
+        "subcommittee": "State, Foreign Operations, and Related Programs"
+      },
+      {
+        "chamber": "senate",
         "code": "SSAP17",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
@@ -147,23 +158,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP20",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 8,
-        "role": "Ex Officio",
-        "subcommittee": "State, Foreign Operations, and Related Programs"
-      },
-      {
-        "chamber": "senate",
         "code": "SSAP22",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 10,
+        "rank": 9,
         "role": "Ex Officio",
         "subcommittee": "Energy and Water Development"
       },
@@ -174,7 +174,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 10,
+        "rank": 9,
         "role": "Ex Officio",
         "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
       }
@@ -462,7 +462,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1055538.21,
+          "label": "Small individual (unitemized)",
+          "share": 0.10011144271737807
+        },
+        {
+          "amount": 7890124.53,
+          "label": "Large individual (itemized)",
+          "share": 0.7483307969666723
+        },
+        {
+          "amount": 1535969.25,
+          "label": "PAC / other committees",
+          "share": 0.14567743368288785
+        },
+        {
+          "amount": 62000.0,
+          "label": "Political party committees",
+          "share": 0.005880326633061858
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S6ME00159",
+        "district": "00",
+        "name": "COLLINS, SUSAN M.",
+        "office": "S",
+        "party": "REP",
+        "state": "ME"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 9672914.33,
+        "debts": 0.0,
+        "disbursements": 6547574.47,
+        "individualContributions": 8945662.74,
+        "receipts": 14925296.32
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -471,14 +517,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 71.5,
     "source": "fec_live",
-    "updated_at": "2026-07-13T23:14:39.778187+00:00"
+    "updated_at": "2026-07-15T09:22:34.312250+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001035",
+    "breakdown": [
+      {
+        "amount": 1055538.21,
+        "label": "Small individual (unitemized)",
+        "share": 0.10011144271737807
+      },
+      {
+        "amount": 7890124.53,
+        "label": "Large individual (itemized)",
+        "share": 0.7483307969666723
+      },
+      {
+        "amount": 1535969.25,
+        "label": "PAC / other committees",
+        "share": 0.14567743368288785
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.005880326633061858
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6ME00159",
+      "district": "00",
+      "name": "COLLINS, SUSAN M.",
+      "office": "S",
+      "party": "REP",
+      "state": "ME"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001035",
+      "candidate": {
+        "candidate_id": "S6ME00159",
+        "district": "00",
+        "name": "COLLINS, SUSAN M.",
+        "office": "S",
+        "party": "REP",
+        "state": "ME"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 38.1,
+          "value": 0.0476,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 50.2,
+          "value": 0.0662,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 93.1,
+          "value": 0.8484,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9958,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 70.6,
+          "value": 0.118,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 71.5,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T09:22:34.312250+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 9672914.33,
+      "debts": 0.0,
+      "disbursements": 6547574.47,
+      "individualContributions": 8945662.74,
+      "receipts": 14925296.32
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "C001035",
     "birthYear": "1952",

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 4,
@@ -79,7 +79,26 @@
     "type": "S",
     "updatedAt": "2026-03-18T11:03:18Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2842",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Stop CMV Act authorizes hospitals and health care entities to screen newborns up to 21 days old for congenital cytomegalovirus and requires state screening standards. It authorizes HRSA and CDC grants, expands NIH research, and tasks the Advisory Committee and state health officers with procedures, reporting, training, and follow\u2011up.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:58:41.152750+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c5b0d08b40e724c349666e8f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Stop CMV Act would let hospitals and other health care entities screen every infant 21 days or younger for congenital cytomegalovirus and require State health officials to adopt approved screening and reporting procedures. HRSA, CDC, NIH would fund grants, data systems, education, research.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:58:18.597073+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c5b0d08b40e724c349666e8f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:59:10.126950+00:00",
   "source": "congress_api"

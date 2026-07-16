@@ -1,10 +1,66 @@
 {
   "bioguideId": "K000401",
   "committees": {
-    "assignments": [],
+    "assignments": [
+      {
+        "chamber": "house",
+        "code": "HSED",
+        "committee": "House Committee on Education and Workforce",
+        "committeeUrl": "https://edlabor.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 13,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSJU",
+        "committee": "House Committee on the Judiciary",
+        "committeeUrl": "https://judiciary.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 18,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSPW",
+        "committee": "House Committee on Transportation and Infrastructure",
+        "committeeUrl": "https://transportation.house.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 21,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSED14",
+        "committee": "House Committee on Education and Workforce",
+        "committeeUrl": "https://edlabor.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": "Early Childhood, Elementary, and Secondary Education"
+      },
+      {
+        "chamber": "house",
+        "code": "HSED13",
+        "committee": "House Committee on Education and Workforce",
+        "committeeUrl": "https://edlabor.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 8,
+        "role": null,
+        "subcommittee": "Higher Education and Workforce Development"
+      }
+    ],
     "bioguideId": "K000401",
-    "count": 0,
-    "leadershipCount": 0,
+    "count": 5,
+    "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -54,7 +110,7 @@
       "birthYear": "1985",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 284,
+        "count": 285,
         "url": "https://api.congress.gov/v3/member/K000401/cosponsored-legislation"
       },
       "currentMember": true,
@@ -137,7 +193,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-14T07:40:29Z"
+      "updateDate": "2026-07-15T07:40:32Z"
     },
     "request": {
       "bioguideId": "k000401",
@@ -357,7 +413,7 @@
       "receipts": 2699316.09
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "K000401",
     "birthYear": "1985",
@@ -427,7 +483,7 @@
     "birthYear": "1985",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 284,
+      "count": 285,
       "url": "https://api.congress.gov/v3/member/K000401/cosponsored-legislation"
     },
     "currentMember": true,
@@ -510,7 +566,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-14T07:40:29Z"
+    "updateDate": "2026-07-15T07:40:32Z"
   },
   "nominate": {
     "dim1": 0.253,

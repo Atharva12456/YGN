@@ -225,7 +225,7 @@
       "birthYear": "1947",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 5085,
+        "count": 5087,
         "url": "https://api.congress.gov/v3/member/H001042/cosponsored-legislation"
       },
       "currentMember": true,
@@ -409,7 +409,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 174012.05,
+          "label": "Small individual (unitemized)",
+          "share": 0.3658411723918282
+        },
+        {
+          "amount": 269137.12,
+          "label": "Large individual (itemized)",
+          "share": 0.5658311566064543
+        },
+        {
+          "amount": 32500.0,
+          "label": "PAC / other committees",
+          "share": 0.06832767100171751
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S2HI00106",
+        "district": "00",
+        "name": "HIRONO, MAZIE K.",
+        "office": "S",
+        "party": "DEM",
+        "state": "HI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1393689.22,
+        "debts": 0.0,
+        "disbursements": 499060.49,
+        "individualContributions": 443149.17,
+        "receipts": 486874.86
+      }
+    },
+    "generated_at": "2026-07-15T15:49:46.765621+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -418,14 +464,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 96.0,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:10:59.699815+00:00"
+    "updated_at": "2026-07-15T15:51:20.224180+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001042",
+    "breakdown": [
+      {
+        "amount": 174012.05,
+        "label": "Small individual (unitemized)",
+        "share": 0.3658411723918282
+      },
+      {
+        "amount": 269137.12,
+        "label": "Large individual (itemized)",
+        "share": 0.5658311566064543
+      },
+      {
+        "amount": 32500.0,
+        "label": "PAC / other committees",
+        "share": 0.06832767100171751
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2HI00106",
+      "district": "00",
+      "name": "HIRONO, MAZIE K.",
+      "office": "S",
+      "party": "DEM",
+      "state": "HI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001042",
+      "candidate": {
+        "candidate_id": "S2HI00106",
+        "district": "00",
+        "name": "HIRONO, MAZIE K.",
+        "office": "S",
+        "party": "DEM",
+        "state": "HI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.1,
+          "value": 0.9317,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 95.5,
+          "value": 0.3927,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T15:49:46.765621+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.0,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T15:51:20.224180+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1393689.22,
+      "debts": 0.0,
+      "disbursements": 499060.49,
+      "individualContributions": 443149.17,
+      "receipts": 486874.86
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "H001042",
     "birthYear": "1947",
@@ -562,7 +705,7 @@
     "birthYear": "1947",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 5085,
+      "count": 5087,
       "url": "https://api.congress.gov/v3/member/H001042/cosponsored-legislation"
     },
     "currentMember": true,

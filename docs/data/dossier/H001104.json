@@ -20,7 +20,7 @@
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 10,
+        "rank": 9,
         "role": null,
         "subcommittee": null
       },
@@ -53,7 +53,7 @@
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 15,
+        "rank": 14,
         "role": null,
         "subcommittee": null
       },
@@ -70,6 +70,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSEV09",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+      },
+      {
+        "chamber": "senate",
         "code": "SSAP23",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
@@ -81,14 +92,14 @@
       },
       {
         "chamber": "senate",
-        "code": "SSEV09",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 5,
+        "rank": 6,
         "role": null,
-        "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
+        "subcommittee": "State, Foreign Operations, and Related Programs"
       },
       {
         "chamber": "senate",
@@ -136,14 +147,14 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP20",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "code": "SSEV10",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
         "rank": 7,
         "role": null,
-        "subcommittee": "State, Foreign Operations, and Related Programs"
+        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
       },
       {
         "chamber": "senate",
@@ -169,23 +180,12 @@
       },
       {
         "chamber": "senate",
-        "code": "SSEV10",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 8,
-        "role": null,
-        "subcommittee": "Clean Air, Climate, and Nuclear Innovation and Safety"
-      },
-      {
-        "chamber": "senate",
         "code": "SSAP18",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 9,
+        "rank": 8,
         "role": null,
         "subcommittee": "Departments of Labor, Health and Human Services, and Education, and Related Agencies"
       }
@@ -228,7 +228,7 @@
       "birthYear": "1967",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 152,
+        "count": 153,
         "url": "https://api.congress.gov/v3/member/H001104/cosponsored-legislation"
       },
       "currentMember": true,
@@ -343,7 +343,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1172180.3,
+          "label": "Small individual (unitemized)",
+          "share": 0.19171246295125466
+        },
+        {
+          "amount": 3124697.08,
+          "label": "Large individual (itemized)",
+          "share": 0.5110505382008157
+        },
+        {
+          "amount": 1755385.0,
+          "label": "PAC / other committees",
+          "share": 0.2870967732333397
+        },
+        {
+          "amount": 62000.0,
+          "label": "Political party committees",
+          "share": 0.010140225614589998
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S6OH00304",
+        "district": "00",
+        "name": "HUSTED, JON",
+        "office": "S",
+        "party": "REP",
+        "state": "OH"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 8161653.3,
+        "debts": 0.0,
+        "disbursements": 2366568.03,
+        "individualContributions": 4296877.38,
+        "receipts": 10528221.33
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -352,14 +398,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 78.4,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:10:56.902881+00:00"
+    "updated_at": "2026-07-15T06:29:30.425373+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001104",
+    "breakdown": [
+      {
+        "amount": 1172180.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.19171246295125466
+      },
+      {
+        "amount": 3124697.08,
+        "label": "Large individual (itemized)",
+        "share": 0.5110505382008157
+      },
+      {
+        "amount": 1755385.0,
+        "label": "PAC / other committees",
+        "share": 0.2870967732333397
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.010140225614589998
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S6OH00304",
+      "district": "00",
+      "name": "HUSTED, JON",
+      "office": "S",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001104",
+      "candidate": {
+        "candidate_id": "S6OH00304",
+        "district": "00",
+        "name": "HUSTED, JON",
+        "office": "S",
+        "party": "REP",
+        "state": "OH"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 93.9,
+          "value": 0.5554,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 85.0,
+          "value": 0.7028,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9941,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 87.9,
+          "value": 0.2728,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 78.4,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:29:30.425373+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 8161653.3,
+      "debts": 0.0,
+      "disbursements": 2366568.03,
+      "individualContributions": 4296877.38,
+      "receipts": 10528221.33
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "H001104",
     "birthYear": "1967",
@@ -414,7 +557,7 @@
     "birthYear": "1967",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 152,
+      "count": 153,
       "url": "https://api.congress.gov/v3/member/H001104/cosponsored-legislation"
     },
     "currentMember": true,

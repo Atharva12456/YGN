@@ -42,7 +42,7 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 20,
+        "rank": 19,
         "role": null,
         "subcommittee": null
       },
@@ -75,7 +75,7 @@
         "committeeUrl": "https://homeland.house.gov/",
         "isSubcommittee": true,
         "party": "minority",
-        "rank": 3,
+        "rank": 2,
         "role": null,
         "subcommittee": "Border Security and Enforcement"
       },
@@ -221,7 +221,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "j000310",
@@ -275,7 +275,53 @@
     },
     "cycle": 2026,
     "financeScore": 80.0,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 259532.92,
+          "label": "Small individual (unitemized)",
+          "share": 0.11788924955395254
+        },
+        {
+          "amount": 1295384.76,
+          "label": "Large individual (itemized)",
+          "share": 0.5884106618922443
+        },
+        {
+          "amount": 639580.09,
+          "label": "PAC / other committees",
+          "share": 0.2905204350945129
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 57000.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.02589146388279103
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4TX32089",
+        "district": "33",
+        "name": "JOHNSON, JULIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 280711.03,
+        "debts": 50000.0,
+        "disbursements": 2202196.32,
+        "individualContributions": 1554917.68,
+        "receipts": 2252003.95
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -287,14 +333,117 @@
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 13,
-    "updated_at": "2026-07-13T23:13:37.196329+00:00"
+    "updated_at": "2026-07-15T09:21:48.265633+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "J000310",
+    "breakdown": [
+      {
+        "amount": 259532.92,
+        "label": "Small individual (unitemized)",
+        "share": 0.11788924955395254
+      },
+      {
+        "amount": 1295384.76,
+        "label": "Large individual (itemized)",
+        "share": 0.5884106618922443
+      },
+      {
+        "amount": 639580.09,
+        "label": "PAC / other committees",
+        "share": 0.2905204350945129
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 57000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.02589146388279103
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4TX32089",
+      "district": "33",
+      "name": "JOHNSON, JULIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "J000310",
+      "candidate": {
+        "candidate_id": "H4TX32089",
+        "district": "33",
+        "name": "JOHNSON, JULIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 55.5,
+          "value": 0.3119,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.9,
+          "value": 0.7293,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 85.3,
+          "value": 0.7095,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 93.6,
+          "value": 0.9747,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 79.6,
+          "value": 0.1669,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "penalty": 42,
+          "ptr_filings": 13
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 80.0,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 38.0,
+      "source": "fec_live",
+      "stockPenalty": 42,
+      "stockPtrCount": 13,
+      "updated_at": "2026-07-15T09:21:48.265633+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 280711.03,
+      "debts": 50000.0,
+      "disbursements": 2202196.32,
+      "individualContributions": 1554917.68,
+      "receipts": 2252003.95
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "J000310",
     "birthYear": "1966",
@@ -416,7 +565,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": -0.408,

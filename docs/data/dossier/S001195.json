@@ -205,7 +205,7 @@
           "stateName": "Missouri"
         }
       ],
-      "updateDate": "2026-07-14T07:40:25Z"
+      "updateDate": "2026-07-15T07:40:28Z"
     },
     "request": {
       "bioguideId": "s001195",
@@ -259,7 +259,53 @@
     },
     "cycle": 2026,
     "financeScore": 66.5,
-    "generated_at": "2026-07-13T17:23:40.529702+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 222805.6,
+          "label": "Small individual (unitemized)",
+          "share": 0.062119386651826716
+        },
+        {
+          "amount": 1076601.53,
+          "label": "Large individual (itemized)",
+          "share": 0.30016223430658034
+        },
+        {
+          "amount": 2287325.0,
+          "label": "PAC / other committees",
+          "share": 0.637718379041593
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MO08162",
+        "district": "08",
+        "name": "SMITH, JASON T",
+        "office": "H",
+        "party": "REP",
+        "state": "MO"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4884151.41,
+        "debts": 0.0,
+        "disbursements": 2593542.85,
+        "individualContributions": 1299407.13,
+        "receipts": 4460550.3
+      }
+    },
+    "generated_at": "2026-07-15T14:09:09.363635+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -270,14 +316,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T17:25:49.678763+00:00"
+    "updated_at": "2026-07-15T14:09:37.445130+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "S001195",
+    "breakdown": [
+      {
+        "amount": 222805.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.062119386651826716
+      },
+      {
+        "amount": 1076601.53,
+        "label": "Large individual (itemized)",
+        "share": 0.30016223430658034
+      },
+      {
+        "amount": 2287325.0,
+        "label": "PAC / other committees",
+        "share": 0.637718379041593
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MO08162",
+      "district": "08",
+      "name": "SMITH, JASON T",
+      "office": "H",
+      "party": "REP",
+      "state": "MO"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S001195",
+      "candidate": {
+        "candidate_id": "H4MO08162",
+        "district": "08",
+        "name": "SMITH, JASON T",
+        "office": "H",
+        "party": "REP",
+        "state": "MO"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 76.3,
+          "value": 0.2525,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 53.5,
+          "value": 0.3623,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 80.4,
+          "value": 0.1715,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 66.5,
+      "generated_at": "2026-07-15T14:09:09.363635+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 66.5,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T14:09:37.445130+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4884151.41,
+      "debts": 0.0,
+      "disbursements": 2593542.85,
+      "individualContributions": 1299407.13,
+      "receipts": 4460550.3
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "S001195",
     "birthYear": "1980",
@@ -513,7 +661,7 @@
         "stateName": "Missouri"
       }
     ],
-    "updateDate": "2026-07-14T07:40:25Z"
+    "updateDate": "2026-07-15T07:40:28Z"
   },
   "nominate": {
     "dim1": 0.577,

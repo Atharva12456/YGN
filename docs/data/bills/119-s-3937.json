@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001176",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Merkley, Jeff [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "OR"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Homes for American Families Act",
+      "updated_at": "2026-03-19T14:49:31Z"
+    },
+    "detailPath": "119/s/3937",
+    "identifier": "S 3937",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on the Judiciary."
+    },
+    "number": "3937",
+    "originChamber": "Senate",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "H001089",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hawley, Josh [R-MO]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "Homes for American Families Act",
+    "type": "S",
+    "updatedAt": "2026-03-19T14:49:31Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3937",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:38.448884+00:00",
+  "source": "congress_api"
+}

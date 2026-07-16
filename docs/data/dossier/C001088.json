@@ -269,7 +269,7 @@
       "birthYear": "1963",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 4160,
+        "count": 4165,
         "url": "https://api.congress.gov/v3/member/C001088/cosponsored-legislation"
       },
       "currentMember": true,
@@ -441,7 +441,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 176260.79,
+          "label": "Small individual (unitemized)",
+          "share": 0.03428547605410361
+        },
+        {
+          "amount": 3087564.64,
+          "label": "Large individual (itemized)",
+          "share": 0.6005795363235183
+        },
+        {
+          "amount": 1877150.0,
+          "label": "PAC / other committees",
+          "share": 0.3651349876223781
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S0DE00092",
+        "district": "00",
+        "name": "COONS, CHRISTOPHER A.",
+        "office": "S",
+        "party": "DEM",
+        "state": "DE"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4129671.39,
+        "debts": 0.0,
+        "disbursements": 3484548.05,
+        "individualContributions": 3263825.43,
+        "receipts": 5773706.18
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -450,14 +496,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 68.3,
     "source": "fec_live",
-    "updated_at": "2026-07-13T23:14:36.867602+00:00"
+    "updated_at": "2026-07-15T09:22:32.724086+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001088",
+    "breakdown": [
+      {
+        "amount": 176260.79,
+        "label": "Small individual (unitemized)",
+        "share": 0.03428547605410361
+      },
+      {
+        "amount": 3087564.64,
+        "label": "Large individual (itemized)",
+        "share": 0.6005795363235183
+      },
+      {
+        "amount": 1877150.0,
+        "label": "PAC / other committees",
+        "share": 0.3651349876223781
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0DE00092",
+      "district": "00",
+      "name": "COONS, CHRISTOPHER A.",
+      "office": "S",
+      "party": "DEM",
+      "state": "DE"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001088",
+      "candidate": {
+        "candidate_id": "S0DE00092",
+        "district": "00",
+        "name": "COONS, CHRISTOPHER A.",
+        "office": "S",
+        "party": "DEM",
+        "state": "DE"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 51.7,
+          "value": 0.2545,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 58.6,
+          "value": 0.1047,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 80.2,
+          "value": 0.6349,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 58.7,
+          "value": 0.054,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "D+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 68.3,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T09:22:32.724086+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4129671.39,
+      "debts": 0.0,
+      "disbursements": 3484548.05,
+      "individualContributions": 3263825.43,
+      "receipts": 5773706.18
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "C001088",
     "birthYear": "1963",
@@ -584,7 +727,7 @@
     "birthYear": "1963",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 4160,
+      "count": 4165,
       "url": "https://api.congress.gov/v3/member/C001088/cosponsored-legislation"
     },
     "currentMember": true,

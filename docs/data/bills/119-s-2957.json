@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "D000618",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Daines, Steve [R-MT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "MT"
+      },
+      {
+        "bioguideId": "K000377",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Kelly, Mark [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Small Communities Transit Improvement Act",
+      "updated_at": "2026-03-19T11:03:27Z"
+    },
+    "detailPath": "119/s/2957",
+    "identifier": "S 2957",
+    "introducedDate": "2025-09-30",
+    "latestAction": {
+      "date": "2025-09-30",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "2957",
+    "originChamber": "Senate",
+    "policyArea": "Transportation and Public Works",
+    "sponsors": [
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "Small Communities Transit Improvement Act",
+    "type": "S",
+    "updatedAt": "2026-03-19T11:03:27Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2957",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:49.422743+00:00",
+  "source": "congress_api"
+}

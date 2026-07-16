@@ -37,17 +37,6 @@
       },
       {
         "chamber": "house",
-        "code": "HSSM23",
-        "committee": "House Committee on Small Business",
-        "committeeUrl": "https://smallbusiness.house.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 2,
-        "role": null,
-        "subcommittee": "Contracting and Infrastructure"
-      },
-      {
-        "chamber": "house",
         "code": "HSSM27",
         "committee": "House Committee on Small Business",
         "committeeUrl": "https://smallbusiness.house.gov/",
@@ -56,6 +45,17 @@
         "rank": 2,
         "role": null,
         "subcommittee": "Economic Growth, Tax, and Capital Access"
+      },
+      {
+        "chamber": "house",
+        "code": "HSSM23",
+        "committee": "House Committee on Small Business",
+        "committeeUrl": "https://smallbusiness.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Contracting and Infrastructure"
       },
       {
         "chamber": "house",
@@ -117,7 +117,7 @@
       "birthYear": "1964",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1244,
+        "count": 1245,
         "url": "https://api.congress.gov/v3/member/M001204/cosponsored-legislation"
       },
       "currentMember": true,
@@ -214,7 +214,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-07-14T07:40:27Z"
+      "updateDate": "2026-07-15T07:40:30Z"
     },
     "request": {
       "bioguideId": "m001204",
@@ -436,7 +436,7 @@
       "receipts": 1903077.51
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "M001204",
     "birthYear": "1964",
@@ -518,7 +518,7 @@
     "birthYear": "1964",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1244,
+      "count": 1245,
       "url": "https://api.congress.gov/v3/member/M001204/cosponsored-legislation"
     },
     "currentMember": true,
@@ -615,7 +615,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-07-14T07:40:27Z"
+    "updateDate": "2026-07-15T07:40:30Z"
   },
   "nominate": {
     "dim1": 0.492,

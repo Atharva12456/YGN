@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001302",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Biggs, Andy [R-AZ-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "P000048",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pfluger, August [R-TX-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "TX"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Afghanistan Vetting and Accountability Act of 2026",
+      "updated_at": "2026-03-19T15:29:33Z"
+    },
+    "detailPath": "119/hr/7759",
+    "identifier": "HR 7759",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7759",
+    "originChamber": "House",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "B001282",
+        "district": 6,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Barr, Andy [R-KY-6]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KY"
+      }
+    ],
+    "title": "Afghanistan Vetting and Accountability Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-19T15:29:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7759",
+    "votes": []
+  },
+  "generated_at": "2026-07-16T06:04:32.877203+00:00",
+  "source": "congress_api"
+}

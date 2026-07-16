@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Consolidating Veteran Employment Services for Improved Performance Act This bill transfers specified programs from the jurisdiction of the Department of Labor to the Department of Veterans Affairs (VA) and establishes the Office of the Deputy Under Secretary for Veterans Economic Opportunity and Transition to implement such programs. Specifically, the bill transfers to the VA (1) job counseling, training, and placement services for veterans, (2) federal government employment services for veterans, (3) administration of employment and reemployment rights of members of the uniformed services, and (4) homeless veterans reintegration programs. The VA must include funding requests for such programs in its budget request for FY2028 and each subsequent year. The transfer of such programs does not affect any suits, proceedings or applications for benefits, services, licenses, permits, certificates, or financial assistance that are pending on the date of the enactment of this bill. The Office of Management and Budget is authorized to determine the functions (e.g., duties) that are transferred under this bill, and may make additional incidental dispositions of personnel, assets, liabilities, grants, contracts, property, records, and unexpended balances as may be necessary to implement this bill. The bill also (1) modifies state responsibilities regarding the employment of full or part-time veterans\u2019 employment specialists (currently known as veteran employment representatives), and (2) expands the purpose and responsibilities of such specialists. The VA and Labor must jointly conduct a study and report on the implementation of the transfer of programs and functions and amendments made by this bill.",
+      "updated_at": "2026-02-24T23:49:06Z"
+    },
+    "detailPath": "119/hr/6861",
+    "identifier": "HR 6861",
+    "introducedDate": "2025-12-18",
+    "latestAction": {
+      "date": "2026-03-18",
+      "text": "Committee Hearings Held"
+    },
+    "number": "6861",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "H001098",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AZ"
+      }
+    ],
+    "title": "Consolidating Veteran Employment Services for Improved Performance Act",
+    "type": "HR",
+    "updatedAt": "2026-03-19T08:07:25Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6861",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill transfers DOL\u2019s veterans employment programs \u2014 job counseling/training/placement, federal hiring services, USERRA administration, and homeless veterans reintegration \u2014 to the Department of Veterans Affairs effective October 1, 2027. It transfers personnel and assets, requires VA FY2028 budget requests, preserves pending cases, and lets OMB make incidental adjustments.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:38:58.292307+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ef5e5883dd6dd486f7b00ea3",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill transfers from DOL to VA, effective Oct 1, 2027, veterans' job counseling/training/placement (ch.41), federal hiring for veterans (\u00a74214), uniformed\u2011service employment/remeployment rights (ch.43), and homeless veterans reintegration (ch.20). It revises State duties for veterans' employment specialists and requires VA FY2028 budget requests.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:39:17.172582+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ef5e5883dd6dd486f7b00ea3",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:28.380722+00:00",
+  "source": "congress_api"
+}

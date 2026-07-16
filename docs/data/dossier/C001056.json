@@ -15,20 +15,20 @@
       },
       {
         "chamber": "senate",
-        "code": "SSFI",
-        "committee": "Senate Committee on Finance",
-        "committeeUrl": "http://www.finance.senate.gov/",
+        "code": "SSJU",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 3,
+        "rank": 2,
         "role": null,
         "subcommittee": null
       },
       {
         "chamber": "senate",
-        "code": "SSJU",
-        "committee": "Senate Committee on the Judiciary",
-        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "code": "SSFI",
+        "committee": "Senate Committee on Finance",
+        "committeeUrl": "http://www.finance.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 3,
@@ -64,7 +64,7 @@
         "committeeUrl": "http://www.budget.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": null
       },
@@ -125,6 +125,28 @@
       },
       {
         "chamber": "senate",
+        "code": "SSJU22",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Crime and Counterterrorism"
+      },
+      {
+        "chamber": "senate",
+        "code": "SSJU28",
+        "committee": "Senate Committee on the Judiciary",
+        "committeeUrl": "http://www.judiciary.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": "Privacy, Technology, and the Law"
+      },
+      {
+        "chamber": "senate",
         "code": "SSJU21",
         "committee": "Senate Committee on the Judiciary",
         "committeeUrl": "http://www.judiciary.senate.gov/",
@@ -144,28 +166,6 @@
         "rank": 3,
         "role": null,
         "subcommittee": "Taxation and IRS Oversight"
-      },
-      {
-        "chamber": "senate",
-        "code": "SSJU22",
-        "committee": "Senate Committee on the Judiciary",
-        "committeeUrl": "http://www.judiciary.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 3,
-        "role": null,
-        "subcommittee": "Crime and Counterterrorism"
-      },
-      {
-        "chamber": "senate",
-        "code": "SSJU28",
-        "committee": "Senate Committee on the Judiciary",
-        "committeeUrl": "http://www.judiciary.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 3,
-        "role": null,
-        "subcommittee": "Privacy, Technology, and the Law"
       },
       {
         "chamber": "senate",
@@ -243,7 +243,7 @@
       "birthYear": "1952",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 4058,
+        "count": 4060,
         "url": "https://api.congress.gov/v3/member/C001056/cosponsored-legislation"
       },
       "currentMember": true,
@@ -290,7 +290,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 1639,
+        "count": 1640,
         "url": "https://api.congress.gov/v3/member/C001056/sponsored-legislation"
       },
       "state": "Texas",
@@ -463,7 +463,53 @@
       }
     },
     "cycle": 2026,
-    "generated_at": "2026-07-13T23:12:53.357327+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 560581.37,
+          "label": "Small individual (unitemized)",
+          "share": 0.0663200210837005
+        },
+        {
+          "amount": 5494260.99,
+          "label": "Large individual (itemized)",
+          "share": 0.650002879503743
+        },
+        {
+          "amount": 2335829.41,
+          "label": "PAC / other committees",
+          "share": 0.2763421405158857
+        },
+        {
+          "amount": 62000.0,
+          "label": "Political party committees",
+          "share": 0.007334958896670845
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S2TX00106",
+        "district": "00",
+        "name": "CORNYN, JOHN SEN",
+        "office": "S",
+        "party": "REP",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4078081.2,
+        "debts": 0.0,
+        "disbursements": 10130088.29,
+        "individualContributions": 6054842.36,
+        "receipts": 13574708.8
+      }
+    },
+    "generated_at": "2026-07-15T06:27:55.682997+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -472,14 +518,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 72.2,
     "source": "fec_live",
-    "updated_at": "2026-07-13T23:14:31.908751+00:00"
+    "updated_at": "2026-07-15T06:30:34.674407+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "C001056",
+    "breakdown": [
+      {
+        "amount": 560581.37,
+        "label": "Small individual (unitemized)",
+        "share": 0.0663200210837005
+      },
+      {
+        "amount": 5494260.99,
+        "label": "Large individual (itemized)",
+        "share": 0.650002879503743
+      },
+      {
+        "amount": 2335829.41,
+        "label": "PAC / other committees",
+        "share": 0.2763421405158857
+      },
+      {
+        "amount": 62000.0,
+        "label": "Political party committees",
+        "share": 0.007334958896670845
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S2TX00106",
+      "district": "00",
+      "name": "CORNYN, JOHN SEN",
+      "office": "S",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "C001056",
+      "candidate": {
+        "candidate_id": "S2TX00106",
+        "district": "00",
+        "name": "CORNYN, JOHN SEN",
+        "office": "S",
+        "party": "REP",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.2,
+          "value": 0.6247,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 85.7,
+          "value": 0.7163,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9954,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 65.9,
+          "value": 0.0926,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-15T06:27:55.682997+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.2,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T06:30:34.674407+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4078081.2,
+      "debts": 0.0,
+      "disbursements": 10130088.29,
+      "individualContributions": 6054842.36,
+      "receipts": 13574708.8
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "C001056",
     "birthYear": "1952",
@@ -655,7 +798,7 @@
     "birthYear": "1952",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 4058,
+      "count": 4060,
       "url": "https://api.congress.gov/v3/member/C001056/cosponsored-legislation"
     },
     "currentMember": true,
@@ -702,7 +845,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 1639,
+      "count": 1640,
       "url": "https://api.congress.gov/v3/member/C001056/sponsored-legislation"
     },
     "state": "Texas",

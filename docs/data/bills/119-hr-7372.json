@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-18T15:32:10Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7372",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill bans selling optional vehicle safety features only as bundles with non\u2011safety options, requiring they be available for separate purchase or included as standard trim with separate price disclosure. It applies to manufacturers and first purchasers under 49 U.S.C. 30102, defines covered ADAS and alert features, and gives FTC and state enforcement.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:07.178660+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "939e0a1051ffae8bf143f6dc",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires automakers, dealers, and lessors to sell optional safety features like automatic emergency braking, lane keeping, and driver monitoring separately from luxury packages or include them as standard. The Federal Trade Commission enforces it and state attorneys general may sue for penalties.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:40:16.094962+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "939e0a1051ffae8bf143f6dc",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:58:51.794622+00:00",
   "source": "congress_api"

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 11,
@@ -149,7 +149,26 @@
     "type": "S",
     "updatedAt": "2026-03-18T11:03:17Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/976",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the ACA to impose civil penalties ($10k\u2013$50k negligent; up to $200k knowing) and criminal penalties (up to 10 years) on agents and brokers who submit false enrollment information. Federal Exchanges must verify agent-assisted enrollments, document consent, delay commissions until inconsistencies resolve, and regulate marketing organizations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:57:59.375747+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7ba0a1bf2b8589d29fe34036",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets HHS require verification of agent or broker enrollments in Exchange plans and imposes civil and criminal penalties on agents, brokers, and marketing organizations. It affects HHS Exchanges, issuers, agents, and consumers by requiring documentation, delaying commissions, reporting issuer terminations, preventing unauthorized disenrollments.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:58:07.613022+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7ba0a1bf2b8589d29fe34036",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-15T05:59:07.872475+00:00",
   "source": "congress_api"

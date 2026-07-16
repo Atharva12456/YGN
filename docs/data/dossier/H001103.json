@@ -198,7 +198,7 @@
           "stateName": "Puerto Rico"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "h001103",
@@ -252,7 +252,53 @@
     },
     "cycle": 2026,
     "financeScore": 85.3,
-    "generated_at": "2026-07-14T06:24:27.711003+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 42960.97,
+          "label": "Small individual (unitemized)",
+          "share": 0.07497421030911557
+        },
+        {
+          "amount": 461899.0,
+          "label": "Large individual (itemized)",
+          "share": 0.8060924315156331
+        },
+        {
+          "amount": 68150.0,
+          "label": "PAC / other committees",
+          "share": 0.1189333581752513
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4PR01010",
+        "district": "00",
+        "name": "HERNANDEZ RIVERA, PABLO JOSE",
+        "office": "H",
+        "party": "DEM",
+        "state": "PR"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 319853.86,
+        "debts": 1140.8,
+        "disbursements": 266142.55,
+        "individualContributions": 504859.97,
+        "receipts": 574030.18
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -263,14 +309,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T06:24:39.852427+00:00"
+    "updated_at": "2026-07-15T09:21:49.816979+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "H001103",
+    "breakdown": [
+      {
+        "amount": 42960.97,
+        "label": "Small individual (unitemized)",
+        "share": 0.07497421030911557
+      },
+      {
+        "amount": 461899.0,
+        "label": "Large individual (itemized)",
+        "share": 0.8060924315156331
+      },
+      {
+        "amount": 68150.0,
+        "label": "PAC / other committees",
+        "share": 0.1189333581752513
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4PR01010",
+      "district": "00",
+      "name": "HERNANDEZ RIVERA, PABLO JOSE",
+      "office": "H",
+      "party": "DEM",
+      "state": "PR"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "H001103",
+      "candidate": {
+        "candidate_id": "H4PR01010",
+        "district": "00",
+        "name": "HERNANDEZ RIVERA, PABLO JOSE",
+        "office": "H",
+        "party": "DEM",
+        "state": "PR"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 94.9,
+          "value": 0.8811,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 64.5,
+          "value": 0.0851,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 85.3,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "B",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 85.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T09:21:49.816979+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 319853.86,
+      "debts": 1140.8,
+      "disbursements": 266142.55,
+      "individualContributions": 504859.97,
+      "receipts": 574030.18
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "H001103",
     "birthYear": "1991",
@@ -403,7 +551,7 @@
         "stateName": "Puerto Rico"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": -0.525,

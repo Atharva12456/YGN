@@ -31,7 +31,7 @@
         "committeeUrl": "https://foreignaffairs.house.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 24,
+        "rank": 23,
         "role": null,
         "subcommittee": null
       },
@@ -53,7 +53,7 @@
         "committeeUrl": "https://homeland.house.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 4,
+        "rank": 5,
         "role": null,
         "subcommittee": "Border Security and Enforcement"
       },
@@ -70,6 +70,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSFA07",
+        "committee": "House Committee on Foreign Affairs",
+        "committeeUrl": "https://foreignaffairs.house.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Western Hemisphere"
+      },
+      {
+        "chamber": "house",
         "code": "HSSY15",
         "committee": "House Committee on Science, Space, and Technology",
         "committeeUrl": "https://science.house.gov/",
@@ -78,17 +89,6 @@
         "rank": 6,
         "role": null,
         "subcommittee": "Research and Technology"
-      },
-      {
-        "chamber": "house",
-        "code": "HSFA07",
-        "committee": "House Committee on Foreign Affairs",
-        "committeeUrl": "https://foreignaffairs.house.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 7,
-        "role": null,
-        "subcommittee": "Western Hemisphere"
       },
       {
         "chamber": "house",
@@ -154,7 +154,7 @@
       "birthYear": "1970",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 269,
+        "count": 273,
         "url": "https://api.congress.gov/v3/member/B001325/cosponsored-legislation"
       },
       "currentMember": true,
@@ -221,7 +221,7 @@
           "stateName": "South Carolina"
         }
       ],
-      "updateDate": "2026-07-14T07:40:33Z"
+      "updateDate": "2026-07-15T07:40:36Z"
     },
     "request": {
       "bioguideId": "b001325",
@@ -275,7 +275,53 @@
     },
     "cycle": 2026,
     "financeScore": 61.6,
-    "generated_at": "2026-07-14T00:07:23.961477+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 5736.3,
+          "label": "Small individual (unitemized)",
+          "share": 0.017694339606578176
+        },
+        {
+          "amount": 67476.62,
+          "label": "Large individual (itemized)",
+          "share": 0.2081401303599925
+        },
+        {
+          "amount": 250975.5,
+          "label": "PAC / other committees",
+          "share": 0.7741655300334294
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4SC01313",
+        "district": "03",
+        "name": "BIGGS, SHERI",
+        "office": "H",
+        "party": "REP",
+        "state": "SC"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 174494.83,
+        "debts": 395000.0,
+        "disbursements": 348017.78,
+        "individualContributions": 73212.92,
+        "receipts": 418427.35
+      }
+    },
+    "generated_at": "2026-07-15T09:21:18.795182+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -287,14 +333,117 @@
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 10,
-    "updated_at": "2026-07-14T00:07:41.295449+00:00"
+    "updated_at": "2026-07-15T09:21:55.334614+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "B001325",
+    "breakdown": [
+      {
+        "amount": 5736.3,
+        "label": "Small individual (unitemized)",
+        "share": 0.017694339606578176
+      },
+      {
+        "amount": 67476.62,
+        "label": "Large individual (itemized)",
+        "share": 0.2081401303599925
+      },
+      {
+        "amount": 250975.5,
+        "label": "PAC / other committees",
+        "share": 0.7741655300334294
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4SC01313",
+      "district": "03",
+      "name": "BIGGS, SHERI",
+      "office": "H",
+      "party": "REP",
+      "state": "SC"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "B001325",
+      "candidate": {
+        "candidate_id": "H4SC01313",
+        "district": "03",
+        "name": "BIGGS, SHERI",
+        "office": "H",
+        "party": "REP",
+        "state": "SC"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.5,
+          "value": 0.6741,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 46.5,
+          "value": 0.2258,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 63.2,
+          "value": 0.0784,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "10 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "penalty": 42,
+          "ptr_filings": 10
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 61.6,
+      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 19.6,
+      "source": "fec_live",
+      "stockPenalty": 42,
+      "stockPtrCount": 10,
+      "updated_at": "2026-07-15T09:21:55.334614+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 174494.83,
+      "debts": 395000.0,
+      "disbursements": 348017.78,
+      "individualContributions": 73212.92,
+      "receipts": 418427.35
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "B001325",
     "birthYear": "1970",
@@ -349,7 +498,7 @@
     "birthYear": "1970",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 269,
+      "count": 273,
       "url": "https://api.congress.gov/v3/member/B001325/cosponsored-legislation"
     },
     "currentMember": true,
@@ -416,7 +565,7 @@
         "stateName": "South Carolina"
       }
     ],
-    "updateDate": "2026-07-14T07:40:33Z"
+    "updateDate": "2026-07-15T07:40:36Z"
   },
   "nominate": {
     "dim1": 0.818,

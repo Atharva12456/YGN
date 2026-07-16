@@ -20,7 +20,7 @@
         "committeeUrl": "https://veterans.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": null
       },
@@ -132,7 +132,7 @@
       "birthYear": "1979",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 673,
+        "count": 674,
         "url": "https://api.congress.gov/v3/member/M001220/cosponsored-legislation"
       },
       "currentMember": true,
@@ -200,7 +200,7 @@
           "stateName": "Kentucky"
         }
       ],
-      "updateDate": "2026-07-14T07:40:30Z"
+      "updateDate": "2026-07-15T07:40:33Z"
     },
     "request": {
       "bioguideId": "m001220",
@@ -254,7 +254,53 @@
     },
     "cycle": 2026,
     "financeScore": 80.8,
-    "generated_at": "2026-07-13T05:23:39.955035+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 146930.6,
+          "label": "Small individual (unitemized)",
+          "share": 0.11331305680823911
+        },
+        {
+          "amount": 709436.0,
+          "label": "Large individual (itemized)",
+          "share": 0.5471179030767581
+        },
+        {
+          "amount": 440311.86,
+          "label": "PAC / other committees",
+          "share": 0.3395690401150028
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2KY03206",
+        "district": "03",
+        "name": "MCGARVEY, MORGAN",
+        "office": "H",
+        "party": "DEM",
+        "state": "KY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1725862.76,
+        "debts": 0.0,
+        "disbursements": 986553.4,
+        "individualContributions": 856366.6,
+        "receipts": 1448999.06
+      }
+    },
+    "generated_at": "2026-07-15T11:47:52.898811+00:00",
     "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -265,14 +311,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T05:24:19.010980+00:00"
+    "updated_at": "2026-07-15T11:48:21.131902+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001220",
+    "breakdown": [
+      {
+        "amount": 146930.6,
+        "label": "Small individual (unitemized)",
+        "share": 0.11331305680823911
+      },
+      {
+        "amount": 709436.0,
+        "label": "Large individual (itemized)",
+        "share": 0.5471179030767581
+      },
+      {
+        "amount": 440311.86,
+        "label": "PAC / other committees",
+        "share": 0.3395690401150028
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2KY03206",
+      "district": "03",
+      "name": "MCGARVEY, MORGAN",
+      "office": "H",
+      "party": "DEM",
+      "state": "KY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001220",
+      "candidate": {
+        "candidate_id": "H2KY03206",
+        "district": "03",
+        "name": "MCGARVEY, MORGAN",
+        "office": "H",
+        "party": "DEM",
+        "state": "KY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.4,
+          "value": 0.3642,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.6,
+          "value": 0.8404,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.6,
+          "value": 0.6604,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 80.4,
+          "value": 0.1716,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 80.8,
+      "generated_at": "2026-07-15T11:47:52.898811+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 80.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T11:48:21.131902+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1725862.76,
+      "debts": 0.0,
+      "disbursements": 986553.4,
+      "individualContributions": 856366.6,
+      "receipts": 1448999.06
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "M001220",
     "birthYear": "1979",
@@ -336,7 +484,7 @@
     "birthYear": "1979",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 673,
+      "count": 674,
       "url": "https://api.congress.gov/v3/member/M001220/cosponsored-legislation"
     },
     "currentMember": true,
@@ -404,7 +552,7 @@
         "stateName": "Kentucky"
       }
     ],
-    "updateDate": "2026-07-14T07:40:30Z"
+    "updateDate": "2026-07-15T07:40:33Z"
   },
   "nominate": {
     "dim1": -0.498,

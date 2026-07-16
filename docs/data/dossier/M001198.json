@@ -4,20 +4,20 @@
     "assignments": [
       {
         "chamber": "senate",
-        "code": "SSHR",
-        "committee": "Senate Committee on Health, Education, Labor, and Pensions",
-        "committeeUrl": "http://www.help.senate.gov/",
+        "code": "SSBU",
+        "committee": "Senate Committee on the Budget",
+        "committeeUrl": "http://www.budget.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": null
       },
       {
         "chamber": "senate",
-        "code": "SSBU",
-        "committee": "Senate Committee on the Budget",
-        "committeeUrl": "http://www.budget.senate.gov/",
+        "code": "SSHR",
+        "committee": "Senate Committee on Health, Education, Labor, and Pensions",
+        "committeeUrl": "http://www.help.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 5,
@@ -181,7 +181,7 @@
       "birthYear": "1960",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 1818,
+        "count": 1821,
         "url": "https://api.congress.gov/v3/member/M001198/cosponsored-legislation"
       },
       "currentMember": true,
@@ -214,7 +214,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 519,
+        "count": 520,
         "url": "https://api.congress.gov/v3/member/M001198/sponsored-legislation"
       },
       "state": "Kansas",
@@ -317,7 +317,53 @@
       }
     },
     "cycle": 2018,
-    "generated_at": "2026-07-13T22:09:29.287011+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 16366.0,
+          "label": "Small individual (unitemized)",
+          "share": 0.014010554657792457
+        },
+        {
+          "amount": 350042.47,
+          "label": "Large individual (itemized)",
+          "share": 0.29966327498983725
+        },
+        {
+          "amount": 801710.88,
+          "label": "PAC / other committees",
+          "share": 0.6863261703523702
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6KS01179",
+        "district": "00",
+        "name": "MARSHALL, ROGER W",
+        "office": "S",
+        "party": "REP",
+        "state": "KS"
+      },
+      "cycle": 2018,
+      "totals": {
+        "cashOnHand": 608285.86,
+        "debts": 35000.0,
+        "disbursements": 753188.46,
+        "individualContributions": 366408.47,
+        "receipts": 1343114.41
+      }
+    },
+    "generated_at": "2026-07-15T15:49:46.765621+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -326,14 +372,111 @@
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
     "score": 65.0,
     "source": "fec_live",
-    "updated_at": "2026-07-13T22:09:58.445922+00:00"
+    "updated_at": "2026-07-15T15:50:37.091813+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "M001198",
+    "breakdown": [
+      {
+        "amount": 16366.0,
+        "label": "Small individual (unitemized)",
+        "share": 0.014010554657792457
+      },
+      {
+        "amount": 350042.47,
+        "label": "Large individual (itemized)",
+        "share": 0.29966327498983725
+      },
+      {
+        "amount": 801710.88,
+        "label": "PAC / other committees",
+        "share": 0.6863261703523702
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6KS01179",
+      "district": "00",
+      "name": "MARSHALL, ROGER W",
+      "office": "S",
+      "party": "REP",
+      "state": "KS"
+    },
+    "cycle": 2018,
+    "grade": {
+      "bioguideId": "M001198",
+      "candidate": {
+        "candidate_id": "H6KS01179",
+        "district": "00",
+        "name": "MARSHALL, ROGER W",
+        "office": "S",
+        "party": "REP",
+        "state": "KS"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 64.9,
+          "value": 0.4218,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.7,
+          "value": 0.8557,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 51.0,
+          "value": 0.3137,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 86.0,
+          "value": 0.9255,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 55.5,
+          "value": 0.0447,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2018,
+      "generated_at": "2026-07-15T15:49:46.765621+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 65.0,
+      "source": "fec_live",
+      "updated_at": "2026-07-15T15:50:37.091813+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 608285.86,
+      "debts": 35000.0,
+      "disbursements": 753188.46,
+      "individualContributions": 366408.47,
+      "receipts": 1343114.41
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "M001198",
     "birthYear": "1960",
@@ -425,7 +568,7 @@
     "birthYear": "1960",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 1818,
+      "count": 1821,
       "url": "https://api.congress.gov/v3/member/M001198/cosponsored-legislation"
     },
     "currentMember": true,
@@ -458,7 +601,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 519,
+      "count": 520,
       "url": "https://api.congress.gov/v3/member/M001198/sponsored-legislation"
     },
     "state": "Kansas",

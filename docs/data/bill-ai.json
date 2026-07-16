@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-15T06:12:01.098092+00:00",
-  "count": 90,
+  "generated_at": "2026-07-16T06:10:43.272466+00:00",
+  "count": 106,
   "bills": {
     "SRES 630": {
       "description": {
@@ -1681,6 +1681,374 @@
       "identifier": "HR 7650",
       "title": "McIntire-Stennis Act District of Columbia Equality Act",
       "source_updated_at": "2026-03-17T19:03:18Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/3286": {
+      "description": {
+        "summary": "The bill lets the Interior Secretary acquire 551.14 acres labeled \"Proposed Addition\" on a May 2025 map into Mammoth Cave National Park. It makes a $350,000 figure CPI-adjustable, amends section 11 of the 1942 Act, and covers land in Edmonson and Barren Counties, Kentucky.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:36.927451+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "70cd1862de8db2176347df8d"
+      },
+      "impact": {
+        "summary": "The bill authorizes Secretary of the Interior and National Park Service to acquire 551.14 acres in Edmonson and Barren Counties, Kentucky, for Mammoth Cave National Park. It makes the $350,000 acquisition cap annually adjusted by the Consumer Price Index from the Bureau of Labor Statistics.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:36.577531+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "70cd1862de8db2176347df8d"
+      },
+      "canonical_id": "119/hr/3286",
+      "identifier": "HR 3286",
+      "title": "Mammoth Cave National Park Boundary Adjustment Act of 2025",
+      "source_updated_at": "2026-03-19T08:07:21Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6861": {
+      "description": {
+        "summary": "The bill transfers DOL\u2019s veterans employment programs \u2014 job counseling/training/placement, federal hiring services, USERRA administration, and homeless veterans reintegration \u2014 to the Department of Veterans Affairs effective October 1, 2027. It transfers personnel and assets, requires VA FY2028 budget requests, preserves pending cases, and lets OMB make incidental adjustments.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:38:58.292307+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "ef5e5883dd6dd486f7b00ea3"
+      },
+      "impact": {
+        "summary": "The bill transfers from DOL to VA, effective Oct 1, 2027, veterans' job counseling/training/placement (ch.41), federal hiring for veterans (\u00a74214), uniformed\u2011service employment/remeployment rights (ch.43), and homeless veterans reintegration (ch.20). It revises State duties for veterans' employment specialists and requires VA FY2028 budget requests.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:17.172582+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "ef5e5883dd6dd486f7b00ea3"
+      },
+      "canonical_id": "119/hr/6861",
+      "identifier": "HR 6861",
+      "title": "Consolidating Veteran Employment Services for Improved Performance Act",
+      "source_updated_at": "2026-03-19T08:07:25Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3758": {
+      "description": {
+        "summary": "The End Veterans Overdose Act of 2026 directs VA to distribute opioid overdose rescue medications, such as naloxone, at VA pharmacies free and without a prescription and to provide usage information. It covers veterans under 38 U.S.C. 1703 and enrolled family caregivers, restricts PII use, and mandates reports to Congress.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:38:30.381423+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3a598b57a233dc631e9809a1"
+      },
+      "impact": {
+        "summary": "This bill requires VA to provide naloxone and other opioid overdose rescue medications free and without prescription at VA pharmacies to covered veterans and caregivers in the VA family caregiver and general caregiver support programs. It restricts personal-data use and mandates reports to Congress.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:38:45.659374+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3a598b57a233dc631e9809a1"
+      },
+      "canonical_id": "119/s/3758",
+      "identifier": "S 3758",
+      "title": "End Veterans Overdose Act of 2026",
+      "source_updated_at": "2026-03-19T11:03:28Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7956": {
+      "description": {
+        "summary": "The bill amends 42 U.S.C. 254r(i)(1) to authorize $12.5 million annually for FY2023\u20132027 and $13.5 million annually for FY2028\u20132032 for the State Offices of Rural Health program. It applies to grants made under subsection (a), funding State Offices of Rural Health that support rural health services in States and U.S. territories.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:05.565749+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "869a246893d569fc56657e7e"
+      },
+      "impact": {
+        "summary": "The bill reauthorizes the State Offices of Rural Health program and authorizes $12.5 million annually for FY2023\u20132027 and $13.5 million annually for FY2028\u20132032. Those grants fund HRSA's State Offices of Rural Health and help state health departments, rural hospitals, clinics, and other rural health providers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:09.131875+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "869a246893d569fc56657e7e"
+      },
+      "canonical_id": "119/hr/7956",
+      "identifier": "HR 7956",
+      "title": "State Offices of Rural Health Program Reauthorization Act of 2026",
+      "source_updated_at": "2026-03-19T15:30:52Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7946": {
+      "description": {
+        "summary": "This bill requires U.S. federal courts and the D.C. courts to excuse individuals who are breastfeeding from jury service upon request. It amends 28 U.S.C. \u00a71866 and D.C. Code \u00a711-1908 to authorize courts or supervising clerks to excuse summoned breastfeeding individuals in federal courts and in the District of Columbia.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:41.398336+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "6fae508e9b3e22cfa8c2a331"
+      },
+      "impact": {
+        "summary": "This bill excuses breastfeeding people from jury service in U.S. federal courts (28 U.S.C. \u00a71866) and in D.C. courts (D.C. Code \u00a711\u20111908). It lets summoned breastfeeding jurors be excused upon request and changes how federal and D.C. courts and their clerks handle jury selection.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:39:51.826499+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "6fae508e9b3e22cfa8c2a331"
+      },
+      "canonical_id": "119/hr/7946",
+      "identifier": "HR 7946",
+      "title": "Jury Duty Exemption for Breastfeeding Act of 2026",
+      "source_updated_at": "2026-03-19T15:17:12Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/1116": {
+      "description": {
+        "summary": "This House resolution commemorates the fifth anniversary of the March 16, 2021 Atlanta spa shootings, condemns xenophobic anti\u2011Asian rhetoric, and urges restoration and expansion of DOJ hate\u2011crime grants. It addresses federal hate\u2011crime reporting and grant programs, online disinformation, AANHPI mental\u2011health and education supports, and honors victims, families, and communities.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T04:30:35.866470+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e84d7cf8c62bd152cbf96450"
+      },
+      "impact": {
+        "summary": "The resolution commemorates the eight Atlanta spa shooting victims and condemns anti-Asian, xenophobic, and anti-immigrant rhetoric. It urges DOJ to restore and expand BJA, COVID\u201119 Hate Crimes Act, and Jabara\u2011Heyer NO HATE Act programs and to support community services, online\u2011hate responses, and AANHPI education.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T04:30:44.754690+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e84d7cf8c62bd152cbf96450"
+      },
+      "canonical_id": "119/hres/1116",
+      "identifier": "HRES 1116",
+      "title": "Commemorating the 5-year remembrance of the March 16, 2021, shootings in the Atlanta, Georgia, region and denouncing continuing anti-Asian hate, including the resurgence of xenophobic and anti-immigrant rhetoric.",
+      "source_updated_at": "2026-03-19T15:24:45Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7372": {
+      "description": {
+        "summary": "This bill bans selling optional vehicle safety features only as bundles with non\u2011safety options, requiring they be available for separate purchase or included as standard trim with separate price disclosure. It applies to manufacturers and first purchasers under 49 U.S.C. 30102, defines covered ADAS and alert features, and gives FTC and state enforcement.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:07.178660+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "939e0a1051ffae8bf143f6dc"
+      },
+      "impact": {
+        "summary": "The bill requires automakers, dealers, and lessors to sell optional safety features like automatic emergency braking, lane keeping, and driver monitoring separately from luxury packages or include them as standard. The Federal Trade Commission enforces it and state attorneys general may sue for penalties.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:16.094962+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "939e0a1051ffae8bf143f6dc"
+      },
+      "canonical_id": "119/hr/7372",
+      "identifier": "HR 7372",
+      "title": "Safety is Not For Sale Act",
+      "source_updated_at": "2026-03-18T15:32:10Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7353": {
+      "description": {
+        "summary": "The bill requires DOT to amend the automatic emergency braking standard so AEB systems detect and respond to pedestrians, bicyclists, motorcyclists and other vulnerable road users in daylight and low light across skin, clothing, and gear. It applies to passenger motor vehicles made for sale in the United States.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:33.636944+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c93b33d4375e0eed4c4d10c6"
+      },
+      "impact": {
+        "summary": "The bill requires the Secretary of Transportation (NHTSA) to amend the Federal Motor Vehicle Safety Standard for automatic emergency braking so AEB on passenger motor vehicles operates in daylight and low light and detects pedestrians, bicyclists, motorcyclists, wheelchair users, and ATV/tractor riders. It affects automakers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:04.236860+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c93b33d4375e0eed4c4d10c6"
+      },
+      "canonical_id": "119/hr/7353",
+      "identifier": "HR 7353",
+      "title": "Magnus White and Safe Streets for Everyone Act of 2026",
+      "source_updated_at": "2026-03-18T15:42:49Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6947": {
+      "description": {
+        "summary": "The SAFE Exit Act directs the Secretary of Transportation to amend FMVSS No. 206 within two years to require power\u2011independent, easy\u2011to\u2011find manual door releases that mechanically disengage electronic latches and labeled performance and emergency\u2011responder access provisions when vehicle electrical power is lost. It covers new vehicles with electronic door latches.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:44.370518+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "6811cdf81bfae3567ca9ad7f"
+      },
+      "impact": {
+        "summary": "Mandates DOT (Secretary/NHTSA) to amend FMVSS No.206 within two years to require intuitive, power\u2011independent manual door releases and emergency responder access when vehicle electrical power is lost. U.S. automakers and motor\u2011vehicle manufacturers must install these devices on new vehicles and comply with DOT/NHTSA rules.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:40:54.255683+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "6811cdf81bfae3567ca9ad7f"
+      },
+      "canonical_id": "119/hr/6947",
+      "identifier": "HR 6947",
+      "title": "SAFE Exit Act of 2026",
+      "source_updated_at": "2026-03-18T16:14:34Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7398": {
+      "description": {
+        "summary": "The bill exempts Purple Heart and Medal of Honor recipients from certain passport fees by amending the Passport Act of 1920. It requires the State Department's Consular Affairs office to make a memorandum of understanding with the Defense Department to verify awards and set documentation for eligible applications and renewals.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:41:03.479215+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4a72e3d4dcdccf6392ad9280"
+      },
+      "impact": {
+        "summary": "The bill exempts Purple Heart and Medal of Honor recipients from certain passport fees. It directs the Secretary of State, via the Assistant Secretary for Consular Affairs, to enter an MOU with the Secretary of Defense and DoD to verify service records and set documentation.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:41:09.143541+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4a72e3d4dcdccf6392ad9280"
+      },
+      "canonical_id": "119/hr/7398",
+      "identifier": "HR 7398",
+      "title": "Passports for Purple Hearts and Medals of Honor Act",
+      "source_updated_at": "2026-03-18T08:06:50Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3671": {
+      "description": {
+        "summary": "The bill bars the SEC and exchanges from prohibiting or conditioning closed-end funds' investments in private funds or limiting listing or sales because of such investments. It defines private fund by reference to the Investment Advisers Act, covers closed-end companies including BDCs, and preserves fiduciary, valuation, liquidity, and redemption obligations.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:41:23.912362+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "cb845fb651f3e5c3ae346120"
+      },
+      "impact": {
+        "summary": "The bill bars the SEC from forbidding closed-end investment companies, including business development companies, to invest any or all assets in private funds as defined by the Investment Advisers Act. It prevents national securities exchanges from refusing to list or trade those closed-end company securities.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:41:18.431331+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "cb845fb651f3e5c3ae346120"
+      },
+      "canonical_id": "119/s/3671",
+      "identifier": "S 3671",
+      "title": "Increasing Investor Opportunities Act",
+      "source_updated_at": "2026-03-18T19:37:49Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3662": {
+      "description": {
+        "summary": "The ACCESS Act of 2026 raises the crowdfunding threshold requiring financial statements reviewed by an independent accountant from $100,000 to $250,000 and lets the SEC raise it to $400,000 on recommendation of the small-business and investor advocates. It covers issuers using the Regulation Crowdfunding exemption and corrects section 4(a)(6) cross-references.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:41:49.513512+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4d81ca1b544ce4c6c06d52e0"
+      },
+      "impact": {
+        "summary": "The bill raises the crowdfunding threshold requiring an independent public-accountant review from $100,000 to $250,000 for issuers using Section 4A. It lets the SEC, after recommendations by the Office of the Advocate for Small Business Capital Formation and the Investor Advocate, raise it to $400,000.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:58:27.880220+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4d81ca1b544ce4c6c06d52e0"
+      },
+      "canonical_id": "119/s/3662",
+      "identifier": "S 3662",
+      "title": "ACCESS Act of 2026",
+      "source_updated_at": "2026-03-18T20:13:02Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/996": {
+      "description": {
+        "summary": "This resolution impeaches DHS Secretary Kristi Lynn Arnold Noem, alleging obstruction of Congress and breach of public trust for denying Member oversight, withholding FEMA funds, and directing ICE warrantless arrests and raids. If adopted it would formally impeach Noem and send articles to the Senate, targeting her DHS conduct.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:42:11.830891+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "1392ac92138d46d4f5d99b32"
+      },
+      "impact": {
+        "summary": "The resolution impeaches Kristi Lynn Arnold Noem, Secretary of Homeland Security. It says she blocked oversight of DHS and ICE detention sites, oversaw ICE warrantless arrests and Chicago raids, and directed FEMA to withhold Emergency Food and Shelter and Shelter and Services Program funds.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:42:18.330718+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "1392ac92138d46d4f5d99b32"
+      },
+      "canonical_id": "119/hres/996",
+      "identifier": "HRES 996",
+      "title": "Impeaching Kristi Lynn Arnold Noem, Secretary of Homeland Security, for high crimes and misdemeanors.",
+      "source_updated_at": "2026-03-18T20:25:26Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/994": {
+      "description": {
+        "summary": "The House resolution urges the Secretary of Defense to review 10 U.S.C. \u00a7504 to determine whether to authorize enlistment under subsection (b)(2) for aliens holding DACA employment authorization documents. It would cover DACA recipients with DHS-issued work permits seeking to enlist in the U.S. Armed Forces under that enlistment authority.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:42:26.641896+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "fbb57237b2a53b8dbfe9a546"
+      },
+      "impact": {
+        "summary": "This resolution urges the Secretary of Defense to review 10 U.S.C. \u00a7504 for authorizing enlistment of aliens with DHS DACA EADs. The review would involve the Department of Defense and could affect DACA recipients seeking to join the U.S. Armed Forces.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:42:30.343010+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "fbb57237b2a53b8dbfe9a546"
+      },
+      "canonical_id": "119/hres/994",
+      "identifier": "HRES 994",
+      "title": "Expressing the sense of the House of Representatives that the Secretary of Defense should review section 504 of title 10, United States Code, for purposes related to enlisting certain aliens in the Armed Forces.",
+      "source_updated_at": "2026-03-18T08:06:54Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/976": {
+      "description": {
+        "summary": "The bill amends the ACA to impose civil penalties ($10k\u2013$50k negligent; up to $200k knowing) and criminal penalties (up to 10 years) on agents and brokers who submit false enrollment information. Federal Exchanges must verify agent-assisted enrollments, document consent, delay commissions until inconsistencies resolve, and regulate marketing organizations.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:57:59.375747+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "7ba0a1bf2b8589d29fe34036"
+      },
+      "impact": {
+        "summary": "The bill lets HHS require verification of agent or broker enrollments in Exchange plans and imposes civil and criminal penalties on agents, brokers, and marketing organizations. It affects HHS Exchanges, issuers, agents, and consumers by requiring documentation, delaying commissions, reporting issuer terminations, preventing unauthorized disenrollments.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:58:07.613022+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "7ba0a1bf2b8589d29fe34036"
+      },
+      "canonical_id": "119/s/976",
+      "identifier": "S 976",
+      "title": "Insurance Fraud Accountability Act",
+      "source_updated_at": "2026-03-18T11:03:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/2842": {
+      "description": {
+        "summary": "The Stop CMV Act authorizes hospitals and health care entities to screen newborns up to 21 days old for congenital cytomegalovirus and requires state screening standards. It authorizes HRSA and CDC grants, expands NIH research, and tasks the Advisory Committee and state health officers with procedures, reporting, training, and follow\u2011up.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:58:41.152750+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c5b0d08b40e724c349666e8f"
+      },
+      "impact": {
+        "summary": "The Stop CMV Act would let hospitals and other health care entities screen every infant 21 days or younger for congenital cytomegalovirus and require State health officials to adopt approved screening and reporting procedures. HRSA, CDC, NIH would fund grants, data systems, education, research.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-16T03:58:18.597073+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c5b0d08b40e724c349666e8f"
+      },
+      "canonical_id": "119/s/2842",
+      "identifier": "S 2842",
+      "title": "Stop CMV Act of 2025",
+      "source_updated_at": "2026-03-18T11:03:18Z",
       "content_version": "bill-ai-v6"
     }
   }

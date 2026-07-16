@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C000880",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Crapo, Mike [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-02",
+        "state": "ID"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "End Veterans Overdose Act of 2026",
+      "updated_at": "2026-03-19T11:03:28Z"
+    },
+    "detailPath": "119/s/3758",
+    "identifier": "S 3758",
+    "introducedDate": "2026-02-02",
+    "latestAction": {
+      "date": "2026-03-18",
+      "text": "Committee on Veterans' Affairs. Ordered to be reported with an amendment in the nature of a substitute favorably."
+    },
+    "number": "3758",
+    "originChamber": "Senate",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NH"
+      }
+    ],
+    "title": "End Veterans Overdose Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-19T11:03:28Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3758",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The End Veterans Overdose Act of 2026 directs VA to distribute opioid overdose rescue medications, such as naloxone, at VA pharmacies free and without a prescription and to provide usage information. It covers veterans under 38 U.S.C. 1703 and enrolled family caregivers, restricts PII use, and mandates reports to Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:38:30.381423+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3a598b57a233dc631e9809a1",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This bill requires VA to provide naloxone and other opioid overdose rescue medications free and without prescription at VA pharmacies to covered veterans and caregivers in the VA family caregiver and general caregiver support programs. It restricts personal-data use and mandates reports to Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-16T03:38:45.659374+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3a598b57a233dc631e9809a1",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-16T06:04:28.648582+00:00",
+  "source": "congress_api"
+}

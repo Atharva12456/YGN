@@ -20,7 +20,7 @@
         "committeeUrl": "https://agriculture.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 24,
+        "rank": 23,
         "role": null,
         "subcommittee": null
       },
@@ -45,10 +45,21 @@
         "rank": 2,
         "role": null,
         "subcommittee": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
+      },
+      {
+        "chamber": "house",
+        "code": "HSAG15",
+        "committee": "House Committee on Agriculture",
+        "committeeUrl": "https://agriculture.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 6,
+        "role": null,
+        "subcommittee": "Forestry and Horticulture"
       }
     ],
     "bioguideId": "P000597",
-    "count": 4,
+    "count": 5,
     "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
@@ -104,7 +115,7 @@
       "birthYear": "1955",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 4845,
+        "count": 4847,
         "url": "https://api.congress.gov/v3/member/P000597/cosponsored-legislation"
       },
       "currentMember": true,
@@ -251,7 +262,7 @@
           "stateName": "Maine"
         }
       ],
-      "updateDate": "2026-07-14T07:40:24Z"
+      "updateDate": "2026-07-15T07:40:27Z"
     },
     "request": {
       "bioguideId": "p000597",
@@ -473,7 +484,7 @@
       "receipts": 388185.87
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "P000597",
     "birthYear": "1955",
@@ -600,7 +611,7 @@
     "birthYear": "1955",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 4845,
+      "count": 4847,
       "url": "https://api.congress.gov/v3/member/P000597/cosponsored-legislation"
     },
     "currentMember": true,
@@ -747,7 +758,7 @@
         "stateName": "Maine"
       }
     ],
-    "updateDate": "2026-07-14T07:40:24Z"
+    "updateDate": "2026-07-15T07:40:27Z"
   },
   "nominate": {
     "dim1": -0.423,

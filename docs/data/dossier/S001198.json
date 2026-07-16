@@ -4,6 +4,17 @@
     "assignments": [
       {
         "chamber": "senate",
+        "code": "SSEV",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
         "code": "SSVA",
         "committee": "Senate Committee on Veterans' Affairs",
         "committeeUrl": "http://www.veterans.senate.gov/",
@@ -29,17 +40,6 @@
         "code": "SSCM",
         "committee": "Senate Committee on Commerce, Science, and Transportation",
         "committeeUrl": "http://www.commerce.senate.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 6,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "senate",
-        "code": "SSEV",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 6,
@@ -86,7 +86,7 @@
         "committeeUrl": "http://www.epw.senate.gov/",
         "isSubcommittee": true,
         "party": "majority",
-        "rank": 3,
+        "rank": 2,
         "role": null,
         "subcommittee": "Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight"
       },
@@ -114,6 +114,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSEV08",
+        "committee": "Senate Committee on Environment and Public Works",
+        "committeeUrl": "http://www.epw.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 4,
+        "role": null,
+        "subcommittee": "Transportation and Infrastructure"
+      },
+      {
+        "chamber": "senate",
         "code": "SSCM34",
         "committee": "Senate Committee on Commerce, Science, and Transportation",
         "committeeUrl": "http://www.commerce.senate.gov/",
@@ -133,17 +144,6 @@
         "rank": 5,
         "role": null,
         "subcommittee": "Surface Transportation, Freight, Pipelines, and Safety"
-      },
-      {
-        "chamber": "senate",
-        "code": "SSEV08",
-        "committee": "Senate Committee on Environment and Public Works",
-        "committeeUrl": "http://www.epw.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 5,
-        "role": null,
-        "subcommittee": "Transportation and Infrastructure"
       }
     ],
     "bioguideId": "S001198",
@@ -203,7 +203,7 @@
       "birthYear": "1964",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 1807,
+        "count": 1808,
         "url": "https://api.congress.gov/v3/member/S001198/cosponsored-legislation"
       },
       "currentMember": true,
@@ -245,7 +245,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 545,
+        "count": 546,
         "url": "https://api.congress.gov/v3/member/S001198/sponsored-legislation"
       },
       "state": "Alaska",
@@ -401,6 +401,7 @@
         "receipts": 9099778.66
       }
     },
+    "generated_at": "2026-07-15T05:58:43.161956+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -492,6 +493,7 @@
         }
       },
       "cycle": 2026,
+      "generated_at": "2026-07-15T05:58:43.161956+00:00",
       "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -512,7 +514,7 @@
       "receipts": 9099778.66
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "S001198",
     "birthYear": "1964",
@@ -612,7 +614,7 @@
     "birthYear": "1964",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 1807,
+      "count": 1808,
       "url": "https://api.congress.gov/v3/member/S001198/cosponsored-legislation"
     },
     "currentMember": true,
@@ -654,7 +656,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 545,
+      "count": 546,
       "url": "https://api.congress.gov/v3/member/S001198/sponsored-legislation"
     },
     "state": "Alaska",

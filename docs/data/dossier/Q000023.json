@@ -137,7 +137,7 @@
       "birthYear": "1958",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 3773,
+        "count": 3775,
         "url": "https://api.congress.gov/v3/member/Q000023/cosponsored-legislation"
       },
       "currentMember": true,
@@ -284,7 +284,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-07-14T07:40:24Z"
+      "updateDate": "2026-07-15T07:40:27Z"
     },
     "request": {
       "bioguideId": "q000023",
@@ -338,7 +338,53 @@
     },
     "cycle": 2026,
     "financeScore": 66.8,
-    "generated_at": "2026-07-13T19:48:54.661573+00:00",
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 7461.28,
+          "label": "Small individual (unitemized)",
+          "share": 0.012011678048945245
+        },
+        {
+          "amount": 225100.0,
+          "label": "Large individual (itemized)",
+          "share": 0.3623813512986478
+        },
+        {
+          "amount": 388607.55,
+          "label": "PAC / other committees",
+          "share": 0.625606970652407
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0IL05096",
+        "district": "05",
+        "name": "QUIGLEY, MIKE",
+        "office": "H",
+        "party": "DEM",
+        "state": "IL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1218099.13,
+        "debts": 0.0,
+        "disbursements": 584763.14,
+        "individualContributions": 232561.28,
+        "receipts": 621678.88
+      }
+    },
+    "generated_at": "2026-07-15T14:09:09.363635+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -349,14 +395,116 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-13T19:51:55.670425+00:00"
+    "updated_at": "2026-07-15T14:09:44.833308+00:00"
   },
   "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+    "available": true,
+    "bioguideId": "Q000023",
+    "breakdown": [
+      {
+        "amount": 7461.28,
+        "label": "Small individual (unitemized)",
+        "share": 0.012011678048945245
+      },
+      {
+        "amount": 225100.0,
+        "label": "Large individual (itemized)",
+        "share": 0.3623813512986478
+      },
+      {
+        "amount": 388607.55,
+        "label": "PAC / other committees",
+        "share": 0.625606970652407
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0IL05096",
+      "district": "05",
+      "name": "QUIGLEY, MIKE",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "Q000023",
+      "candidate": {
+        "candidate_id": "H0IL05096",
+        "district": "05",
+        "name": "QUIGLEY, MIKE",
+        "office": "H",
+        "party": "DEM",
+        "state": "IL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 71.3,
+          "value": 0.4887,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.9,
+          "value": 0.7315,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 54.1,
+          "value": 0.3744,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 49.8,
+          "value": 0.0321,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 66.8,
+      "generated_at": "2026-07-15T14:09:09.363635+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 66.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-15T14:09:44.833308+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1218099.13,
+      "debts": 0.0,
+      "disbursements": 584763.14,
+      "individualContributions": 232561.28,
+      "receipts": 621678.88
+    }
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "Q000023",
     "birthYear": "1958",
@@ -483,7 +631,7 @@
     "birthYear": "1958",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 3773,
+      "count": 3775,
       "url": "https://api.congress.gov/v3/member/Q000023/cosponsored-legislation"
     },
     "currentMember": true,
@@ -630,7 +778,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-07-14T07:40:24Z"
+    "updateDate": "2026-07-15T07:40:27Z"
   },
   "nominate": {
     "dim1": -0.325,

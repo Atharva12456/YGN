@@ -4,20 +4,20 @@
     "assignments": [
       {
         "chamber": "house",
-        "code": "HSHM",
-        "committee": "House Committee on Homeland Security",
-        "committeeUrl": "https://homeland.house.gov/",
+        "code": "HSVR",
+        "committee": "House Committee on Veterans' Affairs",
+        "committeeUrl": "https://veterans.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
-        "rank": 6,
+        "rank": 5,
         "role": null,
         "subcommittee": null
       },
       {
         "chamber": "house",
-        "code": "HSVR",
-        "committee": "House Committee on Veterans' Affairs",
-        "committeeUrl": "https://veterans.house.gov/",
+        "code": "HSHM",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
         "isSubcommittee": false,
         "party": "minority",
         "rank": 6,
@@ -37,6 +37,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSHM08",
+        "committee": "House Committee on Homeland Security",
+        "committeeUrl": "https://homeland.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Cybersecurity and Infrastructure Protection"
+      },
+      {
+        "chamber": "house",
         "code": "HSHM09",
         "committee": "House Committee on Homeland Security",
         "committeeUrl": "https://homeland.house.gov/",
@@ -45,17 +56,6 @@
         "rank": 2,
         "role": null,
         "subcommittee": "Oversight, Investigations, and Accountability"
-      },
-      {
-        "chamber": "house",
-        "code": "HSHM11",
-        "committee": "House Committee on Homeland Security",
-        "committeeUrl": "https://homeland.house.gov/",
-        "isSubcommittee": true,
-        "party": "minority",
-        "rank": 2,
-        "role": null,
-        "subcommittee": "Border Security and Enforcement"
       },
       {
         "chamber": "house",
@@ -71,7 +71,7 @@
     ],
     "bioguideId": "R000617",
     "count": 6,
-    "leadershipCount": 1,
+    "leadershipCount": 2,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -121,7 +121,7 @@
       "birthYear": "1983",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1073,
+        "count": 1074,
         "url": "https://api.congress.gov/v3/member/R000617/cosponsored-legislation"
       },
       "currentMember": true,
@@ -201,7 +201,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-07-14T07:40:30Z"
+      "updateDate": "2026-07-15T07:40:33Z"
     },
     "request": {
       "bioguideId": "r000617",
@@ -216,7 +216,7 @@
     "note": "Campaign-funding detail is not available in this snapshot.",
     "source": "static"
   },
-  "generated_at": "2026-07-14T17:43:38.351434+00:00",
+  "generated_at": "2026-07-16T06:04:18.121055+00:00",
   "history": {
     "bioguideId": "R000617",
     "birthYear": "1983",
@@ -280,7 +280,7 @@
     "birthYear": "1983",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1073,
+      "count": 1074,
       "url": "https://api.congress.gov/v3/member/R000617/cosponsored-legislation"
     },
     "currentMember": true,
@@ -360,7 +360,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-07-14T07:40:30Z"
+    "updateDate": "2026-07-15T07:40:33Z"
   },
   "nominate": {
     "dim1": -0.496,
