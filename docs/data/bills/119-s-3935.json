@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T14:50:17Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3935",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends Exchange Act \u00a715B to set MSRB membership: a 15\u2011member (odd\u2011number) board with a regulated\u2011representative majority and minimum broker\u2011dealer, bank, advisor, and public seats. Those rules govern MSRB appointments, terms, interim members, and SEC removal authority, affecting regulation of brokers, dealers, municipal advisors, municipal entities, and investors.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:59:32.495141+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e54dfb40e2556b7330b1c2c3",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would amend Section 15B to set MSRB membership rules, 15 members, regulated/public quotas, staggered three\u2011year terms, and SEC appointment and removal authority. It would affect the MSRB, the SEC, municipal securities brokers and dealers (including bank dealers), municipal advisors, issuers/obligated persons, and investors.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:59:37.611003+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e54dfb40e2556b7330b1c2c3",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:38.711464+00:00",
   "source": "congress_api"

@@ -1,0 +1,125 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-01-29",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-25",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-25",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "C000127",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Cantwell, Maria [D-WA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-25",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-11",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-12",
+        "state": "DE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "PSA Screening for HIM Act",
+      "updated_at": "2026-03-20T11:03:17Z"
+    },
+    "detailPath": "119/s/297",
+    "identifier": "S 297",
+    "introducedDate": "2025-01-29",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "297",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "B001236",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Boozman, John [R-AR]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AR"
+      }
+    ],
+    "title": "PSA Screening for HIM Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/297",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires group health plans and issuers to cover PSA screening without cost\u2011sharing for high\u2011risk men 40+. High\u2011risk includes African\u2011American men and men with a first\u2011degree family history or relevant genetic alteration, effective for plan years beginning January 1, 2025.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:39:50.677377+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5be11e1968849eb2ffa9e640",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires group health plans and insurers to cover PSA screening without cost-sharing for men 40+ at high risk. It affects private insurers, employer-sponsored and self-insured group plans, the USPSTF guidance, and high-risk groups such as African American men and men with family history.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:40:15.477737+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5be11e1968849eb2ffa9e640",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-17T06:04:31.034259+00:00",
+  "source": "congress_api"
+}

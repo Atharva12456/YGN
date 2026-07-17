@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-29",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "B001243",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Blackburn, Marsha [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "TN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Artificial Intelligence Risk Evaluation Act of 2025",
+      "updated_at": "2026-03-20T11:03:19Z"
+    },
+    "detailPath": "119/s/2938",
+    "identifier": "S 2938",
+    "introducedDate": "2025-09-29",
+    "latestAction": {
+      "date": "2025-09-29",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "2938",
+    "originChamber": "Senate",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "H001089",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hawley, Josh [R-MO]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "Artificial Intelligence Risk Evaluation Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2938",
+    "votes": []
+  },
+  "generated_at": "2026-07-17T06:04:58.220506+00:00",
+  "source": "congress_api"
+}

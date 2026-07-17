@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-07-16T06:10:43.272466+00:00",
-  "count": 106,
+  "generated_at": "2026-07-17T06:11:13.541422+00:00",
+  "count": 125,
   "bills": {
     "SRES 630": {
       "description": {
@@ -2049,6 +2049,443 @@
       "identifier": "S 2842",
       "title": "Stop CMV Act of 2025",
       "source_updated_at": "2026-03-18T11:03:18Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/380": {
+      "description": {
+        "summary": "The Rural Obstetrics Readiness Act establishes HRSA grant programs and a teleconsultation pilot to support obstetric emergency training, equipment, workforce development, transfer protocols, and rapid telehealth consultation. Awards go to rural hospitals, critical access and rural emergency hospitals, consortia, States and Tribes, and facilities lacking obstetric units; it authorizes $5M (2026\u20132028) and $15M (2026\u20132029).",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:39:51.160225+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "32c793e011089b4982fe4628"
+      },
+      "impact": {
+        "summary": "The bill requires HHS/HRSA to grant funds for obstetric emergency training, equipment, staffing, and transfer protocols to rural hospitals, critical access hospitals, rural emergency hospitals, and consortia in maternity shortage areas. It also creates an HRSA teleconsultation pilot for States, political subdivisions, and Indian Tribes.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:39:14.939551+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "32c793e011089b4982fe4628"
+      },
+      "canonical_id": "119/s/380",
+      "identifier": "S 380",
+      "title": "Rural Obstetrics Readiness Act",
+      "source_updated_at": "2026-03-20T11:03:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/297": {
+      "description": {
+        "summary": "The bill requires group health plans and issuers to cover PSA screening without cost\u2011sharing for high\u2011risk men 40+. High\u2011risk includes African\u2011American men and men with a first\u2011degree family history or relevant genetic alteration, effective for plan years beginning January 1, 2025.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:39:50.677377+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "5be11e1968849eb2ffa9e640"
+      },
+      "impact": {
+        "summary": "The bill requires group health plans and insurers to cover PSA screening without cost-sharing for men 40+ at high risk. It affects private insurers, employer-sponsored and self-insured group plans, the USPSTF guidance, and high-risk groups such as African American men and men with family history.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:40:15.477737+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "5be11e1968849eb2ffa9e640"
+      },
+      "canonical_id": "119/s/297",
+      "identifier": "S 297",
+      "title": "PSA Screening for HIM Act",
+      "source_updated_at": "2026-03-20T11:03:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/2855": {
+      "description": {
+        "summary": "The Act funds DOL competitive grants to community colleges, career and technical education centers, and industry partnerships to build immersive technology career pathways using VR/AR/MR for workforce training. Grants run up to five years, prioritize employer-aligned and accessible programs, and require reporting, independent evaluation, and publication of best practices.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:38:57.452852+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b6789cc38502c98538bfdb58"
+      },
+      "impact": {
+        "summary": "The bill tells the Secretary of Labor to fund community colleges, area CTE schools, Tribal colleges, and industry partnerships to build immersive (VR/AR/XR/MR) career-pathway training. Grants prioritize employer-aligned programs serving veterans and people with disabilities, last up to five years, and require DOL reporting.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:38:46.613664+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b6789cc38502c98538bfdb58"
+      },
+      "canonical_id": "119/s/2855",
+      "identifier": "S 2855",
+      "title": "Immersive Technology for the American Workforce Act of 2025",
+      "source_updated_at": "2026-03-20T11:03:19Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/1117": {
+      "description": {
+        "summary": "This House resolution designates March as \"Multiple System Atrophy Awareness Month\" and expresses support for increased public awareness and funding for research toward therapeutics. It concerns a rare, often fatal neurodegenerative disorder affecting tens of thousands in the United States and represents the House's nonbinding endorsement of awareness and research.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:40:29.435901+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "9068e82b4ab907ffed01efe9"
+      },
+      "impact": {
+        "summary": "This House resolution designates March as \"Multiple System Atrophy Awareness Month\" and supports research funding for MSA. It signals support for about 25,000\u201375,000 U.S. patients, their families, researchers and centers like Stanford's MSA Center of Excellence and agencies such as NIH/NINDS.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:40:26.410114+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "9068e82b4ab907ffed01efe9"
+      },
+      "canonical_id": "119/hres/1117",
+      "identifier": "HRES 1117",
+      "title": "Expressing support for the designation of March as \"Multiple System Atrophy Awareness Month\" to strengthen public awareness of this neurodegenerative disorder.",
+      "source_updated_at": "2026-03-19T15:25:24Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/sres/637": {
+      "description": {
+        "summary": "The resolution requests the Secretary of State to submit, within 30 days under section 502B(c), a State Department statement prepared with DRL and the Office of the Legal Adviser on Cameroon's human rights practices. It requires details on violations, treatment of non\u2011Cameroonians sent to Cameroon, U.S. assurances, and 2025\u201326 transfers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:40:58.796095+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "f2995b8411462dd45b587f40"
+      },
+      "impact": {
+        "summary": "Senate requests a 502B(c) report from the Secretary of State on Cameroon's human rights for congressional committees. Prepared with the Assistant Secretary for DRL and State Legal Adviser, it must cover Cameroon government abuses, U.S. removals including 2025\u20132026 cases, and risks from U.S. security assistance.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:41:03.690369+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "f2995b8411462dd45b587f40"
+      },
+      "canonical_id": "119/sres/637",
+      "identifier": "SRES 637",
+      "title": "A resolution requesting information on the Republic of Cameroon's human rights practices pursuant to section 502B(c) of the Foreign Assistance Act 1961.",
+      "source_updated_at": "2026-03-19T19:40:46Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7750": {
+      "description": {
+        "summary": "The POINT Act criminalizes executive \"election interference\" and forbids using government property, personnel, information systems, or funds to influence, delay, or alter elections. It applies to the President, Vice President, EOP and senior agency officials including AG, FBI and DNI directors and cabinet managers, forbids military or federal deployments except under the Voting Rights Act or for secession/rebellion.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:41:37.358293+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "a3bf4fa7edab0b5bd218f19d"
+      },
+      "impact": {
+        "summary": "The POINT Act criminalizes federal executive election interference by named officials\u2014President, Vice President, Attorney General, FBI and DNI directors, and cabinet managers\u2014using government property, personnel, systems, or funds. It forbids Armed Forces deployment to affect State elections, lets States sue, and preserves Voting Rights exceptions.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:41:29.742268+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "a3bf4fa7edab0b5bd218f19d"
+      },
+      "canonical_id": "119/hr/7750",
+      "identifier": "HR 7750",
+      "title": "POINT Act",
+      "source_updated_at": "2026-03-19T19:45:25Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7759": {
+      "description": {
+        "summary": "The bill requires DHS to verify personal and biometric data and conduct in-person vetting of Afghan evacuees, maintain a vetting database, report quarterly, and permit GAO audits. It applies to noncitizen, non-military evacuees from Afghanistan during the 2021 U.S. evacuation operations and bars unvetted individuals from Federal means-tested benefits, unemployment.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:42:02.923750+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "27cc8028ee623893309b42a1"
+      },
+      "impact": {
+        "summary": "The bill directs DHS to verify personal and biometric data, conduct in\u2011person vetting, and create a database for non\u2011citizens evacuated from Afghanistan, including Operation Allies Welcome evacuees, and report to Congress. Evacuees who refuse vetting are barred from unemployment compensation and Federal means\u2011tested public benefits.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:41:50.538907+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "27cc8028ee623893309b42a1"
+      },
+      "canonical_id": "119/hr/7759",
+      "identifier": "HR 7759",
+      "title": "Afghanistan Vetting and Accountability Act of 2026",
+      "source_updated_at": "2026-03-19T15:29:33Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7761": {
+      "description": {
+        "summary": "Reauthorizes USDA\u2019s heirs property relending program to 2031 and funds nonprofit legal and accounting cooperative agreements to resolve ownership and succession of multi\u2011owner farmland or forestland. Provides $60 million per year for FY2027\u20132031 (\u22643% admin), prioritizes underserved heirs (limited\u2011resource, socially disadvantaged, veterans), and requires annual public reports to Congress.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:19:56.569239+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c483ba3e138c7f55856a2687"
+      },
+      "impact": {
+        "summary": "The bill reauthorizes heirs property relending and farmland data programs through 2031 and authorizes $60 million annually for USDA cooperative agreements funding nonprofit legal services. It affects underserved heirs with undivided farmland or forest interests, nonprofit legal providers, and USDA programs requiring ownership to enroll.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:42:45.529190+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "c483ba3e138c7f55856a2687"
+      },
+      "canonical_id": "119/hr/7761",
+      "identifier": "HR 7761",
+      "title": "Heirs Education and Investment to Resolve Succession of Property Act",
+      "source_updated_at": "2026-03-19T19:42:49Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7749": {
+      "description": {
+        "summary": "The Quantum in Practice Act amends the National Quantum Initiative Act to add \"modeling, simulation\" to the definition of quantum information science and to insert \"quantum molecular modeling or simulation\" among section 401(b)(3) research priorities. It applies to federal programs implementing the NQI Act.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:42:52.363116+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4f7ff53e732f41120ae26384"
+      },
+      "impact": {
+        "summary": "The bill amends the National Quantum Initiative Act to add modeling and simulation and to include quantum molecular modeling or simulation in the QIS research program. It would guide NSF, NIST, DOE labs, universities, and researchers to research chemical, pharmaceutical, battery, fertilizer, and defense industries.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:43:21.772324+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4f7ff53e732f41120ae26384"
+      },
+      "canonical_id": "119/hr/7749",
+      "identifier": "HR 7749",
+      "title": "Quantum in Practice Act",
+      "source_updated_at": "2026-03-19T15:27:10Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7752": {
+      "description": {
+        "summary": "The Kelsey Smith Act requires providers and carriers to promptly disclose available device location data to law enforcement or PSAPs in emergencies. Requests must assert recent 911 contact or reasonable suspicion of imminent danger, include subscriber or next\u2011of\u2011kin consent or documented efforts, and be recorded by the agency.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:20:23.866514+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d3439e0208643fe0a601351c"
+      },
+      "impact": {
+        "summary": "The bill amends 18 U.S.C. 2703 to require providers to promptly give device location to law enforcement or public safety answering points (911 centers) in emergencies. It affects wireless carriers, ISPs, investigative agencies, subscribers and next-of-kin consent procedures, and intersects state disclosure laws.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:43:40.322247+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d3439e0208643fe0a601351c"
+      },
+      "canonical_id": "119/hr/7752",
+      "identifier": "HR 7752",
+      "title": "Kelsey Smith Act",
+      "source_updated_at": "2026-03-19T15:27:50Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3937": {
+      "description": {
+        "summary": "The bill amends the Sherman Act to deem purchases of residential real estate by certain large investors civil Section 1 antitrust violations. It covers REITs, insurers, and investment companies or private funds with \u2265$150,000,000 AUM buying single\u2011family homes, condos, townhouses, or zoned land, with a homebuilder exception and 90\u2011day delay.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:59:15.457204+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "2637a648b673a4061ce422d1"
+      },
+      "impact": {
+        "summary": "The bill bars purchases of single-family homes, condos, townhouses, or zoned land by covered entities: REITs, insurance companies, and investment companies or private funds with at least $150,000,000 assets under management. DOJ Antitrust Division must prioritize review and enforcement; effective 90 days after enactment.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:59:11.095072+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "2637a648b673a4061ce422d1"
+      },
+      "canonical_id": "119/s/3937",
+      "identifier": "S 3937",
+      "title": "Homes for American Families Act",
+      "source_updated_at": "2026-03-19T14:49:31Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3935": {
+      "description": {
+        "summary": "The bill amends Exchange Act \u00a715B to set MSRB membership: a 15\u2011member (odd\u2011number) board with a regulated\u2011representative majority and minimum broker\u2011dealer, bank, advisor, and public seats. Those rules govern MSRB appointments, terms, interim members, and SEC removal authority, affecting regulation of brokers, dealers, municipal advisors, municipal entities, and investors.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:59:32.495141+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e54dfb40e2556b7330b1c2c3"
+      },
+      "impact": {
+        "summary": "The bill would amend Section 15B to set MSRB membership rules, 15 members, regulated/public quotas, staggered three\u2011year terms, and SEC appointment and removal authority. It would affect the MSRB, the SEC, municipal securities brokers and dealers (including bank dealers), municipal advisors, issuers/obligated persons, and investors.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:59:37.611003+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e54dfb40e2556b7330b1c2c3"
+      },
+      "canonical_id": "119/s/3935",
+      "identifier": "S 3935",
+      "title": "Municipal Securities Rulemaking Board Reform Act of 2026",
+      "source_updated_at": "2026-03-19T14:50:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7420": {
+      "description": {
+        "summary": "The bill criminalizes knowingly transporting a minor across state or foreign lines to obtain puberty blockers, cross\u2011sex hormones, or gender\u2011altering surgery, punishable by up to 10 years' imprisonment and civil suits. It also denies federal funds to governments that permit, facilitate, or fail to cooperate with investigations of such transport.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:00:02.517365+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "398e28fc1538351dadd6f9a3"
+      },
+      "impact": {
+        "summary": "The bill criminalizes knowingly transporting a minor across state lines to obtain puberty blockers, cross\u2011sex hormones, or surgical sex\u2011change procedures, affecting parents and medical providers. It also bars federal funds to states or localities that allow such transport or refuse to cooperate with DOJ investigations.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T03:59:59.844468+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "398e28fc1538351dadd6f9a3"
+      },
+      "canonical_id": "119/hr/7420",
+      "identifier": "HR 7420",
+      "title": "Stop Gender Trafficking of Minors Act",
+      "source_updated_at": "2026-03-19T15:14:49Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3523": {
+      "description": {
+        "summary": "The Clean Competition Act adds a carbon intensity charge to the tax code that levies fees based on facility or national\u2011industry carbon intensity and requires annual facility reporting of emissions, electricity sourcing, and production quantities. It covers covered entities, eligible facilities, and covered primary goods within defined covered national industries.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:04:04.740644+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "ad8b079dd851cdf317f76831"
+      },
+      "impact": {
+        "summary": "The Clean Competition Act creates a carbon\u2011intensity charge requiring covered entities and eligible facilities to report GHG emissions, electricity use, and output to the Secretary (Treasury), the Administrator (EPA), and the Secretary of Energy. It sets carbon\u2011intensity formulas affecting U.S. energy\u2011intensive manufacturers and import classifications.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:04:27.408486+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "ad8b079dd851cdf317f76831"
+      },
+      "canonical_id": "119/s/3523",
+      "identifier": "S 3523",
+      "title": "Clean Competition Act",
+      "source_updated_at": "2026-03-19T15:15:56Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6787": {
+      "description": {
+        "summary": "Creates a carbon\u2011intensity charge in the tax code that taxes emissions per unit by requiring facilities to report GHG emissions, electricity use, and production. Applies to eligible facilities producing covered primary goods and assigns Treasury, EPA, and Energy to calculate intensities, handle petitions, and administer charges, rebates, and carbon clubs.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:00:27.937372+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b75909ae851dee23f7737c76"
+      },
+      "impact": {
+        "summary": "The Clean Competition Act adds a carbon\u2011intensity charge and carbon border adjustment to the Internal Revenue Code. It makes U.S. manufacturers (covered entities) of goods like steel, cement, aluminum, and chemicals report emissions and energy data to Treasury, EPA (GHGRP), and Energy for billing.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:00:20.798125+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "b75909ae851dee23f7737c76"
+      },
+      "canonical_id": "119/hr/6787",
+      "identifier": "HR 6787",
+      "title": "Clean Competition Act",
+      "source_updated_at": "2026-03-19T15:16:02Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3455": {
+      "description": {
+        "summary": "Creates 49 U.S.C. \u00a75308 authorizing formula grants for urban transit operating, planning, security, and safety projects, with operating grants at 80% federal share. Apportionments use reported operating expenses; recipients must maintain non\u2011Federal spending, cannot convert fixed\u2011route to third\u2011party on\u2011demand, and may reallocate up to 10% of section 5336 funds.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:01:03.554406+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d6f15023258aaf85ae493e51"
+      },
+      "impact": {
+        "summary": "The bill creates \u00a75308 authorizing FTA grants to urbanized areas for transit operating, planning, security, and safety. It sets an 80% federal share for operating aid and requires transit recipients (for example, New York MTA) to certify they will maintain non\u2011Federal operating and security spending.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:01:17.215701+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d6f15023258aaf85ae493e51"
+      },
+      "canonical_id": "119/s/3455",
+      "identifier": "S 3455",
+      "title": "Moving Transit Forward Act of 2025",
+      "source_updated_at": "2026-03-19T11:03:28Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/3310": {
+      "description": {
+        "summary": "The bill requires DHS to verify identities and biometrics and to conduct in-person interviews of noncitizens evacuated from Afghanistan between Jan 20, 2021 and Jan 20, 2022. Unvetted evacuees are barred from unemployment and all means-tested federal benefits until vetted, and DHS must provide quarterly reports while GAO audits compliance.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:01:42.501473+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "5a56a8d5cb40be75d73a7ce4"
+      },
+      "impact": {
+        "summary": "DHS must verify personal and biometric data, conduct in person vetting, and list criminal and benefit records for non United States citizens evacuated from Afghanistan. Noncompliant evacuees would be ineligible for unemployment compensation and Federal means tested programs such as SNAP, Medicaid, and TANF.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:01:53.170191+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "5a56a8d5cb40be75d73a7ce4"
+      },
+      "canonical_id": "119/s/3310",
+      "identifier": "S 3310",
+      "title": "Afghanistan Vetting and Accountability Act of 2025",
+      "source_updated_at": "2026-03-19T15:29:27Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6284": {
+      "description": {
+        "summary": "The bill creates a tiered Public Service Loan Forgiveness for Federal Direct Loans made after enactment, forgiving 15% increments and full balance after 120 qualifying payments. It covers borrowers employed in certified public service jobs, requires employment certification (including self\u2011certification), cancels interest on forgiven amounts, and auto\u2011defers loans during processing.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:37:14.497724+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "1062e76299d2f194aaa6a924"
+      },
+      "impact": {
+        "summary": "Bill requires Department of Education to cancel parts of Federal Direct Loans for borrowers in qualifying public service jobs (government and qualifying nonprofits). It cancels 15% after each 24 payments through 96, forgives remaining balance after 120, requires ED certification, cancels interest, and defers loans.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:02:27.374438+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "1062e76299d2f194aaa6a924"
+      },
+      "canonical_id": "119/hr/6284",
+      "identifier": "HR 6284",
+      "title": "Strengthening Loan Forgiveness for Public Service Workers Act",
+      "source_updated_at": "2026-03-19T08:07:08Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/2957": {
+      "description": {
+        "summary": "S.2957 raises the portion of urbanized-area formula grants reserved for small transit\u2011intensive cities under 49 U.S.C. 5336(h)(3) from 3 percent to 5 percent. It changes allocations for Federal Transit Administration urbanized-area formula funds, increasing federal shares available to qualifying small cities and their transit agencies.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:02:57.469136+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "27cc3a97232d9aefea0d8fe9"
+      },
+      "impact": {
+        "summary": "The bill changes 49 U.S.C. \u00a75336(h)(3) to raise the set\u2011aside for small transit intensive cities from 3% to 5% of formula grants. That change would shift FTA allocations toward local transit agencies in qualifying small urbanized areas and state transportation agencies that receive them.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-07-17T04:02:56.328228+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "27cc3a97232d9aefea0d8fe9"
+      },
+      "canonical_id": "119/s/2957",
+      "identifier": "S 2957",
+      "title": "Small Communities Transit Improvement Act",
+      "source_updated_at": "2026-03-19T11:03:27Z",
       "content_version": "bill-ai-v6"
     }
   }

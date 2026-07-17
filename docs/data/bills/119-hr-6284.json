@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 8,
@@ -119,7 +119,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T08:07:08Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6284",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill creates a tiered Public Service Loan Forgiveness for Federal Direct Loans made after enactment, forgiving 15% increments and full balance after 120 qualifying payments. It covers borrowers employed in certified public service jobs, requires employment certification (including self\u2011certification), cancels interest on forgiven amounts, and auto\u2011defers loans during processing.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:37:14.497724+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1062e76299d2f194aaa6a924",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Bill requires Department of Education to cancel parts of Federal Direct Loans for borrowers in qualifying public service jobs (government and qualifying nonprofits). It cancels 15% after each 24 payments through 96, forgives remaining balance after 120, requires ED certification, cancels interest, and defers loans.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:02:27.374438+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1062e76299d2f194aaa6a924",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:47.256203+00:00",
   "source": "congress_api"

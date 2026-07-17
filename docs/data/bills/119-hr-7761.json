@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T19:42:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7761",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "Reauthorizes USDA\u2019s heirs property relending program to 2031 and funds nonprofit legal and accounting cooperative agreements to resolve ownership and succession of multi\u2011owner farmland or forestland. Provides $60 million per year for FY2027\u20132031 (\u22643% admin), prioritizes underserved heirs (limited\u2011resource, socially disadvantaged, veterans), and requires annual public reports to Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:19:56.569239+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c483ba3e138c7f55856a2687",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill reauthorizes heirs property relending and farmland data programs through 2031 and authorizes $60 million annually for USDA cooperative agreements funding nonprofit legal services. It affects underserved heirs with undivided farmland or forest interests, nonprofit legal providers, and USDA programs requiring ownership to enroll.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:42:45.529190+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c483ba3e138c7f55856a2687",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:34.181842+00:00",
   "source": "congress_api"

@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "G000555",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Gillibrand, Kirsten E. [D-NY]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-11",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-11",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "A000382",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Alsobrooks, Angela D. [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "MD"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "One Fair Price Act of 2025",
+      "updated_at": "2026-03-20T11:03:19Z"
+    },
+    "detailPath": "119/s/3387",
+    "identifier": "S 3387",
+    "introducedDate": "2025-12-08",
+    "latestAction": {
+      "date": "2025-12-08",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "3387",
+    "originChamber": "Senate",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AZ"
+      }
+    ],
+    "title": "One Fair Price Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3387",
+    "votes": []
+  },
+  "generated_at": "2026-07-17T06:04:53.927263+00:00",
+  "source": "congress_api"
+}

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T15:29:27Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3310",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires DHS to verify identities and biometrics and to conduct in-person interviews of noncitizens evacuated from Afghanistan between Jan 20, 2021 and Jan 20, 2022. Unvetted evacuees are barred from unemployment and all means-tested federal benefits until vetted, and DHS must provide quarterly reports while GAO audits compliance.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:01:42.501473+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5a56a8d5cb40be75d73a7ce4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "DHS must verify personal and biometric data, conduct in person vetting, and list criminal and benefit records for non United States citizens evacuated from Afghanistan. Noncompliant evacuees would be ineligible for unemployment compensation and Federal means tested programs such as SNAP, Medicaid, and TANF.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:01:53.170191+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5a56a8d5cb40be75d73a7ce4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:46.099020+00:00",
   "source": "congress_api"

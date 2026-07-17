@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 6,
@@ -99,7 +99,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T15:16:02Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6787",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "Creates a carbon\u2011intensity charge in the tax code that taxes emissions per unit by requiring facilities to report GHG emissions, electricity use, and production. Applies to eligible facilities producing covered primary goods and assigns Treasury, EPA, and Energy to calculate intensities, handle petitions, and administer charges, rebates, and carbon clubs.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:00:27.937372+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b75909ae851dee23f7737c76",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Clean Competition Act adds a carbon\u2011intensity charge and carbon border adjustment to the Internal Revenue Code. It makes U.S. manufacturers (covered entities) of goods like steel, cement, aluminum, and chemicals report emissions and energy data to Treasury, EPA (GHGRP), and Energy for billing.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:00:20.798125+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b75909ae851dee23f7737c76",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:44.913640+00:00",
   "source": "congress_api"

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 12,
@@ -159,7 +159,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T15:27:10Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7749",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Quantum in Practice Act amends the National Quantum Initiative Act to add \"modeling, simulation\" to the definition of quantum information science and to insert \"quantum molecular modeling or simulation\" among section 401(b)(3) research priorities. It applies to federal programs implementing the NQI Act.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:42:52.363116+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4f7ff53e732f41120ae26384",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends the National Quantum Initiative Act to add modeling and simulation and to include quantum molecular modeling or simulation in the QIS research program. It would guide NSF, NIST, DOE labs, universities, and researchers to research chemical, pharmaceutical, battery, fertilizer, and defense industries.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:43:21.772324+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4f7ff53e732f41120ae26384",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:35.575513+00:00",
   "source": "congress_api"

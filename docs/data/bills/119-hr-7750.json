@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T19:45:25Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7750",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The POINT Act criminalizes executive \"election interference\" and forbids using government property, personnel, information systems, or funds to influence, delay, or alter elections. It applies to the President, Vice President, EOP and senior agency officials including AG, FBI and DNI directors and cabinet managers, forbids military or federal deployments except under the Voting Rights Act or for secession/rebellion.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:41:37.358293+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3bf4fa7edab0b5bd218f19d",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The POINT Act criminalizes federal executive election interference by named officials\u2014President, Vice President, Attorney General, FBI and DNI directors, and cabinet managers\u2014using government property, personnel, systems, or funds. It forbids Armed Forces deployment to affect State elections, lets States sue, and preserves Voting Rights exceptions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:41:29.742268+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3bf4fa7edab0b5bd218f19d",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:31.956628+00:00",
   "source": "congress_api"

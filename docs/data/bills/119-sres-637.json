@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "SRES",
     "updatedAt": "2026-03-19T19:40:46Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/637",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The resolution requests the Secretary of State to submit, within 30 days under section 502B(c), a State Department statement prepared with DRL and the Office of the Legal Adviser on Cameroon's human rights practices. It requires details on violations, treatment of non\u2011Cameroonians sent to Cameroon, U.S. assurances, and 2025\u201326 transfers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:40:58.796095+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f2995b8411462dd45b587f40",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Senate requests a 502B(c) report from the Secretary of State on Cameroon's human rights for congressional committees. Prepared with the Assistant Secretary for DRL and State Legal Adviser, it must cover Cameroon government abuses, U.S. removals including 2025\u20132026 cases, and risks from U.S. security assistance.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:41:03.690369+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f2995b8411462dd45b587f40",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:30.744429+00:00",
   "source": "congress_api"

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T11:03:27Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2957",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "S.2957 raises the portion of urbanized-area formula grants reserved for small transit\u2011intensive cities under 49 U.S.C. 5336(h)(3) from 3 percent to 5 percent. It changes allocations for Federal Transit Administration urbanized-area formula funds, increasing federal shares available to qualifying small cities and their transit agencies.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:02:57.469136+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "27cc3a97232d9aefea0d8fe9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill changes 49 U.S.C. \u00a75336(h)(3) to raise the set\u2011aside for small transit intensive cities from 3% to 5% of formula grants. That change would shift FTA allocations toward local transit agencies in qualifying small urbanized areas and state transportation agencies that receive them.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:02:56.328228+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "27cc3a97232d9aefea0d8fe9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:49.422743+00:00",
   "source": "congress_api"

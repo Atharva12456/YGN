@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-18",
+        "state": "AL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Immersive Technology for the American Workforce Act of 2025",
+      "updated_at": "2026-03-20T11:03:19Z"
+    },
+    "detailPath": "119/s/2855",
+    "identifier": "S 2855",
+    "introducedDate": "2025-09-18",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "2855",
+    "originChamber": "Senate",
+    "policyArea": "Labor and Employment",
+    "sponsors": [
+      {
+        "bioguideId": "B001303",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Blunt Rochester, Lisa [D-DE]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "DE"
+      }
+    ],
+    "title": "Immersive Technology for the American Workforce Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2855",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Act funds DOL competitive grants to community colleges, career and technical education centers, and industry partnerships to build immersive technology career pathways using VR/AR/MR for workforce training. Grants run up to five years, prioritize employer-aligned and accessible programs, and require reporting, independent evaluation, and publication of best practices.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:38:57.452852+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b6789cc38502c98538bfdb58",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill tells the Secretary of Labor to fund community colleges, area CTE schools, Tribal colleges, and industry partnerships to build immersive (VR/AR/XR/MR) career-pathway training. Grants prioritize employer-aligned programs serving veterans and people with disabilities, last up to five years, and require DOL reporting.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:38:46.613664+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b6789cc38502c98538bfdb58",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-17T06:04:31.403337+00:00",
+  "source": "congress_api"
+}

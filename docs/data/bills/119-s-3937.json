@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T14:49:31Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3937",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the Sherman Act to deem purchases of residential real estate by certain large investors civil Section 1 antitrust violations. It covers REITs, insurers, and investment companies or private funds with \u2265$150,000,000 AUM buying single\u2011family homes, condos, townhouses, or zoned land, with a homebuilder exception and 90\u2011day delay.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:59:15.457204+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2637a648b673a4061ce422d1",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars purchases of single-family homes, condos, townhouses, or zoned land by covered entities: REITs, insurance companies, and investment companies or private funds with at least $150,000,000 assets under management. DOJ Antitrust Division must prioritize review and enforcement; effective 90 days after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:59:11.095072+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2637a648b673a4061ce422d1",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:38.448884+00:00",
   "source": "congress_api"

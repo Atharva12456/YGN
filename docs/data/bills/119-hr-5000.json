@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001313",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Brown, Shontel M. [D-OH-11]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-08-19",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-10",
+        "state": "VA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Cybersecurity Hiring Modernization Act",
+      "updated_at": "2026-03-19T20:05:20Z"
+    },
+    "detailPath": "119/hr/5000",
+    "identifier": "HR 5000",
+    "introducedDate": "2025-08-19",
+    "latestAction": {
+      "date": "2026-02-04",
+      "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 44 - 0."
+    },
+    "number": "5000",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "M000194",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Mace, Nancy [R-SC-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "SC"
+      }
+    ],
+    "title": "Cybersecurity Hiring Modernization Act",
+    "type": "HR",
+    "updatedAt": "2026-03-19T20:05:20Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5000",
+    "votes": []
+  },
+  "generated_at": "2026-07-17T06:04:44.826201+00:00",
+  "source": "congress_api"
+}

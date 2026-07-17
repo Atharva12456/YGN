@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-19T15:25:24Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1117",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution designates March as \"Multiple System Atrophy Awareness Month\" and expresses support for increased public awareness and funding for research toward therapeutics. It concerns a rare, often fatal neurodegenerative disorder affecting tens of thousands in the United States and represents the House's nonbinding endorsement of awareness and research.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:40:29.435901+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9068e82b4ab907ffed01efe9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This House resolution designates March as \"Multiple System Atrophy Awareness Month\" and supports research funding for MSA. It signals support for about 25,000\u201375,000 U.S. patients, their families, researchers and centers like Stanford's MSA Center of Excellence and agencies such as NIH/NINDS.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:40:26.410114+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9068e82b4ab907ffed01efe9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:30.196222+00:00",
   "source": "congress_api"

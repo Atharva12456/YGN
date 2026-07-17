@@ -1,0 +1,135 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 7,
+    "cosponsors": [
+      {
+        "bioguideId": "C001035",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Collins, Susan M. [R-ME]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-04",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-04",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "S001203",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Smith, Tina [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-04",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-13",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "C000127",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Cantwell, Maria [D-WA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-01",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-03",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "J000312",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Justice, James C. [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-03",
+        "state": "WV"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Rural Obstetrics Readiness Act This bill creates and expands federal grant programs within the Health Resources and Services Administration (HRSA) to increase capacity to provide emergency obstetric health services in rural areas or areas without practitioners or facilities specializing in obstetric services. Specifically, HRSA must establish a program for providing grants to certain hospitals or consortiums that include hospitals in rural areas or areas with maternal health care professional shortages for training, developing a workforce, and purchasing equipment relating to obstetric emergencies. In addition, the bill requires HRSA\u2019s Alliance for Innovation on Maternal Health Capacity program to provide grants for training on emergency obstetric services for practitioners in rural health care facilities without dedicated obstetric units. HRSA must also establish a pilot program to provide grants to government entities for developing or improving telehealth access programs to support urgent maternal health care in rural facilities without a dedicated obstetric unit.",
+      "updated_at": "2025-04-29T19:34:32Z"
+    },
+    "detailPath": "119/s/380",
+    "identifier": "S 380",
+    "introducedDate": "2025-02-04",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "380",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "H001076",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hassan, Margaret Wood [D-NH]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NH"
+      }
+    ],
+    "title": "Rural Obstetrics Readiness Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/380",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Rural Obstetrics Readiness Act establishes HRSA grant programs and a teleconsultation pilot to support obstetric emergency training, equipment, workforce development, transfer protocols, and rapid telehealth consultation. Awards go to rural hospitals, critical access and rural emergency hospitals, consortia, States and Tribes, and facilities lacking obstetric units; it authorizes $5M (2026\u20132028) and $15M (2026\u20132029).",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:39:51.160225+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "32c793e011089b4982fe4628",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires HHS/HRSA to grant funds for obstetric emergency training, equipment, staffing, and transfer protocols to rural hospitals, critical access hospitals, rural emergency hospitals, and consortia in maternity shortage areas. It also creates an HRSA teleconsultation pilot for States, political subdivisions, and Indian Tribes.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:39:14.939551+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "32c793e011089b4982fe4628",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-17T06:04:30.055099+00:00",
+  "source": "congress_api"
+}

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T15:14:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7420",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill criminalizes knowingly transporting a minor across state or foreign lines to obtain puberty blockers, cross\u2011sex hormones, or gender\u2011altering surgery, punishable by up to 10 years' imprisonment and civil suits. It also denies federal funds to governments that permit, facilitate, or fail to cooperate with investigations of such transport.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:00:02.517365+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "398e28fc1538351dadd6f9a3",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill criminalizes knowingly transporting a minor across state lines to obtain puberty blockers, cross\u2011sex hormones, or surgical sex\u2011change procedures, affecting parents and medical providers. It also bars federal funds to states or localities that allow such transport or refuse to cooperate with DOJ investigations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:59:59.844468+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "398e28fc1538351dadd6f9a3",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:42.014397+00:00",
   "source": "congress_api"

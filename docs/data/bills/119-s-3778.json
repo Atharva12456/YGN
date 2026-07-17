@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "C000127",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cantwell, Maria [D-WA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-04",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "K000377",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Kelly, Mark [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Carbon Resource Innovation Act",
+      "updated_at": "2026-03-20T11:03:19Z"
+    },
+    "detailPath": "119/s/3778",
+    "identifier": "S 3778",
+    "introducedDate": "2026-02-04",
+    "latestAction": {
+      "date": "2026-02-04",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3778",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "S001232",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Sheehy, Tim [R-MT]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MT"
+      }
+    ],
+    "title": "Carbon Resource Innovation Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3778",
+    "votes": []
+  },
+  "generated_at": "2026-07-17T06:04:47.939522+00:00",
+  "source": "congress_api"
+}

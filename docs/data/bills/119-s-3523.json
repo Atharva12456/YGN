@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T15:15:56Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3523",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Clean Competition Act adds a carbon intensity charge to the tax code that levies fees based on facility or national\u2011industry carbon intensity and requires annual facility reporting of emissions, electricity sourcing, and production quantities. It covers covered entities, eligible facilities, and covered primary goods within defined covered national industries.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:04:04.740644+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ad8b079dd851cdf317f76831",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Clean Competition Act creates a carbon\u2011intensity charge requiring covered entities and eligible facilities to report GHG emissions, electricity use, and output to the Secretary (Treasury), the Administrator (EPA), and the Secretary of Energy. It sets carbon\u2011intensity formulas affecting U.S. energy\u2011intensive manufacturers and import classifications.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:04:27.408486+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ad8b079dd851cdf317f76831",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:43.589844+00:00",
   "source": "congress_api"

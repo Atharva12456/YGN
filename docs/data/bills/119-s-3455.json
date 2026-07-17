@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 12,
@@ -159,7 +159,26 @@
     "type": "S",
     "updatedAt": "2026-03-19T11:03:28Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3455",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "Creates 49 U.S.C. \u00a75308 authorizing formula grants for urban transit operating, planning, security, and safety projects, with operating grants at 80% federal share. Apportionments use reported operating expenses; recipients must maintain non\u2011Federal spending, cannot convert fixed\u2011route to third\u2011party on\u2011demand, and may reallocate up to 10% of section 5336 funds.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:01:03.554406+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d6f15023258aaf85ae493e51",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill creates \u00a75308 authorizing FTA grants to urbanized areas for transit operating, planning, security, and safety. It sets an 80% federal share for operating aid and requires transit recipients (for example, New York MTA) to certify they will maintain non\u2011Federal operating and security spending.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:01:17.215701+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d6f15023258aaf85ae493e51",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:45.172440+00:00",
   "source": "congress_api"

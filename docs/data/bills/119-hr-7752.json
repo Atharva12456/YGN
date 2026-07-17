@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "HR",
     "updatedAt": "2026-03-19T15:27:50Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7752",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Kelsey Smith Act requires providers and carriers to promptly disclose available device location data to law enforcement or PSAPs in emergencies. Requests must assert recent 911 contact or reasonable suspicion of imminent danger, include subscriber or next\u2011of\u2011kin consent or documented efforts, and be recorded by the agency.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T04:20:23.866514+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d3439e0208643fe0a601351c",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends 18 U.S.C. 2703 to require providers to promptly give device location to law enforcement or public safety answering points (911 centers) in emergencies. It affects wireless carriers, ISPs, investigative agencies, subscribers and next-of-kin consent procedures, and intersects state disclosure laws.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-17T03:43:40.322247+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d3439e0208643fe0a601351c",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-16T06:04:36.387044+00:00",
   "source": "congress_api"
