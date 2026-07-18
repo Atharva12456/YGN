@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Keep Jobs in California Act of 2026",
+      "updated_at": "2026-03-20T15:28:42Z"
+    },
+    "detailPath": "119/hr/7619",
+    "identifier": "HR 7619",
+    "introducedDate": "2026-02-20",
+    "latestAction": {
+      "date": "2026-02-20",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7619",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "K000401",
+        "district": 3,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Kiley, Kevin [R-CA-3]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Keep Jobs in California Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-20T15:28:42Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7619",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill bars states from imposing retroactive taxes on the value of assets owned by individuals who were nonresidents when the taxing law is enacted. It covers taxes attributable to any period before the law's enactment and takes effect January 1, 2026.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:12:12.473382+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "405f86b4f5fe88e645330a3e",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Keep Jobs in California Act of 2026 bars States from levying retroactive taxes on nonresident individuals' assets when the tax uses asset values dated before the law's enactment. It would affect the California Franchise Tax Board, ex-California residents, and banks.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:12:17.946894+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "405f86b4f5fe88e645330a3e",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:25.657352+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-12",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Small Business Investor Capital Access Act",
+      "updated_at": "2026-03-22T22:29:18Z"
+    },
+    "detailPath": "119/s/3880",
+    "identifier": "S 3880",
+    "introducedDate": "2026-02-12",
+    "latestAction": {
+      "date": "2026-02-12",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3880",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "R000605",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Rounds, Mike [R-SD]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "SD"
+      }
+    ],
+    "title": "Small Business Investor Capital Access Act",
+    "type": "S",
+    "updatedAt": "2026-03-22T22:29:18Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3880",
+    "votes": []
+  },
+  "generated_at": "2026-07-18T05:52:26.607885+00:00",
+  "source": "congress_api"
+}

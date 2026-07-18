@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "B001267",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Bennet, Michael F. [D-CO]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "L000575",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Lankford, James [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "C000127",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cantwell, Maria [D-WA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "B001243",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Blackburn, Marsha [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-10",
+        "state": "TN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "IRA Charitable Rollover Facilitation and Enhancement Act of 2026",
+      "updated_at": "2026-03-20T15:26:11Z"
+    },
+    "detailPath": "119/s/3975",
+    "identifier": "S 3975",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3975",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "Y000064",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Young, Todd [R-IN]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IN"
+      }
+    ],
+    "title": "IRA Charitable Rollover Facilitation and Enhancement Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-20T15:26:11Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3975",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the Internal Revenue Code to allow charitable rollovers from individual retirement accounts to donor-advised funds by removing the exclusion of funds described in section 4966(d)(2). It applies to IRA distributions after enactment and affects IRA owners and donor-advised funds covered by section 4966(d)(2).",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:09:41.205928+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d4b14975359a27a41ebba7fc",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would let people transfer IRA distributions directly into donor advised funds. It affects IRA owners, account custodians (banks and brokerages), donor advised fund sponsors (community foundations, Fidelity Charitable), public charities, and the IRS.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:09:59.456851+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d4b14975359a27a41ebba7fc",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:22.916393+00:00",
+  "source": "congress_api"
+}

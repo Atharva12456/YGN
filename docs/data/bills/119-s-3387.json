@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 3,
@@ -69,7 +69,26 @@
     "type": "S",
     "updatedAt": "2026-03-20T11:03:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3387",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The One Fair Price Act makes it unlawful to use surveillance data to offer or charge different prices for the same or substantially similar product or service. It authorizes FTC, State, and private enforcement with at least $3,000 damages, allows disclosed cost\u2011based differences and bona fide discounts/loyalty, and exempts insurance/credit.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:51:54.876332+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e0deadbbe48eee03d5890189",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars using surveillance data to set individualized prices for the same or substantially similar products or services, excluding insurance and credit. Enforcement would be by the Federal Trade Commission, state attorneys general, and private lawsuits with damages, covering retailers, online platforms, airlines.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:51:50.987610+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e0deadbbe48eee03d5890189",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:53.927263+00:00",
   "source": "congress_api"

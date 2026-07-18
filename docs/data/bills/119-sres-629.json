@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 14,
@@ -179,7 +179,26 @@
     "type": "SRES",
     "updatedAt": "2026-03-20T14:09:04Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/629",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution honors Reverend Jesse L. Jackson, Sr., commends his civil\u2011rights and human\u2011rights leadership, and extends condolences to his family. It requests the Secretary of the Senate transmit an enrolled copy to his family and is an expression of recognition, not a law.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:33:43.698716+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d8c068286d382ab971ed4505",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Senate resolution honors Reverend Jesse L. Jackson Sr.'s leadership, citing Operation PUSH, National Rainbow Coalition, his presidential campaigns, and service as a special envoy to Africa. It extends condolences and requests the Secretary of the Senate transmit an enrolled copy to Reverend Jackson's family.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:34:00.956942+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d8c068286d382ab971ed4505",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:37.744505+00:00",
   "source": "congress_api"

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "S",
     "updatedAt": "2026-03-20T11:03:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3655",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires the Secretary of State, in each U.S.-Hong Kong Policy Act certification, to determine and report whether HKETOs merit privileges under 22 U.S.C. 288k. If not, HKETOs must end U.S. operations within 180 days and Congress may bar continuance via expedited joint resolution.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:51:39.632343+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2d86f05b827625d8739194a2",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Bill requires Secretary of State, in each U.S.\u2011Hong Kong Policy Act certification, to report whether HKETOs merit U.S. privileges, exemptions, and immunities. If Secretary finds they do not merit benefits, HKETOs must cease U.S. operations within 180 days; Congress may enact a joint disapproval.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:52:15.107935+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2d86f05b827625d8739194a2",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:50.194752+00:00",
   "source": "congress_api"

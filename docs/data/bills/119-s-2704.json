@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "W000805",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warner, Mark R. [D-VA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-04",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "C000880",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Crapo, Mike [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-04",
+        "state": "ID"
+      },
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-04",
+        "state": "GA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "CDFI Fund Transparency Act",
+      "updated_at": "2026-03-22T23:36:00Z"
+    },
+    "detailPath": "119/s/2704",
+    "identifier": "S 2704",
+    "introducedDate": "2025-09-04",
+    "latestAction": {
+      "date": "2025-09-04",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "2704",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "D000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Daines, Steve [R-MT]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MT"
+      }
+    ],
+    "title": "CDFI Fund Transparency Act",
+    "type": "S",
+    "updatedAt": "2026-03-22T23:36:00Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2704",
+    "votes": []
+  },
+  "generated_at": "2026-07-18T05:52:34.823182+00:00",
+  "source": "congress_api"
+}

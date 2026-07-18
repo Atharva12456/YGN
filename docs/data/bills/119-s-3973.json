@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "National Domestic Preparedness Consortium Reauthorization Act",
+      "updated_at": "2026-03-20T19:13:32Z"
+    },
+    "detailPath": "119/s/3973",
+    "identifier": "S 3973",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3973",
+    "originChamber": "Senate",
+    "policyArea": "Emergency Management",
+    "sponsors": [
+      {
+        "bioguideId": "K000393",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kennedy, John [R-LA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "LA"
+      }
+    ],
+    "title": "National Domestic Preparedness Consortium Reauthorization Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T19:13:32Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3973",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill reauthorizes and updates the National Domestic Preparedness Consortium, adds the Rural Domestic Preparedness Consortium and MxV Learning Institute, and renames certain member entries. It authorizes $111M\u2013$125M for FY2027\u20132031, expands training to state, tribal, territorial and public\u2011safety partners, and preserves FY2023 minimum allocations with proportional distribution.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:55.426586+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8285d709eb49d2e7bc7d0c84",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill reauthorizes the National Domestic Preparedness Consortium and adds the Academy of Counter\u2011Terrorist Education and Rural Domestic Preparedness Consortium. It authorizes FY2027\u20132031 consortium funding ($111M, $114M, $117M, $120M, $125M) and directs the Secretary of Homeland Security to preserve FY2023 funding or proportionally allocate cuts.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:55.949700+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8285d709eb49d2e7bc7d0c84",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:24.797803+00:00",
+  "source": "congress_api"
+}

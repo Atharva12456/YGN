@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 7,
@@ -109,7 +109,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-20T08:06:42Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1119",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The resolution impeaches Attorney General Pamela Bondi for obstruction, EFTA violations, and abuse of DOJ power, submitting articles for Senate trial and removal. It targets Bondi's official conduct over DOJ/FBI Epstein files, redactions, and prosecutorial or personnel actions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:32:57.223404+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "44b4ce9d4ebcb8c60e2234b0",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The House resolution impeaches Attorney General Pamela Bondi for obstructing Congress, flouting the Epstein Files Transparency Act, and abusing Department of Justice and FBI prosecutorial and investigatory powers. It would affect Bondi, the Department of Justice (including the FBI), the House Oversight Committee, Epstein survivors, and Donald J. Trump.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:33:12.544656+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "44b4ce9d4ebcb8c60e2234b0",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:34.265366+00:00",
   "source": "congress_api"

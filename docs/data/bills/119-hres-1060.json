@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 11,
@@ -149,7 +149,26 @@
     "type": "HRES",
     "updatedAt": "2026-03-20T08:06:40Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1060",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This resolution designates April 5, 2026, as \"Barth Syndrome Awareness Day\" and urges awareness, earlier diagnosis, research, treatment development, and regulatory pathways for Barth syndrome. It covers Barth syndrome\u2014a rare, primarily male genetic disorder caused by TAFAZZIN mutations\u2014and concerns patients, clinicians, researchers, clinics, and advocacy groups in the United States.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:34:41.931415+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "12a11006aa85834133cc5d4f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "H. Res. 1060 designates April 5, 2026, as \"Barth Syndrome Awareness Day\" and expresses House support for awareness, diagnosis, research, and treatment development. It highlights patients and families, the Barth Syndrome Foundation, the Kennedy Krieger Institute Barth Syndrome Clinic, researchers, and the FDA's patient\u2011focused program.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:34:45.598892+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "12a11006aa85834133cc5d4f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:43.539998+00:00",
   "source": "congress_api"

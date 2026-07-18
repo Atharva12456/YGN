@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "H001089",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hawley, Josh [R-MO]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-29",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "W000800",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Welch, Peter [D-VT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "K000383",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. King, Angus S., Jr. [I-ME]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "B001243",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Blackburn, Marsha [R-TN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "TN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "AI LEAD Act",
+      "updated_at": "2026-03-20T11:03:19Z"
+    },
+    "detailPath": "119/s/2937",
+    "identifier": "S 2937",
+    "introducedDate": "2025-09-29",
+    "latestAction": {
+      "date": "2025-09-29",
+      "text": "Read twice and referred to the Committee on the Judiciary. (text: CR S6836-6838)"
+    },
+    "number": "2937",
+    "originChamber": "Senate",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "AI LEAD Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2937",
+    "votes": []
+  },
+  "generated_at": "2026-07-18T05:52:33.070920+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Rural Housing Regulatory Relief Act",
+      "updated_at": "2026-03-20T18:34:26Z"
+    },
+    "detailPath": "119/s/3970",
+    "identifier": "S 3970",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Read twice and referred to the Committee on Environment and Public Works."
+    },
+    "number": "3970",
+    "originChamber": "Senate",
+    "policyArea": "Housing and Community Development",
+    "sponsors": [
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NE"
+      }
+    ],
+    "title": "Rural Housing Regulatory Relief Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T18:34:26Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3970",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill exempts assistance under sections 501, 502, 504, 515, 533, and 538 of the Housing Act from NEPA's \"major Federal action\" requirement for construction/modification of housing on qualifying infill sites. It excludes greenfields, road-only sites, and FEMA very/high-risk tracts, and requires USDA to report to Congress within five years.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:22.246052+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "35a2d5d5c66888c177c0a659",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Law exempts USDA Rural Development housing assistance (sections 501, 502, 504, 515, 533, 538) from NEPA for residential projects on qualifying infill sites. It affects rural borrowers and developers using USDA Rural Housing programs, excludes FEMA high\u2011risk tracts, and requires a five\u2011year USDA report.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:12.827990+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "35a2d5d5c66888c177c0a659",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:24.343036+00:00",
+  "source": "congress_api"
+}

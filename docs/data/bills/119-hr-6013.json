@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "M001219",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Del. Moylan, James C. [R-GU-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-10",
+        "state": "GU"
+      },
+      {
+        "bioguideId": "C001055",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Case, Ed [D-HI-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-10",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "S000344",
+        "district": 32,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Sherman, Brad [D-CA-32]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-20",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Filipino Veterans Fairness Act of 2025",
+      "updated_at": "2026-03-21T08:05:59Z"
+    },
+    "detailPath": "119/hr/6013",
+    "identifier": "HR 6013",
+    "introducedDate": "2025-11-10",
+    "latestAction": {
+      "date": "2025-11-17",
+      "text": "Referred to the Subcommittee on Disability Assistance and Memorial Affairs."
+    },
+    "number": "6013",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "M001225",
+        "district": 15,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Mullin, Kevin [D-CA-15]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Filipino Veterans Fairness Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-21T08:05:59Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6013",
+    "votes": []
+  },
+  "generated_at": "2026-07-18T05:52:31.018066+00:00",
+  "source": "congress_api"
+}

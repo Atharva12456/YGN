@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Stop Post-Disaster Vultures Act",
+      "updated_at": "2026-03-20T15:11:38Z"
+    },
+    "detailPath": "119/s/3961",
+    "identifier": "S 3961",
+    "introducedDate": "2026-03-02",
+    "latestAction": {
+      "date": "2026-03-02",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3961",
+    "originChamber": "Senate",
+    "policyArea": "Emergency Management",
+    "sponsors": [
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Stop Post-Disaster Vultures Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T15:11:38Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3961",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Stop Post-Disaster Vultures Act prohibits institutional investors from soliciting offers to buy properties in a declared major disaster area for six months after the declaration. It defines such investors as those owning 75 or more single\u2011family homes and applies to offers for lots, parcels, or homes in affected areas.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:33.981126+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0906a461bb70df15726758ef",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends the Stafford Act to bar institutional investors\u2014defined as any individual or entity owning 75 or more single\u2011family homes\u2014from making offers to buy lots, parcels, or homes within a FEMA-declared major disaster area for six months after the declaration. It targets REITs and private equity.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:10:33.805101+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0906a461bb70df15726758ef",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:25.223329+00:00",
+  "source": "congress_api"
+}

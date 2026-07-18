@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "S001203",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Smith, Tina [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-04",
+        "state": "MN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "PRIME Meat Processing in Indian Country Act",
+      "updated_at": "2026-03-20T15:20:09Z"
+    },
+    "detailPath": "119/s/3994",
+    "identifier": "S 3994",
+    "introducedDate": "2026-03-04",
+    "latestAction": {
+      "date": "2026-03-04",
+      "text": "Read twice and referred to the Committee on Indian Affairs."
+    },
+    "number": "3994",
+    "originChamber": "Senate",
+    "policyArea": "Native Americans",
+    "sponsors": [
+      {
+        "bioguideId": "M001190",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Mullin, Markwayne [R-OK]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OK"
+      }
+    ],
+    "title": "PRIME Meat Processing in Indian Country Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T15:20:09Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3994",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets Indian Tribes run Federal meat inspections under self\u2011determination contracts with USDA standards, oversight, enforcement, and FTCA protection. It covers mobile or stationary processors at least 51% tribe\u2011owned, permits federally inspected labeling and interstate shipment, and requires insurance and annual certifications.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:09:28.319595+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "54ad85d72b1ab8113c0bc475",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets Indian Tribes and Tribal organizations conduct USDA/FSIS meat inspections at tribally owned mobile or stationary processors (51%+ ownership). It makes tribal inspectors subject to FTCA, preserves USDA oversight and labeling for interstate meat, and affects processors of beef, bison, reindeer and insurers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:09:32.863243+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "54ad85d72b1ab8113c0bc475",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:21.841033+00:00",
+  "source": "congress_api"
+}

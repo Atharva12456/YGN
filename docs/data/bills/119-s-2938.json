@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "S",
     "updatedAt": "2026-03-20T11:03:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2938",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Act directs the Energy Secretary to establish an Advanced AI Evaluation Program requiring developers of advanced AI (>10^26 ops) to provide code, training data, and model weights for government testing. It applies to developers supplying advanced AI for interstate or foreign commerce, prohibits deployment unless compliant, and imposes $1,000,000/day fines.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:53:13.556526+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c35a5c6b25360e438f3da165",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Secretary of Energy to establish the Advanced Artificial Intelligence Evaluation Program and compel covered developers to share models, code, and training data. It would affect major AI firms (OpenAI, Google DeepMind, Anthropic, Microsoft, Meta) and bar deployment without program compliance.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:53:13.781384+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c35a5c6b25360e438f3da165",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:58.220506+00:00",
   "source": "congress_api"

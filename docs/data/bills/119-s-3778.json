@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -59,7 +59,26 @@
     "type": "S",
     "updatedAt": "2026-03-20T11:03:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3778",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Carbon Resource Innovation Act amends IRC section 45Q to make solid and liquid carbon capture facilities eligible for the sequestration tax credit. It defines such facilities, requires capture measurement and verification at disposal, injection, or utilization, sets a 1,000\u2011ton threshold, and permits underground storage if carbon does not escape.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:35:44.836381+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "52463d0230c65ac7f30cd9ae",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "Expands Section 45Q tax credit to cover solid or liquid carbon capture facilities, requires measurement/verification at capture and disposal/injection/utilization, and permits underground storage under Treasury/IRS rules. It would affect power plants, steel and cement manufacturers, carbon-capture firms, taxpayers, and the Treasury and IRS.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:35:41.224543+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "52463d0230c65ac7f30cd9ae",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:47.939522+00:00",
   "source": "congress_api"

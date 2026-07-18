@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Improving Housing Access Act",
+      "updated_at": "2026-03-20T18:27:23Z"
+    },
+    "detailPath": "119/s/3969",
+    "identifier": "S 3969",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3969",
+    "originChamber": "Senate",
+    "policyArea": "Housing and Community Development",
+    "sponsors": [
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NE"
+      }
+    ],
+    "title": "Improving Housing Access Act",
+    "type": "S",
+    "updatedAt": "2026-03-20T18:27:23Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3969",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Comptroller General to, within one year, study options to remove housing barriers and improve housing for elderly and disabled people, including analyzing impacts of providing capital advances to Section 202 and Section 811 supportive\u2011housing programs. It covers elderly and disabled persons and Sections 202 and 811.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:11:10.362512+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "25ad659a4d5b982fa6066a45",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Comptroller General to study, within one year, how to remove barriers and improve housing for elderly and disabled. It must examine impacts of providing capital advances for HUD's Section 202 (elderly) and Section 811 (disability) programs, affecting HUD, developers, tenants.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:11:30.872501+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "25ad659a4d5b982fa6066a45",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:23.912725+00:00",
+  "source": "congress_api"
+}

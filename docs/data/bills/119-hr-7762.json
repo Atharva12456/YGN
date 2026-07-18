@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Protecting Our Produce Act",
+      "updated_at": "2026-03-20T15:09:36Z"
+    },
+    "detailPath": "119/hr/7762",
+    "identifier": "HR 7762",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Referred to the House Committee on Agriculture."
+    },
+    "number": "7762",
+    "originChamber": "House",
+    "policyArea": "Agriculture and Food",
+    "sponsors": [
+      {
+        "bioguideId": "B000490",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Bishop, Sanford D. [D-GA-2]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "GA"
+      }
+    ],
+    "title": "Protecting Our Produce Act",
+    "type": "HR",
+    "updatedAt": "2026-03-20T15:09:36Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7762",
+    "votes": [],
+    "aiDescription": {
+      "summary": "Creates a five\u2011year USDA pilot paying producers when national seasonal prices for certain produce fall below a five\u2011year reference because of imports. Applies to asparagus, bell peppers, blueberries, cucumbers, squash sold raw in a four\u2011week window; limits recipients to producers with average AGI <$5,000,000 and \u226575% farming income; authorizes $200M/year.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:11:48.607517+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bd69e007dde58391811ba2f6",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Protecting Our Produce Act would require USDA to run a pilot paying U.S. asparagus, bell pepper, blueberry, cucumber, and squash producers when import-driven seasonal prices fall below a five-year reference price. Payments are authorized at $200,000,000 annually and target producers with under $5,000,000 AGI.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:11:27.099101+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bd69e007dde58391811ba2f6",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:22.279894+00:00",
+  "source": "congress_api"
+}

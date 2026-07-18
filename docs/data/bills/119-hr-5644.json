@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 6,
@@ -99,7 +99,26 @@
     "type": "HR",
     "updatedAt": "2026-03-20T08:06:43Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5644",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill creates a \"catastrophic specialty hospital\" designation that exempts qualifying LTCHs from the Medicare 1886(m) payment system. Applies to LTCHs with a 3-year track record of \u226580% spinal-cord or acquired-brain-injury DRG cases, \u2265175 annual SCI and ABI discharges, \u226530% out\u2011of\u2011state admits, plus inpatient/outpatient services and neurorehab research/training.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:52:38.966510+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e8b18c36c4f8ae163cf64c17",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets the HHS Secretary label some long term care hospitals as catastrophic specialty hospitals that mainly treat spinal cord or brain injuries. Those designated LTCHs would get Medicare payments outside the LTCH payment system, affecting LTCH operators and Medicare beneficiaries with those conditions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:52:37.918667+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e8b18c36c4f8ae163cf64c17",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:57.588258+00:00",
   "source": "congress_api"

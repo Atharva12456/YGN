@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 33,
@@ -369,7 +369,26 @@
     "type": "HR",
     "updatedAt": "2026-03-20T08:06:59Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7345",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Congressional Budget Office with the Council of Economic Advisers to publish within 180 days a study on the long-term economic impact of immigration policies beginning January 20, 2025. It studies 20\u201340 year effects on industries, demographics, safety, innovation, businesses, revenues, and requires DHS, BLS, IRS data.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:35:32.627046+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2fbfb5ab265f464981b33307",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Congressional Budget Office with the Council of Economic Advisers to study immigration policies beginning January 20, 2025 over twenty to forty years. It requires DHS, BLS, IRS to share data and assess impacts on workers, small businesses, GDP, migration, tax revenues.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:35:21.000213+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "2fbfb5ab265f464981b33307",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:47.174607+00:00",
   "source": "congress_api"

@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "L000599",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lawler, Michael [R-NY-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "M001219",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Del. Moylan, James C. [R-GU-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-10",
+        "state": "GU"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "S001215",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Stevens, Haley M. [D-MI-11]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-20",
+        "state": "MI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Energy Burden Tax Credit Act",
+      "updated_at": "2026-03-21T08:05:53Z"
+    },
+    "detailPath": "119/hr/7044",
+    "identifier": "HR 7044",
+    "introducedDate": "2026-01-13",
+    "latestAction": {
+      "date": "2026-01-13",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "7044",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "P000614",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Pappas, Chris [D-NH-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NH"
+      }
+    ],
+    "title": "Energy Burden Tax Credit Act",
+    "type": "HR",
+    "updatedAt": "2026-03-21T08:05:53Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7044",
+    "votes": []
+  },
+  "generated_at": "2026-07-18T05:52:28.901806+00:00",
+  "source": "congress_api"
+}

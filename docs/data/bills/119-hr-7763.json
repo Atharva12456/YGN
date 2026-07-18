@@ -1,0 +1,85 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "E000296",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Evans, Dwight [D-PA-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S001205",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Scanlon, Mary Gay [D-PA-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "PA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Protecting American History Act",
+      "updated_at": "2026-03-20T15:27:15Z"
+    },
+    "detailPath": "119/hr/7763",
+    "identifier": "HR 7763",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Referred to the House Committee on Natural Resources."
+    },
+    "number": "7763",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "B001296",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Boyle, Brendan F. [D-PA-2]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Protecting American History Act",
+    "type": "HR",
+    "updatedAt": "2026-03-20T15:27:15Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7763",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires the Secretary of the Interior to restore within 15 days any interpretive or educational exhibit, sign, plaque, or display removed from public view at Independence National Historical Park after January 21, 2026, to its appearance on that date. It prohibits altering such exhibits without express congressional authorization.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:12:00.292538+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "928b91992c85d2739663760b",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Secretary of the Interior and the National Park Service to restore exhibits, signs, and plaques at Independence National Historical Park in Philadelphia removed after January 21, 2026. It also bars any future alteration without express authorization from Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:11:58.477465+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "928b91992c85d2739663760b",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:23.479810+00:00",
+  "source": "congress_api"
+}

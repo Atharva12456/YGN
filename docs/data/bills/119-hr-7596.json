@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Improving Housing Access Act",
+      "updated_at": "2026-03-20T18:22:34Z"
+    },
+    "detailPath": "119/hr/7596",
+    "identifier": "HR 7596",
+    "introducedDate": "2026-02-17",
+    "latestAction": {
+      "date": "2026-02-17",
+      "text": "Referred to the House Committee on Financial Services."
+    },
+    "number": "7596",
+    "originChamber": "House",
+    "policyArea": "Housing and Community Development",
+    "sponsors": [
+      {
+        "bioguideId": "L000599",
+        "district": 17,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Lawler, Michael [R-NY-17]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "Improving Housing Access Act",
+    "type": "HR",
+    "updatedAt": "2026-03-20T18:22:34Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7596",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Comptroller General to complete within one year a study identifying options to remove barriers and improve housing for elderly and disabled people. It requires assessing impacts of capital advances for HUD Section 202 (elderly) and Section 811 (disabled) supportive housing.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:12:28.646496+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e912b6ec97384212d6c5bad4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Comptroller General to study, within one year, options to remove barriers and improve housing for elderly and disabled persons. It must analyze potential impacts of providing capital advances for HUD's Section 202 and Section 811 supportive housing programs.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T04:12:26.035726+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e912b6ec97384212d6c5bad4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-18T05:52:26.127939+00:00",
+  "source": "congress_api"
+}

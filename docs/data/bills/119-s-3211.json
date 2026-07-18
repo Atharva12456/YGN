@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 10,
@@ -139,7 +139,26 @@
     "type": "S",
     "updatedAt": "2026-03-20T11:03:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3211",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs OMB to consider adding a separate SOC code for direct support professionals as a healthcare support occupation in the next SOC revision. It covers workers who provide daily supports for people with intellectual and developmental disabilities and requires a congressional report if OMB declines.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:52:09.131330+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "16b3423239a1deabbb58636a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill asks the OMB Director to consider adding a separate Standard Occupational Classification (SOC) code for direct support professionals. This would affect OMB and federal statistical agencies (including the BLS), States and home\u2011and\u2011community\u2011based service providers, and individuals with intellectual and developmental disabilities.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-18T03:52:13.133638+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "16b3423239a1deabbb58636a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-07-17T06:04:56.041997+00:00",
   "source": "congress_api"
