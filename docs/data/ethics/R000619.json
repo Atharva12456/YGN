@@ -1,19 +1,104 @@
 {
-    "available":  false,
-    "bioguideId":  "R000619",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "R000619",
+  "candidate": {
+    "candidate_id": "H4OH06165",
+    "district": "06",
+    "name": "RULLI, MICHAEL",
+    "office": "H",
+    "party": "REP",
+    "state": "OH"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 49.5,
+      "value": 0.2212,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 95.4,
+      "value": 0.5867,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 49.1,
+      "value": 0.2762,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 51.6,
+      "value": 0.0362,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 61.6,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 9739.66,
+        "label": "Small individual (unitemized)",
+        "share": 0.009995379592511299
+      },
+      {
+        "amount": 259390.28,
+        "label": "Large individual (itemized)",
+        "share": 0.26620070014844377
+      },
+      {
+        "amount": 705286.28,
+        "label": "PAC / other committees",
+        "share": 0.723803920259045
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4OH06165",
+      "district": "06",
+      "name": "RULLI, MICHAEL",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 284711.01,
+      "debts": 0.0,
+      "disbursements": 913478.93,
+      "individualContributions": 269129.94,
+      "receipts": 1127552.83
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "D-",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 61.6,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-23T22:15:19.813552+00:00"
 }

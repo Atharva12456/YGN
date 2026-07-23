@@ -1,19 +1,105 @@
 {
-    "available":  false,
-    "bioguideId":  "G000599",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "G000599",
+  "candidate": {
+    "candidate_id": "H2NY10308",
+    "district": "10",
+    "name": "GOLDMAN, DANIEL",
+    "office": "H",
+    "party": "DEM",
+    "state": "NY"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 46.4,
+      "value": 0.1728,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 95.3,
+      "value": 0.5844,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 96.1,
+      "value": 0.9116,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 63.5,
+      "value": 0.7458,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 63.2,
+      "value": 0.078,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+      "penalty": 10,
+      "ptr_filings": 1
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 71.3,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 389483.95,
+        "label": "Small individual (unitemized)",
+        "share": 0.07106389488539917
+      },
+      {
+        "amount": 4606909.2,
+        "label": "Large individual (itemized)",
+        "share": 0.840560724351744
+      },
+      {
+        "amount": 483751.0,
+        "label": "PAC / other committees",
+        "share": 0.08826353490228991
+      },
+      {
+        "amount": 613.0,
+        "label": "Political party committees",
+        "share": 0.0001118458605669109
+      },
+      {
+        "amount": 2125000.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.3877201528624562
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NY10308",
+      "district": "10",
+      "name": "GOLDMAN, DANIEL",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1158530.28,
+      "debts": 7518995.32,
+      "disbursements": 8137328.03,
+      "individualContributions": 4996393.15,
+      "receipts": 8363609.43
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "D-",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 61.3,
+  "source": "fec_live",
+  "stockPenalty": 10,
+  "stockPtrCount": 1,
+  "updated_at": "2026-07-23T22:17:06.244026+00:00"
 }

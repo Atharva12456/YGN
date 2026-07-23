@@ -1,19 +1,105 @@
 {
-    "available":  false,
-    "bioguideId":  "T000490",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "T000490",
+  "candidate": {
+    "candidate_id": "H4OH02248",
+    "district": "02",
+    "name": "TAYLOR, DAVID",
+    "office": "H",
+    "party": "REP",
+    "state": "OH"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 68.9,
+      "value": 0.463,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 97.6,
+      "value": 0.8392,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 75.1,
+      "value": 0.5929,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 86.0,
+      "value": 0.2431,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "22 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+      "penalty": 50,
+      "ptr_filings": 22
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 82.5,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 151893.64,
+        "label": "Small individual (unitemized)",
+        "share": 0.1441342614007336
+      },
+      {
+        "amount": 472940.74,
+        "label": "Large individual (itemized)",
+        "share": 0.4487808985696595
+      },
+      {
+        "amount": 429000.0,
+        "label": "PAC / other committees",
+        "share": 0.407084840029607
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4OH02248",
+      "district": "02",
+      "name": "TAYLOR, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 442977.21,
+      "debts": 1707300.0,
+      "disbursements": 780078.41,
+      "individualContributions": 624834.38,
+      "receipts": 1095247.88
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "F",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 32.5,
+  "source": "fec_live",
+  "stockPenalty": 50,
+  "stockPtrCount": 22,
+  "updated_at": "2026-07-23T22:14:19.641188+00:00"
 }

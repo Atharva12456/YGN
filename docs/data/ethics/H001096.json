@@ -1,19 +1,104 @@
 {
-    "available":  false,
-    "bioguideId":  "H001096",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "H001096",
+  "candidate": {
+    "candidate_id": "H2WY00166",
+    "district": "00",
+    "name": "HAGEMAN, HARRIET",
+    "office": "H",
+    "party": "REP",
+    "state": "WY"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 76.1,
+      "value": 0.5386,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 80.5,
+      "value": 0.2874,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 94.8,
+      "value": 0.8786,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 97.4,
+      "value": 0.5361,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2024,
+  "financeScore": 90.6,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 1332163.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.47099311853697773
+      },
+      {
+        "amount": 1152788.43,
+        "label": "Large individual (itemized)",
+        "share": 0.40757407295598924
+      },
+      {
+        "amount": 343462.32,
+        "label": "PAC / other committees",
+        "share": 0.1214328085070331
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2WY00166",
+      "district": "00",
+      "name": "HAGEMAN, HARRIET",
+      "office": "H",
+      "party": "REP",
+      "state": "WY"
+    },
+    "cycle": 2024,
+    "totals": {
+      "cashOnHand": 882963.04,
+      "debts": 0.0,
+      "disbursements": 2461850.85,
+      "individualContributions": 2484952.21,
+      "receipts": 3070024.92
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "A-",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 90.6,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-23T22:15:54.117422+00:00"
 }

@@ -1,19 +1,105 @@
 {
-    "available":  false,
-    "bioguideId":  "M001222",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "M001222",
+  "candidate": {
+    "candidate_id": "H2OH16051",
+    "district": "07",
+    "name": "MILLER, MAX",
+    "office": "H",
+    "party": "REP",
+    "state": "OH"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 35.0,
+      "value": 0.0,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 79.2,
+      "value": 0.2763,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 74.2,
+      "value": 0.5846,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 95.4,
+      "value": 0.986,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 81.9,
+      "value": 0.1792,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "14 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+      "penalty": 42,
+      "ptr_filings": 14
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 72.4,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 165676.57,
+        "label": "Small individual (unitemized)",
+        "share": 0.10477730330409811
+      },
+      {
+        "amount": 758708.38,
+        "label": "Large individual (itemized)",
+        "share": 0.47982293483394134
+      },
+      {
+        "amount": 656840.8,
+        "label": "PAC / other committees",
+        "share": 0.4153997618619606
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2OH16051",
+      "district": "07",
+      "name": "MILLER, MAX",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 1379131.85,
+      "debts": 970000.0,
+      "disbursements": 937959.47,
+      "individualContributions": 924384.95,
+      "receipts": 2142561.93
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "F",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 30.4,
+  "source": "fec_live",
+  "stockPenalty": 42,
+  "stockPtrCount": 14,
+  "updated_at": "2026-07-23T22:16:55.826123+00:00"
 }

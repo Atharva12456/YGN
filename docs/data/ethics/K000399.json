@@ -1,19 +1,104 @@
 {
-    "available":  false,
-    "bioguideId":  "K000399",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "K000399",
+  "candidate": {
+    "candidate_id": "H2VA02064",
+    "district": "02",
+    "name": "KIGGANS, JENNIFER",
+    "office": "H",
+    "party": "REP",
+    "state": "VA"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 35.5,
+      "value": 0.0074,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 84.1,
+      "value": 0.3441,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 84.7,
+      "value": 0.698,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 0.9991,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 87.4,
+      "value": 0.2642,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 77.3,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 766025.78,
+        "label": "Small individual (unitemized)",
+        "share": 0.18445144469501065
+      },
+      {
+        "amount": 2132867.74,
+        "label": "Large individual (itemized)",
+        "share": 0.5135734935531574
+      },
+      {
+        "amount": 1248600.68,
+        "label": "PAC / other committees",
+        "share": 0.3006507160544553
+      },
+      {
+        "amount": 5500.0,
+        "label": "Political party committees",
+        "share": 0.0013243456973766059
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2VA02064",
+      "district": "02",
+      "name": "KIGGANS, JENNIFER",
+      "office": "H",
+      "party": "REP",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3592183.0,
+      "debts": 153170.29,
+      "disbursements": 2296723.86,
+      "individualContributions": 2898893.52,
+      "receipts": 5843429.46
+    }
+  },
+  "generated_at": "2026-07-23T22:14:10.066640+00:00",
+  "grade": "C+",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 77.3,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-23T22:15:51.815551+00:00"
 }
