@@ -3585,26 +3585,44 @@ def _fec_search_candidates(member):
     if not names:
         return []
 
-    params = {
-        "q": names[0],
-        "per_page": 20,
-        "has_raised_funds": "true",
-    }
     state = _member_state_code(member)
     office = _member_fec_office(member)
-    if state:
-        params["state"] = state
-    if office:
-        params["office"] = office
-    # Party is intentionally NOT a hard filter: FEC's party codes don't always
-    # match ours (independents, minor parties, caucus mismatches), which would
-    # drop a real candidate to zero results. It stays a +1 signal in scoring.
 
-    data = _fec_get(
-        "/candidates/search/", params=params, ttl_seconds=FEC_LIVE_CACHE_TTL_SECONDS
-    )
-    candidates = data.get("results", [])
-    return sorted(candidates, key=lambda candidate: _fec_candidate_match_score(candidate, member), reverse=True)
+    def run_search(query, require_raised_funds):
+        params = {"q": query, "per_page": 20}
+        if require_raised_funds:
+            params["has_raised_funds"] = "true"
+        if state:
+            params["state"] = state
+        if office:
+            params["office"] = office
+        # Party is intentionally NOT a hard filter: FEC's party codes don't always
+        # match ours (independents, minor parties, caucus mismatches), which would
+        # drop a real candidate to zero results. It stays a +1 signal in scoring.
+        data = _fec_get(
+            "/candidates/search/", params=params, ttl_seconds=FEC_LIVE_CACHE_TTL_SECONDS
+        )
+        return data.get("results") or []
+
+    # Progressive fallback, widened only when a search comes back empty.
+    # Previously this tried names[0] ONCE with has_raised_funds=true, so a member
+    # whose FEC record doesn't carry that flag (typical for newly-elected members)
+    # or whose primary name form doesn't hit FEC's index was silently ungradeable
+    # forever. Attempt 1 is the historical query, so members that already match
+    # keep their existing (cached) result and nothing regresses.
+    attempts = [(names[0], True), (names[0], False)]
+    if len(names) > 1:
+        attempts.append((names[1], False))
+
+    for query, require_raised_funds in attempts:
+        candidates = run_search(query, require_raised_funds)
+        if candidates:
+            return sorted(
+                candidates,
+                key=lambda candidate: _fec_candidate_match_score(candidate, member),
+                reverse=True,
+            )
+    return []
 
 
 def _fec_best_candidate(member):
