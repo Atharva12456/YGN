@@ -1,19 +1,104 @@
 {
-    "available":  false,
-    "bioguideId":  "S001148",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "S001148",
+  "candidate": {
+    "candidate_id": "H8ID02064",
+    "district": "02",
+    "name": "SIMPSON, MICHAEL",
+    "office": "H",
+    "party": "REP",
+    "state": "ID"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 64.5,
+      "value": 0.4181,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 82.1,
+      "value": 0.3017,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 58.4,
+      "value": 0.4531,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 37.1,
+      "value": 0.0046,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 61.2,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 2343.33,
+        "label": "Small individual (unitemized)",
+        "share": 0.0020958268304847143
+      },
+      {
+        "amount": 504250.0,
+        "label": "Large individual (itemized)",
+        "share": 0.450990974071905
+      },
+      {
+        "amount": 611500.0,
+        "label": "PAC / other committees",
+        "share": 0.5469131990976102
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8ID02064",
+      "district": "02",
+      "name": "SIMPSON, MICHAEL",
+      "office": "H",
+      "party": "REP",
+      "state": "ID"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 429358.58,
+      "debts": 0.0,
+      "disbursements": 793940.47,
+      "individualContributions": 506593.33,
+      "receipts": 1118093.33
+    }
+  },
+  "generated_at": "2026-07-23T22:00:18.353113+00:00",
+  "grade": "D-",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 61.2,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-23T22:02:00.250278+00:00"
 }

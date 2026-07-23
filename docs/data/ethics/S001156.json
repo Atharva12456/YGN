@@ -1,19 +1,104 @@
 {
-    "available":  false,
-    "bioguideId":  "S001156",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "S001156",
+  "candidate": {
+    "candidate_id": "H2CA39078",
+    "district": "41",
+    "name": "SANCHEZ, LINDA",
+    "office": "H",
+    "party": "DEM",
+    "state": "CA"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 82.6,
+      "value": 0.6108,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 84.1,
+      "value": 0.3442,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 46.1,
+      "value": 0.2164,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 63.0,
+      "value": 0.0772,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 69.8,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 26483.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.01669362544591411
+      },
+      {
+        "amount": 316778.42,
+        "label": "Large individual (itemized)",
+        "share": 0.19967483310005252
+      },
+      {
+        "amount": 1243176.38,
+        "label": "PAC / other committees",
+        "share": 0.7836109422808141
+      },
+      {
+        "amount": 32.68,
+        "label": "Political party committees",
+        "share": 2.0599173219279636e-05
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA39078",
+      "district": "41",
+      "name": "SANCHEZ, LINDA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 415745.67,
+      "debts": 12116.42,
+      "disbursements": 1612831.35,
+      "individualContributions": 343262.38,
+      "receipts": 1602789.55
+    }
+  },
+  "generated_at": "2026-07-23T22:00:18.353113+00:00",
+  "grade": "D+",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 69.8,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-07-23T22:01:17.436588+00:00"
 }

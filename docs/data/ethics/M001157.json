@@ -1,19 +1,105 @@
 {
-    "available":  false,
-    "bioguideId":  "M001157",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "M001157",
+  "candidate": {
+    "candidate_id": "H4TX10093",
+    "district": "10",
+    "name": "MCCAUL, MICHAEL",
+    "office": "H",
+    "party": "REP",
+    "state": "TX"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 35.0,
+      "value": 0.0,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 98.1,
+      "value": 0.9199,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 55.2,
+      "value": 0.3945,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 70.5,
+      "value": 0.804,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 87.6,
+      "value": 0.2678,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+      "penalty": 42,
+      "ptr_filings": 18
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 67.5,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 11744.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.10566285375123023
+      },
+      {
+        "amount": 32103.49,
+        "label": "Large individual (itemized)",
+        "share": 0.2888363741678076
+      },
+      {
+        "amount": 67300.0,
+        "label": "PAC / other committees",
+        "share": 0.6055007720809622
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 25800.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.23212362436387557
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4TX10093",
+      "district": "10",
+      "name": "MCCAUL, MICHAEL",
+      "office": "H",
+      "party": "REP",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 3322.16,
+      "debts": 0.0,
+      "disbursements": 404722.32,
+      "individualContributions": 43847.67,
+      "receipts": 276975.57
+    }
+  },
+  "generated_at": "2026-07-23T22:00:18.353113+00:00",
+  "grade": "F",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 25.5,
+  "source": "fec_live",
+  "stockPenalty": 42,
+  "stockPtrCount": 18,
+  "updated_at": "2026-07-23T22:02:15.777966+00:00"
 }
