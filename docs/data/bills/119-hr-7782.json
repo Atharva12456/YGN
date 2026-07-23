@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "American Passport Card Accessibility Act",
+      "updated_at": "2026-03-26T19:35:55Z"
+    },
+    "detailPath": "119/hr/7782",
+    "identifier": "HR 7782",
+    "introducedDate": "2026-03-04",
+    "latestAction": {
+      "date": "2026-03-04",
+      "text": "Referred to the House Committee on Foreign Affairs."
+    },
+    "number": "7782",
+    "originChamber": "House",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "U000040",
+        "district": 14,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Underwood, Lauren [D-IL-14]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "American Passport Card Accessibility Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T19:35:55Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7782",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill bars the Secretary of State from charging a fee to issue or reissue U.S. passport cards, but permits fees for expedited processing. It applies to all passport card applicants and overrides the Passport Act of 1920's fee authority except for expedited-service charges.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:43:42.651064+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "18bd7b61d9b2cf11754ccb44",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars the Secretary of State and Department of State from charging fees for issuing or reissuing passport cards. It would affect U.S. citizens applying for passport cards and the Department's consular and passport offices that process them; expedited processing fees remain allowed.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:43:51.142601+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "18bd7b61d9b2cf11754ccb44",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:43.003890+00:00",
+  "source": "congress_api"
+}

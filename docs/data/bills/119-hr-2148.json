@@ -1,0 +1,145 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 8,
+    "cosponsors": [
+      {
+        "bioguideId": "C001133",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Ciscomani, Juan [R-AZ-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-14",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "P000614",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Pappas, Chris [D-NH-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-28",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "C001127",
+        "district": 20,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Cherfilus-McCormick, Sheila [D-FL-20]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-05-14",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "M001220",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McGarvey, Morgan [D-KY-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-07-02",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "C001072",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Carson, Andr\u00e9 [D-IN-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-07-07",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "M000317",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Malliotakis, Nicole [R-NY-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001068",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Cohen, Steve [D-TN-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-14",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "H001066",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Horsford, Steven [D-NV-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-17",
+        "state": "NV"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Veteran Caregiver Reeducation, Reemployment, and Retirement Act This bill expands support and assistance provided to family caregivers under the Program of Comprehensive Assistance for Family Caregivers administered by the Department of Veterans Affairs (VA). First, the bill extends the period of medical care coverage for primary family caregivers to include the 180-day period following the removal of their designation as a caregiver under the program, unless such individuals (1) were dismissed from the program for fraud, abuse, or mistreatment; or (2) are entitled to Medicare. Next, the VA must provide bereavement counseling and support to family caregivers following the death of a veteran receiving care under the program. The VA must also provide retirement planning services to primary family caregivers and study the feasibility and advisability of establishing a retirement plan or retirement savings for caregivers. Further, unless they were discharged for fraud, abuse, or mistreatment, the VA must provide to primary family caregivers (1) assistance returning to the workforce upon discharge or dismissal from the program, (2) support in transitioning from caregiving, and (3) specified employment assistance during their tenure as a caregiver and for the following 180-days. The VA must partner with the Department of Labor to study and report on the feasibility and advisability of conducting a program to assist primary caregivers in returning to the workforce. Finally, the Government Accountability Office must report on the VA\u2019s efforts supporting family caregivers in transitioning from caregiving.",
+      "updated_at": "2025-07-30T21:56:59Z"
+    },
+    "detailPath": "119/hr/2148",
+    "identifier": "HR 2148",
+    "introducedDate": "2025-03-14",
+    "latestAction": {
+      "date": "2026-02-12",
+      "text": "Ordered to be Reported in the Nature of a Substitute (Amended) by Voice Vote."
+    },
+    "number": "2148",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "M001206",
+        "district": 25,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Morelle, Joseph D. [D-NY-25]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "Veteran Caregiver Reeducation, Reemployment, and Retirement Act",
+    "type": "HR",
+    "updatedAt": "2026-03-25T20:35:24Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/2148",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill expands VA caregiver benefits by extending 180\u2011day post\u2011program medical care, adding bereavement counseling, retirement planning and studies, and requiring employment assistance including training and a $1,000 certification reimbursement. It covers primary caregivers under 38 U.S.C. 1720G, excluding those dismissed for fraud, abuse, mistreatment, or entitled to Medicare.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:27:46.191550+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f417f1445c3d8c09a9342f89",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill expands VA support for primary family caregivers, adding 180 days of medical coverage, bereavement counseling, retirement planning, and licensure reimbursement. It directs VA to study return-to-work programs and VA hiring and partner with Labor, Defense (Military OneSource), VETS, GAO, and Treasury.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:27:56.306085+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f417f1445c3d8c09a9342f89",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:47.068441+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "G000585",
+        "district": 34,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gomez, Jimmy [D-CA-34]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Expressing the sense of the House of Representatives that creators and digital workers, as a distinct and growing class of small businesses and independent economic contributors, deserve fair treatment, transparency, and economic opportunity in the modern platform-based economy.",
+      "updated_at": "2026-03-25T08:05:58Z"
+    },
+    "detailPath": "119/hres/1005",
+    "identifier": "HRES 1005",
+    "introducedDate": "2026-01-15",
+    "latestAction": {
+      "date": "2026-01-15",
+      "text": "Referred to the Committee on Education and Workforce, and in addition to the Committee on Energy and Commerce, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "1005",
+    "originChamber": "House",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "K000389",
+        "district": 17,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Khanna, Ro [D-CA-17]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Expressing the sense of the House of Representatives that creators and digital workers, as a distinct and growing class of small businesses and independent economic contributors, deserve fair treatment, transparency, and economic opportunity in the modern platform-based economy.",
+    "type": "HRES",
+    "updatedAt": "2026-03-25T08:05:58Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1005",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution calls for portable health and retirement benefits, transparent revenue-sharing, algorithm and AI transparency, creator control of audience contacts, customer appeal rights, small\u2011business support, and protections against worker misclassification. It addresses creators, freelancers, and digital workers who earn income through online platforms and the platforms that host content.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:18:52.596597+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e07deaa17e117c7dca7c6575",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution supports portable benefits, timely appeals, small-business resources, and clear revenue-sharing and algorithmic transparency for creators and digital workers on platforms like YouTube, TikTok, Patreon, Substack, Uber, and DoorDash. It signals Congressional support to agencies like the Department of Labor, SBA, and FTC.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:19:14.842801+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e07deaa17e117c7dca7c6575",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:53.683667+00:00",
+  "source": "congress_api"
+}

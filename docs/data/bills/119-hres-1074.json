@@ -1,0 +1,105 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "E000246",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Edwards, Chuck [R-NC-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "P000614",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pappas, Chris [D-NH-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "S001145",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Schakowsky, Janice D. [D-IL-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "G000583",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gottheimer, Josh [D-NJ-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Celebrating the 175th anniversary of the Young Men's Christian Association (YMCA).",
+      "updated_at": "2026-03-25T08:05:53Z"
+    },
+    "detailPath": "119/hres/1074",
+    "identifier": "HRES 1074",
+    "introducedDate": "2026-02-23",
+    "latestAction": {
+      "date": "2026-02-23",
+      "text": "Referred to the House Committee on Education and Workforce."
+    },
+    "number": "1074",
+    "originChamber": "House",
+    "policyArea": "Sports and Recreation",
+    "sponsors": [
+      {
+        "bioguideId": "Q000023",
+        "district": 5,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Quigley, Mike [D-IL-5]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "Celebrating the 175th anniversary of the Young Men's Christian Association (YMCA).",
+    "type": "HRES",
+    "updatedAt": "2026-03-25T08:05:53Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1074",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution celebrates the YMCA's 175th anniversary and formally congratulates and recognizes its historical contributions to education, recreation, childcare, public health, and wartime humanitarian work. It commends YMCA staff and volunteers, encourages support to address social isolation, and notes roughly 2,600 locations serving communities in every State and territory.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:28:22.865876+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3b38d805af4d82552ae3ee70",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This House resolution congratulates the Young Men's Christian Association (YMCA) on its 175th anniversary and recognizes its Chicago headquarters and ~2,600 locations nationwide. It honors YMCA staff and volunteers and spotlights programs \u2014 childcare, camps, swim lessons, and youth sports \u2014 that serve communities in every State.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:28:24.856232+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3b38d805af4d82552ae3ee70",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:46.288031+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,85 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Contract Our Veterans Act of 2026",
+      "updated_at": "2026-03-25T11:03:19Z"
+    },
+    "detailPath": "119/s/3964",
+    "identifier": "S 3964",
+    "introducedDate": "2026-03-03",
+    "latestAction": {
+      "date": "2026-03-03",
+      "text": "Read twice and referred to the Committee on Small Business and Entrepreneurship."
+    },
+    "number": "3964",
+    "originChamber": "Senate",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "S001232",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Sheehy, Tim [R-MT]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MT"
+      }
+    ],
+    "title": "Contract Our Veterans Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-25T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3964",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Contract Our Veterans Act of 2026 amends the Small Business Act to establish a governmentwide 5% prime/subcontract goal and authorize sole-source and veteran-only restricted competitions for small business concerns owned and controlled by veterans. It adds veterans-owned provisions to federal contracting, SBA reporting, scorecards, mentor-protege rules, and subcontracting limits.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:26:26.810835+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1ed3f75174ea5c21bc43023d",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Small Business Administration and federal contracting officers to set a 5% goal for veteran\u2011owned small business awards. It permits restricted set\u2011asides and limited sole\u2011source awards and amends SBA reporting, scorecards, OSDBU duties, and subcontracting rules, affecting federal agencies and prime contractors.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:26:40.509150+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1ed3f75174ea5c21bc43023d",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:43.637832+00:00",
+  "source": "congress_api"
+}

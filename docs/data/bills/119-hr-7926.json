@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Stop Unfair Electricity Prices Act",
+      "updated_at": "2026-03-26T18:45:07Z"
+    },
+    "detailPath": "119/hr/7926",
+    "identifier": "HR 7926",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "7926",
+    "originChamber": "House",
+    "policyArea": "Energy",
+    "sponsors": [
+      {
+        "bioguideId": "S001215",
+        "district": 11,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Stevens, Haley M. [D-MI-11]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MI"
+      }
+    ],
+    "title": "Stop Unfair Electricity Prices Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T18:45:07Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7926",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill bars DOE from providing federal aid to state\u2011regulated investor\u2011owned electric utilities that raise residential rates above January 1, 2026 levels for one year. It permits aid after that only if utilities cap and cut total pay for their five top earners, report amounts, and forfeit aid for violations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:46:59.207701+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "53970e6382c35112ecca4bfa",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill bars the Secretary of Energy from aiding state regulated investor owned utilities for one year if they charge residential rates above January 1 2026 levels. After that, two-year aid requires cuts to total compensation for the five highest compensated employees and a report.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:47:09.668978+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "53970e6382c35112ecca4bfa",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:41.233201+00:00",
+  "source": "congress_api"
+}

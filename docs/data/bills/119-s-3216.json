@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Greenlighting Growth Act",
+      "updated_at": "2026-01-10T06:54:48Z"
+    },
+    "detailPath": "119/s/3216",
+    "identifier": "S 3216",
+    "introducedDate": "2025-11-19",
+    "latestAction": {
+      "date": "2025-11-19",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3216",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "K000393",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kennedy, John [R-LA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "LA"
+      }
+    ],
+    "title": "Greenlighting Growth Act",
+    "type": "S",
+    "updatedAt": "2026-01-10T06:54:48Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3216",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill permits an emerging growth company to omit acquired\u2011company financial statements for periods before the earliest audited period shown in its IPO. It amends Securities Act section 7(a)(2) and Exchange Act 12(b)(1)(K) filings and prohibits later requiring those pre\u2011IPO periods even after the issuer ceases to be an EGC.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:39:29.622768+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8d5eaaa6169d05ac1ebea7b5",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Greenlighting Growth Act lets emerging growth companies (EGCs) and former EGC issuers omit acquired\u2011company financial statements and 17 C.F.R. \u00a7210.3\u201105/210.8\u201104 disclosures for periods before their earliest audited IPO year. It affects SEC\u2011registered issuers, auditors, underwriters, and investors.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:39:25.106971+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8d5eaaa6169d05ac1ebea7b5",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:19:00.803844+00:00",
+  "source": "congress_api"
+}

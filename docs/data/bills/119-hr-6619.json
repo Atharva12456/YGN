@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "R000600",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Del. Radewagen, Aumua Amata Coleman [R-AS-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "AS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "PROSPER in the Pacific Act",
+      "updated_at": "2026-03-26T08:06:33Z"
+    },
+    "detailPath": "119/hr/6619",
+    "identifier": "HR 6619",
+    "introducedDate": "2025-12-11",
+    "latestAction": {
+      "date": "2025-12-11",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "6619",
+    "originChamber": "House",
+    "policyArea": "Foreign Trade and International Finance",
+    "sponsors": [
+      {
+        "bioguideId": "C001055",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Case, Ed [D-HI-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "HI"
+      }
+    ],
+    "title": "PROSPER in the Pacific Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T08:06:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6619",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes duty\u2011free preferential treatment for imports from qualifying Pacific Islands countries and directs the President to designate eligible countries using AGOA/Trade Act criteria. It applies to imports entering the U.S., waives income thresholds, excludes countries for worker, human\u2011rights, or environmental failures, and requires an FTA plan and report.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:21:57.058935+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "643b41bdd8f216da3ccb01a2",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The PROSPER Act authorizes the President to grant preferential tariffs on goods from Pacific Islands, affecting Pacific exporters and U.S. importers. It conditions eligibility on Trade Act and AGOA labor, human rights, and environmental standards and directs USTR and Congress consultations on free trade plans.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:21:46.520376+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "643b41bdd8f216da3ccb01a2",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:58.132849+00:00",
+  "source": "congress_api"
+}

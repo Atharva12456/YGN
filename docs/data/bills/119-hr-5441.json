@@ -1,0 +1,165 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 10,
+    "cosponsors": [
+      {
+        "bioguideId": "T000478",
+        "district": 24,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tenney, Claudia [R-NY-24]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "D000617",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. DelBene, Suzan K. [D-WA-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "B001292",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Beyer, Donald S. [D-VA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-26",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "D000629",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Davids, Sharice [D-KS-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "K000397",
+        "district": 40,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Kim, Young [R-CA-40]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "N000189",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Newhouse, Dan [R-WA-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-21",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "O000019",
+        "district": 23,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Obernolte, Jay [R-CA-23]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-02",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "W000804",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Wittman, Robert J. [R-VA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "M001206",
+        "district": 25,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Morelle, Joseph D. [D-NY-25]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "NY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Fusion Advanced Manufacturing Parity Act",
+      "updated_at": "2026-03-25T08:06:00Z"
+    },
+    "detailPath": "119/hr/5441",
+    "identifier": "HR 5441",
+    "introducedDate": "2025-09-17",
+    "latestAction": {
+      "date": "2025-09-17",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "5441",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "M001205",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Miller, Carol D. [R-WV-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "WV"
+      }
+    ],
+    "title": "Fusion Advanced Manufacturing Parity Act",
+    "type": "HR",
+    "updatedAt": "2026-03-25T08:06:00Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5441",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill adds \"fusion energy components\" to Internal Revenue Code section 45X, making them eligible for the advanced manufacturing production credit equal to 25% of a component's sales price and phasing that credit out between 2032\u20132034 to 0% thereafter. Scope: defined fusion parts and systems for machines producing electricity or process heat.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:40:17.176943+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "77d69a693bb471e3b3d393fa",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill makes many fusion components eligible for a 25% Section 45X advanced manufacturing tax credit. That affects U.S. fusion component manufacturers, fusion companies and suppliers, requires Treasury/IRS administration, and phases out from 2032 through 2034.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:40:04.906958+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "77d69a693bb471e3b3d393fa",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:19:02.432168+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001133",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Ciscomani, Juan [R-AZ-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-02",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "VA Bonus and Relocation Recovery Act",
+      "updated_at": "2026-03-26T08:06:39Z"
+    },
+    "detailPath": "119/hr/7319",
+    "identifier": "HR 7319",
+    "introducedDate": "2026-02-02",
+    "latestAction": {
+      "date": "2026-03-02",
+      "text": "Referred to the Subcommittee on Oversight and Investigations."
+    },
+    "number": "7319",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "S001224",
+        "district": 3,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Self, Keith [R-TX-3]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "VA Bonus and Relocation Recovery Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T08:06:39Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7319",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes the VA to recoup awards, bonuses, and relocation costs from former employees if a Director upholds a repayment order and repayment is unpaid after 180 days. It amends 38 U.S.C. \u00a7\u00a7721 and 723 to permit recovery as other federal debts and disallows waiver under 38 U.S.C. 5302.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:27:04.080644+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5c87a441f7f7992ff3a25663",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets the Secretary of Veterans Affairs recoup awards, bonuses, and relocation expenses from former Department of Veterans Affairs employees who do not repay within 180 days after a Director upholds an order. Recovery uses federal debt-collection tools and cannot be waived.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:26:58.192112+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5c87a441f7f7992ff3a25663",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:44.202842+00:00",
+  "source": "congress_api"
+}

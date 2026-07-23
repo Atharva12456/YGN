@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001198",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Marshall, Roger [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "KS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution honoring the life of Hays, Kansas police sergeant Scott Heimann.",
+      "updated_at": "2026-03-26T13:55:02Z"
+    },
+    "detailPath": "119/sres/425",
+    "identifier": "SRES 425",
+    "introducedDate": "2025-09-30",
+    "latestAction": {
+      "date": "2026-03-21",
+      "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent. (consideration: CR S1465)"
+    },
+    "number": "425",
+    "originChamber": "Senate",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "A resolution honoring the life of Hays, Kansas police sergeant Scott Heimann.",
+    "type": "SRES",
+    "updatedAt": "2026-03-26T13:55:02Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/425",
+    "votes": [],
+    "aiDescription": {
+      "summary": "S. Res. 425 is a Senate resolution honoring Hays, Kansas police Sergeant Scott Heimann, who was killed in the line of duty on September 27, 2025. It offers appreciation and condolences, pays tribute to his sacrifice, and urges government support for his family and Hays, Kansas.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:45:59.612856+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "91a1b8a807582117e65eb96e",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Senate honored Hays, Kansas Police Sergeant Scott Heimann and offered condolences to his wife Beth, Patrick, Victoria, parents Bill and Teresa Heimann. It pays tribute to his line-of-duty death and calls on federal, Kansas, and local governments to support his family.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:46:07.004624+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "91a1b8a807582117e65eb96e",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:40.868138+00:00",
+  "source": "congress_api"
+}

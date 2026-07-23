@@ -1,0 +1,125 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "F000466",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C001126",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carey, Mike [R-OH-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "P000597",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pingree, Chellie [D-ME-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "T000463",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Turner, Michael R. [R-OH-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-01",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "W000822",
+        "district": 12,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Watson Coleman, Bonnie [D-NJ-12]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-24",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "B001292",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Beyer, Donald S. [D-VA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "VA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "CREATIVE Act of 2025",
+      "updated_at": "2026-03-25T08:06:08Z"
+    },
+    "detailPath": "119/hr/6165",
+    "identifier": "HR 6165",
+    "introducedDate": "2025-11-20",
+    "latestAction": {
+      "date": "2025-11-21",
+      "text": "Referred to the Subcommittee on Economic Development, Public Buildings, and Emergency Management."
+    },
+    "number": "6165",
+    "originChamber": "House",
+    "policyArea": "Arts, Culture, Religion",
+    "sponsors": [
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OR"
+      }
+    ],
+    "title": "CREATIVE Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-25T08:06:08Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6165",
+    "votes": [],
+    "aiDescription": {
+      "summary": "CREATIVE establishes a competitive federal grant program funding hiring (up to $5,000,000) and construction/maintenance (up to $3,000,000) for arts productions, facilities, and programming. Grants fund eligible arts entities to employ professional performers and related staff, prioritize underserved communities, require community outreach and labor protections, and limit recipients to one grant.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:39:06.254103+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bb43cc7655395cf5c7997eb8",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The CREATIVE Act creates a Commerce-run grant program for arts jobs. The Economic Development Administration would award competitive grants (up to $5 million for hiring, $3 million for construction/maintenance) to arts nonprofits, theaters, and museums to hire performers, writers, and related staff with NEA labor-standards.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:38:52.049008+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "bb43cc7655395cf5c7997eb8",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:19:00.417646+00:00",
+  "source": "congress_api"
+}

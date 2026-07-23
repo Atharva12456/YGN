@@ -1,0 +1,95 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "E000295",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Ernst, Joni [R-IA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-18",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-27",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "H001079",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Hyde-Smith, Cindy [R-MS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "MS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Seasonal Agriculture CDL Modernization Act",
+      "updated_at": "2026-03-25T11:03:19Z"
+    },
+    "detailPath": "119/s/2909",
+    "identifier": "S 2909",
+    "introducedDate": "2025-09-18",
+    "latestAction": {
+      "date": "2025-09-18",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "2909",
+    "originChamber": "Senate",
+    "policyArea": "Transportation and Public Works",
+    "sponsors": [
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "Seasonal Agriculture CDL Modernization Act",
+    "type": "S",
+    "updatedAt": "2026-03-25T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2909",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Secretary of Transportation to allow States to offer online registration and renewal for seasonal farm-related service-industry restricted commercial driver's licenses. It also clarifies within one year that implements of husbandry are not commercial motor vehicles and are excluded from gross combination weight rating calculations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:40:28.536376+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9cd008f1a3dbc1ac195c737d",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "DOT would let States offer online registration and renewal for seasonal restricted CDLs used by farm-related service industries and eligible employees. It clarifies implements of husbandry are not commercial motor vehicles and not subject to gross combination weight calculations, affecting farmers and State licensing.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:40:38.098741+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9cd008f1a3dbc1ac195c737d",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:19:01.568143+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,85 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001257",
+        "district": 12,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bilirakis, Gus M. [R-FL-12]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-05",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "S001200",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Soto, Darren [D-FL-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Save for Success Act",
+      "updated_at": "2026-03-26T08:06:36Z"
+    },
+    "detailPath": "119/hr/7393",
+    "identifier": "HR 7393",
+    "introducedDate": "2026-02-05",
+    "latestAction": {
+      "date": "2026-02-05",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "7393",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "P000622",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Patronis, Jimmy [R-FL-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "Save for Success Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T08:06:36Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7393",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Save for Success Act lets Section 529 plan distributions pay a designated beneficiary\u2019s qualified housing expenses for buying a principal residence, including closing and mortgage costs. It\u2019s limited to first-time homebuyers (no ownership in prior three years, includes spouse) and applies to distributions after December 31, 2026.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:57.486001+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a59f2ca5f20efa5876418123",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Save for Success Act would change the Internal Revenue Code to allow distributions from state-sponsored 529 qualified tuition programs for a beneficiary\u2019s first\u2011time home purchase, including closing costs and mortgage payments. It would affect beneficiaries, savers, state 529 administrators, the IRS and mortgage lenders.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:35.511018+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a59f2ca5f20efa5876418123",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:50.293163+00:00",
+  "source": "congress_api"
+}

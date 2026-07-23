@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-10",
+        "state": "NV"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Improving Access to Small Business Information Act",
+      "updated_at": "2026-01-12T22:12:33Z"
+    },
+    "detailPath": "119/s/3411",
+    "identifier": "S 3411",
+    "introducedDate": "2025-12-10",
+    "latestAction": {
+      "date": "2025-12-10",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3411",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AL"
+      }
+    ],
+    "title": "Improving Access to Small Business Information Act",
+    "type": "S",
+    "updatedAt": "2026-01-12T22:12:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3411",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill exempts actions by the Advocate for Small Business Capital Formation from being a \"collection of information\" under the Paperwork Reduction Act. It amends Section 4(i) of the Securities Exchange Act, preserves some PRA review duties, but exempts the SEC from OMB submission, control-number display, and clearance labeling.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:20:51.018491+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a15e76702071e3e950bf270f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill exempts the SEC's Advocate for Small Business Capital Formation from being a \"collection of information\" under the Paperwork Reduction Act. It removes OMB submission and control-number requirements and affects the SEC, OMB, small issuers, startups, and others who work with the Advocate.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:20:51.486283+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a15e76702071e3e950bf270f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:58.521594+00:00",
+  "source": "congress_api"
+}

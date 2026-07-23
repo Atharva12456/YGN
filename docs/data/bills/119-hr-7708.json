@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "PAPERS Act of 2026",
+      "updated_at": "2026-03-26T18:39:03Z"
+    },
+    "detailPath": "119/hr/7708",
+    "identifier": "HR 7708",
+    "introducedDate": "2026-02-25",
+    "latestAction": {
+      "date": "2026-02-25",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7708",
+    "originChamber": "House",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "P000597",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Pingree, Chellie [D-ME-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "ME"
+      }
+    ],
+    "title": "PAPERS Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-03-26T18:39:03Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7708",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The PAPERS Act requires DHS to return covered documents to individuals on release from custody, except when document is fraudulent, contraband or evidence in a pending criminal case, or not legally possessed. It covers passports, green cards, employment authorization documents, birth certificates, driver's licenses, Social Security cards, and similar papers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:28:33.822558+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1b5956c9b88c3caa696c75f3",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The PAPERS Act would require the Secretary of Homeland Security to return government IDs to people released from DHS immigration custody. DHS may keep documents only for fraud, contraband/evidence, or no legal entitlement, and must give a written explanation plus a certified copy.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:28:29.583281+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1b5956c9b88c3caa696c75f3",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:45.662207+00:00",
+  "source": "congress_api"
+}

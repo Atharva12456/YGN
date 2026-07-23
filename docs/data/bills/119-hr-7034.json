@@ -1,0 +1,125 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "H001099",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Haridopolos, Mike [R-FL-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "B001302",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Biggs, Andy [R-AZ-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-21",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "E000300",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Evans, Gabe [R-CO-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-27",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "W000816",
+        "district": 25,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Williams, Roger [R-TX-25]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-10",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "J000304",
+        "district": 13,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Jackson, Ronny [R-TX-13]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-17",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "H001100",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Hurd, Jeff [R-CO-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "CO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "To amend the Internal Revenue Code of 1986 to eliminate the dollar limitations on the exclusion of gain from sales of principal residences, and for other purposes.",
+      "updated_at": "2026-03-26T08:06:48Z"
+    },
+    "detailPath": "119/hr/7034",
+    "identifier": "HR 7034",
+    "introducedDate": "2026-01-13",
+    "latestAction": {
+      "date": "2026-01-13",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "7034",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "G000601",
+        "district": 12,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Goldman, Craig A. [R-TX-12]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "To amend the Internal Revenue Code of 1986 to eliminate the dollar limitations on the exclusion of gain from sales of principal residences, and for other purposes.",
+    "type": "HR",
+    "updatedAt": "2026-03-26T08:06:48Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7034",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill amends IRC section 121 to remove the $250,000 and $500,000 dollar limits on excluding gain from the sale of a principal residence. It applies to qualifying owners who meet the ownership and use tests for sales and exchanges after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:02.864500+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e21de0b0f9714583e9bcf590",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill would change Internal Revenue Code section 121 to remove dollar limits on excluding gain from sales of principal residences. It would affect homeowners who sell their main homes, the IRS and Treasury revenues, and the residential real estate industry.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:05.245428+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e21de0b0f9714583e9bcf590",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:55.872990+00:00",
+  "source": "congress_api"
+}

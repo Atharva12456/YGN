@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "K000384",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kaine, Tim [D-VA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "M000133",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Markey, Edward J. [D-MA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "W000817",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warren, Elizabeth [D-MA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "CT"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "ARMAS Act of 2025",
+      "updated_at": "2026-03-25T11:03:19Z"
+    },
+    "detailPath": "119/s/3508",
+    "identifier": "S 3508",
+    "introducedDate": "2025-12-16",
+    "latestAction": {
+      "date": "2025-12-16",
+      "text": "Read twice and referred to the Committee on Foreign Relations."
+    },
+    "number": "3508",
+    "originChamber": "Senate",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "M001169",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Murphy, Christopher [D-CT]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CT"
+      }
+    ],
+    "title": "ARMAS Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-03-25T11:03:19Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3508",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The ARMAS Act of 2025 transfers export licensing and regulatory control of certain firearms and munitions from Commerce to State. It covers U.S. exports tied to trafficking into Mexico, Central America, and the Caribbean and mandates reports, tracing expansion, changes to Caribbean security assistance, license limits, and promotion bans.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:20:27.141006+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3dcd51faf34abfe50aadcd4",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "ARMAS would move export control of U.S. firearms and munitions from Commerce to State. It would add certification and licensing limits, require reports and strategies to curb trafficking to Mexico and Central American and Caribbean countries, and expand eTrace and Caribbean Basin Security Initiative support.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:20:32.647906+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3dcd51faf34abfe50aadcd4",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:57.387485+00:00",
+  "source": "congress_api"
+}

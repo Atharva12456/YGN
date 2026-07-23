@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "K000393",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kennedy, John [R-LA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "A000382",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Alsobrooks, Angela D. [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "GA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "TRUST Act of 2026",
+      "updated_at": "2026-03-26T11:03:17Z"
+    },
+    "detailPath": "119/s/3830",
+    "identifier": "S 3830",
+    "introducedDate": "2026-02-11",
+    "latestAction": {
+      "date": "2026-02-11",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3830",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "B001305",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Budd, Ted [R-NC]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NC"
+      }
+    ],
+    "title": "TRUST Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-26T11:03:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3830",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The TRUST Act of 2026 raises the 10(d) asset threshold from $3,000,000,000 to $6,000,000,000, allowing Federal banking agencies to examine qualifying insured depository institutions no less than once every 18 months. It applies to qualifying insured depository institutions supervised by the FDIC, OCC, or Federal Reserve below $6 billion.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:44:33.716349+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "079cd9d0458fad587f66e80a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill raises the FDIA asset cutoff from $3B to $6B, letting federal banking agencies examine qualifying insured depository institutions every 18 months instead of more often. It affects FDIC\u2011insured banks and savings associations and the supervisors FDIC, OCC, and the Federal Reserve.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:44:34.568501+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "079cd9d0458fad587f66e80a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:48.602529+00:00",
+  "source": "congress_api"
+}

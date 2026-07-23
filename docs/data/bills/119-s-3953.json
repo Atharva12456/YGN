@@ -1,0 +1,135 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 7,
+    "cosponsors": [
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "R000608",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Rosen, Jacky [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "V000128",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Van Hollen, Chris [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "S000033",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Sanders, Bernard [I-VT]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-26",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-02",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001169",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Murphy, Christopher [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-02",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "A000382",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Alsobrooks, Angela D. [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "MD"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "African American History Act of 2026",
+      "updated_at": "2026-03-26T11:03:17Z"
+    },
+    "detailPath": "119/s/3953",
+    "identifier": "S 3953",
+    "introducedDate": "2026-02-26",
+    "latestAction": {
+      "date": "2026-02-26",
+      "text": "Read twice and referred to the Committee on Rules and Administration."
+    },
+    "number": "3953",
+    "originChamber": "Senate",
+    "policyArea": "Arts, Culture, Religion",
+    "sponsors": [
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "African American History Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-26T11:03:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3953",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill lets the Director of the National Museum of African American History and Culture use federal funds to create and share African American history education resources, programs, and exhibitions. It funds teacher training, curricula, translations, online materials, collection digitization, and authorizes $4,000,000 annually for FY2027\u2013FY2031.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:27:16.974020+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "37533d7c4670b8c517e81656",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets the Director of the National Museum of African American History and Culture use $4,000,000 yearly to fund curricula, digital resources, teacher training, exhibitions, and digitize collections. It would affect NMAAHC staff, Smithsonian museums, teachers, local educational agencies, K\u201312 schools, students, and families.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:27:25.765255+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "37533d7c4670b8c517e81656",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:45.136257+00:00",
+  "source": "congress_api"
+}

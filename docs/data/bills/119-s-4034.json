@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-10",
+        "state": "NV"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "ELEVATE Act of 2026",
+      "updated_at": "2026-03-26T18:18:26Z"
+    },
+    "detailPath": "119/s/4034",
+    "identifier": "S 4034",
+    "introducedDate": "2026-03-10",
+    "latestAction": {
+      "date": "2026-03-10",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "4034",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NE"
+      }
+    ],
+    "title": "ELEVATE Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-26T18:18:26Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4034",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The ELEVATE Act lets issuers submit draft registration statements to the SEC for confidential staff review before public filing and bars compelled disclosure of those submissions, treating them as confidential under FOIA exemptions and Exchange Act confidentiality rules. It also limits emerging growth companies to two years of financials.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:47:35.519351+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b8ddeaca5448a521a08ba601",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The ELEVATE Act allows issuers to submit draft registration statements to the SEC for confidential review and requires public filing 10 days before listing. Emerging growth companies may report two prior fiscal years and confidential submissions are exempt from FOIA and protected under section 24.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:48:10.651242+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "b8ddeaca5448a521a08ba601",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:41.614999+00:00",
+  "source": "congress_api"
+}

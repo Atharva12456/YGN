@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "P000614",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pappas, Chris [D-NH-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-01-28",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "V000133",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Van Drew, Jefferson [R-NJ-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-13",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "L000590",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Lee, Susie [D-NV-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-24",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "M001237",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McDonald Rivet, Kristen [D-MI-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-18",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "G000583",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gottheimer, Josh [D-NJ-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Removing Extraneous Loopholes Insuring Every Veteran Emergency Act or the RELIEVE Act This bill expands eligibility for Department of Veterans Affairs (VA) reimbursement of emergency treatment for veterans who are treated in a non-VA facility. Specifically, the bill waives the requirement that a veteran must have received VA care within the 24-month period preceding the furnishing of emergency treatment if the veteran receives such emergency treatment within the 60-day period following their enrollment in the VA health care system.",
+      "updated_at": "2025-03-06T21:38:38Z"
+    },
+    "detailPath": "119/hr/748",
+    "identifier": "HR 748",
+    "introducedDate": "2025-01-28",
+    "latestAction": {
+      "date": "2025-12-19",
+      "text": "Referred to the Subcommittee on Health."
+    },
+    "number": "748",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "B001301",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Bergman, Jack [R-MI-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MI"
+      }
+    ],
+    "title": "RELIEVE Act",
+    "type": "HR",
+    "updatedAt": "2026-03-25T08:06:09Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/748",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The RELIEVE Act waives the 24\u2011month VA\u2011care prerequisite for reimbursement of emergency treatment provided within 60 days after a veteran enrolls. It amends 38 U.S.C. 1725(b)(2)(B), takes effect for care furnished one year after enactment, and covers veterans seeking emergency care through the Veterans Community Care program.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:19:50.104640+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "65976471b8d56c891e484ecb",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "RELIEVE lets the VA reimburse non\u2011VA providers for emergency care within 60 days after a veteran enrolls in VA health care. It affects veterans enrolling in VA care, the VA\u2019s Veterans Community Care program, and non\u2011VA providers, applying to care furnished one year after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:20:03.085500+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "65976471b8d56c891e484ecb",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:56.644035+00:00",
+  "source": "congress_api"
+}

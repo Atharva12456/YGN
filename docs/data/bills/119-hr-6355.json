@@ -1,0 +1,105 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "S000250",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sessions, Pete [R-TX-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-02",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "C001080",
+        "district": 28,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Chu, Judy [D-CA-28]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-02",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "S000185",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Scott, Robert C. \"Bobby\" [D-VA-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-02",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "M001219",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Del. Moylan, James C. [R-GU-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-24",
+        "state": "GU"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Corporal Fernando Ruiz Baltazar Posthumous Citizenship Act of 2025",
+      "updated_at": "2026-03-25T08:05:27Z"
+    },
+    "detailPath": "119/hr/6355",
+    "identifier": "HR 6355",
+    "introducedDate": "2025-12-02",
+    "latestAction": {
+      "date": "2025-12-02",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "6355",
+    "originChamber": "House",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "C001123",
+        "district": 31,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Cisneros, Gilbert Ray [D-CA-31]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Corporal Fernando Ruiz Baltazar Posthumous Citizenship Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-03-25T08:05:27Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6355",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends INA section 329A to grant posthumous U.S. citizenship to otherwise qualified noncitizens who enlisted in the Philippines and died on active duty with U.S. Armed Forces between September 1, 1939 and December 31, 1946. The executive department must certify eligibility and certain timing and benefit limits waived.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:22:55.832673+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "46ac0625596160b4ae5b8e87",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill amends the Immigration and Nationality Act to grant honorary posthumous U.S. citizenship to noncitizens who enlisted in the Philippines and died on active duty in the U.S. Armed Forces between September 1, 1939, and December 31, 1946. It directs military departments to certify.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:22:35.980617+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "46ac0625596160b4ae5b8e87",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:59.656961+00:00",
+  "source": "congress_api"
+}

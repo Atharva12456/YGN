@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-04",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "HALOS Act of 2025",
+      "updated_at": "2026-02-04T05:06:15Z"
+    },
+    "detailPath": "119/s/3342",
+    "identifier": "S 3342",
+    "introducedDate": "2025-12-04",
+    "latestAction": {
+      "date": "2025-12-04",
+      "text": "Read twice and referred to the Committee on Banking, Housing, and Urban Affairs."
+    },
+    "number": "3342",
+    "originChamber": "Senate",
+    "policyArea": "Finance and Financial Sector",
+    "sponsors": [
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NE"
+      }
+    ],
+    "title": "HALOS Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-02-04T05:06:15Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3342",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The HALOS Act directs the SEC to amend Regulation D within six months so issuer presentations at qualifying sponsored events are not deemed general solicitation. It applies to non\u2011bankrupt business issuers (not investment companies or shell/blank\u2011check firms) presenting at specified sponsored events, subject to sponsor conduct and disclosure limits.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:22:38.111426+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f3ed753d95ebe27a808137ec",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Securities and Exchange Commission to amend Regulation D to allow issuer presentations at sponsored events despite the general solicitation ban. It affects issuers (early\u2011stage companies), the SEC, angel investor groups of accredited investors, incubators, colleges, states, tribes, nonprofits, and event sponsors.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:21:58.972909+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f3ed753d95ebe27a808137ec",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:59.279173+00:00",
+  "source": "congress_api"
+}

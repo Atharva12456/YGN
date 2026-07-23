@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "L000571",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Lummis, Cynthia M. [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "WY"
+      },
+      {
+        "bioguideId": "J000312",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Justice, James C. [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-12",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "C001075",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Cassidy, Bill [R-LA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-09",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "C001095",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Cotton, Tom [R-AR]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "AR"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Less Than Lethal Act",
+      "updated_at": "2026-03-26T11:03:17Z"
+    },
+    "detailPath": "119/s/3514",
+    "identifier": "S 3514",
+    "introducedDate": "2025-12-16",
+    "latestAction": {
+      "date": "2025-12-16",
+      "text": "Read twice and referred to the Committee on Finance. (text: CR S8782)"
+    },
+    "number": "3514",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "B001261",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Barrasso, John [R-WY]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "WY"
+      }
+    ],
+    "title": "Less Than Lethal Act",
+    "type": "S",
+    "updatedAt": "2026-03-26T11:03:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3514",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This bill exempts certain less-than-lethal projectile devices and ammunition from the federal firearms/ammunition excise tax and from NFA coverage. It defines covered devices by technical limits (nonconvertible to common firearm ammo, no semiauto feeding, projectiles \u2264500 ft/s), requires IRS classification, annual lists and a report, and applies to post\u2011enactment sales.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:21:30.588708+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f334430d2a5fda1be8ed986a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill exempts certain less-than-lethal projectile devices and related cartridges from the federal firearms and ammunition excise tax and from National Firearms Act (NFA) classification, affecting manufacturers and importers of those devices. The Treasury Secretary must make 90\u2011day rulings, publish annual device lists, and report to House Ways and Means and Senate Finance.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:21:10.272273+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f334430d2a5fda1be8ed986a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:57.767644+00:00",
+  "source": "congress_api"
+}

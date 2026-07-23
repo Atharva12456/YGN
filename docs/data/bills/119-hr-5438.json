@@ -1,0 +1,755 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 69,
+    "cosponsors": [
+      {
+        "bioguideId": "B001317",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Brecheen, Josh [R-OK-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "E000246",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Edwards, Chuck [R-NC-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "B001307",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Baird, James R. [R-IN-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "C001118",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cline, Ben [R-VA-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "S001188",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Stutzman, Marlin A. [R-IN-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-18",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "B001316",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Burlison, Eric [R-MO-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "F000246",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fallon, Pat [R-TX-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "V000134",
+        "district": 24,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Van Duyne, Beth [R-TX-24]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "J000304",
+        "district": 13,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Jackson, Ronny [R-TX-13]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "S001224",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Self, Keith [R-TX-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "W000806",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Webster, Daniel [R-FL-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-30",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "G000576",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Grothman, Glenn [R-WI-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-17",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "H001101",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Harrigan, Pat [R-NC-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-17",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "C001115",
+        "district": 27,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Cloud, Michael [R-TX-27]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-21",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "S001229",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Shreve, Jefferson [R-IN-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-21",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "H001077",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Higgins, Clay [R-LA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "B001301",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Bergman, Jack [R-MI-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-04",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "B001325",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Biggs, Sheri [R-SC-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-10",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "D000032",
+        "district": 19,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Donalds, Byron [R-FL-19]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "M001215",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Miller-Meeks, Mariannette [R-IA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "S000168",
+        "district": 27,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Salazar, Maria Elvira [R-FL-27]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "F000482",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fedorchak, Julie [R-ND-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "H001086",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Harshbarger, Diana [R-TN-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "P000605",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Perry, Scott [R-PA-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-16",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "P000609",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Palmer, Gary J. [R-AL-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "S000250",
+        "district": 17,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Sessions, Pete [R-TX-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "H001098",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "J000301",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Johnson, Dusty [R-SD-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "SD"
+      },
+      {
+        "bioguideId": "S001172",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Smith, Adrian [R-NE-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "G000589",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gooden, Lance [R-TX-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "H001067",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Hudson, Richard [R-NC-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "M001239",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McGuire, John J. [R-VA-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-17",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "F000484",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fine, Randy [R-FL-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-18",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "L000597",
+        "district": 15,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Lee, Laurel M. [R-FL-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-07",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "S000510",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Smith, Adam [D-WA-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "B001282",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Barr, Andy [R-KY-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "S001230",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Subramanyam, Suhas [D-VA-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "B001309",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Burchett, Tim [R-TN-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "P000048",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Pfluger, August [R-TX-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-09",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "G000565",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gosar, Paul A. [R-AZ-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-09",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "T000463",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Turner, Michael R. [R-OH-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-09",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "O000086",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Owens, Burgess [R-UT-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-12",
+        "state": "UT"
+      },
+      {
+        "bioguideId": "C001103",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Carter, Earl L. \"Buddy\" [R-GA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-12",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "G000603",
+        "district": 26,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gill, Brandon [R-TX-26]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-12",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "M001213",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Moore, Blake D. [R-UT-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-12",
+        "state": "UT"
+      },
+      {
+        "bioguideId": "C001132",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Crane, Elijah [R-AZ-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "M001216",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Mills, Cory [R-FL-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "D000230",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Davis, Donald G. [D-NC-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "L000599",
+        "district": 17,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Lawler, Michael [R-NY-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "M001217",
+        "district": 23,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Moskowitz, Jared [D-FL-23]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "B000825",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Boebert, Lauren [R-CO-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "H001093",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Houchin, Erin [R-IN-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "F000480",
+        "district": 20,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fong, Vince [R-CA-20]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "G000593",
+        "district": 28,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gimenez, Carlos A. [R-FL-28]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-13",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "D000616",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. DesJarlais, Scott [R-TN-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-14",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "L000600",
+        "district": 23,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Langworthy, Nicholas A. [R-NY-23]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-14",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001129",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Collins, Mike [R-GA-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-14",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "J000311",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Jack, Brian [R-GA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "L000596",
+        "district": 13,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Luna, Anna Paulina [R-FL-13]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "T000480",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Timmons, William R. [R-SC-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "M000194",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Mace, Nancy [R-SC-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "M001222",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Miller, Max L. [R-OH-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-20",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "L000583",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Loudermilk, Barry [R-GA-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-21",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "F000450",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Foxx, Virginia [R-NC-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-22",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "S001199",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Smucker, Lloyd [R-PA-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-02",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "V000139",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Van Epps, Matt [R-TN-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-02",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "F000459",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fleischmann, Charles J. \"Chuck\" [R-TN-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-09",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "B001323",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Begich, Nicholas J. [R-AK-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "AK"
+      },
+      {
+        "bioguideId": "E000300",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Evans, Gabe [R-CO-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "CO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Incentivize Savings Act",
+      "updated_at": "2026-03-26T18:43:33Z"
+    },
+    "detailPath": "119/hr/5438",
+    "identifier": "HR 5438",
+    "introducedDate": "2025-09-17",
+    "latestAction": {
+      "date": "2026-02-04",
+      "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 25 - 19."
+    },
+    "number": "5438",
+    "originChamber": "House",
+    "policyArea": "Economics and Public Finance",
+    "sponsors": [
+      {
+        "bioguideId": "M001218",
+        "district": 7,
+        "isOriginalCosponsor": null,
+        "name": "Rep. McCormick, Richard [R-GA-7]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "GA"
+      }
+    ],
+    "title": "Incentivize Savings Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T18:43:33Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5438",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires unspent agency appropriations be split: 49% held one more year, 49% for public-debt principal and interest, and 2% for retention bonuses (capped at 10% of basic pay), with leftovers to debt and next-year budgets tied to CPI. Coverage: executive agencies, US Postal Service, PRC; Red Cross excluded.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:02:07.739824+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "46a601d6f7cbca1dcf3edac5",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill makes Executive agencies (including USPS and PRC) split unspent funds: 49% kept one year, 49% for public debt, 2% for retention bonuses capped at 10% of basic pay. They must cap next-year budget requests to the prior request adjusted by CPI to OMB.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:02:12.933957+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "46a601d6f7cbca1dcf3edac5",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:53.107582+00:00",
+  "source": "congress_api"
+}

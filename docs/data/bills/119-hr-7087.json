@@ -1,0 +1,85 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001185",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sewell, Terri A. [D-AL-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-15",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "S001172",
+        "district": 3,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Smith, Adrian [R-NE-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-25",
+        "state": "NE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Grave Injustice Parity Act",
+      "updated_at": "2026-03-26T08:06:47Z"
+    },
+    "detailPath": "119/hr/7087",
+    "identifier": "HR 7087",
+    "introducedDate": "2026-01-15",
+    "latestAction": {
+      "date": "2026-01-15",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "7087",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "M001224",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Moran, Nathaniel [R-TX-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "Grave Injustice Parity Act",
+    "type": "HR",
+    "updatedAt": "2026-03-26T08:06:47Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7087",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill lets estates and donors deduct transfers to nonprofit cemetery companies and cemetery corporations chartered for burial, and makes private foundation payments to them count as qualifying distributions, not taxable expenditures. It applies to estate and gift tax years beginning after enactment and to foundation distributions made after enactment.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:36.094789+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ebb6e1723b59f6e80245be94",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets estates and donors deduct federal estate and gift transfers to nonprofit cemetery companies or burial-only cemetery corporations. It also treats private foundation payments to those nonprofit cemeteries as meeting minimum distribution rules and not taxable expenditures under sections 4942 and 4945.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T05:03:25.703875+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "ebb6e1723b59f6e80245be94",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:55.161835+00:00",
+  "source": "congress_api"
+}

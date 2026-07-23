@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "W000817",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warren, Elizabeth [D-MA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-10",
+        "state": "MA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Support for Astrophysical Observatories and National High-Energy Astrophysics Hubs Act of 2026",
+      "updated_at": "2026-03-26T18:20:23Z"
+    },
+    "detailPath": "119/s/4044",
+    "identifier": "S 4044",
+    "introducedDate": "2026-03-10",
+    "latestAction": {
+      "date": "2026-03-10",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "4044",
+    "originChamber": "Senate",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "M000133",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Markey, Edward J. [D-MA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MA"
+      }
+    ],
+    "title": "Support for Astrophysical Observatories and National High-Energy Astrophysics Hubs Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-03-26T18:20:23Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4044",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs NASA to designate national high\u2011energy astrophysics hubs to support X\u2011ray flagship missions, workforce development, mission planning and operations, scientific software, and tech transfer. Eligible hubs are NASA contractors that are universities, suitable state or federal entities (including FFRDCs), or NGOs with advanced energy research or commercialization expertise.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:47:10.276842+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5ea26cedc6abcb5e07d17270",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs NASA to designate national high energy astrophysics hubs to support X ray flagship missions and sustain US leadership. They would apply to NASA contractors, universities, FFRDCs, and NGOs, and to aerospace, spacecraft operations, and scientific software workforces and commercial partners.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:47:36.721173+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "5ea26cedc6abcb5e07d17270",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:41.976122+00:00",
+  "source": "congress_api"
+}

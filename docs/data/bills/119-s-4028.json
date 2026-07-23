@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Open Books, Open Doors Act",
+      "updated_at": "2026-03-26T18:16:57Z"
+    },
+    "detailPath": "119/s/4028",
+    "identifier": "S 4028",
+    "introducedDate": "2026-03-09",
+    "latestAction": {
+      "date": "2026-03-09",
+      "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+    },
+    "number": "4028",
+    "originChamber": "Senate",
+    "policyArea": "Education",
+    "sponsors": [
+      {
+        "bioguideId": "K000394",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kim, Andy [D-NJ]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "Open Books, Open Doors Act",
+    "type": "S",
+    "updatedAt": "2026-03-26T18:16:57Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4028",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Open Books, Open Doors Act creates a competitive Department of Education grant program to fund literacy materials, evidence-based programs, and family-literacy services. Grants prioritize projects serving \"book deserts\" and may be awarded to states, tribes, schools, libraries, juvenile-justice facilities, nonprofits, and community partners serving infants through young adults.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:44:03.997618+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "341423d906b386da2d6946dc",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Secretary of Education would award competitive grants to qualified applicants to provide books, evidence based literacy programs. Grants target \"book deserts\" and fund State and Tribal governments, SEAs, public libraries, schools, juvenile justice facilities, Head Start, WIC, barbershops, laundromats, bookstores, and community health centers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T04:44:16.141834+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "341423d906b386da2d6946dc",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:42.489128+00:00",
+  "source": "congress_api"
+}

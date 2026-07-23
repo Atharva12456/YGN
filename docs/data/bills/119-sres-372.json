@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001198",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Marshall, Roger [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-03",
+        "state": "KS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution honoring the life of Kansas City, Kansas police officer Hunter Simoncic.",
+      "updated_at": "2026-03-26T13:54:26Z"
+    },
+    "detailPath": "119/sres/372",
+    "identifier": "SRES 372",
+    "introducedDate": "2025-09-03",
+    "latestAction": {
+      "date": "2026-03-21",
+      "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent. (consideration: CR S1465)"
+    },
+    "number": "372",
+    "originChamber": "Senate",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "A resolution honoring the life of Kansas City, Kansas police officer Hunter Simoncic.",
+    "type": "SRES",
+    "updatedAt": "2026-03-26T13:54:26Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/372",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution honors Kansas City, Kansas police officer Hunter Simoncic and memorializes his August 26, 2025 death while attempting to disable a fleeing vehicle, urging government support for his family. It is a nonbinding Senate expression covering Officer Simoncic, his family, and his legacy.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:46:31.691691+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9b7eaf82aea476001e002ad9",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Senate honors Kansas City, Kansas Officer Hunter Simoncic, killed August 26, 2025 on duty, and offers condolences to family. It pays tribute to his service with the Kansas City, Kansas Police Department and urges federal, Kansas state, and local governments to support his family.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-07-23T03:46:40.680496+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9b7eaf82aea476001e002ad9",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-07-23T06:18:40.504498+00:00",
+  "source": "congress_api"
+}
