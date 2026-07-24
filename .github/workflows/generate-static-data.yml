@@ -16,11 +16,19 @@ on:
         type: boolean
         default: false
   schedule:
-    # Hourly (offset off :00 so it isn't stuck behind GitHub's top-of-hour
-    # scheduling backlog): a fast, bounded ethics checkpoint. At 40 members per
-    # run this refreshes every current member's grade within ~14h — inside the
-    # 19h target even if a few scheduled runs are delayed or dropped.
-    - cron: "17 * * * *"
+    # Every 3 hours (offset off :00 so it isn't stuck behind GitHub's top-of-hour
+    # scheduling backlog): a fast, bounded ethics checkpoint.
+    #
+    # Cadence is set by the Actions minute budget, not by how fast we'd like the
+    # sweep to run. Measured: ~4 min per ethics run, ~20 min for the daily full
+    # run, ~0.5 min per Pages build. Hourly worked out to ~5,250 min/month against
+    # a 3,000-minute allowance, which exhausted the quota on 2026-07-24 and left
+    # every scheduled run failing in 2 seconds. Every 3 hours lands near
+    # ~1,700 min/month, leaving headroom for CI on real code pushes.
+    #
+    # Little sweep throughput is lost: the FEC key allows 60 requests/hour, so a
+    # run scores ~27 members before throttling regardless of how often it fires.
+    - cron: "17 */3 * * *"
     # Once daily: a full refresh so member dossiers, the recent-bills digest,
     # and the national-debt metric don't go stale under the ethics-only sweep.
     - cron: "47 3 * * *"

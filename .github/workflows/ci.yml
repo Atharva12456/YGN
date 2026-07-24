@@ -2,7 +2,16 @@ name: CI
 
 on:
   push:
+    # The data workflow pushes an "update ethics grade checkpoint" commit on every
+    # sweep. Those touch only generated JSON, so running the full browser suite
+    # (which downloads Chrome) on them doubled Actions usage for no signal and
+    # helped exhaust the monthly minute allowance. Skip when a push changes
+    # nothing but generated data.
+    paths-ignore:
+      - "docs/data/**"
   pull_request:
+    paths-ignore:
+      - "docs/data/**"
 
 permissions:
   contents: read

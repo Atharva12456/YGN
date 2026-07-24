@@ -124,10 +124,20 @@ function listen(serverApp) {
       element => element.textContent.replace(/\s+/g, ' ').trim(),
     );
     assert.match(balanceText, /Who runs the 119th Congress/i);
-    assert.match(balanceText, /212 Democrats/);
-    assert.match(balanceText, /218 Republicans/);
-    assert.match(balanceText, /45 Democrats/);
-    assert.match(balanceText, /52 Republicans/);
+    // Assert the card renders a real party breakdown for both chambers, not
+    // frozen seat counts: the roster genuinely changes (deaths, resignations,
+    // special elections), and hardcoding "52 Republicans" made CI fail the moment
+    // a Senate seat flipped. Check shape + plausible chamber sizes instead.
+    const seats = label => [...balanceText.matchAll(new RegExp(`(\\d+) ${label}`, 'g'))]
+      .map(match => Number(match[1]));
+    const democrats = seats('Democrats');
+    const republicans = seats('Republicans');
+    assert.ok(democrats.length >= 2, `expected House and Senate Democrat counts, got ${democrats}`);
+    assert.ok(republicans.length >= 2, `expected House and Senate Republican counts, got ${republicans}`);
+    const houseTotal = democrats[0] + republicans[0];
+    const senateTotal = democrats[1] + republicans[1];
+    assert.ok(houseTotal > 400 && houseTotal <= 435, `implausible House total: ${houseTotal}`);
+    assert.ok(senateTotal > 90 && senateTotal <= 100, `implausible Senate total: ${senateTotal}`);
 
     await homePage.waitForSelector('#on-this-day:not([hidden])');
     const historyMapGap = await homePage.evaluate(() => {
