@@ -1,19 +1,105 @@
 {
-    "available":  false,
-    "bioguideId":  "M001239",
-    "candidate":  null,
-    "components":  {
-
-                   },
-    "cycle":  null,
-    "generated_at":  "2026-07-10T19:54:25.805888+00:00",
-    "grade":  "N/A",
-    "method":  "campaign_finance_stock_v4",
-    "notes":  [
-                  "No current evidence-backed FEC grade is available for this member.",
-                  "YGN does not substitute synthetic or randomized values for missing public data."
-              ],
-    "score":  null,
-    "source":  "unavailable",
-    "updated_at":  null
+  "bioguideId": "M001239",
+  "candidate": {
+    "candidate_id": "H0VA07133",
+    "district": "05",
+    "name": "MCGUIRE, JOHN",
+    "office": "H",
+    "party": "REP",
+    "state": "VA"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 44.3,
+      "value": 0.1413,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 90.1,
+      "value": 0.4727,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 86.2,
+      "value": 0.7258,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 96.0,
+      "value": 1.0,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 96.0,
+      "value": 0.4026,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "7 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+      "penalty": 32,
+      "ptr_filings": 7
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 82.6,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 437911.06,
+        "label": "Small individual (unitemized)",
+        "share": 0.29222722962076525
+      },
+      {
+        "amount": 649730.96,
+        "label": "Large individual (itemized)",
+        "share": 0.4335790889584753
+      },
+      {
+        "amount": 410887.26,
+        "label": "PAC / other committees",
+        "share": 0.27419368142075945
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0VA07133",
+      "district": "05",
+      "name": "MCGUIRE, JOHN",
+      "office": "H",
+      "party": "REP",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 565242.48,
+      "debts": 41487.84,
+      "disbursements": 1215947.49,
+      "individualContributions": 1087642.02,
+      "receipts": 1746971.46
+    }
+  },
+  "generated_at": "2026-07-24T00:10:20.738488+00:00",
+  "grade": "F",
+  "method": "campaign_finance_stock_v4",
+  "notes": [
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+    "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+  ],
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 50.6,
+  "source": "fec_live",
+  "stockPenalty": 32,
+  "stockPtrCount": 7,
+  "updated_at": "2026-07-24T00:10:26.194602+00:00"
 }
