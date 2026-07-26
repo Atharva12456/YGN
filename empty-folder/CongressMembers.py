@@ -59,7 +59,6 @@ STATIC_FOREIGN_BRIEF_PATH = (
 STATIC_CIVIC_DIR = Path(__file__).parent.parent / "docs" / "data" / "civic"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
-CACHE_LOCK_STRIPES = 256
 CACHE_STALE_RETENTION_SECONDS = 90 * 24 * 60 * 60
 CACHE_PRUNE_EVERY_WRITES = 256
 REQUEST_TIMEOUT_SECONDS = 20
@@ -147,11 +146,6 @@ ENV_PATHS = (
 )
 
 _cache_lock = threading.RLock()
-# Cached fetchers can call other cached fetchers while holding their stripe
-# (ethics -> member/FEC/disclosure is one example). Two different keys can hash
-# to the same stripe, so these locks must be reentrant or that collision
-# deadlocks the worker forever.
-_cache_key_locks = tuple(threading.RLock() for _ in range(CACHE_LOCK_STRIPES))
 _cache_writes_since_prune = 0
 _background_refresh_thread = None
 _background_refresh_stop = threading.Event()
@@ -316,14 +310,18 @@ _cache_init_lock = threading.Lock()
 
 def _connect_cache():
     path = _cache_path()
-    path.parent.mkdir(parents=True, exist_ok=True)
+    path_key = str(path)
+    # Only on the first connection for this cache file. mkdir(exist_ok=True) is a
+    # real syscall (~0.19 ms, about a third of the cost of a warm cache hit) and it
+    # was running on every single read and write.
+    if path_key not in _initialized_cache_paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
 
     conn = sqlite3.connect(path, timeout=30)
     conn.row_factory = sqlite3.Row
 
     # Create the schema (and switch to WAL for concurrent readers) once per cache
     # file rather than on every read/write — this ran on the hot path before.
-    path_key = str(path)
     if path_key not in _initialized_cache_paths:
         with _cache_init_lock:
             if path_key not in _initialized_cache_paths:
@@ -424,12 +422,39 @@ def _write_cache(cache_key, response_json, source, ttl_seconds=None):
             conn.commit()
 
 
-def _cache_lock_for_key(cache_key):
-    # Fixed lock striping preserves single-flight behavior for a key without an
-    # ever-growing dictionary (or a wholesale clear that can duplicate in-flight
-    # work). A collision only serializes two unrelated cold misses briefly.
-    digest = hashlib.blake2b(str(cache_key).encode("utf-8"), digest_size=2).digest()
-    return _cache_key_locks[int.from_bytes(digest, "big") % CACHE_LOCK_STRIPES]
+_cache_key_lock_registry = {}
+_cache_key_registry_lock = threading.Lock()
+
+
+@contextmanager
+def _cache_key_lock(cache_key):
+    """Single-flight lock for ONE cache key.
+
+    This used to be fixed striping over 256 RLocks. RLock reentrancy is per
+    THREAD, so when a cached fetcher fans out to a thread pool — getRecentBillDigest
+    builds its items across 8 workers while holding the digest's own lock — a
+    worker whose key hashed to the parent's stripe would block forever on a lock
+    owned by a thread that is itself blocked waiting for that worker. Keying the
+    lock on the cache key removes the collision entirely; refcounting keeps the
+    registry from growing without bound.
+    """
+    key = str(cache_key)
+    with _cache_key_registry_lock:
+        entry = _cache_key_lock_registry.get(key)
+        if entry is None:
+            entry = [threading.RLock(), 0]
+            _cache_key_lock_registry[key] = entry
+        entry[1] += 1
+    lock = entry[0]
+    lock.acquire()
+    try:
+        yield
+    finally:
+        lock.release()
+        with _cache_key_registry_lock:
+            entry[1] -= 1
+            if entry[1] <= 0:
+                _cache_key_lock_registry.pop(key, None)
 
 
 def _cached_json(cache_key, source, fetch_json, ttl_seconds=None):
@@ -437,8 +462,7 @@ def _cached_json(cache_key, source, fetch_json, ttl_seconds=None):
     if fresh_response is not None:
         return fresh_response
 
-    key_lock = _cache_lock_for_key(cache_key)
-    with key_lock:
+    with _cache_key_lock(cache_key):
         fresh_response = _read_cache(cache_key)
         if fresh_response is not None:
             return fresh_response
@@ -470,8 +494,7 @@ def _cached_json_dynamic(cache_key, source, fetch_json, ttl_for):
     if fresh_response is not None:
         return fresh_response
 
-    key_lock = _cache_lock_for_key(cache_key)
-    with key_lock:
+    with _cache_key_lock(cache_key):
         fresh_response = _read_cache(cache_key)
         if fresh_response is not None:
             return fresh_response
@@ -3667,6 +3690,10 @@ def _resolve_wikipedia_summary(member):
     tried_titles = set()
 
     for title in _member_name_candidates(member):
+        # Record before fetching: the search loop below routinely surfaces the same
+        # title and would otherwise re-download it (and re-spend the 429 budget)
+        # for a summary we have already scored.
+        tried_titles.add(title.lower())
         try:
             summary = _wiki_summary_from_page_title(title)
         except WikipediaRateLimited:
@@ -4744,6 +4771,34 @@ def _committee_name_lookup():
     return _memoized_index("committees", _build_committee_name_lookup)
 
 
+def _build_committee_membership_index():
+    """bioguide id -> [(committee code, membership entry)].
+
+    Built once per memo window instead of re-parsing the ~340 KB membership map
+    and rescanning all 230 codes for every single member. Iterates in the same
+    order as the original scan and keeps at most one entry per (code, member),
+    mirroring the `break` the per-member loop used, so the resulting assignment
+    list is identical.
+    """
+    membership = _unitedstates_dataset("committee-membership-current.yaml") or {}
+    index = {}
+    for code, members in membership.items():
+        if not isinstance(members, list):
+            continue
+        seen_in_code = set()
+        for member in members:
+            bioguide = member.get("bioguide")
+            if not bioguide or bioguide in seen_in_code:
+                continue
+            seen_in_code.add(bioguide)
+            index.setdefault(bioguide, []).append((code, member))
+    return index
+
+
+def _committee_membership_index():
+    return _memoized_index("committee-membership", _build_committee_membership_index)
+
+
 # --- Committee assignments (extra feature) -------------------------------
 
 
@@ -4751,32 +4806,25 @@ def get_member_committees(bioguide_id):
     cache_key = _build_cache_key("member-committees-v1", {"bioguideId": bioguide_id})
 
     def fetch_json():
-        membership = _unitedstates_dataset("committee-membership-current.yaml") or {}
         full, sub = _committee_name_lookup()
         assignments = []
-        for code, members in membership.items():
-            if not isinstance(members, list):
-                continue
-            for member in members:
-                if member.get("bioguide") != bioguide_id:
-                    continue
-                is_subcommittee = len(code) > 4
-                parent_code = code[:4] if is_subcommittee else code
-                committee_info = full.get(parent_code, {})
-                assignments.append(
-                    {
-                        "code": code,
-                        "committee": committee_info.get("name"),
-                        "chamber": committee_info.get("chamber"),
-                        "committeeUrl": committee_info.get("url"),
-                        "subcommittee": sub.get(code) if is_subcommittee else None,
-                        "isSubcommittee": is_subcommittee,
-                        "role": member.get("title"),
-                        "rank": member.get("rank"),
-                        "party": member.get("party"),
-                    }
-                )
-                break
+        for code, member in _committee_membership_index().get(bioguide_id, ()):
+            is_subcommittee = len(code) > 4
+            parent_code = code[:4] if is_subcommittee else code
+            committee_info = full.get(parent_code, {})
+            assignments.append(
+                {
+                    "code": code,
+                    "committee": committee_info.get("name"),
+                    "chamber": committee_info.get("chamber"),
+                    "committeeUrl": committee_info.get("url"),
+                    "subcommittee": sub.get(code) if is_subcommittee else None,
+                    "isSubcommittee": is_subcommittee,
+                    "role": member.get("title"),
+                    "rank": member.get("rank"),
+                    "party": member.get("party"),
+                }
+            )
 
         # Full committees before their subcommittees; leadership (low rank) first.
         assignments.sort(
@@ -5019,16 +5067,23 @@ def _legislation_item(item):
 
 def get_member_legislation(bioguide_id, limit=15):
     limit = max(1, min(int(limit or 15), 50))
-    sponsored = _congress_get(
-        f"/member/{bioguide_id}/sponsored-legislation",
-        params={"limit": limit},
-        ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
-    )
-    cosponsored = _congress_get(
-        f"/member/{bioguide_id}/cosponsored-legislation",
-        params={"limit": limit},
-        ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
-    )
+
+    # Two independent Congress.gov feeds: overlap them so a cold member page pays
+    # one round-trip instead of two. Safe now that cache single-flight locks are
+    # per key rather than striped (a worker can no longer block on a lock its
+    # parent thread holds).
+    def _fetch(kind):
+        return _congress_get(
+            f"/member/{bioguide_id}/{kind}-legislation",
+            params={"limit": limit},
+            ttl_seconds=LEGISLATION_CACHE_TTL_SECONDS,
+        )
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        sponsored_future = pool.submit(_fetch, "sponsored")
+        cosponsored_future = pool.submit(_fetch, "cosponsored")
+        sponsored = sponsored_future.result()
+        cosponsored = cosponsored_future.result()
 
     sponsored_items = sponsored.get("sponsoredLegislation") or []
     cosponsored_items = cosponsored.get("cosponsoredLegislation") or []
@@ -5229,6 +5284,26 @@ def _house_disclosure_index(year):
     )
 
 
+def _house_disclosure_by_last_name(year):
+    """{lowercased last name -> [row]} for one year's House disclosure index.
+
+    _house_disclosure_index() round-trips the whole ~0.5 MB row list through
+    SQLite + json.loads on every call, and the ethics sweep calls it twice per
+    House member. Index it once per memo window and look the name up directly;
+    rows keep their original order, so the filings list is unchanged.
+    """
+
+    def build():
+        index = {}
+        for row in _house_disclosure_index(year) or []:
+            key = (row.get("Last") or "").strip().lower()
+            if key:
+                index.setdefault(key, []).append(row)
+        return index
+
+    return _memoized_index(f"house-fd-by-last:{year}", build)
+
+
 def _house_disclosure_filings(last_name, first_name, state_code=None):
     if not last_name:
         return []
@@ -5239,12 +5314,10 @@ def _house_disclosure_filings(last_name, first_name, state_code=None):
     filings = []
     for year in (_current_year(), _current_year() - 1):
         try:
-            rows = _house_disclosure_index(year)
+            rows = _house_disclosure_by_last_name(year).get(last_name, ())
         except UpstreamDataError:
             continue
         for row in rows:
-            if (row.get("Last") or "").strip().lower() != last_name:
-                continue
             if first_initial and (row.get("First") or "").strip().lower()[:1] != first_initial:
                 continue
             # Disambiguate same-name reps in different states (StateDst is e.g. "CA11").
@@ -5639,26 +5712,29 @@ def get_cache_stats():
         }
 
     now = _now_seconds()
-    with _cache_lock:
-        with _cache_connection() as conn:
-            totals = conn.execute(
-                """
-                SELECT
-                    COUNT(*) AS total_entries,
-                    SUM(CASE WHEN expires_at > ? THEN 1 ELSE 0 END) AS fresh_entries,
-                    SUM(CASE WHEN expires_at <= ? THEN 1 ELSE 0 END) AS expired_entries
-                FROM api_cache
-                """,
-                (now, now),
-            ).fetchone()
-            sources = conn.execute(
-                """
-                SELECT source, COUNT(*) AS entries, MIN(expires_at) AS earliest_expires_at
-                FROM api_cache
-                GROUP BY source
-                ORDER BY entries DESC, source
-                """
-            ).fetchall()
+    # Read-only aggregates. WAL readers never block writers, so this must NOT take
+    # the global write lock: the GROUP BY is a full index scan that grows with the
+    # 90-day retention window, and holding _cache_lock across it stalled every
+    # _write_cache — including the background refresh — for its whole duration.
+    with _cache_connection() as conn:
+        totals = conn.execute(
+            """
+            SELECT
+                COUNT(*) AS total_entries,
+                SUM(CASE WHEN expires_at > ? THEN 1 ELSE 0 END) AS fresh_entries,
+                SUM(CASE WHEN expires_at <= ? THEN 1 ELSE 0 END) AS expired_entries
+            FROM api_cache
+            """,
+            (now, now),
+        ).fetchone()
+        sources = conn.execute(
+            """
+            SELECT source, COUNT(*) AS entries, MIN(expires_at) AS earliest_expires_at
+            FROM api_cache
+            GROUP BY source
+            ORDER BY entries DESC, source
+            """
+        ).fetchall()
 
     return {
         "cache_path": str(path),

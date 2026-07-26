@@ -24,6 +24,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+          # Re-downloaded ~25 wheels on every run before this.
+          cache: pip
+          cache-dependency-path: requirements.txt
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -32,7 +35,15 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Install frontend test dependencies
         run: npm ci
+      # Chrome-for-Testing is ~130 MB and was re-downloaded every run (~15-30s).
+      - name: Cache Chrome for Puppeteer
+        id: chrome-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Install Chrome for Puppeteer
+        if: steps.chrome-cache.outputs.cache-hit != 'true'
         run: npx puppeteer browsers install chrome
       - name: Python unit tests
         run: python -m unittest discover -s tests -q

@@ -78,19 +78,45 @@ class CongressMembersCacheTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(requests_get.call_count, 1)
 
-    def test_cache_stripe_lock_is_reentrant_for_nested_cached_fetches(self):
-        lock = self.module._cache_lock_for_key("outer-cache-key")
-        lock.acquire()
-        try:
-            acquired_again = lock.acquire(timeout=0.1)
-            self.assertTrue(
-                acquired_again,
-                "nested cached requests must not deadlock on a stripe collision",
-            )
-            if acquired_again:
-                lock.release()
-        finally:
-            lock.release()
+    def test_cache_key_lock_is_reentrant_for_nested_cached_fetches(self):
+        """A cached fetcher may call another cached fetcher on the same key."""
+        with self.module._cache_key_lock("outer-cache-key"):
+            with self.module._cache_key_lock("outer-cache-key"):
+                pass
+
+    def test_different_cache_keys_never_share_a_lock(self):
+        """The old implementation striped keys onto 256 shared RLocks. Because
+        RLock reentrancy is per-thread, a cached fetcher that fans out to a worker
+        pool (the bill digest does) could have a worker block forever on a stripe
+        its own parent thread held. Distinct keys must now be independent.
+        """
+        import threading
+
+        acquired = threading.Event()
+
+        def grab_other_key():
+            # Must not block: a different key must map to a different lock.
+            with self.module._cache_key_lock("key-b"):
+                acquired.set()
+
+        with self.module._cache_key_lock("key-a"):
+            worker = threading.Thread(target=grab_other_key, daemon=True)
+            worker.start()
+            worker.join(timeout=5)
+
+        self.assertTrue(
+            acquired.is_set(),
+            "a worker thread deadlocked acquiring a different cache key's lock",
+        )
+
+    def test_cache_key_lock_registry_does_not_leak(self):
+        """Refcounting must drop the entry once no holder remains."""
+        registry = self.module._cache_key_lock_registry
+        before = len(registry)
+        with self.module._cache_key_lock("transient-key"):
+            self.assertIn("transient-key", registry)
+        self.assertNotIn("transient-key", registry)
+        self.assertEqual(len(registry), before)
 
     def test_list_congress_members_can_filter_current_congress(self):
         with patch.object(self.module.requests, "get") as requests_get:

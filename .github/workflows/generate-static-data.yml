@@ -81,21 +81,38 @@ jobs:
 
       - name: Decide run mode
         id: mode
-        # The hourly cron is the fast ethics-only checkpoint. The daily cron and
-        # manual dispatch do a full refresh, unless ethics_only is requested.
+        env:
+          # The ONE full-refresh cron. Matching on this (rather than on the
+          # checkpoint cron) means changing the checkpoint cadence can't silently
+          # turn every scheduled run into a 20-minute full refresh - which is what
+          # happened when the checkpoint cron moved from hourly to every 3 hours.
+          FULL_REFRESH_CRON: "47 3 * * *"
+          SCHEDULE: ${{ github.event.schedule }}
+          ETHICS_ONLY_INPUT: ${{ github.event.inputs.ethics_only }}
         run: |
-          if [ "${{ github.event.schedule }}" = "17 * * * *" ] || [ "${{ github.event.inputs.ethics_only }}" = "true" ]; then
-            echo "ethics_only=true" >> "$GITHUB_OUTPUT"
-            echo "Run mode: ethics-only checkpoint sweep."
+          if [ "$ETHICS_ONLY_INPUT" = "true" ]; then
+            mode=true;  reason="ethics_only requested via workflow_dispatch"
+          elif [ -z "$SCHEDULE" ]; then
+            mode=false; reason="manual dispatch"
+          elif [ "$SCHEDULE" = "$FULL_REFRESH_CRON" ]; then
+            mode=false; reason="daily full-refresh cron"
           else
-            echo "ethics_only=false" >> "$GITHUB_OUTPUT"
-            echo "Run mode: full data refresh."
+            mode=true;  reason="checkpoint cron ($SCHEDULE)"
+          fi
+          echo "ethics_only=$mode" >> "$GITHUB_OUTPUT"
+          if [ "$mode" = "true" ]; then
+            echo "Run mode: ethics-only checkpoint sweep - $reason"
+          else
+            echo "Run mode: full data refresh - $reason"
           fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          # Re-downloaded ~25 wheels on every run before this.
+          cache: pip
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
