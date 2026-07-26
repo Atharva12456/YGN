@@ -227,7 +227,9 @@
   padding: 0.6rem 0.4rem;
   margin-bottom: 1.25rem;
   background: var(--color-bg);
-  backdrop-filter: blur(6px);
+  /* No backdrop-filter: the background is opaque, so a blur had nothing to blur —
+     it only forced an extra compositing layer and a full-width blur pass on every
+     scroll frame of this sticky bar. */
   border-bottom: 1px solid var(--color-border);
 }
 .dossier-nav a {

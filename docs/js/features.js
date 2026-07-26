@@ -439,13 +439,30 @@ function wireBillSaveButtons(scope) {
 
 // -- Global quick search (all pages): members + recent bills ----------------------
 
+// Shared reader for the committed digest (124 KB): the bill detail page's
+// related-bills block and the global quick search both want it. A failure is not
+// memoized, mirroring the rule ensureQuickSearchData documents below.
+let staticBillsDigestPromise = null;
+function loadStaticBillsDigest() {
+  if (!staticBillsDigestPromise) {
+    staticBillsDigestPromise = fetch('data/recent-bills-digest.json', { cache: 'default' })
+      .then(r => (r.ok ? r.json() : null))
+      .catch(() => null)
+      .then(value => {
+        if (!value) staticBillsDigestPromise = null;
+        return value;
+      });
+  }
+  return staticBillsDigestPromise;
+}
+
 let quickSearchData = null;
 
 async function ensureQuickSearchData() {
   if (quickSearchData) return quickSearchData;
   const [membersLoadedOk, digestRes] = await Promise.all([
     loadMemberDataOnly().then(() => true).catch(() => false),
-    fetch('data/recent-bills-digest.json', { cache: 'default' }).then(r => (r.ok ? r.json() : null)).catch(() => null),
+    loadStaticBillsDigest(),
   ]);
   const bills = (digestRes && digestRes.bills) || (currentBillsDigest && currentBillsDigest.bills) || [];
   const data = {
@@ -744,9 +761,8 @@ function whatHappensNextHtml(bill) {
 async function injectRelatedBills(container, bill) {
   if (!bill || !bill.policyArea || !bill.detailPath) return;
   try {
-    const res = await fetch('data/recent-bills-digest.json', { cache: 'default' });
-    if (!res.ok) return;
-    const digest = await res.json();
+    const digest = await loadStaticBillsDigest();
+    if (!digest) return;
     const related = (digest.bills || []).filter(b =>
       b.policyArea === bill.policyArea && b.detailPath && b.detailPath !== bill.detailPath
     ).slice(0, 3);

@@ -536,15 +536,24 @@ function estimatePopulationNow(latestValue, annualChange, baselineDate) {
 
 function startPopulationTicker(latestValue, annualChange, baselineDate, sourceText) {
   if (populationTicker) window.clearInterval(populationTicker);
+  // First paint goes through updateStatCard so the card is built if absent.
+  let lastText = formatNumber(estimatePopulationNow(latestValue, annualChange, baselineDate));
+  updateStatCard('stat-population', 'U.S. Population', lastText, sourceText);
+
+  // The label and source never change, and the rounded estimate only moves every
+  // ~19 seconds. Hold the value node and write only when the string differs,
+  // instead of re-querying three nodes and dirtying layout once per second.
+  let valueEl = null;
   const render = () => {
-    updateStatCard(
-      'stat-population',
-      'U.S. Population',
-      formatNumber(estimatePopulationNow(latestValue, annualChange, baselineDate)),
-      sourceText
-    );
+    const text = formatNumber(estimatePopulationNow(latestValue, annualChange, baselineDate));
+    if (text === lastText) return;
+    lastText = text;
+    if (!valueEl) {
+      valueEl = document.querySelector('#stat-population .stat-value');
+    }
+    if (valueEl) valueEl.textContent = text;
+    else updateStatCard('stat-population', 'U.S. Population', text, sourceText);
   };
-  render();
   populationTicker = window.setInterval(render, 1_000);
 }
 
@@ -1727,11 +1736,13 @@ function wireMemberSaveButton(button) {
   if (!button || button.dataset.saveBound) return;
   button.dataset.saveBound = 'true';
 
-  // The tile itself is clickable and hoverable; keep every save interaction
-  // isolated from its navigation, keyboard, prefetch, and popover handlers.
-  ['pointerdown', 'mousedown', 'touchstart', 'keydown'].forEach(type => {
-    button.addEventListener(type, event => event.stopPropagation());
-  });
+  // The tile is clickable and hoverable; keep save interactions isolated from its
+  // navigation/keyboard handlers. Only 'keydown' actually has listeners further up
+  // the tree (the tile's Enter handler, plus the document-level Escape and "/"
+  // shortcuts). Nothing in the app listens for pointerdown/mousedown/touchstart, so
+  // registering those cost ~1,600 dead listeners per 537-tile render. The 'click'
+  // handler below already stops propagation for activation.
+  button.addEventListener('keydown', event => event.stopPropagation());
   button.addEventListener('mouseenter', () => hidePopover());
   button.addEventListener('focus', () => hidePopover());
   button.addEventListener('click', event => {
@@ -1826,18 +1837,28 @@ function showEmpty(options) {
   `;
 }
 
+let memberScoreIndexPromise = null;
+
 async function loadMemberScoreIndex() {
   if (memberScoreIndex !== null) return memberScoreIndex;
+  // Memoize the in-flight promise (same pattern as memberDataLoadPromise below):
+  // two callers racing on the member detail page were each fetching and parsing
+  // this 145 KB file.
+  if (memberScoreIndexPromise) return memberScoreIndexPromise;
 
-  try {
-    const res = await fetch('data/member-scores.json', { cache: 'default' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    memberScoreIndex = await res.json();
-  } catch {
-    memberScoreIndex = {};
-  }
+  memberScoreIndexPromise = (async () => {
+    try {
+      const res = await fetch('data/member-scores.json', { cache: 'default' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      memberScoreIndex = await res.json();
+    } catch {
+      memberScoreIndex = {};
+    }
+    memberScoreIndexPromise = null;
+    return memberScoreIndex;
+  })();
 
-  return memberScoreIndex;
+  return memberScoreIndexPromise;
 }
 
 function hydrateMemberScores(members, scoreIndex) {
@@ -3213,6 +3234,11 @@ function applyFilters() {
   list = sortMembers(list, sortBy);
   updateMembersCount(list.length, savedRosterCount);
   renderIdeologyStrip(list);
+
+  // Every tile is about to be replaced. Drop the stale observations first so the
+  // score observer stops retaining detached tiles (and their closures) — its
+  // observation set otherwise grows with every filter/sort keystroke.
+  if (scoreObserver) scoreObserver.disconnect();
 
   if (list.length === 0) {
     showEmpty({ savedOnly: showSavedMembersOnly, savedRosterCount });
