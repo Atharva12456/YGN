@@ -776,6 +776,7 @@ function initCivicFeatures() {
   initHearings();
   initTermDecoder();
   initForeignCivic();
+  initForeignBrief();
   initNominations();
   initSupportSpotlight();
   initGerryScoreboard();
@@ -949,3 +950,237 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+// -- Foreign affairs: AI brief (Azure, regenerated at most every 12h) -----------
+// The page ships with hand-written fallback cards so it is never blank. When the
+// brief is available we replace the Conflict Watch grid with live AI content and
+// reveal the diplomacy/outlook section. Everything is guarded: any failure leaves
+// the static fallback exactly as it was.
+
+const FOREIGN_WATCH_KEY = 'ygn-foreign-watch';
+
+function foreignWatchRead() {
+  try { return JSON.parse(localStorage.getItem(FOREIGN_WATCH_KEY) || '[]'); }
+  catch (_) { return []; }
+}
+function foreignWatchWrite(list) {
+  try { localStorage.setItem(FOREIGN_WATCH_KEY, JSON.stringify(list.slice(0, 40))); }
+  catch (_) { /* private mode */ }
+}
+
+function formatRelativeAge(seconds) {
+  if (seconds == null || !isFinite(seconds)) return '';
+  const hours = Math.floor(seconds / 3600);
+  if (hours < 1) return 'just now';
+  if (hours === 1) return '1 hour ago';
+  if (hours < 24) return `${hours} hours ago`;
+  const days = Math.round(hours / 24);
+  return days === 1 ? '1 day ago' : `${days} days ago`;
+}
+
+function formatCountdown(seconds) {
+  if (seconds == null || !isFinite(seconds) || seconds <= 0) return 'due now';
+  const hours = Math.floor(seconds / 3600);
+  const mins = Math.round((seconds % 3600) / 60);
+  if (hours >= 1) return `in ${hours}h ${mins}m`;
+  return `in ${mins}m`;
+}
+
+async function initForeignBrief() {
+  const grid = document.getElementById('conflict-grid');
+  const toolbar = document.getElementById('foreign-brief-toolbar');
+  const outlookHost = document.getElementById('foreign-outlook');
+  if (!grid) return;
+
+  let data = null;
+  try {
+    const result = await fetchJsonWithStaticFallback(
+      '/foreign/brief', 'civic/foreign-brief.json', { cache: 'no-store' }
+    );
+    data = result && result.data;
+  } catch (_) {
+    return; // keep the static fallback cards
+  }
+
+  const conflicts = (data && data.conflicts) || [];
+  if (!conflicts.length) return; // nothing generated yet -> keep fallback
+
+  const diplomacy = (data && data.diplomacy) || [];
+  const state = { region: null, query: '', watchedOnly: false };
+
+  function cardKey(conflict) {
+    return String(conflict.title || '').toLowerCase().slice(0, 60);
+  }
+
+  function visibleConflicts() {
+    const watch = foreignWatchRead();
+    const query = state.query.trim().toLowerCase();
+    return conflicts.filter(conflict => {
+      if (state.region && conflict.region !== state.region) return false;
+      if (state.watchedOnly && watch.indexOf(cardKey(conflict)) === -1) return false;
+      if (query) {
+        const hay = [conflict.title, conflict.region, conflict.status, conflict.summary,
+          conflict.usLever, conflict.publicRead].join(' ').toLowerCase();
+        if (hay.indexOf(query) === -1) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderGrid() {
+    const watch = foreignWatchRead();
+    const rows = visibleConflicts();
+    if (!rows.length) {
+      grid.innerHTML = '<p class="foreign-empty">No conflicts match this view. '
+        + 'Clear the filters to see the full brief.</p>';
+      return;
+    }
+    grid.innerHTML = rows.map(conflict => {
+      const key = cardKey(conflict);
+      const starred = watch.indexOf(key) !== -1;
+      const tone = ['danger', 'caution', 'steady'].indexOf(conflict.tone) !== -1
+        ? conflict.tone : 'caution';
+      return `
+        <article class="conflict-card conflict-card--ai tone-${esc(tone)}" data-key="${esc(key)}">
+          <div class="conflict-card-top">
+            <span class="status-pill ${esc(tone)}">${esc(conflict.status || 'Watch')}</span>
+            <span class="conflict-region">${esc(conflict.region || 'Global')}</span>
+          </div>
+          <h3>${esc(conflict.title || '')}</h3>
+          <p>${esc(conflict.summary || '')}</p>
+          <dl>
+            ${conflict.usLever ? `<div><dt>U.S. lever</dt><dd>${esc(conflict.usLever)}</dd></div>` : ''}
+            ${conflict.publicRead ? `<div><dt>Public read</dt><dd>${esc(conflict.publicRead)}</dd></div>` : ''}
+          </dl>
+          <button type="button" class="conflict-watch-btn${starred ? ' is-on' : ''}"
+                  data-key="${esc(key)}"
+                  aria-pressed="${starred ? 'true' : 'false'}"
+                  aria-label="${starred ? 'Remove from' : 'Add to'} watchlist">
+            ${starred ? '★' : '☆'} <span>${starred ? 'Watching' : 'Watch'}</span>
+          </button>
+        </article>`;
+    }).join('');
+
+    grid.querySelectorAll('.conflict-watch-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.key;
+        const list = foreignWatchRead();
+        const at = list.indexOf(key);
+        if (at === -1) list.push(key); else list.splice(at, 1);
+        foreignWatchWrite(list);
+        renderGrid();
+        renderToolbarCounts();
+      });
+    });
+  }
+
+  function renderToolbarCounts() {
+    const label = toolbar && toolbar.querySelector('.foreign-count');
+    if (label) {
+      const shown = visibleConflicts().length;
+      label.textContent = shown === conflicts.length
+        ? `${conflicts.length} tracked`
+        : `${shown} of ${conflicts.length}`;
+    }
+    const watchBtn = toolbar && toolbar.querySelector('.foreign-watch-toggle');
+    if (watchBtn) {
+      const n = foreignWatchRead().length;
+      watchBtn.textContent = n ? `★ Watchlist (${n})` : '☆ Watchlist';
+      watchBtn.classList.toggle('is-on', state.watchedOnly);
+      watchBtn.setAttribute('aria-pressed', state.watchedOnly ? 'true' : 'false');
+    }
+  }
+
+  // ---- toolbar: freshness, search, region filter, watchlist, copy ----
+  if (toolbar) {
+    const regions = [];
+    conflicts.forEach(c => {
+      if (c.region && regions.indexOf(c.region) === -1) regions.push(c.region);
+    });
+    const age = formatRelativeAge(data.age_seconds);
+    const next = formatCountdown(data.next_refresh_seconds);
+    toolbar.innerHTML = `
+      <div class="foreign-brief-meta">
+        <span class="foreign-ai-badge">AI brief</span>
+        <span class="foreign-count">${conflicts.length} tracked</span>
+        <span class="foreign-freshness" title="This brief regenerates at most once every 12 hours">
+          Updated ${esc(age)} &middot; next refresh ${esc(next)}
+        </span>
+      </div>
+      <div class="foreign-brief-controls">
+        <input type="search" class="foreign-search" placeholder="Search conflicts, levers, regions..."
+               aria-label="Search the foreign-affairs brief" autocomplete="off">
+        <div class="foreign-region-chips" role="group" aria-label="Filter by region">
+          <button type="button" class="foreign-chip is-on" data-region="">All regions</button>
+          ${regions.map(r => `<button type="button" class="foreign-chip" data-region="${esc(r)}">${esc(r)}</button>`).join('')}
+        </div>
+        <button type="button" class="foreign-watch-toggle">☆ Watchlist</button>
+        <button type="button" class="foreign-copy">Copy brief</button>
+      </div>`;
+    toolbar.hidden = false;
+
+    const search = toolbar.querySelector('.foreign-search');
+    let debounce;
+    search.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => { state.query = search.value; renderGrid(); renderToolbarCounts(); }, 70);
+    });
+
+    toolbar.querySelectorAll('.foreign-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        state.region = chip.dataset.region || null;
+        toolbar.querySelectorAll('.foreign-chip').forEach(c => c.classList.toggle('is-on', c === chip));
+        renderGrid(); renderToolbarCounts();
+      });
+    });
+
+    toolbar.querySelector('.foreign-watch-toggle').addEventListener('click', () => {
+      state.watchedOnly = !state.watchedOnly;
+      renderGrid(); renderToolbarCounts();
+    });
+
+    toolbar.querySelector('.foreign-copy').addEventListener('click', async (event) => {
+      const btn = event.currentTarget;
+      const text = [
+        'YGN foreign-affairs brief',
+        `Updated ${age}`,
+        '',
+        ...conflicts.map(c => `- ${c.title} (${c.region}, ${c.status}): ${c.summary}`),
+        '',
+        ...(data.outlook ? ['Outlook: ' + data.outlook] : []),
+      ].join('\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copied';
+      } catch (_) {
+        btn.textContent = 'Copy failed';
+      }
+      setTimeout(() => { btn.textContent = 'Copy brief'; }, 1600);
+    });
+  }
+
+  renderGrid();
+  renderToolbarCounts();
+
+  // ---- diplomacy read + outlook ----
+  if (outlookHost && (diplomacy.length || data.outlook)) {
+    outlookHost.innerHTML = `
+      <div class="foreign-section-heading">
+        <div>
+          <p class="eyebrow">Diplomacy read</p>
+          <h2>What Washington is working on</h2>
+        </div>
+        <span class="foreign-ai-badge">AI brief</span>
+      </div>
+      ${diplomacy.length ? `<div class="diplomacy-grid">${diplomacy.map(item => `
+        <article class="diplomacy-card tone-${esc(['danger','caution','steady'].indexOf(item.tone) !== -1 ? item.tone : 'steady')}">
+          <h3>${esc(item.title || '')}</h3>
+          <p>${esc(item.detail || '')}</p>
+        </article>`).join('')}</div>` : ''}
+      ${data.outlook ? `<div class="foreign-outlook-note"><h3>What to watch next</h3><p>${esc(data.outlook)}</p></div>` : ''}
+      <p class="civic-meta">Generated from Congress.gov, Federal Register, and Senate treaty data.
+        Regenerates at most once every 12 hours. Figures are never invented.</p>`;
+    outlookHost.hidden = false;
+  }
+}

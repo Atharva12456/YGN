@@ -748,3 +748,309 @@ body[data-page="economy"] {
 :root[data-theme="dark"] .badge--role { background: rgba(245, 158, 11, 0.2); color: #f6c977; }
 :root[data-theme="dark"] .vote-tag--partyline { background: rgba(239, 68, 68, 0.2); color: #ff9d9d; }
 :root[data-theme="dark"] .vote-tag--mixed { background: rgba(234, 179, 8, 0.18); color: #ecc879; }
+
+
+/* ── Foreign affairs: AI brief, continuous tiles, toolbar ──────────────────── */
+
+/* Continuous tiles: auto-fill so rows always pack flush with no ragged holes,
+   equal-height rows, and cards that stretch so their footers line up. This holds
+   as the region filter / search change how many tiles are visible. */
+.conflict-grid,
+.diplomacy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.85rem;
+  align-items: stretch;
+}
+.conflict-grid > *,
+.diplomacy-grid > * {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* Push the watch button to the bottom so every card's footer aligns. */
+.conflict-card--ai > dl { flex: 1 1 auto; }
+
+.conflict-card--ai {
+  position: relative;
+  border-left: 3px solid var(--color-border);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.conflict-card--ai.tone-danger { border-left-color: #e05260; }
+.conflict-card--ai.tone-caution { border-left-color: #d99a2b; }
+.conflict-card--ai.tone-steady { border-left-color: #2f9e79; }
+
+.conflict-region { font-size: 0.78rem; color: var(--color-text-muted); }
+
+.conflict-watch-btn {
+  margin-top: 0.7rem;
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+              background var(--transition-fast);
+}
+.conflict-watch-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.conflict-watch-btn.is-on {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-tint-blue);
+}
+
+/* Toolbar */
+.foreign-brief-toolbar {
+  margin: 0 0 0.9rem;
+  padding: 0.8rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+.foreign-brief-toolbar[hidden] { display: none; }
+.foreign-brief-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+.foreign-ai-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  background: var(--color-tint-blue);
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+}
+.foreign-count { font-size: 0.8rem; font-weight: 700; color: var(--color-text); }
+.foreign-freshness { font-size: 0.78rem; color: var(--color-text-muted); }
+
+.foreign-brief-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.foreign-search {
+  flex: 1 1 220px;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.foreign-search:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-tint-blue);
+  background: var(--color-surface);
+}
+.foreign-region-chips { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.foreign-chip,
+.foreign-watch-toggle,
+.foreign-copy {
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), color var(--transition-fast),
+              background var(--transition-fast);
+}
+.foreign-chip:hover,
+.foreign-watch-toggle:hover,
+.foreign-copy:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.foreign-chip.is-on,
+.foreign-watch-toggle.is-on {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+.foreign-empty {
+  grid-column: 1 / -1;
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Diplomacy + outlook */
+.diplomacy-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow-card);
+}
+.diplomacy-card.tone-danger { border-top-color: #e05260; }
+.diplomacy-card.tone-caution { border-top-color: #d99a2b; }
+.diplomacy-card.tone-steady { border-top-color: #2f9e79; }
+.diplomacy-card h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+.diplomacy-card p { font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.55; }
+
+.foreign-outlook-note {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+.foreign-outlook-note h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+.foreign-outlook-note p { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+
+@media (max-width: 560px) {
+  .foreign-brief-controls { flex-direction: column; align-items: stretch; }
+  .foreign-region-chips { justify-content: flex-start; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Dark-mode overrides for semantic (non-themeable) colors.
+
+   These rules are ADDITIVE: they only apply under :root[data-theme="dark"], so
+   light mode and the pinned-light economy page are untouched. Saturated brand /
+   status colors chosen for a white card (party blues and reds, grade greens,
+   status pills, map strokes) are too dark on a #171d2b surface, so each gets a
+   lightened counterpart that clears ~4.5:1 against the dark card.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* -- Member dossier hero: the white veil gradient must not sit over a dark tint */
+:root[data-theme="dark"] .dossier-hero {
+  background:
+    linear-gradient(180deg, rgba(23, 29, 43, 0.55), rgba(23, 29, 43, 0.85)),
+    var(--dossier-tint, var(--color-surface));
+}
+:root[data-theme="dark"] .ideology-track {
+  background: linear-gradient(90deg, #6f9dea 0%, #39435a 50%, #e0736a 100%);
+}
+:root[data-theme="dark"] .member-save-button--detail.is-saved { color: #9cc0ff; }
+:root[data-theme="dark"] .enacted-badge,
+:root[data-theme="dark"] .badge--enacted {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86e2a8;
+}
+:root[data-theme="dark"] .dossier-list-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* -- Metric / status text ------------------------------------------------- */
+:root[data-theme="dark"] .pulse-card .stat-value { color: #6fd7b4; }
+:root[data-theme="dark"] .bill-impact-status { color: #e0b95e; }
+:root[data-theme="dark"] .grade-deduction { color: #ff9d9d; }
+:root[data-theme="dark"] .map-status.warn { color: #e0b95e; }
+:root[data-theme="dark"] .foreign-updated { color: #6fd7b4; }
+:root[data-theme="dark"] .consensus-card strong { color: #6fd7b4; }
+:root[data-theme="dark"] .foreign-signal-board strong,
+:root[data-theme="dark"] .meeting-row time { color: #8fb4ef; }
+
+/* -- Party / vote coloring ------------------------------------------------ */
+:root[data-theme="dark"] .vote-party-label.party-d { color: #8fb4ef; }
+:root[data-theme="dark"] .vote-party-label.party-r { color: #ff9d9d; }
+:root[data-theme="dark"] .spotlight-nums .yea-n { color: #6fd7b4; }
+:root[data-theme="dark"] .spotlight-nums .nay-n { color: #ff9d9d; }
+:root[data-theme="dark"] .vote-tag--bipartisan,
+:root[data-theme="dark"] .cosponsor-tag.bipartisan {
+  background: rgba(47, 125, 92, 0.24);
+  color: #86e2a8;
+}
+:root[data-theme="dark"] .bipartisan-tag { color: #86e2a8; }
+:root[data-theme="dark"] .gerry-scoreboard-label { color: #ff9d9d; }
+:root[data-theme="dark"] .gerry-scoreboard-value { color: #86e2a8; }
+
+/* -- Search / chips ------------------------------------------------------- */
+:root[data-theme="dark"] .gs-kind--member { color: #9cc0ff; }
+:root[data-theme="dark"] .gs-kind--bill {
+  background: rgba(59, 143, 109, 0.26);
+  color: #86e2a8;
+}
+:root[data-theme="dark"] .support-count { color: #9cc0ff; }
+:root[data-theme="dark"] .bill-chip--clear:hover {
+  color: #ff9d9d;
+  border-color: #ff9d9d;
+}
+
+/* -- Foreign-affairs status pills + consensus chips (measured 2.1-3.4:1) --- */
+:root[data-theme="dark"] .status-pill.danger,
+:root[data-theme="dark"] .consensus-chip.weak {
+  background: rgba(239, 68, 68, 0.22);
+  color: #ff9d9d;
+}
+:root[data-theme="dark"] .status-pill.caution,
+:root[data-theme="dark"] .consensus-chip.mixed {
+  background: rgba(234, 179, 8, 0.2);
+  color: #ecc879;
+}
+:root[data-theme="dark"] .status-pill.stable,
+:root[data-theme="dark"] .status-pill.steady,
+:root[data-theme="dark"] .consensus-chip.strong {
+  background: rgba(47, 125, 102, 0.26);
+  color: #86e2a8;
+}
+:root[data-theme="dark"] .status-pill.watch {
+  background: rgba(59, 130, 246, 0.22);
+  color: #9cc0ff;
+}
+:root[data-theme="dark"] .conflict-card { border-top-color: #4a7fd4; }
+
+/* "steady" is the tone the AI brief emits; mirror the existing .stable styling
+   in light mode so AI-rendered pills are never unstyled. */
+.status-pill.steady {
+  background: rgba(47, 125, 102, 0.13);
+  color: #2f7d66;
+}
+
+/* -- Map: strokes are drawn against the light page fill by default --------- */
+:root[data-theme="dark"] .map-stage {
+  background: linear-gradient(180deg, rgba(23, 29, 43, 0.96), rgba(23, 29, 43, 0.9));
+}
+:root[data-theme="dark"] .state-shape { stroke: #2a3346; }
+:root[data-theme="dark"] .state-shape:hover,
+:root[data-theme="dark"] .state-shape:focus,
+:root[data-theme="dark"] .district-shape:hover,
+:root[data-theme="dark"] .district-shape:focus { stroke: #e6e9f0; }
+:root[data-theme="dark"] .district-shape { stroke: #1b2233; }
+:root[data-theme="dark"] .map-tooltip {
+  border-color: rgba(230, 233, 240, 0.18);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* -- Elevation: light-tuned shadows read as nothing on a dark page --------- */
+:root[data-theme="dark"] .global-search-results { box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6); }
+:root[data-theme="dark"] .compare-modal { box-shadow: 0 18px 60px rgba(0, 0, 0, 0.7); }
+:root[data-theme="dark"] .back-to-top { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55); }
+:root[data-theme="dark"] .member-tile:hover,
+:root[data-theme="dark"] .member-tile:focus-within { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55); }
+:root[data-theme="dark"] .member-save-button--tile { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
+:root[data-theme="dark"] .ethics-badge:hover,
+:root[data-theme="dark"] .ethics-badge:focus-visible { box-shadow: 0 0 0 2px rgba(230, 233, 240, 0.25); }
+:root[data-theme="dark"] body:not([data-page="economy"]) .stat-card:hover,
+:root[data-theme="dark"] body:not([data-page="economy"]) .pulse-card:hover,
+:root[data-theme="dark"] body:not([data-page="economy"]) .eo-card:hover,
+:root[data-theme="dark"] body:not([data-page="economy"]) .official-card:hover,
+:root[data-theme="dark"] body:not([data-page="economy"]) .law-card:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+}
+
+/* -- Links that were never given a color (browser default #0000ee) --------- */
+:root[data-theme="dark"] a:not([class]) { color: #8fb4ef; }
+a:not([class]) { color: var(--color-accent); }

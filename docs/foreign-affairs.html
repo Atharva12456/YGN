@@ -78,7 +78,11 @@
           <a class="secondary-button" href="https://www.cfr.org/global-conflict-tracker" target="_blank" rel="noopener">CFR Tracker</a>
         </div>
 
-        <div class="conflict-grid">
+        <!-- Filled by initForeignBrief() from the AI brief. Hidden until it has
+             content so the static cards below remain the no-blank-space fallback. -->
+        <div id="foreign-brief-toolbar" class="foreign-brief-toolbar" hidden></div>
+
+        <div class="conflict-grid" id="conflict-grid">
           <article class="conflict-card priority-high">
             <div class="conflict-card-top">
               <span class="status-pill danger">Active war</span>
@@ -150,6 +154,10 @@
           </article>
         </div>
       </section>
+
+      <!-- AI diplomacy read + outlook. Hidden until the brief loads so the page
+           never shows an empty shell. -->
+      <section id="foreign-outlook" class="foreign-section" aria-label="AI diplomacy read and outlook" hidden></section>
 
       <section id="treaty-tracker" class="foreign-section" aria-labelledby="treaty-tracker-title">
         <div class="foreign-section-heading">

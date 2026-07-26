@@ -184,7 +184,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-surface);
   border-radius: 50%;
   background: var(--color-surface);
   color: var(--color-text-muted);
@@ -198,7 +198,7 @@
 }
 .member-save-button--tile.is-saved {
   background: var(--color-tint-blue);
-  border-color: #fff;
+  border-color: var(--color-surface);
   color: var(--color-accent-hover);
 }
 
@@ -260,7 +260,7 @@
   border-radius: 999px;
   bottom: 8px;
   right: 8px;
-  border: 2px solid white;
+  border: 2px solid var(--color-surface);
   color: white;
   display: flex;
   align-items: center;

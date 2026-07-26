@@ -55,6 +55,10 @@
         applyTheme(next);
         try { localStorage.setItem('ygn-theme', next); } catch (e) {}
         btn.textContent = next === 'dark' ? sun : moon;
+        // Inline-styled visuals (e.g. NOMINATE tile tints) can't follow CSS
+        // variables, so tell them to recompute for the new palette.
+        try { document.dispatchEvent(new CustomEvent('ygn:themechange', { detail: { theme: next } })); }
+        catch (e) {}
       });
       header.appendChild(btn);
     });

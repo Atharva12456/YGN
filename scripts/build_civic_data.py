@@ -491,6 +491,27 @@ def main():
             failures += 1
             print(f"  weekly brief failed: {type(exc).__name__}: {exc}")
 
+        # Foreign-affairs brief. refresh_foreign_brief() self-limits to one model
+        # call per 12 hours and no-ops entirely without an AI provider, so this is
+        # safe to call on every build; committing the result means the page has
+        # content immediately instead of waiting for a dyno to regenerate it.
+        try:
+            foreign = backend.refresh_foreign_brief()
+            if isinstance(foreign, dict) and foreign.get("conflicts"):
+                existing = read_json(CIVIC_DIR / "foreign-brief.json", None)
+                if not isinstance(existing, dict) or existing.get(
+                    "generated_at"
+                ) != foreign.get("generated_at"):
+                    atomic_write_json(CIVIC_DIR / "foreign-brief.json", foreign)
+                    print("  foreign brief: written")
+                else:
+                    print("  foreign brief: unchanged (within the 12h window)")
+            else:
+                print("  foreign brief: no AI provider or nothing generated; keeping prior")
+        except Exception as exc:  # noqa: BLE001
+            failures += 1
+            print(f"  foreign brief failed: {type(exc).__name__}: {exc}")
+
     print(f"civic data build complete ({failures} failures).")
     return 0
 

@@ -31,7 +31,7 @@
   border-radius: 50%;
   overflow: hidden;
   background: var(--color-skeleton);
-  box-shadow: 0 0 0 4px #fff, 0 4px 14px rgba(26, 31, 46, 0.18);
+  box-shadow: 0 0 0 4px var(--color-surface), 0 4px 14px var(--color-card-shadow);
 }
 .dossier-hero-photo { width: 100%; height: 100%; object-fit: cover; }
 .dossier-hero-initials {
@@ -43,7 +43,7 @@
   font-family: var(--font-display);
   font-size: 2.75rem;
   font-weight: 700;
-  color: #64748b;
+  color: var(--color-text-muted);
 }
 
 .dossier-hero-body { flex-grow: 1; min-width: 0; }
@@ -226,7 +226,7 @@
   gap: 0.25rem;
   padding: 0.6rem 0.4rem;
   margin-bottom: 1.25rem;
-  background: rgba(244, 246, 249, 0.92);
+  background: var(--color-bg);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -239,7 +239,7 @@
   text-decoration: none;
   transition: background var(--transition-fast), color var(--transition-fast);
 }
-.dossier-nav a:hover { background: #e8eef7; color: var(--color-accent); }
+.dossier-nav a:hover { background: var(--color-tint-blue); color: var(--color-accent); }
 
 /* ── Card grid ────────────────────────────────────────────────────────────── */
 .dossier-grid {
@@ -263,7 +263,7 @@
   color: var(--color-text);
   margin: 0 0 1rem;
   padding-bottom: 0.6rem;
-  border-bottom: 2px solid #eef1f7;
+  border-bottom: 2px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -283,7 +283,7 @@
 .card-spinner {
   width: 18px;
   height: 18px;
-  border: 2px solid #dbe2ee;
+  border: 2px solid var(--color-border);
   border-top-color: var(--color-accent);
   border-radius: 50%;
   animation: dossier-spin 0.7s linear infinite;
@@ -291,7 +291,7 @@
 @keyframes dossier-spin { to { transform: rotate(360deg); } }
 
 /* ── Wikipedia / about ────────────────────────────────────────────────────── */
-.wiki-body { line-height: 1.65; color: #2b3240; }
+.wiki-body { line-height: 1.65; color: var(--color-text); }
 .wiki-thumb {
   float: right;
   margin: 0 0 0.75rem 1rem;
@@ -344,7 +344,7 @@
   height: 10px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 0 3px #fff;
+  box-shadow: 0 0 0 3px var(--color-surface);
 }
 .timeline-item strong { display: block; font-size: 0.92rem; }
 .timeline-item span { font-size: 0.85rem; color: var(--color-text-muted); }
@@ -394,7 +394,7 @@
   padding: 0.85rem 1rem;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
-.dossier-list-item:hover { border-color: #c7d2e6; box-shadow: 0 2px 8px rgba(26, 31, 46, 0.06); }
+.dossier-list-item:hover { border-color: var(--color-accent); box-shadow: 0 2px 8px rgba(26, 31, 46, 0.06); }
 .dossier-list-item-title { font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
 .dossier-list-item-meta { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.45; }
 .dossier-list-item-meta a { color: var(--color-accent); font-weight: 600; }
@@ -473,7 +473,7 @@
   text-decoration: none;
   transition: background var(--transition-fast), border-color var(--transition-fast);
 }
-.contact-link:hover { background: #eef4ff; border-color: var(--color-accent); }
+.contact-link:hover { background: var(--color-tint-blue); border-color: var(--color-accent); }
 .contact-line { font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.3rem; }
 
 .muted-text { color: var(--color-text-muted); font-size: 0.9rem; }

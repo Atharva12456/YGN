@@ -2177,19 +2177,44 @@ function createMemberTile(member) {
  * @param {HTMLElement} tileEl
  * @param {number|null} dim1  — roughly -1.0 (liberal) to +1.0 (conservative)
  */
+/**
+ * Tint palette for the current theme. The tint is written as an inline style, so
+ * CSS variables can't reach it: without a dark palette the tiles keep their
+ * light-tuned fills and the (now light) tile text becomes unreadable in dark mode.
+ */
+function nominateTintPalette() {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return dark
+    ? { none: '#171d2b', noneBorder: 'rgba(148, 163, 184, 0.28)',
+        base: [58, 66, 84], left: [46, 78, 132], right: [128, 56, 56], zero: '#3a4254' }
+    : { none: '#f4f6f9', noneBorder: 'rgba(148, 163, 184, 0.4)',
+        base: [176, 176, 176], left: [90, 130, 194], right: [196, 92, 92], zero: '#B0B0B0' };
+}
+
+/**
+ * Apply a proportional NOMINATE tint to a member tile based on dim1 score.
+ * @param {HTMLElement} tileEl
+ * @param {number|null} dim1  — roughly -1.0 (liberal) to +1.0 (conservative)
+ */
 function applyNominateTint(tileEl, dim1) {
+  // Remember the score so the tile can be re-tinted when the theme changes.
+  if (dim1 === null || dim1 === undefined) delete tileEl.dataset.dim1;
+  else tileEl.dataset.dim1 = String(dim1);
+
+  const palette = nominateTintPalette();
+
   if (dim1 === null || dim1 === undefined) {
-    tileEl.style.backgroundColor = '#f4f6f9';
-    tileEl.style.borderColor = 'rgba(148, 163, 184, 0.4)';
+    tileEl.style.backgroundColor = palette.none;
+    tileEl.style.borderColor = palette.noneBorder;
     return;
   }
 
-  const baseGray = [176, 176, 176];
-  const targetColor = dim1 < 0 ? [90, 130, 194] : [196, 92, 92];
+  const baseGray = palette.base;
+  const targetColor = dim1 < 0 ? palette.left : palette.right;
   const distance = Math.abs(dim1);
 
   if (distance === 0) {
-    tileEl.style.backgroundColor = '#B0B0B0';
+    tileEl.style.backgroundColor = palette.zero;
   } else {
     const tintStrength = 0.12 + 0.88 * Math.pow(distance, 0.85);
     const r = Math.round(baseGray[0] + (targetColor[0] - baseGray[0]) * tintStrength);
@@ -2197,9 +2222,18 @@ function applyNominateTint(tileEl, dim1) {
     const b = Math.round(baseGray[2] + (targetColor[2] - baseGray[2]) * tintStrength);
     tileEl.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
-  
+
   tileEl.style.borderColor = 'transparent';
 }
+
+// Re-tint every rendered tile when the theme flips (the toggle in enhancements.js
+// dispatches this). Without it, tiles keep the palette they were built with.
+document.addEventListener('ygn:themechange', () => {
+  document.querySelectorAll('.member-tile').forEach(tile => {
+    const raw = tile.dataset.dim1;
+    applyNominateTint(tile, raw === undefined || raw === '' ? null : Number(raw));
+  });
+});
 
 /**
  * Fetch NOMINATE scores for a member from the API, cache, and apply tint.
