@@ -50,6 +50,13 @@ STATIC_RECENT_DIGEST_PATH = (
     Path(__file__).parent.parent / "docs" / "data" / "recent-bills-digest.json"
 )
 STATIC_MEMBER_AI_DIR = Path(__file__).parent.parent / "docs" / "data" / "member-ai"
+# Committed AI-written foreign-affairs brief (conflicts + diplomacy outlook). Like
+# the bill/member AI stores this is served instantly and survives dyno restarts;
+# the model regenerates it at most once every FOREIGN_BRIEF_TTL_SECONDS.
+STATIC_FOREIGN_BRIEF_PATH = (
+    Path(__file__).parent.parent / "docs" / "data" / "civic" / "foreign-brief.json"
+)
+STATIC_CIVIC_DIR = Path(__file__).parent.parent / "docs" / "data" / "civic"
 DEFAULT_CACHE_TTL_SECONDS = 15 * 60
 DEFAULT_WIKI_CACHE_TTL_SECONDS = 30 * 24 * 60 * 60
 CACHE_LOCK_STRIPES = 256
@@ -2640,6 +2647,16 @@ def refresh_ai_generation_cache(limit=None):
                         raise UpstreamDataError(
                             result.get("reason") or "Member overview was not generated."
                         )
+                elif kind == "foreign-brief":
+                    # refresh_foreign_brief self-limits to one model call per
+                    # FOREIGN_BRIEF_TTL_SECONDS (12h), so draining this job often
+                    # is cheap; it only regenerates once the window has elapsed.
+                    result = refresh_foreign_brief()
+                    if _foreign_brief_is_fresh(result):
+                        _delete_cache_entry(job_key)
+                        report["completed"] += 1
+                    else:
+                        raise UpstreamDataError("Foreign brief was not generated.")
                 else:
                     raise ValueError("Unsupported AI refresh job kind.")
             except Exception as exc:  # noqa: BLE001 - preserve queue for retry
@@ -2654,6 +2671,355 @@ def refresh_ai_generation_cache(limit=None):
     finally:
         _ai_refresh_lock.release()
     return report
+
+
+# --- Foreign-affairs AI brief (regenerated at most once every 12 hours) --------
+
+AI_FOREIGN_CONTENT_VERSION = "foreign-ai-v1"
+# The foreign page asks for a refresh "once every 12 hours". This is the single
+# source of truth for that cadence: the background loop runs far more often, but
+# refresh_foreign_brief() is a no-op until the committed/cached brief is older
+# than this, so the model is called at most twice a day.
+FOREIGN_BRIEF_TTL_SECONDS = 12 * 60 * 60
+FOREIGN_BRIEF_MAX_TOKENS = 4000
+
+FOREIGN_BRIEF_SYSTEM_PROMPT = (
+    "You are a nonpartisan foreign-affairs desk editor writing for an American civic "
+    "dashboard. You explain what is happening in the world and what leverage Congress "
+    "and the executive branch actually have.\n"
+    "Rules:\n"
+    "- Reply with STRICT JSON only. No prose, no markdown, no code fences.\n"
+    "- Be factual and neutral. Never invent statistics, poll numbers, casualty figures, "
+    "vote counts, or dates. If you do not know a number, describe the situation in words.\n"
+    "- Ground every item in the supplied source material and well-established public "
+    "knowledge. Do not speculate about future events as if they had happened.\n"
+    "- Write complete sentences. No ellipses, no trailing fragments.\n"
+)
+
+FOREIGN_BRIEF_SCHEMA_HINT = (
+    '{"conflicts":[{"title":"short name of the conflict or flashpoint",'
+    '"region":"Europe|Middle East|Africa|Asia|Americas|Global",'
+    '"status":"2-3 word status label, e.g. Active war",'
+    '"tone":"danger|caution|steady",'
+    '"summary":"2-3 sentences on what is happening and why it matters to the US",'
+    '"usLever":"the concrete US levers, <=12 words",'
+    '"publicRead":"one sentence on where American opinion sits, qualitative only"}],'
+    '"diplomacy":[{"title":"short headline","detail":"1-2 sentences","tone":"steady|caution"}],'
+    '"outlook":"3-4 sentences on what to watch next"}'
+)
+
+
+def _parse_iso_datetime(value):
+    """Parse an ISO-8601 timestamp into an aware UTC datetime, or None.
+
+    Accepts the trailing "Z" form that the committed snapshots use.
+    """
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        parsed = datetime.fromisoformat(text)
+    except (TypeError, ValueError):
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _static_foreign_brief():
+    """The committed AI foreign brief, or None."""
+    payload = _read_json_file_cached(STATIC_FOREIGN_BRIEF_PATH, None)
+    return payload if isinstance(payload, dict) else None
+
+
+def _civic_snapshot(name):
+    payload = _read_json_file_cached(STATIC_CIVIC_DIR / name, None)
+    return payload if isinstance(payload, dict) else {}
+
+
+def _parse_ai_json(reply):
+    """Parse a model reply that should be JSON, tolerating code fences/prose."""
+    text = str(reply or "").strip()
+    if not text:
+        return None
+    if text.startswith("```"):
+        # drop the opening fence (optionally ```json) and any trailing fence
+        text = text.split("\n", 1)[1] if "\n" in text else ""
+        if text.rstrip().endswith("```"):
+            text = text.rstrip()[:-3]
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return None
+    try:
+        parsed = json.loads(text[start : end + 1])
+    except (TypeError, ValueError):
+        return None
+    return parsed if isinstance(parsed, dict) else None
+
+
+FOREIGN_KEYWORD_RE = re.compile(
+    r"\b(nato|ukraine|russia|china|taiwan|israel|gaza|iran|treaty|sanction|foreign|"
+    r"defense|military|diplomat|embassy|refugee|war|troops|weapons|arms|tariff|export)\b",
+    re.I,
+)
+FOREIGN_POLICY_AREA_NAMES = {
+    "International Affairs",
+    "Armed Forces and National Security",
+    "Foreign Trade and International Finance",
+    "Immigration",
+    "Intelligence and National Security",
+}
+
+
+def _foreign_brief_material():
+    """Real, sourced material for the model: committed civic snapshots + the
+    foreign-policy slice of the recent-bills digest. No upstream calls."""
+    lines = []
+
+    treaties = (_civic_snapshot("treaties.json").get("treaties") or [])[:8]
+    if treaties:
+        lines.append("Senate treaty queue (Congress.gov):")
+        for item in treaties:
+            lines.append(
+                f"- {item.get('topic') or 'Treaty'}"
+                + (f" (Treaty {item.get('number')})" if item.get("number") else "")
+                + (f", countries: {item.get('countriesText')}" if item.get("countriesText") else "")
+            )
+
+    orders = (_civic_snapshot("executive-orders.json").get("orders") or [])[:8]
+    if orders:
+        lines.append("\nRecent executive orders (Federal Register):")
+        for item in orders:
+            lines.append(f"- EO {item.get('number') or '?'}: {item.get('title') or 'Untitled'}")
+
+    nominations = (_civic_snapshot("nominations.json").get("nominations") or [])[:6]
+    if nominations:
+        lines.append("\nPending nominations:")
+        for item in nominations:
+            lines.append(
+                f"- {item.get('description') or item.get('organization') or 'Nomination'}"
+            )
+
+    digest = _read_json_file_cached(STATIC_RECENT_DIGEST_PATH, {})
+    bills = digest.get("bills") if isinstance(digest, dict) else None
+    foreign_bills = []
+    for bill in bills or []:
+        if not isinstance(bill, dict):
+            continue
+        title = str(bill.get("title") or "")
+        if (
+            bill.get("policyArea") in FOREIGN_POLICY_AREA_NAMES
+            or FOREIGN_KEYWORD_RE.search(title)
+        ):
+            foreign_bills.append(bill)
+    if foreign_bills:
+        lines.append("\nForeign-policy bills moving in Congress:")
+        for bill in foreign_bills[:12]:
+            action = (bill.get("latestAction") or {}).get("text") or ""
+            lines.append(
+                f"- {bill.get('identifier')}: {str(bill.get('title'))[:160]}"
+                + (f" | latest action: {action[:110]}" if action else "")
+            )
+
+    return "\n".join(lines).strip()
+
+
+def _foreign_brief_age_seconds(payload):
+    if not isinstance(payload, dict):
+        return None
+    stamp = payload.get("generated_at")
+    parsed = _parse_iso_datetime(stamp) if stamp else None
+    if parsed is None:
+        return None
+    return max(0.0, (datetime.now(timezone.utc) - parsed).total_seconds())
+
+
+def _foreign_brief_is_fresh(payload):
+    """True when a brief exists, matches the current content version, and is
+    younger than the 12-hour refresh window."""
+    if not isinstance(payload, dict) or not payload.get("conflicts"):
+        return False
+    if payload.get("content_version") != AI_FOREIGN_CONTENT_VERSION:
+        return False
+    age = _foreign_brief_age_seconds(payload)
+    return age is not None and age < FOREIGN_BRIEF_TTL_SECONDS
+
+
+def _normalize_foreign_brief(parsed, material):
+    """Coerce the model's JSON into the exact shape the frontend renders."""
+    tones = {"danger", "caution", "steady"}
+
+    def clean(value, limit):
+        return _strip_markup(value)[:limit] if value else ""
+
+    conflicts = []
+    for item in (parsed.get("conflicts") or [])[:8]:
+        if not isinstance(item, dict):
+            continue
+        title = clean(item.get("title"), 80)
+        summary = clean(item.get("summary"), 420)
+        if not title or not summary:
+            continue
+        tone = str(item.get("tone") or "").lower()
+        conflicts.append(
+            {
+                "title": title,
+                "region": clean(item.get("region"), 40) or "Global",
+                "status": clean(item.get("status"), 40) or "Watch",
+                "tone": tone if tone in tones else "caution",
+                "summary": summary,
+                "usLever": clean(item.get("usLever"), 120),
+                "publicRead": clean(item.get("publicRead"), 200),
+            }
+        )
+
+    diplomacy = []
+    for item in (parsed.get("diplomacy") or [])[:6]:
+        if not isinstance(item, dict):
+            continue
+        title = clean(item.get("title"), 90)
+        detail = clean(item.get("detail"), 320)
+        if not title or not detail:
+            continue
+        tone = str(item.get("tone") or "").lower()
+        diplomacy.append(
+            {
+                "title": title,
+                "detail": detail,
+                "tone": tone if tone in tones else "steady",
+            }
+        )
+
+    if not conflicts:
+        return None
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "content_version": AI_FOREIGN_CONTENT_VERSION,
+        "source": "ai",
+        "model": (_ai_provider_config() or {}).get("model"),
+        "refresh_interval_seconds": FOREIGN_BRIEF_TTL_SECONDS,
+        "input_hash": hashlib.sha256(
+            f"{AI_FOREIGN_CONTENT_VERSION}|{material}".encode("utf-8")
+        ).hexdigest()[:24],
+        "conflicts": conflicts,
+        "diplomacy": diplomacy,
+        "outlook": clean(parsed.get("outlook"), 700),
+    }
+
+
+def refresh_foreign_brief(force=False):
+    """The ONLY path allowed to generate the foreign brief with the model.
+
+    Honors the 12-hour window: if a committed or cached brief is still fresh this
+    returns it untouched without spending a model call, so the every-15-minute
+    background refresh cannot turn into 96 generations a day.
+    """
+    cache_key = _build_cache_key("foreign-brief-v1", {"v": AI_FOREIGN_CONTENT_VERSION})
+
+    cached = _read_cache(cache_key, allow_stale=True)
+    committed = _static_foreign_brief()
+    # Prefer whichever existing brief is newer.
+    existing = cached
+    if committed and (
+        not existing
+        or (_foreign_brief_age_seconds(committed) or 1e9)
+        < (_foreign_brief_age_seconds(existing) or 1e9)
+    ):
+        existing = committed
+
+    if not force and _foreign_brief_is_fresh(existing):
+        return existing
+
+    if not ai_insights_available():
+        return existing
+
+    material = _foreign_brief_material()
+    if not material:
+        return existing
+
+    user_prompt = (
+        "Source material from official U.S. government feeds:\n\n"
+        f"{material}\n\n"
+        "Using this material plus well-established public knowledge, write the current "
+        "foreign-affairs brief. Cover the 4-6 most consequential conflicts or flashpoints "
+        "for the United States right now, then 3-4 diplomacy items, then the outlook.\n"
+        "Reply with JSON matching exactly this shape:\n"
+        f"{FOREIGN_BRIEF_SCHEMA_HINT}"
+    )
+
+    try:
+        with _allow_ai_generation():
+            reply = _llm_chat(
+                FOREIGN_BRIEF_SYSTEM_PROMPT,
+                user_prompt,
+                max_tokens=FOREIGN_BRIEF_MAX_TOKENS,
+            )
+    except UpstreamDataError:
+        LOGGER.warning("Foreign brief generation failed.", exc_info=True)
+        return existing
+
+    parsed = _parse_ai_json(reply)
+    if not parsed:
+        LOGGER.warning("Foreign brief reply was not parseable JSON.")
+        return existing
+
+    payload = _normalize_foreign_brief(parsed, material)
+    if not payload:
+        return existing
+
+    _write_cache(cache_key, payload, "foreign-brief", ttl_seconds=FOREIGN_BRIEF_TTL_SECONDS * 4)
+    return payload
+
+
+def get_foreign_brief():
+    """Read-only accessor used by the public route. Never calls the model.
+
+    Serves the freshest of (refresh cache, committed snapshot) and queues a
+    regeneration when the brief is missing or older than the 12-hour window.
+    """
+    cache_key = _build_cache_key("foreign-brief-v1", {"v": AI_FOREIGN_CONTENT_VERSION})
+    cached = _read_cache(cache_key, allow_stale=True)
+    committed = _static_foreign_brief()
+
+    best = cached
+    if committed and (
+        not best
+        or (_foreign_brief_age_seconds(committed) or 1e9)
+        < (_foreign_brief_age_seconds(best) or 1e9)
+    ):
+        best = committed
+
+    fresh = _foreign_brief_is_fresh(best)
+    if not fresh:
+        _queue_ai_refresh_job("foreign-brief", AI_FOREIGN_CONTENT_VERSION, {})
+
+    if not best:
+        return {
+            "available": False,
+            "ai_mode": "cache_refresh_only",
+            "refresh_interval_seconds": FOREIGN_BRIEF_TTL_SECONDS,
+            "reason": (
+                "The foreign-affairs brief is queued and will appear after the next "
+                "content refresh."
+            ),
+            "conflicts": [],
+            "diplomacy": [],
+        }
+
+    age = _foreign_brief_age_seconds(best)
+    return {
+        **best,
+        "available": True,
+        "ai_mode": "cache_refresh_only",
+        "stale": not fresh,
+        "age_seconds": int(age) if age is not None else None,
+        "next_refresh_seconds": (
+            max(0, int(FOREIGN_BRIEF_TTL_SECONDS - age)) if age is not None else 0
+        ),
+    }
 
 
 def getRecentBillDigest(limit=5):
@@ -5116,6 +5482,10 @@ def refresh_government_officials_cache(include_ethics=True, include_ai=False):
         # Enqueue any gaps across the whole committed digest first, then drain a
         # bounded batch. This is the only runtime path allowed to call the model.
         result["billAiQueued"] = _enqueue_committed_digest_ai_jobs()
+        # Keep the foreign brief in the queue too; refresh_foreign_brief() is a
+        # no-op until the 12-hour window elapses, so this stays cheap.
+        if not _foreign_brief_is_fresh(_static_foreign_brief()):
+            _queue_ai_refresh_job("foreign-brief", AI_FOREIGN_CONTENT_VERSION, {})
         result["aiRefresh"] = refresh_ai_generation_cache()
     else:
         result["aiRefresh"] = {"enabled": ai_insights_available(), "skipped": True}

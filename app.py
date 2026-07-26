@@ -424,6 +424,14 @@ def ai_status():
     return _backend_response(government.ai_key_diagnostic)
 
 
+@app.get("/foreign/brief")
+def foreign_brief():
+    """AI foreign-affairs brief. Read-only: serves the committed/cached brief and
+    queues a regeneration when it is older than the 12-hour window. This route
+    never calls the model itself."""
+    return _backend_response(government.get_foreign_brief)
+
+
 @app.post("/cache/refresh", include_in_schema=False)
 def refresh_cache(
     include_ai: bool = False,
