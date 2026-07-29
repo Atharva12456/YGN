@@ -1,14 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    YGN — UX layer
-   Ten self-contained additions built on the "Civic Record" design system.
-   Every feature is wrapped in its own guard, so one failure can never take a
-   page down, and none of it is injected on the economy page.
+   Self-contained additions built on the "Civic Record" design system. Every
+   feature is wrapped in its own guard, so one failure can never take a page
+   down, and none of it is injected on the economy page.
 
-     1  Command palette (Ctrl/Cmd-K)      6  Section rail (auto table of contents)
-     2  Keyboard shortcut help (?)        7  Copy-link anchors on headings
-     3  Saved hub (bills + members)       8  Toast feedback
-     4  Density toggle                    9  Reading-comfort text size
-     5  Sortable bill table              10  Active-filter summary + reset
+     1  Command palette (Ctrl/Cmd-K)      5  Section rail (auto table of contents)
+     2  Keyboard shortcut help (?)        6  Copy-link anchors on headings
+     3  Saved hub (bills + members)       7  Toast feedback
+     4  Sortable bill table               8  Active-filter summary + reset
+
+   Density and reading-comfort text size started here too, as cycle-buttons in
+   the nav. They now live in the settings menu (js/settings.js), which applies
+   both before first paint instead of at DOMContentLoaded.
    ═══════════════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -29,11 +32,6 @@
     if (text != null) n.textContent = text;
     return n;
   }
-  function store(key, fallback) {
-    try { var v = localStorage.getItem(key); return v === null ? fallback : v; }
-    catch (e) { return fallback; }
-  }
-  function save(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
   function readJson(key) {
     try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch (e) { return []; }
   }
@@ -41,7 +39,7 @@
   // while it is open rather than stacking another overlay on top of it.
   function settingsOpen() { return !!(window.ygnSettingsOpen && window.ygnSettingsOpen()); }
 
-  /* ── 8. Toasts ───────────────────────────────────────────────────────────
+  /* ── 7. Toasts ───────────────────────────────────────────────────────────
      Saving a bill or copying a link used to give no feedback at all. */
   var toastHost = null;
   function toast(message, kind) {
@@ -331,61 +329,7 @@
     setInterval(refreshCount, 2000);   // same-tab saves don't fire 'storage'
   }
 
-  /* ── 4 + 9. Display controls: density and text size ─────────────────────
-     These are quick cycle-buttons for two of the preferences the settings menu
-     also owns (js/settings.js). Both write the same keys; each listens for the
-     other's change event so the labels never drift. */
-  function setupDisplayControls() {
-    var density = store('ygn-density', 'comfortable');
-    var textSize = store('ygn-textsize', 'normal');
-    function apply() {
-      document.documentElement.setAttribute('data-density', density);
-      document.documentElement.setAttribute('data-textsize', textSize);
-    }
-    apply();
-
-    var nav = document.querySelector('.main-nav');
-    if (!nav) return;
-    var wrap = el('div', 'ygn-display-controls');
-    wrap.innerHTML =
-      '<button type="button" class="ygn-dc-btn" data-act="density" title="Toggle row density">' +
-        '<span class="ygn-dc-icon">≡</span><span class="ygn-dc-text"></span></button>' +
-      '<button type="button" class="ygn-dc-btn" data-act="text" title="Change text size">' +
-        '<span class="ygn-dc-icon">A</span><span class="ygn-dc-text"></span></button>';
-    nav.appendChild(wrap);
-
-    function label() {
-      wrap.querySelector('[data-act="density"] .ygn-dc-text').textContent =
-        density === 'compact' ? 'Compact' : 'Comfortable';
-      wrap.querySelector('[data-act="text"] .ygn-dc-text').textContent =
-        textSize === 'large' ? 'Large' : textSize === 'small' ? 'Small' : 'Normal';
-    }
-    label();
-
-    // The settings menu writes the same two keys; pick its changes back up.
-    document.addEventListener('ygn:prefschange', function () {
-      density = store('ygn-density', 'comfortable');
-      textSize = store('ygn-textsize', 'normal');
-      label();
-    });
-
-    wrap.addEventListener('click', function (e) {
-      var b = e.target.closest('.ygn-dc-btn');
-      if (!b) return;
-      if (b.dataset.act === 'density') {
-        density = density === 'compact' ? 'comfortable' : 'compact';
-        save('ygn-density', density);
-        toast('Density: ' + (density === 'compact' ? 'compact' : 'comfortable'));
-      } else {
-        textSize = textSize === 'normal' ? 'large' : textSize === 'large' ? 'small' : 'normal';
-        save('ygn-textsize', textSize);
-        toast('Text size: ' + textSize);
-      }
-      apply(); label();
-    });
-  }
-
-  /* ── 5. Sortable bill table ───────────────────────────────────────────── */
+  /* ── 4. Sortable bill table ───────────────────────────────────────────── */
   function setupSortableBills() {
     var grid = document.getElementById('recent-bills-grid');
     if (!grid) return;
@@ -422,7 +366,7 @@
     });
   }
 
-  /* ── 6 + 7. Section rail and heading anchors ──────────────────────────── */
+  /* ── 5 + 6. Section rail and heading anchors ──────────────────────────── */
   function setupSectionRail() {
     var main = document.getElementById('main-content');
     if (!main) return;
@@ -478,7 +422,7 @@
     }
   }
 
-  /* ── 10. Active-filter summary + reset ────────────────────────────────── */
+  /* ── 8. Active-filter summary + reset ────────────────────────────────── */
   function setupFilterSummary() {
     var filters = document.getElementById('bill-filters');
     if (!filters) return;
@@ -515,7 +459,6 @@
     guard('palette', setupPalette);
     guard('shortcuts', setupShortcutHelp);
     guard('saved-hub', setupSavedHub);
-    guard('display-controls', setupDisplayControls);
     guard('sortable-bills', setupSortableBills);
     guard('section-rail', setupSectionRail);
     guard('filter-summary', setupFilterSummary);

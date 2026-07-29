@@ -5,7 +5,9 @@
    there, so none of these nodes are ever created).
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Density and text-size modes (features 4 + 9) ────────────────────────── */
+/* ── Density and text-size modes ──────────────────────────────────────────
+   The attributes these hang off are set by the settings menu (js/settings.js);
+   the rules stay here because they restyle this layer's components too. */
 :root[data-textsize="small"]  { font-size: 93.75%; }   /* 15px base */
 :root[data-textsize="large"]  { font-size: 112.5%; }   /* 18px base */
 
@@ -20,7 +22,7 @@
 :root[data-density="compact"] .member-tile { padding: var(--space-2) var(--space-3); }
 :root[data-density="compact"] .civic-section { margin-bottom: var(--space-4); }
 
-/* ── Toasts (feature 8) ──────────────────────────────────────────────────── */
+/* ── Toasts (feature 7) ──────────────────────────────────────────────────── */
 .ygn-toasts {
   position: fixed;
   left: 50%;
@@ -244,27 +246,7 @@ kbd {
 }
 .ygn-hub-list a:hover { background: var(--color-tint-blue); color: var(--color-accent-text); }
 
-/* ── Display controls in the nav (features 4 + 9) ────────────────────────── */
-.ygn-display-controls { display: flex; gap: var(--space-1); margin-left: auto; align-items: center; }
-.ygn-dc-btn {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--color-nav-text);
-  border-radius: var(--radius-sm);
-  padding: var(--space-1) var(--space-2);
-  min-height: 30px;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--text-xs);
-  white-space: nowrap;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
-}
-.ygn-dc-btn:hover { color: var(--color-nav-active); border-color: rgba(255, 255, 255, 0.25); }
-.ygn-dc-icon { font-weight: var(--weight-bold); }
-@media (max-width: 760px) { .ygn-dc-text { display: none; } }
-
-/* ── Sortable bill headers (feature 5) ───────────────────────────────────── */
+/* ── Sortable bill headers (feature 4) ───────────────────────────────────── */
 .ygn-sortable { cursor: pointer; position: relative; user-select: none; }
 .ygn-sortable:hover { color: var(--color-accent-text); }
 .ygn-sortable::after {
@@ -276,7 +258,7 @@ kbd {
 .ygn-sortable[data-sort="asc"]::after { content: "↑"; opacity: 1; color: var(--color-accent); }
 .ygn-sortable[data-sort="desc"]::after { content: "↓"; opacity: 1; color: var(--color-accent); }
 
-/* ── Section rail + heading anchors (features 6 + 7) ─────────────────────── */
+/* ── Section rail + heading anchors (features 5 + 6) ─────────────────────── */
 .ygn-rail {
   position: fixed;
   right: var(--space-4);
@@ -339,7 +321,7 @@ kbd {
 h2:hover .ygn-anchor, .ygn-anchor:focus-visible { opacity: 1; }
 .ygn-anchor:hover { color: var(--color-accent); }
 
-/* ── Filter summary (feature 10) ─────────────────────────────────────────── */
+/* ── Filter summary (feature 8) ─────────────────────────────────────────── */
 .ygn-filter-summary {
   display: flex;
   align-items: center;
