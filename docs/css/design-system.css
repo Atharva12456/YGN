@@ -154,7 +154,6 @@ dd a:not([class]),
 .inline-info { z-index: 1; }
 
 /* The UX layer's own controls hold themselves to the same minimum. */
-.ygn-dc-btn { min-width: 32px; min-height: 32px; }
 .ygn-anchor { min-width: 28px; min-height: 28px; }
 
 /* Chip-shaped controls get a real minimum height. */
