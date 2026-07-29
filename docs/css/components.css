@@ -605,14 +605,20 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
    alters it.)
    ========================================================================= */
 
+/* The :not([data-motion="full"]) gate lets someone override the OS setting from
+   the settings menu ("Animations: Full"). settings.js only ever sets that
+   attribute after an explicit choice, so with the script absent — or on the
+   economy page, which it skips — this behaves exactly as a plain media query. */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  :root:not([data-motion="full"]) *,
+  :root:not([data-motion="full"]) *::before,
+  :root:not([data-motion="full"]) *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1 !important; transform: none !important; }
+  :root:not([data-motion="full"]) .reveal { opacity: 1 !important; transform: none !important; }
 }
 
 /* Scroll-reveal (classes added by JS) */

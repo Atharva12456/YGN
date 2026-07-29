@@ -37,6 +37,9 @@
   function readJson(key) {
     try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch (e) { return []; }
   }
+  // The settings dialog (js/settings.js) is modal; global shortcuts stand down
+  // while it is open rather than stacking another overlay on top of it.
+  function settingsOpen() { return !!(window.ygnSettingsOpen && window.ygnSettingsOpen()); }
 
   /* ── 8. Toasts ───────────────────────────────────────────────────────────
      Saving a bill or copying a link used to give no feedback at all. */
@@ -67,7 +70,10 @@
     { label: 'Economy', href: 'economy.html', hint: 'Economic indicators' },
     { label: 'District Map', href: 'map.html', hint: 'Districts and boundaries' },
     { label: 'Ethics Methodology', href: 'ethics-methodology.html', hint: 'How grades are computed' },
-    { label: 'Methodology', href: 'methodology.html', hint: 'Sources and standards' }
+    { label: 'Methodology', href: 'methodology.html', hint: 'Sources and standards' },
+    // A hash href marks a row that runs an action instead of navigating; see
+    // activate() below.
+    { label: 'Settings', href: '#ygn-settings', hint: 'Appearance, motion, stored data' }
   ];
 
   function setupPalette() {
@@ -161,6 +167,14 @@
       nodes[active].scrollIntoView({ block: 'nearest' });
     }
 
+    // Rows whose href is a hash open something in-page rather than navigating.
+    function activate(href) {
+      if (href !== '#ygn-settings') return false;
+      close();
+      if (window.ygnOpenSettings) window.ygnOpenSettings();
+      return true;
+    }
+
     function open() {
       overlay.hidden = false;
       document.body.style.overflow = 'hidden';
@@ -179,11 +193,12 @@
       var tag = (e.target && e.target.tagName) || '';
       var typing = tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable);
       if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+        if (settingsOpen()) return;
         e.preventDefault();
         overlay.hidden ? open() : close();
       } else if (e.key === 'Escape' && !overlay.hidden) {
         close();
-      } else if (!typing && e.key === '?' && overlay.hidden) {
+      } else if (!typing && e.key === '?' && overlay.hidden && !settingsOpen()) {
         e.preventDefault();
         if (window.ygnOpenShortcuts) window.ygnOpenShortcuts();
       }
@@ -194,8 +209,15 @@
       else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
       else if (e.key === 'Enter') {
         var node = results.querySelectorAll('.ygn-palette-row')[active];
-        if (node) { e.preventDefault(); window.location.href = node.getAttribute('href'); }
+        if (!node) return;
+        e.preventDefault();
+        var href = node.getAttribute('href');
+        if (!activate(href)) window.location.href = href;
       }
+    });
+    results.addEventListener('click', function (e) {
+      var row = e.target.closest && e.target.closest('.ygn-palette-row');
+      if (row && activate(row.getAttribute('href'))) e.preventDefault();
     });
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
   }
@@ -204,6 +226,7 @@
   function setupShortcutHelp() {
     var SHORTCUTS = [
       ['Ctrl / ⌘ + K', 'Open the command palette'],
+      ['Ctrl / ⌘ + ,', 'Open settings'],
       ['/', 'Focus the search box'],
       ['?', 'Show this list'],
       ['g then h', 'Go home'],
@@ -238,6 +261,7 @@
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';
       if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+      if (settingsOpen()) return;
       if (e.key === 'g') { lastG = Date.now(); return; }
       if (Date.now() - lastG > 900) return;
       var map = { h: 'index.html', m: 'members.html', b: 'recent-bills.html', f: 'foreign-affairs.html' };
@@ -307,7 +331,10 @@
     setInterval(refreshCount, 2000);   // same-tab saves don't fire 'storage'
   }
 
-  /* ── 4 + 9. Display controls: density and text size ───────────────────── */
+  /* ── 4 + 9. Display controls: density and text size ─────────────────────
+     These are quick cycle-buttons for two of the preferences the settings menu
+     also owns (js/settings.js). Both write the same keys; each listens for the
+     other's change event so the labels never drift. */
   function setupDisplayControls() {
     var density = store('ygn-density', 'comfortable');
     var textSize = store('ygn-textsize', 'normal');
@@ -334,6 +361,14 @@
         textSize === 'large' ? 'Large' : textSize === 'small' ? 'Small' : 'Normal';
     }
     label();
+
+    // The settings menu writes the same two keys; pick its changes back up.
+    document.addEventListener('ygn:prefschange', function () {
+      density = store('ygn-density', 'comfortable');
+      textSize = store('ygn-textsize', 'normal');
+      label();
+    });
+
     wrap.addEventListener('click', function (e) {
       var b = e.target.closest('.ygn-dc-btn');
       if (!b) return;
