@@ -1,0 +1,198 @@
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   YGN DESIGN SYSTEM — "Civic Record"
+   ───────────────────────────────────────────────────────────────────────────
+   The site had grown 244 font-size declarations across ~30 ad-hoc rem values
+   (0.82 / 0.83 / 0.84 / 0.85 / 0.86 all render within 0.6px of each other) and
+   10 border-radius values including 2px, 3px, 5px and 7px. Individually
+   invisible; collectively that reads as "unpolished" — nothing lines up on a
+   shared rhythm.
+
+   This defines one scale for type, space, radius and elevation. Every ad-hoc
+   value in the stylesheets is snapped to the nearest step below.
+
+   Principle: a government-record aesthetic — quiet surfaces, one confident
+   accent, generous reading measure, and hierarchy carried by weight and space
+   rather than by many sizes.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Type scale (1.18 ratio, 16px base) ──────────────────────────────────
+     Only 9 steps. Labels/meta live at 2xs–xs, body at sm–base, headings lg+. */
+  --text-2xs: 0.6875rem;  /* 11px — dense badges, superscript meta            */
+  --text-xs: 0.75rem;     /* 12px — eyebrows, table headers, chips            */
+  --text-sm: 0.8125rem;   /* 13px — secondary/meta copy                       */
+  --text-md: 0.875rem;    /* 14px — dense body, list rows                     */
+  --text-base: 0.9375rem; /* 15px — default reading size                      */
+  --text-lg: 1.0625rem;   /* 17px — card titles, lead-ins                     */
+  --text-xl: 1.25rem;     /* 20px — section headings                          */
+  --text-2xl: 1.625rem;   /* 26px — page headings                             */
+  --text-3xl: 2.125rem;   /* 34px — hero                                      */
+  --text-4xl: 2.75rem;    /* 44px — display numerals, initials                */
+  --text-5xl: 3rem;       /* 48px — the largest display moment on a page      */
+
+  /* ── Weight ───────────────────────────────────────────────────────────── */
+  --weight-normal: 400;
+  --weight-medium: 550;
+  --weight-semibold: 650;
+  --weight-bold: 750;
+
+  /* ── Line height ──────────────────────────────────────────────────────── */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.65;
+
+  /* ── Space scale (4px base) ───────────────────────────────────────────── */
+  --space-1: 0.25rem;   /*  4px */
+  --space-2: 0.5rem;    /*  8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+
+  /* ── Radius: four steps, not ten ──────────────────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --radius-card: var(--radius-lg);  /* 12px — unchanged from before */
+
+  /* ── Elevation: three deliberate levels ───────────────────────────────── */
+  --elev-1: 0 1px 2px rgba(26, 31, 46, 0.06), 0 1px 3px rgba(26, 31, 46, 0.04);
+  --elev-2: 0 2px 6px rgba(26, 31, 46, 0.07), 0 4px 12px rgba(26, 31, 46, 0.05);
+  --elev-3: 0 8px 24px rgba(26, 31, 46, 0.12), 0 2px 6px rgba(26, 31, 46, 0.06);
+  --shadow-card: var(--elev-1);
+
+  /* ── Accent: a text-safe variant ──────────────────────────────────────────
+     --color-accent (#4f8ef7) measures 3.21:1 on white — fine for large text and
+     fills, below AA for body links. --color-accent-text is the readable one. */
+  --color-accent-text: #1d63d1;
+
+  /* ── Minimum comfortable hit area ─────────────────────────────────────── */
+  --tap-min: 36px;
+
+  /* ── Reading measure ──────────────────────────────────────────────────── */
+  --measure: 68ch;
+}
+
+:root[data-theme="dark"] {
+  --color-accent-text: #8fb4ef;
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --elev-2: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --elev-3: 0 10px 28px rgba(0, 0, 0, 0.6);
+}
+
+/* The economy page is pinned to the light palette; keep its elevation light too. */
+body[data-page="economy"] {
+  --color-accent-text: #1d63d1;
+  --elev-1: 0 1px 2px rgba(26, 31, 46, 0.06), 0 1px 3px rgba(26, 31, 46, 0.04);
+  --elev-2: 0 2px 6px rgba(26, 31, 46, 0.07), 0 4px 12px rgba(26, 31, 46, 0.05);
+  --elev-3: 0 8px 24px rgba(26, 31, 46, 0.12), 0 2px 6px rgba(26, 31, 46, 0.06);
+}
+
+/* ── Typographic polish ──────────────────────────────────────────────────── */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tabular figures wherever numbers are compared down a column. */
+.stat-value,
+.pulse-card .stat-value,
+.dossier-stat-value,
+.spotlight-nums,
+.gerry-chip,
+.ethics-badge,
+.conflict-card dd,
+.member-tile .tile-meta {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Headings share one rhythm. */
+h1, h2, h3 { letter-spacing: -0.01em; }
+
+/* Body links become readable without changing fills or buttons. */
+p a:not([class]),
+li a:not([class]),
+dd a:not([class]),
+.wiki-body a,
+.civic-meta a {
+  color: var(--color-accent-text);
+  text-underline-offset: 0.15em;
+}
+
+/* ── Comfortable hit areas ────────────────────────────────────────────────
+   Small icon controls were 22x15 (the bill star) and 18x18 (the info dot),
+   well under a usable target. Expand the hit area without changing the glyph
+   size or the layout, using a transparent inset pseudo-element. */
+.bill-save-button,
+.inline-info,
+.member-save-button--tile,
+.foreign-chip,
+.decoder-select,
+.map-colorby-btn {
+  position: relative;
+}
+.bill-save-button::after,
+.inline-info::after,
+.member-save-button--tile::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  transform: translate(-50%, -50%);
+  /* Purely a touch/click target — never paints. */
+  background: transparent;
+}
+.bill-save-button,
+.inline-info { z-index: 1; }
+
+/* The UX layer's own controls hold themselves to the same minimum. */
+.ygn-dc-btn { min-width: 32px; min-height: 32px; }
+.ygn-anchor { min-width: 28px; min-height: 28px; }
+
+/* Chip-shaped controls get a real minimum height. */
+.map-colorby-btn,
+.gerry-chip,
+.foreign-chip,
+.foreign-watch-toggle,
+.foreign-copy,
+.bill-chip,
+.chip {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Focus: one consistent ring everywhere ───────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Selection ───────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--color-tint-blue);
+  color: var(--color-text);
+}
+
+/* ── Scrollbars that match the theme instead of the OS ───────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); background-clip: content-box; }

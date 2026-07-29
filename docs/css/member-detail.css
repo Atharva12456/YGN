@@ -41,14 +41,14 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 2.75rem;
+  font-size: var(--text-4xl);
   font-weight: 700;
   color: var(--color-text-muted);
 }
 
 .dossier-hero-body { flex-grow: 1; min-width: 0; }
 .dossier-hero-eyebrow {
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -57,7 +57,7 @@
 }
 .dossier-hero-name {
   font-family: var(--font-display);
-  font-size: 2.1rem;
+  font-size: var(--text-3xl);
   line-height: 1.15;
   color: var(--color-text);
   margin-bottom: 0.6rem;
@@ -73,7 +73,7 @@
   color: var(--color-text);
   padding: 0.24rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   border: 1px solid var(--color-border);
 }
@@ -86,7 +86,7 @@
 .ideology-labels {
   display: flex;
   justify-content: space-between;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -110,7 +110,7 @@
   transform: translate(-50%, -50%);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-.ideology-caption { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.4rem; }
+.ideology-caption { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.4rem; }
 
 /* ── Hero side actions ────────────────────────────────────────────────────── */
 .dossier-hero-side {
@@ -127,17 +127,17 @@
   justify-content: center;
   min-width: 74px;
   padding: 0.5rem 0.75rem;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: var(--grade-color, #94a3b8);
   color: #fff;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: var(--text-2xl);
   line-height: 1;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .grade-badge span {
-  font-size: 0.62rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -153,7 +153,7 @@
   color: var(--color-text);
   padding: 0.4rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   transition: background var(--transition-fast), border-color var(--transition-fast);
 }
@@ -169,7 +169,7 @@
   color: var(--color-text);
   padding: 0.4rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
@@ -193,7 +193,7 @@
 .dossier-stat {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 0.9rem 1rem;
   box-shadow: var(--shadow-card);
   text-align: center;
@@ -201,14 +201,14 @@
 .dossier-stat-value {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--color-accent);
   line-height: 1.1;
 }
 .dossier-stat-label {
   display: block;
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -235,7 +235,7 @@
 .dossier-nav a {
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.83rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text-muted);
   text-decoration: none;
@@ -261,7 +261,7 @@
 .dossier-card--wide { grid-column: 1 / -1; }
 .dossier-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: var(--text-xl);
   color: var(--color-text);
   margin: 0 0 1rem;
   padding-bottom: 0.6rem;
@@ -279,7 +279,7 @@
   align-items: center;
   gap: 0.6rem;
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: var(--text-md);
   padding: 0.5rem 0;
 }
 .card-spinner {
@@ -299,7 +299,7 @@
   margin: 0 0 0.75rem 1rem;
   width: 110px;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
 }
 .wiki-more { display: inline-block; margin-top: 0.85rem; font-weight: 600; color: var(--color-accent); }
@@ -310,17 +310,17 @@
   padding: 0.6rem 0.85rem;
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-accent);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: var(--color-surface-alt);
 }
-.tenure-item strong { display: block; font-size: 0.95rem; }
-.tenure-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+.tenure-item strong { display: block; font-size: var(--text-base); }
+.tenure-item span { font-size: var(--text-md); color: var(--color-text-muted); }
 
 .timeline-details { margin-top: 0.85rem; }
 .timeline-details > summary {
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: var(--text-md);
   color: var(--color-accent);
   padding: 0.35rem 0;
   user-select: none;
@@ -348,8 +348,8 @@
   background: var(--color-accent);
   box-shadow: 0 0 0 3px var(--color-surface);
 }
-.timeline-item strong { display: block; font-size: 0.92rem; }
-.timeline-item span { font-size: 0.85rem; color: var(--color-text-muted); }
+.timeline-item strong { display: block; font-size: var(--text-base); }
+.timeline-item span { font-size: var(--text-md); color: var(--color-text-muted); }
 
 /* ── Funding ──────────────────────────────────────────────────────────────── */
 .funding-totals {
@@ -360,24 +360,24 @@
 }
 .funding-stat { display: flex; flex-direction: column; gap: 0.15rem; }
 .funding-stat-label {
-  font-size: 0.7rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--color-text-muted);
   font-weight: 700;
 }
-.funding-stat-value { font-size: 1.25rem; font-weight: 700; color: var(--color-text); }
-.funding-subhead { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; }
+.funding-stat-value { font-size: var(--text-xl); font-weight: 700; color: var(--color-text); }
+.funding-subhead { font-weight: 700; font-size: var(--text-md); margin-bottom: 0.5rem; }
 .funding-bar-container {
   display: flex;
   height: 26px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   margin-bottom: 0.9rem;
   background: var(--color-surface-alt);
 }
 .funding-bar-segment { height: 100%; transition: width var(--transition-med); }
-.funding-legend { font-size: 0.85rem; line-height: 1.5; }
+.funding-legend { font-size: var(--text-md); line-height: 1.5; }
 .funding-legend-item {
   display: flex;
   align-items: center;
@@ -386,32 +386,32 @@
   padding: 0.2rem 0;
 }
 .funding-legend-label { display: flex; align-items: center; gap: 0.5rem; }
-.funding-legend-color { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.funding-legend-color { width: 12px; height: 12px; border-radius: var(--radius-xs); flex-shrink: 0; }
 
 /* ── Financial disclosures & generic lists ────────────────────────────────── */
 .dossier-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
 .dossier-list-item {
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 .dossier-list-item:hover { border-color: var(--color-accent); box-shadow: 0 2px 8px rgba(26, 31, 46, 0.06); }
 .dossier-list-item-title { font-weight: 700; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-.dossier-list-item-meta { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.45; }
+.dossier-list-item-meta { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.45; }
 .dossier-list-item-meta a { color: var(--color-accent); font-weight: 600; }
 
 /* Legislation: 2-column bill grid (the card is full-width) + compact amendments */
 .bill-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem; }
-.bill-title-text { font-size: 0.95rem; margin: 0.25rem 0 0.4rem; }
+.bill-title-text { font-size: var(--text-base); margin: 0.25rem 0 0.4rem; }
 .bill-item--amendment { align-self: start; background: var(--color-surface-alt); }
 .bill-item--amendment .dossier-list-item-title { font-weight: 600; }
 
 .badge {
   display: inline-block;
   padding: 0.1rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.72rem;
+  border-radius: var(--radius-xs);
+  font-size: var(--text-xs);
   font-weight: 700;
   background: var(--color-surface-alt);
   color: var(--color-text-muted);
@@ -420,9 +420,9 @@
 .badge--report { background: #e0e7ff; color: #3730a3; }
 .badge--role { background: #fef3c7; color: #92400e; }
 
-.stock-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.stock-table { width: 100%; border-collapse: collapse; font-size: var(--text-md); }
 .stock-table th, .stock-table td { padding: 0.5rem 0.6rem; text-align: left; border-bottom: 1px solid var(--color-border); }
-.stock-table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); }
+.stock-table th { font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); }
 .stock-asset { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ── Legislation tabs ─────────────────────────────────────────────────────── */
@@ -449,18 +449,18 @@
   border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 0.2rem 0.65rem;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   color: var(--color-text);
 }
 .policy-tag span { color: var(--color-text-muted); font-weight: 700; margin-left: 0.25rem; }
 
 /* ── Committees ───────────────────────────────────────────────────────────── */
-.committee-sub { margin: 0.5rem 0 0 0; padding-left: 1.35rem; font-size: 0.88rem; color: var(--color-text-muted); }
+.committee-sub { margin: 0.5rem 0 0 0; padding-left: 1.35rem; font-size: var(--text-md); color: var(--color-text-muted); }
 .committee-sub li { margin-bottom: 0.2rem; }
 
 /* ── Contact & links ──────────────────────────────────────────────────────── */
 .contact-cols { display: flex; flex-direction: column; gap: 1.25rem; }
-.contact-group-title { font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.contact-group-title { font-weight: 700; margin-bottom: 0.4rem; font-size: var(--text-md); }
 .contact-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .contact-link {
   display: inline-flex;
@@ -469,17 +469,17 @@
   padding: 0.35rem 0.7rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  font-size: 0.83rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-accent);
   text-decoration: none;
   transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 .contact-link:hover { background: var(--color-tint-blue); border-color: var(--color-accent); }
-.contact-line { font-size: 0.9rem; color: var(--color-text); margin-bottom: 0.3rem; }
+.contact-line { font-size: var(--text-md); color: var(--color-text); margin-bottom: 0.3rem; }
 
-.muted-text { color: var(--color-text-muted); font-size: 0.9rem; }
-.dossier-source { margin-top: 1rem; font-size: 0.78rem; color: var(--color-text-muted); }
+.muted-text { color: var(--color-text-muted); font-size: var(--text-md); }
+.dossier-source { margin-top: 1rem; font-size: var(--text-xs); color: var(--color-text-muted); }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 860px) {
@@ -492,7 +492,7 @@
 }
 @media (max-width: 600px) {
   .dossier-hero { padding: 1.25rem; }
-  .dossier-hero-name { font-size: 1.7rem; }
+  .dossier-hero-name { font-size: var(--text-2xl); }
   .dossier-hero-photo-wrap { width: 104px; height: 104px; }
   .dossier-card { padding: 1.1rem 1.15rem; }
   .dossier-nav { overflow-x: auto; flex-wrap: nowrap; }
@@ -501,7 +501,7 @@
 /* ── Economy dashboard ────────────────────────────────────────────────────── */
 .econ-header { max-width: 760px; margin: 0 0 2rem; }
 .econ-eyebrow {
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -510,12 +510,12 @@
 }
 .econ-title {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: var(--text-3xl);
   line-height: 1.12;
   color: var(--color-text);
   margin-bottom: 0.75rem;
 }
-.econ-subtitle { color: var(--color-text-muted); font-size: 1rem; line-height: 1.6; }
+.econ-subtitle { color: var(--color-text-muted); font-size: var(--text-base); line-height: 1.6; }
 .econ-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -534,7 +534,7 @@
 }
 .econ-card--feature { border-left: 4px solid var(--color-accent); }
 .econ-card-label {
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -542,14 +542,14 @@
 }
 .econ-card-value {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: var(--text-3xl);
   font-weight: 700;
   color: var(--color-accent);
   line-height: 1.1;
 }
 .econ-card--feature .econ-card-value { color: var(--color-text); }
-.econ-card-context { font-size: 0.82rem; color: var(--color-text-muted); margin-top: auto; }
+.econ-card-context { font-size: var(--text-sm); color: var(--color-text-muted); margin-top: auto; }
 .econ-card--wide { grid-column: 1 / -1; }
 .econ-spark { width: 100%; height: 120px; display: block; margin: 0.5rem 0; }
-.econ-sources { margin-top: 1.5rem; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; }
-@media (max-width: 600px) { .econ-title { font-size: 1.9rem; } }
+.econ-sources { margin-top: 1.5rem; font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.5; }
+@media (max-width: 600px) { .econ-title { font-size: var(--text-3xl); } }

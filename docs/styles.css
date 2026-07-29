@@ -1,6 +1,13 @@
 /* YGN stylesheet - split into docs/css/ partials, aggregated here so every
-   page's <link href="styles.css"> keeps working. Order = cascade order. */
+   page's <link href="styles.css"> keeps working. Order = cascade order.
+
+   design-system.css is imported LAST on purpose: it re-defines the shared
+   tokens (radius, elevation, the text-safe accent) and carries the component
+   rules — focus rings, hit areas, link colour — that must win over the older
+   per-component declarations. */
 @import url("css/base.css");
 @import url("css/members.css");
 @import url("css/member-detail.css");
 @import url("css/components.css");
+@import url("css/design-system.css");
+@import url("css/ux.css");
