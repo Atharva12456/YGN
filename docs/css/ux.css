@@ -380,5 +380,6 @@ h2:hover .ygn-anchor, .ygn-anchor:focus-visible { opacity: 1; }
 .ygn-filter-reset:hover { border-color: var(--color-accent); color: var(--color-accent-text); }
 
 @media (prefers-reduced-motion: reduce) {
-  .ygn-toast, .ygn-rail { transition: none; }
+  :root:not([data-motion="full"]) .ygn-toast,
+  :root:not([data-motion="full"]) .ygn-rail { transition: none; }
 }

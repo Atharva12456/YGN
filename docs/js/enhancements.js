@@ -60,6 +60,13 @@
         try { document.dispatchEvent(new CustomEvent('ygn:themechange', { detail: { theme: next } })); }
         catch (e) {}
       });
+      // The settings menu (js/settings.js) can also change the theme — including
+      // following the OS live in System mode — so keep the glyph in step.
+      document.addEventListener('ygn:themechange', function (e) {
+        var t = (e && e.detail && e.detail.theme) ||
+                (docEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+        btn.textContent = t === 'dark' ? sun : moon;
+      });
       header.appendChild(btn);
     });
 
