@@ -1020,7 +1020,16 @@ def _bill_summaries_payload(bill):
 # Full bill text for the AI. Newly-introduced bills usually have NO official
 # summary for weeks, which used to make the model punt with "the material is too
 # thin" filler. The published text always exists, so feed it (capped) instead.
-BILL_TEXT_MAX_CHARS = 9000
+# How much bill text the model sees. This is the single biggest input cost: the
+# excerpt is included in BOTH the description and the impact prompt, so every
+# 1,000 chars here costs ~500 tokens per bill. 9,000 chars was ~2,400 tokens per
+# call / ~4,800 per bill; 4,000 keeps the operative provisions (bills front-load
+# definitions and effective dates) at roughly half the spend.
+# Tune without a deploy via YGN_BILL_TEXT_MAX_CHARS.
+try:
+    BILL_TEXT_MAX_CHARS = max(800, int(os.getenv("YGN_BILL_TEXT_MAX_CHARS", "4000")))
+except ValueError:
+    BILL_TEXT_MAX_CHARS = 4000
 BILL_TEXT_TTL_SECONDS = 3 * 24 * 60 * 60
 
 
@@ -1917,6 +1926,18 @@ def _is_next_gen_model(model):
     return bool(re.match(r"(gpt-5|o[1-4])(\b|[-_])", str(model or "").lower()))
 
 
+def _ai_completion_floor():
+    """Minimum completion budget for a reasoning model, tunable without a deploy.
+
+    Raise YGN_AI_COMPLETION_FLOOR if summaries start coming back empty (that is
+    the symptom of hidden reasoning exhausting the budget); lower it to spend less.
+    """
+    try:
+        return max(400, int(os.getenv("YGN_AI_COMPLETION_FLOOR", "2000")))
+    except ValueError:
+        return 2000
+
+
 def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
     if not getattr(_ai_generation_scope, "allowed", False):
         raise UpstreamDataError(
@@ -1945,11 +1966,14 @@ def _llm_chat(system_prompt, user_prompt, max_tokens=250, temperature=0.2):
     def build_body():
         body = {"messages": messages}
         if state["modern"]:
-            # Reasoning models spend part of the budget on hidden reasoning, and
-            # long inputs (full bill text) can burn 1-2k reasoning tokens before a
-            # single output token -- a 1200 cap produced empty completions on big
-            # bills. Give real headroom; unused budget costs nothing.
-            body["max_completion_tokens"] = max(max_tokens * 4, 4000)
+            # Reasoning models spend part of the budget on hidden reasoning before
+            # emitting a token, so the cap needs headroom above the visible answer
+            # -- a 1200 cap produced empty completions on big bills. But the budget
+            # is NOT free on a reasoning model: it will happily spend it thinking.
+            # A flat 4000 floor meant a 240-token summary reserved 4000 either way.
+            # Scale with the request and keep a 2000 floor, which still clears the
+            # observed 1-2k reasoning burn now that inputs are ~half the size.
+            body["max_completion_tokens"] = max(max_tokens * 3, _ai_completion_floor())
         else:
             body["max_tokens"] = max_tokens
             if state["temperature"]:
@@ -2573,9 +2597,9 @@ def get_candidate_confidence(bioguide_id):
 
 def _ai_refresh_limit():
     try:
-        return max(0, min(40, int(os.getenv("YGN_AI_REFRESH_LIMIT", "12"))))
+        return max(0, min(40, int(os.getenv("YGN_AI_REFRESH_LIMIT", "6"))))
     except ValueError:
-        return 12
+        return 6
 
 
 def _enqueue_committed_digest_ai_jobs():
@@ -2704,7 +2728,8 @@ AI_FOREIGN_CONTENT_VERSION = "foreign-ai-v1"
 # refresh_foreign_brief() is a no-op until the committed/cached brief is older
 # than this, so the model is called at most twice a day.
 FOREIGN_BRIEF_TTL_SECONDS = 12 * 60 * 60
-FOREIGN_BRIEF_MAX_TOKENS = 4000
+# The brief is ~6 short items; 4000 was reserving far more than it emits.
+FOREIGN_BRIEF_MAX_TOKENS = 1200
 
 FOREIGN_BRIEF_SYSTEM_PROMPT = (
     "You are a nonpartisan foreign-affairs desk editor writing for an American civic "
