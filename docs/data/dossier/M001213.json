@@ -112,7 +112,7 @@
       "birthYear": "1980",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 618,
+        "count": 620,
         "url": "https://api.congress.gov/v3/member/M001213/cosponsored-legislation"
       },
       "currentMember": true,
@@ -168,7 +168,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 96,
+        "count": 97,
         "url": "https://api.congress.gov/v3/member/M001213/sponsored-legislation"
       },
       "state": "Utah",
@@ -203,7 +203,7 @@
           "stateName": "Utah"
         }
       ],
-      "updateDate": "2026-07-22T07:40:25Z"
+      "updateDate": "2026-07-31T07:40:22Z"
     },
     "request": {
       "bioguideId": "m001213",
@@ -212,13 +212,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "M001213",
+    "candidate": {
+      "candidate_id": "H0UT01205",
+      "district": "02",
+      "name": "MOORE, BLAKE",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 55.7,
+        "value": 0.3152,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 93.0,
+        "value": 0.5361,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 56.1,
+        "value": 0.4129,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 37.9,
+        "value": 0.0063,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 60.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 6329.18,
+          "label": "Small individual (unitemized)",
+          "share": 0.002614233758051835
+        },
+        {
+          "amount": 993216.75,
+          "label": "Large individual (itemized)",
+          "share": 0.410242836656965
+        },
+        {
+          "amount": 1421500.0,
+          "label": "PAC / other committees",
+          "share": 0.587142929584983
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0UT01205",
+        "district": "02",
+        "name": "MOORE, BLAKE",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1886961.7,
+        "debts": 0.0,
+        "disbursements": 2183697.46,
+        "individualContributions": 999545.93,
+        "receipts": 2536636.22
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "D-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 60.2,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:12:36.747438+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "M001213",
+    "breakdown": [
+      {
+        "amount": 6329.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.002614233758051835
+      },
+      {
+        "amount": 993216.75,
+        "label": "Large individual (itemized)",
+        "share": 0.410242836656965
+      },
+      {
+        "amount": 1421500.0,
+        "label": "PAC / other committees",
+        "share": 0.587142929584983
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0UT01205",
+      "district": "02",
+      "name": "MOORE, BLAKE",
+      "office": "H",
+      "party": "REP",
+      "state": "UT"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001213",
+      "candidate": {
+        "candidate_id": "H0UT01205",
+        "district": "02",
+        "name": "MOORE, BLAKE",
+        "office": "H",
+        "party": "REP",
+        "state": "UT"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 55.7,
+          "value": 0.3152,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 93.0,
+          "value": 0.5361,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 56.1,
+          "value": 0.4129,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 37.9,
+          "value": 0.0063,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 60.2,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "D-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 60.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:12:36.747438+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1886961.7,
+      "debts": 0.0,
+      "disbursements": 2183697.46,
+      "individualContributions": 999545.93,
+      "receipts": 2536636.22
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "M001213",
     "birthYear": "1980",
@@ -291,7 +496,7 @@
     "birthYear": "1980",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 618,
+      "count": 620,
       "url": "https://api.congress.gov/v3/member/M001213/cosponsored-legislation"
     },
     "currentMember": true,
@@ -347,7 +552,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 96,
+      "count": 97,
       "url": "https://api.congress.gov/v3/member/M001213/sponsored-legislation"
     },
     "state": "Utah",
@@ -382,7 +587,7 @@
         "stateName": "Utah"
       }
     ],
-    "updateDate": "2026-07-22T07:40:25Z"
+    "updateDate": "2026-07-31T07:40:22Z"
   },
   "nominate": {
     "dim1": 0.371,

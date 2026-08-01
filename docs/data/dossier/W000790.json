@@ -198,7 +198,7 @@
       "birthYear": "1969",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 1275,
+        "count": 1287,
         "url": "https://api.congress.gov/v3/member/W000790/cosponsored-legislation"
       },
       "currentMember": true,
@@ -259,7 +259,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 283,
+        "count": 286,
         "url": "https://api.congress.gov/v3/member/W000790/sponsored-legislation"
       },
       "state": "Georgia",
@@ -300,13 +300,208 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "W000790",
+    "candidate": {
+      "candidate_id": "S0GA00559",
+      "district": "00",
+      "name": "WARNOCK, RAPHAEL",
+      "office": "S",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 96.7,
+        "value": 1.0,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": null,
+        "value": null,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 96.3,
+        "value": 0.9744,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 96.5,
+        "value": 0.4539,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 2812361.95,
+          "label": "Small individual (unitemized)",
+          "share": 0.4422650382947121
+        },
+        {
+          "amount": 3383817.89,
+          "label": "Large individual (itemized)",
+          "share": 0.532130776660231
+        },
+        {
+          "amount": 162816.93,
+          "label": "PAC / other committees",
+          "share": 0.025604185045057036
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S0GA00559",
+        "district": "00",
+        "name": "WARNOCK, RAPHAEL",
+        "office": "S",
+        "party": "DEM",
+        "state": "GA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4101705.27,
+        "debts": 0.0,
+        "disbursements": 9167820.55,
+        "individualContributions": 6196179.84,
+        "receipts": 7415689.37
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "A",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 96.4,
+    "source": "fec_live",
+    "updated_at": "2026-07-23T22:02:59.230757+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "W000790",
+    "breakdown": [
+      {
+        "amount": 2812361.95,
+        "label": "Small individual (unitemized)",
+        "share": 0.4422650382947121
+      },
+      {
+        "amount": 3383817.89,
+        "label": "Large individual (itemized)",
+        "share": 0.532130776660231
+      },
+      {
+        "amount": 162816.93,
+        "label": "PAC / other committees",
+        "share": 0.025604185045057036
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S0GA00559",
+      "district": "00",
+      "name": "WARNOCK, RAPHAEL",
+      "office": "S",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "W000790",
+      "candidate": {
+        "candidate_id": "S0GA00559",
+        "district": "00",
+        "name": "WARNOCK, RAPHAEL",
+        "office": "S",
+        "party": "DEM",
+        "state": "GA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.3,
+          "value": 0.9744,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 96.5,
+          "value": 0.4539,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "A",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 96.4,
+      "source": "fec_live",
+      "updated_at": "2026-07-23T22:02:59.230757+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4101705.27,
+      "debts": 0.0,
+      "disbursements": 9167820.55,
+      "individualContributions": 6196179.84,
+      "receipts": 7415689.37
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "W000790",
     "birthYear": "1969",
@@ -379,7 +574,7 @@
     "birthYear": "1969",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 1275,
+      "count": 1287,
       "url": "https://api.congress.gov/v3/member/W000790/cosponsored-legislation"
     },
     "currentMember": true,
@@ -440,7 +635,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 283,
+      "count": 286,
       "url": "https://api.congress.gov/v3/member/W000790/sponsored-legislation"
     },
     "state": "Georgia",

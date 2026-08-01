@@ -121,7 +121,7 @@
       "birthYear": "1975",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 961,
+        "count": 972,
         "url": "https://api.congress.gov/v3/member/V000138/cosponsored-legislation"
       },
       "currentMember": true,
@@ -202,7 +202,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-07-22T07:40:28Z"
+      "updateDate": "2026-07-31T07:40:25Z"
     },
     "request": {
       "bioguideId": "v000138",
@@ -211,13 +211,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "V000138",
+    "candidate": {
+      "candidate_id": "H4VA07234",
+      "district": "07",
+      "name": "VINDMAN, YEVGENY 'EUGENE'",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 88.8,
+        "value": 0.7212,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 64.7,
+        "value": 0.1562,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 96.1,
+        "value": 0.931,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9997,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 97.8,
+        "value": 0.5762,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 92.0,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 6305884.86,
+          "label": "Small individual (unitemized)",
+          "share": 0.5363960218164429
+        },
+        {
+          "amount": 4638725.38,
+          "label": "Large individual (itemized)",
+          "share": 0.39458282150285995
+        },
+        {
+          "amount": 807750.0,
+          "label": "PAC / other committees",
+          "share": 0.06870945097183898
+        },
+        {
+          "amount": 2948.75,
+          "label": "Political party committees",
+          "share": 0.0002508288375774809
+        },
+        {
+          "amount": 715.67,
+          "label": "Self-funding & candidate loans",
+          "share": 6.087687128073785e-05
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4VA07234",
+        "district": "07",
+        "name": "VINDMAN, YEVGENY 'EUGENE'",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 6661973.59,
+        "debts": 0.0,
+        "disbursements": 5529335.43,
+        "individualContributions": 10944610.24,
+        "receipts": 12056375.28
+      }
+    },
+    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "grade": "A-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 92.0,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:14:17.181943+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "V000138",
+    "breakdown": [
+      {
+        "amount": 6305884.86,
+        "label": "Small individual (unitemized)",
+        "share": 0.5363960218164429
+      },
+      {
+        "amount": 4638725.38,
+        "label": "Large individual (itemized)",
+        "share": 0.39458282150285995
+      },
+      {
+        "amount": 807750.0,
+        "label": "PAC / other committees",
+        "share": 0.06870945097183898
+      },
+      {
+        "amount": 2948.75,
+        "label": "Political party committees",
+        "share": 0.0002508288375774809
+      },
+      {
+        "amount": 715.67,
+        "label": "Self-funding & candidate loans",
+        "share": 6.087687128073785e-05
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4VA07234",
+      "district": "07",
+      "name": "VINDMAN, YEVGENY 'EUGENE'",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "V000138",
+      "candidate": {
+        "candidate_id": "H4VA07234",
+        "district": "07",
+        "name": "VINDMAN, YEVGENY 'EUGENE'",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 88.8,
+          "value": 0.7212,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 64.7,
+          "value": 0.1562,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.1,
+          "value": 0.931,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9997,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 97.8,
+          "value": 0.5762,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 92.0,
+      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "grade": "A-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 92.0,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:14:17.181943+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 6661973.59,
+      "debts": 0.0,
+      "disbursements": 5529335.43,
+      "individualContributions": 10944610.24,
+      "receipts": 12056375.28
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "V000138",
     "birthYear": "1975",
@@ -272,7 +477,7 @@
     "birthYear": "1975",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 961,
+      "count": 972,
       "url": "https://api.congress.gov/v3/member/V000138/cosponsored-legislation"
     },
     "currentMember": true,
@@ -353,7 +558,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-07-22T07:40:28Z"
+    "updateDate": "2026-07-31T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.173,

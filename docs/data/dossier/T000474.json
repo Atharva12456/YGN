@@ -115,7 +115,7 @@
       "birthYear": "1965",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1736,
+        "count": 1740,
         "url": "https://api.congress.gov/v3/member/T000474/cosponsored-legislation"
       },
       "currentMember": true,
@@ -161,7 +161,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 190,
+        "count": 192,
         "url": "https://api.congress.gov/v3/member/T000474/sponsored-legislation"
       },
       "state": "California",
@@ -226,7 +226,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-22T07:40:23Z"
+      "updateDate": "2026-07-31T07:40:20Z"
     },
     "request": {
       "bioguideId": "t000474",
@@ -235,13 +235,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "T000474",
+    "candidate": {
+      "candidate_id": "H4CA35031",
+      "district": "35",
+      "name": "TORRES, NORMA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 59.6,
+        "value": 0.3666,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 91.6,
+        "value": 0.5068,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 52.9,
+        "value": 0.3495,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 78.4,
+        "value": 0.1607,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 72.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 43080.08,
+          "label": "Small individual (unitemized)",
+          "share": 0.05617569806259923
+        },
+        {
+          "amount": 224981.0,
+          "label": "Large individual (itemized)",
+          "share": 0.2933714312002586
+        },
+        {
+          "amount": 498820.0,
+          "label": "PAC / other committees",
+          "share": 0.6504528707371422
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4CA35031",
+        "district": "35",
+        "name": "TORRES, NORMA",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 339247.17,
+        "debts": 889.07,
+        "disbursements": 733128.45,
+        "individualContributions": 268061.08,
+        "receipts": 769060.59
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "C-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 72.2,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:00:51.820856+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "T000474",
+    "breakdown": [
+      {
+        "amount": 43080.08,
+        "label": "Small individual (unitemized)",
+        "share": 0.05617569806259923
+      },
+      {
+        "amount": 224981.0,
+        "label": "Large individual (itemized)",
+        "share": 0.2933714312002586
+      },
+      {
+        "amount": 498820.0,
+        "label": "PAC / other committees",
+        "share": 0.6504528707371422
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA35031",
+      "district": "35",
+      "name": "TORRES, NORMA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "T000474",
+      "candidate": {
+        "candidate_id": "H4CA35031",
+        "district": "35",
+        "name": "TORRES, NORMA",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.6,
+          "value": 0.3666,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 91.6,
+          "value": 0.5068,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 52.9,
+          "value": 0.3495,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 78.4,
+          "value": 0.1607,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.2,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:00:51.820856+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 339247.17,
+      "debts": 889.07,
+      "disbursements": 733128.45,
+      "individualContributions": 268061.08,
+      "receipts": 769060.59
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "T000474",
     "birthYear": "1965",
@@ -341,7 +546,7 @@
     "birthYear": "1965",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1736,
+      "count": 1740,
       "url": "https://api.congress.gov/v3/member/T000474/cosponsored-legislation"
     },
     "currentMember": true,
@@ -387,7 +592,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 190,
+      "count": 192,
       "url": "https://api.congress.gov/v3/member/T000474/sponsored-legislation"
     },
     "state": "California",
@@ -452,7 +657,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-22T07:40:23Z"
+    "updateDate": "2026-07-31T07:40:20Z"
   },
   "nominate": {
     "dim1": -0.365,

@@ -115,7 +115,7 @@
       "birthYear": "1961",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1589,
+        "count": 1590,
         "url": "https://api.congress.gov/v3/member/M001194/cosponsored-legislation"
       },
       "currentMember": true,
@@ -236,7 +236,7 @@
           "stateName": "Michigan"
         }
       ],
-      "updateDate": "2026-07-22T07:40:26Z"
+      "updateDate": "2026-07-31T07:40:24Z"
     },
     "request": {
       "bioguideId": "m001194",
@@ -245,13 +245,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "M001194",
+    "candidate": {
+      "candidate_id": "H4MI04126",
+      "district": "02",
+      "name": "MOOLENAAR, JOHN MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "MI"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 72.6,
+        "value": 0.5018,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 96.9,
+        "value": 0.7281,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 82.4,
+        "value": 0.6564,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9997,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 50.5,
+        "value": 0.0338,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 74.4,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 35443.98,
+          "label": "Small individual (unitemized)",
+          "share": 0.02216830957675267
+        },
+        {
+          "amount": 1014040.98,
+          "label": "Large individual (itemized)",
+          "share": 0.6342282770770568
+        },
+        {
+          "amount": 548883.08,
+          "label": "PAC / other committees",
+          "share": 0.343296944611793
+        },
+        {
+          "amount": 490.0,
+          "label": "Political party committees",
+          "share": 0.00030646873439745784
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4MI04126",
+        "district": "02",
+        "name": "MOOLENAAR, JOHN MR.",
+        "office": "H",
+        "party": "REP",
+        "state": "MI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1905561.19,
+        "debts": 27360.9,
+        "disbursements": 1028617.86,
+        "individualContributions": 1049484.96,
+        "receipts": 1652234.8
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "C",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 74.4,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:12:18.579556+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "M001194",
+    "breakdown": [
+      {
+        "amount": 35443.98,
+        "label": "Small individual (unitemized)",
+        "share": 0.02216830957675267
+      },
+      {
+        "amount": 1014040.98,
+        "label": "Large individual (itemized)",
+        "share": 0.6342282770770568
+      },
+      {
+        "amount": 548883.08,
+        "label": "PAC / other committees",
+        "share": 0.343296944611793
+      },
+      {
+        "amount": 490.0,
+        "label": "Political party committees",
+        "share": 0.00030646873439745784
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4MI04126",
+      "district": "02",
+      "name": "MOOLENAAR, JOHN MR.",
+      "office": "H",
+      "party": "REP",
+      "state": "MI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001194",
+      "candidate": {
+        "candidate_id": "H4MI04126",
+        "district": "02",
+        "name": "MOOLENAAR, JOHN MR.",
+        "office": "H",
+        "party": "REP",
+        "state": "MI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 72.6,
+          "value": 0.5018,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.9,
+          "value": 0.7281,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.4,
+          "value": 0.6564,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9997,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 50.5,
+          "value": 0.0338,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 74.4,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 74.4,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:12:18.579556+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1905561.19,
+      "debts": 27360.9,
+      "disbursements": 1028617.86,
+      "individualContributions": 1049484.96,
+      "receipts": 1652234.8
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "M001194",
     "birthYear": "1961",
@@ -351,7 +556,7 @@
     "birthYear": "1961",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1589,
+      "count": 1590,
       "url": "https://api.congress.gov/v3/member/M001194/cosponsored-legislation"
     },
     "currentMember": true,
@@ -472,7 +677,7 @@
         "stateName": "Michigan"
       }
     ],
-    "updateDate": "2026-07-22T07:40:26Z"
+    "updateDate": "2026-07-31T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.447,

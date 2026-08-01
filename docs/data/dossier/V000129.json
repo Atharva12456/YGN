@@ -140,7 +140,7 @@
       "birthYear": "1977",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1858,
+        "count": 1859,
         "url": "https://api.congress.gov/v3/member/V000129/cosponsored-legislation"
       },
       "currentMember": true,
@@ -186,7 +186,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 88,
+        "count": 89,
         "url": "https://api.congress.gov/v3/member/V000129/sponsored-legislation"
       },
       "state": "California",
@@ -251,7 +251,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-22T07:40:26Z"
+      "updateDate": "2026-07-31T07:40:23Z"
     },
     "request": {
       "bioguideId": "v000129",
@@ -260,13 +260,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "V000129",
+    "candidate": {
+      "candidate_id": "H2CA20094",
+      "district": "22",
+      "name": "VALADAO, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 35.0,
+        "value": 0.0,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 83.2,
+        "value": 0.3268,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 56.8,
+        "value": 0.4256,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.998,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 61.4,
+        "value": 0.0682,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 62.3,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 97099.72,
+          "label": "Small individual (unitemized)",
+          "share": 0.029027227046503807
+        },
+        {
+          "amount": 1326492.65,
+          "label": "Large individual (itemized)",
+          "share": 0.39654494706131493
+        },
+        {
+          "amount": 1911533.22,
+          "label": "PAC / other committees",
+          "share": 0.5714384015100611
+        },
+        {
+          "amount": 10000.0,
+          "label": "Political party committees",
+          "share": 0.0029894243821201347
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2CA20094",
+        "district": "22",
+        "name": "VALADAO, DAVID",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3365587.25,
+        "debts": 0.0,
+        "disbursements": 1607549.91,
+        "individualContributions": 1423592.37,
+        "receipts": 4927601.63
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "D-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 62.3,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:13:06.022622+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "V000129",
+    "breakdown": [
+      {
+        "amount": 97099.72,
+        "label": "Small individual (unitemized)",
+        "share": 0.029027227046503807
+      },
+      {
+        "amount": 1326492.65,
+        "label": "Large individual (itemized)",
+        "share": 0.39654494706131493
+      },
+      {
+        "amount": 1911533.22,
+        "label": "PAC / other committees",
+        "share": 0.5714384015100611
+      },
+      {
+        "amount": 10000.0,
+        "label": "Political party committees",
+        "share": 0.0029894243821201347
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2CA20094",
+      "district": "22",
+      "name": "VALADAO, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "V000129",
+      "candidate": {
+        "candidate_id": "H2CA20094",
+        "district": "22",
+        "name": "VALADAO, DAVID",
+        "office": "H",
+        "party": "REP",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 35.0,
+          "value": 0.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 83.2,
+          "value": 0.3268,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 56.8,
+          "value": 0.4256,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.998,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 61.4,
+          "value": 0.0682,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 62.3,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "D-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 62.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:13:06.022622+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3365587.25,
+      "debts": 0.0,
+      "disbursements": 1607549.91,
+      "individualContributions": 1423592.37,
+      "receipts": 4927601.63
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "V000129",
     "birthYear": "1977",
@@ -366,7 +571,7 @@
     "birthYear": "1977",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1858,
+      "count": 1859,
       "url": "https://api.congress.gov/v3/member/V000129/cosponsored-legislation"
     },
     "currentMember": true,
@@ -412,7 +617,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 88,
+      "count": 89,
       "url": "https://api.congress.gov/v3/member/V000129/sponsored-legislation"
     },
     "state": "California",
@@ -477,7 +682,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-22T07:40:26Z"
+    "updateDate": "2026-07-31T07:40:23Z"
   },
   "nominate": {
     "dim1": 0.256,

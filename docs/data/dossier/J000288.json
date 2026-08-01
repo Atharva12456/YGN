@@ -148,7 +148,7 @@
       "birthYear": "1954",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 6042,
+        "count": 6061,
         "url": "https://api.congress.gov/v3/member/J000288/cosponsored-legislation"
       },
       "currentMember": true,
@@ -310,7 +310,7 @@
           "stateName": "Georgia"
         }
       ],
-      "updateDate": "2026-07-22T07:40:22Z"
+      "updateDate": "2026-07-31T07:40:20Z"
     },
     "request": {
       "bioguideId": "j000288",
@@ -319,13 +319,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "J000288",
+    "candidate": {
+      "candidate_id": "H6GA04129",
+      "district": "04",
+      "name": "JOHNSON, HENRY C. 'HANK'",
+      "office": "H",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 92.9,
+        "value": 0.7944,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 96.5,
+        "value": 0.6798,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 45.0,
+        "value": 0.1966,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9981,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 86.4,
+        "value": 0.249,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 79.8,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 19345.07,
+          "label": "Small individual (unitemized)",
+          "share": 0.04894615353066216
+        },
+        {
+          "amount": 58357.43,
+          "label": "Large individual (itemized)",
+          "share": 0.14765372926719159
+        },
+        {
+          "amount": 316750.0,
+          "label": "PAC / other committees",
+          "share": 0.8014286911775061
+        },
+        {
+          "amount": 779.17,
+          "label": "Political party committees",
+          "share": 0.0019714260246401815
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6GA04129",
+        "district": "04",
+        "name": "JOHNSON, HENRY C. 'HANK'",
+        "office": "H",
+        "party": "DEM",
+        "state": "GA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 117905.6,
+        "debts": 5211.2,
+        "disbursements": 396085.24,
+        "individualContributions": 77702.5,
+        "receipts": 402314.84
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 79.8,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:01:57.544896+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "J000288",
+    "breakdown": [
+      {
+        "amount": 19345.07,
+        "label": "Small individual (unitemized)",
+        "share": 0.04894615353066216
+      },
+      {
+        "amount": 58357.43,
+        "label": "Large individual (itemized)",
+        "share": 0.14765372926719159
+      },
+      {
+        "amount": 316750.0,
+        "label": "PAC / other committees",
+        "share": 0.8014286911775061
+      },
+      {
+        "amount": 779.17,
+        "label": "Political party committees",
+        "share": 0.0019714260246401815
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6GA04129",
+      "district": "04",
+      "name": "JOHNSON, HENRY C. 'HANK'",
+      "office": "H",
+      "party": "DEM",
+      "state": "GA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "J000288",
+      "candidate": {
+        "candidate_id": "H6GA04129",
+        "district": "04",
+        "name": "JOHNSON, HENRY C. 'HANK'",
+        "office": "H",
+        "party": "DEM",
+        "state": "GA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 92.9,
+          "value": 0.7944,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.5,
+          "value": 0.6798,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 45.0,
+          "value": 0.1966,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9981,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 86.4,
+          "value": 0.249,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 79.8,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 79.8,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:01:57.544896+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 117905.6,
+      "debts": 5211.2,
+      "disbursements": 396085.24,
+      "individualContributions": 77702.5,
+      "receipts": 402314.84
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "J000288",
     "birthYear": "1954",
@@ -461,7 +666,7 @@
     "birthYear": "1954",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 6042,
+      "count": 6061,
       "url": "https://api.congress.gov/v3/member/J000288/cosponsored-legislation"
     },
     "currentMember": true,
@@ -623,7 +828,7 @@
         "stateName": "Georgia"
       }
     ],
-    "updateDate": "2026-07-22T07:40:22Z"
+    "updateDate": "2026-07-31T07:40:20Z"
   },
   "nominate": {
     "dim1": -0.479,

@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "S001193",
+        "district": 14,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Swalwell, Eric [D-CA-14]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "T000469",
+        "district": 20,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tonko, Paul [D-NY-20]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001059",
+        "district": 21,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Costa, Jim [D-CA-21]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "B001300",
+        "district": 44,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Barrag\u00e1n, Nanette Diaz [D-CA-44]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution expresses support for the designation of National Survivors of Homicide Victims Awareness Month.",
+      "updated_at": "2026-04-03T19:50:38Z"
+    },
+    "detailPath": "119/hres/895",
+    "identifier": "HRES 895",
+    "introducedDate": "2025-11-19",
+    "latestAction": {
+      "date": "2025-11-19",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "895",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "P000617",
+        "district": 7,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Pressley, Ayanna [D-MA-7]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MA"
+      }
+    ],
+    "title": "Expressing support for the designation of November 20, 2025, through December 20, 2025, as \"National Survivors of Homicide Victims Awareness Month\".",
+    "type": "HRES",
+    "updatedAt": "2026-04-03T19:50:50Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/895",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:56.984015+00:00",
+  "source": "congress_api"
+}

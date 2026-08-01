@@ -126,7 +126,7 @@
       "birthYear": "1976",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 690,
+        "count": 693,
         "url": "https://api.congress.gov/v3/member/K000402/cosponsored-legislation"
       },
       "currentMember": true,
@@ -214,7 +214,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-07-22T07:40:27Z"
+      "updateDate": "2026-07-31T07:40:25Z"
     },
     "request": {
       "bioguideId": "k000402",
@@ -223,13 +223,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "K000402",
+    "candidate": {
+      "candidate_id": "H4NY26078",
+      "district": "26",
+      "name": "KENNEDY, TIMOTHY",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 66.9,
+        "value": 0.4429,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.8,
+        "value": 0.8632,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 87.5,
+        "value": 0.7485,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 50.4,
+        "value": 0.0334,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 74.6,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 57306.36,
+          "label": "Small individual (unitemized)",
+          "share": 0.025033258540831244
+        },
+        {
+          "amount": 1656163.61,
+          "label": "Large individual (itemized)",
+          "share": 0.7234654554057597
+        },
+        {
+          "amount": 575739.0,
+          "label": "PAC / other committees",
+          "share": 0.25150128605340905
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4NY26078",
+        "district": "26",
+        "name": "KENNEDY, TIMOTHY",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1213877.96,
+        "debts": 0.0,
+        "disbursements": 1435474.77,
+        "individualContributions": 1713469.97,
+        "receipts": 2310288.18
+      }
+    },
+    "generated_at": "2026-07-24T00:10:20.738488+00:00",
+    "grade": "C",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 74.6,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-24T00:10:58.555752+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "K000402",
+    "breakdown": [
+      {
+        "amount": 57306.36,
+        "label": "Small individual (unitemized)",
+        "share": 0.025033258540831244
+      },
+      {
+        "amount": 1656163.61,
+        "label": "Large individual (itemized)",
+        "share": 0.7234654554057597
+      },
+      {
+        "amount": 575739.0,
+        "label": "PAC / other committees",
+        "share": 0.25150128605340905
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NY26078",
+      "district": "26",
+      "name": "KENNEDY, TIMOTHY",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "K000402",
+      "candidate": {
+        "candidate_id": "H4NY26078",
+        "district": "26",
+        "name": "KENNEDY, TIMOTHY",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 66.9,
+          "value": 0.4429,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.8,
+          "value": 0.8632,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 87.5,
+          "value": 0.7485,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 50.4,
+          "value": 0.0334,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 74.6,
+      "generated_at": "2026-07-24T00:10:20.738488+00:00",
+      "grade": "C",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 74.6,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-24T00:10:58.555752+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1213877.96,
+      "debts": 0.0,
+      "disbursements": 1435474.77,
+      "individualContributions": 1713469.97,
+      "receipts": 2310288.18
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "K000402",
     "birthYear": "1976",
@@ -293,7 +498,7 @@
     "birthYear": "1976",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 690,
+      "count": 693,
       "url": "https://api.congress.gov/v3/member/K000402/cosponsored-legislation"
     },
     "currentMember": true,
@@ -381,7 +586,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-07-22T07:40:27Z"
+    "updateDate": "2026-07-31T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.386,

@@ -224,7 +224,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-07-22T07:40:28Z"
+      "updateDate": "2026-07-31T07:40:25Z"
     },
     "request": {
       "bioguideId": "m001240",
@@ -233,13 +233,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "M001240",
+    "candidate": {
+      "candidate_id": "H4NC06177",
+      "district": "06",
+      "name": "MCDOWELL, ADDISON",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 52.0,
+        "value": 0.259,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.3,
+        "value": 0.7985,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 68.1,
+        "value": 0.5338,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 47.8,
+        "value": 0.0278,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 65.9,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 16394.75,
+          "label": "Small individual (unitemized)",
+          "share": 0.01482789225953409
+        },
+        {
+          "amount": 573769.87,
+          "label": "Large individual (itemized)",
+          "share": 0.5189342816527779
+        },
+        {
+          "amount": 515505.0,
+          "label": "PAC / other committees",
+          "share": 0.4662378260876879
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4NC06177",
+        "district": "06",
+        "name": "MCDOWELL, ADDISON",
+        "office": "H",
+        "party": "REP",
+        "state": "NC"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 381728.0,
+        "debts": 28602.42,
+        "disbursements": 852002.85,
+        "individualContributions": 590164.62,
+        "receipts": 1226407.96
+      }
+    },
+    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "grade": "D",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 65.9,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:15:11.820750+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "M001240",
+    "breakdown": [
+      {
+        "amount": 16394.75,
+        "label": "Small individual (unitemized)",
+        "share": 0.01482789225953409
+      },
+      {
+        "amount": 573769.87,
+        "label": "Large individual (itemized)",
+        "share": 0.5189342816527779
+      },
+      {
+        "amount": 515505.0,
+        "label": "PAC / other committees",
+        "share": 0.4662378260876879
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4NC06177",
+      "district": "06",
+      "name": "MCDOWELL, ADDISON",
+      "office": "H",
+      "party": "REP",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001240",
+      "candidate": {
+        "candidate_id": "H4NC06177",
+        "district": "06",
+        "name": "MCDOWELL, ADDISON",
+        "office": "H",
+        "party": "REP",
+        "state": "NC"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 52.0,
+          "value": 0.259,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.3,
+          "value": 0.7985,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 68.1,
+          "value": 0.5338,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 47.8,
+          "value": 0.0278,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 65.9,
+      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "grade": "D",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 65.9,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:15:11.820750+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 381728.0,
+      "debts": 28602.42,
+      "disbursements": 852002.85,
+      "individualContributions": 590164.62,
+      "receipts": 1226407.96
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "M001240",
     "birthYear": "1994",
@@ -375,7 +580,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-07-22T07:40:28Z"
+    "updateDate": "2026-07-31T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.538,

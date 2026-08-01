@@ -85,7 +85,7 @@
       "birthYear": "1962",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 2817,
+        "count": 2824,
         "url": "https://api.congress.gov/v3/member/S001201/cosponsored-legislation"
       },
       "currentMember": true,
@@ -216,7 +216,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-07-22T07:40:27Z"
+      "updateDate": "2026-07-31T07:40:24Z"
     },
     "request": {
       "bioguideId": "s001201",
@@ -225,13 +225,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "S001201",
+    "candidate": {
+      "candidate_id": "H6NY03247",
+      "district": "03",
+      "name": "SUOZZI, THOMAS",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 62.6,
+        "value": 0.3982,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 94.2,
+        "value": 0.5624,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 84.7,
+        "value": 0.6988,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9991,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 59.0,
+        "value": 0.0553,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "8 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+        "penalty": 32,
+        "ptr_filings": 8
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 75.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 203261.81,
+          "label": "Small individual (unitemized)",
+          "share": 0.038645476291823626
+        },
+        {
+          "amount": 3472348.75,
+          "label": "Large individual (itemized)",
+          "share": 0.6601858523992697
+        },
+        {
+          "amount": 1579043.69,
+          "label": "PAC / other committees",
+          "share": 0.3002182037326574
+        },
+        {
+          "amount": 4999.13,
+          "label": "Political party committees",
+          "share": 0.0009504675762492927
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6NY03247",
+        "district": "03",
+        "name": "SUOZZI, THOMAS",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 5679950.24,
+        "debts": 0.0,
+        "disbursements": 1811088.67,
+        "individualContributions": 3675610.56,
+        "receipts": 5456697.74
+      }
+    },
+    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 43.2,
+    "source": "fec_live",
+    "stockPenalty": 32,
+    "stockPtrCount": 8,
+    "updated_at": "2026-07-23T22:16:21.804195+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "S001201",
+    "breakdown": [
+      {
+        "amount": 203261.81,
+        "label": "Small individual (unitemized)",
+        "share": 0.038645476291823626
+      },
+      {
+        "amount": 3472348.75,
+        "label": "Large individual (itemized)",
+        "share": 0.6601858523992697
+      },
+      {
+        "amount": 1579043.69,
+        "label": "PAC / other committees",
+        "share": 0.3002182037326574
+      },
+      {
+        "amount": 4999.13,
+        "label": "Political party committees",
+        "share": 0.0009504675762492927
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6NY03247",
+      "district": "03",
+      "name": "SUOZZI, THOMAS",
+      "office": "H",
+      "party": "DEM",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S001201",
+      "candidate": {
+        "candidate_id": "H6NY03247",
+        "district": "03",
+        "name": "SUOZZI, THOMAS",
+        "office": "H",
+        "party": "DEM",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 62.6,
+          "value": 0.3982,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 94.2,
+          "value": 0.5624,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 84.7,
+          "value": 0.6988,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9991,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 59.0,
+          "value": 0.0553,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "8 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+          "penalty": 32,
+          "ptr_filings": 8
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 75.2,
+      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 43.2,
+      "source": "fec_live",
+      "stockPenalty": 32,
+      "stockPtrCount": 8,
+      "updated_at": "2026-07-23T22:16:21.804195+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 5679950.24,
+      "debts": 0.0,
+      "disbursements": 1811088.67,
+      "individualContributions": 3675610.56,
+      "receipts": 5456697.74
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "S001201",
     "birthYear": "1962",
@@ -322,7 +529,7 @@
     "birthYear": "1962",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 2817,
+      "count": 2824,
       "url": "https://api.congress.gov/v3/member/S001201/cosponsored-legislation"
     },
     "currentMember": true,
@@ -453,7 +660,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-07-22T07:40:27Z"
+    "updateDate": "2026-07-31T07:40:24Z"
   },
   "nominate": {
     "dim1": -0.212,

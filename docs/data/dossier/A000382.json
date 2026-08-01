@@ -172,7 +172,7 @@
       "birthYear": "1971",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 482,
+        "count": 486,
         "url": "https://api.congress.gov/v3/member/A000382/cosponsored-legislation"
       },
       "currentMember": true,
@@ -221,7 +221,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 95,
+        "count": 99,
         "url": "https://api.congress.gov/v3/member/A000382/sponsored-legislation"
       },
       "state": "Maryland",
@@ -244,13 +244,208 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "A000382",
+    "candidate": {
+      "candidate_id": "S4MD00327",
+      "district": "00",
+      "name": "ALSOBROOKS, ANGELA",
+      "office": "S",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 96.7,
+        "value": 1.0,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": null,
+        "value": null,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 82.7,
+        "value": 0.6621,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 96.1,
+        "value": 0.408,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 346335.16,
+          "label": "Small individual (unitemized)",
+          "share": 0.27012433560000776
+        },
+        {
+          "amount": 502547.23,
+          "label": "Large individual (itemized)",
+          "share": 0.39196204223496767
+        },
+        {
+          "amount": 433250.0,
+          "label": "PAC / other committees",
+          "share": 0.33791362216502463
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S4MD00327",
+        "district": "00",
+        "name": "ALSOBROOKS, ANGELA",
+        "office": "S",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 686548.88,
+        "debts": 29625.33,
+        "disbursements": 1131757.7,
+        "individualContributions": 848882.39,
+        "receipts": 1768461.2
+      }
+    },
+    "generated_at": "2026-07-24T00:10:20.738488+00:00",
+    "grade": "A-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 92.5,
+    "source": "fec_live",
+    "updated_at": "2026-07-24T00:12:51.164233+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "A000382",
+    "breakdown": [
+      {
+        "amount": 346335.16,
+        "label": "Small individual (unitemized)",
+        "share": 0.27012433560000776
+      },
+      {
+        "amount": 502547.23,
+        "label": "Large individual (itemized)",
+        "share": 0.39196204223496767
+      },
+      {
+        "amount": 433250.0,
+        "label": "PAC / other committees",
+        "share": 0.33791362216502463
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4MD00327",
+      "district": "00",
+      "name": "ALSOBROOKS, ANGELA",
+      "office": "S",
+      "party": "DEM",
+      "state": "MD"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "A000382",
+      "candidate": {
+        "candidate_id": "S4MD00327",
+        "district": "00",
+        "name": "ALSOBROOKS, ANGELA",
+        "office": "S",
+        "party": "DEM",
+        "state": "MD"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 96.7,
+          "value": 1.0,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": null,
+          "value": null,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.7,
+          "value": 0.6621,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 96.1,
+          "value": 0.408,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-24T00:10:20.738488+00:00",
+      "grade": "A-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 92.5,
+      "source": "fec_live",
+      "updated_at": "2026-07-24T00:12:51.164233+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 686548.88,
+      "debts": 29625.33,
+      "disbursements": 1131757.7,
+      "individualContributions": 848882.39,
+      "receipts": 1768461.2
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "A000382",
     "birthYear": "1971",
@@ -305,7 +500,7 @@
     "birthYear": "1971",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 482,
+      "count": 486,
       "url": "https://api.congress.gov/v3/member/A000382/cosponsored-legislation"
     },
     "currentMember": true,
@@ -354,7 +549,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 95,
+      "count": 99,
       "url": "https://api.congress.gov/v3/member/A000382/sponsored-legislation"
     },
     "state": "Maryland",

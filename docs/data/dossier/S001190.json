@@ -115,7 +115,7 @@
       "birthYear": "1961",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 2098,
+        "count": 2100,
         "url": "https://api.congress.gov/v3/member/S001190/cosponsored-legislation"
       },
       "currentMember": true,
@@ -226,7 +226,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-07-22T07:40:24Z"
+      "updateDate": "2026-07-31T07:40:21Z"
     },
     "request": {
       "bioguideId": "s001190",
@@ -235,13 +235,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "S001190",
+    "candidate": {
+      "candidate_id": "H2IL10068",
+      "district": "10",
+      "name": "SCHNEIDER, BRADLEY S.",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 73.0,
+        "value": 0.5061,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 94.7,
+        "value": 0.5719,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 71.7,
+        "value": 0.5646,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 59.6,
+        "value": 0.0585,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "3 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+        "penalty": 22,
+        "ptr_filings": 3
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 74.3,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 96125.73,
+          "label": "Small individual (unitemized)",
+          "share": 0.03305484100520423
+        },
+        {
+          "amount": 1545703.67,
+          "label": "Large individual (itemized)",
+          "share": 0.5315225075847088
+        },
+        {
+          "amount": 1266238.74,
+          "label": "PAC / other committees",
+          "share": 0.43542265141008696
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2IL10068",
+        "district": "10",
+        "name": "SCHNEIDER, BRADLEY S.",
+        "office": "H",
+        "party": "DEM",
+        "state": "IL"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 1699006.68,
+        "debts": 0.0,
+        "disbursements": 2279281.91,
+        "individualContributions": 1641829.4,
+        "receipts": 3006862.5
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 52.3,
+    "source": "fec_live",
+    "stockPenalty": 22,
+    "stockPtrCount": 3,
+    "updated_at": "2026-07-23T22:00:23.465597+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "S001190",
+    "breakdown": [
+      {
+        "amount": 96125.73,
+        "label": "Small individual (unitemized)",
+        "share": 0.03305484100520423
+      },
+      {
+        "amount": 1545703.67,
+        "label": "Large individual (itemized)",
+        "share": 0.5315225075847088
+      },
+      {
+        "amount": 1266238.74,
+        "label": "PAC / other committees",
+        "share": 0.43542265141008696
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2IL10068",
+      "district": "10",
+      "name": "SCHNEIDER, BRADLEY S.",
+      "office": "H",
+      "party": "DEM",
+      "state": "IL"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S001190",
+      "candidate": {
+        "candidate_id": "H2IL10068",
+        "district": "10",
+        "name": "SCHNEIDER, BRADLEY S.",
+        "office": "H",
+        "party": "DEM",
+        "state": "IL"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 73.0,
+          "value": 0.5061,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 94.7,
+          "value": 0.5719,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 71.7,
+          "value": 0.5646,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 59.6,
+          "value": 0.0585,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "3 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+          "penalty": 22,
+          "ptr_filings": 3
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 74.3,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 52.3,
+      "source": "fec_live",
+      "stockPenalty": 22,
+      "stockPtrCount": 3,
+      "updated_at": "2026-07-23T22:00:23.465597+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 1699006.68,
+      "debts": 0.0,
+      "disbursements": 2279281.91,
+      "individualContributions": 1641829.4,
+      "receipts": 3006862.5
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "S001190",
     "birthYear": "1961",
@@ -341,7 +548,7 @@
     "birthYear": "1961",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 2098,
+      "count": 2100,
       "url": "https://api.congress.gov/v3/member/S001190/cosponsored-legislation"
     },
     "currentMember": true,
@@ -452,7 +659,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-07-22T07:40:24Z"
+    "updateDate": "2026-07-31T07:40:21Z"
   },
   "nominate": {
     "dim1": -0.199,

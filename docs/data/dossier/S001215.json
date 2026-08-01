@@ -117,7 +117,7 @@
       "birthYear": "1983",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1534,
+        "count": 1535,
         "url": "https://api.congress.gov/v3/member/S001215/cosponsored-legislation"
       },
       "currentMember": true,
@@ -218,7 +218,7 @@
           "stateName": "Michigan"
         }
       ],
-      "updateDate": "2026-07-22T07:40:24Z"
+      "updateDate": "2026-07-31T07:40:21Z"
     },
     "request": {
       "bioguideId": "s001215",
@@ -227,13 +227,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "S001215",
+    "candidate": {
+      "candidate_id": "H8MI11254",
+      "district": "11",
+      "name": "STEVENS, HALEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MI"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 59.8,
+        "value": 0.3684,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 82.9,
+        "value": 0.3194,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 78.6,
+        "value": 0.6218,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 56.4,
+        "value": 0.0466,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 71.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 37657.42,
+          "label": "Small individual (unitemized)",
+          "share": 0.028947122337067595
+        },
+        {
+          "amount": 771246.33,
+          "label": "Large individual (itemized)",
+          "share": 0.5928542599711931
+        },
+        {
+          "amount": 492000.0,
+          "label": "PAC / other committees",
+          "share": 0.3781986176917393
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8MI11254",
+        "district": "11",
+        "name": "STEVENS, HALEY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MI"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 30.36,
+        "debts": 7007.68,
+        "disbursements": 2317732.95,
+        "individualContributions": 808903.75,
+        "receipts": 1564027.75
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "C-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 71.2,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:13:46.229461+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "S001215",
+    "breakdown": [
+      {
+        "amount": 37657.42,
+        "label": "Small individual (unitemized)",
+        "share": 0.028947122337067595
+      },
+      {
+        "amount": 771246.33,
+        "label": "Large individual (itemized)",
+        "share": 0.5928542599711931
+      },
+      {
+        "amount": 492000.0,
+        "label": "PAC / other committees",
+        "share": 0.3781986176917393
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8MI11254",
+      "district": "11",
+      "name": "STEVENS, HALEY",
+      "office": "H",
+      "party": "DEM",
+      "state": "MI"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S001215",
+      "candidate": {
+        "candidate_id": "H8MI11254",
+        "district": "11",
+        "name": "STEVENS, HALEY",
+        "office": "H",
+        "party": "DEM",
+        "state": "MI"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.8,
+          "value": 0.3684,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 82.9,
+          "value": 0.3194,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 78.6,
+          "value": 0.6218,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 56.4,
+          "value": 0.0466,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 71.2,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 71.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:13:46.229461+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 30.36,
+      "debts": 7007.68,
+      "disbursements": 2317732.95,
+      "individualContributions": 808903.75,
+      "receipts": 1564027.75
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "S001215",
     "birthYear": "1983",
@@ -315,7 +520,7 @@
     "birthYear": "1983",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1534,
+      "count": 1535,
       "url": "https://api.congress.gov/v3/member/S001215/cosponsored-legislation"
     },
     "currentMember": true,
@@ -416,7 +621,7 @@
         "stateName": "Michigan"
       }
     ],
-    "updateDate": "2026-07-22T07:40:24Z"
+    "updateDate": "2026-07-31T07:40:21Z"
   },
   "nominate": {
     "dim1": -0.365,

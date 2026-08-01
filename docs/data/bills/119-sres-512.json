@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-20",
+        "state": "WV"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution designates November 30, 2025, as Drive Safer Sunday. It also encourages all people of the United States to use the Sunday after Thanksgiving as an opportunity to educate themselves about highway safety.",
+      "updated_at": "2026-04-03T18:15:56Z"
+    },
+    "detailPath": "119/sres/512",
+    "identifier": "SRES 512",
+    "introducedDate": "2025-11-20",
+    "latestAction": {
+      "date": "2025-12-02",
+      "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent. (consideration: CR S8454)"
+    },
+    "number": "512",
+    "originChamber": "Senate",
+    "policyArea": "Transportation and Public Works",
+    "sponsors": [
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "GA"
+      }
+    ],
+    "title": "A resolution designating November 30, 2025, as \"Drive Safer Sunday\".",
+    "type": "SRES",
+    "updatedAt": "2026-04-03T18:16:40Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/512",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:55.051615+00:00",
+  "source": "congress_api"
+}

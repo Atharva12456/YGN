@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "F000472",
+        "district": 18,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Franklin, Scott [R-FL-18]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "NOAA Global Ocean Monitoring and Observing Research Act",
+      "updated_at": "2026-04-03T14:54:08Z"
+    },
+    "detailPath": "119/hr/7896",
+    "identifier": "HR 7896",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on Science, Space, and Technology."
+    },
+    "number": "7896",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "A000380",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Amo, Gabe [D-RI-1]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "RI"
+      }
+    ],
+    "title": "NOAA Global Ocean Monitoring and Observing Research Act",
+    "type": "HR",
+    "updatedAt": "2026-04-03T14:54:08Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7896",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:38.112780+00:00",
+  "source": "congress_api"
+}

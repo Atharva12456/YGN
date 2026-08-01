@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-12",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "G000587",
+        "district": 29,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Garcia, Sylvia R. [D-TX-29]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-12",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "L000582",
+        "district": 36,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Lieu, Ted [D-CA-36]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-04-02",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Older Workers\u2019 Bureau Act",
+      "updated_at": "2026-04-03T08:05:49Z"
+    },
+    "detailPath": "119/hr/7524",
+    "identifier": "HR 7524",
+    "introducedDate": "2026-02-12",
+    "latestAction": {
+      "date": "2026-02-12",
+      "text": "Referred to the House Committee on Education and Workforce."
+    },
+    "number": "7524",
+    "originChamber": "House",
+    "policyArea": "Labor and Employment",
+    "sponsors": [
+      {
+        "bioguideId": "B001292",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Beyer, Donald S. [D-VA-8]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "VA"
+      }
+    ],
+    "title": "Older Workers\u2019 Bureau Act",
+    "type": "HR",
+    "updatedAt": "2026-04-03T08:05:49Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7524",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:44.929062+00:00",
+  "source": "congress_api"
+}

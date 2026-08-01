@@ -125,7 +125,7 @@
       "birthYear": "1956",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 823,
+        "count": 829,
         "url": "https://api.congress.gov/v3/member/F000477/cosponsored-legislation"
       },
       "currentMember": true,
@@ -190,7 +190,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 40,
+        "count": 44,
         "url": "https://api.congress.gov/v3/member/F000477/sponsored-legislation"
       },
       "state": "North Carolina",
@@ -215,7 +215,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-07-22T07:40:27Z"
+      "updateDate": "2026-07-31T07:40:24Z"
     },
     "request": {
       "bioguideId": "f000477",
@@ -224,13 +224,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "F000477",
+    "candidate": {
+      "candidate_id": "H2NC06114",
+      "district": "04",
+      "name": "FOUSHEE, VALERIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "NC"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 92.7,
+        "value": 0.7916,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.3,
+        "value": 0.799,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 58.2,
+        "value": 0.4514,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9934,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 84.0,
+        "value": 0.2117,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 82.4,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 86346.82,
+          "label": "Small individual (unitemized)",
+          "share": 0.09557793478816609
+        },
+        {
+          "amount": 321453.11,
+          "label": "Large individual (itemized)",
+          "share": 0.3558188290551196
+        },
+        {
+          "amount": 489618.0,
+          "label": "PAC / other committees",
+          "share": 0.541961791703647
+        },
+        {
+          "amount": 6000.0,
+          "label": "Political party committees",
+          "share": 0.006641444453067253
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H2NC06114",
+        "district": "04",
+        "name": "FOUSHEE, VALERIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NC"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 47788.08,
+        "debts": 4000.0,
+        "disbursements": 949918.41,
+        "individualContributions": 407799.93,
+        "receipts": 912010.9
+      }
+    },
+    "generated_at": "2026-07-24T00:10:20.738488+00:00",
+    "grade": "B-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 82.4,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-24T00:11:10.250663+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "F000477",
+    "breakdown": [
+      {
+        "amount": 86346.82,
+        "label": "Small individual (unitemized)",
+        "share": 0.09557793478816609
+      },
+      {
+        "amount": 321453.11,
+        "label": "Large individual (itemized)",
+        "share": 0.3558188290551196
+      },
+      {
+        "amount": 489618.0,
+        "label": "PAC / other committees",
+        "share": 0.541961791703647
+      },
+      {
+        "amount": 6000.0,
+        "label": "Political party committees",
+        "share": 0.006641444453067253
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H2NC06114",
+      "district": "04",
+      "name": "FOUSHEE, VALERIE",
+      "office": "H",
+      "party": "DEM",
+      "state": "NC"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000477",
+      "candidate": {
+        "candidate_id": "H2NC06114",
+        "district": "04",
+        "name": "FOUSHEE, VALERIE",
+        "office": "H",
+        "party": "DEM",
+        "state": "NC"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 92.7,
+          "value": 0.7916,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.3,
+          "value": 0.799,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 58.2,
+          "value": 0.4514,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9934,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 84.0,
+          "value": 0.2117,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 82.4,
+      "generated_at": "2026-07-24T00:10:20.738488+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 82.4,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-24T00:11:10.250663+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 47788.08,
+      "debts": 4000.0,
+      "disbursements": 949918.41,
+      "individualContributions": 407799.93,
+      "receipts": 912010.9
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "F000477",
     "birthYear": "1956",
@@ -294,7 +499,7 @@
     "birthYear": "1956",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 823,
+      "count": 829,
       "url": "https://api.congress.gov/v3/member/F000477/cosponsored-legislation"
     },
     "currentMember": true,
@@ -359,7 +564,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 40,
+      "count": 44,
       "url": "https://api.congress.gov/v3/member/F000477/sponsored-legislation"
     },
     "state": "North Carolina",
@@ -384,7 +589,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-07-22T07:40:27Z"
+    "updateDate": "2026-07-31T07:40:24Z"
   },
   "nominate": {
     "dim1": -0.499,

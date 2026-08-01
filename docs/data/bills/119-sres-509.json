@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "B001236",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Boozman, John [R-AR]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "AR"
+      },
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M000934",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Moran, Jerry [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-19",
+        "state": "KS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution designates October 16, 2025, and October 16, 2026, as World Food Day. It also reaffirms the commitment of the United States to combating global food insecurity and malnutrition through humanitarian support and investment in resilient agriculture to improve long-term food security.",
+      "updated_at": "2026-04-03T15:40:13Z"
+    },
+    "detailPath": "119/sres/509",
+    "identifier": "SRES 509",
+    "introducedDate": "2025-11-19",
+    "latestAction": {
+      "date": "2025-11-19",
+      "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S8248; text: CR S8244-8245)"
+    },
+    "number": "509",
+    "originChamber": "Senate",
+    "policyArea": "Agriculture and Food",
+    "sponsors": [
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "DE"
+      }
+    ],
+    "title": "A resolution designating October 16, 2025, and October 16, 2026, as \"World Food Day\".",
+    "type": "SRES",
+    "updatedAt": "2026-04-03T15:40:49Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/509",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:56.308081+00:00",
+  "source": "congress_api"
+}

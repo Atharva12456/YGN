@@ -115,7 +115,7 @@
       "birthYear": "1957",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1911,
+        "count": 1915,
         "url": "https://api.congress.gov/v3/member/C001103/cosponsored-legislation"
       },
       "currentMember": true,
@@ -226,7 +226,7 @@
           "stateName": "Georgia"
         }
       ],
-      "updateDate": "2026-07-22T07:40:23Z"
+      "updateDate": "2026-07-31T07:40:21Z"
     },
     "request": {
       "bioguideId": "c001103",
@@ -235,13 +235,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "C001103",
+    "candidate": {
+      "candidate_id": "H4GA01039",
+      "district": "01",
+      "name": "CARTER, EARL LEROY",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 62.6,
+        "value": 0.398,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 96.1,
+        "value": 0.6135,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 51.0,
+        "value": 0.3123,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 72.8,
+        "value": 0.1302,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "4 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+        "penalty": 22,
+        "ptr_filings": 4
+      }
+    },
+    "cycle": 2024,
+    "financeScore": 71.1,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 93614.18,
+          "label": "Small individual (unitemized)",
+          "share": 0.040658347430761035
+        },
+        {
+          "amount": 625413.84,
+          "label": "Large individual (itemized)",
+          "share": 0.27162864850951424
+        },
+        {
+          "amount": 1583431.03,
+          "label": "PAC / other committees",
+          "share": 0.6877130040597248
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4GA01039",
+        "district": "01",
+        "name": "CARTER, EARL LEROY",
+        "office": "H",
+        "party": "REP",
+        "state": "GA"
+      },
+      "cycle": 2024,
+      "totals": {
+        "cashOnHand": 3018930.34,
+        "debts": 0.0,
+        "disbursements": 1396344.13,
+        "individualContributions": 719028.02,
+        "receipts": 2597666.23
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 49.1,
+    "source": "fec_live",
+    "stockPenalty": 22,
+    "stockPtrCount": 4,
+    "updated_at": "2026-07-23T22:00:50.752682+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "C001103",
+    "breakdown": [
+      {
+        "amount": 93614.18,
+        "label": "Small individual (unitemized)",
+        "share": 0.040658347430761035
+      },
+      {
+        "amount": 625413.84,
+        "label": "Large individual (itemized)",
+        "share": 0.27162864850951424
+      },
+      {
+        "amount": 1583431.03,
+        "label": "PAC / other committees",
+        "share": 0.6877130040597248
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4GA01039",
+      "district": "01",
+      "name": "CARTER, EARL LEROY",
+      "office": "H",
+      "party": "REP",
+      "state": "GA"
+    },
+    "cycle": 2024,
+    "grade": {
+      "bioguideId": "C001103",
+      "candidate": {
+        "candidate_id": "H4GA01039",
+        "district": "01",
+        "name": "CARTER, EARL LEROY",
+        "office": "H",
+        "party": "REP",
+        "state": "GA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 62.6,
+          "value": 0.398,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 96.1,
+          "value": 0.6135,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 51.0,
+          "value": 0.3123,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 72.8,
+          "value": 0.1302,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "4 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+          "penalty": 22,
+          "ptr_filings": 4
+        }
+      },
+      "cycle": 2024,
+      "financeScore": 71.1,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 49.1,
+      "source": "fec_live",
+      "stockPenalty": 22,
+      "stockPtrCount": 4,
+      "updated_at": "2026-07-23T22:00:50.752682+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3018930.34,
+      "debts": 0.0,
+      "disbursements": 1396344.13,
+      "individualContributions": 719028.02,
+      "receipts": 2597666.23
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "C001103",
     "birthYear": "1957",
@@ -341,7 +548,7 @@
     "birthYear": "1957",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1911,
+      "count": 1915,
       "url": "https://api.congress.gov/v3/member/C001103/cosponsored-legislation"
     },
     "currentMember": true,
@@ -452,7 +659,7 @@
         "stateName": "Georgia"
       }
     ],
-    "updateDate": "2026-07-22T07:40:23Z"
+    "updateDate": "2026-07-31T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.555,

@@ -1,0 +1,736 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 69,
+    "cosponsors": [
+      {
+        "bioguideId": "P000613",
+        "district": 19,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Panetta, Jimmy [D-CA-19]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "T000478",
+        "district": 24,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tenney, Claudia [R-NY-24]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001115",
+        "district": 27,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cloud, Michael [R-TX-27]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "F000474",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Flood, Mike [R-NE-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "W000812",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wagner, Ann [R-MO-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "S000250",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sessions, Pete [R-TX-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "S001172",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Smith, Adrian [R-NE-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "F000475",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Finstad, Brad [R-MN-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "F000446",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Feenstra, Randy [R-IA-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "E000298",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Estes, Ron [R-KS-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "M001194",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Moolenaar, John R. [R-MI-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "F000466",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "B000490",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bishop, Sanford D. [D-GA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "N000189",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Newhouse, Dan [R-WA-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "M001215",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Miller-Meeks, Mariannette [R-IA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "I000056",
+        "district": 48,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Issa, Darrell [R-CA-48]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001061",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cleaver, Emanuel [D-MO-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "H001096",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hageman, Harriet M. [R-WY-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "WY"
+      },
+      {
+        "bioguideId": "A000055",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Aderholt, Robert B. [R-AL-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "T000467",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Thompson, Glenn [R-PA-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S001195",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Smith, Jason [R-MO-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "V000136",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Vasquez, Gabe [D-NM-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "F000472",
+        "district": 18,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Franklin, Scott [R-FL-18]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "G000546",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Graves, Sam [R-MO-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "V000135",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Van Orden, Derrick [R-WI-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "M001212",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Moore, Barry [R-AL-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "Z000018",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Zinke, Ryan K. [R-MT-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MT"
+      },
+      {
+        "bioguideId": "B001301",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bergman, Jack [R-MI-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "R000619",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Rulli, Michael A. [R-OH-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "D000634",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Downing, Troy [R-MT-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MT"
+      },
+      {
+        "bioguideId": "B001298",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bacon, Don [R-NE-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "R000603",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Rouzer, David [R-NC-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "N000193",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Nunn, Zachary [R-IA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "B001295",
+        "district": 12,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bost, Mike [R-IL-12]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "H001100",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hurd, Jeff [R-CO-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "C001118",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cline, Ben [R-VA-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "L000597",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lee, Laurel M. [R-FL-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "M001236",
+        "district": 14,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Moore, Tim [R-NC-14]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "F000478",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fry, Russell [R-SC-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "B000668",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bentz, Cliff [R-OR-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "C001059",
+        "district": 21,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Costa, Jim [D-CA-21]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "G000576",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Grothman, Glenn [R-WI-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "M001204",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Meuser, Daniel [R-PA-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S001189",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Scott, Austin [R-GA-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "G000583",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gottheimer, Josh [D-NJ-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "M001211",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Miller, Mary E. [R-IL-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "B001291",
+        "district": 36,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Babin, Brian [R-TX-36]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "V000129",
+        "district": 22,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Valadao, David G. [R-CA-22]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "H001091",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hinson, Ashley [R-IA-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "C001119",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Craig, Angie [D-MN-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "B001315",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Budzinski, Nikki [D-IL-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "R000612",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Rose, John W. [R-TN-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "M001240",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McDowell, Addison P. [R-NC-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "C001039",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cammack, Kat [R-FL-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "F000470",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fischbach, Michelle [R-MN-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M001157",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCaul, Michael T. [R-TX-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "K000376",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kelly, Mike [R-PA-16]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "D000230",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davis, Donald G. [D-NC-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "A000379",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Alford, Mark [R-MO-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "D000629",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davids, Sharice [D-KS-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "F000480",
+        "district": 20,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fong, Vince [R-CA-20]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "F000482",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fedorchak, Julie [R-ND-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-23",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "M001228",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Maloy, Celeste [R-UT-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-24",
+        "state": "UT"
+      },
+      {
+        "bioguideId": "K000009",
+        "district": 9,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Kaptur, Marcy [D-OH-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "L000599",
+        "district": 17,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Lawler, Michael [R-NY-17]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-03",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "S001229",
+        "district": 6,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Shreve, Jefferson [R-IN-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-04",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "M001238",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McBride, Sarah [D-DE-At Large]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "DE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution supports the designation of National FFA (Future Farmers of America) Week. It also celebrates the 50th anniversary of the chartering of Alaska as a State FFA Association of the National FFA Organization.",
+      "updated_at": "2026-04-03T10:51:45Z"
+    },
+    "detailPath": "119/hres/1073",
+    "identifier": "HRES 1073",
+    "introducedDate": "2026-02-23",
+    "latestAction": {
+      "date": "2026-02-23",
+      "text": "Referred to the House Committee on Agriculture."
+    },
+    "number": "1073",
+    "originChamber": "House",
+    "policyArea": "Agriculture and Food",
+    "sponsors": [
+      {
+        "bioguideId": "M000871",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Mann, Tracey [R-KS-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "Expressing support for the designation of February 21 through February 28, 2026, as \"National FFA Week\", recognizing the important role of the National Future Farmers of America (FFA) Organization in developing the next generation of globally conscious leaders who will change the world, and celebrating the 50th anniversary of the chartering of the State of Alaska as a State FFA Association.",
+    "type": "HRES",
+    "updatedAt": "2026-04-03T10:52:38Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1073",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:44.344414+00:00",
+  "source": "congress_api"
+}

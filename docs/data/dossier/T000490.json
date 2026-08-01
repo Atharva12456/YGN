@@ -132,7 +132,7 @@
       "birthYear": "1969",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 182,
+        "count": 186,
         "url": "https://api.congress.gov/v3/member/T000490/cosponsored-legislation"
       },
       "currentMember": true,
@@ -213,7 +213,7 @@
           "stateName": "Ohio"
         }
       ],
-      "updateDate": "2026-07-22T07:40:28Z"
+      "updateDate": "2026-07-31T07:40:25Z"
     },
     "request": {
       "bioguideId": "t000490",
@@ -222,13 +222,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "T000490",
+    "candidate": {
+      "candidate_id": "H4OH02248",
+      "district": "02",
+      "name": "TAYLOR, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 68.9,
+        "value": 0.463,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.6,
+        "value": 0.8392,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 75.1,
+        "value": 0.5929,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 86.0,
+        "value": 0.2431,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "22 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+        "penalty": 50,
+        "ptr_filings": 22
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 82.5,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 151893.64,
+          "label": "Small individual (unitemized)",
+          "share": 0.1441342614007336
+        },
+        {
+          "amount": 472940.74,
+          "label": "Large individual (itemized)",
+          "share": 0.4487808985696595
+        },
+        {
+          "amount": 429000.0,
+          "label": "PAC / other committees",
+          "share": 0.407084840029607
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4OH02248",
+        "district": "02",
+        "name": "TAYLOR, DAVID",
+        "office": "H",
+        "party": "REP",
+        "state": "OH"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 442977.21,
+        "debts": 1707300.0,
+        "disbursements": 780078.41,
+        "individualContributions": 624834.38,
+        "receipts": 1095247.88
+      }
+    },
+    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 32.5,
+    "source": "fec_live",
+    "stockPenalty": 50,
+    "stockPtrCount": 22,
+    "updated_at": "2026-07-23T22:14:19.641188+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "T000490",
+    "breakdown": [
+      {
+        "amount": 151893.64,
+        "label": "Small individual (unitemized)",
+        "share": 0.1441342614007336
+      },
+      {
+        "amount": 472940.74,
+        "label": "Large individual (itemized)",
+        "share": 0.4487808985696595
+      },
+      {
+        "amount": 429000.0,
+        "label": "PAC / other committees",
+        "share": 0.407084840029607
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4OH02248",
+      "district": "02",
+      "name": "TAYLOR, DAVID",
+      "office": "H",
+      "party": "REP",
+      "state": "OH"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "T000490",
+      "candidate": {
+        "candidate_id": "H4OH02248",
+        "district": "02",
+        "name": "TAYLOR, DAVID",
+        "office": "H",
+        "party": "REP",
+        "state": "OH"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 68.9,
+          "value": 0.463,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.6,
+          "value": 0.8392,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 75.1,
+          "value": 0.5929,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 86.0,
+          "value": 0.2431,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "22 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+          "penalty": 50,
+          "ptr_filings": 22
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 82.5,
+      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 32.5,
+      "source": "fec_live",
+      "stockPenalty": 50,
+      "stockPtrCount": 22,
+      "updated_at": "2026-07-23T22:14:19.641188+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 442977.21,
+      "debts": 1707300.0,
+      "disbursements": 780078.41,
+      "individualContributions": 624834.38,
+      "receipts": 1095247.88
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "T000490",
     "birthYear": "1969",
@@ -283,7 +490,7 @@
     "birthYear": "1969",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 182,
+      "count": 186,
       "url": "https://api.congress.gov/v3/member/T000490/cosponsored-legislation"
     },
     "currentMember": true,
@@ -364,7 +571,7 @@
         "stateName": "Ohio"
       }
     ],
-    "updateDate": "2026-07-22T07:40:28Z"
+    "updateDate": "2026-07-31T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.691,

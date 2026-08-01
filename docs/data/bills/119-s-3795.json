@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001305",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Budd, Ted [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-05",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Radar Next Program Act of 2026",
+      "updated_at": "2026-04-03T21:19:16Z"
+    },
+    "detailPath": "119/s/3795",
+    "identifier": "S 3795",
+    "introducedDate": "2026-02-05",
+    "latestAction": {
+      "date": "2026-02-05",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "3795",
+    "originChamber": "Senate",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "C000127",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cantwell, Maria [D-WA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "WA"
+      }
+    ],
+    "title": "Radar Next Program Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-04-03T21:19:16Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3795",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:48.171931+00:00",
+  "source": "congress_api"
+}

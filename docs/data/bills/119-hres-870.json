@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001137",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Meeks, Gregory W. [D-NY-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-10",
+        "state": "NY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution honors and remembers the victims of the crash of American Airlines Flight 587 in Rockaway Queens, New York. It also (1) honors and thanks the families, friends, and loved ones of the victims of the crash; (2) conveys the condolences of U.S. citizens to the families, friends, and communities of the victims; and (3) solemnly marks the 24 th anniversary of the crash.",
+      "updated_at": "2026-04-03T15:16:59Z"
+    },
+    "detailPath": "119/hres/870",
+    "identifier": "HRES 870",
+    "introducedDate": "2025-11-10",
+    "latestAction": {
+      "date": "2025-11-11",
+      "text": "Referred to the Subcommittee on Aviation."
+    },
+    "number": "870",
+    "originChamber": "House",
+    "policyArea": "Transportation and Public Works",
+    "sponsors": [
+      {
+        "bioguideId": "E000297",
+        "district": 13,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Espaillat, Adriano [D-NY-13]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "Honoring and remembering the victims of the crash of American Airlines Flight 587 in Rockaway Queens, New York, on November 12, 2001, and extending the sincerest condolences of the citizens of the United States to the families and friends of those individuals.",
+    "type": "HRES",
+    "updatedAt": "2026-04-03T15:17:59Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/870",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:57.539122+00:00",
+  "source": "congress_api"
+}

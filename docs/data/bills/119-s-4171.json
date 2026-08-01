@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Virtual Currency Tax Fairness Act",
+      "updated_at": "2026-04-03T15:00:34Z"
+    },
+    "detailPath": "119/s/4171",
+    "identifier": "S 4171",
+    "introducedDate": "2026-03-24",
+    "latestAction": {
+      "date": "2026-03-24",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "4171",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "B001305",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Budd, Ted [R-NC]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NC"
+      }
+    ],
+    "title": "Virtual Currency Tax Fairness Act",
+    "type": "S",
+    "updatedAt": "2026-04-03T15:00:34Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4171",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill excludes de minimis gains or losses from virtual currency sales or exchanges from gross income unless the transaction's value or gain/loss exceeds $200 or it is exchanged for cash or business/income\u2011producing property. It defines virtual currency as digital value (excluding U.S./foreign currency) and applies to transactions after 2026.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-01T04:28:36.196207+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "29cd945148dd0a4c75e36ade",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill excludes de minimis gains or losses from virtual currency sales or exchanges from gross income, affecting U.S. taxpayers, cryptocurrency exchanges, businesses accepting crypto, tax preparers, and the IRS. It applies to transactions $200 or less (aggregated) and takes effect after December 31, 2026.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-01T03:56:59.644827+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "29cd945148dd0a4c75e36ade",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-01T06:16:32.864279+00:00",
+  "source": "congress_api"
+}

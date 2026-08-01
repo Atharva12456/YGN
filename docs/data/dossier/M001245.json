@@ -62,7 +62,7 @@
       "birthYear": "1988",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 88,
+        "count": 92,
         "url": "https://api.congress.gov/v3/member/M001245/cosponsored-legislation"
       },
       "currentMember": true,
@@ -113,7 +113,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-07-22T07:40:28Z"
+      "updateDate": "2026-07-31T07:40:25Z"
     },
     "request": {
       "bioguideId": "m001245",
@@ -122,13 +122,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "M001245",
+    "candidate": {
+      "candidate_id": "H6TX18232",
+      "district": "18",
+      "name": "MENEFEE, CHRISTIAN",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 73.3,
+        "value": 0.5095,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.6,
+        "value": 0.8395,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 96.2,
+        "value": 0.9354,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 83.7,
+        "value": 0.2062,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+        "penalty": 10,
+        "ptr_filings": 1
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 88.0,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 700825.71,
+          "label": "Small individual (unitemized)",
+          "share": 0.19283425205889926
+        },
+        {
+          "amount": 2698549.08,
+          "label": "Large individual (itemized)",
+          "share": 0.7425137035655138
+        },
+        {
+          "amount": 234867.67,
+          "label": "PAC / other committees",
+          "share": 0.06462452908194018
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 100.0,
+          "label": "Self-funding & candidate loans",
+          "share": 2.7515293646818304e-05
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6TX18232",
+        "district": "18",
+        "name": "MENEFEE, CHRISTIAN",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 156015.99,
+        "debts": 0.0,
+        "disbursements": 3481562.61,
+        "individualContributions": 3399374.79,
+        "receipts": 3637578.6
+      }
+    },
+    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 78.0,
+    "source": "fec_live",
+    "stockPenalty": 10,
+    "stockPtrCount": 1,
+    "updated_at": "2026-07-23T22:14:14.547808+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "M001245",
+    "breakdown": [
+      {
+        "amount": 700825.71,
+        "label": "Small individual (unitemized)",
+        "share": 0.19283425205889926
+      },
+      {
+        "amount": 2698549.08,
+        "label": "Large individual (itemized)",
+        "share": 0.7425137035655138
+      },
+      {
+        "amount": 234867.67,
+        "label": "PAC / other committees",
+        "share": 0.06462452908194018
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 100.0,
+        "label": "Self-funding & candidate loans",
+        "share": 2.7515293646818304e-05
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6TX18232",
+      "district": "18",
+      "name": "MENEFEE, CHRISTIAN",
+      "office": "H",
+      "party": "DEM",
+      "state": "TX"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M001245",
+      "candidate": {
+        "candidate_id": "H6TX18232",
+        "district": "18",
+        "name": "MENEFEE, CHRISTIAN",
+        "office": "H",
+        "party": "DEM",
+        "state": "TX"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 73.3,
+          "value": 0.5095,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.6,
+          "value": 0.8395,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 96.2,
+          "value": 0.9354,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 83.7,
+          "value": 0.2062,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 88.0,
+      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 78.0,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-23T22:14:14.547808+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 156015.99,
+      "debts": 0.0,
+      "disbursements": 3481562.61,
+      "individualContributions": 3399374.79,
+      "receipts": 3637578.6
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "M001245",
     "birthYear": "1988",
@@ -183,7 +390,7 @@
     "birthYear": "1988",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 88,
+      "count": 92,
       "url": "https://api.congress.gov/v3/member/M001245/cosponsored-legislation"
     },
     "currentMember": true,
@@ -234,7 +441,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-07-22T07:40:28Z"
+    "updateDate": "2026-07-31T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.58,

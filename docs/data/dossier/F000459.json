@@ -122,7 +122,7 @@
       "birthYear": "1962",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1496,
+        "count": 1500,
         "url": "https://api.congress.gov/v3/member/F000459/cosponsored-legislation"
       },
       "currentMember": true,
@@ -263,7 +263,7 @@
           "stateName": "Tennessee"
         }
       ],
-      "updateDate": "2026-07-22T07:40:22Z"
+      "updateDate": "2026-07-31T07:40:20Z"
     },
     "request": {
       "bioguideId": "f000459",
@@ -272,13 +272,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "F000459",
+    "candidate": {
+      "candidate_id": "H0TN03254",
+      "district": "03",
+      "name": "FLEISCHMANN, CHARLES J",
+      "office": "H",
+      "party": "REP",
+      "state": "TN"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 59.2,
+        "value": 0.3627,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 90.0,
+        "value": 0.4704,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 84.7,
+        "value": 0.6977,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 61.4,
+        "value": 0.7285,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 36.4,
+        "value": 0.003,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "8 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+        "penalty": 32,
+        "ptr_filings": 8
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 62.1,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 4395.04,
+          "label": "Small individual (unitemized)",
+          "share": 0.0020689553328566007
+        },
+        {
+          "amount": 1477634.75,
+          "label": "Large individual (itemized)",
+          "share": 0.6955932815234287
+        },
+        {
+          "amount": 9500.0,
+          "label": "PAC / other committees",
+          "share": 0.004472103931281105
+        },
+        {
+          "amount": 632750.0,
+          "label": "Political party committees",
+          "share": 0.2978656592124336
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0TN03254",
+        "district": "03",
+        "name": "FLEISCHMANN, CHARLES J",
+        "office": "H",
+        "party": "REP",
+        "state": "TN"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 4835524.55,
+        "debts": 0.0,
+        "disbursements": 752330.86,
+        "individualContributions": 1482029.79,
+        "receipts": 2330803.33
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 30.1,
+    "source": "fec_live",
+    "stockPenalty": 32,
+    "stockPtrCount": 8,
+    "updated_at": "2026-07-23T22:01:54.941590+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "F000459",
+    "breakdown": [
+      {
+        "amount": 4395.04,
+        "label": "Small individual (unitemized)",
+        "share": 0.0020689553328566007
+      },
+      {
+        "amount": 1477634.75,
+        "label": "Large individual (itemized)",
+        "share": 0.6955932815234287
+      },
+      {
+        "amount": 9500.0,
+        "label": "PAC / other committees",
+        "share": 0.004472103931281105
+      },
+      {
+        "amount": 632750.0,
+        "label": "Political party committees",
+        "share": 0.2978656592124336
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0TN03254",
+      "district": "03",
+      "name": "FLEISCHMANN, CHARLES J",
+      "office": "H",
+      "party": "REP",
+      "state": "TN"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "F000459",
+      "candidate": {
+        "candidate_id": "H0TN03254",
+        "district": "03",
+        "name": "FLEISCHMANN, CHARLES J",
+        "office": "H",
+        "party": "REP",
+        "state": "TN"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 59.2,
+          "value": 0.3627,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 90.0,
+          "value": 0.4704,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 84.7,
+          "value": 0.6977,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 61.4,
+          "value": 0.7285,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 36.4,
+          "value": 0.003,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "8 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+          "penalty": 32,
+          "ptr_filings": 8
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 62.1,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 30.1,
+      "source": "fec_live",
+      "stockPenalty": 32,
+      "stockPtrCount": 8,
+      "updated_at": "2026-07-23T22:01:54.941590+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 4835524.55,
+      "debts": 0.0,
+      "disbursements": 752330.86,
+      "individualContributions": 1482029.79,
+      "receipts": 2330803.33
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "F000459",
     "birthYear": "1962",
@@ -396,7 +603,7 @@
     "birthYear": "1962",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1496,
+      "count": 1500,
       "url": "https://api.congress.gov/v3/member/F000459/cosponsored-legislation"
     },
     "currentMember": true,
@@ -537,7 +744,7 @@
         "stateName": "Tennessee"
       }
     ],
-    "updateDate": "2026-07-22T07:40:22Z"
+    "updateDate": "2026-07-31T07:40:20Z"
   },
   "nominate": {
     "dim1": 0.432,

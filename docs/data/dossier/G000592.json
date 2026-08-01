@@ -124,7 +124,7 @@
       "birthYear": "1982",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 923,
+        "count": 927,
         "url": "https://api.congress.gov/v3/member/G000592/cosponsored-legislation"
       },
       "currentMember": true,
@@ -235,7 +235,7 @@
           "stateName": "Maine"
         }
       ],
-      "updateDate": "2026-07-22T07:40:25Z"
+      "updateDate": "2026-07-31T07:40:22Z"
     },
     "request": {
       "bioguideId": "g000592",
@@ -244,13 +244,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "G000592",
+    "candidate": {
+      "candidate_id": "H8ME02185",
+      "district": "02",
+      "name": "GOLDEN, JARED",
+      "office": "H",
+      "party": "DEM",
+      "state": "ME"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 52.1,
+        "value": 0.2598,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 62.9,
+        "value": 0.141,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 93.8,
+        "value": 0.8609,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9998,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 82.4,
+        "value": 0.1857,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 79.3,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 367175.81,
+          "label": "Small individual (unitemized)",
+          "share": 0.1598380857149634
+        },
+        {
+          "amount": 1610449.83,
+          "label": "Large individual (itemized)",
+          "share": 0.7010571256510288
+        },
+        {
+          "amount": 319000.0,
+          "label": "PAC / other committees",
+          "share": 0.1388663086031548
+        },
+        {
+          "amount": 547.83,
+          "label": "Political party committees",
+          "share": 0.00023848003085287243
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H8ME02185",
+        "district": "02",
+        "name": "GOLDEN, JARED",
+        "office": "H",
+        "party": "DEM",
+        "state": "ME"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 397679.36,
+        "debts": 0.0,
+        "disbursements": 2311630.49,
+        "individualContributions": 1977625.64,
+        "receipts": 2582579.97
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 79.3,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:13:34.479305+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "G000592",
+    "breakdown": [
+      {
+        "amount": 367175.81,
+        "label": "Small individual (unitemized)",
+        "share": 0.1598380857149634
+      },
+      {
+        "amount": 1610449.83,
+        "label": "Large individual (itemized)",
+        "share": 0.7010571256510288
+      },
+      {
+        "amount": 319000.0,
+        "label": "PAC / other committees",
+        "share": 0.1388663086031548
+      },
+      {
+        "amount": 547.83,
+        "label": "Political party committees",
+        "share": 0.00023848003085287243
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H8ME02185",
+      "district": "02",
+      "name": "GOLDEN, JARED",
+      "office": "H",
+      "party": "DEM",
+      "state": "ME"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000592",
+      "candidate": {
+        "candidate_id": "H8ME02185",
+        "district": "02",
+        "name": "GOLDEN, JARED",
+        "office": "H",
+        "party": "DEM",
+        "state": "ME"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 52.1,
+          "value": 0.2598,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 62.9,
+          "value": 0.141,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 93.8,
+          "value": 0.8609,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9998,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 82.4,
+          "value": 0.1857,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 79.3,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 79.3,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:13:34.479305+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 397679.36,
+      "debts": 0.0,
+      "disbursements": 2311630.49,
+      "individualContributions": 1977625.64,
+      "receipts": 2582579.97
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "G000592",
     "birthYear": "1982",
@@ -332,7 +537,7 @@
     "birthYear": "1982",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 923,
+      "count": 927,
       "url": "https://api.congress.gov/v3/member/G000592/cosponsored-legislation"
     },
     "currentMember": true,
@@ -443,7 +648,7 @@
         "stateName": "Maine"
       }
     ],
-    "updateDate": "2026-07-22T07:40:25Z"
+    "updateDate": "2026-07-31T07:40:22Z"
   },
   "nominate": {
     "dim1": -0.107,

@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-09",
+        "state": "OR"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Cybersecurity Skills Integration Act This bill requires the Department of Education to establish a pilot program in order to award grants to partnerships between postsecondary educational institutions and employers in critical infrastructure sectors for cybersecurity education programs.",
+      "updated_at": "2026-04-03T19:45:42Z"
+    },
+    "detailPath": "119/hr/7885",
+    "identifier": "HR 7885",
+    "introducedDate": "2026-03-09",
+    "latestAction": {
+      "date": "2026-03-09",
+      "text": "Referred to the House Committee on Education and Workforce."
+    },
+    "number": "7885",
+    "originChamber": "House",
+    "policyArea": "Education",
+    "sponsors": [
+      {
+        "bioguideId": "T000467",
+        "district": 15,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Thompson, Glenn [R-PA-15]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Cybersecurity Skills Integration Act",
+    "type": "HR",
+    "updatedAt": "2026-04-03T19:46:13Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7885",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:39.187799+00:00",
+  "source": "congress_api"
+}

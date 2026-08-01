@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "J000294",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Jeffries, Hakeem S. [D-NY-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "L000597",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lee, Laurel M. [R-FL-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "B001298",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bacon, Don [R-NE-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-11",
+        "state": "NE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Effective Assistance of Counsel in the Digital Era Act This bill prohibits the Department of Justice from monitoring the contents of a privileged electronic communication between an incarcerated person and his or her legal representative.",
+      "updated_at": "2026-04-03T15:17:00Z"
+    },
+    "detailPath": "119/hr/7491",
+    "identifier": "HR 7491",
+    "introducedDate": "2026-02-11",
+    "latestAction": {
+      "date": "2026-02-11",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7491",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "D000631",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Dean, Madeleine [D-PA-4]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Effective Assistance of Counsel in the Digital Era Act",
+    "type": "HR",
+    "updatedAt": "2026-04-03T15:17:25Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7491",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:47.047789+00:00",
+  "source": "congress_api"
+}

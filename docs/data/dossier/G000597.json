@@ -117,7 +117,7 @@
       "birthYear": "1984",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1067,
+        "count": 1070,
         "url": "https://api.congress.gov/v3/member/G000597/cosponsored-legislation"
       },
       "currentMember": true,
@@ -208,7 +208,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-07-22T07:40:25Z"
+      "updateDate": "2026-07-31T07:40:22Z"
     },
     "request": {
       "bioguideId": "g000597",
@@ -217,13 +217,220 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "G000597",
+    "candidate": {
+      "candidate_id": "H0NY02234",
+      "district": "02",
+      "name": "GARBARINO, ANDREW",
+      "office": "H",
+      "party": "REP",
+      "state": "NY"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 47.3,
+        "value": 0.1868,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 86.9,
+        "value": 0.4054,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 50.1,
+        "value": 0.2953,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 38.4,
+        "value": 0.0074,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+        "penalty": 10,
+        "ptr_filings": 1
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 56.6,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 5584.45,
+          "label": "Small individual (unitemized)",
+          "share": 0.002180112570004902
+        },
+        {
+          "amount": 750957.59,
+          "label": "Large individual (itemized)",
+          "share": 0.2931662171744017
+        },
+        {
+          "amount": 1805000.0,
+          "label": "PAC / other committees",
+          "share": 0.7046536702555933
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H0NY02234",
+        "district": "02",
+        "name": "GARBARINO, ANDREW",
+        "office": "H",
+        "party": "REP",
+        "state": "NY"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 3458914.55,
+        "debts": 0.0,
+        "disbursements": 1599707.78,
+        "individualContributions": 756542.04,
+        "receipts": 3513016.04
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "F",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 46.6,
+    "source": "fec_live",
+    "stockPenalty": 10,
+    "stockPtrCount": 1,
+    "updated_at": "2026-07-23T23:12:42.622502+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "G000597",
+    "breakdown": [
+      {
+        "amount": 5584.45,
+        "label": "Small individual (unitemized)",
+        "share": 0.002180112570004902
+      },
+      {
+        "amount": 750957.59,
+        "label": "Large individual (itemized)",
+        "share": 0.2931662171744017
+      },
+      {
+        "amount": 1805000.0,
+        "label": "PAC / other committees",
+        "share": 0.7046536702555933
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0NY02234",
+      "district": "02",
+      "name": "GARBARINO, ANDREW",
+      "office": "H",
+      "party": "REP",
+      "state": "NY"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "G000597",
+      "candidate": {
+        "candidate_id": "H0NY02234",
+        "district": "02",
+        "name": "GARBARINO, ANDREW",
+        "office": "H",
+        "party": "REP",
+        "state": "NY"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 47.3,
+          "value": 0.1868,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 86.9,
+          "value": 0.4054,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 50.1,
+          "value": 0.2953,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 38.4,
+          "value": 0.0074,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 56.6,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "F",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 46.6,
+      "source": "fec_live",
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-07-23T23:12:42.622502+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 3458914.55,
+      "debts": 0.0,
+      "disbursements": 1599707.78,
+      "individualContributions": 756542.04,
+      "receipts": 3513016.04
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "G000597",
     "birthYear": "1984",
@@ -296,7 +503,7 @@
     "birthYear": "1984",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1067,
+      "count": 1070,
       "url": "https://api.congress.gov/v3/member/G000597/cosponsored-legislation"
     },
     "currentMember": true,
@@ -387,7 +594,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-07-22T07:40:25Z"
+    "updateDate": "2026-07-31T07:40:22Z"
   },
   "nominate": {
     "dim1": 0.244,

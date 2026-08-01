@@ -107,7 +107,7 @@
       "birthYear": "1982",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 345,
+        "count": 347,
         "url": "https://api.congress.gov/v3/member/W000831/cosponsored-legislation"
       },
       "currentMember": true,
@@ -153,7 +153,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 18,
+        "count": 21,
         "url": "https://api.congress.gov/v3/member/W000831/sponsored-legislation"
       },
       "state": "Virginia",
@@ -168,7 +168,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-07-22T07:40:24Z"
+      "updateDate": "2026-07-31T07:40:21Z"
     },
     "request": {
       "bioguideId": "w000831",
@@ -177,13 +177,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "W000831",
+    "candidate": {
+      "candidate_id": "H6VA11066",
+      "district": "11",
+      "name": "WALKINSHAW, JAMES",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 75.8,
+        "value": 0.5353,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.0,
+        "value": 0.7493,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 82.4,
+        "value": 0.6574,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 0.9963,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 84.4,
+        "value": 0.2173,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 85.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 386986.73,
+          "label": "Small individual (unitemized)",
+          "share": 0.14284412034196342
+        },
+        {
+          "amount": 1394097.92,
+          "label": "Large individual (itemized)",
+          "share": 0.5145879060322324
+        },
+        {
+          "amount": 918069.42,
+          "label": "PAC / other committees",
+          "share": 0.33887678451598735
+        },
+        {
+          "amount": 10000.0,
+          "label": "Political party committees",
+          "share": 0.0036911891098168515
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6VA11066",
+        "district": "11",
+        "name": "WALKINSHAW, JAMES",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 968203.32,
+        "debts": 0.0,
+        "disbursements": 1757543.77,
+        "individualContributions": 1781084.65,
+        "receipts": 2725747.09
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "B",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 85.2,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:00:44.815921+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "W000831",
+    "breakdown": [
+      {
+        "amount": 386986.73,
+        "label": "Small individual (unitemized)",
+        "share": 0.14284412034196342
+      },
+      {
+        "amount": 1394097.92,
+        "label": "Large individual (itemized)",
+        "share": 0.5145879060322324
+      },
+      {
+        "amount": 918069.42,
+        "label": "PAC / other committees",
+        "share": 0.33887678451598735
+      },
+      {
+        "amount": 10000.0,
+        "label": "Political party committees",
+        "share": 0.0036911891098168515
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6VA11066",
+      "district": "11",
+      "name": "WALKINSHAW, JAMES",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "W000831",
+      "candidate": {
+        "candidate_id": "H6VA11066",
+        "district": "11",
+        "name": "WALKINSHAW, JAMES",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 75.8,
+          "value": 0.5353,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.0,
+          "value": 0.7493,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 82.4,
+          "value": 0.6574,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 0.9963,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 84.4,
+          "value": 0.2173,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 85.2,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "B",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 85.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:00:44.815921+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 968203.32,
+      "debts": 0.0,
+      "disbursements": 1757543.77,
+      "individualContributions": 1781084.65,
+      "receipts": 2725747.09
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "W000831",
     "birthYear": "1982",
@@ -238,7 +443,7 @@
     "birthYear": "1982",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 345,
+      "count": 347,
       "url": "https://api.congress.gov/v3/member/W000831/cosponsored-legislation"
     },
     "currentMember": true,
@@ -284,7 +489,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 18,
+      "count": 21,
       "url": "https://api.congress.gov/v3/member/W000831/sponsored-legislation"
     },
     "state": "Virginia",
@@ -299,7 +504,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-07-22T07:40:24Z"
+    "updateDate": "2026-07-31T07:40:21Z"
   },
   "nominate": {
     "dim1": -0.41,

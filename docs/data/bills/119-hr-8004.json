@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M000312",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McGovern, James P. [D-MA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "MA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Leave No Americans Behind Act of 2026",
+      "updated_at": "2026-04-03T14:52:36Z"
+    },
+    "detailPath": "119/hr/8004",
+    "identifier": "HR 8004",
+    "introducedDate": "2026-03-19",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Referred to the House Committee on Foreign Affairs."
+    },
+    "number": "8004",
+    "originChamber": "House",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "D000624",
+        "district": 6,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Dingell, Debbie [D-MI-6]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MI"
+      }
+    ],
+    "title": "Leave No Americans Behind Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-04-03T14:52:36Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/8004",
+    "votes": []
+  },
+  "generated_at": "2026-08-01T06:16:36.325622+00:00",
+  "source": "congress_api"
+}

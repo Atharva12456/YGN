@@ -121,7 +121,7 @@
       "birthYear": "1974",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 179,
+        "count": 180,
         "url": "https://api.congress.gov/v3/member/R000620/cosponsored-legislation"
       },
       "currentMember": true,
@@ -202,7 +202,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-07-22T07:40:22Z"
+      "updateDate": "2026-07-31T07:40:20Z"
     },
     "request": {
       "bioguideId": "r000620",
@@ -211,13 +211,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "R000620",
+    "candidate": {
+      "candidate_id": "H4CA29141",
+      "district": "29",
+      "name": "RIVAS, LUZ",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 83.7,
+        "value": 0.6306,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.2,
+        "value": 0.7862,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 60.0,
+        "value": 0.4665,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 54.2,
+        "value": 0.0417,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 72.1,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 13006.07,
+          "label": "Small individual (unitemized)",
+          "share": 0.01944735187884392
+        },
+        {
+          "amount": 298987.85,
+          "label": "Large individual (itemized)",
+          "share": 0.4470621737733999
+        },
+        {
+          "amount": 356789.68,
+          "label": "PAC / other committees",
+          "share": 0.5334904743477561
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H4CA29141",
+        "district": "29",
+        "name": "RIVAS, LUZ",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 377476.23,
+        "debts": 0.0,
+        "disbursements": 557465.01,
+        "individualContributions": 311993.92,
+        "receipts": 670678.01
+      }
+    },
+    "generated_at": "2026-07-23T23:12:13.734347+00:00",
+    "grade": "C-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 72.1,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T23:14:34.833003+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "R000620",
+    "breakdown": [
+      {
+        "amount": 13006.07,
+        "label": "Small individual (unitemized)",
+        "share": 0.01944735187884392
+      },
+      {
+        "amount": 298987.85,
+        "label": "Large individual (itemized)",
+        "share": 0.4470621737733999
+      },
+      {
+        "amount": 356789.68,
+        "label": "PAC / other committees",
+        "share": 0.5334904743477561
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H4CA29141",
+      "district": "29",
+      "name": "RIVAS, LUZ",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "R000620",
+      "candidate": {
+        "candidate_id": "H4CA29141",
+        "district": "29",
+        "name": "RIVAS, LUZ",
+        "office": "H",
+        "party": "DEM",
+        "state": "CA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 83.7,
+          "value": 0.6306,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.2,
+          "value": 0.7862,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 60.0,
+          "value": 0.4665,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 54.2,
+          "value": 0.0417,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 72.1,
+      "generated_at": "2026-07-23T23:12:13.734347+00:00",
+      "grade": "C-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 72.1,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T23:14:34.833003+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 377476.23,
+      "debts": 0.0,
+      "disbursements": 557465.01,
+      "individualContributions": 311993.92,
+      "receipts": 670678.01
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "R000620",
     "birthYear": "1974",
@@ -272,7 +477,7 @@
     "birthYear": "1974",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 179,
+      "count": 180,
       "url": "https://api.congress.gov/v3/member/R000620/cosponsored-legislation"
     },
     "currentMember": true,
@@ -353,7 +558,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-07-22T07:40:22Z"
+    "updateDate": "2026-07-31T07:40:20Z"
   },
   "nominate": {
     "dim1": -0.501,

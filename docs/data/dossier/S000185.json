@@ -82,7 +82,7 @@
       "birthYear": "1947",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 4529,
+        "count": 4532,
         "url": "https://api.congress.gov/v3/member/S000185/cosponsored-legislation"
       },
       "currentMember": true,
@@ -312,7 +312,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-07-22T07:40:22Z"
+      "updateDate": "2026-07-31T07:40:19Z"
     },
     "request": {
       "bioguideId": "s000185",
@@ -321,13 +321,218 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "S000185",
+    "candidate": {
+      "candidate_id": "H6VA01117",
+      "district": "03",
+      "name": "SCOTT, ROBERT C",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 85.2,
+        "value": 0.6567,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 97.2,
+        "value": 0.7845,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 69.5,
+        "value": 0.5462,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 62.3,
+        "value": 0.0733,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": true,
+        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+        "penalty": 0,
+        "ptr_filings": 0
+      }
+    },
+    "cycle": 2026,
+    "financeScore": 77.2,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 26416.96,
+          "label": "Small individual (unitemized)",
+          "share": 0.040046028216871074
+        },
+        {
+          "amount": 333867.05,
+          "label": "Large individual (itemized)",
+          "share": 0.5061161202872513
+        },
+        {
+          "amount": 299380.91,
+          "label": "PAC / other committees",
+          "share": 0.4538378514958776
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "H6VA01117",
+        "district": "03",
+        "name": "SCOTT, ROBERT C",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 169257.69,
+        "debts": 3191.43,
+        "disbursements": 653270.52,
+        "individualContributions": 360284.01,
+        "receipts": 659664.92
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "C+",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 77.2,
+    "source": "fec_live",
+    "stockPenalty": 0,
+    "stockPtrCount": 0,
+    "updated_at": "2026-07-23T22:02:07.548430+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "S000185",
+    "breakdown": [
+      {
+        "amount": 26416.96,
+        "label": "Small individual (unitemized)",
+        "share": 0.040046028216871074
+      },
+      {
+        "amount": 333867.05,
+        "label": "Large individual (itemized)",
+        "share": 0.5061161202872513
+      },
+      {
+        "amount": 299380.91,
+        "label": "PAC / other committees",
+        "share": 0.4538378514958776
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "H6VA01117",
+      "district": "03",
+      "name": "SCOTT, ROBERT C",
+      "office": "H",
+      "party": "DEM",
+      "state": "VA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "S000185",
+      "candidate": {
+        "candidate_id": "H6VA01117",
+        "district": "03",
+        "name": "SCOTT, ROBERT C",
+        "office": "H",
+        "party": "DEM",
+        "state": "VA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 85.2,
+          "value": 0.6567,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 97.2,
+          "value": 0.7845,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 69.5,
+          "value": 0.5462,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 62.3,
+          "value": 0.0733,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": true,
+          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+          "penalty": 0,
+          "ptr_filings": 0
+        }
+      },
+      "cycle": 2026,
+      "financeScore": 77.2,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "C+",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 77.2,
+      "source": "fec_live",
+      "stockPenalty": 0,
+      "stockPtrCount": 0,
+      "updated_at": "2026-07-23T22:02:07.548430+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 169257.69,
+      "debts": 3191.43,
+      "disbursements": 653270.52,
+      "individualContributions": 360284.01,
+      "receipts": 659664.92
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "S000185",
     "birthYear": "1947",
@@ -526,7 +731,7 @@
     "birthYear": "1947",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 4529,
+      "count": 4532,
       "url": "https://api.congress.gov/v3/member/S000185/cosponsored-legislation"
     },
     "currentMember": true,
@@ -756,7 +961,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-07-22T07:40:22Z"
+    "updateDate": "2026-07-31T07:40:19Z"
   },
   "nominate": {
     "dim1": -0.451,

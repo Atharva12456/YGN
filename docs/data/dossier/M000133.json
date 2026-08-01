@@ -192,7 +192,7 @@
       "birthYear": "1946",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 10202,
+        "count": 10212,
         "url": "https://api.congress.gov/v3/member/M000133/cosponsored-legislation"
       },
       "currentMember": true,
@@ -227,7 +227,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 1671,
+        "count": 1677,
         "url": "https://api.congress.gov/v3/member/M000133/sponsored-legislation"
       },
       "state": "Massachusetts",
@@ -494,13 +494,208 @@
     }
   },
   "errors": [],
-  "ethics": null,
-  "funding": {
-    "available": false,
-    "note": "Campaign-funding detail is not available in this snapshot.",
-    "source": "static"
+  "ethics": {
+    "bioguideId": "M000133",
+    "candidate": {
+      "candidate_id": "S4MA00028",
+      "district": "00",
+      "name": "MARKEY, EDWARD SEN.",
+      "office": "S",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "components": {
+      "donor_diversity": {
+        "score": 46.3,
+        "value": 0.1719,
+        "weight": 0.2
+      },
+      "in_state_support": {
+        "score": 89.4,
+        "value": 0.4589,
+        "weight": 0.1
+      },
+      "pac_independence": {
+        "score": 93.1,
+        "value": 0.8482,
+        "weight": 0.25
+      },
+      "self_party_independence": {
+        "score": 96.0,
+        "value": 1.0,
+        "weight": 0.15
+      },
+      "small_donor": {
+        "score": 88.7,
+        "value": 0.2857,
+        "weight": 0.3
+      },
+      "stock_conflict": {
+        "measurable": false,
+        "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+      }
+    },
+    "cycle": 2026,
+    "funding": {
+      "available": true,
+      "breakdown": [
+        {
+          "amount": 1098929.22,
+          "label": "Small individual (unitemized)",
+          "share": 0.24237376739432165
+        },
+        {
+          "amount": 2746947.84,
+          "label": "Large individual (itemized)",
+          "share": 0.6058516642377516
+        },
+        {
+          "amount": 688150.0,
+          "label": "PAC / other committees",
+          "share": 0.15177456836792677
+        },
+        {
+          "amount": 0.0,
+          "label": "Political party committees",
+          "share": 0.0
+        },
+        {
+          "amount": 0.0,
+          "label": "Self-funding & candidate loans",
+          "share": 0.0
+        }
+      ],
+      "candidate": {
+        "candidateId": "S4MA00028",
+        "district": "00",
+        "name": "MARKEY, EDWARD SEN.",
+        "office": "S",
+        "party": "DEM",
+        "state": "MA"
+      },
+      "cycle": 2026,
+      "totals": {
+        "cashOnHand": 2227616.88,
+        "debts": 0.0,
+        "disbursements": 6972838.36,
+        "individualContributions": 3845877.06,
+        "receipts": 7548478.64
+      }
+    },
+    "generated_at": "2026-07-23T22:00:18.353113+00:00",
+    "grade": "B-",
+    "method": "campaign_finance_stock_v4",
+    "notes": [
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+    ],
+    "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+    "score": 82.5,
+    "source": "fec_live",
+    "updated_at": "2026-07-23T22:03:19.992820+00:00"
   },
-  "generated_at": "2026-07-23T06:18:28.958158+00:00",
+  "funding": {
+    "available": true,
+    "bioguideId": "M000133",
+    "breakdown": [
+      {
+        "amount": 1098929.22,
+        "label": "Small individual (unitemized)",
+        "share": 0.24237376739432165
+      },
+      {
+        "amount": 2746947.84,
+        "label": "Large individual (itemized)",
+        "share": 0.6058516642377516
+      },
+      {
+        "amount": 688150.0,
+        "label": "PAC / other committees",
+        "share": 0.15177456836792677
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 0.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.0
+      }
+    ],
+    "candidate": {
+      "candidateId": "S4MA00028",
+      "district": "00",
+      "name": "MARKEY, EDWARD SEN.",
+      "office": "S",
+      "party": "DEM",
+      "state": "MA"
+    },
+    "cycle": 2026,
+    "grade": {
+      "bioguideId": "M000133",
+      "candidate": {
+        "candidate_id": "S4MA00028",
+        "district": "00",
+        "name": "MARKEY, EDWARD SEN.",
+        "office": "S",
+        "party": "DEM",
+        "state": "MA"
+      },
+      "components": {
+        "donor_diversity": {
+          "score": 46.3,
+          "value": 0.1719,
+          "weight": 0.2
+        },
+        "in_state_support": {
+          "score": 89.4,
+          "value": 0.4589,
+          "weight": 0.1
+        },
+        "pac_independence": {
+          "score": 93.1,
+          "value": 0.8482,
+          "weight": 0.25
+        },
+        "self_party_independence": {
+          "score": 96.0,
+          "value": 1.0,
+          "weight": 0.15
+        },
+        "small_donor": {
+          "score": 88.7,
+          "value": 0.2857,
+          "weight": 0.3
+        },
+        "stock_conflict": {
+          "measurable": false,
+          "note": "Stock-trade conflict not machine-countable for this member (Senate filings require a provider key); grade reflects campaign finance only."
+        }
+      },
+      "cycle": 2026,
+      "generated_at": "2026-07-23T22:00:18.353113+00:00",
+      "grade": "B-",
+      "method": "campaign_finance_stock_v4",
+      "notes": [
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      ],
+      "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+      "score": 82.5,
+      "source": "fec_live",
+      "updated_at": "2026-07-23T22:03:19.992820+00:00"
+    },
+    "note": null,
+    "source": "fec_committed",
+    "totals": {
+      "cashOnHand": 2227616.88,
+      "debts": 0.0,
+      "disbursements": 6972838.36,
+      "individualContributions": 3845877.06,
+      "receipts": 7548478.64
+    }
+  },
+  "generated_at": "2026-08-01T06:16:23.366740+00:00",
   "history": {
     "bioguideId": "M000133",
     "birthYear": "1946",
@@ -781,7 +976,7 @@
     "birthYear": "1946",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 10202,
+      "count": 10212,
       "url": "https://api.congress.gov/v3/member/M000133/cosponsored-legislation"
     },
     "currentMember": true,
@@ -816,7 +1011,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 1671,
+      "count": 1677,
       "url": "https://api.congress.gov/v3/member/M000133/sponsored-legislation"
     },
     "state": "Massachusetts",
