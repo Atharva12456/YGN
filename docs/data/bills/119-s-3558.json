@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001305",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Budd, Ted [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-18",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "National Guard Protective Zone Act",
+      "updated_at": "2026-04-06T13:09:36Z"
+    },
+    "detailPath": "119/s/3558",
+    "identifier": "S 3558",
+    "introducedDate": "2025-12-18",
+    "latestAction": {
+      "date": "2025-12-18",
+      "text": "Read twice and referred to the Committee on the Judiciary."
+    },
+    "number": "3558",
+    "originChamber": "Senate",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "C001095",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cotton, Tom [R-AR]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AR"
+      }
+    ],
+    "title": "National Guard Protective Zone Act",
+    "type": "S",
+    "updatedAt": "2026-04-06T13:09:36Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3558",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:40.193909+00:00",
+  "source": "congress_api"
+}

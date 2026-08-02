@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "T000193",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Thompson, Bennie G. [D-MS-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "MS"
+      },
+      {
+        "bioguideId": "P000621",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pou, Nellie [D-NJ-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "M001229",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McIver, LaMonica [D-NJ-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Safe Passage to the World Cup Act",
+      "updated_at": "2026-04-04T19:31:38Z"
+    },
+    "detailPath": "119/hr/7988",
+    "identifier": "HR 7988",
+    "introducedDate": "2026-03-18",
+    "latestAction": {
+      "date": "2026-03-18",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7988",
+    "originChamber": "House",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "S001193",
+        "district": 14,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Swalwell, Eric [D-CA-14]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Safe Passage to the World Cup Act",
+    "type": "HR",
+    "updatedAt": "2026-04-04T19:31:38Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7988",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:34.819569+00:00",
+  "source": "congress_api"
+}

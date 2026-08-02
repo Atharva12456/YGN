@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "D000616",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. DesJarlais, Scott [R-TN-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "H001077",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Higgins, Clay [R-LA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "M001212",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Moore, Barry [R-AL-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "A000372",
+        "district": 12,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Allen, Rick W. [R-GA-12]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-16",
+        "state": "GA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "National Guard Protective Zone Act",
+      "updated_at": "2026-04-06T13:09:42Z"
+    },
+    "detailPath": "119/hr/7898",
+    "identifier": "HR 7898",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "7898",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "B001325",
+        "district": 3,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Biggs, Sheri [R-SC-3]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "SC"
+      }
+    ],
+    "title": "National Guard Protective Zone Act",
+    "type": "HR",
+    "updatedAt": "2026-04-06T13:09:42Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7898",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:36.781984+00:00",
+  "source": "congress_api"
+}

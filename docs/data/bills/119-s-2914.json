@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-19",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "G000386",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Grassley, Chuck [R-IA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-07",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-07",
+        "state": "IL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Eastern Flank Strategic Partnership Act of 2025",
+      "updated_at": "2026-04-06T20:04:28Z"
+    },
+    "detailPath": "119/s/2914",
+    "identifier": "S 2914",
+    "introducedDate": "2025-09-19",
+    "latestAction": {
+      "date": "2025-09-19",
+      "text": "Read twice and referred to the Committee on Foreign Relations."
+    },
+    "number": "2914",
+    "originChamber": "Senate",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "W000437",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Wicker, Roger F. [R-MS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MS"
+      }
+    ],
+    "title": "Eastern Flank Strategic Partnership Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-04-06T20:04:28Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2914",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:48.119719+00:00",
+  "source": "congress_api"
+}

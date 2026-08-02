@@ -1,0 +1,96 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "M001243",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. McCormick, David [R-PA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-03",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "R000618",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Ricketts, Pete [R-NE]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-03",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-03",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "S001208",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Slotkin, Elissa [D-MI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-03",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-02",
+        "state": "NH"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "DETECT Nitazenes Act of 2025",
+      "updated_at": "2026-04-06T13:19:38Z"
+    },
+    "detailPath": "119/s/3093",
+    "identifier": "S 3093",
+    "introducedDate": "2025-11-03",
+    "latestAction": {
+      "date": "2025-11-03",
+      "text": "Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+    },
+    "number": "3093",
+    "originChamber": "Senate",
+    "policyArea": "Science, Technology, Communications",
+    "sponsors": [
+      {
+        "bioguideId": "S001227",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Schmitt, Eric [R-MO]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "DETECT Nitazenes Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-04-06T13:19:38Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3093",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:44.847528+00:00",
+  "source": "congress_api"
+}

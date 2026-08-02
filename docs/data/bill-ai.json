@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-01T06:23:49.099702+00:00",
-  "count": 191,
+  "generated_at": "2026-08-02T06:25:01.705656+00:00",
+  "count": 196,
   "bills": {
     "SRES 630": {
       "description": {
@@ -4004,6 +4004,97 @@
       "identifier": "SRES 653",
       "title": "A resolution designating March 21, 2026, as \"National Women in Agriculture Day\".",
       "source_updated_at": "2026-04-03T12:18:10Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/8149": {
+      "description": {
+        "summary": "The bill directs the Secretary of Agriculture, through NIFA, to study accessibility of addiction and mental health providers and services and identify barriers, best practices, and federal recommendations. It covers farmers, ranchers, agricultural workers, and their families affected by drought, extreme weather, commodity instability, misinformation, and related stressors.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T03:58:45.215027+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d36987a800267004b445af3b"
+      },
+      "canonical_id": "119/hr/8149",
+      "identifier": "HR 8149",
+      "title": "Agricultural Access to Addiction and Mental Health Care Act",
+      "source_updated_at": "2026-04-06T18:35:17Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/4168": {
+      "impact": {
+        "summary": "The bill requires USDA's Economic Research Service to publish after each Census a report on consolidation in beef, dairy, pork, and poultry. ERS must use NASS, FSIS, and AMS Packers and Stockyards data to analyze effects on ranchers, farmers, processing facilities, packers, and downstream consumers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T03:58:05.770137+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "f70794b7fec0615fda8226cf"
+      },
+      "canonical_id": "119/s/4168",
+      "identifier": "S 4168",
+      "title": "Livestock Consolidation Research Act of 2026",
+      "source_updated_at": "2026-04-06T13:33:52Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/8017": {
+      "description": {
+        "summary": "The bill amends section 201(a) of the Civil Rights Act to deem an establishment that implements Sharia law in providing goods, services, facilities, privileges, advantages, or accommodations to be discriminating or segregating on the basis of religion. It covers establishments classed as public accommodations under section 201(a) nationwide.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T03:58:32.630085+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8d665979f1f5a8e7efc69f8b"
+      },
+      "impact": {
+        "summary": "The bill amends Section 201(a) of the Civil Rights Act to treat a covered public accommodation's use of \"Sharia law\" in providing goods or services as illegal religious discrimination. It would apply to hotels, restaurants, stores, hospitals, schools, mosques, Muslim-owned businesses, and DOJ enforcement.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T03:58:35.443240+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "8d665979f1f5a8e7efc69f8b"
+      },
+      "canonical_id": "119/hr/8017",
+      "identifier": "HR 8017",
+      "title": "Defeat Sharia Law in America Act",
+      "source_updated_at": "2026-04-06T13:23:03Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/4154": {
+      "description": {
+        "summary": "The bill creates an NIJ task force to study use of AI speech\u2011to\u2011text and automatic speech recognition in U.S. courts. It requires a 15\u2011member panel (4 federal, 11 nonfederal) to assess feasibility, accuracy, privacy, and civil\u2011liberty issues and recommend reforms to safeguard constitutional rights and accurate court records.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T05:38:47.868890+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "3ca386fec65ec33fbd10837f"
+      },
+      "canonical_id": "119/s/4154",
+      "identifier": "S 4154",
+      "title": "Research and Oversight of AI in Courts Act of 2026",
+      "source_updated_at": "2026-04-06T13:24:39Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/s/846": {
+      "description": {
+        "summary": "The bill funds a pilot program awarding grants to States, Indian Tribes, and Tribal organizations to supplement wages of eligible child care workers. It covers center\u2011 and home\u2011based workers at licensed or registered providers nationwide including Tribal lands, with grants awarded based on child population, workforce size, wages, and subsidy gaps.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T05:54:16.766734+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4bf5ffc2230811a1bc16982f"
+      },
+      "impact": {
+        "summary": "The Secretary of Health and Human Services would run a pilot awarding competitive grants to States, Indian Tribes, and Tribal organizations to supplement wages of eligible child care workers in licensed, regulated, or registered centers and family child care homes. It references CCDBG eligibility.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-02T03:58:18.153190+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4bf5ffc2230811a1bc16982f"
+      },
+      "canonical_id": "119/s/846",
+      "identifier": "S 846",
+      "title": "Child Care Workforce Act",
+      "source_updated_at": "2026-04-06T15:28:21Z",
       "content_version": "bill-ai-v6"
     }
   }

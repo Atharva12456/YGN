@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "K000384",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Kaine, Tim [D-VA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-04",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-04",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "K000383",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. King, Angus S., Jr. [I-ME]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-04",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "G000555",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gillibrand, Kirsten E. [D-NY]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-04",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-06",
+        "state": "MN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Child Care Workforce Act",
+      "updated_at": "2026-04-06T15:28:21Z"
+    },
+    "detailPath": "119/s/846",
+    "identifier": "S 846",
+    "introducedDate": "2025-03-04",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "846",
+    "originChamber": "Senate",
+    "policyArea": "Families",
+    "sponsors": [
+      {
+        "bioguideId": "B001319",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Britt, Katie Boyd [R-AL]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AL"
+      }
+    ],
+    "title": "Child Care Workforce Act",
+    "type": "S",
+    "updatedAt": "2026-04-06T15:28:21Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/846",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill funds a pilot program awarding grants to States, Indian Tribes, and Tribal organizations to supplement wages of eligible child care workers. It covers center\u2011 and home\u2011based workers at licensed or registered providers nationwide including Tribal lands, with grants awarded based on child population, workforce size, wages, and subsidy gaps.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-02T05:54:16.766734+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4bf5ffc2230811a1bc16982f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Secretary of Health and Human Services would run a pilot awarding competitive grants to States, Indian Tribes, and Tribal organizations to supplement wages of eligible child care workers in licensed, regulated, or registered centers and family child care homes. It references CCDBG eligibility.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-02T03:58:18.153190+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4bf5ffc2230811a1bc16982f",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-02T06:20:34.179447+00:00",
+  "source": "congress_api"
+}

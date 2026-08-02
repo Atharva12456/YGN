@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "C001068",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cohen, Steve [D-TN-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-17",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "T000463",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Turner, Michael R. [R-OH-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-24",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-04",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "B001298",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Bacon, Don [R-NE-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-12",
+        "state": "NE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Eastern Flank Strategic Partnership Act of 2025",
+      "updated_at": "2026-04-06T20:04:28Z"
+    },
+    "detailPath": "119/hr/5793",
+    "identifier": "HR 5793",
+    "introducedDate": "2025-10-17",
+    "latestAction": {
+      "date": "2025-10-17",
+      "text": "Referred to the Committee on Foreign Affairs, and in addition to the Committee on Armed Services, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "5793",
+    "originChamber": "House",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "W000795",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Wilson, Joe [R-SC-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "SC"
+      }
+    ],
+    "title": "Eastern Flank Strategic Partnership Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-04-06T20:04:28Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5793",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:45.560624+00:00",
+  "source": "congress_api"
+}

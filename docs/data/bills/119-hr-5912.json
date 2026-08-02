@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001219",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Del. Moylan, James C. [R-GU-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-11-04",
+        "state": "GU"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "DISRUPT Act",
+      "updated_at": "2026-04-06T18:12:56Z"
+    },
+    "detailPath": "119/hr/5912",
+    "identifier": "HR 5912",
+    "introducedDate": "2025-11-04",
+    "latestAction": {
+      "date": "2025-11-04",
+      "text": "Referred to the Committee on Foreign Affairs, and in addition to the Committees on Armed Services, and Intelligence (Permanent Select), for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "5912",
+    "originChamber": "House",
+    "policyArea": "International Affairs",
+    "sponsors": [
+      {
+        "bioguideId": "K000391",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Krishnamoorthi, Raja [D-IL-8]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "DISRUPT Act",
+    "type": "HR",
+    "updatedAt": "2026-04-06T18:12:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5912",
+    "votes": []
+  },
+  "generated_at": "2026-08-02T06:20:44.647911+00:00",
+  "source": "congress_api"
+}

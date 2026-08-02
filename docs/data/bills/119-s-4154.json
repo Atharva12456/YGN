@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "W000800",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Welch, Peter [D-VT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-19",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "H001079",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Hyde-Smith, Cindy [R-MS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-26",
+        "state": "MS"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Research and Oversight of AI in Courts Act of 2026",
+      "updated_at": "2026-04-06T13:24:39Z"
+    },
+    "detailPath": "119/s/4154",
+    "identifier": "S 4154",
+    "introducedDate": "2026-03-19",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Read twice and referred to the Committee on the Judiciary."
+    },
+    "number": "4154",
+    "originChamber": "Senate",
+    "policyArea": "Law",
+    "sponsors": [
+      {
+        "bioguideId": "W000437",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Wicker, Roger F. [R-MS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MS"
+      }
+    ],
+    "title": "Research and Oversight of AI in Courts Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-04-06T13:24:39Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4154",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill creates an NIJ task force to study use of AI speech\u2011to\u2011text and automatic speech recognition in U.S. courts. It requires a 15\u2011member panel (4 federal, 11 nonfederal) to assess feasibility, accuracy, privacy, and civil\u2011liberty issues and recommend reforms to safeguard constitutional rights and accurate court records.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-02T05:38:47.868890+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3ca386fec65ec33fbd10837f",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-02T06:20:33.983141+00:00",
+  "source": "congress_api"
+}
