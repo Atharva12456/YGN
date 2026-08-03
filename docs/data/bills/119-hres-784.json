@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 7,
@@ -109,7 +109,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-06T13:04:18Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/784",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution designates September 29, 2025, as \"National Coffee Day\" and supports strengthening coffee supply chains, agricultural research, climate resilience, and coffee health research. It recognizes growers, importers, roasters, retailers, baristas, researchers, U.S. economic impacts and exports, domestic producers in Hawai'i and Puerto Rico, and global smallholder farmers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:46.489667+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c14670e5866353c40e1eb2b3",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The House resolution would designate September 29, 2025, as \"National Coffee Day\" and recognize U.S. coffee growers in Hawai'i and Puerto Rico, importers, roasters, retailers, baristas, and researchers. It supports supply chain resilience, agricultural research, farmer livelihoods, and trade actions involving the U.S. Trade Representative.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:47.462616+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c14670e5866353c40e1eb2b3",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:46.643126+00:00",
   "source": "congress_api"

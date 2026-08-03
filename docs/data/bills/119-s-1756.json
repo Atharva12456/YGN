@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 23,
@@ -269,7 +269,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T19:40:38Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1756",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Conscience Protection Act of 2025 would bar federal discrimination against health care entities that decline to participate in abortions and authorize private enforcement of federal conscience laws. It covers hospitals, clinics, providers, insurers, States, and other entities operating under federal health statutes and HHS oversight.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:32:00.795797+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9e36b1c1b6ad076f596d6c7a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill prohibits discrimination against health care entities that decline to participate in abortion and strengthens enforcement of federal conscience protections under the Public Health Service Act and laws like the Church Amendments, Coats\u2011Snowe, and Weldon. It affects hospitals, clinics, insurers, state agencies and HHS.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:31:58.210772+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9e36b1c1b6ad076f596d6c7a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:34.374337+00:00",
   "source": "congress_api"

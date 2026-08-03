@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T13:23:55Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7980",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends the Federal Food, Drug, and Cosmetic Act to change \"controlled substances\" to \"drugs,\" expanding FDA authority to order cessation of distribution and recalls for any drug. It also applies related import/export prohibitions and names the Center for Biologics Evaluation and Research alongside CDER and senior officials.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:15:07.541249+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1a50f1f6914df097a1461968",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill lets the Food and Drug Administration use cease-distribution and recall orders for all drugs under the Federal Food, Drug, and Cosmetic Act. That expands FDA authority over drugmakers, wholesalers, pharmacies, hospitals, importers/exporters, and patients by enabling orders to stop distribution and require recalls.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:15:11.241501+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1a50f1f6914df097a1461968",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:35.164825+00:00",
   "source": "congress_api"

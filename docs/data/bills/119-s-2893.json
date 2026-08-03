@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 7,
@@ -109,7 +109,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T19:34:47Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2893",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The SEVER Act requires denial of U.S. visas or admission to any person subject to sanctions under Executive Order 13876. It applies that restriction to individuals seeking entry as representatives to the United Nations, based on the EO as in effect on September 16, 2025.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:39:09.567563+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15b877a4d4c2e5b4e1e7a146",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The SEVER Act would require denial of admission to the United States for any United Nations representatives who are subject to sanctions under Executive Order 13876 (relating to Iran). It directs the State Department to refuse visas to people designated under EO 13876.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:39:14.849608+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15b877a4d4c2e5b4e1e7a146",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:48.308742+00:00",
   "source": "congress_api"

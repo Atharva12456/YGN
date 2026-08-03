@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -68,6 +68,15 @@
       "content_version": "bill-ai-v6",
       "input_hash": "f70794b7fec0615fda8226cf",
       "status": "AI impact analysis",
+      "source": "committed"
+    },
+    "aiDescription": {
+      "summary": "The bill directs USDA's Economic Research Service to publish, within one year after each Census of Agriculture release, a report on consolidation and concentration in the livestock industry. It must cover beef, dairy, pork, and poultry (broilers, eggs, turkeys), track facility and herd changes, and assess producer and consumer impacts.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T03:59:30.646585+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "f70794b7fec0615fda8226cf",
       "source": "committed"
     }
   },

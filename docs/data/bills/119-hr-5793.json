@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 4,
@@ -79,7 +79,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T20:04:28Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5793",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Act directs U.S. policy to prioritize defense cooperation, using existing security\u2011assistance authorities to strengthen resilience, logistics, and interoperability. It defines Eastern Flank partners as Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia and targets 5% of GDP for defense by 2035.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:21.675609+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6c3dd43f6e4964eec2faa7e2",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs U.S. defense cooperation with frontline NATO allies Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia. It authorizes use of FMF, DoD section 333, excess defense-article transfers, and War Reserve Stocks, engaging State and DoD to improve logistics, resilience, and interoperability.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:18.797545+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "6c3dd43f6e4964eec2faa7e2",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:45.560624+00:00",
   "source": "congress_api"

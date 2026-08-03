@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 14,
@@ -179,7 +179,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-06T18:43:32Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/990",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution formally recognizes the 113th anniversary of Delta Sigma Theta Sorority, Incorporated and honors its founding, programs, and civic and global service. It addresses Delta Sigma Theta\u2014founded by 22 Howard University women in 1913\u2014its 350,000+ members, 1,050+ chapters worldwide, and its Five\u2011Point Program Thrust and named initiatives.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:33:12.785196+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4f5e1f25806a15dc49e1d910",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This House resolution recognizes the 113th anniversary of Delta Sigma Theta Sorority, Incorporated and its 350,000 members across 1,050 chapters. It highlights Financial Fortitude, the Betty Shabazz Delta Academy, the Mary Help of the Sick Hospital in Thika, Kenya, and the sorority's UN consultative status.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:33:14.708731+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4f5e1f25806a15dc49e1d910",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:39.996423+00:00",
   "source": "congress_api"

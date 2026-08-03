@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T19:55:21Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3359",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill amends Title IV of the Higher Education Act to create standards for \"early college fast track\" pathways that equal at least two semesters of postsecondary credit. They must satisfy state high school diploma requirements and be included in statewide articulation agreements covering students, state agencies, and public colleges.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:05:40.642189+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3019d4a8ea1e89c1ac64dd46",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill funds state educational agencies to scale early college and early\u2011graduation pathways (AP/IB, dual enrollment, early college high schools, CTE). It makes participating high school students eligible for Pell Grants and ties earned credits to statewide articulation agreements with public two\u2011 and four\u2011year colleges.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:05:38.183512+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3019d4a8ea1e89c1ac64dd46",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:42.963482+00:00",
   "source": "congress_api"

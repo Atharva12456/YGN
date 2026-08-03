@@ -95,21 +95,6 @@
         "congress": 119,
         "latestAction": {
           "actionDate": "2026-03-18",
-          "text": "Referred to the House Committee on the Judiciary."
-        },
-        "number": "7988",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Safe Passage to the World Cup Act",
-        "type": "HR",
-        "updateDate": "2026-04-04",
-        "updateDateIncludingText": "2026-04-04",
-        "url": "https://api.congress.gov/v3/bill/119/hr/7988?format=json"
-      },
-      {
-        "congress": 119,
-        "latestAction": {
-          "actionDate": "2026-03-18",
           "text": "Referred to the House Committee on Energy and Commerce."
         },
         "number": "7980",
@@ -375,6 +360,21 @@
         "updateDate": "2026-04-06",
         "updateDateIncludingText": "2026-04-06",
         "url": "https://api.congress.gov/v3/bill/119/s/2369?format=json"
+      },
+      {
+        "congress": 119,
+        "latestAction": {
+          "actionDate": "2025-12-09",
+          "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S8580; text: CR S8579)"
+        },
+        "number": "537",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.",
+        "type": "SRES",
+        "updateDate": "2026-04-06",
+        "updateDateIncludingText": "2026-04-06",
+        "url": "https://api.congress.gov/v3/bill/119/sres/537?format=json"
       },
       {
         "congress": 119,
@@ -1203,13 +1203,13 @@
       }
     ],
     "pagination": {
-      "count": 16396,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-04T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 16395,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-05T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-08-02T06:20:26.846700+00:00"
+  "generated_at": "2026-08-03T06:46:55.149942+00:00"
 }

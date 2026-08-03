@@ -279,7 +279,16 @@
     "type": "SRES",
     "updatedAt": "2026-04-06T12:56:53Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/593",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution honors the victims of the January 29, 2025 Potomac River mid\u2011air collision and offers condolences while acknowledging first responders and investigators. It commits the Senate to support affected families and to translate lessons from the crash into measures to prevent future mid\u2011air collisions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:32:53.101947+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9419e12d24cfa5ee1db58de7",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:39.277285+00:00",
   "source": "congress_api"

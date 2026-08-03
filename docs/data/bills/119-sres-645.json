@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 13,
@@ -169,7 +169,26 @@
     "type": "SRES",
     "updatedAt": "2026-04-06T14:27:56Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/645",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution designates 2026 as the \"International Year of Rangelands and Pastoralists\" and urges agencies and universities to promote rangeland education and research. It covers U.S. and global rangelands and pastoralists, including ranchers, nomads, and federal, state, and private lands that support forage, biodiversity, water, and rural livelihoods.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:15:40.255375+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "cc54bf0c0d0f58bb2eeacec7",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution names 2026 the International Year of Rangelands and Pastoralists and urges agencies, universities, and groups to promote rangeland education and research. It affects U.S. ranchers and pastoralists, the beef, lamb, and wool industries, and federal land managers such as BLM and Forest Service.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:15:44.779287+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "cc54bf0c0d0f58bb2eeacec7",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:36.333290+00:00",
   "source": "congress_api"

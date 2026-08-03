@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T13:19:38Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3093",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs DHS's Science and Technology Directorate to work with the DEA to develop and evaluate capability to detect, identify, and disrupt nitazenes at very low concentrations. It amends 6 U.S.C. 182(15) by adding 'nitazenes' to the fentanyl and xylazine list, expanding federal S&T and DEA detection scope.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:52.255154+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7b834447d6701bb1123f5b2c",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill adds \"nitazenes\" to the Homeland Security Act's list alongside fentanyl and xylazine. It directs DHS Science and Technology Directorate to work with the Drug Enforcement Administration to develop detection and identification of nitazenes at very low concentrations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:43.704426+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7b834447d6701bb1123f5b2c",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:44.847528+00:00",
   "source": "congress_api"

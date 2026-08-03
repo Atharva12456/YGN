@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-06T10:37:19Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/798",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution designates September 15\u201321, 2025, as \"Rail Safety Week\" and formally supports efforts to reduce highway\u2011rail grade crossing incidents, injuries, and fatalities. It urges people in the United States to join Rail Safety Week events and education campaigns to learn safe behavior at railroad tracks and grade crossings.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:05:50.605407+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e077523c0b3c3e8de3e0f1ed",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution designates September 15\u201321, 2025 as Rail Safety Week and backs Operation Lifesaver and the U.S. Department of Transportation's safety outreach. It urges state DOTs, freight railroads, Amtrak, law enforcement, motorists and pedestrians to support education, enforcement and engineering to reduce grade\u2011crossing incidents.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:05:54.533538+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e077523c0b3c3e8de3e0f1ed",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:43.290878+00:00",
   "source": "congress_api"

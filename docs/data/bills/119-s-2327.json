@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 6,
@@ -99,7 +99,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T16:44:47Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2327",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Comptroller General to audit the Board of Governors and all Federal Reserve banks and report findings and recommendations within 12 months. It repeals statutory audit limits and explicitly authorizes GAO audits of international transactions, monetary policy deliberations, FOMC transactions, related communications, and Fed facilities.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:49:45.261953+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9391cd043bef4d6c70916a66",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The Comptroller General (GAO) must complete an audit within 12 months of the Board of Governors of the Federal Reserve System and the 12 Federal Reserve banks and submit a report to Congress. GAO may audit FOMC actions, Section 13(3) programs, and Fed communications.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:49:48.532614+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9391cd043bef4d6c70916a66",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:41.903206+00:00",
   "source": "congress_api"

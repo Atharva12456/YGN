@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "S",
     "updatedAt": "2026-04-06T19:33:51Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2369",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill requires the Secretary of the Interior to remove or permanently conceal \"Francis Newlands\" from the Chevy Chase Circle memorial fountain, including a brass plaque, a named stone tablet, and carved \"Newlands\" on the fountain's coping stones. Items are offered to his descendants for 60 days, then accessioned by National Park Service.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:50:14.441430+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "60c0135292d9c711e2cfcfc1",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Interior Secretary and National Park Service to remove or conceal \"Newlands\" name and plaques at Chevy Chase Circle fountain (Washington, D.C.). Removed items must be offered to Newlands's descendants for 60 days, then accessioned into the Rock Creek Park museum.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T06:43:54.749221+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "60c0135292d9c711e2cfcfc1",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:42.771553+00:00",
   "source": "congress_api"

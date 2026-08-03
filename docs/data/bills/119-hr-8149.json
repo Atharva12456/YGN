@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -57,6 +57,16 @@
       "generated_at": "2026-08-02T03:58:45.215027+00:00",
       "content_version": "bill-ai-v6",
       "input_hash": "d36987a800267004b445af3b",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Secretary of Agriculture via the National Institute of Food and Agriculture (NIFA) to study access to addiction and mental\u2011health care for farmers, ranchers, and agricultural workers. The study must examine rural provider availability, barriers, telehealth, training, outreach, and coordination with State departments of agriculture and mental\u2011health organizations.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T03:58:38.027179+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d36987a800267004b445af3b",
+      "status": "AI impact analysis",
       "source": "committed"
     }
   },

@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 2,
@@ -67,6 +67,16 @@
       "generated_at": "2026-08-02T05:38:47.868890+00:00",
       "content_version": "bill-ai-v6",
       "input_hash": "3ca386fec65ec33fbd10837f",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Attorney General via the National Institute of Justice to form an AI Research and Oversight in Courts Task Force to study AI speech-to-text and automatic speech recognition in U.S. courts. Affected include federal judges, clerks, prosecutors, administrators, civil\u2011liberties experts, and Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T03:59:18.915700+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "3ca386fec65ec33fbd10837f",
+      "status": "AI impact analysis",
       "source": "committed"
     }
   },

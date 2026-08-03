@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 10,
@@ -139,7 +139,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T13:55:36Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6803",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill renames Newark Penn Station as the \"Donald M. Payne, Jr. Transit Center at Newark Penn Station\". It makes any United States law, map, regulation, document, paper, or other federal record referencing Newark Penn Station a reference to that new designation.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:32:11.846631+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c15f1105b4a22681725f3a77",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill renames Newark Penn Station at 1 Raymond Plaza West in Newark, New Jersey, as the \"Donald M. Payne, Jr. Transit Center at Newark Penn Station\". Amtrak, NJ Transit and federal agencies would use the new name, affecting commuters and Newark officials.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:32:20.044809+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c15f1105b4a22681725f3a77",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:38.490190+00:00",
   "source": "congress_api"

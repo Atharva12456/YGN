@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 0,
@@ -38,7 +38,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T16:30:37Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5856",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill renames D.C.'s Office of Mayor to Office of Governor and the Council to the Legislative Assembly, treating current holders as governor and representatives. It amends the Home Rule Act to make federal and D.C. laws and rules that mention those offices refer to the new titles.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:09.082710+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7b32bbb9c9e723ce058c2f3a",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill renames the Mayor of the District of Columbia as Governor and the Council as the Legislative Assembly. It treats current officeholders as the new titles and changes references in U.S. and D.C. laws, affecting federal agencies and District government.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:22:04.737856+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "7b32bbb9c9e723ce058c2f3a",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:45.168248+00:00",
   "source": "congress_api"

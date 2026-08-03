@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 4,
@@ -79,7 +79,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T18:08:09Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5962",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes DOJ and State to provide technical assistance and training to help Ukraine recover forcibly transferred children and obtain prisoner and civilian detainee releases. Assistance may include biometric ID, open\u2011source intelligence, secure communications, and database management, and the Secretary of State must brief Congress.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:21.792435+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "dad8094ebdc112c8cfdab035",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill authorizes the Department of Justice and Department of State to provide assistance and advisory support to the Government of Ukraine for POW exchanges, civilian detainee releases, and return of abducted Ukrainian children.  \nIt covers biometrics, open-source intelligence, communications, database security, and NGO coordination.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:20.834387+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "dad8094ebdc112c8cfdab035",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:44.294331+00:00",
   "source": "congress_api"

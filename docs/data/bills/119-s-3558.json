@@ -49,7 +49,17 @@
     "type": "S",
     "updatedAt": "2026-04-06T13:09:36Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3558",
-    "votes": []
+    "votes": [],
+    "impact": {
+      "summary": "The bill criminalizes knowingly entering a posted 15\u2011foot protective zone around a National Guard member during Chapter 15 (title 10) or title 32 deployments. It affects Army and Air National Guard members, people who approach or protest posted zones, and federal prosecutors enforcing Section 1390.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T06:28:07.270286+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "c833ade102247ad880c5a757",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:40.193909+00:00",
   "source": "congress_api"

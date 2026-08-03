@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 10,
@@ -139,7 +139,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T19:31:28Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6567",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The Federal Food Administration Act of 2025 establishes a Federal Food Administration inside HHS led by a President\u2011appointed, Senate\u2011confirmed Commissioner to review food research and oversee safety, labeling, marketing, and public information. It covers regulated food products, industry stakeholders, imports, and mandates collaboration with USDA, CDC, NIH and international partners.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:50:00.113297+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8c450078779e2e53db015d04",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill creates a Federal Food Administration within HHS led by a presidentially appointed Commissioner to oversee food safety, labeling, and research. It mandates coordination with USDA, CDC, and NIH and affects food manufacturers, importers, distributors, retailers, packers, and consumers under the FD&C Act.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T04:50:01.507805+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "8c450078779e2e53db015d04",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:42.582059+00:00",
   "source": "congress_api"

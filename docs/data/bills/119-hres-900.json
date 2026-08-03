@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-06T17:03:15Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/900",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution expresses condolences, honors victims, and commends first responders to the UPS Airlines Flight 2976 crash near Louisville, Kentucky. It names 14 victims, cites federal, state, and local responders including over 20 fire and emergency units, and conveys sympathy to the people of Louisville and Kentucky.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:08.399058+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "58543da9faf8758391d62ac5",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This House resolution expresses condolences for UPS Airlines flight 2976 victims and sympathies to Louisville and the Commonwealth of Kentucky. It honors named victims and commends first responders such as Okolona Fire Protection District, Louisville Fire Department, and Kentucky Air National Guard.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-03T05:06:04.483523+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "58543da9faf8758391d62ac5",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:43.860045+00:00",
   "source": "congress_api"
