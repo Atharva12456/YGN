@@ -62,11 +62,18 @@ async function initOnThisDay() {
   let entry = events[key];
   let label = 'On this day';
   if (!entry) {
-    // Fall back to the nearest earlier entry in the same month.
-    const month = key.slice(0, 2);
-    const candidates = Object.keys(events).filter(k => k.startsWith(month) && k <= key).sort();
-    const alt = candidates.pop();
-    if (alt) { entry = events[alt]; label = 'This month in history'; }
+    // Fall back to the most recent entry on or before today, then wrap to the
+    // latest entry of the year. The old fallback only looked within the SAME
+    // month, so any month whose first entry falls after the 1st left the card
+    // blank until then -- 68 days a year with this dataset, including 25 days
+    // every October and 16 every September, and it is what broke CI on Aug 1-5.
+    const keys = Object.keys(events).sort();
+    const earlier = keys.filter(k => k <= key);
+    const alt = earlier.length ? earlier[earlier.length - 1] : keys[keys.length - 1];
+    if (alt) {
+      entry = events[alt];
+      label = alt.slice(0, 2) === key.slice(0, 2) ? 'This month in history' : 'Recently in history';
+    }
   }
   if (!entry) { host.hidden = true; return; }
   host.innerHTML = `<span class="otd-label">${esc(label)}${entry.year ? ` · ${esc(String(entry.year))}` : ''}</span> <span class="otd-text">${esc(entry.text)}</span>`;
