@@ -1841,29 +1841,62 @@ def _queue_ai_refresh_job(kind, cache_id, payload):
     return True
 
 
+# Job kinds that must not wait behind the bill backlog. The queue is FIFO and the
+# per-cycle budget is small, so a page-level artifact like the foreign brief -- one
+# model call per 12 hours, feeding a whole page -- was being starved indefinitely
+# behind bill jobs that re-queue as the digest churns. Observed: 6 bills pending
+# and a budget of 6 meant the brief never got a turn. These are cheap (each is a
+# no-op once its own TTL is satisfied), so they jump the line.
+AI_PRIORITY_JOB_KINDS = ("foreign-brief",)
+
+
 def _pending_ai_refresh_jobs(limit):
     limit = max(0, int(limit))
     if not limit:
         return []
+
+    def rows_to_jobs(rows):
+        out = []
+        for row in rows:
+            try:
+                job = json.loads(row["response_json"])
+            except (TypeError, ValueError):
+                job = {}
+            out.append((row["cache_key"], job))
+        return out
+
     with _cache_connection() as conn:
-        rows = conn.execute(
-            """
+        # Priority kinds first, oldest of those first.
+        placeholders = ",".join("?" for _ in AI_PRIORITY_JOB_KINDS)
+        priority = conn.execute(
+            f"""
             SELECT cache_key, response_json
             FROM api_cache
             WHERE source = ? AND expires_at > ?
+              AND json_extract(response_json, '$.kind') IN ({placeholders})
             ORDER BY created_at ASC
             LIMIT ?
             """,
-            (AI_REFRESH_QUEUE_SOURCE, _now_seconds(), limit),
+            (AI_REFRESH_QUEUE_SOURCE, _now_seconds(), *AI_PRIORITY_JOB_KINDS, limit),
         ).fetchall()
-    jobs = []
-    for row in rows:
-        try:
-            job = json.loads(row["response_json"])
-        except (TypeError, ValueError):
-            job = {}
-        jobs.append((row["cache_key"], job))
-    return jobs
+
+        remaining = limit - len(priority)
+        rest = []
+        if remaining > 0:
+            rest = conn.execute(
+                f"""
+                SELECT cache_key, response_json
+                FROM api_cache
+                WHERE source = ? AND expires_at > ?
+                  AND (json_extract(response_json, '$.kind') IS NULL
+                       OR json_extract(response_json, '$.kind') NOT IN ({placeholders}))
+                ORDER BY created_at ASC
+                LIMIT ?
+                """,
+                (AI_REFRESH_QUEUE_SOURCE, _now_seconds(), *AI_PRIORITY_JOB_KINDS, remaining),
+            ).fetchall()
+
+    return rows_to_jobs(priority) + rows_to_jobs(rest)
 
 
 def _delete_cache_entry(cache_key):
