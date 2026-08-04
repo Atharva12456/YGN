@@ -14,6 +14,7 @@
   <script src="js/features.js" defer></script>
   <script src="js/enhancements.js" defer></script>
   <script src="js/ux.js" defer></script>  <script src="js/settings.js" defer></script>
+  <script src="js/economy.js" defer></script>
 </head>
 <body data-page="economy">
   <header class="site-header">
@@ -36,12 +37,48 @@
         <p class="econ-eyebrow">Economy</p>
         <h1 class="econ-title">The public numbers behind the government</h1>
         <p class="econ-subtitle">
-          Live fiscal and economic indicators from the U.S. Treasury, the Bureau of
-          Labor Statistics, and the World Bank — the backdrop for what Congress does.
+          Fiscal and market indicators from the U.S. Treasury, the Bureau of Labor
+          Statistics, the World Bank and public market data &mdash; the backdrop for
+          what Congress does. End-of-day figures, not live quotes.
         </p>
+        <p id="econ-updated" class="econ-updated"></p>
       </div>
-      <div id="econ-grid" class="econ-grid" aria-live="polite"></div>
-      <p id="econ-sources" class="econ-sources"></p>
+
+      <!-- Debt counter. The per-second rate is derived from Treasury's own daily
+           series; if no rate can be derived the figure simply sits still. -->
+      <section class="econ-debtclock" aria-labelledby="econ-debt-title">
+        <h2 id="econ-debt-title" class="econ-section-title">National debt right now</h2>
+        <p id="econ-debt-live" class="econ-debt-value">&mdash;</p>
+        <p id="econ-debt-rate" class="econ-debt-rate"></p>
+      </section>
+
+      <div id="econ-controls" class="econ-controls" role="toolbar" aria-label="Chart and indicator controls"></div>
+      <p id="econ-status" class="econ-status" role="status" hidden></p>
+
+      <section aria-labelledby="econ-indices-title">
+        <h2 id="econ-indices-title" class="econ-section-title">Market indices</h2>
+        <div id="econ-indices" class="econ-cards" aria-live="polite"></div>
+      </section>
+
+      <section class="econ-chart-block" aria-labelledby="econ-chart-title">
+        <h2 id="econ-chart-title" class="econ-section-title">Index history</h2>
+        <p class="econ-chart-hint">
+          Hover the chart, or focus it and use the arrow keys, to step through each trading day.
+        </p>
+        <div id="econ-chart" class="econ-chart"></div>
+      </section>
+
+      <section aria-labelledby="econ-metrics-title">
+        <h2 id="econ-metrics-title" class="econ-section-title">Fiscal and labour indicators</h2>
+        <div id="econ-metrics" class="econ-cards"></div>
+      </section>
+
+      <section class="econ-daily-block" aria-labelledby="econ-daily-title">
+        <h2 id="econ-daily-title" class="econ-section-title">Day by day</h2>
+        <div id="econ-daily" class="econ-daily"></div>
+      </section>
+
+      <section id="econ-sources" class="econ-sources" aria-label="Data sources"></section>
     </section>
   </main>
 </body>

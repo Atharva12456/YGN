@@ -414,6 +414,14 @@ def economy_snapshot():
     return _backend_response(government.get_economy_snapshot)
 
 
+@app.get("/metrics/markets")
+def market_metrics(
+    range: Annotated[str, Query(pattern="^(1m|3m|6m|1y|5y)$")] = "1y",
+):
+    """Index levels and daily history for the economy dashboard."""
+    return _backend_response(government.get_market_snapshot, range_key=range)
+
+
 @app.get("/metrics/fec-status", include_in_schema=False)
 def fec_status():
     return _backend_response(government.fec_key_diagnostic)

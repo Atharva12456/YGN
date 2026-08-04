@@ -853,6 +853,184 @@ def _treasury_debt_history():
     )
 
 
+# --- Market indices -------------------------------------------------------
+#
+# Index levels for the economy dashboard. Two providers, tried in order:
+#
+#   1. FRED (Federal Reserve Bank of St. Louis) when FRED_API_KEY is set. This is
+#      the preferred source on a government-data site: official, documented, and
+#      stable. Free key from https://fred.stlouisfed.org/docs/api/api_key.html
+#   2. Yahoo's chart endpoint, which needs no key. It is undocumented and can
+#      change or throttle without notice, so it is the fallback, and the payload
+#      always reports which provider actually answered.
+#
+# If both fail the metric reports available=false with a reason. It never
+# substitutes an estimate, a stale value presented as current, or a placeholder.
+
+MARKET_CACHE_TTL_SECONDS = 15 * 60
+
+# (key, display name, Yahoo symbol, FRED series id)
+MARKET_INDICES = (
+    ("sp500", "S&P 500", "^GSPC", "SP500"),
+    ("dow", "Dow Jones Industrial Average", "^DJI", "DJIA"),
+    ("nasdaq", "Nasdaq Composite", "^IXIC", "NASDAQCOM"),
+)
+
+MARKET_RANGE_DAYS = {"1m": 30, "3m": 90, "6m": 180, "1y": 365, "5y": 1825}
+
+
+def _fred_api_key():
+    _load_local_env()
+    return (os.getenv("FRED_API_KEY") or "").strip() or None
+
+
+def _fred_series(series_id, days):
+    """Daily observations from FRED. Returns [{date, value}] oldest-first."""
+    start = (datetime.now(timezone.utc) - timedelta(days=days + 10)).date().isoformat()
+    cache_key = _build_cache_key("fred", {"series": series_id, "start": start})
+
+    def fetch_json():
+        try:
+            resp = requests.get(
+                "https://api.stlouisfed.org/fred/series/observations",
+                params={
+                    "series_id": series_id,
+                    "api_key": _fred_api_key(),
+                    "file_type": "json",
+                    "observation_start": start,
+                },
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"FRED request failed for {series_id}.") from None
+        rows = (resp.json() or {}).get("observations") or []
+        points = []
+        for row in rows:
+            raw = row.get("value")
+            if raw in (None, "", "."):
+                continue          # FRED marks market holidays with "."
+            try:
+                points.append({"date": row.get("date"), "value": float(raw)})
+            except (TypeError, ValueError):
+                continue
+        if not points:
+            raise UpstreamDataError(f"FRED returned no usable observations for {series_id}.")
+        return {"points": points, "provider": "fred"}
+
+    return _cached_json(cache_key, f"fred:{series_id}", fetch_json,
+                        ttl_seconds=MARKET_CACHE_TTL_SECONDS)
+
+
+def _yahoo_series(symbol, days):
+    """Daily closes from Yahoo's chart endpoint. Returns [{date, value}]."""
+    span = "1mo" if days <= 30 else "3mo" if days <= 90 else "6mo" if days <= 180 \
+        else "1y" if days <= 365 else "5y"
+    cache_key = _build_cache_key("yahoo-chart", {"symbol": symbol, "range": span})
+
+    def fetch_json():
+        try:
+            resp = requests.get(
+                f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+                params={"range": span, "interval": "1d"},
+                headers={"User-Agent": "Mozilla/5.0 (compatible; YGN/1.0)"},
+                timeout=REQUEST_TIMEOUT_SECONDS,
+            )
+            resp.raise_for_status()
+        except requests.RequestException:
+            raise UpstreamDataError(f"Market data request failed for {symbol}.") from None
+
+        result = ((resp.json() or {}).get("chart") or {}).get("result") or []
+        if not result:
+            raise UpstreamDataError(f"Market data returned no result for {symbol}.")
+        block = result[0]
+        stamps = block.get("timestamp") or []
+        quote = ((block.get("indicators") or {}).get("quote") or [{}])[0]
+        closes = quote.get("close") or []
+        points = []
+        for stamp, close in zip(stamps, closes):
+            if close is None:
+                continue          # half-days and holidays come back null
+            points.append({
+                "date": datetime.fromtimestamp(stamp, timezone.utc).date().isoformat(),
+                "value": float(close),
+            })
+        if not points:
+            raise UpstreamDataError(f"Market data had no closing prices for {symbol}.")
+        return {"points": points, "provider": "yahoo",
+                "meta": {"previousClose": (block.get("meta") or {}).get("chartPreviousClose")}}
+
+    return _cached_json(cache_key, f"market:{symbol}", fetch_json,
+                        ttl_seconds=MARKET_CACHE_TTL_SECONDS)
+
+
+def _index_series(yahoo_symbol, fred_id, days):
+    """FRED first when a key exists, else the keyless endpoint."""
+    errors = []
+    if _fred_api_key():
+        try:
+            return _fred_series(fred_id, days)
+        except Exception as exc:  # noqa: BLE001 - fall through to the backup
+            errors.append(f"fred: {exc}")
+    try:
+        return _yahoo_series(yahoo_symbol, days)
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"chart: {exc}")
+    raise UpstreamDataError("; ".join(errors) or "No market provider available.")
+
+
+def get_market_snapshot(range_key="1y"):
+    """Latest level plus a daily history for each tracked index."""
+    range_key = range_key if range_key in MARKET_RANGE_DAYS else "1y"
+    days = MARKET_RANGE_DAYS[range_key]
+
+    snapshot = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "range": range_key,
+        "available_ranges": list(MARKET_RANGE_DAYS),
+        "indices": {},
+        "errors": [],
+    }
+
+    for key, label, symbol, fred_id in MARKET_INDICES:
+        try:
+            series = _index_series(symbol, fred_id, days)
+            points = series["points"][-(days + 5):]
+            latest = points[-1]
+            prior = points[-2] if len(points) > 1 else None
+            first = points[0]
+            change = (latest["value"] - prior["value"]) if prior else None
+            snapshot["indices"][key] = {
+                "label": label,
+                "symbol": symbol,
+                "provider": series.get("provider"),
+                "available": True,
+                "latest": latest["value"],
+                "latest_date": latest["date"],
+                "change": round(change, 2) if change is not None else None,
+                "change_percent": (
+                    round(change / prior["value"] * 100, 2)
+                    if change is not None and prior["value"] else None
+                ),
+                "range_change_percent": (
+                    round((latest["value"] - first["value"]) / first["value"] * 100, 2)
+                    if first["value"] else None
+                ),
+                "period_high": max(p["value"] for p in points),
+                "period_low": min(p["value"] for p in points),
+                "points": points,
+            }
+        except Exception as exc:  # noqa: BLE001 - degrade per index
+            snapshot["indices"][key] = {
+                "label": label, "symbol": symbol, "available": False,
+                "reason": "Index data is temporarily unavailable from the upstream provider.",
+                "points": [],
+            }
+            snapshot["errors"].append({"index": key, "error": str(exc)[:200]})
+
+    return snapshot
+
+
 def get_economy_snapshot():
     snapshot = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
