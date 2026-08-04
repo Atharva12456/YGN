@@ -2722,7 +2722,11 @@ def refresh_ai_generation_cache(limit=None):
 
 # --- Foreign-affairs AI brief (regenerated at most once every 12 hours) --------
 
-AI_FOREIGN_CONTENT_VERSION = "foreign-ai-v1"
+# v2 dropped the "publicRead" field: it asked the model to characterize American
+# public opinion with no pollster, dates, sample or method, which contradicts the
+# standard published on the recent-bills page. Bumping the version invalidates
+# every brief generated under the old schema.
+AI_FOREIGN_CONTENT_VERSION = "foreign-ai-v2"
 # The foreign page asks for a refresh "once every 12 hours". This is the single
 # source of truth for that cadence: the background loop runs far more often, but
 # refresh_foreign_brief() is a no-op until the committed/cached brief is older
@@ -2739,6 +2743,12 @@ FOREIGN_BRIEF_SYSTEM_PROMPT = (
     "- Reply with STRICT JSON only. No prose, no markdown, no code fences.\n"
     "- Be factual and neutral. Never invent statistics, poll numbers, casualty figures, "
     "vote counts, or dates. If you do not know a number, describe the situation in words.\n"
+    "- NEVER characterize American public opinion. Do not write that Americans "
+    "'broadly support', 'are divided on', 'are concerned about', or any similar claim "
+    "about what the public thinks, even qualitatively and even without numbers. This "
+    "site only reports opinion when it can name the pollster, field dates, sample and "
+    "method, and none of that is available to you here. Describe what GOVERNMENTS and "
+    "LEGISLATORS are doing instead.\n"
     "- Ground every item in the supplied source material and well-established public "
     "knowledge. Do not speculate about future events as if they had happened.\n"
     "- Write complete sentences. No ellipses, no trailing fragments.\n"
@@ -2751,7 +2761,9 @@ FOREIGN_BRIEF_SCHEMA_HINT = (
     '"tone":"danger|caution|steady",'
     '"summary":"2-3 sentences on what is happening and why it matters to the US",'
     '"usLever":"the concrete US levers, <=12 words",'
-    '"publicRead":"one sentence on where American opinion sits, qualitative only"}],'
+    '"congressWatch":"one sentence on what Congress or the executive branch is '
+    'actually doing or deciding here - bills, treaties, nominations, appropriations, '
+    'war powers, sanctions. Never public opinion."}],'
     '"diplomacy":[{"title":"short headline","detail":"1-2 sentences","tone":"steady|caution"}],'
     '"outlook":"3-4 sentences on what to watch next"}'
 )
@@ -2920,7 +2932,7 @@ def _normalize_foreign_brief(parsed, material):
                 "tone": tone if tone in tones else "caution",
                 "summary": summary,
                 "usLever": clean(item.get("usLever"), 120),
-                "publicRead": clean(item.get("publicRead"), 200),
+                "congressWatch": clean(item.get("congressWatch"), 220),
             }
         )
 

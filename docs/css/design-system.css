@@ -195,3 +195,26 @@ dd a:not([class]),
   background-clip: content-box;
 }
 *::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); background-clip: content-box; }
+
+/* Several components clear the native outline and draw their own box-shadow ring
+   on :focus. That is visible, but it made the focus treatment differ per control.
+   Restore a real outline for keyboard focus specifically, so every focusable thing
+   shares one ring; the box-shadow styling underneath is left alone. */
+.decoder-search:focus-visible,
+.decoder-select:focus-visible,
+.foreign-search:focus-visible,
+.ygn-palette-input:focus-visible,
+.global-search input:focus-visible,
+.state-shape:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── [hidden] must actually hide ──────────────────────────────────────────────
+   The UA sheet's `[hidden] { display: none }` is only specificity (0,1,0), so any
+   ordinary layout rule beats it. `#main-content .foreign-page .foreign-section
+   { display: grid }` (1,2,1) silently overrode it, which meant every section on
+   the foreign page marked `hidden` -- the AI outlook, executive orders, live
+   treaties, nominations -- still rendered, as empty shells before their data
+   loaded. Enforce the attribute globally; `hidden` should never be advisory. */
+[hidden] { display: none !important; }

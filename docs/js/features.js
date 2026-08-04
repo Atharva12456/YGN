@@ -793,6 +793,7 @@ function initCivicFeatures() {
   initTermDecoder();
   initForeignCivic();
   initForeignBrief();
+  initForeignSignalBoard();
   initNominations();
   initSupportSpotlight();
   initGerryScoreboard();
@@ -1037,7 +1038,7 @@ async function initForeignBrief() {
       if (state.watchedOnly && watch.indexOf(cardKey(conflict)) === -1) return false;
       if (query) {
         const hay = [conflict.title, conflict.region, conflict.status, conflict.summary,
-          conflict.usLever, conflict.publicRead].join(' ').toLowerCase();
+          conflict.usLever, conflict.congressWatch].join(' ').toLowerCase();
         if (hay.indexOf(query) === -1) return false;
       }
       return true;
@@ -1067,7 +1068,7 @@ async function initForeignBrief() {
           <p>${esc(conflict.summary || '')}</p>
           <dl>
             ${conflict.usLever ? `<div><dt>U.S. lever</dt><dd>${esc(conflict.usLever)}</dd></div>` : ''}
-            ${conflict.publicRead ? `<div><dt>Public read</dt><dd>${esc(conflict.publicRead)}</dd></div>` : ''}
+            ${conflict.congressWatch ? `<div><dt>In Congress</dt><dd>${esc(conflict.congressWatch)}</dd></div>` : ''}
           </dl>
           <button type="button" class="conflict-watch-btn${starred ? ' is-on' : ''}"
                   data-key="${esc(key)}"
@@ -1195,8 +1196,39 @@ async function initForeignBrief() {
           <p>${esc(item.detail || '')}</p>
         </article>`).join('')}</div>` : ''}
       ${data.outlook ? `<div class="foreign-outlook-note"><h3>What to watch next</h3><p>${esc(data.outlook)}</p></div>` : ''}
-      <p class="civic-meta">Generated from Congress.gov, Federal Register, and Senate treaty data.
-        Regenerates at most once every 12 hours. Figures are never invented.</p>`;
+      <p class="civic-meta">Written by an AI model from Congress.gov, Federal Register and Senate
+        treaty records, and regenerated at most once every 12 hours. It summarizes government
+        activity only &mdash; it does not report public opinion, and any specific figure should be
+        checked against the linked primary source.</p>`;
     outlookHost.hidden = false;
   }
+}
+
+// The hero signal board used to be four hand-typed numbers presented as live
+// counters -- and one of them ("Active conflict lanes: 4") disagreed with the five
+// conflict cards rendered directly below it. Count the things actually on the page
+// instead, and leave a tile as an em dash when its source has not loaded rather
+// than showing a number nobody can check.
+async function initForeignSignalBoard() {
+  const board = document.querySelector('.foreign-signal-board');
+  if (!board) return;
+
+  function set(id, value) {
+    const node = document.getElementById(id);
+    if (node && Number.isFinite(value)) node.textContent = String(value);
+  }
+
+  // Conflicts: whatever the brief actually rendered (AI cards, else the fallback).
+  const conflicts = document.querySelectorAll('.conflict-card--ai').length
+    || document.querySelectorAll('.conflict-card').length;
+  set('sig-conflicts', conflicts);
+
+  const [treaties, nominations, hearings] = await Promise.all([
+    fetchCivic('treaties.json').catch(() => null),
+    fetchCivic('nominations.json').catch(() => null),
+    fetchCivic('hearings.json').catch(() => null)
+  ]);
+  if (treaties && Array.isArray(treaties.treaties)) set('sig-treaties', treaties.treaties.length);
+  if (nominations && Array.isArray(nominations.nominations)) set('sig-nominations', nominations.nominations.length);
+  if (hearings && Array.isArray(hearings.hearings)) set('sig-meetings', hearings.hearings.length);
 }
