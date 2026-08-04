@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 5,
@@ -89,7 +89,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-06T13:07:51Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1118",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution designates the third week of March as National CACFP Week and urges reforms to CACFP, including extra\u2011meal reimbursement, reduced area\u2011eligibility, annual for\u2011profit eligibility, inflation adjustments, and lower administrative burdens. It covers CACFP participants in Head Start, childcare (including military), family homes, shelters, after\u2011school, and adult day care.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:21:04.451164+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d2dd2dea736a1f804f930170",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The resolution names the third week of March as National CACFP Week and recognizes USDA's CACFP. It urges strengthening CACFP reimbursement, eligibility, inflation adjustments, and reduced paperwork to help Head Start, childcare (including military), nonprofit sponsors, State agencies, and adult daycare providers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:21:04.543492+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d2dd2dea736a1f804f930170",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:35.697524+00:00",
   "source": "congress_api"

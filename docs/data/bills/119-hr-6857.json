@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 21,
@@ -249,7 +249,26 @@
     "type": "HR",
     "updatedAt": "2026-04-06T19:59:25Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6857",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill directs the Department of Education's Office for Civil Rights to run an annually updated public awareness campaign about Title VI rights, require colleges to post an OCR complaint link on their homepages, and distribute campaign materials for campus display. It applies to institutions in federal student aid programs.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:04:35.799776+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e60d7a6b9ba244f2de10101b",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires ED's Office for Civil Rights to run an annual Title VI awareness campaign and brief Congress monthly. Colleges and universities participating in federal student aid must link to OCR\u2019s complaint page and post campaign materials in high\u2011traffic campus locations and student websites.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:04:36.397987+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e60d7a6b9ba244f2de10101b",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:40.992952+00:00",
   "source": "congress_api"

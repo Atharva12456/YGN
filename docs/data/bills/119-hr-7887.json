@@ -38,7 +38,16 @@
     "type": "HR",
     "updatedAt": "2026-04-06T15:49:23Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7887",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes the FDIC to bar sale of compensation\u2011received stock during cease\u2011and\u2011desist orders and to automatically prohibit senior executives at certain troubled banks from selling such stock when supervisory ratings or notices are unresolved. Coverage applies to officers, directors, institution\u2011affiliated parties and banks or holding companies over $50 billion.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T06:09:13.430160+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "319647ad5aa43cb698dd2917",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:37.470116+00:00",
   "source": "congress_api"

@@ -79,7 +79,17 @@
     "type": "HR",
     "updatedAt": "2026-04-06T13:09:42Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-bill/7898",
-    "votes": []
+    "votes": [],
+    "impact": {
+      "summary": "The bill makes it a federal crime to knowingly enter or remain within a posted 15\u2011foot protective zone around a National Guard member during Title 10 or Title 32 deployments. Violators face fines, up to one year imprisonment, five years for contact, enforced by DOJ.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T04:48:23.455700+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "547d04edc1150bb853de4508",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-02T06:20:36.781984+00:00",
   "source": "congress_api"

@@ -1,7 +1,7 @@
 {
-  "ai_cached": 33,
+  "ai_cached": 37,
   "ai_mode": "cache_refresh_only",
-  "ai_queued": 7,
+  "ai_queued": 3,
   "bills": [
     {
       "aiDescription": {
@@ -25,6 +25,7 @@
       "detailPath": "119/hr/8149",
       "identifier": "HR 8149",
       "impact": {
+        "generated_at": "2026-08-03T03:58:38.027179+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -35,7 +36,6 @@
         "summary": "The bill directs the Secretary of Agriculture via the National Institute of Food and Agriculture (NIFA) to study access to addiction and mental\u2011health care for farmers, ranchers, and agricultural workers. The study must examine rural provider availability, barriers, telehealth, training, outreach, and coordination with State departments of agriculture and mental\u2011health organizations.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T03:58:38.027179+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "d36987a800267004b445af3b",
         "source": "committed"
@@ -78,13 +78,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill directs USDA's Economic Research Service to publish, within one year after each Census of Agriculture release, a report on consolidation and concentration in the livestock industry. It must cover beef, dairy, pork, and poultry (broilers, eggs, turkeys), track facility and herd changes, and assess producer and consumer impacts.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T03:59:30.646585+00:00",
+        "input_hash": "f70794b7fec0615fda8226cf",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T03:59:30.646585+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "f70794b7fec0615fda8226cf",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill directs USDA's Economic Research Service to publish, within one year after each Census of Agriculture release, a report on consolidation and concentration in the livestock industry. It must cover beef, dairy, pork, and poultry (broilers, eggs, turkeys), track facility and herd changes, and assess producer and consumer impacts."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/4168?format=json",
       "committees": [],
@@ -244,6 +244,7 @@
       "detailPath": "119/s/4154",
       "identifier": "S 4154",
       "impact": {
+        "generated_at": "2026-08-03T03:59:18.915700+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -254,7 +255,6 @@
         "summary": "The bill directs the Attorney General via the National Institute of Justice to form an AI Research and Oversight in Courts Task Force to study AI speech-to-text and automatic speech recognition in U.S. courts. Affected include federal judges, clerks, prosecutors, administrators, civil\u2011liberties experts, and Congress.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T03:59:18.915700+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "3ca386fec65ec33fbd10837f",
         "source": "committed"
@@ -370,13 +370,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The Conscience Protection Act of 2025 would bar federal discrimination against health care entities that decline to participate in abortions and authorize private enforcement of federal conscience laws. It covers hospitals, clinics, providers, insurers, States, and other entities operating under federal health statutes and HHS oversight.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:32:00.795797+00:00",
+        "input_hash": "9e36b1c1b6ad076f596d6c7a",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:00.795797+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "9e36b1c1b6ad076f596d6c7a",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The Conscience Protection Act of 2025 would bar federal discrimination against health care entities that decline to participate in abortions and authorize private enforcement of federal conscience laws. It covers hospitals, clinics, providers, insurers, States, and other entities operating under federal health statutes and HHS oversight."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/1756?format=json",
       "committees": [],
@@ -390,6 +390,7 @@
       "detailPath": "119/s/1756",
       "identifier": "S 1756",
       "impact": {
+        "generated_at": "2026-08-03T04:31:58.210772+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -400,7 +401,6 @@
         "summary": "The bill prohibits discrimination against health care entities that decline to participate in abortion and strengthens enforcement of federal conscience protections under the Public Health Service Act and laws like the Church Amendments, Coats\u2011Snowe, and Weldon. It affects hospitals, clinics, insurers, state agencies and HHS.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:31:58.210772+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "9e36b1c1b6ad076f596d6c7a",
         "source": "committed"
@@ -443,13 +443,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill amends the Federal Food, Drug, and Cosmetic Act to change \"controlled substances\" to \"drugs,\" expanding FDA authority to order cessation of distribution and recalls for any drug. It also applies related import/export prohibitions and names the Center for Biologics Evaluation and Research alongside CDER and senior officials.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:15:07.541249+00:00",
+        "input_hash": "1a50f1f6914df097a1461968",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:15:07.541249+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "1a50f1f6914df097a1461968",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill amends the Federal Food, Drug, and Cosmetic Act to change \"controlled substances\" to \"drugs,\" expanding FDA authority to order cessation of distribution and recalls for any drug. It also applies related import/export prohibitions and names the Center for Biologics Evaluation and Research alongside CDER and senior officials."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7980?format=json",
       "committees": [],
@@ -463,6 +463,7 @@
       "detailPath": "119/hr/7980",
       "identifier": "HR 7980",
       "impact": {
+        "generated_at": "2026-08-03T04:15:11.241501+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -473,7 +474,6 @@
         "summary": "The bill lets the Food and Drug Administration use cease-distribution and recall orders for all drugs under the Federal Food, Drug, and Cosmetic Act. That expands FDA authority over drugmakers, wholesalers, pharmacies, hospitals, importers/exporters, and patients by enabling orders to stop distribution and require recalls.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:15:11.241501+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "1a50f1f6914df097a1461968",
         "source": "committed"
@@ -515,7 +515,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/house-bill/7980"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This House resolution designates the third week of March as National CACFP Week and urges reforms to CACFP, including extra\u2011meal reimbursement, reduced area\u2011eligibility, annual for\u2011profit eligibility, inflation adjustments, and lower administrative burdens. It covers CACFP participants in Head Start, childcare (including military), family homes, shelters, after\u2011school, and adult day care.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:21:04.451164+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d2dd2dea736a1f804f930170",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/1118?format=json",
       "committees": [],
       "congress": 119,
@@ -534,8 +542,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1118"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The resolution names the third week of March as National CACFP Week and recognizes USDA's CACFP. It urges strengthening CACFP reimbursement, eligibility, inflation adjustments, and reduced paperwork to help Head Start, childcare (including military), nonprofit sponsors, State agencies, and adult daycare providers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:21:04.543492+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d2dd2dea736a1f804f930170",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-17",
@@ -575,13 +589,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This Senate resolution designates 2026 as the \"International Year of Rangelands and Pastoralists\" and urges agencies and universities to promote rangeland education and research. It covers U.S. and global rangelands and pastoralists, including ranchers, nomads, and federal, state, and private lands that support forage, biodiversity, water, and rural livelihoods.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:15:40.255375+00:00",
+        "input_hash": "cc54bf0c0d0f58bb2eeacec7",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:15:40.255375+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "cc54bf0c0d0f58bb2eeacec7",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This Senate resolution designates 2026 as the \"International Year of Rangelands and Pastoralists\" and urges agencies and universities to promote rangeland education and research. It covers U.S. and global rangelands and pastoralists, including ranchers, nomads, and federal, state, and private lands that support forage, biodiversity, water, and rural livelihoods."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/645?format=json",
       "committees": [],
@@ -595,6 +609,7 @@
       "detailPath": "119/sres/645",
       "identifier": "SRES 645",
       "impact": {
+        "generated_at": "2026-08-03T04:15:44.779287+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -605,7 +620,6 @@
         "summary": "The resolution names 2026 the International Year of Rangelands and Pastoralists and urges agencies, universities, and groups to promote rangeland education and research. It affects U.S. ranchers and pastoralists, the beef, lamb, and wool industries, and federal land managers such as BLM and Forest Service.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:15:44.779287+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "cc54bf0c0d0f58bb2eeacec7",
         "source": "committed"
@@ -666,8 +680,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/7898"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The bill makes it a federal crime to knowingly enter or remain within a posted 15\u2011foot protective zone around a National Guard member during Title 10 or Title 32 deployments. Violators face fines, up to one year imprisonment, five years for contact, enforced by DOJ.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T04:48:23.455700+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "547d04edc1150bb853de4508",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2026-03-12",
@@ -707,13 +727,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The Land Grant Research Prioritization Act of 2026 adds four USDA research priorities and authorizes grants for mechanized harvesting, agricultural artificial intelligence, invasive species control including biocontrol, and aquaculture methods. Mechanization and AI grants may emphasize specialty-crop production, while invasive species and aquaculture grants target projects at land-grant colleges and universities.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T06:11:52.637672+00:00",
+        "input_hash": "a8c048a5e9cf5a40992e025c",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T06:11:52.637672+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "a8c048a5e9cf5a40992e025c",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The Land Grant Research Prioritization Act of 2026 adds four USDA research priorities and authorizes grants for mechanized harvesting, agricultural artificial intelligence, invasive species control including biocontrol, and aquaculture methods. Mechanization and AI grants may emphasize specialty-crop production, while invasive species and aquaculture grants target projects at land-grant colleges and universities."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/4067?format=json",
       "committees": [],
@@ -727,6 +747,7 @@
       "detailPath": "119/s/4067",
       "identifier": "S 4067",
       "impact": {
+        "generated_at": "2026-08-03T04:16:14.248677+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -737,7 +758,6 @@
         "summary": "The bill adds mechanized harvesting, agricultural artificial intelligence, invasive\u2011species control, and aquaculture to USDA high\u2011priority research and extension grant areas. It directs USDA to fund land\u2011grant universities and Cooperative Extension, specialty\u2011crop producers, aquaculture and fisheries businesses, and invasive\u2011species researchers.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:16:14.248677+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "a8c048a5e9cf5a40992e025c",
         "source": "committed"
@@ -779,7 +799,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4067"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "The bill authorizes the FDIC to bar sale of compensation\u2011received stock during cease\u2011and\u2011desist orders and to automatically prohibit senior executives at certain troubled banks from selling such stock when supervisory ratings or notices are unresolved. Coverage applies to officers, directors, institution\u2011affiliated parties and banks or holding companies over $50 billion.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T06:09:13.430160+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "319647ad5aa43cb698dd2917",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/7887?format=json",
       "committees": [],
       "congress": 119,
@@ -839,13 +867,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill adds to the Civil Rights Act that a public accommodation implementing Sharia law in delivering goods or services constitutes religious discrimination. It applies to establishments covered by Section 201(a) of the Act.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:48:48.178293+00:00",
+        "input_hash": "49c588500e5206bd96849ce9",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:48:48.178293+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "49c588500e5206bd96849ce9",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill adds to the Civil Rights Act that a public accommodation implementing Sharia law in delivering goods or services constitutes religious discrimination. It applies to establishments covered by Section 201(a) of the Act."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3887?format=json",
       "committees": [],
@@ -859,6 +887,7 @@
       "detailPath": "119/s/3887",
       "identifier": "S 3887",
       "impact": {
+        "generated_at": "2026-08-03T04:48:52.781706+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -869,7 +898,6 @@
         "summary": "The bill adds that public accommodations implementing Sharia law commit religious discrimination under the Civil Rights Act. It would cover hotels, restaurants, stores and hospitals, affect Muslim owned businesses and Islamic charities offering public services, and enable DOJ and private Civil Rights Act suits.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:48:52.781706+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "49c588500e5206bd96849ce9",
         "source": "committed"
@@ -912,13 +940,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill renames Newark Penn Station as the \"Donald M. Payne, Jr. Transit Center at Newark Penn Station\". It makes any United States law, map, regulation, document, paper, or other federal record referencing Newark Penn Station a reference to that new designation.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:32:11.846631+00:00",
+        "input_hash": "c15f1105b4a22681725f3a77",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:11.846631+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "c15f1105b4a22681725f3a77",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill renames Newark Penn Station as the \"Donald M. Payne, Jr. Transit Center at Newark Penn Station\". It makes any United States law, map, regulation, document, paper, or other federal record referencing Newark Penn Station a reference to that new designation."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6803?format=json",
       "committees": [],
@@ -932,6 +960,7 @@
       "detailPath": "119/hr/6803",
       "identifier": "HR 6803",
       "impact": {
+        "generated_at": "2026-08-03T04:32:20.044809+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -942,7 +971,6 @@
         "summary": "The bill renames Newark Penn Station at 1 Raymond Plaza West in Newark, New Jersey, as the \"Donald M. Payne, Jr. Transit Center at Newark Penn Station\". Amtrak, NJ Transit and federal agencies would use the new name, affecting commuters and Newark officials.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:20.044809+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "c15f1105b4a22681725f3a77",
         "source": "committed"
@@ -985,13 +1013,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This joint resolution designates Feb. 2\u20136, 2026, as \"National School Counseling Week,\" honors school counselors, and encourages observances and activities. It applies nationwide to elementary and secondary school counselors, highlights their roles in academic, social\u2011emotional, and college/career readiness, and calls for public awareness without creating funding or mandates.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:32:32.103752+00:00",
+        "input_hash": "415552de732de8e86d12cc9e",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:32.103752+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "415552de732de8e86d12cc9e",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This joint resolution designates Feb. 2\u20136, 2026, as \"National School Counseling Week,\" honors school counselors, and encourages observances and activities. It applies nationwide to elementary and secondary school counselors, highlights their roles in academic, social\u2011emotional, and college/career readiness, and calls for public awareness without creating funding or mandates."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hjres/148?format=json",
       "committees": [],
@@ -1005,6 +1033,7 @@
       "detailPath": "119/hjres/148",
       "identifier": "HJRES 148",
       "impact": {
+        "generated_at": "2026-08-03T04:32:32.135195+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1015,7 +1044,6 @@
         "summary": "The resolution designates February 2 through 6, 2026, as National School Counseling Week and honors school counselors and American School Counselor Association. It encourages Congress, state and local education agencies, schools, and the public to observe the week and promote counselor roles and student supports.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:32.135195+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "415552de732de8e86d12cc9e",
         "source": "committed"
@@ -1058,13 +1086,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This Senate resolution honors the victims of the January 29, 2025 Potomac River mid\u2011air collision and offers condolences while acknowledging first responders and investigators. It commits the Senate to support affected families and to translate lessons from the crash into measures to prevent future mid\u2011air collisions.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:32:53.101947+00:00",
+        "input_hash": "9419e12d24cfa5ee1db58de7",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:32:53.101947+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "9419e12d24cfa5ee1db58de7",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This Senate resolution honors the victims of the January 29, 2025 Potomac River mid\u2011air collision and offers condolences while acknowledging first responders and investigators. It commits the Senate to support affected families and to translate lessons from the crash into measures to prevent future mid\u2011air collisions."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/593?format=json",
       "committees": [],
@@ -1125,13 +1153,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This House resolution formally recognizes the 113th anniversary of Delta Sigma Theta Sorority, Incorporated and honors its founding, programs, and civic and global service. It addresses Delta Sigma Theta\u2014founded by 22 Howard University women in 1913\u2014its 350,000+ members, 1,050+ chapters worldwide, and its Five\u2011Point Program Thrust and named initiatives.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:33:12.785196+00:00",
+        "input_hash": "4f5e1f25806a15dc49e1d910",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:33:12.785196+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "4f5e1f25806a15dc49e1d910",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This House resolution formally recognizes the 113th anniversary of Delta Sigma Theta Sorority, Incorporated and honors its founding, programs, and civic and global service. It addresses Delta Sigma Theta\u2014founded by 22 Howard University women in 1913\u2014its 350,000+ members, 1,050+ chapters worldwide, and its Five\u2011Point Program Thrust and named initiatives."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/990?format=json",
       "committees": [],
@@ -1145,6 +1173,7 @@
       "detailPath": "119/hres/990",
       "identifier": "HRES 990",
       "impact": {
+        "generated_at": "2026-08-03T04:33:14.708731+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1155,7 +1184,6 @@
         "summary": "This House resolution recognizes the 113th anniversary of Delta Sigma Theta Sorority, Incorporated and its 350,000 members across 1,050 chapters. It highlights Financial Fortitude, the Betty Shabazz Delta Academy, the Mary Help of the Sick Hospital in Thika, Kenya, and the sorority's UN consultative status.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:33:14.708731+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "4f5e1f25806a15dc49e1d910",
         "source": "committed"
@@ -1198,6 +1226,65 @@
     },
     {
       "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/969?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 53,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "This resolution expresses support for the designation of National Hispanic-Serving Institutions Week.",
+        "updated_at": "2026-04-06T20:23:56Z"
+      },
+      "detailPath": "119/hres/969",
+      "identifier": "HRES 969",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/969"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-12-19",
+        "text": "Referred to the House Committee on Education and Workforce."
+      },
+      "members": [
+        {
+          "bioguideId": "C001091",
+          "district": 20,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Castro, Joaquin [D-TX-20]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "number": "969",
+      "originChamber": "House",
+      "policyArea": "Education",
+      "sponsors": [
+        {
+          "bioguideId": "C001091",
+          "district": 20,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Castro, Joaquin [D-TX-20]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "TX"
+        }
+      ],
+      "title": "Expressing support for the designation of the week beginning on September 8, 2025, as \"National Hispanic-Serving Institutions Week\".",
+      "type": "HRES",
+      "updatedAt": "2026-04-06T20:24:21Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/969"
+    },
+    {
+      "aiDescription": null,
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3558?format=json",
       "committees": [],
       "congress": 119,
@@ -1210,6 +1297,7 @@
       "detailPath": "119/s/3558",
       "identifier": "S 3558",
       "impact": {
+        "generated_at": "2026-08-03T06:28:07.270286+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1220,7 +1308,6 @@
         "summary": "The bill criminalizes knowingly entering a posted 15\u2011foot protective zone around a National Guard member during Chapter 15 (title 10) or title 32 deployments. It affects Army and Air National Guard members, people who approach or protest posted zones, and federal prosecutors enforcing Section 1390.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T06:28:07.270286+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "c833ade102247ad880c5a757",
         "source": "committed"
@@ -1262,7 +1349,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3558"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "The bill directs the Department of Education's Office for Civil Rights to run an annually updated public awareness campaign about Title VI rights, require colleges to post an OCR complaint link on their homepages, and distribute campaign materials for campus display. It applies to institutions in federal student aid programs.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:04:35.799776+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e60d7a6b9ba244f2de10101b",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6857?format=json",
       "committees": [],
       "congress": 119,
@@ -1281,8 +1376,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/6857"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The bill requires ED's Office for Civil Rights to run an annual Title VI awareness campaign and brief Congress monthly. Colleges and universities participating in federal student aid must link to OCR\u2019s complaint page and post campaign materials in high\u2011traffic campus locations and student websites.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:04:36.397987+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e60d7a6b9ba244f2de10101b",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2025-12-18",
@@ -1322,13 +1423,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill requires DHS to submit within one year a national strategy to secure K-12 schools from terrorism and to update or certify it annually through 2033. The strategy must list federal programs and spending, identify vulnerabilities and goals, propose actions and resources, and coordinate with Education and other agencies.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:49:10.172994+00:00",
+        "input_hash": "aebf9475afed43b3af756edf",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:49:10.172994+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "aebf9475afed43b3af756edf",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill requires DHS to submit within one year a national strategy to secure K-12 schools from terrorism and to update or certify it annually through 2033. The strategy must list federal programs and spending, identify vulnerabilities and goals, propose actions and resources, and coordinate with Education and other agencies."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3472?format=json",
       "committees": [],
@@ -1348,8 +1449,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3472"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "The bill requires the Department of Homeland Security, with the Department of Education, to produce and update a national strategy securing elementary and secondary schools from terrorism. The strategy must inventory federal programs and spending and guide FEMA grants and state and local school districts.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:37:36.552806+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "aebf9475afed43b3af756edf",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2025-12-15",
@@ -1389,13 +1496,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill allows IMLS to award grants to colleges and universities to adopt, adapt, or create free downloadable \"open educational reading materials\" and to offer STEM courses using only those materials. Applications must be led by librarians with STEM faculty collaboration and prioritize institutions serving many low\u2011income or minority students.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:49:30.027618+00:00",
+        "input_hash": "65fa2799d22672d1023e4960",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:49:30.027618+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "65fa2799d22672d1023e4960",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill allows IMLS to award grants to colleges and universities to adopt, adapt, or create free downloadable \"open educational reading materials\" and to offer STEM courses using only those materials. Applications must be led by librarians with STEM faculty collaboration and prioritize institutions serving many low\u2011income or minority students."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6686?format=json",
       "committees": [],
@@ -1409,6 +1516,7 @@
       "detailPath": "119/hr/6686",
       "identifier": "HR 6686",
       "impact": {
+        "generated_at": "2026-08-03T04:49:31.800588+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1419,7 +1527,6 @@
         "summary": "The bill allows the Institute of Museum and Library Services to award grants to U.S. colleges and universities to create and adopt free digital open educational reading materials for STEM courses. It affects librarians, STEM faculty, students (especially low income or minority), and textbook publishers.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:49:31.800588+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "65fa2799d22672d1023e4960",
         "source": "committed"
@@ -1462,13 +1569,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill directs the Comptroller General to audit the Board of Governors and all Federal Reserve banks and report findings and recommendations within 12 months. It repeals statutory audit limits and explicitly authorizes GAO audits of international transactions, monetary policy deliberations, FOMC transactions, related communications, and Fed facilities.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:49:45.261953+00:00",
+        "input_hash": "9391cd043bef4d6c70916a66",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:49:45.261953+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "9391cd043bef4d6c70916a66",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill directs the Comptroller General to audit the Board of Governors and all Federal Reserve banks and report findings and recommendations within 12 months. It repeals statutory audit limits and explicitly authorizes GAO audits of international transactions, monetary policy deliberations, FOMC transactions, related communications, and Fed facilities."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/2327?format=json",
       "committees": [],
@@ -1482,6 +1589,7 @@
       "detailPath": "119/s/2327",
       "identifier": "S 2327",
       "impact": {
+        "generated_at": "2026-08-03T04:49:48.532614+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1492,7 +1600,6 @@
         "summary": "The Comptroller General (GAO) must complete an audit within 12 months of the Board of Governors of the Federal Reserve System and the 12 Federal Reserve banks and submit a report to Congress. GAO may audit FOMC actions, Section 13(3) programs, and Fed communications.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:49:48.532614+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "9391cd043bef4d6c70916a66",
         "source": "committed"
@@ -1535,13 +1642,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The Federal Food Administration Act of 2025 establishes a Federal Food Administration inside HHS led by a President\u2011appointed, Senate\u2011confirmed Commissioner to review food research and oversee safety, labeling, marketing, and public information. It covers regulated food products, industry stakeholders, imports, and mandates collaboration with USDA, CDC, NIH and international partners.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:50:00.113297+00:00",
+        "input_hash": "8c450078779e2e53db015d04",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:50:00.113297+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "8c450078779e2e53db015d04",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The Federal Food Administration Act of 2025 establishes a Federal Food Administration inside HHS led by a President\u2011appointed, Senate\u2011confirmed Commissioner to review food research and oversee safety, labeling, marketing, and public information. It covers regulated food products, industry stakeholders, imports, and mandates collaboration with USDA, CDC, NIH and international partners."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/6567?format=json",
       "committees": [],
@@ -1555,6 +1662,7 @@
       "detailPath": "119/hr/6567",
       "identifier": "HR 6567",
       "impact": {
+        "generated_at": "2026-08-03T04:50:01.507805+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1565,7 +1673,6 @@
         "summary": "The bill creates a Federal Food Administration within HHS led by a presidentially appointed Commissioner to oversee food safety, labeling, and research. It mandates coordination with USDA, CDC, and NIH and affects food manufacturers, importers, distributors, retailers, packers, and consumers under the FD&C Act.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:50:01.507805+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "8c450078779e2e53db015d04",
         "source": "committed"
@@ -1608,13 +1715,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill requires the Secretary of the Interior to remove or permanently conceal \"Francis Newlands\" from the Chevy Chase Circle memorial fountain, including a brass plaque, a named stone tablet, and carved \"Newlands\" on the fountain's coping stones. Items are offered to his descendants for 60 days, then accessioned by National Park Service.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T04:50:14.441430+00:00",
+        "input_hash": "60c0135292d9c711e2cfcfc1",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T04:50:14.441430+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "60c0135292d9c711e2cfcfc1",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill requires the Secretary of the Interior to remove or permanently conceal \"Francis Newlands\" from the Chevy Chase Circle memorial fountain, including a brass plaque, a named stone tablet, and carved \"Newlands\" on the fountain's coping stones. Items are offered to his descendants for 60 days, then accessioned by National Park Service."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/2369?format=json",
       "committees": [],
@@ -1628,6 +1735,7 @@
       "detailPath": "119/s/2369",
       "identifier": "S 2369",
       "impact": {
+        "generated_at": "2026-08-03T06:43:54.749221+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1638,7 +1746,6 @@
         "summary": "The bill requires the Interior Secretary and National Park Service to remove or conceal \"Newlands\" name and plaques at Chevy Chase Circle fountain (Washington, D.C.). Removed items must be offered to Newlands's descendants for 60 days, then accessioned into the Rock Creek Park museum.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T06:43:54.749221+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "60c0135292d9c711e2cfcfc1",
         "source": "committed"
@@ -1680,7 +1787,15 @@
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2369"
     },
     {
-      "aiDescription": null,
+      "aiDescription": {
+        "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, condemns the November 26, 2025 targeted shooting in Washington, D.C., and expresses sympathy and gratitude to their families and first responders. It honors both West Virginia National Guard members\u2014Beckstrom (deceased) and Wolfe (critically injured)\u2014and their fellow Guardsmen.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:05:06.224162+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4835248d385f062a703941e2",
+        "source": "committed"
+      },
       "apiUrl": "https://api.congress.gov/v3/bill/119/sres/537?format=json",
       "committees": [],
       "congress": 119,
@@ -1699,8 +1814,14 @@
             "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/537"
           }
         ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+        "status": "AI impact analysis",
+        "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, West Virginia National Guard members shot during the November 26, 2025 Washington, D.C. attack, and expresses sympathy to their families.  \nIt honors fellow West Virginia National Guard members, first responders, condemns the attack.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:05:09.523616+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4835248d385f062a703941e2",
+        "source": "committed"
       },
       "latestAction": {
         "date": "2025-12-09",
@@ -1740,13 +1861,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill amends Title IV of the Higher Education Act to create standards for \"early college fast track\" pathways that equal at least two semesters of postsecondary credit. They must satisfy state high school diploma requirements and be included in statewide articulation agreements covering students, state agencies, and public colleges.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:05:40.642189+00:00",
+        "input_hash": "3019d4a8ea1e89c1ac64dd46",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:05:40.642189+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "3019d4a8ea1e89c1ac64dd46",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill amends Title IV of the Higher Education Act to create standards for \"early college fast track\" pathways that equal at least two semesters of postsecondary credit. They must satisfy state high school diploma requirements and be included in statewide articulation agreements covering students, state agencies, and public colleges."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3359?format=json",
       "committees": [],
@@ -1760,6 +1881,7 @@
       "detailPath": "119/s/3359",
       "identifier": "S 3359",
       "impact": {
+        "generated_at": "2026-08-03T05:05:38.183512+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1770,7 +1892,6 @@
         "summary": "The bill funds state educational agencies to scale early college and early\u2011graduation pathways (AP/IB, dual enrollment, early college high schools, CTE). It makes participating high school students eligible for Pell Grants and ties earned credits to statewide articulation agreements with public two\u2011 and four\u2011year colleges.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:05:38.183512+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "3019d4a8ea1e89c1ac64dd46",
         "source": "committed"
@@ -1813,13 +1934,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This House resolution designates September 15\u201321, 2025, as \"Rail Safety Week\" and formally supports efforts to reduce highway\u2011rail grade crossing incidents, injuries, and fatalities. It urges people in the United States to join Rail Safety Week events and education campaigns to learn safe behavior at railroad tracks and grade crossings.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:05:50.605407+00:00",
+        "input_hash": "e077523c0b3c3e8de3e0f1ed",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:05:50.605407+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "e077523c0b3c3e8de3e0f1ed",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This House resolution designates September 15\u201321, 2025, as \"Rail Safety Week\" and formally supports efforts to reduce highway\u2011rail grade crossing incidents, injuries, and fatalities. It urges people in the United States to join Rail Safety Week events and education campaigns to learn safe behavior at railroad tracks and grade crossings."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/798?format=json",
       "committees": [],
@@ -1833,6 +1954,7 @@
       "detailPath": "119/hres/798",
       "identifier": "HRES 798",
       "impact": {
+        "generated_at": "2026-08-03T05:05:54.533538+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1843,7 +1965,6 @@
         "summary": "The resolution designates September 15\u201321, 2025 as Rail Safety Week and backs Operation Lifesaver and the U.S. Department of Transportation's safety outreach. It urges state DOTs, freight railroads, Amtrak, law enforcement, motorists and pedestrians to support education, enforcement and engineering to reduce grade\u2011crossing incidents.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:05:54.533538+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "e077523c0b3c3e8de3e0f1ed",
         "source": "committed"
@@ -1886,13 +2007,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This House resolution expresses condolences, honors victims, and commends first responders to the UPS Airlines Flight 2976 crash near Louisville, Kentucky. It names 14 victims, cites federal, state, and local responders including over 20 fire and emergency units, and conveys sympathy to the people of Louisville and Kentucky.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:06:08.399058+00:00",
+        "input_hash": "58543da9faf8758391d62ac5",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:08.399058+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "58543da9faf8758391d62ac5",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This House resolution expresses condolences, honors victims, and commends first responders to the UPS Airlines Flight 2976 crash near Louisville, Kentucky. It names 14 victims, cites federal, state, and local responders including over 20 fire and emergency units, and conveys sympathy to the people of Louisville and Kentucky."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/900?format=json",
       "committees": [],
@@ -1906,6 +2027,7 @@
       "detailPath": "119/hres/900",
       "identifier": "HRES 900",
       "impact": {
+        "generated_at": "2026-08-03T05:06:04.483523+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1916,7 +2038,6 @@
         "summary": "This House resolution expresses condolences for UPS Airlines flight 2976 victims and sympathies to Louisville and the Commonwealth of Kentucky. It honors named victims and commends first responders such as Okolona Fire Protection District, Louisville Fire Department, and Kentucky Air National Guard.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:04.483523+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "58543da9faf8758391d62ac5",
         "source": "committed"
@@ -1959,13 +2080,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill authorizes DOJ and State to provide technical assistance and training to help Ukraine recover forcibly transferred children and obtain prisoner and civilian detainee releases. Assistance may include biometric ID, open\u2011source intelligence, secure communications, and database management, and the Secretary of State must brief Congress.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:06:21.792435+00:00",
+        "input_hash": "dad8094ebdc112c8cfdab035",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:21.792435+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "dad8094ebdc112c8cfdab035",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill authorizes DOJ and State to provide technical assistance and training to help Ukraine recover forcibly transferred children and obtain prisoner and civilian detainee releases. Assistance may include biometric ID, open\u2011source intelligence, secure communications, and database management, and the Secretary of State must brief Congress."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5962?format=json",
       "committees": [],
@@ -1979,6 +2100,7 @@
       "detailPath": "119/hr/5962",
       "identifier": "HR 5962",
       "impact": {
+        "generated_at": "2026-08-03T05:06:20.834387+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -1989,7 +2111,6 @@
         "summary": "The bill authorizes the Department of Justice and Department of State to provide assistance and advisory support to the Government of Ukraine for POW exchanges, civilian detainee releases, and return of abducted Ukrainian children.  \nIt covers biometrics, open-source intelligence, communications, database security, and NGO coordination.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:20.834387+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "dad8094ebdc112c8cfdab035",
         "source": "committed"
@@ -2032,13 +2153,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The DISRUPT Act directs the executive branch to produce a strategy across federal agencies to disrupt expanding cooperation among the People's Republic of China, Russia, Iran, and North Korea and to mitigate resulting risks to U.S. national security. It covers those four named adversary countries.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:06:37.842552+00:00",
+        "input_hash": "7b85b014190a607cb001fd20",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:37.842552+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7b85b014190a607cb001fd20",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The DISRUPT Act directs the executive branch to produce a strategy across federal agencies to disrupt expanding cooperation among the People's Republic of China, Russia, Iran, and North Korea and to mitigate resulting risks to U.S. national security. It covers those four named adversary countries."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5912?format=json",
       "committees": [],
@@ -2052,6 +2173,7 @@
       "detailPath": "119/hr/5912",
       "identifier": "HR 5912",
       "impact": {
+        "generated_at": "2026-08-03T05:06:42.116810+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2062,7 +2184,6 @@
         "summary": "The DISRUPT Act requires the executive branch to craft a whole-of-government strategy to disrupt cooperation among China, Russia, Iran, and North Korea. It would involve the Departments of State and Defense, the Intelligence Community, National Laboratories, and federal procurement and research programs.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:42.116810+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "7b85b014190a607cb001fd20",
         "source": "committed"
@@ -2105,13 +2226,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill directs DHS's Science and Technology Directorate to work with the DEA to develop and evaluate capability to detect, identify, and disrupt nitazenes at very low concentrations. It amends 6 U.S.C. 182(15) by adding 'nitazenes' to the fentanyl and xylazine list, expanding federal S&T and DEA detection scope.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:06:52.255154+00:00",
+        "input_hash": "7b834447d6701bb1123f5b2c",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:52.255154+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7b834447d6701bb1123f5b2c",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill directs DHS's Science and Technology Directorate to work with the DEA to develop and evaluate capability to detect, identify, and disrupt nitazenes at very low concentrations. It amends 6 U.S.C. 182(15) by adding 'nitazenes' to the fentanyl and xylazine list, expanding federal S&T and DEA detection scope."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3093?format=json",
       "committees": [],
@@ -2125,6 +2246,7 @@
       "detailPath": "119/s/3093",
       "identifier": "S 3093",
       "impact": {
+        "generated_at": "2026-08-03T05:06:43.704426+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2135,7 +2257,6 @@
         "summary": "The bill adds \"nitazenes\" to the Homeland Security Act's list alongside fentanyl and xylazine. It directs DHS Science and Technology Directorate to work with the Drug Enforcement Administration to develop detection and identification of nitazenes at very low concentrations.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:06:43.704426+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "7b834447d6701bb1123f5b2c",
         "source": "committed"
@@ -2178,13 +2299,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill renames D.C.'s Office of Mayor to Office of Governor and the Council to the Legislative Assembly, treating current holders as governor and representatives. It amends the Home Rule Act to make federal and D.C. laws and rules that mention those offices refer to the new titles.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:22:09.082710+00:00",
+        "input_hash": "7b32bbb9c9e723ce058c2f3a",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:09.082710+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7b32bbb9c9e723ce058c2f3a",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill renames D.C.'s Office of Mayor to Office of Governor and the Council to the Legislative Assembly, treating current holders as governor and representatives. It amends the Home Rule Act to make federal and D.C. laws and rules that mention those offices refer to the new titles."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5856?format=json",
       "committees": [],
@@ -2198,6 +2319,7 @@
       "detailPath": "119/hr/5856",
       "identifier": "HR 5856",
       "impact": {
+        "generated_at": "2026-08-03T05:22:04.737856+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2208,7 +2330,6 @@
         "summary": "The bill renames the Mayor of the District of Columbia as Governor and the Council as the Legislative Assembly. It treats current officeholders as the new titles and changes references in U.S. and D.C. laws, affecting federal agencies and District government.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:04.737856+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "7b32bbb9c9e723ce058c2f3a",
         "source": "committed"
@@ -2251,13 +2372,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The Act directs U.S. policy to prioritize defense cooperation, using existing security\u2011assistance authorities to strengthen resilience, logistics, and interoperability. It defines Eastern Flank partners as Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia and targets 5% of GDP for defense by 2035.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:22:21.675609+00:00",
+        "input_hash": "6c3dd43f6e4964eec2faa7e2",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:21.675609+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "6c3dd43f6e4964eec2faa7e2",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The Act directs U.S. policy to prioritize defense cooperation, using existing security\u2011assistance authorities to strengthen resilience, logistics, and interoperability. It defines Eastern Flank partners as Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia and targets 5% of GDP for defense by 2035."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5793?format=json",
       "committees": [],
@@ -2271,6 +2392,7 @@
       "detailPath": "119/hr/5793",
       "identifier": "HR 5793",
       "impact": {
+        "generated_at": "2026-08-03T05:22:18.797545+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2281,7 +2403,6 @@
         "summary": "The bill directs U.S. defense cooperation with frontline NATO allies Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia. It authorizes use of FMF, DoD section 333, excess defense-article transfers, and War Reserve Stocks, engaging State and DoD to improve logistics, resilience, and interoperability.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:18.797545+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "6c3dd43f6e4964eec2faa7e2",
         "source": "committed"
@@ -2324,13 +2445,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This House resolution supports recognizing September 29, 2025, as \"International Day of Awareness of Food Loss and Waste\" and urges attention to food\u2011waste prevention. It frames U.S. commitments to halve food loss and waste by 2030 and targets government partners, retailers, consumers, and the household, retail, and food\u2011service sectors.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:22:32.817595+00:00",
+        "input_hash": "a8bb7f31038689cc456e8369",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:32.817595+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "a8bb7f31038689cc456e8369",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This House resolution supports recognizing September 29, 2025, as \"International Day of Awareness of Food Loss and Waste\" and urges attention to food\u2011waste prevention. It frames U.S. commitments to halve food loss and waste by 2030 and targets government partners, retailers, consumers, and the household, retail, and food\u2011service sectors."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/778?format=json",
       "committees": [],
@@ -2344,6 +2465,7 @@
       "detailPath": "119/hres/778",
       "identifier": "HRES 778",
       "impact": {
+        "generated_at": "2026-08-03T05:22:32.848288+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2354,7 +2476,6 @@
         "summary": "The resolution formally supports recognizing September 29, 2025, as International Day of Awareness of Food Loss and Waste. It highlights the National Strategy and affects households, retailers, food service industries, and federal agencies involved in preventing waste, recycling organics, cutting methane, and addressing food insecurity.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:32.848288+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "a8bb7f31038689cc456e8369",
         "source": "committed"
@@ -2397,13 +2518,13 @@
     },
     {
       "aiDescription": {
-        "summary": "This House resolution designates September 29, 2025, as \"National Coffee Day\" and supports strengthening coffee supply chains, agricultural research, climate resilience, and coffee health research. It recognizes growers, importers, roasters, retailers, baristas, researchers, U.S. economic impacts and exports, domestic producers in Hawai'i and Puerto Rico, and global smallholder farmers.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:22:46.489667+00:00",
+        "input_hash": "c14670e5866353c40e1eb2b3",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:46.489667+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "c14670e5866353c40e1eb2b3",
-        "source": "committed"
+        "source": "committed",
+        "summary": "This House resolution designates September 29, 2025, as \"National Coffee Day\" and supports strengthening coffee supply chains, agricultural research, climate resilience, and coffee health research. It recognizes growers, importers, roasters, retailers, baristas, researchers, U.S. economic impacts and exports, domestic producers in Hawai'i and Puerto Rico, and global smallholder farmers."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hres/784?format=json",
       "committees": [],
@@ -2417,6 +2538,7 @@
       "detailPath": "119/hres/784",
       "identifier": "HRES 784",
       "impact": {
+        "generated_at": "2026-08-03T05:22:47.462616+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2427,7 +2549,6 @@
         "summary": "The House resolution would designate September 29, 2025, as \"National Coffee Day\" and recognize U.S. coffee growers in Hawai'i and Puerto Rico, importers, roasters, retailers, baristas, and researchers. It supports supply chain resilience, agricultural research, farmer livelihoods, and trade actions involving the U.S. Trade Representative.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:22:47.462616+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "c14670e5866353c40e1eb2b3",
         "source": "committed"
@@ -2470,13 +2591,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill creates a National Gun Violence Research Program, authorizes competitive grants and HHS funding for gun-violence research, and lifts restrictions on ATF firearms-trace data. It applies to federal agencies, grant recipients, and institutions studying the causes, consequences, and prevention of gun violence, suicide, unintentional firearm injury, and trafficking.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:23:03.502912+00:00",
+        "input_hash": "1c253f84d01c45a3b0111c43",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:23:03.502912+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "1c253f84d01c45a3b0111c43",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill creates a National Gun Violence Research Program, authorizes competitive grants and HHS funding for gun-violence research, and lifts restrictions on ATF firearms-trace data. It applies to federal agencies, grant recipients, and institutions studying the causes, consequences, and prevention of gun violence, suicide, unintentional firearm injury, and trafficking."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5622?format=json",
       "committees": [],
@@ -2490,6 +2611,7 @@
       "detailPath": "119/hr/5622",
       "identifier": "HR 5622",
       "impact": {
+        "generated_at": "2026-08-03T05:23:01.848457+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2500,7 +2622,6 @@
         "summary": "The bill removes limits on ATF firearms tracing data and creates a National Gun Violence Research Program at the White House Office of Science and Technology Policy. It allows HHS funds to support gun-violence research and authorizes competitive grants to universities and public health researchers.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:23:01.848457+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "1c253f84d01c45a3b0111c43",
         "source": "committed"
@@ -2543,13 +2664,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill revises Title I\u2019s definition of \u201cState\u201d to treat American Samoa and the Northern Mariana Islands as separate States for JAG formula grants. Each would receive its own Edward Byrne Memorial Justice Assistance Grant allocation rather than share a single combined allocation.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:23:14.518357+00:00",
+        "input_hash": "e871a9950dcace882cb6db7b",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:23:14.518357+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "e871a9950dcace882cb6db7b",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill revises Title I\u2019s definition of \u201cState\u201d to treat American Samoa and the Northern Mariana Islands as separate States for JAG formula grants. Each would receive its own Edward Byrne Memorial Justice Assistance Grant allocation rather than share a single combined allocation."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5640?format=json",
       "committees": [],
@@ -2563,6 +2684,7 @@
       "detailPath": "119/hr/5640",
       "identifier": "HR 5640",
       "impact": {
+        "generated_at": "2026-08-03T05:23:15.228171+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2573,7 +2695,6 @@
         "summary": "The bill treats American Samoa and the Northern Mariana Islands as separate \"States\" for the Justice Assistance Grant (JAG) formula. That change requires the Department of Justice to give each territory its own full JAG allocation, increasing funds for local police, prosecutors, and courts.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:23:15.228171+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "e871a9950dcace882cb6db7b",
         "source": "committed"
@@ -2616,13 +2737,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The Justice for Exonerees Act raises the cap in 28 U.S.C. 2513(e) from $50,000 to $70,000 and requires annual CPI-based inflation adjustments to awards under that subsection. It covers persons unjustly convicted and imprisoned who obtain damages under that federal statute against the United States.",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:38:34.951746+00:00",
+        "input_hash": "0bc8b67c44cf2e1352ca3bc9",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:38:34.951746+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "0bc8b67c44cf2e1352ca3bc9",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The Justice for Exonerees Act raises the cap in 28 U.S.C. 2513(e) from $50,000 to $70,000 and requires annual CPI-based inflation adjustments to awards under that subsection. It covers persons unjustly convicted and imprisoned who obtain damages under that federal statute against the United States."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5540?format=json",
       "committees": [],
@@ -2636,6 +2757,7 @@
       "detailPath": "119/hr/5540",
       "identifier": "HR 5540",
       "impact": {
+        "generated_at": "2026-08-03T05:38:37.595194+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2646,7 +2768,6 @@
         "summary": "The bill raises the maximum federal damage award for an unjust conviction and imprisonment under 28 U.S.C. \u00a72513 from $50,000 to $70,000 and requires annual inflation adjustments tied to the Consumer Price Index. It affects exonerees, the Department of Justice, federal courts, and Treasury.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:38:37.595194+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "0bc8b67c44cf2e1352ca3bc9",
         "source": "committed"
@@ -2689,13 +2810,13 @@
     },
     {
       "aiDescription": {
-        "summary": "The bill directs US to prioritize defense cooperation and use existing authorities to enhance resilience and interoperability with NATO Eastern Flank partners. It covers Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia and requires a 5% GDP defense commitment by 2035 (3.5% core, 1.5% other).",
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:38:52.756677+00:00",
+        "input_hash": "7dfa2f10f2c96df3bbfe9ad3",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:38:52.756677+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "7dfa2f10f2c96df3bbfe9ad3",
-        "source": "committed"
+        "source": "committed",
+        "summary": "The bill directs US to prioritize defense cooperation and use existing authorities to enhance resilience and interoperability with NATO Eastern Flank partners. It covers Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia and requires a 5% GDP defense commitment by 2035 (3.5% core, 1.5% other)."
       },
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/2914?format=json",
       "committees": [],
@@ -2709,6 +2830,7 @@
       "detailPath": "119/s/2914",
       "identifier": "S 2914",
       "impact": {
+        "generated_at": "2026-08-03T05:38:48.617860+00:00",
         "sources": [
           {
             "label": "Congress.gov bill page",
@@ -2719,7 +2841,6 @@
         "summary": "The bill directs the United States to deepen defense cooperation with NATO frontline members Bulgaria, Estonia, Finland, Hungary, Latvia, Lithuania, Poland, Romania, and Slovakia. It authorizes Foreign Military Financing, section 333, excess defense-article transfers, and War Reserve Stocks, involving the Departments of State and Defense.",
         "model": "gpt-5-mini",
         "provider": "azure",
-        "generated_at": "2026-08-03T05:38:48.617860+00:00",
         "content_version": "bill-ai-v6",
         "input_hash": "7dfa2f10f2c96df3bbfe9ad3",
         "source": "committed"
@@ -2759,83 +2880,10 @@
       "type": "S",
       "updatedAt": "2026-04-06T20:04:28Z",
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2914"
-    },
-    {
-      "aiDescription": {
-        "summary": "The SEVER Act requires denial of U.S. visas or admission to any person subject to sanctions under Executive Order 13876. It applies that restriction to individuals seeking entry as representatives to the United Nations, based on the EO as in effect on September 16, 2025.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "generated_at": "2026-08-03T05:39:09.567563+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "15b877a4d4c2e5b4e1e7a146",
-        "source": "committed"
-      },
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/2893?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 7,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "SEVER Act of 2025",
-        "updated_at": "2026-04-06T19:34:47Z"
-      },
-      "detailPath": "119/s/2893",
-      "identifier": "S 2893",
-      "impact": {
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2893"
-          }
-        ],
-        "status": "AI impact analysis",
-        "summary": "The SEVER Act would require denial of admission to the United States for any United Nations representatives who are subject to sanctions under Executive Order 13876 (relating to Iran). It directs the State Department to refuse visas to people designated under EO 13876.",
-        "model": "gpt-5-mini",
-        "provider": "azure",
-        "generated_at": "2026-08-03T05:39:14.849608+00:00",
-        "content_version": "bill-ai-v6",
-        "input_hash": "15b877a4d4c2e5b4e1e7a146",
-        "source": "committed"
-      },
-      "latestAction": {
-        "date": "2025-09-18",
-        "text": "Read twice and referred to the Committee on the Judiciary."
-      },
-      "members": [
-        {
-          "bioguideId": "C001098",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "number": "2893",
-      "originChamber": "Senate",
-      "policyArea": "International Affairs",
-      "sponsors": [
-        {
-          "bioguideId": "C001098",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Cruz, Ted [R-TX]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "TX"
-        }
-      ],
-      "title": "SEVER Act of 2025",
-      "type": "S",
-      "updatedAt": "2026-04-06T19:34:47Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2893"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-08-03T06:47:00.199192+00:00",
+  "generated_at": "2026-08-04T06:15:43.826409+00:00",
   "impact_status": "cached",
   "source": "congress_api"
 }

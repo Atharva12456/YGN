@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -57,6 +57,16 @@
       "generated_at": "2026-08-03T04:49:10.172994+00:00",
       "content_version": "bill-ai-v6",
       "input_hash": "aebf9475afed43b3af756edf",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill requires the Department of Homeland Security, with the Department of Education, to produce and update a national strategy securing elementary and secondary schools from terrorism. The strategy must inventory federal programs and spending and guide FEMA grants and state and local school districts.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:37:36.552806+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "aebf9475afed43b3af756edf",
+      "status": "AI impact analysis",
       "source": "committed"
     }
   },

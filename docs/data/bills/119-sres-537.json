@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 1,
@@ -49,7 +49,26 @@
     "type": "SRES",
     "updatedAt": "2026-04-06T20:17:23Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/537",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, condemns the November 26, 2025 targeted shooting in Washington, D.C., and expresses sympathy and gratitude to their families and first responders. It honors both West Virginia National Guard members\u2014Beckstrom (deceased) and Wolfe (critically injured)\u2014and their fellow Guardsmen.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:05:06.224162+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4835248d385f062a703941e2",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, West Virginia National Guard members shot during the November 26, 2025 Washington, D.C. attack, and expresses sympathy to their families.  \nIt honors fellow West Virginia National Guard members, first responders, condemns the attack.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-04T05:05:09.523616+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4835248d385f062a703941e2",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-03T06:47:08.369859+00:00",
   "source": "congress_api"

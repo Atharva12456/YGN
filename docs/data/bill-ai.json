@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-03T06:52:30.281691+00:00",
-  "count": 226,
+  "generated_at": "2026-08-04T06:24:40.339863+00:00",
+  "count": 231,
   "bills": {
     "SRES 630": {
       "description": {
@@ -4348,7 +4348,15 @@
       "identifier": "S 3472",
       "title": "National Strategy for School Security Act of 2025",
       "source_updated_at": "2026-04-06T20:02:14Z",
-      "content_version": "bill-ai-v6"
+      "content_version": "bill-ai-v6",
+      "impact": {
+        "summary": "The bill requires the Department of Homeland Security, with the Department of Education, to produce and update a national strategy securing elementary and secondary schools from terrorism. The strategy must inventory federal programs and spending and guide FEMA grants and state and local school districts.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:37:36.552806+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "aebf9475afed43b3af756edf"
+      }
     },
     "119/hr/6686": {
       "description": {
@@ -4785,6 +4793,105 @@
       "identifier": "S 2893",
       "title": "SEVER Act of 2025",
       "source_updated_at": "2026-04-06T19:34:47Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hres/1118": {
+      "description": {
+        "summary": "This House resolution designates the third week of March as National CACFP Week and urges reforms to CACFP, including extra\u2011meal reimbursement, reduced area\u2011eligibility, annual for\u2011profit eligibility, inflation adjustments, and lower administrative burdens. It covers CACFP participants in Head Start, childcare (including military), family homes, shelters, after\u2011school, and adult day care.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:21:04.451164+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d2dd2dea736a1f804f930170"
+      },
+      "impact": {
+        "summary": "The resolution names the third week of March as National CACFP Week and recognizes USDA's CACFP. It urges strengthening CACFP reimbursement, eligibility, inflation adjustments, and reduced paperwork to help Head Start, childcare (including military), nonprofit sponsors, State agencies, and adult daycare providers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:21:04.543492+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "d2dd2dea736a1f804f930170"
+      },
+      "canonical_id": "119/hres/1118",
+      "identifier": "HRES 1118",
+      "title": "Expressing support for the designation of the third week of March as \"National CACFP Week\".",
+      "source_updated_at": "2026-04-06T13:07:51Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7898": {
+      "impact": {
+        "summary": "The bill makes it a federal crime to knowingly enter or remain within a posted 15\u2011foot protective zone around a National Guard member during Title 10 or Title 32 deployments. Violators face fines, up to one year imprisonment, five years for contact, enforced by DOJ.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T04:48:23.455700+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "547d04edc1150bb853de4508"
+      },
+      "canonical_id": "119/hr/7898",
+      "identifier": "HR 7898",
+      "title": "National Guard Protective Zone Act",
+      "source_updated_at": "2026-04-06T13:09:42Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/7887": {
+      "description": {
+        "summary": "The bill authorizes the FDIC to bar sale of compensation\u2011received stock during cease\u2011and\u2011desist orders and to automatically prohibit senior executives at certain troubled banks from selling such stock when supervisory ratings or notices are unresolved. Coverage applies to officers, directors, institution\u2011affiliated parties and banks or holding companies over $50 billion.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T06:09:13.430160+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "319647ad5aa43cb698dd2917"
+      },
+      "canonical_id": "119/hr/7887",
+      "identifier": "HR 7887",
+      "title": "Incentivizing Safe and Sound Banking Act",
+      "source_updated_at": "2026-04-06T15:49:23Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/hr/6857": {
+      "description": {
+        "summary": "The bill directs the Department of Education's Office for Civil Rights to run an annually updated public awareness campaign about Title VI rights, require colleges to post an OCR complaint link on their homepages, and distribute campaign materials for campus display. It applies to institutions in federal student aid programs.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:04:35.799776+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e60d7a6b9ba244f2de10101b"
+      },
+      "impact": {
+        "summary": "The bill requires ED's Office for Civil Rights to run an annual Title VI awareness campaign and brief Congress monthly. Colleges and universities participating in federal student aid must link to OCR\u2019s complaint page and post campaign materials in high\u2011traffic campus locations and student websites.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:04:36.397987+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "e60d7a6b9ba244f2de10101b"
+      },
+      "canonical_id": "119/hr/6857",
+      "identifier": "HR 6857",
+      "title": "Protecting Students on Campus Act of 2025",
+      "source_updated_at": "2026-04-06T19:59:25Z",
+      "content_version": "bill-ai-v6"
+    },
+    "119/sres/537": {
+      "description": {
+        "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, condemns the November 26, 2025 targeted shooting in Washington, D.C., and expresses sympathy and gratitude to their families and first responders. It honors both West Virginia National Guard members\u2014Beckstrom (deceased) and Wolfe (critically injured)\u2014and their fellow Guardsmen.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:05:06.224162+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4835248d385f062a703941e2"
+      },
+      "impact": {
+        "summary": "This Senate resolution honors Specialist Sarah Beckstrom and Staff Sergeant Andrew Wolfe, West Virginia National Guard members shot during the November 26, 2025 Washington, D.C. attack, and expresses sympathy to their families.  \nIt honors fellow West Virginia National Guard members, first responders, condemns the attack.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "generated_at": "2026-08-04T05:05:09.523616+00:00",
+        "content_version": "bill-ai-v6",
+        "input_hash": "4835248d385f062a703941e2"
+      },
+      "canonical_id": "119/sres/537",
+      "identifier": "SRES 537",
+      "title": "A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.",
+      "source_updated_at": "2026-04-06T20:17:23Z",
       "content_version": "bill-ai-v6"
     }
   }

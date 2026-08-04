@@ -259,6 +259,21 @@
       {
         "congress": 119,
         "latestAction": {
+          "actionDate": "2025-12-19",
+          "text": "Referred to the House Committee on Education and Workforce."
+        },
+        "number": "969",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "Expressing support for the designation of the week beginning on September 8, 2025, as \"National Hispanic-Serving Institutions Week\".",
+        "type": "HRES",
+        "updateDate": "2026-04-06",
+        "updateDateIncludingText": "2026-04-06",
+        "url": "https://api.congress.gov/v3/bill/119/hres/969?format=json"
+      },
+      {
+        "congress": 119,
+        "latestAction": {
           "actionDate": "2025-12-18",
           "text": "Read twice and referred to the Committee on the Judiciary."
         },
@@ -1185,31 +1200,16 @@
         "updateDate": "2026-04-06",
         "updateDateIncludingText": "2026-04-06",
         "url": "https://api.congress.gov/v3/bill/119/hr/1315?format=json"
-      },
-      {
-        "congress": 118,
-        "latestAction": {
-          "actionDate": "2024-12-17",
-          "text": "Referred to the Subcommittee on Trade."
-        },
-        "number": "9827",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "To impose additional duties on imports of goods into the United States.",
-        "type": "HR",
-        "updateDate": "2026-04-05",
-        "updateDateIncludingText": "2026-04-05",
-        "url": "https://api.congress.gov/v3/bill/118/hr/9827?format=json"
       }
     ],
     "pagination": {
-      "count": 16395,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-05T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 16402,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-06T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-08-03T06:46:55.149942+00:00"
+  "generated_at": "2026-08-04T06:15:19.973402+00:00"
 }
