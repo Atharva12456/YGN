@@ -1180,6 +1180,13 @@ async function initForeignBrief() {
   renderGrid();
   renderToolbarCounts();
 
+  // The hero board is built by initForeignSignalBoard(), which runs before this
+  // fetch resolves and therefore counts the static fallback cards. Correct it now
+  // that the real brief has rendered. Deliberately `conflicts.length` and not the
+  // filtered count: the board reports what is tracked, not what is on screen.
+  const conflictTile = document.getElementById('sig-conflicts');
+  if (conflictTile) conflictTile.textContent = String(conflicts.length);
+
   // ---- diplomacy read + outlook ----
   if (outlookHost && (diplomacy.length || data.outlook)) {
     outlookHost.innerHTML = `
