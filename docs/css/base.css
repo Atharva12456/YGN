@@ -210,12 +210,21 @@ button {
   padding: 2rem max(1rem, 5vw);
 }
 
-/* Sections: hidden by default, shown when active */
-#main-content section {
+/* Page sections: hidden by default, shown when active.
+   Child combinator, NOT descendant. Pages nest their own <section> elements
+   inside the switchable one -- economy has six, foreign-affairs eleven,
+   recent-bills four -- and a descendant selector hid every one of them.
+   foreign-affairs and recent-bills happened to survive because per-page rules
+   (.foreign-section, .civic-section) re-set display; the economy page had no
+   such rule, so its chart, debt clock, indices, metrics and daily table all
+   rendered into a display:none container.
+   Nested sections that must start hidden use the `hidden` attribute, which
+   `[hidden] { display: none !important }` in design-system.css enforces. */
+#main-content > section {
   display: none;
 }
 
-#main-content section.active {
+#main-content > section.active {
   display: block;
 }
 
