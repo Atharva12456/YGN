@@ -62,12 +62,21 @@ jobs:
       YGN_WIKI_RETRY_DELAY_SECONDS: "1"
       YGN_WIKI_SEARCH_QUERY_LIMIT: "2"
       YGN_WIKI_SEARCH_RESULT_LIMIT: "3"
-      # 50 members x ~5 calls per hourly run is <=250 FEC calls/hour, well under a
-      # standard 1,000/hour key. ceil(537 / 50) = 11 runs, so the sweep cursor
-      # covers the whole roster in ~11 hours -- margin to spare under the 19h goal
-      # even if GitHub delays or drops a few scheduled runs. Progress commits every
-      # run, so one slow lookup can't strand more than a single batch.
-      YGN_FEC_SCORE_LIMIT: "50"
+      # Sized to the key's ACTUAL hourly budget, not to an assumed one.
+      #
+      # This was 50, written for a registered 1,000/hour key. The key in the
+      # FEC_API_KEY secret reports X-RateLimit-Limit=60 (measured in the run logs),
+      # and scoring one member costs ~5 calls: candidate search, totals, and two
+      # schedule_a breakdowns. So only ~12 members can complete in an hour --
+      # the other ~38 attempts each burned a 429 and wrote an N/A, every run,
+      # which is why coverage sat at 488/537 while `fec_scored_this_run` read 49.
+      #
+      # 10 leaves headroom for the retry the client makes before giving up, so
+      # every member the sweep attempts can actually finish. ~10 real grades per
+      # run instead of a mostly-wasted batch.
+      #
+      # Raise this to 50 the moment the key is a registered 1,000/hour one.
+      YGN_FEC_SCORE_LIMIT: "10"
       YGN_FEC_DELAY_SECONDS: "0"
       # Sequential (1): the FEC backend throttles concurrent bursts even under the
       # hourly budget, and parallel workers were silently dropping most of each
