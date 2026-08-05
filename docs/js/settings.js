@@ -13,7 +13,6 @@
    uses for the theme, now extended to text size and density, which previously
    flashed at their defaults until DOMContentLoaded.
 
-   The economy page is deliberately pinned to the light palette and takes no
    injected chrome, so this module exits before touching it.
 
    Storage contract: a preference left at its default is stored as the ABSENCE
@@ -27,7 +26,6 @@
 
   var docEl = document.documentElement;
   var page = (document.body && document.body.dataset.page) || '';
-  if (page === 'economy') return;
 
   function guard(label, fn) {
     try { return fn(); } catch (e) { if (window.console) console.warn('[ygn/settings] ' + label, e); }

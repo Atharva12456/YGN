@@ -13,13 +13,13 @@
    Scoped off the economy page: settings.js never runs there, so its header has
    only the brand and the health pill, and even the 8px gap would be a visible
    change to a page that is deliberately left exactly as it is. */
-body:not([data-page="economy"]) .site-header { gap: var(--space-2); }
-body:not([data-page="economy"]) .site-header > #health-indicator { margin-left: auto; }
+.site-header { gap: var(--space-2); }
+.site-header > #health-indicator { margin-left: auto; }
 /* Both of these carry their own left margin from when they were the last thing
    in the header. With a real flex gap they'd read as 17px, 16px, 8px — let the
    gap be the only source of spacing. */
-body:not([data-page="economy"]) .site-header > .theme-toggle,
-body:not([data-page="economy"]) .site-header > .ygn-hub-btn { margin-left: 0; }
+.site-header > .theme-toggle,
+.site-header > .ygn-hub-btn { margin-left: 0; }
 
 .ygn-settings-btn {
   background: none;

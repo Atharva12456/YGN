@@ -2,7 +2,7 @@
    YGN — UX layer
    Self-contained additions built on the "Civic Record" design system. Every
    feature is wrapped in its own guard, so one failure can never take a page
-   down, and none of it is injected on the economy page.
+   down. Every page gets this layer, economy included.
 
      1  Command palette (Ctrl/Cmd-K)      5  Section rail (auto table of contents)
      2  Keyboard shortcut help (?)        6  Copy-link anchors on headings
@@ -17,7 +17,6 @@
   'use strict';
 
   var page = (document.body && document.body.dataset.page) || '';
-  if (page === 'economy') return;               // economy page stays untouched
 
   function guard(label, fn) {
     try { fn(); } catch (e) { if (window.console) console.warn('[ygn/ux] ' + label, e); }

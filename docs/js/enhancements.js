@@ -2,21 +2,20 @@
    Site enhancements: theme, scroll-reveal, count-up, back-to-top, reading
    progress, "/" search shortcut, recently-viewed. Self-contained and guarded
    so a single failure never breaks the page. Injected chrome and animations
-   are skipped on the economy page; global helpers (skip link, focus, print)
+   run on every page, economy included; global helpers (skip link, focus, print)
    are harmless everywhere.
    ======================================================================== */
 (function () {
   'use strict';
   var docEl = document.documentElement;
   var page = (document.body && document.body.dataset.page) || '';
-  var isEconomy = page === 'economy';
 
   function applyTheme(t) {
     if (t === 'dark') docEl.setAttribute('data-theme', 'dark');
     else docEl.removeAttribute('data-theme');
   }
   // Apply the theme immediately (deferred script runs pre-paint) to avoid a flash.
-  if (!isEconomy) {
+  {
     var stored = null;
     try { stored = localStorage.getItem('ygn-theme'); } catch (e) {}
     var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -42,7 +41,6 @@
     });
 
     guard('theme-toggle', function () {
-      if (isEconomy) return;
       var header = document.querySelector('.site-header');
       if (!header || document.querySelector('.theme-toggle')) return;
       var sun = '☀', moon = '☾';
@@ -70,7 +68,7 @@
       header.appendChild(btn);
     });
 
-    if (!isEconomy) {
+    {
       guard('reveal', setupReveal);
       guard('countup', setupCountUp);
       guard('backtotop', setupBackToTop);

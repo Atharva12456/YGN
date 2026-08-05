@@ -279,7 +279,20 @@
            '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="1.6"/></svg>';
   }
 
-  var INDEX_COLORS = { sp500: '#2f7d66', dow: '#1d63d1', nasdaq: '#b4530a' };
+  // Series colours live in CSS so they can differ per theme. They are applied as
+  // inline SVG attributes, which CSS variables cannot reach once drawn, so the
+  // values are read at render time and every chart is redrawn on a theme change
+  // (same pattern as the NOMINATE tile tint in core.js).
+  function indexColor(key) {
+    var v = getComputedStyle(document.documentElement)
+      .getPropertyValue('--econ-series-' + key).trim();
+    return v || '#1d63d1';
+  }
+  var INDEX_COLORS = {
+    get sp500() { return indexColor('sp500'); },
+    get dow() { return indexColor('dow'); },
+    get nasdaq() { return indexColor('nasdaq'); }
+  };
 
   /* ── index cards (FEATURES 3, 4, 20) ───────────────────────────────────── */
   function renderIndexCards() {
@@ -637,6 +650,13 @@
     readUrlState();
     wireControls();
     load(false);
+    // Inline SVG attributes don't follow CSS variables; redraw with the new
+    // palette whenever the theme flips.
+    document.addEventListener('ygn:themechange', function () {
+      if (!state.markets) return;
+      renderIndexCards();
+      renderMainChart();
+    });
   }
   if (document.readyState !== 'loading') boot();
   else document.addEventListener('DOMContentLoaded', boot);

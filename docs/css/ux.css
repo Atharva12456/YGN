@@ -1,8 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    YGN — UX layer styling (pairs with docs/js/ux.js)
    Everything here uses the design-system tokens: no new sizes, radii, or
-   shadows are invented. Never applied to the economy page (ux.js exits early
-   there, so none of these nodes are ever created).
+   shadows are invented. Applies on every page, economy included.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ── Density and text-size modes ──────────────────────────────────────────

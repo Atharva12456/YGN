@@ -626,18 +626,18 @@ a.bill-person:hover { border-color: var(--color-accent); box-shadow: var(--shado
 .reveal.is-visible { opacity: 1; transform: none; }
 
 /* Card hover lift (never on economy) */
-body:not([data-page="economy"]) .stat-card,
-body:not([data-page="economy"]) .pulse-card,
-body:not([data-page="economy"]) .eo-card,
-body:not([data-page="economy"]) .official-card,
-body:not([data-page="economy"]) .law-card {
+.stat-card,
+.pulse-card,
+.eo-card,
+.official-card,
+.law-card {
   transition: transform var(--transition-fast), box-shadow var(--transition-med);
 }
-body:not([data-page="economy"]) .stat-card:hover,
-body:not([data-page="economy"]) .pulse-card:hover,
-body:not([data-page="economy"]) .eo-card:hover,
-body:not([data-page="economy"]) .official-card:hover,
-body:not([data-page="economy"]) .law-card:hover {
+.stat-card:hover,
+.pulse-card:hover,
+.eo-card:hover,
+.official-card:hover,
+.law-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(26, 31, 46, 0.13);
 }
@@ -721,20 +721,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 :root[data-theme="dark"] .secondary-button { color: var(--color-text); }
 :root[data-theme="dark"] img.member-photo, :root[data-theme="dark"] .member-avatar { filter: brightness(0.92); }
 
-/* Pin the economy page to the light palette regardless of theme preference */
-body[data-page="economy"] {
-  --color-bg: #f4f6f9;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f7f9fd;
-  --color-header-bg: #1a1f2e;
-  --color-nav-bg: #242938;
-  --color-text: #1a1f2e;
-  --color-text-muted: #5a6272;
-  --color-border: #dde2ec;
-  --color-card-shadow: rgba(26, 31, 46, 0.08);
-  --color-skeleton: #e2e8f0;
-  --color-skeleton-shine: #f1f5f9;
-}
 
 @media print {
   .site-header, .main-nav, .back-to-top, .read-progress, .theme-toggle,
@@ -1049,11 +1035,11 @@ body[data-page="economy"] {
 :root[data-theme="dark"] .member-save-button--tile { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
 :root[data-theme="dark"] .ethics-badge:hover,
 :root[data-theme="dark"] .ethics-badge:focus-visible { box-shadow: 0 0 0 2px rgba(230, 233, 240, 0.25); }
-:root[data-theme="dark"] body:not([data-page="economy"]) .stat-card:hover,
-:root[data-theme="dark"] body:not([data-page="economy"]) .pulse-card:hover,
-:root[data-theme="dark"] body:not([data-page="economy"]) .eo-card:hover,
-:root[data-theme="dark"] body:not([data-page="economy"]) .official-card:hover,
-:root[data-theme="dark"] body:not([data-page="economy"]) .law-card:hover {
+:root[data-theme="dark"] .stat-card:hover,
+:root[data-theme="dark"] .pulse-card:hover,
+:root[data-theme="dark"] .eo-card:hover,
+:root[data-theme="dark"] .official-card:hover,
+:root[data-theme="dark"] .law-card:hover {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
 }
 
