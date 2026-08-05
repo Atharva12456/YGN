@@ -209,6 +209,11 @@ def _load_local_env():
     env_keys = {
         "CONGRESS_API_KEY",
         "FEC_API_KEY",
+        # Multi-key rotation: a comma/space separated list, plus numbered slots.
+        "FEC_API_KEYS",
+        # Market indices on the economy page; when set, index levels come from
+        # FRED (the official Federal Reserve series) instead of the fallback.
+        "FRED_API_KEY",
         "ECON_API_KEY",
         "YGN_ECON_API_KEY",
         "FMP_API_KEY",
@@ -220,6 +225,25 @@ def _load_local_env():
         "OPENAI_API_KEY",
         "OPENAI_BASE_URL",
         "OPENAI_MODEL",
+        "FEC_API_KEY_2",
+        "FEC_API_KEY_3",
+        "FEC_API_KEY_4",
+        "FEC_API_KEY_5",
+        "FEC_API_KEY_6",
+        "FEC_API_KEY_7",
+        "FEC_API_KEY_8",
+        "FEC_API_KEY_9",
+        "FEC_API_KEY_10",
+        "FEC_API_KEY_11",
+        "FEC_API_KEY_12",
+        "FEC_API_KEY_13",
+        "FEC_API_KEY_14",
+        "FEC_API_KEY_15",
+        "FEC_API_KEY_16",
+        "FEC_API_KEY_17",
+        "FEC_API_KEY_18",
+        "FEC_API_KEY_19",
+        "FEC_API_KEY_20",
     }
     for env_path in ENV_PATHS:
         if not env_path.exists():
