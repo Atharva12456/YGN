@@ -63,14 +63,58 @@
       <section class="econ-chart-block" aria-labelledby="econ-chart-title">
         <h2 id="econ-chart-title" class="econ-section-title">Index history</h2>
         <p class="econ-chart-hint">
-          Hover the chart, or focus it and use the arrow keys, to step through each trading day.
+          Hover the chart, or focus it and use the arrow keys, to step through each
+          trading day. Drag across it to zoom into a date window. Press
+          <kbd>?</kbd> for the full list of shortcuts.
         </p>
         <div id="econ-chart" class="econ-chart"></div>
+        <div id="econ-stats" class="econ-stats-host"></div>
+      </section>
+
+      <section class="econ-split" aria-labelledby="econ-moves-title">
+        <div>
+          <h2 id="econ-moves-title" class="econ-section-title">Biggest daily moves</h2>
+          <div id="econ-moves"></div>
+        </div>
+        <div>
+          <h2 class="econ-section-title">On a fixed starting amount</h2>
+          <div id="econ-growth"></div>
+        </div>
+      </section>
+
+      <section class="econ-panel" aria-labelledby="econ-monthly-title">
+        <h2 id="econ-monthly-title" class="econ-section-title">Month by month</h2>
+        <div id="econ-monthly"></div>
+      </section>
+
+      <section class="econ-split" aria-labelledby="econ-hist-title">
+        <div>
+          <h2 id="econ-hist-title" class="econ-section-title">How daily moves are distributed</h2>
+          <div id="econ-hist"></div>
+        </div>
+        <div>
+          <h2 class="econ-section-title">Do the indices move together?</h2>
+          <div id="econ-corr"></div>
+        </div>
+      </section>
+
+      <section class="econ-panel" aria-labelledby="econ-terms-title">
+        <h2 id="econ-terms-title" class="econ-section-title">Across administrations</h2>
+        <div id="econ-terms"></div>
       </section>
 
       <section aria-labelledby="econ-metrics-title">
         <h2 id="econ-metrics-title" class="econ-section-title">Fiscal and labour indicators</h2>
         <div id="econ-metrics" class="econ-cards"></div>
+        <div id="econ-fiscal" class="econ-cards"></div>
+      </section>
+
+      <section class="econ-panel" id="econ-debt-chart-block" aria-labelledby="econ-debt-chart-title">
+        <h2 id="econ-debt-chart-title" class="econ-section-title">Total public debt over time</h2>
+        <div id="econ-debt-chart" class="econ-chart"></div>
+        <p class="econ-note">
+          Month-end totals from the U.S. Treasury&rsquo;s daily &ldquo;Debt to the Penny&rdquo; series.
+        </p>
       </section>
 
       <section class="econ-daily-block" aria-labelledby="econ-daily-title">

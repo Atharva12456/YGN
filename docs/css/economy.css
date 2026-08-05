@@ -13,15 +13,27 @@
   --econ-series-sp500: #2f7d66;
   --econ-series-dow: #1d63d1;
   --econ-series-nasdaq: #b4530a;
+  --econ-series-debt: #7a4bbd;
   --econ-up: #2f7d66;
   --econ-down: #c0453f;
+  /* Heat-map tints. Kept as variables so the month grid and correlation table
+     stay legible against either surface without inline colours. */
+  --econ-heat-u1: #e6f4ee; --econ-heat-u2: #c6e8da; --econ-heat-u3: #9bd8c1; --econ-heat-u4: #6cc4a5;
+  --econ-heat-d1: #fdeceb; --econ-heat-d2: #f9d3d1; --econ-heat-d3: #f2b0ac; --econ-heat-d4: #e88781;
+  --econ-heat-ink: #14202e;
 }
 :root[data-theme="dark"] {
   --econ-series-sp500: #5fd3ab;
   --econ-series-dow: #7fb0f5;
   --econ-series-nasdaq: #f0a55c;
+  --econ-series-debt: #c3a2f0;
   --econ-up: #6fd7b4;
   --econ-down: #ff9d9d;
+  /* u4 was #2d7e63, which measured 4.49:1 against the light ink -- just under
+     the 4.5 floor for the numbers sitting on it. */
+  --econ-heat-u1: #17352c; --econ-heat-u2: #1d4a3c; --econ-heat-u3: #24634e; --econ-heat-u4: #2a745b;
+  --econ-heat-d1: #3a1f22; --econ-heat-d2: #52272a; --econ-heat-d3: #6d3134; --econ-heat-d4: #8a3c3e;
+  --econ-heat-ink: #f2f5f9;
 }
 
 .econ-updated {
@@ -292,11 +304,221 @@
   .econ-debt-value { font-size: var(--text-2xl); }
 }
 
+/* ── Moving averages and the drag-zoom brush (21-23) ──────────────────────── */
+.econ-ma { fill: none; stroke-width: 1.4; opacity: 0.75; }
+.econ-brush {
+  fill: var(--color-accent);
+  opacity: 0.16;
+  stroke: var(--color-accent);
+  stroke-width: 1;
+}
+.econ-chart-svg { cursor: crosshair; }
+.econ-ma-group { display: inline-flex; gap: var(--space-1); }
+.econ-btn--sm { padding: 0.25rem 0.5rem; font-size: var(--text-xs); }
+
+/* ── At-a-glance statistics (26-29) ───────────────────────────────────────── */
+.econ-stats-host { margin-top: var(--space-4); }
+.econ-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+}
+.econ-stat {
+  border-left: 3px solid var(--color-border);
+  padding-left: var(--space-3);
+}
+.econ-stat.is-up { border-left-color: var(--econ-up); }
+.econ-stat.is-down { border-left-color: var(--econ-down); }
+.econ-stat dt {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.econ-stat dd {
+  margin: 0.15rem 0 0;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.econ-stat.is-up dd { color: var(--econ-up); }
+.econ-stat.is-down dd { color: var(--econ-down); }
+.econ-stat-note { font-size: var(--text-xs); color: var(--color-text-muted); margin: 0.1rem 0 0; }
+
+/* ── Range-position gauge (33) ────────────────────────────────────────────── */
+.econ-gauge { margin-top: var(--space-4); }
+.econ-gauge-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--econ-down), var(--color-border), var(--econ-up));
+}
+.econ-gauge-fill { display: none; }
+.econ-gauge-pin {
+  position: absolute;
+  top: -4px;
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--color-text);
+  transform: translateX(-1.5px);
+}
+.econ-gauge-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+.econ-gauge-ends strong { color: var(--color-text); }
+
+/* ── Layout for the analysis panels ───────────────────────────────────────── */
+.econ-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+.econ-panel { display: block; }
+.econ-sub {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+/* ── Biggest moves (25) ───────────────────────────────────────────────────── */
+.econ-moves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.econ-move-list { list-style: none; margin: 0; padding: 0; }
+.econ-move-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+.econ-move-list li:last-child { border-bottom: 0; }
+.econ-move-date { color: var(--color-text-muted); }
+.econ-move-val { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ── Growth line (38) ─────────────────────────────────────────────────────── */
+.econ-growth-line { font-size: var(--text-base); line-height: 1.6; }
+.econ-growth-line strong { font-variant-numeric: tabular-nums; }
+
+/* ── Shared direction colours ─────────────────────────────────────────────── */
+.is-up { color: var(--econ-up); }
+.is-down { color: var(--econ-down); }
+
+/* ── Month grid + correlation heat cells (30, 31) ─────────────────────────── */
+.econ-month-table td, .econ-corr-table td { text-align: right; font-variant-numeric: tabular-nums; }
+.econ-month-table td { padding: 0.3rem 0.4rem; font-size: var(--text-xs); }
+.econ-mna { color: var(--color-text-muted); text-align: center; }
+.econ-m0 { color: var(--color-text-muted); }
+.econ-mu1 { background: var(--econ-heat-u1); color: var(--econ-heat-ink); }
+.econ-mu2 { background: var(--econ-heat-u2); color: var(--econ-heat-ink); }
+.econ-mu3 { background: var(--econ-heat-u3); color: var(--econ-heat-ink); }
+.econ-mu4 { background: var(--econ-heat-u4); color: var(--econ-heat-ink); }
+.econ-md1 { background: var(--econ-heat-d1); color: var(--econ-heat-ink); }
+.econ-md2 { background: var(--econ-heat-d2); color: var(--econ-heat-ink); }
+.econ-md3 { background: var(--econ-heat-d3); color: var(--econ-heat-ink); }
+.econ-md4 { background: var(--econ-heat-d4); color: var(--econ-heat-ink); }
+.econ-myear { font-weight: 600; border-left: 2px solid var(--color-border); }
+.econ-corr-self { color: var(--color-text-muted); }
+.econ-corr-c0, .econ-corr-c1 { background: var(--econ-heat-u1); color: var(--econ-heat-ink); }
+.econ-corr-c2 { background: var(--econ-heat-u2); color: var(--econ-heat-ink); }
+.econ-corr-c3 { background: var(--econ-heat-u3); color: var(--econ-heat-ink); }
+.econ-corr-c4 { background: var(--econ-heat-u4); color: var(--econ-heat-ink); }
+
+/* ── Histogram (32) ───────────────────────────────────────────────────────── */
+.econ-hist-svg { width: 100%; height: auto; display: block; }
+.econ-bar.is-up { fill: var(--econ-up); }
+.econ-bar.is-down { fill: var(--econ-down); }
+.econ-bar-label { font-size: 9px; }
+
+/* ── Administrations (34) ─────────────────────────────────────────────────── */
+.econ-flag {
+  font-size: var(--text-xs);
+  background: var(--color-surface-alt, var(--color-border));
+  color: var(--color-text-muted);
+  border-radius: var(--radius-pill, 999px);
+  padding: 0.05rem 0.4rem;
+}
+
+/* ── Fiscal cards (35, 37) ────────────────────────────────────────────────── */
+.econ-card--fiscal .econ-value { font-size: var(--text-xl); }
+.econ-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-border);
+  overflow: hidden;
+  margin: var(--space-2) 0;
+}
+.econ-progress span { display: block; height: 100%; background: var(--color-accent); }
+
+/* ── Sortable, scrollable day table (39) ──────────────────────────────────── */
+.econ-table-scroll { max-height: 30rem; overflow: auto; }
+.econ-table--sticky thead th { position: sticky; top: 0; z-index: 1; background: var(--color-surface); }
+.econ-th-sort button {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font: inherit;
+  color: inherit;
+}
+.econ-th-sort button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.econ-caret { color: var(--color-text-muted); font-size: 0.7em; }
+.econ-th-sort.is-sorted .econ-caret { color: var(--color-accent); }
+.econ-table-more { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+
+/* ── Shortcut help (40) ───────────────────────────────────────────────────── */
+.econ-keys {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 60;
+  max-width: 22rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--elev-2, 0 8px 30px rgba(0, 0, 0, 0.18));
+  padding: var(--space-4);
+}
+.econ-keys h2 { font-size: var(--text-base); margin: 0 0 var(--space-3); }
+.econ-keys dl { display: grid; grid-template-columns: auto 1fr; gap: 0.35rem var(--space-3); margin: 0 0 var(--space-3); }
+.econ-keys dl > div { display: contents; }
+.econ-keys dt { margin: 0; }
+.econ-keys dd { margin: 0; font-size: var(--text-sm); color: var(--color-text-muted); }
+.econ-keys kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--text-xs);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 4px);
+  padding: 0.1rem 0.35rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .econ-moves-grid { grid-template-columns: 1fr; }
+  .econ-month-table { font-size: var(--text-xs); }
+  .econ-keys { left: var(--space-4); right: var(--space-4); max-width: none; }
+}
+
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
-  .econ-controls, .econ-chart-hint, .econ-toasts, .site-header, .main-nav { display: none !important; }
+  .econ-controls, .econ-chart-hint, .econ-toasts, .site-header, .main-nav,
+  .econ-table-more, .econ-keys { display: none !important; }
   .econ-card, .econ-chart-block, .econ-table, .econ-debtclock { box-shadow: none; border-color: #ccc; }
   .econ-cards { grid-template-columns: repeat(3, 1fr); }
+  /* Sticky headers and a clipped scroll box both break across printed pages. */
+  .econ-table-scroll { max-height: none; overflow: visible; }
+  .econ-table--sticky thead th { position: static; }
 }
 
 @media (prefers-reduced-motion: reduce) {
