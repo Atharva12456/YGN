@@ -1,0 +1,115 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "M001225",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Mullin, Kevin [D-CA-15]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001112",
+        "district": 24,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carbajal, Salud O. [D-CA-24]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "L000397",
+        "district": 18,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lofgren, Zoe [D-CA-18]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "L000607",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Liccardo, Sam T. [D-CA-16]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-23",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "G000559",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Garamendi, John [D-CA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-08",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Monterey Bay National Heritage Area Study Act",
+      "updated_at": "2026-04-07T15:18:24Z"
+    },
+    "detailPath": "119/hr/5555",
+    "identifier": "HR 5555",
+    "introducedDate": "2025-09-23",
+    "latestAction": {
+      "date": "2026-03-18",
+      "text": "Subcommittee Hearings Held"
+    },
+    "number": "5555",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "P000613",
+        "district": 19,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Panetta, Jimmy [D-CA-19]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Monterey Bay National Heritage Area Study Act",
+    "type": "HR",
+    "updatedAt": "2026-04-07T15:18:24Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/5555",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes the Interior Secretary to study designating a Monterey Bay National Heritage Area under 54 U.S.C. \u00a7120103(a) in consultation with state, Tribal, local, and nonprofit partners. It directs study of Monterey, San Mateo, Santa Cruz, San Luis Obispo counties and any adjacent California areas with similar heritage aspects.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:25:46.315281+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9a2ff52cba4b952440d05c4d",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill authorizes the Secretary of the Interior to study designating Monterey, San Mateo, Santa Cruz, and San Luis Obispo Counties (and nearby similar California areas) as the Monterey Bay National Heritage Area. It would involve DOI, California, Tribal governments, Monterey Bay Economic Partnership, and tourism/fishing.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:59:10.458236+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "9a2ff52cba4b952440d05c4d",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-05T06:12:01.619353+00:00",
+  "source": "congress_api"
+}

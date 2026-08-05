@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "M001212",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Moore, Barry [R-AL-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-04-06",
+        "state": "AL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Freedom from Government Surveys Act",
+      "updated_at": "2026-04-07T08:05:37Z"
+    },
+    "detailPath": "119/hr/4820",
+    "identifier": "HR 4820",
+    "introducedDate": "2025-07-29",
+    "latestAction": {
+      "date": "2025-07-29",
+      "text": "Referred to the House Committee on Oversight and Government Reform."
+    },
+    "number": "4820",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "S001214",
+        "district": 17,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Steube, W. Gregory [R-FL-17]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "FL"
+      }
+    ],
+    "title": "Freedom from Government Surveys Act",
+    "type": "HR",
+    "updatedAt": "2026-04-07T08:05:37Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/4820",
+    "votes": []
+  },
+  "generated_at": "2026-08-05T06:12:29.207044+00:00",
+  "source": "congress_api"
+}

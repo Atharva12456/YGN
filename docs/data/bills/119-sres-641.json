@@ -1,0 +1,125 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 6,
+    "cosponsors": [
+      {
+        "bioguideId": "B001261",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Barrasso, John [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "WY"
+      },
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "H001076",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hassan, Margaret Wood [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "K000383",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. King, Angus S., Jr. [I-ME]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "S001181",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Shaheen, Jeanne [D-NH]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NH"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution recognizing Girl Scouts of the United States of America on its 114th birthday and celebrating its legacy of providing girls with a supportive and inclusive space where they can explore their world, build meaningful relationships, and have access to experiences that prepare them for a life of leadership.",
+      "updated_at": "2026-04-08T01:12:56Z"
+    },
+    "detailPath": "119/sres/641",
+    "identifier": "SRES 641",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the Committee on the Judiciary. (text: CR S1050-1051)"
+    },
+    "number": "641",
+    "originChamber": "Senate",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "D000622",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Duckworth, Tammy [D-IL]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "A resolution recognizing Girl Scouts of the United States of America on its 114th birthday and celebrating its legacy of providing girls with a supportive and inclusive space where they can explore their world, build meaningful relationships, and have access to experiences that prepare them for a life of leadership.",
+    "type": "SRES",
+    "updatedAt": "2026-04-08T01:12:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/641",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This Senate resolution recognizes Girl Scouts USA on its 114th birthday, congratulates 2025 Gold Award recipients, and celebrates its leadership and civic programs while encouraging continued leadership development. The nonbinding statement covers the national organization, members and alumni, and events including the 2026 National Council Session and World Thinking Day.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:21.914213+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e683e1b7c41127b00e6cb680",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This Senate resolution recognizes Girl Scouts of the United States of America on its 114th birthday and congratulates 2025 Gold Award recipients. It encourages the national organization, its members, and the July 2026 National Council Session in Washington, DC, to keep advancing girls' leadership.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:21.175891+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "e683e1b7c41127b00e6cb680",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-05T06:12:02.146339+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-08",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "A resolution observing the 1-year anniversary of the 2025 Southern California wildfires.",
+      "updated_at": "2026-04-07T20:54:14Z"
+    },
+    "detailPath": "119/sres/577",
+    "identifier": "SRES 577",
+    "introducedDate": "2026-01-08",
+    "latestAction": {
+      "date": "2026-01-08",
+      "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S119; text: CR S117-118)"
+    },
+    "number": "577",
+    "originChamber": "Senate",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "A resolution observing the 1-year anniversary of the 2025 Southern California wildfires.",
+    "type": "SRES",
+    "updatedAt": "2026-04-07T20:54:14Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/577",
+    "votes": []
+  },
+  "generated_at": "2026-08-05T06:12:09.747442+00:00",
+  "source": "congress_api"
+}

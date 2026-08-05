@@ -1,0 +1,135 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 7,
+    "cosponsors": [
+      {
+        "bioguideId": "K000397",
+        "district": 40,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kim, Young [R-CA-40]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "W000797",
+        "district": 25,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wasserman Schultz, Debbie [D-FL-25]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "M001143",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCollum, Betty [D-MN-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M000317",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Malliotakis, Nicole [R-NY-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001067",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Clarke, Yvette D. [D-NY-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-12",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "K000399",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Kiggans, Jennifer A. [R-VA-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-26",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "F000466",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-04-02",
+        "state": "PA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Recognizing Girl Scouts of the United States of America on its 114th birthday and celebrating its legacy of providing girls with a secure and inclusive space where they can explore their world, build meaningful relationships, and have access to experiences that prepare them for a life of leadership.",
+      "updated_at": "2026-04-08T01:00:23Z"
+    },
+    "detailPath": "119/hres/1114",
+    "identifier": "HRES 1114",
+    "introducedDate": "2026-03-12",
+    "latestAction": {
+      "date": "2026-03-12",
+      "text": "Referred to the House Committee on Oversight and Government Reform."
+    },
+    "number": "1114",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "W000822",
+        "district": 12,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Watson Coleman, Bonnie [D-NJ-12]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "Recognizing Girl Scouts of the United States of America on its 114th birthday and celebrating its legacy of providing girls with a secure and inclusive space where they can explore their world, build meaningful relationships, and have access to experiences that prepare them for a life of leadership.",
+    "type": "HRES",
+    "updatedAt": "2026-04-08T01:00:23Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1114",
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution recognizes Girl Scouts of the United States on its 114th birthday, congratulates 2025 Gold Award recipients, and encourages its leadership and STEM programs. It is a nonbinding House expression addressing the Girl Scouts and Gold Award honorees and does not change law or funding.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:33.605200+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4585b4b1e7a926d7c7327b03",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "House Resolution 1114 recognizes Girl Scouts of the United States of America on its 114th birthday and congratulates 2025 Gold Award recipients. It spotlights the Girl Scouts Leadership Experience, the July 2026 National Council Session in Washington, DC, and members, alums, and supporters.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:38.508707+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "4585b4b1e7a926d7c7327b03",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-05T06:12:01.839681+00:00",
+  "source": "congress_api"
+}

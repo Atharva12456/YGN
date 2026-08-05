@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "P000613",
+        "district": 19,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Panetta, Jimmy [D-CA-19]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-11",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution supports the designation of Celebrate Community Week.",
+      "updated_at": "2026-04-07T16:29:00Z"
+    },
+    "detailPath": "119/hres/705",
+    "identifier": "HRES 705",
+    "introducedDate": "2025-09-11",
+    "latestAction": {
+      "date": "2025-09-15",
+      "text": "Sponsor introductory remarks on measure. (CR H4301)"
+    },
+    "number": "705",
+    "originChamber": "House",
+    "policyArea": "Arts, Culture, Religion",
+    "sponsors": [
+      {
+        "bioguideId": "T000467",
+        "district": 15,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Thompson, Glenn [R-PA-15]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Expressing support for the designation of the week beginning on September 14, 2025, as \"Celebrate Community Week\".",
+    "type": "HRES",
+    "updatedAt": "2026-04-07T16:29:04Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/705",
+    "votes": []
+  },
+  "generated_at": "2026-08-05T06:12:24.320099+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "K000403",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kennedy, Mike [R-UT-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-18",
+        "state": "UT"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Public Lands Access Restoration Act",
+      "updated_at": "2026-04-07T15:05:54Z"
+    },
+    "detailPath": "119/hr/7979",
+    "identifier": "HR 7979",
+    "introducedDate": "2026-03-18",
+    "latestAction": {
+      "date": "2026-03-26",
+      "text": "Subcommittee Hearings Held"
+    },
+    "number": "7979",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "C001137",
+        "district": 5,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Crank, Jeff [R-CO-5]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CO"
+      }
+    ],
+    "title": "Public Lands Access Restoration Act",
+    "type": "HR",
+    "updatedAt": "2026-04-07T15:05:54Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/7979",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill presumes Forest Service and BLM roads and trails are open to motorized use unless a Secretary restricts access under strict evidence, signage, mapping, notice, comment, and periodic review requirements. It mandates public nominations for motorized routes, agency consideration with priority for connectivity, resource protection, fuels reduction, and recreation.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:04.294310+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1970f64d1b52c01742375444",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill directs the Forest Service and Bureau of Land Management to presume covered roads and trails open to motorized use unless the Secretary of Agriculture or Interior imposes narrow, signed, mapped, public\u2011noticed restrictions. It allows public nominations, affecting OHV users and fuels\u2011reduction crews.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-05T04:26:10.647353+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "1970f64d1b52c01742375444",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-05T06:12:00.896549+00:00",
+  "source": "congress_api"
+}
