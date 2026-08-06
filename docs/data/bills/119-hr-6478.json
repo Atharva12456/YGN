@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "F000475",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Finstad, Brad [R-MN-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-04",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "G000546",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Graves, Sam [R-MO-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-04",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "S001212",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Stauber, Pete [R-MN-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-04-02",
+        "state": "MN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Air Guard Standardizing Tuition Assistance To Unify the Services Act of 2025 or the Air Guard STATUS Act of 2025 This bill requires the Department of the Air Force to establish a permanent program to pay all or a portion of tuition or expenses at an educational institution for members of the Air National Guard who are in compliance with training requirements (i.e., required field exercises and drills).",
+      "updated_at": "2026-04-08T15:28:18Z"
+    },
+    "detailPath": "119/hr/6478",
+    "identifier": "HR 6478",
+    "introducedDate": "2025-12-04",
+    "latestAction": {
+      "date": "2025-12-04",
+      "text": "Referred to the House Committee on Armed Services."
+    },
+    "number": "6478",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "S001225",
+        "district": 17,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Sorensen, Eric [D-IL-17]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "Air Guard STATUS Act of 2025",
+    "type": "HR",
+    "updatedAt": "2026-04-08T15:28:31Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6478",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:08.853302+00:00",
+  "source": "congress_api"
+}

@@ -1,0 +1,95 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "C001047",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Capito, Shelley Moore [R-WV]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-07-17",
+        "state": "WV"
+      },
+      {
+        "bioguideId": "L000570",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Luj\u00e1n, Ben Ray [D-NM]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-27",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "S001198",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Sullivan, Dan [R-AK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-10-27",
+        "state": "AK"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Head start Education And Development Workforce Advancement and Yield Act or the HEADWAY Act This bill allows some teachers in Early Head Start programs to teach while in the process of earning their Child Development Associate (CDA) credential and completing training. Currently, the Department of Health and Human Services (HHS) must ensure that all teachers providing direct services to children and families in Early Head Start centers (1) have a minimum of a CDA credential and have been trained in early childhood development, and (2) have been trained in early childhood development with a focus on infant and toddler development. The bill revises this requirement by requiring at least one teacher per classroom (instead of all teachers) to have a CDA credential and training. In particular, the bill requires HHS to ensure that (1) each additional teacher providing direct services to children and families is in the process of earning a CDA credential and completing training, and (2) the Early Head Start agency provides a mentor to oversee the progress and guide the work of a teacher who is in the process of earning a CDA credential and completing training.",
+      "updated_at": "2026-04-08T15:25:00Z"
+    },
+    "detailPath": "119/s/2323",
+    "identifier": "S 2323",
+    "introducedDate": "2025-07-17",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "2323",
+    "originChamber": "Senate",
+    "policyArea": "Education",
+    "sponsors": [
+      {
+        "bioguideId": "W000790",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Warnock, Raphael G. [D-GA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "GA"
+      }
+    ],
+    "title": "HEADWAY Act",
+    "type": "S",
+    "updatedAt": "2026-04-08T15:25:13Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2323",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The HEADWAY Act permits some teachers in Early Head Start classrooms to teach while they earn a Child Development Associate (CDA) credential and requires at least one CDA\u2011credentialed teacher per classroom plus agency\u2011provided mentors for trainees. It applies to teachers providing direct services in Early Head Start centers.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:41:11.384804+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0a2ae8aed770194aff43146e",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The HEADWAY Act requires only one teacher per Early Head Start center classroom to hold a CDA credential instead of all teachers. HHS must ensure other teachers are working toward a CDA and Early Head Start agencies provide mentors to guide training while they teach.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:41:23.174719+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "0a2ae8aed770194aff43146e",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-06T06:15:05.120437+00:00",
+  "source": "congress_api"
+}

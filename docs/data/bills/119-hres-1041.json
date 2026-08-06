@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 7,
@@ -109,7 +109,26 @@
     "type": "HRES",
     "updatedAt": "2026-04-08T00:34:49Z",
     "url": "https://www.congress.gov/bill/119th-congress/house-resolution/1041",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "This House resolution supports designating February 8, 2026, as \"Scouting America Day\" to mark the 116th anniversary of Scouting America's 1910 incorporation. It is a nonbinding expression of recognition for Scouting America, its nearly 1,000,000 youth members and over 500,000 adult volunteers, and their nationwide civic and service contributions.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:58:47.447040+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3a41f5824f1a1034ff349ad",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "This House resolution supports redesignating February 8, 2026, as \"Scouting America Day\" honoring the 116th anniversary of Scouting America (formerly Boy Scouts of America). It recognizes Scouting America, its nearly 1,000,000 youth members and about 500,000 adult volunteers and affiliated chartered organizations nationwide.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:58:49.552165+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3a41f5824f1a1034ff349ad",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-05T06:12:07.263885+00:00",
   "source": "congress_api"

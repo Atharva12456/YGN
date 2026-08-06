@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "G000359",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Graham, Lindsey [R-SC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-13",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-13",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "Y000064",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Young, Todd [R-IN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-13",
+        "state": "IN"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Critical Materials Future Act of 2025",
+      "updated_at": "2026-04-08T16:43:56Z"
+    },
+    "detailPath": "119/s/596",
+    "identifier": "S 596",
+    "introducedDate": "2025-02-13",
+    "latestAction": {
+      "date": "2025-03-12",
+      "text": "Committee on Energy and Natural Resources. Hearings held. Hearings printed: S.Hrg. 119-46."
+    },
+    "number": "596",
+    "originChamber": "Senate",
+    "policyArea": "Energy",
+    "sponsors": [
+      {
+        "bioguideId": "H000273",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hickenlooper, John W. [D-CO]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CO"
+      }
+    ],
+    "title": "Critical Materials Future Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-04-08T16:43:56Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/596",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:36.095837+00:00",
+  "source": "congress_api"
+}

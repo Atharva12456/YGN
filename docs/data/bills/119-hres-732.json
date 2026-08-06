@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "W000797",
+        "district": 25,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wasserman Schultz, Debbie [D-FL-25]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "F000466",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fitzpatrick, Brian K. [R-PA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "D000624",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Dingell, Debbie [D-MI-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-09-17",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "M001237",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McDonald Rivet, Kristen [D-MI-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-07",
+        "state": "MI"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution expresses support for the designation of Rare Cancer Day.",
+      "updated_at": "2026-04-08T15:30:34Z"
+    },
+    "detailPath": "119/hres/732",
+    "identifier": "HRES 732",
+    "introducedDate": "2025-09-17",
+    "latestAction": {
+      "date": "2025-09-17",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "732",
+    "originChamber": "House",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "K000376",
+        "district": 16,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Kelly, Mike [R-PA-16]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Expressing support for the designation of September 30, 2025, as \"Rare Cancer Day\" to highlight the challenges patients with rare cancers face and to raise awareness and support efforts to improve early diagnosis and treatment.",
+    "type": "HRES",
+    "updatedAt": "2026-04-08T15:31:14Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/732",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:27.591719+00:00",
+  "source": "congress_api"
+}

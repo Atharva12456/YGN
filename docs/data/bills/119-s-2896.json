@@ -2,7 +2,7 @@
   "ai_enabled": false,
   "ai_mode": "cache_refresh_only",
   "bill": {
-    "aiPending": true,
+    "aiPending": false,
     "committees": [],
     "congress": 119,
     "cosponsorCount": 4,
@@ -79,7 +79,26 @@
     "type": "S",
     "updatedAt": "2026-04-08T11:53:26Z",
     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/2896",
-    "votes": []
+    "votes": [],
+    "aiDescription": {
+      "summary": "The STARS Act waives entrance and standard amenity recreation fees on September 17, 2026, making recreation sites free. It covers National Park System and National Wildlife Refuge units that charge entrance fees, and Bureau of Land Management, Bureau of Reclamation, and Forest Service sites charging standard amenity fees.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T04:48:14.903386+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d48184650dfc3b74a773426c",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "On September 17, 2026 the STARS Act waives entrance fees at National Park Service and National Wildlife Refuge System units. It also waives amenity recreation fees at Bureau of Land Management, Bureau of Reclamation, and Forest Service sites, affecting all visitors and agency fee receipts.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T04:48:13.850899+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "d48184650dfc3b74a773426c",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
   },
   "generated_at": "2026-08-05T06:12:19.222884+00:00",
   "source": "congress_api"

@@ -1,0 +1,75 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-09",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "National Biotechnology Initiative Act of 2025",
+      "updated_at": "2026-04-08T17:24:12Z"
+    },
+    "detailPath": "119/s/1387",
+    "identifier": "S 1387",
+    "introducedDate": "2025-04-09",
+    "latestAction": {
+      "date": "2026-03-19",
+      "text": "Committee on Health, Education, Labor, and Pensions. Hearings held."
+    },
+    "number": "1387",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "Y000064",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Young, Todd [R-IN]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IN"
+      }
+    ],
+    "title": "National Biotechnology Initiative Act of 2025",
+    "type": "S",
+    "updatedAt": "2026-04-08T17:24:12Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1387",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The National Biotechnology Initiative Act of 2025 requires the President to create a National Biotechnology Initiative and a National Biotechnology Coordination Office to coordinate and advance federal biotechnology strategy and activities. It covers participating agencies including USDA, Commerce, Defense, Energy, HHS, DHS, Interior, State, EPA, NASA, NSF, ODNI, and USTR.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:41:44.924082+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15e8f6751821ce1b65cfd3e7",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill establishes a National Biotechnology Initiative and Coordination Office to align federal biotechnology strategy, policy, and activities for national security and economic competitiveness. It involves agencies listed in the bill\u2014USDA, Commerce, Defense, HHS, NSF\u2014and affects biotech companies, biomanufacturing firms, university researchers, and federal labs.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:41:45.542942+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "15e8f6751821ce1b65cfd3e7",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-06T06:15:05.383928+00:00",
+  "source": "congress_api"
+}

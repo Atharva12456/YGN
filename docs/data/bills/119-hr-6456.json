@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001224",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Self, Keith [R-TX-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-04",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "G000594",
+        "district": 23,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gonzales, Tony [R-TX-23]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-04",
+        "state": "TX"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This bill requires the Department of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, after notifying his next of kin. The VA must relinquish the remains to the next of kin or, if no next of kin responds to the notification, arrange for the disposition of the remains. Cota was interred prior to the enactment of regulations that would have barred his interment due to a 1975 rape conviction.",
+      "updated_at": "2026-04-08T15:18:58Z"
+    },
+    "detailPath": "119/hr/6456",
+    "identifier": "HR 6456",
+    "introducedDate": "2025-12-04",
+    "latestAction": {
+      "date": "2025-12-04",
+      "text": "Referred to the House Committee on Veterans' Affairs."
+    },
+    "number": "6456",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "L000603",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Luttrell, Morgan [R-TX-8]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "TX"
+      }
+    ],
+    "title": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes.",
+    "type": "HR",
+    "updatedAt": "2026-04-08T15:19:03Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/6456",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:08.335180+00:00",
+  "source": "congress_api"
+}

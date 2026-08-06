@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-26",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Health ACCESS Act",
+      "updated_at": "2026-04-08T13:07:09Z"
+    },
+    "detailPath": "119/s/1140",
+    "identifier": "S 1140",
+    "introducedDate": "2025-03-26",
+    "latestAction": {
+      "date": "2025-03-26",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "1140",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "C001075",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cassidy, Bill [R-LA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "LA"
+      }
+    ],
+    "title": "Health ACCESS Act",
+    "type": "S",
+    "updatedAt": "2026-04-08T13:07:09Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1140",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:34.998233+00:00",
+  "source": "congress_api"
+}

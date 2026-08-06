@@ -1,0 +1,336 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 29,
+    "cosponsors": [
+      {
+        "bioguideId": "S001203",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Smith, Tina [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "B001288",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Booker, Cory A. [D-NJ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "B001230",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Baldwin, Tammy [D-WI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "B001277",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Blumenthal, Richard [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "C001113",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cortez Masto, Catherine [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "D000622",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Duckworth, Tammy [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "D000563",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Durbin, Richard J. [D-IL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "F000479",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Fetterman, John [D-PA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "G000574",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Gallego, Ruben [D-AZ]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "H001046",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Heinrich, Martin [D-NM]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "H001042",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hirono, Mazie K. [D-HI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "K000367",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Klobuchar, Amy [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M000133",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Markey, Edward J. [D-MA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "M001176",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Merkley, Jeff [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "M001169",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Murphy, Christopher [D-CT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "M001111",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Murray, Patty [D-WA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "R000122",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Reed, Jack [D-RI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "RI"
+      },
+      {
+        "bioguideId": "R000608",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Rosen, Jacky [D-NV]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "S000033",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Sanders, Bernard [I-VT]",
+        "party": "I",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "S001194",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schatz, Brian [D-HI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "S001150",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Schiff, Adam B. [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "S001208",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Slotkin, Elissa [D-MI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "V000128",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Van Hollen, Chris [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "W000817",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Warren, Elizabeth [D-MA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "W000802",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Whitehouse, Sheldon [D-RI]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "RI"
+      },
+      {
+        "bioguideId": "W000779",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Wyden, Ron [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-04",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "W000800",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Welch, Peter [D-VT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-10",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "B001303",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Blunt Rochester, Lisa [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-29",
+        "state": "DE"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "No Tax Breaks for Union Busting (NTBUB) Act This bill excludes from the tax deduction for ordinary and necessary business expenses amounts paid or incurred to influence employees with respect to labor organizations or labor organization activities. The bill also imposes information reporting requirements related to such expenses and imposes penalties for failure to comply. Under the bill, amounts paid to influence employees with respect to labor organizations include amounts paid (including wages and other costs) in connection with an action that results in a complaint or settlement related to an unfair labor practice or a finding of interference, influence, or coercion related to railway employees\u2019 rights to organize and bargain collectively; for any meeting or training attended by employees and at which labor organizations are discussed; and that require certain employer disclosures and financial reporting. (Some exceptions apply.) The bill requires employers to file a return reporting certain information related to expenses paid to influence employees with respect to labor organizations and imposes a penalty for noncompliance. The amount of the penalty is the greater of (1) $10,000, or (2) $1,000 multiplied by the number full-time equivalent employees. Additional penalties apply for violations that continue for more than 90 days. The bill also imposes information reporting requirements on persons conducting activities on behalf of another person to influence employees with respect to labor organizations. The bill allows certain penalties for noncompliance with the reporting requirements to be waived if noncompliance is due to reasonable cause and not willful neglect.",
+      "updated_at": "2026-04-08T16:47:09Z"
+    },
+    "detailPath": "119/s/1310",
+    "identifier": "S 1310",
+    "introducedDate": "2025-04-04",
+    "latestAction": {
+      "date": "2025-04-04",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "1310",
+    "originChamber": "Senate",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "L000570",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Luj\u00e1n, Ben Ray [D-NM]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NM"
+      }
+    ],
+    "title": "No Tax Breaks for Union Busting (NTBUB) Act",
+    "type": "S",
+    "updatedAt": "2026-04-08T16:49:21Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1310",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:30.435335+00:00",
+  "source": "congress_api"
+}

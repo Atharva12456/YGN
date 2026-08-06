@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B000490",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bishop, Sanford D. [D-GA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-02-07",
+        "state": "GA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution supports the redesignation of a Scouting America Day in celebration of the 115th anniversary of the incorporation of Scouting America (formerly known as Boy Scouts of America).",
+      "updated_at": "2025-03-17T16:20:05Z"
+    },
+    "detailPath": "119/hres/121",
+    "identifier": "HRES 121",
+    "introducedDate": "2025-02-07",
+    "latestAction": {
+      "date": "2025-02-10",
+      "text": "Sponsor introductory remarks on measure. (CR H589)"
+    },
+    "number": "121",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "T000467",
+        "district": 15,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Thompson, Glenn [R-PA-15]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Supporting the designation of \"Scouting America Day\" in celebration of its 115th anniversary.",
+    "type": "HRES",
+    "updatedAt": "2026-04-08T00:34:48Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/121",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:39.566951+00:00",
+  "source": "congress_api"
+}

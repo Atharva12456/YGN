@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "K000391",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Krishnamoorthi, Raja [D-IL-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-03-25",
+        "state": "IL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "This resolution recognizes the essential services provided by the cleaning industry in maintaining sanitary conditions and supports the designation of National Cleaning Week to promote safe and clean environments at work, in schools, and at home.",
+      "updated_at": "2026-04-08T13:01:12Z"
+    },
+    "detailPath": "119/hres/247",
+    "identifier": "HRES 247",
+    "introducedDate": "2025-03-25",
+    "latestAction": {
+      "date": "2025-03-25",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "247",
+    "originChamber": "House",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "L000585",
+        "district": 16,
+        "isOriginalCosponsor": null,
+        "name": "Rep. LaHood, Darin [R-IL-16]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IL"
+      }
+    ],
+    "title": "Expressing support for the designation of the week of March 23, 2025, through March 29, 2025, as \"National Cleaning Week\".",
+    "type": "HRES",
+    "updatedAt": "2026-04-08T13:01:17Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/247",
+    "votes": []
+  },
+  "generated_at": "2026-08-06T06:15:35.440983+00:00",
+  "source": "congress_api"
+}

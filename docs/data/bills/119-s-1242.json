@@ -1,0 +1,64 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": false,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 0,
+    "cosponsors": [],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Watershed Results Act",
+      "updated_at": "2026-04-08T15:43:03Z"
+    },
+    "detailPath": "119/s/1242",
+    "identifier": "S 1242",
+    "introducedDate": "2025-04-01",
+    "latestAction": {
+      "date": "2026-03-17",
+      "text": "Committee on Energy and Natural Resources Subcommittee on Water and Power. Hearings held."
+    },
+    "number": "1242",
+    "originChamber": "Senate",
+    "policyArea": "Water Resources Development",
+    "sponsors": [
+      {
+        "bioguideId": "W000779",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Wyden, Ron [D-OR]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "OR"
+      }
+    ],
+    "title": "Watershed Results Act",
+    "type": "S",
+    "updatedAt": "2026-04-08T15:43:03Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1242",
+    "votes": [],
+    "aiDescription": {
+      "summary": "The bill authorizes the Bureau of Reclamation to select watershed partners to run advance\u2011analytics\u2011driven watershed outcomes projects and to purchase verified conservation outcomes via pay\u2011for\u2011performance contracts. It applies in Reclamation States (1902 Act states plus Hawaii, Alaska, Puerto Rico) and lets States, Tribes, water districts, authorities, water organizations, and NGOs lead proposals.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:42:05.540027+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3a44e2751996abd88841231",
+      "source": "committed"
+    },
+    "impact": {
+      "summary": "The bill authorizes the Secretary of the Interior, acting through the Commissioner of Reclamation, to solicit proposals and select watershed partners to perform advance watershed analytics and implement watershed outcomes projects in Reclamation States. It affects States, Indian Tribes, irrigation and water districts, and NGOs.",
+      "model": "gpt-5-mini",
+      "provider": "azure",
+      "generated_at": "2026-08-06T03:42:03.784767+00:00",
+      "content_version": "bill-ai-v6",
+      "input_hash": "a3a44e2751996abd88841231",
+      "status": "AI impact analysis",
+      "source": "committed"
+    }
+  },
+  "generated_at": "2026-08-06T06:15:05.640732+00:00",
+  "source": "congress_api"
+}
