@@ -127,7 +127,14 @@
       var pool = PAGES.map(function (p) { return { label: p.label, href: p.href, hint: p.hint, kind: 'Page' }; })
         .concat(people).concat(bills);
       var matches;
-      if (!q) {
+      // Structured queries — "state:TX party:D" — are resolved by the personal
+      // tools module, which has the roster loaded. It returns null when the
+      // query holds no key:value pairs, which is the normal case.
+      var structured = q && window.ygnPaletteFilter
+        ? window.ygnPaletteFilter(input.value.trim(), pool) : null;
+      if (structured) {
+        matches = structured;
+      } else if (!q) {
         matches = pool.filter(function (x) { return x.kind === 'Page'; });
       } else {
         matches = pool.map(function (x) { var s = score(x, q); return s === -1 ? null : { x: x, s: s }; })
