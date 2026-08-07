@@ -188,7 +188,7 @@ async function initTermDecoder() {
       </div>
       <select class="decoder-select" aria-label="Jump to a term">${options}</select>
     </div>
-    <div class="decoder-results" aria-live="polite"></div>`;
+    <div class="decoder-results" aria-live="polite" hidden></div>`;
   host.hidden = false;
 
   const searchEl = host.querySelector('.decoder-search');
@@ -197,10 +197,22 @@ async function initTermDecoder() {
 
   function render(query, focusIndex) {
     const q = (query || '').trim().toLowerCase();
+    // Idle state is the search box alone. Listing all 26 definitions by default
+    // put a wall of glossary between the reader and the bills they came for;
+    // the terms are also linked inline in the prose now, so the full list is
+    // reference material rather than something to scroll past.
+    if (!q && focusIndex == null) {
+      resultsEl.hidden = true;
+      resultsEl.innerHTML = '';
+      return;
+    }
+    resultsEl.hidden = false;
     let matches = terms.map((t, i) => ({ term: t.term, definition: t.definition, i }));
     if (q) {
       matches = matches.filter(t =>
         t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q));
+    } else if (focusIndex != null) {
+      matches = matches.filter(t => t.i === focusIndex);
     }
     if (!matches.length) {
       resultsEl.innerHTML = `<p class="decoder-empty">No term matches “${esc(query)}”. Try “filibuster”, “quorum”, or “reconciliation”.</p>`;

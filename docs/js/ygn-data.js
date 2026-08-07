@@ -287,6 +287,61 @@
 
   api.note = function (text) { return api.el('p', 'ygn-fnote', text); };
 
+  /* ── Panel shell ───────────────────────────────────────────────────────────
+     Every injected panel is built here so they behave identically. Two rules
+     matter more than the styling:
+
+     1. A panel goes AFTER the thing the page exists for, never before it. The
+        members panel originally sat between the filters and the member grid,
+        which pushed the actual members ~1450px down the page — you had to
+        scroll past a wall of analysis to reach what you came for.
+
+     2. A panel starts CLOSED. Ten dense cards opening automatically on every
+        visit reads as clutter rather than depth; the summary line says what is
+        inside so opening it is an informed choice. The open/closed state is
+        remembered per panel. */
+  api.panel = function (opts) {
+    var host = opts.after;
+    if (!host || !host.parentNode) return null;
+    var wrap = api.el('div', 'ygn-analysis' + (opts.className ? ' ' + opts.className : ''));
+
+    var head = api.el('div', 'ygn-analysis-head');
+    var heading = api.el('div', 'ygn-analysis-heading');
+    heading.appendChild(api.el('h2', null, opts.title));
+    if (opts.summary) heading.appendChild(api.el('p', 'ygn-analysis-sub', opts.summary));
+    head.appendChild(heading);
+
+    var toggle = api.el('button', 'ygn-analysis-toggle');
+    toggle.type = 'button';
+    head.appendChild(toggle);
+    wrap.appendChild(head);
+
+    var grid = api.el('div', 'ygn-analysis-grid');
+    (opts.cards || []).filter(Boolean).forEach(function (c) { grid.appendChild(c); });
+    if (!grid.children.length) return null;
+    wrap.appendChild(grid);
+
+    var key = opts.storeKey;
+    var open = key ? api.store.get(key, false) === true : false;
+    function apply() {
+      grid.hidden = !open;
+      wrap.classList.toggle('is-open', open);
+      toggle.textContent = open ? 'Hide' : 'Show ' + grid.children.length;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) api.schedulePack();
+    }
+    toggle.addEventListener('click', function () {
+      open = !open;
+      if (key) api.store.set(key, open);
+      apply();
+    });
+    apply();
+
+    host.parentNode.insertBefore(wrap, host.nextSibling);
+    wrap.grid = grid;
+    return wrap;
+  };
+
   /* ── Card packing ──────────────────────────────────────────────────────────
      The panels lay out as CSS multi-column, which removes the holes a grid
      leaves between cards of different heights but still balances columns badly
