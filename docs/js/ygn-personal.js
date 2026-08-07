@@ -80,70 +80,6 @@
     return c;
   }
 
-  /* ── 41. Pin members and compare them ──────────────────────────────────── */
-  function memberTray(roster, meId) {
-    var c = card('Compare tray', 'Pin up to four members and read them side by side');
-    var tray = D.store.get(KEYS.tray, []) || [];
-    var me = meId ? roster.filter(function (m) { return m.id === meId; })[0] : null;
-
-    function render() {
-      c.body.innerHTML = '';
-      if (me) {
-        var inTray = tray.indexOf(me.id) > -1;
-        var btn = el('button', 'ygn-fbtn' + (inTray ? ' is-on' : ''),
-                     inTray ? 'Remove ' + me.last : 'Add ' + me.last + ' to the tray');
-        btn.type = 'button';
-        btn.addEventListener('click', function () {
-          var i = tray.indexOf(me.id);
-          if (i > -1) tray.splice(i, 1); else tray.push(me.id);
-          tray = tray.slice(-4);
-          D.store.set(KEYS.tray, tray);
-          D.toast(i > -1 ? 'Removed from tray' : 'Added to tray');
-          render();
-        });
-        c.body.appendChild(btn);
-      }
-      var picked = tray.map(function (id) {
-        return roster.filter(function (m) { return m.id === id; })[0];
-      }).filter(Boolean);
-      if (!picked.length) {
-        c.body.appendChild(D.note('Nothing pinned. Add members from their pages, then compare them here.'));
-        return;
-      }
-      var fields = [
-        ['Member', function (m) { return m.name; }],
-        ['Party', function (m) { return m.party || '—'; }],
-        ['State', function (m) { return m.state || '—'; }],
-        ['Chamber', function (m) { return m.chamber || '—'; }],
-        ['Ideology', function (m) { return fmt.ideology(m.ideology); }],
-        ['Lean', function (m) { return fmt.lean(m.ideology); }],
-        ['Ethics', function (m) { return m.ethics === null ? '—' : fmt.num(m.ethics, 1); }],
-        ['Grade', function (m) { return m.grade || '—'; }],
-        ['Since', function (m) { return m.firstYear ? String(m.firstYear) : '—'; }]
-      ];
-      var table = el('table', 'ygn-ftable');
-      var tbody = el('tbody');
-      fields.forEach(function (f) {
-        var tr = el('tr');
-        tr.appendChild(el('th', null, f[0]));
-        picked.forEach(function (m) { tr.appendChild(el('td', null, f[1](m))); });
-        tbody.appendChild(tr);
-      });
-      table.appendChild(tbody);
-      var scroll = el('div', 'ygn-tablescroll');
-      scroll.appendChild(table);
-      c.body.appendChild(scroll);
-      var clear = el('button', 'ygn-fbtn is-quiet', 'Clear tray');
-      clear.type = 'button';
-      clear.addEventListener('click', function () {
-        tray = []; D.store.set(KEYS.tray, tray); render(); D.toast('Tray cleared');
-      });
-      c.body.appendChild(clear);
-    }
-    render();
-    return c;
-  }
-
   /* ── 42 + 43 + 50. The saved-items workbench ───────────────────────────── */
   function savedWorkbench(roster) {
     var c = card('Your saved items', 'Export, print, back up');
@@ -585,40 +521,23 @@
   }
 
   /* ═══ Boot ═══════════════════════════════════════════════════════════════ */
-  /* On the detail pages two modules mount asynchronously and whichever settles
-     first ends up on top. The personal tools always belong last, so there they
-     append to main-content rather than inserting after a moving anchor. */
-  function mountLast(cards, title) {
+  function mountLast(cards, title, summary, key) {
+    // Detail pages: anchor on the container but insert after it, and always
+    // last, so whichever module settles first does not end up on top.
     var main = document.getElementById('main-content');
-    if (!main) return;
-    return mount(main, cards, title, true);
+    if (!main || !main.lastElementChild) return null;
+    return mount(main.lastElementChild, cards, title, summary, key);
   }
 
-  function mount(host, cards, title, append) {
-    if (!host || (!append && !host.parentNode)) return;
-    var wrap = el('div', 'ygn-analysis ygn-personalpanel');
-    var head = el('div', 'ygn-analysis-head');
-    head.appendChild(el('h2', null, title || 'Your tools'));
-    var toggle = el('button', 'ygn-analysis-toggle', 'Hide');
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded', 'true');
-    head.appendChild(toggle);
-    wrap.appendChild(head);
-    var grid = el('div', 'ygn-analysis-grid');
-    cards.filter(Boolean).forEach(function (c) { grid.appendChild(c); });
-    if (!grid.children.length) return;
-    wrap.appendChild(grid);
-    toggle.addEventListener('click', function () {
-      var open = grid.hidden;
-      grid.hidden = !open;
-      toggle.textContent = open ? 'Hide' : 'Show';
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) D.schedulePack();
+  function mount(anchor, cards, title, summary, key) {
+    return D.panel({
+      after: anchor,
+      className: 'ygn-personalpanel',
+      storeKey: key || 'ygn-personalpanel-open',
+      title: title || 'Your tools',
+      summary: summary || 'Saved items, notes and exports — all kept in this browser.',
+      cards: cards
     });
-    if (append) host.appendChild(wrap);
-    else host.parentNode.insertBefore(wrap, host.nextSibling);
-    wrap.grid = grid;
-    return wrap;
   }
 
   D.ready(function () {
@@ -639,7 +558,7 @@
           D.guard('pe:45', function () { return watchlistDigest(digest && digest.bills); }),
           D.guard('pe:46', historyPanel),
           D.guard('pe:47', freshnessPanel)
-        ], 'Your tools');
+        ], 'Your tools', 'Your delegation, watchlist, reading history and exports.');
         if (!panel || !panel.grid) return;
         // Appended rather than swapped into placeholders: an empty slot would
         // leave a hole in the grid for anyone who never scrolls this far.
@@ -664,11 +583,11 @@
         // after the dossier. Both anchors live in main-content, which core.js
         // does not rewrite.
         mountLast([
-          D.guard('pe:41', function () { return memberTray(roster, id); }),
           D.guard('pe:40', function () {
             return notesPanel('member:' + id, me ? me.name : 'this member');
           })
-        ], 'Your tools');
+        ], 'Your notes on ' + (me ? me.last : 'this member'),
+           'Private to this browser.', 'ygn-membertools-open');
       });
     }
 
@@ -678,7 +597,7 @@
       D.settled('bill-container').then(function () {
         mountLast([
           D.guard('pe:40b', function () { return notesPanel('bill:' + billId, 'this bill'); })
-        ], 'Your tools');
+        ], 'Your notes', 'Private to this browser.', 'ygn-billtools-open');
       });
     }
   });

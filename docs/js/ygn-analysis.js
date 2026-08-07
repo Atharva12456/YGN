@@ -75,72 +75,39 @@
 
   /* ═══ MEMBERS PAGE ═══════════════════════════════════════════════════════ */
   function buildMembersAnalysis(roster) {
-    var anchor = document.getElementById('ideology-strip') || document.getElementById('members-grid');
-    if (!anchor || !anchor.parentNode) return;
-    // Guard on this panel's own class: .ygn-analysis is shared with the civic
-    // and personal panels, so checking it would let one block the others.
     if (document.querySelector('.ygn-memberpanel')) return;
-
-    var host = el('div', 'ygn-analysis ygn-memberpanel');
-    var head = el('div', 'ygn-analysis-head');
-    head.appendChild(el('h2', null, 'Chamber analysis'));
-    var toggle = el('button', 'ygn-analysis-toggle', 'Hide');
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded', 'true');
-    head.appendChild(toggle);
-    host.appendChild(head);
-
-    var grid = el('div', 'ygn-analysis-grid');
-    host.appendChild(grid);
-
-    toggle.addEventListener('click', function () {
-      var open = grid.hidden;
-      grid.hidden = !open;
-      toggle.textContent = open ? 'Hide' : 'Show';
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) D.schedulePack();
-      D.store.set('ygn-analysis-open', open);
-    });
-    if (D.store.get('ygn-analysis-open', true) === false) toggle.click();
-
+    // Below the member grid, not above it: this is supporting reading, and the
+    // page exists to show members.
+    var anchor = document.getElementById('members-grid');
+    if (!anchor) return;
     var withIdeology = roster.filter(function (m) { return m.ideology !== null; });
     var withEthics = roster.filter(function (m) { return m.ethics !== null; });
 
-    D.guard('an:1', function () { grid.appendChild(ideologyDistribution(withIdeology)); });
-    D.guard('an:2', function () { grid.appendChild(gradeDistribution(withEthics)); });
-    D.guard('an:3', function () { grid.appendChild(partyOverlap(withIdeology)); });
-    D.guard('an:4', function () { grid.appendChild(ethicsVsIdeology(roster)); });
-    D.guard('an:5', function () { grid.appendChild(chamberCompare(roster)); });
-    D.guard('an:6', function () { grid.appendChild(longestServing(roster)); });
-    D.guard('an:7', function () { grid.appendChild(freshmanClass(roster)); });
-    D.guard('an:8', function () { grid.appendChild(ethicsOutliers(withEthics)); });
-    D.guard('an:9', function () { grid.appendChild(delegationTable(roster)); });
-    D.guard('an:10', function () { grid.appendChild(dividedDelegations(withIdeology)); });
-
-    anchor.parentNode.insertBefore(host, anchor.nextSibling);
+    D.panel({
+      after: anchor,
+      className: 'ygn-memberpanel',
+      storeKey: 'ygn-memberpanel-open',
+      title: 'Chamber analysis',
+      summary: 'How the whole chamber compares — party distance, ethics, seniority and delegations.',
+      cards: [
+        D.guard('an:1', function () { return gradeDistribution(withEthics); }),
+        D.guard('an:2', function () { return partyDistance(withIdeology); }),
+        D.guard('an:3', function () { return ethicsVsIdeology(roster); }),
+        D.guard('an:4', function () { return chamberCompare(roster); }),
+        D.guard('an:5', function () { return longestServing(roster); }),
+        D.guard('an:6', function () { return freshmanClass(roster); }),
+        D.guard('an:7', function () { return ethicsOutliers(withEthics); }),
+        D.guard('an:8', function () { return delegationTable(roster); }),
+        D.guard('an:9', function () { return dividedDelegations(withIdeology); })
+      ]
+    });
   }
 
-  /* 1. Ideology distribution, split by party so the overlap is visible. */
-  function ideologyDistribution(members) {
-    var c = card('Ideological spread',
-                 'NOMINATE first-dimension score for ' + members.length + ' members with a rating');
-    var bins = S.histogram(members, function (m) { return m.ideology; }, 24);
-    c.body.appendChild(D.histogramChart(bins, PARTY_CATS, {
-      label: 'Distribution of ideology scores by party',
-      xLeft: '← liberal', xRight: 'conservative →'
-    }));
-    c.body.appendChild(legend(PARTY_CATS));
-    var dem = members.filter(function (m) { return m.partyKey === 'D'; }).map(function (m) { return m.ideology; });
-    var rep = members.filter(function (m) { return m.partyKey === 'R'; }).map(function (m) { return m.ideology; });
-    c.body.appendChild(statRow('Democratic median', fmt.ideology(S.median(dem))));
-    c.body.appendChild(statRow('Republican median', fmt.ideology(S.median(rep))));
-    var gap = S.median(rep) - S.median(dem);
-    c.body.appendChild(statRow('Gap between medians', fmt.ideology(gap),
-      'the distance between the two parties on this scale'));
-    return c;
-  }
-
-  /* 2. Ethics grades, ordered A → F rather than by count. */
+  /* 1. Ethics grades, ordered A → F rather than by count.
+        (An ideology histogram used to live here too. It duplicated the
+        #ideology-strip features.js already draws above the member grid — and
+        that one is filter-aware, so it was also the better of the two. Its only
+        unique content, the party medians, moved into partyDistance below.) */
   var GRADE_ORDER = ['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F'];
   function gradeDistribution(members) {
     var c = card('Ethics grades', 'How the ' + members.length + ' scored members are distributed');
@@ -160,16 +127,23 @@
     return c;
   }
 
-  /* 3. Overlap: members sitting inside the other party's ideological range.
-        This is the standard "how polarised is it really" question, and it is
-        answerable directly from dim1 without any modelling. */
-  function partyOverlap(members) {
-    var c = card('Party overlap', 'Members whose score falls inside the other party’s range');
+  /* 2. How far apart the parties actually sit: medians, the gap between them,
+        and whether their ranges overlap at all. The strip above the member grid
+        draws the shape of the distribution; this states the numbers, which it
+        does not. */
+  function partyDistance(members) {
+    var c = card('How far apart the parties are', 'Measured on NOMINATE, across ' + members.length + ' rated members');
     var dem = members.filter(function (m) { return m.partyKey === 'D'; });
     var rep = members.filter(function (m) { return m.partyKey === 'R'; });
     if (!dem.length || !rep.length) { c.body.appendChild(D.note('Not enough rated members.')); return c; }
     var demVals = dem.map(function (m) { return m.ideology; });
     var repVals = rep.map(function (m) { return m.ideology; });
+
+    c.body.appendChild(statRow('Democratic median', fmt.ideology(S.median(demVals))));
+    c.body.appendChild(statRow('Republican median', fmt.ideology(S.median(repVals))));
+    c.body.appendChild(statRow('Gap between them',
+      fmt.ideology(S.median(repVals) - S.median(demVals)), 'on a scale running roughly −1 to +1'));
+
     var demMax = Math.max.apply(null, demVals), repMin = Math.min.apply(null, repVals);
     // Members in the zone where the two parties' ranges cross over.
     var crossers = members.filter(function (m) {
@@ -184,7 +158,7 @@
       fmt.pct(crossers.length / members.length * 100, 1) + ' of rated members'));
     if (crossers.length) {
       var list = el('ul', 'ygn-minilist');
-      crossers.slice(0, 12).forEach(function (m) {
+      crossers.slice(0, 6).forEach(function (m) {
         var li = el('li');
         li.appendChild(memberLink(m));
         li.appendChild(chip(m.partyKey, partyTone(m.partyKey)));
@@ -192,7 +166,7 @@
         list.appendChild(li);
       });
       c.body.appendChild(list);
-      if (crossers.length > 12) c.body.appendChild(D.note('Showing 12 of ' + crossers.length + '.'));
+      if (crossers.length > 6) c.body.appendChild(D.note('Showing 6 of ' + crossers.length + '.'));
     } else {
       c.body.appendChild(D.note('No member of either party scores inside the other party’s range.'));
     }
@@ -265,7 +239,7 @@
       body.appendChild(memberLink(m));
       body.appendChild(chip(m.stateAbbr + ' · ' + m.partyKey, partyTone(m.partyKey)));
       body.appendChild(el('span', 'ygn-mini-val', (thisYear - m.firstYear) + ' yrs'));
-    }, 10));
+    }, 6));
     c.body.appendChild(D.note('Counted from the earliest term Congress.gov lists, so a break in service is not subtracted.'));
     return c;
   }
@@ -281,14 +255,14 @@
       ['D', 'R', 'I'].filter(function (k) { return byParty[k]; })
         .map(function (k) { return byParty[k].length + ' ' + k; }).join(' · ') || '—'));
     var list = el('ul', 'ygn-minilist');
-    fresh.slice(0, 14).forEach(function (m) {
+    fresh.slice(0, 8).forEach(function (m) {
       var li = el('li');
       li.appendChild(memberLink(m));
       li.appendChild(chip(m.stateAbbr + ' · ' + m.partyKey, partyTone(m.partyKey)));
       list.appendChild(li);
     });
     c.body.appendChild(list);
-    if (fresh.length > 14) c.body.appendChild(D.note('Showing 14 of ' + fresh.length + '.'));
+    if (fresh.length > 8) c.body.appendChild(D.note('Showing 8 of ' + fresh.length + '.'));
     return c;
   }
 
@@ -307,7 +281,7 @@
       c.body.appendChild(el('p', 'ygn-fsublabel', pair[0] + ' (' + pair[1].length + ')'));
       if (!pair[1].length) { c.body.appendChild(D.note('None.')); return; }
       var list = el('ul', 'ygn-minilist');
-      pair[1].slice(0, 6).forEach(function (m) {
+      pair[1].slice(0, 4).forEach(function (m) {
         var li = el('li');
         li.appendChild(memberLink(m));
         li.appendChild(chip(m.grade || '—', pair[2]));
@@ -417,12 +391,12 @@
     if (!rows.length) { c.body.appendChild(D.note('Not enough data.')); return c; }
     rows.sort(function (a, b) { return b.sd - a.sd; });
     c.body.appendChild(el('p', 'ygn-fsublabel', 'Widest internal spread'));
-    c.body.appendChild(D.barChart(rows.slice(0, 6).map(function (r) {
+    c.body.appendChild(D.barChart(rows.slice(0, 5).map(function (r) {
       return { label: D.abbr(r.state), value: +r.sd.toFixed(3), display: r.sd.toFixed(2),
                tone: 'mid', title: r.state + ': SD ' + r.sd.toFixed(3) + ' across ' + r.n + ' members' };
     }), { labelWidth: 34, label: 'Most divided delegations' }));
     c.body.appendChild(el('p', 'ygn-fsublabel', 'Most uniform'));
-    c.body.appendChild(D.barChart(rows.slice(-6).reverse().map(function (r) {
+    c.body.appendChild(D.barChart(rows.slice(-5).reverse().map(function (r) {
       return { label: D.abbr(r.state), value: +r.sd.toFixed(3), display: r.sd.toFixed(2),
                tone: 'good', title: r.state + ': SD ' + r.sd.toFixed(3) + ' across ' + r.n + ' members' };
     }), { labelWidth: 34, label: 'Most uniform delegations' }));
@@ -517,7 +491,7 @@
     var near = peers.filter(function (m) { return m.id !== me.id && m.ideology !== null; })
       .map(function (m) { return { m: m, d: Math.abs(m.ideology - me.ideology) }; })
       .sort(function (a, b) { return a.d - b.d; })
-      .slice(0, 8);
+      .slice(0, 5);
     var list = el('ul', 'ygn-minilist');
     near.forEach(function (n) {
       var li = el('li');
@@ -542,7 +516,7 @@
       .sort(function (a, b) { return a.d - b.d; });
     if (!others.length) { c.body.appendChild(D.note('No rated members of the other party.')); return c; }
     var list = el('ul', 'ygn-minilist');
-    others.slice(0, 5).forEach(function (n) {
+    others.slice(0, 4).forEach(function (n) {
       var li = el('li');
       li.appendChild(memberLink(n.m));
       li.appendChild(chip(n.m.stateAbbr, partyTone(n.m.partyKey)));

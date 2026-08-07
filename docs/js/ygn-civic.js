@@ -261,10 +261,6 @@
     var upcoming = items.filter(function (h) { return h.date && D.daysAgo(h.date) <= 0; })
       .sort(function (a, b) { return D.parseDate(a.date) - D.parseDate(b.date); });
     c.body.appendChild(statRow('Still upcoming', String(upcoming.length), 'of ' + items.length + ' listed'));
-    if (upcoming[0]) {
-      c.body.appendChild(statRow('Next', fmt.date(upcoming[0].date),
-        (upcoming[0].committee || '') + (upcoming[0].room ? ' · ' + upcoming[0].room : '')));
-    }
     return c;
   }
 
@@ -445,121 +441,17 @@
     return c;
   }
 
-  /* ── 38. How close the recorded votes were ────────────────────────────────
-     The file gives yea, nay and not-voting totals. Margin and turnout follow
-     directly; party composition does not, so this does not claim it. */
-  function voteMargins(vs) {
-    var votes = (vs && vs.votes) || [];
-    var c = card('Recent vote margins', 'From the roll-call totals in the snapshot');
-    if (!votes.length) { c.body.appendChild(D.note('No votes recorded.')); return c; }
-    var rows = votes.map(function (v) {
-      var yea = v.yea || 0, nay = v.nay || 0, nv = v.notVoting || 0;
-      var cast = yea + nay;
-      return { v: v, yea: yea, nay: nay, nv: nv, cast: cast,
-               margin: cast ? Math.abs(yea - nay) : null,
-               share: cast ? Math.max(yea, nay) / cast : null };
-    });
-    var list = el('ul', 'ygn-votelist');
-    rows.forEach(function (r) {
-      var li = el('li');
-      var head = el('div', 'ygn-vote-head');
-      var a = el('a', 'ygn-mlink', r.v.identifier || 'Vote');
-      if (r.v.detailPath) a.href = 'bill.html?id=' + encodeURIComponent(r.v.detailPath);
-      head.appendChild(a);
-      head.appendChild(chip(r.v.chamber || '', 'mid'));
-      head.appendChild(chip(r.v.result || '', /pass|agree/i.test(r.v.result || '') ? 'good' : 'bad'));
-      li.appendChild(head);
-      if (r.v.billTitle) li.appendChild(el('p', 'ygn-vote-title', r.v.billTitle));
-      // A proportional bar: yea against nay, with the abstentions shown apart.
-      var bar = el('div', 'ygn-votebar');
-      if (r.cast) {
-        var y = el('span', 'ygn-votebar-yea');
-        y.style.width = (r.yea / r.cast * 100).toFixed(1) + '%';
-        y.title = r.yea + ' yea';
-        bar.appendChild(y);
-        var nn = el('span', 'ygn-votebar-nay');
-        nn.style.width = (r.nay / r.cast * 100).toFixed(1) + '%';
-        nn.title = r.nay + ' nay';
-        bar.appendChild(nn);
-      }
-      li.appendChild(bar);
-      var meta = el('p', 'ygn-vote-meta');
-      meta.textContent = r.yea + ' yea · ' + r.nay + ' nay' +
-        (r.nv ? ' · ' + r.nv + ' not voting' : '') +
-        (r.margin !== null ? ' · margin ' + r.margin : '') +
-        (r.v.date ? ' · ' + fmt.date(r.v.date) : '');
-      li.appendChild(meta);
-      list.appendChild(li);
-    });
-    c.body.appendChild(list);
-    var closest = rows.filter(function (r) { return r.margin !== null; })
-      .sort(function (a, b) { return a.margin - b.margin; })[0];
-    if (closest) {
-      c.body.appendChild(statRow('Closest here', (closest.v.identifier || '—'),
-        'decided by ' + closest.margin + ' votes'));
-    }
-    c.body.appendChild(D.note('These totals do not break down by party, so nothing here says who voted how.'));
-    return c;
-  }
-
-  /* ── 39. The bills carrying the broadest support ──────────────────────── */
-  function broadestSupport(ss) {
-    var bills = (ss && ss.bills) || [];
-    var c = card('Broadest support', 'Bills with the most cosponsors on record');
-    if (!bills.length) { c.body.appendChild(D.note('No spotlight bills recorded.')); return c; }
-    var ranked = bills.slice().sort(function (a, b) {
-      return (b.cosponsorCount || 0) - (a.cosponsorCount || 0);
-    });
-    var max = ranked[0].cosponsorCount || 1;
-    var ol = el('ol', 'ygn-ranklist');
-    ranked.forEach(function (b, i) {
-      var li = el('li');
-      li.appendChild(el('span', 'ygn-rank-n', String(i + 1)));
-      var body = el('span', 'ygn-rank-body');
-      var a = el('a', 'ygn-mlink', b.identifier || 'Bill');
-      if (b.detailPath) a.href = 'bill.html?id=' + encodeURIComponent(b.detailPath);
-      body.appendChild(a);
-      if (b.bipartisan) body.appendChild(chip('bipartisan', 'good'));
-      if (b.policyArea) body.appendChild(chip(b.policyArea, 'mid'));
-      body.appendChild(el('span', 'ygn-mini-val', (b.cosponsorCount || 0) + ' cosponsors'));
-      body.appendChild(el('span', 'ygn-rank-title', b.title || ''));
-      var meter = el('div', 'ygn-meter');
-      var fill = el('span', 'ygn-meter-fill' + (b.bipartisan ? ' is-good' : ''));
-      fill.style.width = ((b.cosponsorCount || 0) / max * 100).toFixed(1) + '%';
-      meter.appendChild(fill);
-      body.appendChild(meter);
-      li.appendChild(body);
-      ol.appendChild(li);
-    });
-    c.body.appendChild(ol);
-    var bp = bills.filter(function (b) { return b.bipartisan; }).length;
-    c.body.appendChild(statRow('Marked bipartisan', bp + ' of ' + bills.length));
-    return c;
-  }
-
   /* ═══ Boot ═══════════════════════════════════════════════════════════════ */
-  function mount(host, cards) {
-    if (!host || !host.parentNode) return;
-    var wrap = el('div', 'ygn-analysis ygn-civicpanel');
-    var head = el('div', 'ygn-analysis-head');
-    head.appendChild(el('h2', null, 'The record, in context'));
-    var toggle = el('button', 'ygn-analysis-toggle', 'Hide');
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded', 'true');
-    head.appendChild(toggle);
-    wrap.appendChild(head);
-    var grid = el('div', 'ygn-analysis-grid');
-    cards.filter(Boolean).forEach(function (c) { grid.appendChild(c); });
-    if (!grid.children.length) return;
-    wrap.appendChild(grid);
-    toggle.addEventListener('click', function () {
-      var open = grid.hidden;
-      grid.hidden = !open;
-      toggle.textContent = open ? 'Hide' : 'Show';
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) D.schedulePack();
+  function mount(anchor, cards, opts) {
+    opts = opts || {};
+    D.panel({
+      after: anchor,
+      className: 'ygn-civicpanel',
+      storeKey: opts.storeKey || 'ygn-civicpanel-open',
+      title: opts.title || 'The record, in context',
+      summary: opts.summary || 'Pace and shape of what the federal government has been doing.',
+      cards: cards
     });
-    host.parentNode.insertBefore(wrap, host.nextSibling);
   }
 
   D.ready(function () {
@@ -576,7 +468,7 @@
 
     if (isHome) {
       Promise.all(['recent-laws', 'executive-orders', 'hearings', 'nominations', 'treaties',
-                   'on-this-day', 'vote-spotlight'].map(D.civic)).then(function (r) {
+                   'on-this-day'].map(D.civic)).then(function (r) {
         var host = document.getElementById('home-recent-bills') || document.getElementById('district-map');
         mount(host, [
           D.guard('cv:30', function () {
@@ -584,18 +476,16 @@
                                    hearings: (r[2] || {}).hearings, nominations: (r[3] || {}).nominations,
                                    treaties: (r[4] || {}).treaties });
           }),
-          D.guard('cv:37', function () { return almanac(r[5]); }),
-          D.guard('cv:38', function () { return voteMargins(r[6]); })
-        ]);
+          D.guard('cv:37', function () { return almanac(r[5]); })
+        ], { title: 'The federal record', summary: 'Every dated law, order, hearing, nomination and treaty on one clock.' });
       });
     } else if (page === 'bills') {
-      Promise.all(['recent-laws', 'hearings', 'support-spotlight'].map(D.civic)).then(function (r) {
+      Promise.all(['recent-laws', 'hearings'].map(D.civic)).then(function (r) {
         var host = document.getElementById('recent-laws') || document.getElementById('recent-bills-grid');
         mount(host, [
           D.guard('cv:31', function () { return lawsPace(r[0]); }),
-          D.guard('cv:35', function () { return hearingLoad(r[1]); }),
-          D.guard('cv:39', function () { return broadestSupport(r[2]); })
-        ]);
+          D.guard('cv:35', function () { return hearingLoad(r[1]); })
+        ], { title: 'Lawmaking in context', summary: 'How fast laws are passing and which committees are busiest.' });
       });
     } else if (page === 'foreign') {
       Promise.all(['executive-orders', 'nominations', 'treaties'].map(D.civic)).then(function (r) {

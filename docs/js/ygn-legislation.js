@@ -68,41 +68,31 @@
 
   /* ═══ BILLS PAGE ═════════════════════════════════════════════════════════ */
   function buildBillsAnalysis(bills, digest) {
-    var anchor = document.getElementById('civic-pulse-grid') || document.getElementById('recent-bills-grid');
-    if (!anchor || !anchor.parentNode) return;
     if (document.querySelector('.ygn-billpanel')) return;
+    // After the bill list. This used to sit above #civic-pulse-grid, which put
+    // a screen of charts between the reader and the bills themselves.
+    var anchor = document.getElementById('recent-bills-grid');
+    if (!anchor) return;
 
-    var host = el('div', 'ygn-analysis ygn-billpanel');
-    var head = el('div', 'ygn-analysis-head');
-    head.appendChild(el('h2', null, 'What this batch of bills looks like'));
-    var toggle = el('button', 'ygn-analysis-toggle', 'Hide');
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded', 'true');
-    head.appendChild(toggle);
-    host.appendChild(head);
-    var grid = el('div', 'ygn-analysis-grid');
-    host.appendChild(grid);
-    toggle.addEventListener('click', function () {
-      var open = grid.hidden;
-      grid.hidden = !open;
-      toggle.textContent = open ? 'Hide' : 'Show';
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) D.schedulePack();
-      D.store.set('ygn-billpanel-open', open);
+    var panel = D.panel({
+      after: anchor,
+      className: 'ygn-billpanel',
+      storeKey: 'ygn-billpanel-open',
+      title: 'What this batch of bills looks like',
+      summary: 'Policy mix, how stale the feed is, who is sponsoring, and an export.',
+      cards: [
+        D.guard('bl:16', function () { return policyBreakdown(bills); }),
+        D.guard('bl:17', function () { return stalledAndMoving(bills); }),
+        D.guard('bl:18', function () { return mostCosponsored(bills); }),
+        D.guard('bl:19', function () { return chamberOrigin(bills); }),
+        D.guard('bl:20', function () { return sponsorshipReach(bills); }),
+        D.guard('bl:21', function () { return activityTimeline(bills); }),
+        D.guard('bl:29', function () { return exportPanel(bills, digest); })
+      ]
     });
-    if (D.store.get('ygn-billpanel-open', true) === false) toggle.click();
-
-    D.guard('bl:16', function () { grid.appendChild(policyBreakdown(bills)); });
-    D.guard('bl:17', function () { grid.appendChild(stalledAndMoving(bills)); });
-    D.guard('bl:18', function () { grid.appendChild(mostCosponsored(bills)); });
-    D.guard('bl:19', function () { grid.appendChild(chamberOrigin(bills)); });
-    D.guard('bl:20', function () { grid.appendChild(sponsorshipReach(bills)); });
-    D.guard('bl:21', function () { grid.appendChild(activityTimeline(bills)); });
-    D.guard('bl:29', function () { grid.appendChild(exportPanel(bills, digest)); });
-
-    anchor.parentNode.insertBefore(host, anchor);
-    D.guard('bl:22', function () { policyChips(bills, host); });
-    D.guard('bl:28', function () { newSinceLastVisit(bills, host); });
+    // The "moved since your visit" strip stays above the list: it is a pointer
+    // into the bills, not analysis of them.
+    if (panel) D.guard('bl:28', function () { newSinceLastVisit(bills, anchor); });
   }
 
   /* 16. What Congress is spending its time on, by Congress.gov policy area. */
@@ -250,56 +240,6 @@
     return c;
   }
 
-  /* 22. Filter the visible bill rows by policy area, client-side. */
-  function policyChips(bills, host) {
-    var grid = document.getElementById('recent-bills-grid');
-    if (!grid) return;
-    var areas = Object.keys(S.groupBy(bills, function (b) { return b.policyArea; })).sort();
-    if (areas.length < 2) return;
-    var bar = el('div', 'ygn-policybar');
-    bar.appendChild(el('span', 'ygn-policybar-label', 'Filter by policy area'));
-    var wrap = el('div', 'ygn-chiprow');
-    var active = null;
-
-    function apply() {
-      var rows = grid.querySelectorAll('.bill-row');
-      var shown = 0;
-      [].slice.call(rows).forEach(function (row) {
-        if (row.classList.contains('bill-row-header')) return;
-        if (!active) { row.hidden = false; shown++; return; }
-        // Match on the row's own text, which carries the policy area label.
-        var hit = (row.textContent || '').toLowerCase().indexOf(active.toLowerCase()) > -1;
-        row.hidden = !hit;
-        if (hit) shown++;
-      });
-      count.textContent = active ? shown + ' shown' : '';
-    }
-    var all = el('button', 'ygn-chip is-toggle is-on', 'All');
-    all.type = 'button';
-    all.addEventListener('click', function () {
-      active = null;
-      [].slice.call(wrap.children).forEach(function (b) { b.classList.toggle('is-on', b === all); });
-      apply();
-    });
-    wrap.appendChild(all);
-    areas.forEach(function (a) {
-      var b = el('button', 'ygn-chip is-toggle', a);
-      b.type = 'button';
-      b.addEventListener('click', function () {
-        active = active === a ? null : a;
-        [].slice.call(wrap.children).forEach(function (x) {
-          x.classList.toggle('is-on', active ? x === b : x === all);
-        });
-        apply();
-      });
-      wrap.appendChild(b);
-    });
-    bar.appendChild(wrap);
-    var count = el('span', 'ygn-policybar-count');
-    bar.appendChild(count);
-    host.parentNode.insertBefore(bar, host.nextSibling);
-  }
-
   /* 28. Which bills have moved since the reader was last here. */
   function newSinceLastVisit(bills, host) {
     var KEY = 'ygn-bills-lastseen';
@@ -366,65 +306,25 @@
 
   /* 23. Congress.gov action text is procedural. This maps the common phrases
          to what they mean, and says so when it does not recognise one. */
-  var STATUS_MAP = [
-    [/became public law/i,            'Enacted', 'This is now law.', 'good'],
-    [/presented to president|sent to president/i, 'At the President', 'Passed both chambers; awaiting signature or veto.', 'good'],
-    [/passed\/agreed to in senate|passed senate/i, 'Passed the Senate', 'Cleared the Senate. Needs the House unless it started there.', 'good'],
-    [/passed\/agreed to in house|passed house/i,  'Passed the House', 'Cleared the House. Needs the Senate unless it started there.', 'good'],
-    [/resolving differences|conference/i, 'Reconciling versions', 'Both chambers passed different texts and are settling the difference.', 'mid'],
-    [/reported (by|to)/i,             'Out of committee', 'A committee approved it; it can now be scheduled for a floor vote.', 'mid'],
-    [/placed on.*calendar/i,          'Awaiting floor time', 'Eligible for a vote whenever leadership schedules one.', 'mid'],
-    [/subcommittee hearings held|hearings held/i, 'Hearings held', 'A committee has taken testimony. No vote yet.', 'mid'],
-    [/referred to (the )?(sub)?committee/i, 'In committee', 'Sent to committee. Most bills stop here permanently.', 'bad'],
-    [/introduced|sponsor introductory/i, 'Introduced', 'Filed, and nothing further has happened yet.', 'bad'],
-    [/vetoed/i,                       'Vetoed', 'The President rejected it. Congress can attempt an override.', 'bad']
-  ];
-  function decodeStatus(text) {
-    for (var i = 0; i < STATUS_MAP.length; i++) {
-      if (STATUS_MAP[i][0].test(text || '')) {
-        return { label: STATUS_MAP[i][1], plain: STATUS_MAP[i][2], tone: STATUS_MAP[i][3] };
-      }
-    }
-    return null;
-  }
-
   function buildBillDetail(bills, detailPath) {
+    if (document.querySelector('.ygn-billdetailpanel')) return;
     var me = bills.filter(function (b) { return b.detailPath === detailPath; })[0];
-    // Mount inside main-content, not bill-container: core.js rewrites that
-    // container and would take this with it.
-    var host = document.getElementById('main-content') || document.getElementById('bill-container');
-    if (!host || document.querySelector('.ygn-bill-analysis')) return;
-    var wrap = el('div', 'ygn-bill-analysis');
-    var grid = el('div', 'ygn-analysis-grid');
-    wrap.appendChild(grid);
-
-    if (me) {
-      D.guard('bl:23', function () { grid.appendChild(statusCard(me)); });
-      D.guard('bl:26', function () { grid.appendChild(sponsorMix(me)); });
-      D.guard('bl:24', function () { grid.appendChild(relatedBills(me, bills)); });
-    }
-    D.guard('bl:25', function () { grid.appendChild(readingTime()); });
-    D.guard('bl:27', function () { grid.appendChild(compareTray(me, bills)); });
-    if (grid.children.length) host.appendChild(wrap);
-  }
-
-  function statusCard(b) {
-    var c = card('Where this bill actually stands', 'Plain reading of the latest recorded action');
-    var text = (b.latestAction && b.latestAction.text) || '';
-    var decoded = decodeStatus(text);
-    if (decoded) {
-      var badge = el('p', 'ygn-statusbadge is-' + decoded.tone, decoded.label);
-      c.body.appendChild(badge);
-      c.body.appendChild(el('p', 'ygn-statusplain', decoded.plain));
-    } else {
-      c.body.appendChild(D.note('This action text does not match a stage we decode, so it is shown as recorded.'));
-    }
-    if (text) {
-      c.body.appendChild(statRow('Recorded action', text));
-    }
-    var d = b.latestAction && b.latestAction.date;
-    if (d) c.body.appendChild(statRow('Dated', fmt.date(d), fmt.ago(d)));
-    return c;
+    // Anchored on the container but inserted after it, so core.js rewriting
+    // the container cannot take this with it.
+    var anchor = document.getElementById('bill-container');
+    if (!anchor) return;
+    D.panel({
+      after: anchor,
+      className: 'ygn-billdetailpanel',
+      storeKey: 'ygn-billdetail-open',
+      title: 'More on this bill',
+      summary: 'Who is behind it, how long this page takes to read, and a compare tray.',
+      cards: [
+        me ? D.guard('bl:26', function () { return sponsorMix(me); }) : null,
+        D.guard('bl:25', readingTime),
+        D.guard('bl:27', function () { return compareTray(me, bills); })
+      ]
+    });
   }
 
   function sponsorMix(b) {
@@ -455,25 +355,6 @@
       });
       c.body.appendChild(list);
     }
-    return c;
-  }
-
-  function relatedBills(me, bills) {
-    var c = card('Related bills', 'Same policy area in the current digest');
-    if (!me.policyArea) { c.body.appendChild(D.note('This bill has no policy area assigned.')); return c; }
-    var kin = bills.filter(function (b) {
-      return b.policyArea === me.policyArea && b.detailPath !== me.detailPath;
-    }).sort(function (a, b) { return (b.cosponsorCount || 0) - (a.cosponsorCount || 0); }).slice(0, 8);
-    if (!kin.length) { c.body.appendChild(D.note('No other bill in this batch shares its policy area.')); return c; }
-    c.body.appendChild(chip(me.policyArea, 'accent'));
-    var list = el('ul', 'ygn-minilist');
-    kin.forEach(function (b) {
-      var li = el('li');
-      li.appendChild(billLink(b));
-      li.appendChild(el('span', 'ygn-rank-title', titleOf(b)));
-      list.appendChild(li);
-    });
-    c.body.appendChild(list);
     return c;
   }
 
@@ -527,10 +408,6 @@
         ['Chamber', function (b) { return b.originChamber || '—'; }],
         ['Cosponsors', function (b) { return b.cosponsorCount === undefined ? '—' : String(b.cosponsorCount); }],
         ['Party mix', function (b) { var m = partyMix(b); return m.total ? m.D + 'D / ' + m.R + 'R' : '—'; }],
-        ['Status', function (b) {
-          var d = decodeStatus(b.latestAction && b.latestAction.text);
-          return d ? d.label : ((b.latestAction && b.latestAction.text) || '—').slice(0, 40);
-        }],
         ['Last action', function (b) { return fmt.date(b.latestAction && b.latestAction.date) || '—'; }]
       ];
       var tbody = el('tbody');
