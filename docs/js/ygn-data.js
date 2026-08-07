@@ -339,7 +339,23 @@
 
     host.parentNode.insertBefore(wrap, host.nextSibling);
     wrap.grid = grid;
+    wrap.refresh = apply;
     return wrap;
+  };
+
+  /* One bar per page. Two modules contribute cards to the bills page, and two
+     separate collapsed bars stacked above the list is just clutter of a
+     different shape. Whichever module resolves first builds the panel; the
+     other finds it by class and appends into it. */
+  api.panelFor = function (opts) {
+    var existing = document.querySelector('.' + opts.className);
+    if (existing && existing.grid) {
+      (opts.cards || []).filter(Boolean).forEach(function (c) { existing.grid.appendChild(c); });
+      if (existing.refresh) existing.refresh();
+      api.schedulePack();
+      return existing;
+    }
+    return api.panel(opts);
   };
 
   /* ── Card packing ──────────────────────────────────────────────────────────

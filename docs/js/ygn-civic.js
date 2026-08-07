@@ -444,9 +444,9 @@
   /* ═══ Boot ═══════════════════════════════════════════════════════════════ */
   function mount(anchor, cards, opts) {
     opts = opts || {};
-    D.panel({
+    D.panelFor({
       after: anchor,
-      className: 'ygn-civicpanel',
+      className: opts.className || 'ygn-civicpanel',
       storeKey: opts.storeKey || 'ygn-civicpanel-open',
       title: opts.title || 'The record, in context',
       summary: opts.summary || 'Pace and shape of what the federal government has been doing.',
@@ -481,11 +481,15 @@
       });
     } else if (page === 'bills') {
       Promise.all(['recent-laws', 'hearings'].map(D.civic)).then(function (r) {
-        var host = document.getElementById('recent-laws') || document.getElementById('recent-bills-grid');
+        // Same bar as the bills panel — whichever of the two lands first
+        // builds it and the other appends.
+        var host = document.getElementById('bill-filters') || document.getElementById('recent-bills-grid');
         mount(host, [
           D.guard('cv:31', function () { return lawsPace(r[0]); }),
           D.guard('cv:35', function () { return hearingLoad(r[1]); })
-        ], { title: 'Lawmaking in context', summary: 'How fast laws are passing and which committees are busiest.' });
+        ], { className: 'ygn-billpanel', storeKey: 'ygn-billpanel-open',
+             title: 'Bills in context',
+             summary: 'Policy mix, how stale the feed is, who sponsors, lawmaking pace and hearings.' });
       });
     } else if (page === 'foreign') {
       Promise.all(['executive-orders', 'nominations', 'treaties'].map(D.civic)).then(function (r) {

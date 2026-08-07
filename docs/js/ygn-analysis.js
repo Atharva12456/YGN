@@ -76,9 +76,11 @@
   /* ═══ MEMBERS PAGE ═══════════════════════════════════════════════════════ */
   function buildMembersAnalysis(roster) {
     if (document.querySelector('.ygn-memberpanel')) return;
-    // Below the member grid, not above it: this is supporting reading, and the
-    // page exists to show members.
-    var anchor = document.getElementById('members-grid');
+    /* Directly above the member grid. Collapsed this is a 72px bar, so it costs
+       almost nothing and is visible without scrolling — below the grid it sat
+       under 537 member tiles, where nobody would ever find it. The original
+       mistake was opening it expanded at ~1450px, not the position. */
+    var anchor = document.getElementById('ideology-strip');
     if (!anchor) return;
     var withIdeology = roster.filter(function (m) { return m.ideology !== null; });
     var withEthics = roster.filter(function (m) { return m.ethics !== null; });
