@@ -613,6 +613,7 @@
       grid.hidden = !open;
       toggle.textContent = open ? 'Hide' : 'Show';
       toggle.setAttribute('aria-expanded', String(open));
+      if (open) D.schedulePack();
     });
     if (append) host.appendChild(wrap);
     else host.parentNode.insertBefore(wrap, host.nextSibling);
@@ -647,6 +648,7 @@
             [D.guard('pe:44', function () { return myDelegation(roster); }),
              D.guard('pe:42', function () { return savedWorkbench(roster); })]
               .filter(Boolean).forEach(function (c) { panel.grid.appendChild(c); });
+            D.schedulePack();
           });
         });
       });
