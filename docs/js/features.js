@@ -146,6 +146,9 @@ function decodeGlossaryText(value) {
   for (var i = 0; i < map.length; i++) { out = out.split(map[i][0]).join(map[i][1]); }
   return out;
 }
+// The inline glossary tooltips (js/ygn-civic.js) render the same committed
+// strings, so they need the same repair rather than a second copy of the map.
+window.ygnDecodeGlossary = decodeGlossaryText;
 
 function highlightMatch(text, query) {
   const safe = esc(text);

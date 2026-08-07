@@ -25,6 +25,7 @@
   var page = D.page();
 
   var el = D.el, card = D.card, fmt = D.fmt;
+  var statRow = D.statRow, download = D.download, csvCell = D.csvCell, chip = D.chip;
 
   var KEYS = {
     notes:   'ygn-notes',
@@ -36,32 +37,8 @@
     savedB:  'ygn_saved_bills_v1'
   };
 
-  function chip(t, tone) { return el('span', 'ygn-chip' + (tone ? ' is-' + tone : ''), t); }
-  function statRow(label, value, hint) {
-    var r = el('div', 'ygn-statrow');
-    r.appendChild(el('span', 'ygn-statrow-label', label));
-    r.appendChild(el('span', 'ygn-statrow-value', value));
-    if (hint) r.appendChild(el('span', 'ygn-statrow-hint', hint));
-    return r;
-  }
   function savedMembers() { return D.store.get(KEYS.savedM, []) || []; }
   function savedBills() { return D.store.get(KEYS.savedB, []) || []; }
-  function download(name, text, type) {
-    try {
-      var blob = new Blob([text], { type: type });
-      var url = URL.createObjectURL(blob);
-      var a = el('a');
-      a.href = url; a.download = name;
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-      D.toast('Downloaded ' + name);
-      return true;
-    } catch (e) { D.toast('Could not build the file', 'warn'); return false; }
-  }
-  function csvCell(v) {
-    var s = v === null || v === undefined ? '' : String(v);
-    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
-  }
 
   /* ── 40. Private notes on a member or bill ─────────────────────────────── */
   function notesPanel(subjectKey, subjectLabel) {
@@ -449,36 +426,44 @@
     return c;
   }
 
-  /* ── 47. How old the data on screen actually is ────────────────────────── */
+  /* ── 47. How old the data on screen actually is ────────────────────────────
+     Reads the 0.5 KB manifest and 1 KB health file rather than the snapshots
+     themselves. An earlier version opened officials.json and member-scores.json
+     purely to read their generated_at — 540 KB to render two dates, on the one
+     page core.js works hardest to keep them off. Every snapshot is written by
+     the same build, so the manifest timestamp covers all of them. */
   function freshnessPanel() {
-    var c = card('Data freshness', 'When each snapshot was last rebuilt');
-    var rows = [
-      ['Member roster', D.officials()],
-      ['Ethics and ideology', D.scores()],
-      ['Recent bills', D.digest()],
-      ['Build manifest', D.manifest()],
-      ['Service health', D.health()]
-    ];
+    var c = card('Data freshness', 'When the committed snapshots were last rebuilt');
     var body = c.body;
     body.appendChild(D.note('Loading…'));
-    Promise.all(rows.map(function (r) { return r[1]; })).then(function (out) {
+    Promise.all([D.manifest(), D.health(), D.digest()]).then(function (out) {
+      var manifest = out[0], health = out[1], digest = out[2];
       body.innerHTML = '';
-      out.forEach(function (data, i) {
-        var when = data && (data.generated_at || data.generatedAt);
-        var label = rows[i][0];
-        if (!data) { body.appendChild(statRow(label, 'unavailable', 'snapshot did not load')); return; }
-        if (!when) { body.appendChild(statRow(label, 'loaded', 'no timestamp recorded')); return; }
-        var days = Math.floor((Date.now() - new Date(when).getTime()) / 86400000);
-        var hint = fmt.ago(when);
-        var row = statRow(label, fmt.date(when), hint);
+      function dated(label, when, hint) {
+        if (!when) { body.appendChild(statRow(label, 'unknown', hint || '')); return; }
+        var days = D.daysAgo(when);
+        var row = statRow(label, fmt.date(when), fmt.ago(when));
         if (days > 14) row.appendChild(chip('stale', 'bad'));
         else if (days > 5) row.appendChild(chip('ageing', 'mid'));
         body.appendChild(row);
-      });
-      var health = out[4];
+      }
+      dated('Site data rebuilt', manifest && manifest.generated_at);
+      dated('Recent bills snapshot', digest && digest.generated_at);
       if (health && health.status) {
         body.appendChild(statRow('Reported status', String(health.status),
-          health.mode ? 'mode: ' + health.mode : ''));
+          health.mode ? 'serving in ' + health.mode + ' mode' : ''));
+      }
+      if (manifest) {
+        var counts = [
+          ['Members on file', manifest.members],
+          ['With an ethics score', manifest.ethics],
+          ['Dossiers built', manifest.dossiers]
+        ].filter(function (p) { return typeof p[1] === 'number'; });
+        counts.forEach(function (p) { body.appendChild(statRow(p[0], fmt.num(p[1]))); });
+        if (typeof manifest.errors === 'number' && manifest.errors > 0) {
+          body.appendChild(statRow('Build errors', fmt.num(manifest.errors),
+            'recorded during the last rebuild'));
+        }
       }
       body.appendChild(D.note('These pages read committed snapshots, so a stale timestamp means the ' +
                               'rebuild has not run — not that the site is down.'));
@@ -571,9 +556,16 @@
       history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
       shareBtn.hidden = !qs;
     }
+    // Typing in the search box fires input on every keystroke; rewriting the
+    // URL that often is wasteful and makes the address bar flicker.
+    var syncTimer = null;
+    function syncSoon() {
+      if (syncTimer) clearTimeout(syncTimer);
+      syncTimer = setTimeout(function () { syncTimer = null; sync(); }, 250);
+    }
     controls.forEach(function (p) {
-      p[1].addEventListener('change', sync);
-      p[1].addEventListener('input', sync);
+      p[1].addEventListener('change', syncSoon);
+      p[1].addEventListener('input', syncSoon);
     });
 
     var shareBtn = el('button', 'ygn-sharebtn', 'Copy link to this view');
@@ -624,6 +616,7 @@
     });
     if (append) host.appendChild(wrap);
     else host.parentNode.insertBefore(wrap, host.nextSibling);
+    wrap.grid = grid;
     return wrap;
   }
 
@@ -634,16 +627,27 @@
     if (page === 'members') D.guard('pe:49', shareableFilters);
 
     if (D.page() === 'home' && D.file().indexOf('index') === 0) {
-      D.roster().then(function (roster) {
-        D.digest().then(function (digest) {
-          var host = document.getElementById('home-recent-bills') || document.getElementById('district-map');
-          mount(host, [
-            D.guard('pe:44', function () { return myDelegation(roster); }),
-            D.guard('pe:45', function () { return watchlistDigest(digest && digest.bills); }),
-            D.guard('pe:46', historyPanel),
-            D.guard('pe:42', function () { return savedWorkbench(roster); }),
-            D.guard('pe:47', freshnessPanel)
-          ], 'Your tools');
+      /* Mount the roster-free cards straight away, then wait until the panel is
+         actually scrolled to before pulling the roster. core.js goes out of its
+         way to keep officials.json and member-scores.json off the home page
+         (see loadMemberCount and the map's lazy delegation load); fetching
+         ~540 KB here on load would have quietly undone both. */
+      D.digest().then(function (digest) {
+        var host = document.getElementById('home-recent-bills') || document.getElementById('district-map');
+        var panel = mount(host, [
+          D.guard('pe:45', function () { return watchlistDigest(digest && digest.bills); }),
+          D.guard('pe:46', historyPanel),
+          D.guard('pe:47', freshnessPanel)
+        ], 'Your tools');
+        if (!panel || !panel.grid) return;
+        // Appended rather than swapped into placeholders: an empty slot would
+        // leave a hole in the grid for anyone who never scrolls this far.
+        D.whenVisible(panel).then(function () {
+          D.roster().then(function (roster) {
+            [D.guard('pe:44', function () { return myDelegation(roster); }),
+             D.guard('pe:42', function () { return savedWorkbench(roster); })]
+              .filter(Boolean).forEach(function (c) { panel.grid.appendChild(c); });
+          });
         });
       });
     }

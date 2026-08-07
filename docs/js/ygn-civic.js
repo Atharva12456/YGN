@@ -25,16 +25,9 @@
   var page = D.page();
 
   var el = D.el, card = D.card, fmt = D.fmt, S = D.stats;
+  var statRow = D.statRow, chip = D.chip;
   var isHome = page === 'home' && D.file().indexOf('index') === 0;
 
-  function chip(t, tone) { return el('span', 'ygn-chip' + (tone ? ' is-' + tone : ''), t); }
-  function statRow(label, value, hint) {
-    var r = el('div', 'ygn-statrow');
-    r.appendChild(el('span', 'ygn-statrow-label', label));
-    r.appendChild(el('span', 'ygn-statrow-value', value));
-    if (hint) r.appendChild(el('span', 'ygn-statrow-hint', hint));
-    return r;
-  }
   function extLink(text, href) {
     var a = el('a', 'ygn-mlink', text);
     a.href = href; a.target = '_blank'; a.rel = 'noopener';
@@ -283,8 +276,11 @@
      Only text nodes inside prose are touched, and each term is marked once per
      page, so this cannot turn an article into a field of underlines. Anything
      already inside a link, heading, button or existing tooltip is skipped. */
+  var glossaryUsed = {};      // module-level so repeat passes never double-mark
+  var glossaryTipReady = false;
   function glossary(terms) {
     if (!terms || !terms.length) return;
+    var used = glossaryUsed;
     /* Several entries are written for a reader, not a matcher:
          "Continuing resolution (CR)"      → "continuing resolution", "CR"
          "PTR (Periodic Transaction Report)" → "PTR", "Periodic Transaction Report"
@@ -292,9 +288,14 @@
        Matching the label verbatim would find none of these in real prose, so
        each entry contributes its aliases instead. Two-letter aliases stay
        case-sensitive; lowercased, "CR" would fire inside ordinary words. */
+    // features.js repairs UTF-8-as-Windows-1252 mojibake that the build has
+    // produced in this file before; reuse it so a tooltip can never show
+    // mangled text the term decoder shows cleanly.
+    var fix = window.ygnDecodeGlossary || function (s) { return String(s || ''); };
     var byTerm = {}, exact = {};
     terms.forEach(function (t) {
       if (!t.term) return;
+      t = { term: fix(t.term), definition: fix(t.definition) };
       var aliases = [];
       var paren = /^(.+?)\s*\(([^)]+)\)\s*$/.exec(t.term);
       if (paren) { aliases.push(paren[1], paren[2]); }
@@ -314,7 +315,6 @@
 
     var main = document.getElementById('main-content');
     if (!main) return;
-    var used = {};
     var SKIP = /^(A|BUTTON|H1|H2|H3|H4|CODE|PRE|KBD|SCRIPT|STYLE|INPUT|TEXTAREA|SELECT|LABEL|ABBR)$/;
 
     // Collect candidate text nodes first: mutating while walking invalidates
@@ -367,7 +367,8 @@
       }
     });
 
-    if (!marked) return;
+    if (!marked || glossaryTipReady) return;
+    glossaryTipReady = true;
     // A single shared tooltip, positioned on demand.
     var tip = el('div', 'ygn-termtip');
     tip.hidden = true;
@@ -562,11 +563,15 @@
 
   D.ready(function () {
     // The glossary runs everywhere, after other modules have written their prose.
-    setTimeout(function () {
-      D.civic('glossary').then(function (g) {
-        D.guard('cv:36', function () { glossary(g && g.terms); });
+    // Two passes: most prose is present early, but the feature cards and the
+    // async civic sections land later and use this vocabulary heavily.
+    D.civic('glossary').then(function (g) {
+      [1600, 4200].forEach(function (delay) {
+        setTimeout(function () {
+          D.guard('cv:36', function () { glossary(g && g.terms); });
+        }, delay);
       });
-    }, 1600);
+    });
 
     if (isHome) {
       Promise.all(['recent-laws', 'executive-orders', 'hearings', 'nominations', 'treaties',

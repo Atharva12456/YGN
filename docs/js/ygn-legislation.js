@@ -26,9 +26,10 @@
   var D = window.ygnData;
   if (!D) return;
   var page = D.page();
-  if (page !== 'bills' && page !== 'bill' && page !== 'home') return;
+  if (page !== 'bills' && page !== 'bill') return;
 
   var el = D.el, card = D.card, fmt = D.fmt, S = D.stats;
+  var chip = D.chip, statRow = D.statRow, download = D.download, csvCell = D.csvCell;
 
   function billHref(b) { return 'bill.html?id=' + encodeURIComponent(b.detailPath || ''); }
   function billLink(b) {
@@ -36,14 +37,6 @@
     a.href = billHref(b);
     a.textContent = b.identifier || b.title || 'Bill';
     return a;
-  }
-  function chip(t, tone) { return el('span', 'ygn-chip' + (tone ? ' is-' + tone : ''), t); }
-  function statRow(label, value, hint) {
-    var r = el('div', 'ygn-statrow');
-    r.appendChild(el('span', 'ygn-statrow-label', label));
-    r.appendChild(el('span', 'ygn-statrow-value', value));
-    if (hint) r.appendChild(el('span', 'ygn-statrow-hint', hint));
-    return r;
   }
   function titleOf(b) {
     return (b.description && b.description.text) || b.title || b.identifier || '';
@@ -339,21 +332,6 @@
   /* 29. Take the digest away as CSV or JSON. */
   function exportPanel(bills, digest) {
     var c = card('Export this data', 'The digest as a file, generated in your browser');
-    function download(name, text, type) {
-      try {
-        var blob = new Blob([text], { type: type });
-        var url = URL.createObjectURL(blob);
-        var a = el('a');
-        a.href = url; a.download = name;
-        document.body.appendChild(a); a.click(); a.remove();
-        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-        D.toast('Downloaded ' + name);
-      } catch (e) { D.toast('Could not build the file', 'warn'); }
-    }
-    function csvCell(v) {
-      var s = v === null || v === undefined ? '' : String(v);
-      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
-    }
     var row = el('div', 'ygn-btnrow');
     var csvBtn = el('button', 'ygn-fbtn', 'Download CSV');
     csvBtn.type = 'button';
@@ -578,6 +556,8 @@
 
   /* ═══ Boot ═══════════════════════════════════════════════════════════════ */
   D.ready(function () {
+    // Nothing here renders on the home page, so don't pull the digest there.
+    if (page !== 'bills' && page !== 'bill') return;
     D.digest().then(function (digest) {
       var bills = (digest && digest.bills) || [];
       if (!bills.length) return;

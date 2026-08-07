@@ -32,6 +32,7 @@
   var page = D.page();
 
   var el = D.el, card = D.card, fmt = D.fmt, S = D.stats;
+  var chip = D.chip, statRow = D.statRow;
 
   /* ── Shared bits ───────────────────────────────────────────────────────── */
   var PARTY_CATS = [
@@ -46,17 +47,6 @@
     a.href = 'member.html?id=' + encodeURIComponent(m.id);
     a.textContent = m.name;
     return a;
-  }
-  function chip(text, tone) {
-    return el('span', 'ygn-chip' + (tone ? ' is-' + tone : ''), text);
-  }
-  function statRow(label, value, hint) {
-    var r = el('div', 'ygn-statrow');
-    r.appendChild(el('span', 'ygn-statrow-label', label));
-    var v = el('span', 'ygn-statrow-value', value);
-    r.appendChild(v);
-    if (hint) r.appendChild(el('span', 'ygn-statrow-hint', hint));
-    return r;
   }
   function legend(cats) {
     var wrap = el('div', 'ygn-legend');
@@ -87,9 +77,11 @@
   function buildMembersAnalysis(roster) {
     var anchor = document.getElementById('ideology-strip') || document.getElementById('members-grid');
     if (!anchor || !anchor.parentNode) return;
-    if (document.querySelector('.ygn-analysis')) return;
+    // Guard on this panel's own class: .ygn-analysis is shared with the civic
+    // and personal panels, so checking it would let one block the others.
+    if (document.querySelector('.ygn-memberpanel')) return;
 
-    var host = el('div', 'ygn-analysis');
+    var host = el('div', 'ygn-analysis ygn-memberpanel');
     var head = el('div', 'ygn-analysis-head');
     head.appendChild(el('h2', null, 'Chamber analysis'));
     var toggle = el('button', 'ygn-analysis-toggle', 'Hide');
@@ -376,7 +368,9 @@
     }
     function render() {
       var sorted = rows.slice().sort(function (a, b) {
-        if (activeKey === 'split') return (b.d - b.r) - (a.d - a.r) * dir;
+        // Sort by partisan margin. The parenthesis matters: without it `dir`
+        // multiplies only the second term and the ordering is nonsense.
+        if (activeKey === 'split') return ((a.d - a.r) - (b.d - b.r)) * dir;
         var av = a[activeKey], bv = b[activeKey];
         if (av === null) return 1;
         if (bv === null) return -1;
@@ -475,9 +469,15 @@
     // The member's own position marked on the chamber distribution.
     var bins = S.histogram(peers.filter(function (m) { return m.ideology !== null; }),
                            function (m) { return m.ideology; }, 22);
-    var chart = D.histogramChart(bins, PARTY_CATS.concat([{
-      label: me.last, tone: 'me', test: function (m) { return m.id === me.id; }
-    }]), { xLeft: '← liberal', xRight: 'conservative →', label: 'Position within the chamber' });
+    // The categories stack, so a member counted by both their party and the
+    // "me" band would make their own bin one taller than it really is. The
+    // party tests exclude them here.
+    var cats = PARTY_CATS.map(function (cat) {
+      return { label: cat.label, tone: cat.tone,
+               test: function (m) { return m.id !== me.id && cat.test(m); } };
+    }).concat([{ label: me.last, tone: 'me', test: function (m) { return m.id === me.id; } }]);
+    var chart = D.histogramChart(bins, cats,
+      { xLeft: '← liberal', xRight: 'conservative →', label: 'Position within the chamber' });
     c.body.appendChild(chart);
     c.body.appendChild(D.note('Their own bar is highlighted.'));
     return c;

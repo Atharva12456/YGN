@@ -287,6 +287,39 @@
 
   api.note = function (text) { return api.el('p', 'ygn-fnote', text); };
 
+  // chip and statRow are the two shapes every feature reaches for. They lived
+  // as identical private copies in all four modules before they moved here.
+  api.chip = function (text, tone) {
+    return api.el('span', 'ygn-chip' + (tone ? ' is-' + tone : ''), text);
+  };
+  api.statRow = function (label, value, hint) {
+    var r = api.el('div', 'ygn-statrow');
+    r.appendChild(api.el('span', 'ygn-statrow-label', label));
+    r.appendChild(api.el('span', 'ygn-statrow-value', value));
+    if (hint) r.appendChild(api.el('span', 'ygn-statrow-hint', hint));
+    return r;
+  };
+
+  /* ── File export ───────────────────────────────────────────────────────────
+     Everything is built from data already in the page and handed straight to
+     the browser; nothing is uploaded anywhere. */
+  api.csvCell = function (v) {
+    var s = v === null || v === undefined ? '' : String(v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  api.download = function (name, text, type) {
+    try {
+      var blob = new Blob([text], { type: type });
+      var url = URL.createObjectURL(blob);
+      var a = api.el('a');
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      api.toast('Downloaded ' + name);
+      return true;
+    } catch (e) { api.toast('Could not build the file', 'warn'); return false; }
+  };
+
   api.guard = function (label, fn) {
     try { return fn(); } catch (e) { if (window.console) console.warn('[ygn/' + label + ']', e); }
   };
@@ -324,6 +357,48 @@
         }
         setTimeout(check, 200);
       })();
+    });
+  };
+
+  /* Resolves when `node` is near the viewport. core.js deliberately keeps the
+     ~390 KB officials.json and ~148 KB member-scores.json off the home page —
+     the member count comes from the 0.5 KB manifest, and the map loads its
+     delegation data only once a state is picked. Anything on the home page
+     that wants the roster has to earn it the same way, by waiting until the
+     reader has actually scrolled to it. */
+  api.whenVisible = function (node, opts) {
+    return new Promise(function (resolve) {
+      if (!node) { resolve(null); return; }
+      var margin = (opts && opts.margin) || 400;
+      var done = false;
+      function finish() {
+        if (done) return;
+        done = true;
+        if (io) io.disconnect();
+        window.removeEventListener('scroll', onScroll);
+        resolve(node);
+      }
+      // A backgrounded tab never fires IntersectionObserver at all, and the API
+      // is missing entirely on older browsers — in either case the panel would
+      // sit unfilled forever. Scrolling near it is the same signal, measured
+      // directly, so the two together cannot both miss.
+      function onScroll() {
+        var r = node.getBoundingClientRect();
+        if (r.top - margin < window.innerHeight && r.bottom + margin > 0) finish();
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      var io = null;
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) { finish(); return; }
+          }
+        }, { rootMargin: margin + 'px' });
+        io.observe(node);
+      } else {
+        onScroll();                 // no observer: judge from where it sits now
+      }
     });
   };
 
