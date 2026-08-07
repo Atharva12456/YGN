@@ -52,13 +52,58 @@
   min-height: 28px;
 }
 .ygn-analysis-toggle:hover { border-color: var(--color-accent); color: var(--color-accent-text); }
+/* These cards genuinely differ in height — a stat pair is 176px, a ranked list
+   of twelve is 611px. Laid out as grid rows every row grew to its tallest card
+   and the shorter ones left holes below them: ~25% of the panel was dead space.
+
+   Multi-column packs them instead. Each card sits directly beneath the one
+   above it in its own column, so a short card costs exactly its own height and
+   nothing more. The trade is that reading order runs down each column rather
+   than across — fine here, because the cards are independent readings rather
+   than a sequence. */
 .ygn-analysis-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-4);
-  align-items: start;
+  display: block;
+  column-width: 330px;
+  column-gap: var(--space-4);
 }
 .ygn-analysis-grid[hidden] { display: none; }
+
+/* Once ygn-data.js has measured the cards it assigns them to columns itself
+   (shortest-column-first), which balances far better than multi-column can on
+   its own. The multi-column rules above stay as the no-JS fallback. */
+.ygn-analysis-grid.is-packed {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  column-width: auto;
+}
+.ygn-analysis-grid.is-packed > .ygn-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.ygn-analysis-grid.is-packed > .ygn-col > * { margin-bottom: 0; }
+
+.ygn-analysis-grid > * {
+  /* All three are needed: the unprefixed property, the WebKit alias, and the
+     paged-media name that Safari still honours for columns. */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: var(--space-4);
+}
+
+/* Growth is bounded at the list rather than the card. Capping the card clipped
+   real content behind a nested scrollbar; capping the list keeps the heading,
+   the summary stats and the footnote always visible and scrolls only the part
+   that is genuinely long. Tables and the timeline already work this way. */
+.ygn-minilist,
+.ygn-ranklist {
+  max-height: 300px;
+  overflow-y: auto;
+}
 
 .ygn-fcard {
   background: var(--color-surface);
@@ -213,7 +258,7 @@
 }
 
 /* ── Tables ──────────────────────────────────────────────────────────────── */
-.ygn-tablescroll { overflow-x: auto; max-height: 340px; overflow-y: auto; }
+.ygn-tablescroll { overflow-x: auto; max-height: 300px; overflow-y: auto; }
 .ygn-ftable { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }
 .ygn-ftable th, .ygn-ftable td {
   padding: var(--space-1) var(--space-2);
@@ -492,7 +537,7 @@
 
 /* ── Narrow screens ──────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .ygn-analysis-grid { grid-template-columns: 1fr; }
+  .ygn-analysis-grid { column-width: auto; column-count: 1; }
   .ygn-tl-item { grid-template-columns: 1fr; gap: 2px; }
   .ygn-fcard { padding: var(--space-3); }
 }

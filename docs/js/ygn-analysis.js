@@ -98,6 +98,7 @@
       grid.hidden = !open;
       toggle.textContent = open ? 'Hide' : 'Show';
       toggle.setAttribute('aria-expanded', String(open));
+      if (open) D.schedulePack();
       D.store.set('ygn-analysis-open', open);
     });
     if (D.store.get('ygn-analysis-open', true) === false) toggle.click();

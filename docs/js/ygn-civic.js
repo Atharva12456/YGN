@@ -557,6 +557,7 @@
       grid.hidden = !open;
       toggle.textContent = open ? 'Hide' : 'Show';
       toggle.setAttribute('aria-expanded', String(open));
+      if (open) D.schedulePack();
     });
     host.parentNode.insertBefore(wrap, host.nextSibling);
   }

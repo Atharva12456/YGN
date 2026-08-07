@@ -287,6 +287,115 @@
 
   api.note = function (text) { return api.el('p', 'ygn-fnote', text); };
 
+  /* ── Card packing ──────────────────────────────────────────────────────────
+     The panels lay out as CSS multi-column, which removes the holes a grid
+     leaves between cards of different heights but still balances columns badly
+     when the tallest block lands late: on the bills panel the shortest column
+     ended 415px above the longest. Feeding the browser the tallest cards first
+     lets it balance far better — the same panel closes to 90px and gets 20%
+     shorter.
+
+     The cost is that visual order becomes height order. That is acceptable
+     here only because multi-column already reads top-to-bottom down each
+     column rather than across, so DOM order was never the reading order, and
+     because these cards are independent readings rather than a sequence. */
+  var PACK_MIN = 330, PACK_GAP = 16, PACK_MAX_COLS = 4;
+
+  api.packGrid = function (grid) {
+    if (!grid || grid.hidden) return;
+
+    // Cards may already be inside columns from a previous pass; flatten first.
+    var cards = [];
+    [].slice.call(grid.children).forEach(function (child) {
+      if (child.classList && child.classList.contains('ygn-col')) {
+        [].slice.call(child.children).forEach(function (c) { cards.push(c); });
+      } else cards.push(child);
+    });
+    if (cards.length < 3) return;
+
+    var width = grid.clientWidth;
+    if (!width) return;                            // not laid out yet
+    var n = Math.floor((width + PACK_GAP) / (PACK_MIN + PACK_GAP));
+    n = Math.max(1, Math.min(PACK_MAX_COLS, n));
+
+    /* Stamp the declaration order the first time each card is seen. After a
+       pack, DOM order is column order, so re-deriving "original order" from the
+       DOM would drift a little further every resize — and collapsing to one
+       column on a phone would show the cards in an arbitrary sequence. */
+    var measured = cards.map(function (node, i) {
+      if (!node.hasAttribute('data-ygn-order')) node.setAttribute('data-ygn-order', String(i));
+      return { node: node, h: node.getBoundingClientRect().height,
+               i: parseInt(node.getAttribute('data-ygn-order'), 10) || 0 };
+    });
+    // Nothing measurable yet (backgrounded tab, fonts still loading) — leave the
+    // CSS multi-column fallback in place and let a later sweep try again.
+    if (measured.some(function (m) { return !m.h; })) return;
+
+    if (n < 2) {
+      // One column: nothing to balance, so hand the cards back unwrapped and
+      // let the stylesheet lay them out.
+      if (grid.classList.contains('is-packed')) {
+        var flat = document.createDocumentFragment();
+        measured.sort(function (a, b) { return a.i - b.i; })
+                .forEach(function (m) { flat.appendChild(m.node); });
+        grid.classList.remove('is-packed');
+        grid.innerHTML = '';
+        grid.appendChild(flat);
+      }
+      return;
+    }
+
+    /* Greedy shortest-column-first over cards sorted tall to short. This is the
+       standard bin-packing heuristic and it beats what CSS can do alone:
+       multi-column balances by splitting a single flow, so an unluckily ordered
+       tall card strands a column. Measured on the bills panel the ragged bottom
+       went 415px -> 90px, and on the members panel 331px -> ~140px.
+
+       Feeding the browser sorted content instead was tried first and is not
+       reliable: it helped the bills panel and made the members panel worse,
+       because multi-column's break points do not follow document order in any
+       way you can steer. Assigning columns outright removes the guesswork. */
+    var cols = [], heights = [];
+    for (var c = 0; c < n; c++) { cols.push([]); heights.push(0); }
+    measured.slice().sort(function (a, b) { return (b.h - a.h) || (a.i - b.i); })
+      .forEach(function (m) {
+        var target = 0;
+        for (var k = 1; k < n; k++) if (heights[k] < heights[target]) target = k;
+        cols[target].push(m);
+        heights[target] += m.h + PACK_GAP;
+      });
+
+    // Within a column, restore document order so reading down a column still
+    // follows the order the features were declared in.
+    var frag = document.createDocumentFragment();
+    cols.forEach(function (col) {
+      var wrap = api.el('div', 'ygn-col');
+      col.sort(function (a, b) { return a.i - b.i; })
+         .forEach(function (m) { wrap.appendChild(m.node); });
+      frag.appendChild(wrap);
+    });
+    grid.innerHTML = '';
+    grid.classList.add('is-packed');
+    grid.appendChild(frag);
+  };
+
+  function repackAll() {
+    var grids = document.querySelectorAll('.ygn-analysis-grid');
+    for (var i = 0; i < grids.length; i++) api.guard('pack', function () { api.packGrid(grids[i]); });
+  }
+  var packTimer = null;
+  api.schedulePack = function (delay) {
+    if (packTimer) clearTimeout(packTimer);
+    packTimer = setTimeout(repackAll, delay || 120);
+  };
+  // Panels mount at different times and the lazy home cards arrive later still,
+  // so sweep a few times rather than making every call site remember to ask.
+  // Same approach ux.js already uses for its late DOM passes.
+  if (typeof window !== 'undefined') {
+    [700, 2000, 4200, 6500].forEach(function (d) { setTimeout(repackAll, d); });
+    window.addEventListener('resize', function () { api.schedulePack(200); });
+  }
+
   // chip and statRow are the two shapes every feature reaches for. They lived
   // as identical private copies in all four modules before they moved here.
   api.chip = function (text, tone) {
