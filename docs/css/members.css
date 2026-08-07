@@ -466,7 +466,9 @@
   gap: 1rem;
 }
 
+.map-heading h1,
 .map-heading h2,
+.methodology-header h1,
 .methodology-header h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: var(--color-text);
