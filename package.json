@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "check": "node --check docs/config.js && node --check docs/js/core.js && node --check docs/js/features.js && node --check docs/js/enhancements.js && node --check docs/js/ux.js && node --check docs/js/settings.js && node --check docs/js/economy.js && node --check test_saved_members.js",
+    "check": "node --check docs/config.js && node --check docs/js/core.js && node --check docs/js/features.js && node --check docs/js/enhancements.js && node --check docs/js/ux.js && node --check docs/js/settings.js && node --check docs/js/economy.js && node --check docs/js/ygn-data.js && node --check docs/js/ygn-analysis.js && node --check docs/js/ygn-legislation.js && node --check docs/js/ygn-civic.js && node --check docs/js/ygn-personal.js && node --check test_saved_members.js",
     "test": "npm run check && node test_saved_members.js"
   },
   "devDependencies": {
