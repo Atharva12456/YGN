@@ -68,18 +68,18 @@
 
   /* ═══ BILLS PAGE ═════════════════════════════════════════════════════════ */
   function buildBillsAnalysis(bills, digest) {
-    if (document.querySelector('.ygn-billpanel')) return;
-    // After the bill list. This used to sit above #civic-pulse-grid, which put
-    // a screen of charts between the reader and the bills themselves.
-    var anchor = document.getElementById('recent-bills-grid');
+    if (document.querySelector('.ygn-billpanel .ygn-fcard')) return;
+    // Just under the filters, above the list: one collapsed bar, reachable
+    // without scrolling past 40 bills.
+    var anchor = document.getElementById('bill-filters') || document.getElementById('recent-bills-grid');
     if (!anchor) return;
 
-    var panel = D.panel({
+    var panel = D.panelFor({
       after: anchor,
       className: 'ygn-billpanel',
       storeKey: 'ygn-billpanel-open',
-      title: 'What this batch of bills looks like',
-      summary: 'Policy mix, how stale the feed is, who is sponsoring, and an export.',
+      title: 'Bills in context',
+      summary: 'Policy mix, how stale the feed is, who sponsors, lawmaking pace and hearings.',
       cards: [
         D.guard('bl:16', function () { return policyBreakdown(bills); }),
         D.guard('bl:17', function () { return stalledAndMoving(bills); }),
@@ -92,7 +92,9 @@
     });
     // The "moved since your visit" strip stays above the list: it is a pointer
     // into the bills, not analysis of them.
-    if (panel) D.guard('bl:28', function () { newSinceLastVisit(bills, anchor); });
+    if (panel) D.guard('bl:28', function () {
+      newSinceLastVisit(bills, document.getElementById('recent-bills-grid') || anchor);
+    });
   }
 
   /* 16. What Congress is spending its time on, by Congress.gov policy area. */
