@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001110",
+        "district": 46,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Correa, J. Luis [D-CA-46]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-30",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Online Accessibility Act",
+      "updated_at": "2026-07-13T11:55:23Z"
+    },
+    "detailPath": "119/hr/9539",
+    "identifier": "HR 9539",
+    "introducedDate": "2026-06-30",
+    "latestAction": {
+      "date": "2026-06-30",
+      "text": "Referred to the House Committee on Energy and Commerce."
+    },
+    "number": "9539",
+    "originChamber": "House",
+    "policyArea": "Civil Rights and Liberties, Minority Issues",
+    "sponsors": [
+      {
+        "bioguideId": "A000379",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Alford, Mark [R-MO-4]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "Online Accessibility Act",
+    "type": "HR",
+    "updatedAt": "2026-07-13T11:55:23Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/9539",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:11.590507+00:00",
+  "source": "congress_api"
+}

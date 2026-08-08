@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-15",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "V000128",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Van Hollen, Chris [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-01-27",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "T000476",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Tillis, Thomas [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-01",
+        "state": "NC"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "MAP for Care Act",
+      "updated_at": "2026-06-02T11:03:22Z"
+    },
+    "detailPath": "119/s/3473",
+    "identifier": "S 3473",
+    "introducedDate": "2025-12-15",
+    "latestAction": {
+      "date": "2025-12-15",
+      "text": "Read twice and referred to the Committee on Finance."
+    },
+    "number": "3473",
+    "originChamber": "Senate",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "C001075",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Cassidy, Bill [R-LA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "LA"
+      }
+    ],
+    "title": "MAP for Care Act",
+    "type": "S",
+    "updatedAt": "2026-06-02T11:03:22Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3473",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:36.287236+00:00",
+  "source": "congress_api"
+}

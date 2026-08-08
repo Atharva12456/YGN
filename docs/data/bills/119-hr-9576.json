@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S001228",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schmidt, Derek [R-KS-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-07-02",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "H001098",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-07-14",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "National Fraud Enforcement Division Act of 2026",
+      "updated_at": "2026-07-15T08:07:26Z"
+    },
+    "detailPath": "119/hr/9576",
+    "identifier": "HR 9576",
+    "introducedDate": "2026-07-02",
+    "latestAction": {
+      "date": "2026-07-02",
+      "text": "Referred to the House Committee on the Judiciary."
+    },
+    "number": "9576",
+    "originChamber": "House",
+    "policyArea": "Crime and Law Enforcement",
+    "sponsors": [
+      {
+        "bioguideId": "F000475",
+        "district": 1,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Finstad, Brad [R-MN-1]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MN"
+      }
+    ],
+    "title": "National Fraud Enforcement Division Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-07-15T08:07:26Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/9576",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:09.773612+00:00",
+  "source": "congress_api"
+}

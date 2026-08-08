@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "D000230",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davis, Donald G. [D-NC-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-30",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "G000593",
+        "district": 28,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gimenez, Carlos A. [R-FL-28]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-07-22",
+        "state": "FL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Boat Loan Interest Deduction Act of 2026",
+      "updated_at": "2026-07-23T08:09:11Z"
+    },
+    "detailPath": "119/hr/9537",
+    "identifier": "HR 9537",
+    "introducedDate": "2026-06-30",
+    "latestAction": {
+      "date": "2026-06-30",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "9537",
+    "originChamber": "House",
+    "policyArea": "Taxation",
+    "sponsors": [
+      {
+        "bioguideId": "Y000067",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Yakym, Rudy [R-IN-2]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "IN"
+      }
+    ],
+    "title": "Boat Loan Interest Deduction Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-07-23T08:09:11Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/9537",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:15.083998+00:00",
+  "source": "congress_api"
+}

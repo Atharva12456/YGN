@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "C001114",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Curtis, John R. [R-UT]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "UT"
+      },
+      {
+        "bioguideId": "B001267",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Bennet, Michael F. [D-CO]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "CO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Responsible Containment Reauthorization Act of 2026",
+      "updated_at": "2026-04-11T02:41:16Z"
+    },
+    "detailPath": "119/s/4005",
+    "identifier": "S 4005",
+    "introducedDate": "2026-03-05",
+    "latestAction": {
+      "date": "2026-03-05",
+      "text": "Read twice and referred to the Committee on Energy and Natural Resources."
+    },
+    "number": "4005",
+    "originChamber": "Senate",
+    "policyArea": "Energy",
+    "sponsors": [
+      {
+        "bioguideId": "H000273",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Hickenlooper, John W. [D-CO]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CO"
+      }
+    ],
+    "title": "Responsible Containment Reauthorization Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-04-11T02:41:16Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4005",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:28.370086+00:00",
+  "source": "congress_api"
+}

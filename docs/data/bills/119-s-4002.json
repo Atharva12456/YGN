@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "S001198",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Sullivan, Dan [R-AK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "AK"
+      },
+      {
+        "bioguideId": "V000128",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Van Hollen, Chris [D-MD]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "M001243",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. McCormick, David [R-PA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-03-05",
+        "state": "PA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Foreign Service Age Integration and Reform (FAIR) Act of 2026",
+      "updated_at": "2026-04-21T21:52:01Z"
+    },
+    "detailPath": "119/s/4002",
+    "identifier": "S 4002",
+    "introducedDate": "2026-03-05",
+    "latestAction": {
+      "date": "2026-03-05",
+      "text": "Read twice and referred to the Committee on Foreign Relations."
+    },
+    "number": "4002",
+    "originChamber": "Senate",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "R000608",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Rosen, Jacky [D-NV]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NV"
+      }
+    ],
+    "title": "Foreign Service Age Integration and Reform (FAIR) Act of 2026",
+    "type": "S",
+    "updatedAt": "2026-04-21T21:52:01Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4002",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:28.896757+00:00",
+  "source": "congress_api"
+}

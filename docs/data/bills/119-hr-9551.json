@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "P000048",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Pfluger, August [R-TX-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-07-13",
+        "state": "TX"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Mental Health Parity Enforcement and Funding Act",
+      "updated_at": "2026-07-14T08:06:06Z"
+    },
+    "detailPath": "119/hr/9551",
+    "identifier": "HR 9551",
+    "introducedDate": "2026-06-30",
+    "latestAction": {
+      "date": "2026-06-30",
+      "text": "Referred to the House Committee on Education and Workforce."
+    },
+    "number": "9551",
+    "originChamber": "House",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "K000398",
+        "district": 7,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Kean, Thomas H. [R-NJ-7]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NJ"
+      }
+    ],
+    "title": "Mental Health Parity Enforcement and Funding Act",
+    "type": "HR",
+    "updatedAt": "2026-07-14T08:06:06Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/9551",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:12.345620+00:00",
+  "source": "congress_api"
+}

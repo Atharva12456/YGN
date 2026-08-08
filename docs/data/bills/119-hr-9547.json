@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "B001298",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bacon, Don [R-NE-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-30",
+        "state": "NE"
+      },
+      {
+        "bioguideId": "C001120",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Crenshaw, Dan [R-TX-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-30",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "M001196",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Moulton, Seth [D-MA-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-30",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "K000399",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Kiggans, Jennifer A. [R-VA-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-08-03",
+        "state": "VA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Veterans and Servicemembers PTSD Emerging Treatment Review Act of 2026",
+      "updated_at": "2026-08-04T08:07:58Z"
+    },
+    "detailPath": "119/hr/9547",
+    "identifier": "HR 9547",
+    "introducedDate": "2026-06-30",
+    "latestAction": {
+      "date": "2026-06-30",
+      "text": "Referred to the House Committee on Armed Services."
+    },
+    "number": "9547",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "H001098",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Hamadeh, Abraham J. [R-AZ-8]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AZ"
+      }
+    ],
+    "title": "Veterans and Servicemembers PTSD Emerging Treatment Review Act of 2026",
+    "type": "HR",
+    "updatedAt": "2026-08-04T08:07:58Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/9547",
+    "votes": []
+  },
+  "generated_at": "2026-08-08T04:39:11.880017+00:00",
+  "source": "congress_api"
+}
