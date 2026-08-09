@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "B001287",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bera, Ami [D-CA-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-05-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "V000138",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Vindman, Eugene Simon [D-VA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-06-23",
+        "state": "VA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Foreign Service Workforce Retention Act",
+      "updated_at": "2026-06-24T08:08:42Z"
+    },
+    "detailPath": "119/hr/8987",
+    "identifier": "HR 8987",
+    "introducedDate": "2026-05-21",
+    "latestAction": {
+      "date": "2026-05-21",
+      "text": "Referred to the House Committee on Foreign Affairs."
+    },
+    "number": "8987",
+    "originChamber": "House",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "O000176",
+        "district": 2,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Olszewski, Johnny [D-MD-2]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MD"
+      }
+    ],
+    "title": "Foreign Service Workforce Retention Act",
+    "type": "HR",
+    "updatedAt": "2026-06-24T08:08:42Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/8987",
+    "votes": []
+  },
+  "generated_at": "2026-08-09T04:50:11.355575+00:00",
+  "source": "congress_api"
+}

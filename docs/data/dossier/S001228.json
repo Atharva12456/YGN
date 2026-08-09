@@ -243,7 +243,7 @@
           "stateName": "Kansas"
         }
       ],
-      "updateDate": "2026-08-07T07:40:36Z"
+      "updateDate": "2026-08-08T07:40:24Z"
     },
     "request": {
       "bioguideId": "s001228",
@@ -264,18 +264,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 57.3,
-        "value": 0.3397,
+        "score": 56.0,
+        "value": 0.3191,
         "weight": 0.2
       },
       "in_state_support": {
         "score": 97.7,
-        "value": 0.8596,
+        "value": 0.8538,
         "weight": 0.1
       },
       "pac_independence": {
         "score": 80.8,
-        "value": 0.6396,
+        "value": 0.6399,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -284,8 +284,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 61.8,
-        "value": 0.0707,
+        "score": 60.2,
+        "value": 0.0617,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -296,24 +296,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 74.4,
+    "financeScore": 73.6,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 42813.07,
+          "amount": 55452.01,
           "label": "Small individual (unitemized)",
-          "share": 0.045243457124969993
+          "share": 0.03950726810845465
         },
         {
-          "amount": 562468.95,
+          "amount": 842638.08,
           "label": "Large individual (itemized)",
-          "share": 0.5943988558506057
+          "share": 0.600344848544777
         },
         {
-          "amount": 341000.0,
+          "amount": 505500.0,
           "label": "PAC / other committees",
-          "share": 0.3603576870244243
+          "share": 0.3601478833467683
         },
         {
           "amount": 0.0,
@@ -336,44 +336,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 687803.18,
-        "debts": 3981.28,
-        "disbursements": 339810.07,
-        "individualContributions": 605282.02,
-        "receipts": 989112.11
+        "cashOnHand": 939168.02,
+        "debts": 2897.71,
+        "disbursements": 556938.11,
+        "individualContributions": 898090.09,
+        "receipts": 1457604.99
       }
     },
-    "generated_at": "2026-07-14T17:43:38.351434+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 74.4,
+    "score": 73.6,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T17:44:27.875067+00:00"
+    "updated_at": "2026-08-09T04:50:49.609066+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001228",
     "breakdown": [
       {
-        "amount": 42813.07,
+        "amount": 55452.01,
         "label": "Small individual (unitemized)",
-        "share": 0.045243457124969993
+        "share": 0.03950726810845465
       },
       {
-        "amount": 562468.95,
+        "amount": 842638.08,
         "label": "Large individual (itemized)",
-        "share": 0.5943988558506057
+        "share": 0.600344848544777
       },
       {
-        "amount": 341000.0,
+        "amount": 505500.0,
         "label": "PAC / other committees",
-        "share": 0.3603576870244243
+        "share": 0.3601478833467683
       },
       {
         "amount": 0.0,
@@ -407,18 +406,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 57.3,
-          "value": 0.3397,
+          "score": 56.0,
+          "value": 0.3191,
           "weight": 0.2
         },
         "in_state_support": {
           "score": 97.7,
-          "value": 0.8596,
+          "value": 0.8538,
           "weight": 0.1
         },
         "pac_independence": {
           "score": 80.8,
-          "value": 0.6396,
+          "value": 0.6399,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -427,8 +426,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 61.8,
-          "value": 0.0707,
+          "score": 60.2,
+          "value": 0.0617,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -439,31 +438,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 74.4,
-      "generated_at": "2026-07-14T17:43:38.351434+00:00",
+      "financeScore": 73.6,
       "grade": "C",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 74.4,
+      "score": 73.6,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T17:44:27.875067+00:00"
+      "updated_at": "2026-08-09T04:50:49.609066+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 687803.18,
-      "debts": 3981.28,
-      "disbursements": 339810.07,
-      "individualContributions": 605282.02,
-      "receipts": 989112.11
+      "cashOnHand": 939168.02,
+      "debts": 2897.71,
+      "disbursements": 556938.11,
+      "individualContributions": 898090.09,
+      "receipts": 1457604.99
     }
   },
-  "generated_at": "2026-08-08T04:39:02.616419+00:00",
+  "generated_at": "2026-08-09T04:49:57.077207+00:00",
   "history": {
     "bioguideId": "S001228",
     "birthYear": "1968",
@@ -585,7 +583,7 @@
         "stateName": "Kansas"
       }
     ],
-    "updateDate": "2026-08-07T07:40:36Z"
+    "updateDate": "2026-08-08T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.681,

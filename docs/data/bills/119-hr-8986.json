@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "L000560",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Larsen, Rick [D-WA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-05-21",
+        "state": "WA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Ensuring Rural Health Care Access for Military and Tribal Families Act",
+      "updated_at": "2026-06-23T19:01:54Z"
+    },
+    "detailPath": "119/hr/8986",
+    "identifier": "HR 8986",
+    "introducedDate": "2026-05-21",
+    "latestAction": {
+      "date": "2026-05-21",
+      "text": "Referred to the House Committee on Ways and Means."
+    },
+    "number": "8986",
+    "originChamber": "House",
+    "policyArea": "Health",
+    "sponsors": [
+      {
+        "bioguideId": "N000189",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Newhouse, Dan [R-WA-4]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "WA"
+      }
+    ],
+    "title": "Ensuring Rural Health Care Access for Military and Tribal Families Act",
+    "type": "HR",
+    "updatedAt": "2026-06-23T19:01:54Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/8986",
+    "votes": []
+  },
+  "generated_at": "2026-08-09T04:50:10.993679+00:00",
+  "source": "congress_api"
+}

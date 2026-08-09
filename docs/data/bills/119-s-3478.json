@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "M001190",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Mullin, Markwayne [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-12-15",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "S001203",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Smith, Tina [D-MN]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "S001198",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Sullivan, Dan [R-AK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-02-25",
+        "state": "AK"
+      },
+      {
+        "bioguideId": "A000383",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Armstrong, Alan [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2026-07-15",
+        "state": "OK"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Indian Buffalo Management Act",
+      "updated_at": "2026-07-16T11:03:21Z"
+    },
+    "detailPath": "119/s/3478",
+    "identifier": "S 3478",
+    "introducedDate": "2025-12-15",
+    "latestAction": {
+      "date": "2025-12-15",
+      "text": "Read twice and referred to the Committee on Indian Affairs."
+    },
+    "number": "3478",
+    "originChamber": "Senate",
+    "policyArea": "Native Americans",
+    "sponsors": [
+      {
+        "bioguideId": "H001046",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Heinrich, Martin [D-NM]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NM"
+      }
+    ],
+    "title": "Indian Buffalo Management Act",
+    "type": "S",
+    "updatedAt": "2026-07-16T11:03:21Z",
+    "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3478",
+    "votes": []
+  },
+  "generated_at": "2026-08-09T04:50:17.700112+00:00",
+  "source": "congress_api"
+}
