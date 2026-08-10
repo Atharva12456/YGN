@@ -192,7 +192,7 @@
           "stateName": "Louisiana"
         }
       ],
-      "updateDate": "2026-08-08T07:40:24Z"
+      "updateDate": "2026-08-09T07:40:25Z"
     },
     "request": {
       "bioguideId": "f000110",
@@ -213,18 +213,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 47.6,
-        "value": 0.1913,
+        "score": 53.1,
+        "value": 0.275,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 98.1,
-        "value": 0.9085,
+        "score": 97.6,
+        "value": 0.8443,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 82.4,
-        "value": 0.6574,
+        "score": 89.5,
+        "value": 0.7845,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -233,36 +233,36 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 42.6,
-        "value": 0.0165,
+        "score": 96.3,
+        "value": 0.4346,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
-        "penalty": 42,
-        "ptr_filings": 18
+        "note": "20 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+        "penalty": 50,
+        "ptr_filings": 20
       }
     },
     "cycle": 2026,
-    "financeScore": 67.1,
+    "financeScore": 86.0,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 4788.8,
+          "amount": 280022.04,
           "label": "Small individual (unitemized)",
-          "share": 0.01086366696853602
+          "share": 0.34095431250367103
         },
         {
-          "amount": 285020.0,
+          "amount": 364267.0,
           "label": "Large individual (itemized)",
-          "share": 0.6465841879744688
+          "share": 0.44353081833406666
         },
         {
-          "amount": 151000.0,
+          "amount": 177000.0,
           "label": "PAC / other committees",
-          "share": 0.3425521450569952
+          "share": 0.21551486916226228
         },
         {
           "amount": 0.0,
@@ -285,14 +285,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 249637.81,
+        "cashOnHand": 436429.12,
         "debts": 0.0,
-        "disbursements": 237836.64,
-        "individualContributions": 289808.8,
-        "receipts": 450034.59
+        "disbursements": 434369.23,
+        "individualContributions": 644289.04,
+        "receipts": 833358.49
       }
     },
-    "generated_at": "2026-07-14T17:43:38.351434+00:00",
+    "generated_at": "2026-08-09T15:48:12.216301+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -300,30 +300,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 25.1,
+    "score": 36.0,
     "source": "fec_live",
-    "stockPenalty": 42,
-    "stockPtrCount": 18,
-    "updated_at": "2026-07-14T17:46:13.732390+00:00"
+    "stockPenalty": 50,
+    "stockPtrCount": 20,
+    "updated_at": "2026-08-09T15:48:24.010245+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "F000110",
     "breakdown": [
       {
-        "amount": 4788.8,
+        "amount": 280022.04,
         "label": "Small individual (unitemized)",
-        "share": 0.01086366696853602
+        "share": 0.34095431250367103
       },
       {
-        "amount": 285020.0,
+        "amount": 364267.0,
         "label": "Large individual (itemized)",
-        "share": 0.6465841879744688
+        "share": 0.44353081833406666
       },
       {
-        "amount": 151000.0,
+        "amount": 177000.0,
         "label": "PAC / other committees",
-        "share": 0.3425521450569952
+        "share": 0.21551486916226228
       },
       {
         "amount": 0.0,
@@ -357,18 +357,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 47.6,
-          "value": 0.1913,
+          "score": 53.1,
+          "value": 0.275,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 98.1,
-          "value": 0.9085,
+          "score": 97.6,
+          "value": 0.8443,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 82.4,
-          "value": 0.6574,
+          "score": 89.5,
+          "value": 0.7845,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -377,20 +377,20 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 42.6,
-          "value": 0.0165,
+          "score": 96.3,
+          "value": 0.4346,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
-          "penalty": 42,
-          "ptr_filings": 18
+          "note": "20 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+          "penalty": 50,
+          "ptr_filings": 20
         }
       },
       "cycle": 2026,
-      "financeScore": 67.1,
-      "generated_at": "2026-07-14T17:43:38.351434+00:00",
+      "financeScore": 86.0,
+      "generated_at": "2026-08-09T15:48:12.216301+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -398,23 +398,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 25.1,
+      "score": 36.0,
       "source": "fec_live",
-      "stockPenalty": 42,
-      "stockPtrCount": 18,
-      "updated_at": "2026-07-14T17:46:13.732390+00:00"
+      "stockPenalty": 50,
+      "stockPtrCount": 20,
+      "updated_at": "2026-08-09T15:48:24.010245+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 249637.81,
+      "cashOnHand": 436429.12,
       "debts": 0.0,
-      "disbursements": 237836.64,
-      "individualContributions": 289808.8,
-      "receipts": 450034.59
+      "disbursements": 434369.23,
+      "individualContributions": 644289.04,
+      "receipts": 833358.49
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "F000110",
     "birthYear": "1962",
@@ -580,7 +580,7 @@
         "stateName": "Louisiana"
       }
     ],
-    "updateDate": "2026-08-08T07:40:24Z"
+    "updateDate": "2026-08-09T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.457,

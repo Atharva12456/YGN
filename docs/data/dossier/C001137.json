@@ -199,7 +199,7 @@
           "stateName": "Colorado"
         }
       ],
-      "updateDate": "2026-08-08T07:40:24Z"
+      "updateDate": "2026-08-09T07:40:25Z"
     },
     "request": {
       "bioguideId": "c001137",
@@ -225,13 +225,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.7,
-        "value": 0.7035,
+        "score": 96.4,
+        "value": 0.6538,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 68.3,
-        "value": 0.5358,
+        "score": 65.9,
+        "value": 0.5162,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -240,8 +240,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 78.4,
-        "value": 0.1604,
+        "score": 78.1,
+        "value": 0.1586,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -252,24 +252,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 71.7,
+    "financeScore": 70.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 139234.55,
+          "amount": 141652.93,
           "label": "Small individual (unitemized)",
-          "share": 0.08595069535871287
+          "share": 0.08187868109022621
         },
         {
-          "amount": 728700.57,
+          "amount": 751381.41,
           "label": "Large individual (itemized)",
-          "share": 0.4498331822079392
+          "share": 0.43431589340590776
         },
         {
-          "amount": 752000.0,
+          "amount": 837000.0,
           "label": "PAC / other committees",
-          "share": 0.4642161224333478
+          "share": 0.48380542550386596
         },
         {
           "amount": 0.0,
@@ -292,44 +292,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1294118.76,
+        "cashOnHand": 1465048.38,
         "debts": 0.0,
-        "disbursements": 771383.73,
-        "individualContributions": 867935.12,
-        "receipts": 1998949.35
+        "disbursements": 778792.52,
+        "individualContributions": 893034.34,
+        "receipts": 2177287.76
       }
     },
-    "generated_at": "2026-07-14T17:43:38.351434+00:00",
+    "generated_at": "2026-08-09T07:17:32.115368+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 71.7,
+    "score": 70.9,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T17:45:29.492861+00:00"
+    "updated_at": "2026-08-09T07:17:46.783439+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "C001137",
     "breakdown": [
       {
-        "amount": 139234.55,
+        "amount": 141652.93,
         "label": "Small individual (unitemized)",
-        "share": 0.08595069535871287
+        "share": 0.08187868109022621
       },
       {
-        "amount": 728700.57,
+        "amount": 751381.41,
         "label": "Large individual (itemized)",
-        "share": 0.4498331822079392
+        "share": 0.43431589340590776
       },
       {
-        "amount": 752000.0,
+        "amount": 837000.0,
         "label": "PAC / other committees",
-        "share": 0.4642161224333478
+        "share": 0.48380542550386596
       },
       {
         "amount": 0.0,
@@ -368,13 +368,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.7,
-          "value": 0.7035,
+          "score": 96.4,
+          "value": 0.6538,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 68.3,
-          "value": 0.5358,
+          "score": 65.9,
+          "value": 0.5162,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -383,8 +383,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 78.4,
-          "value": 0.1604,
+          "score": 78.1,
+          "value": 0.1586,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -395,31 +395,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 71.7,
-      "generated_at": "2026-07-14T17:43:38.351434+00:00",
+      "financeScore": 70.9,
+      "generated_at": "2026-08-09T07:17:32.115368+00:00",
       "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 71.7,
+      "score": 70.9,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T17:45:29.492861+00:00"
+      "updated_at": "2026-08-09T07:17:46.783439+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1294118.76,
+      "cashOnHand": 1465048.38,
       "debts": 0.0,
-      "disbursements": 771383.73,
-      "individualContributions": 867935.12,
-      "receipts": 1998949.35
+      "disbursements": 778792.52,
+      "individualContributions": 893034.34,
+      "receipts": 2177287.76
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "C001137",
     "birthYear": "1967",
@@ -541,7 +541,7 @@
         "stateName": "Colorado"
       }
     ],
-    "updateDate": "2026-08-08T07:40:24Z"
+    "updateDate": "2026-08-09T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.685,

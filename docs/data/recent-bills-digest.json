@@ -1952,65 +1952,6 @@
     },
     {
       "aiDescription": null,
-      "apiUrl": "https://api.congress.gov/v3/bill/119/s/4005?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 2,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Responsible Containment Reauthorization Act of 2026",
-        "updated_at": "2026-04-11T02:41:16Z"
-      },
-      "detailPath": "119/s/4005",
-      "identifier": "S 4005",
-      "impact": {
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4005"
-          }
-        ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
-      },
-      "latestAction": {
-        "date": "2026-03-05",
-        "text": "Read twice and referred to the Committee on Energy and Natural Resources."
-      },
-      "members": [
-        {
-          "bioguideId": "H000273",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Hickenlooper, John W. [D-CO]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CO"
-        }
-      ],
-      "number": "4005",
-      "originChamber": "Senate",
-      "policyArea": "Energy",
-      "sponsors": [
-        {
-          "bioguideId": "H000273",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Hickenlooper, John W. [D-CO]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CO"
-        }
-      ],
-      "title": "Responsible Containment Reauthorization Act of 2026",
-      "type": "S",
-      "updatedAt": "2026-04-11T02:41:16Z",
-      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/4005"
-    },
-    {
-      "aiDescription": null,
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/4002?format=json",
       "committees": [],
       "congress": 119,
@@ -2362,10 +2303,69 @@
       "type": "S",
       "updatedAt": "2026-07-16T11:03:21Z",
       "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3478"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/3470?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 12,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Accountability for Federal Law Enforcement Act",
+        "updated_at": "2026-04-21T11:03:28Z"
+      },
+      "detailPath": "119/s/3470",
+      "identifier": "S 3470",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3470"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2025-12-15",
+        "text": "Read twice and referred to the Committee on the Judiciary. (Sponsor introductory remarks on measure: CR S8731-8732)"
+      },
+      "members": [
+        {
+          "bioguideId": "P000145",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Padilla, Alex [D-CA]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
+      "number": "3470",
+      "originChamber": "Senate",
+      "policyArea": "Civil Rights and Liberties, Minority Issues",
+      "sponsors": [
+        {
+          "bioguideId": "P000145",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Padilla, Alex [D-CA]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CA"
+        }
+      ],
+      "title": "Accountability for Federal Law Enforcement Act",
+      "type": "S",
+      "updatedAt": "2026-04-21T11:03:28Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/3470"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-08-09T04:50:00.286449+00:00",
+  "generated_at": "2026-08-10T05:10:07.741965+00:00",
   "impact_status": "queued_for_refresh",
   "source": "congress_api"
 }

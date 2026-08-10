@@ -534,22 +534,6 @@
         "introducedDate": "2026-03-05",
         "latestAction": {
           "actionDate": "2026-03-05",
-          "text": "Read twice and referred to the Committee on Energy and Natural Resources."
-        },
-        "number": "4005",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "Responsible Containment Reauthorization Act of 2026",
-        "type": "S",
-        "updateDate": "2026-04-11",
-        "updateDateIncludingText": "2026-04-11",
-        "url": "https://api.congress.gov/v3/bill/119/s/4005?format=json"
-      },
-      {
-        "congress": 119,
-        "introducedDate": "2026-03-05",
-        "latestAction": {
-          "actionDate": "2026-03-05",
           "text": "Read twice and referred to the Committee on Foreign Relations."
         },
         "number": "4002",
@@ -1092,6 +1076,22 @@
       },
       {
         "congress": 105,
+        "introducedDate": "1997-03-11",
+        "latestAction": {
+          "actionDate": "1998-04-21",
+          "text": "Became Public Law No: 105-168."
+        },
+        "number": "419",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "Birth Defects Prevention Act of 1998",
+        "type": "S",
+        "updateDate": "2026-06-03",
+        "updateDateIncludingText": "2026-06-03",
+        "url": "https://api.congress.gov/v3/bill/105/s/419?format=json"
+      },
+      {
+        "congress": 105,
         "introducedDate": "1998-03-05",
         "latestAction": {
           "actionDate": "1998-03-23",
@@ -1284,13 +1284,13 @@
       }
     ],
     "pagination": {
-      "count": 16342,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-11T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 16334,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-12T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00"
+  "generated_at": "2026-08-10T05:09:53.650191+00:00"
 }

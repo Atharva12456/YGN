@@ -200,7 +200,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-08-08T07:40:24Z"
+      "updateDate": "2026-08-09T07:40:25Z"
     },
     "request": {
       "bioguideId": "g000581",
@@ -221,28 +221,28 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 35.0,
-        "value": 0.0,
+        "score": 37.4,
+        "value": 0.0365,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 76.5,
-        "value": 0.2539,
+        "score": 75.1,
+        "value": 0.2425,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 71.2,
-        "value": 0.5603,
+        "score": 75.0,
+        "value": 0.5919,
         "weight": 0.25
       },
       "self_party_independence": {
-        "score": 80.4,
-        "value": 0.8866,
+        "score": 84.0,
+        "value": 0.9126,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 59.9,
-        "value": 0.0602,
+        "score": 66.2,
+        "value": 0.0942,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -253,29 +253,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 62.5,
+    "financeScore": 66.2,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 81137.12,
+          "amount": 179283.93,
           "label": "Small individual (unitemized)",
-          "share": 0.03374472625840013
+          "share": 0.05576882987913435
         },
         {
-          "amount": 1265968.37,
+          "amount": 1723635.93,
           "label": "Large individual (itemized)",
-          "share": 0.5265130940985213
+          "share": 0.5361616010633721
         },
         {
-          "amount": 1052561.11,
+          "amount": 1307061.11,
           "label": "PAC / other committees",
-          "share": 0.43775754583337184
+          "share": 0.40658004699708733
         },
         {
-          "amount": 4771.93,
+          "amount": 4788.47,
           "label": "Political party committees",
-          "share": 0.001984633809706918
+          "share": 0.0014895220604062979
         },
         {
           "amount": 0.0,
@@ -293,14 +293,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1895986.21,
-        "debts": 0.0,
-        "disbursements": 1293622.86,
-        "individualContributions": 1347105.49,
-        "receipts": 2907549.31
+        "cashOnHand": 2532412.14,
+        "debts": 425000.0,
+        "disbursements": 1523562.69,
+        "individualContributions": 1902919.86,
+        "receipts": 3773915.07
       }
     },
-    "generated_at": "2026-07-14T18:16:37.253479+00:00",
+    "generated_at": "2026-08-09T13:16:10.215621+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -308,35 +308,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 40.5,
+    "score": 44.2,
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 3,
-    "updated_at": "2026-07-14T18:18:10.846237+00:00"
+    "updated_at": "2026-08-09T13:16:33.516115+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000581",
     "breakdown": [
       {
-        "amount": 81137.12,
+        "amount": 179283.93,
         "label": "Small individual (unitemized)",
-        "share": 0.03374472625840013
+        "share": 0.05576882987913435
       },
       {
-        "amount": 1265968.37,
+        "amount": 1723635.93,
         "label": "Large individual (itemized)",
-        "share": 0.5265130940985213
+        "share": 0.5361616010633721
       },
       {
-        "amount": 1052561.11,
+        "amount": 1307061.11,
         "label": "PAC / other committees",
-        "share": 0.43775754583337184
+        "share": 0.40658004699708733
       },
       {
-        "amount": 4771.93,
+        "amount": 4788.47,
         "label": "Political party committees",
-        "share": 0.001984633809706918
+        "share": 0.0014895220604062979
       },
       {
         "amount": 0.0,
@@ -365,28 +365,28 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 35.0,
-          "value": 0.0,
+          "score": 37.4,
+          "value": 0.0365,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 76.5,
-          "value": 0.2539,
+          "score": 75.1,
+          "value": 0.2425,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 71.2,
-          "value": 0.5603,
+          "score": 75.0,
+          "value": 0.5919,
           "weight": 0.25
         },
         "self_party_independence": {
-          "score": 80.4,
-          "value": 0.8866,
+          "score": 84.0,
+          "value": 0.9126,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 59.9,
-          "value": 0.0602,
+          "score": 66.2,
+          "value": 0.0942,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -397,8 +397,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 62.5,
-      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "financeScore": 66.2,
+      "generated_at": "2026-08-09T13:16:10.215621+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -406,23 +406,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 40.5,
+      "score": 44.2,
       "source": "fec_live",
       "stockPenalty": 22,
       "stockPtrCount": 3,
-      "updated_at": "2026-07-14T18:18:10.846237+00:00"
+      "updated_at": "2026-08-09T13:16:33.516115+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1895986.21,
-      "debts": 0.0,
-      "disbursements": 1293622.86,
-      "individualContributions": 1347105.49,
-      "receipts": 2907549.31
+      "cashOnHand": 2532412.14,
+      "debts": 425000.0,
+      "disbursements": 1523562.69,
+      "individualContributions": 1902919.86,
+      "receipts": 3773915.07
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "G000581",
     "birthYear": "1967",
@@ -620,7 +620,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-08-08T07:40:24Z"
+    "updateDate": "2026-08-09T07:40:25Z"
   },
   "nominate": {
     "dim1": -0.387,

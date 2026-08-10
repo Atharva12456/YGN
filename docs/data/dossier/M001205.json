@@ -175,7 +175,7 @@
           "stateName": "West Virginia"
         }
       ],
-      "updateDate": "2026-08-08T07:40:24Z"
+      "updateDate": "2026-08-09T07:40:25Z"
     },
     "request": {
       "bioguideId": "m001205",
@@ -196,18 +196,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 71.0,
-        "value": 0.4857,
+        "score": 66.0,
+        "value": 0.4329,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 85.5,
-        "value": 0.3756,
+        "score": 84.0,
+        "value": 0.3426,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 50.1,
-        "value": 0.2947,
+        "score": 49.8,
+        "value": 0.2888,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -216,8 +216,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 37.9,
-        "value": 0.0064,
+        "score": 37.7,
+        "value": 0.0059,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -228,24 +228,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.0,
+    "financeScore": 59.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 2683.24,
+          "amount": 2970.84,
           "label": "Small individual (unitemized)",
-          "share": 0.0018768180135695302
+          "share": 0.00171470849675623
         },
         {
-          "amount": 418603.29,
+          "amount": 497453.29,
           "label": "Large individual (itemized)",
-          "share": 0.2927960954709493
+          "share": 0.2871199334539527
         },
         {
-          "amount": 1008388.58,
+          "amount": 1232138.58,
           "label": "PAC / other committees",
-          "share": 0.705327086515481
+          "share": 0.7111653580492912
         },
         {
           "amount": 0.0,
@@ -268,14 +268,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 729464.08,
+        "cashOnHand": 604378.98,
         "debts": 417992.72,
-        "disbursements": 941654.18,
-        "individualContributions": 421286.53,
-        "receipts": 1431576.28
+        "disbursements": 1382060.71,
+        "individualContributions": 500424.13,
+        "receipts": 1746897.71
       }
     },
-    "generated_at": "2026-07-15T11:47:52.898811+00:00",
+    "generated_at": "2026-08-09T13:16:10.215621+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -283,30 +283,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 51.0,
+    "score": 49.8,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-15T11:48:15.074169+00:00"
+    "updated_at": "2026-08-09T13:16:29.890604+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M001205",
     "breakdown": [
       {
-        "amount": 2683.24,
+        "amount": 2970.84,
         "label": "Small individual (unitemized)",
-        "share": 0.0018768180135695302
+        "share": 0.00171470849675623
       },
       {
-        "amount": 418603.29,
+        "amount": 497453.29,
         "label": "Large individual (itemized)",
-        "share": 0.2927960954709493
+        "share": 0.2871199334539527
       },
       {
-        "amount": 1008388.58,
+        "amount": 1232138.58,
         "label": "PAC / other committees",
-        "share": 0.705327086515481
+        "share": 0.7111653580492912
       },
       {
         "amount": 0.0,
@@ -340,18 +340,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 71.0,
-          "value": 0.4857,
+          "score": 66.0,
+          "value": 0.4329,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 85.5,
-          "value": 0.3756,
+          "score": 84.0,
+          "value": 0.3426,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 50.1,
-          "value": 0.2947,
+          "score": 49.8,
+          "value": 0.2888,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -360,8 +360,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 37.9,
-          "value": 0.0064,
+          "score": 37.7,
+          "value": 0.0059,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -372,8 +372,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 61.0,
-      "generated_at": "2026-07-15T11:47:52.898811+00:00",
+      "financeScore": 59.8,
+      "generated_at": "2026-08-09T13:16:10.215621+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -381,23 +381,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 51.0,
+      "score": 49.8,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-07-15T11:48:15.074169+00:00"
+      "updated_at": "2026-08-09T13:16:29.890604+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 729464.08,
+      "cashOnHand": 604378.98,
       "debts": 417992.72,
-      "disbursements": 941654.18,
-      "individualContributions": 421286.53,
-      "receipts": 1431576.28
+      "disbursements": 1382060.71,
+      "individualContributions": 500424.13,
+      "receipts": 1746897.71
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "M001205",
     "birthYear": "1950",
@@ -570,7 +570,7 @@
         "stateName": "West Virginia"
       }
     ],
-    "updateDate": "2026-08-08T07:40:24Z"
+    "updateDate": "2026-08-09T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.529,

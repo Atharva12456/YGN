@@ -261,7 +261,7 @@
           "stateName": "Illinois"
         }
       ],
-      "updateDate": "2026-08-08T07:40:23Z"
+      "updateDate": "2026-08-09T07:40:24Z"
     },
     "request": {
       "bioguideId": "l000585",
@@ -287,13 +287,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 88.0,
-        "value": 0.4275,
+        "score": 88.9,
+        "value": 0.4486,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 52.0,
-        "value": 0.3319,
+        "score": 51.6,
+        "value": 0.3257,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -302,8 +302,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 66.8,
-        "value": 0.0976,
+        "score": 68.0,
+        "value": 0.1044,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -314,29 +314,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 63.2,
+    "financeScore": 63.6,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 70538.99,
+          "amount": 88212.59,
           "label": "Small individual (unitemized)",
-          "share": 0.03241054048139063
+          "share": 0.034005353606204845
         },
         {
-          "amount": 651909.92,
+          "amount": 756644.52,
           "label": "Large individual (itemized)",
-          "share": 0.2995329654192685
+          "share": 0.2916813173357356
         },
         {
-          "amount": 1453872.37,
+          "amount": 1749122.37,
           "label": "PAC / other committees",
-          "share": 0.6680105471124599
+          "share": 0.6742747797380518
         },
         {
           "amount": 100.0,
           "label": "Political party committees",
-          "share": 4.5946986881142795e-05
+          "share": 3.8549320007727754e-05
         },
         {
           "amount": 0.0,
@@ -354,49 +354,48 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 6682463.2,
+        "cashOnHand": 6748620.74,
         "debts": 0.0,
-        "disbursements": 1952628.27,
-        "individualContributions": 722448.91,
-        "receipts": 3113808.4
+        "disbursements": 2445401.29,
+        "individualContributions": 844857.11,
+        "receipts": 3672738.96
       }
     },
-    "generated_at": "2026-07-14T19:46:25.427771+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 63.2,
+    "score": 63.6,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T19:47:24.180098+00:00"
+    "updated_at": "2026-08-10T05:13:04.818851+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "L000585",
     "breakdown": [
       {
-        "amount": 70538.99,
+        "amount": 88212.59,
         "label": "Small individual (unitemized)",
-        "share": 0.03241054048139063
+        "share": 0.034005353606204845
       },
       {
-        "amount": 651909.92,
+        "amount": 756644.52,
         "label": "Large individual (itemized)",
-        "share": 0.2995329654192685
+        "share": 0.2916813173357356
       },
       {
-        "amount": 1453872.37,
+        "amount": 1749122.37,
         "label": "PAC / other committees",
-        "share": 0.6680105471124599
+        "share": 0.6742747797380518
       },
       {
         "amount": 100.0,
         "label": "Political party committees",
-        "share": 4.5946986881142795e-05
+        "share": 3.8549320007727754e-05
       },
       {
         "amount": 0.0,
@@ -430,13 +429,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 88.0,
-          "value": 0.4275,
+          "score": 88.9,
+          "value": 0.4486,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 52.0,
-          "value": 0.3319,
+          "score": 51.6,
+          "value": 0.3257,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -445,8 +444,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 66.8,
-          "value": 0.0976,
+          "score": 68.0,
+          "value": 0.1044,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -457,31 +456,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 63.2,
-      "generated_at": "2026-07-14T19:46:25.427771+00:00",
+      "financeScore": 63.6,
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 63.2,
+      "score": 63.6,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T19:47:24.180098+00:00"
+      "updated_at": "2026-08-10T05:13:04.818851+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 6682463.2,
+      "cashOnHand": 6748620.74,
       "debts": 0.0,
-      "disbursements": 1952628.27,
-      "individualContributions": 722448.91,
-      "receipts": 3113808.4
+      "disbursements": 2445401.29,
+      "individualContributions": 844857.11,
+      "receipts": 3672738.96
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "L000585",
     "birthYear": "1968",
@@ -698,7 +696,7 @@
         "stateName": "Illinois"
       }
     ],
-    "updateDate": "2026-08-08T07:40:23Z"
+    "updateDate": "2026-08-09T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.461,

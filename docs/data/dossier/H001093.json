@@ -209,7 +209,7 @@
           "stateName": "Indiana"
         }
       ],
-      "updateDate": "2026-08-08T07:40:23Z"
+      "updateDate": "2026-08-09T07:40:24Z"
     },
     "request": {
       "bioguideId": "h001093",
@@ -235,13 +235,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.6,
-        "value": 0.692,
+        "score": 96.8,
+        "value": 0.7199,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 49.2,
-        "value": 0.2778,
+        "score": 47.7,
+        "value": 0.2481,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -250,8 +250,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 60.6,
-        "value": 0.0641,
+        "score": 61.2,
+        "value": 0.0672,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -262,34 +262,34 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.5,
+    "financeScore": 61.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 19527.71,
+          "amount": 23017.1,
           "label": "Small individual (unitemized)",
-          "share": 0.017761978566809344
+          "share": 0.016620884513892292
         },
         {
-          "amount": 285102.02,
+          "amount": 319688.55,
           "label": "Large individual (itemized)",
-          "share": 0.2593225712894164
+          "share": 0.23085038818807244
         },
         {
-          "amount": 793940.04,
+          "amount": 1041092.97,
           "label": "PAC / other committees",
-          "share": 0.7221505221970089
+          "share": 0.7517839355346735
         },
         {
           "amount": 100.0,
           "label": "Political party committees",
-          "share": 9.095781618433162e-05
+          "share": 7.221102794831795e-05
         },
         {
-          "amount": 740.97,
+          "amount": 931.41,
           "label": "Self-funding & candidate loans",
-          "share": 0.000673970130581042
+          "share": 0.0006725807354134283
         }
       ],
       "candidate": {
@@ -302,54 +302,54 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 989725.73,
+        "cashOnHand": 1183065.62,
         "debts": 0.0,
-        "disbursements": 1234666.65,
-        "individualContributions": 304629.73,
-        "receipts": 1482348.52
+        "disbursements": 1415550.66,
+        "individualContributions": 342705.65,
+        "receipts": 1856572.42
       }
     },
-    "generated_at": "2026-07-14T18:16:37.253479+00:00",
+    "generated_at": "2026-08-09T21:48:50.097216+00:00",
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 61.5,
+    "score": 61.4,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T18:19:26.177027+00:00"
+    "updated_at": "2026-08-09T21:49:28.151315+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001093",
     "breakdown": [
       {
-        "amount": 19527.71,
+        "amount": 23017.1,
         "label": "Small individual (unitemized)",
-        "share": 0.017761978566809344
+        "share": 0.016620884513892292
       },
       {
-        "amount": 285102.02,
+        "amount": 319688.55,
         "label": "Large individual (itemized)",
-        "share": 0.2593225712894164
+        "share": 0.23085038818807244
       },
       {
-        "amount": 793940.04,
+        "amount": 1041092.97,
         "label": "PAC / other committees",
-        "share": 0.7221505221970089
+        "share": 0.7517839355346735
       },
       {
         "amount": 100.0,
         "label": "Political party committees",
-        "share": 9.095781618433162e-05
+        "share": 7.221102794831795e-05
       },
       {
-        "amount": 740.97,
+        "amount": 931.41,
         "label": "Self-funding & candidate loans",
-        "share": 0.000673970130581042
+        "share": 0.0006725807354134283
       }
     ],
     "candidate": {
@@ -378,13 +378,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.6,
-          "value": 0.692,
+          "score": 96.8,
+          "value": 0.7199,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 49.2,
-          "value": 0.2778,
+          "score": 47.7,
+          "value": 0.2481,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -393,8 +393,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 60.6,
-          "value": 0.0641,
+          "score": 61.2,
+          "value": 0.0672,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -405,31 +405,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 61.5,
-      "generated_at": "2026-07-14T18:16:37.253479+00:00",
+      "financeScore": 61.4,
+      "generated_at": "2026-08-09T21:48:50.097216+00:00",
       "grade": "D-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 61.5,
+      "score": 61.4,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T18:19:26.177027+00:00"
+      "updated_at": "2026-08-09T21:49:28.151315+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 989725.73,
+      "cashOnHand": 1183065.62,
       "debts": 0.0,
-      "disbursements": 1234666.65,
-      "individualContributions": 304629.73,
-      "receipts": 1482348.52
+      "disbursements": 1415550.66,
+      "individualContributions": 342705.65,
+      "receipts": 1856572.42
     }
   },
-  "generated_at": "2026-08-09T04:49:57.077207+00:00",
+  "generated_at": "2026-08-10T05:09:53.650191+00:00",
   "history": {
     "bioguideId": "H001093",
     "birthYear": "1976",
@@ -570,7 +570,7 @@
         "stateName": "Indiana"
       }
     ],
-    "updateDate": "2026-08-08T07:40:23Z"
+    "updateDate": "2026-08-09T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.637,
