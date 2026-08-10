@@ -15,13 +15,13 @@
       "weight": 0.2
     },
     "in_state_support": {
-      "score": 96.6,
-      "value": 0.696,
+      "score": 96.5,
+      "value": 0.6783,
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 56.8,
-      "value": 0.4262,
+      "score": 57.0,
+      "value": 0.431,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 41.8,
-      "value": 0.0147,
+      "score": 41.1,
+      "value": 0.0133,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 57.8,
+  "financeScore": 57.6,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 4891.5,
+        "amount": 5257.89,
         "label": "Small individual (unitemized)",
-        "share": 0.006271124661304461
+        "share": 0.005714315399662071
       },
       {
-        "amount": 327551.0,
+        "amount": 391335.0,
         "label": "Large individual (itemized)",
-        "share": 0.41993522517324694
+        "share": 0.4253058958872773
       },
       {
-        "amount": 447561.13,
+        "amount": 523533.08,
         "label": "PAC / other committees",
-        "share": 0.5737936501654486
+        "share": 0.5689797887130607
       },
       {
         "amount": 0.0,
@@ -82,23 +82,23 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 1332700.28,
+      "cashOnHand": 1329417.31,
       "debts": 0.0,
-      "disbursements": 554886.51,
-      "individualContributions": 332442.5,
-      "receipts": 1170229.83
+      "disbursements": 729586.83,
+      "individualContributions": 396592.89,
+      "receipts": 1341647.18
     }
   },
-  "generated_at": "2026-07-15T14:09:09.363635+00:00",
+  "generated_at": "2026-08-10T19:17:55.632493+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 57.8,
+  "score": 57.6,
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-15T14:09:19.673091+00:00"
+  "updated_at": "2026-08-10T19:18:33.307785+00:00"
 }
