@@ -223,7 +223,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-08-09T07:40:23Z"
+      "updateDate": "2026-08-10T07:40:21Z"
     },
     "request": {
       "bioguideId": "s000168",
@@ -254,18 +254,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 63.0,
-        "value": 0.4914,
+        "score": 65.1,
+        "value": 0.509,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9982,
+        "value": 0.9988,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 53.5,
-        "value": 0.0401,
+        "score": 49.9,
+        "value": 0.0325,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -276,24 +276,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 62.9,
+    "financeScore": 62.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 16242.23,
+          "amount": 17867.22,
           "label": "Small individual (unitemized)",
-          "share": 0.01960277627961037
+          "share": 0.016452529961776586
         },
         {
-          "amount": 388404.29,
+          "amount": 532447.63,
           "label": "Large individual (itemized)",
-          "share": 0.4687658285168297
+          "share": 0.4902895126187473
         },
         {
-          "amount": 421428.55,
+          "amount": 533178.55,
           "label": "PAC / other committees",
-          "share": 0.5086228666562777
+          "share": 0.490962559863907
         },
         {
           "amount": 0.0,
@@ -303,7 +303,7 @@
         {
           "amount": 2492.77,
           "label": "Self-funding & candidate loans",
-          "share": 0.00300852854728226
+          "share": 0.0022953975555692393
         }
       ],
       "candidate": {
@@ -316,14 +316,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1937339.79,
+        "cashOnHand": 2259546.73,
         "debts": 14300.0,
-        "disbursements": 846727.53,
-        "individualContributions": 404646.52,
-        "receipts": 1373240.18
+        "disbursements": 1150679.49,
+        "individualContributions": 550314.85,
+        "receipts": 1999399.08
       }
     },
-    "generated_at": "2026-07-14T21:14:49.808383+00:00",
+    "generated_at": "2026-08-10T13:45:21.822552+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -331,30 +331,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 40.9,
+    "score": 40.4,
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 4,
-    "updated_at": "2026-07-14T21:16:46.598396+00:00"
+    "updated_at": "2026-08-10T13:46:34.959666+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S000168",
     "breakdown": [
       {
-        "amount": 16242.23,
+        "amount": 17867.22,
         "label": "Small individual (unitemized)",
-        "share": 0.01960277627961037
+        "share": 0.016452529961776586
       },
       {
-        "amount": 388404.29,
+        "amount": 532447.63,
         "label": "Large individual (itemized)",
-        "share": 0.4687658285168297
+        "share": 0.4902895126187473
       },
       {
-        "amount": 421428.55,
+        "amount": 533178.55,
         "label": "PAC / other committees",
-        "share": 0.5086228666562777
+        "share": 0.490962559863907
       },
       {
         "amount": 0.0,
@@ -364,7 +364,7 @@
       {
         "amount": 2492.77,
         "label": "Self-funding & candidate loans",
-        "share": 0.00300852854728226
+        "share": 0.0022953975555692393
       }
     ],
     "candidate": {
@@ -398,18 +398,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 63.0,
-          "value": 0.4914,
+          "score": 65.1,
+          "value": 0.509,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9982,
+          "value": 0.9988,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 53.5,
-          "value": 0.0401,
+          "score": 49.9,
+          "value": 0.0325,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -420,8 +420,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 62.9,
-      "generated_at": "2026-07-14T21:14:49.808383+00:00",
+      "financeScore": 62.4,
+      "generated_at": "2026-08-10T13:45:21.822552+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -429,23 +429,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 40.9,
+      "score": 40.4,
       "source": "fec_live",
       "stockPenalty": 22,
       "stockPtrCount": 4,
-      "updated_at": "2026-07-14T21:16:46.598396+00:00"
+      "updated_at": "2026-08-10T13:46:34.959666+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1937339.79,
+      "cashOnHand": 2259546.73,
       "debts": 14300.0,
-      "disbursements": 846727.53,
-      "individualContributions": 404646.52,
-      "receipts": 1373240.18
+      "disbursements": 1150679.49,
+      "individualContributions": 550314.85,
+      "receipts": 1999399.08
     }
   },
-  "generated_at": "2026-08-10T05:09:53.650191+00:00",
+  "generated_at": "2026-08-11T04:53:31.565696+00:00",
   "history": {
     "bioguideId": "S000168",
     "birthYear": "1961",
@@ -609,7 +609,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-08-09T07:40:23Z"
+    "updateDate": "2026-08-10T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.273,

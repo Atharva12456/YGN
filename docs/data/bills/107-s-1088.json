@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 107,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "S000709",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Specter, Arlen [R-PA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2001-06-22",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "G000352",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Graham, Bob [D-FL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2001-07-12",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "C000858",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Craig, Larry E. [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2001-08-01",
+        "state": "ID"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Amends Federal provisions concerning the Montgomery GI Bill (educational assistance for veterans) to allow eligible veterans to elect to receive accelerated payment of such assistance for education leading to employment in a high technology industry. Makes eligible those veterans who are: (1) enrolled in an approved program of education leading to such employment; and (2) charged tuition and fees which, on a monthly basis, exceed 200 percent of the monthly rate of basic educational assistance allowance otherwise payable. Makes such accelerated payment the lesser of: (1) 60 percent of the established charges for such education; or (2) the aggregate amount of basic educational assistance to which such veteran remains entitled. Revises, generally, provisions concerning determinations by the Secretary of Veterans Affairs of an individual's enrollment, pursuit, and attendance under an approved program. Includes within the definition of \"educational institution\" for purposes of eligibility for Montgomery GI Bill assistance any private entity that offers a courses to fulfill requirements for a license or certification for employment in a high technology occupation.",
+      "updated_at": "2006-11-28T17:35:26Z"
+    },
+    "detailPath": "107/s/1088",
+    "identifier": "S 1088",
+    "introducedDate": "2001-06-22",
+    "latestAction": {
+      "date": "2001-12-08",
+      "text": "Returned to the Calendar. Calendar No. 194."
+    },
+    "number": "1088",
+    "originChamber": "Senate",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "R000361",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Rockefeller, John D., IV [D-WV]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "WV"
+      }
+    ],
+    "title": "Veterans' Benefits Improvement Act of 2001",
+    "type": "S",
+    "updatedAt": "2026-05-29T10:56:47Z",
+    "url": "https://www.congress.gov/bill/107th-congress/senate-bill/1088",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:45.012280+00:00",
+  "source": "congress_api"
+}

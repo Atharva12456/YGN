@@ -1,0 +1,556 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 119,
+    "cosponsorCount": 51,
+    "cosponsors": [
+      {
+        "bioguideId": "N000191",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Neguse, Joe [D-CO-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "M001227",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McClellan, Jennifer L. [D-VA-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "C001068",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cohen, Steve [D-TN-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "A000381",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Ansari, Yassamin [D-AZ-3]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "B001300",
+        "district": 44,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Barrag\u00e1n, Nanette Diaz [D-CA-44]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "B001278",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bonamici, Suzanne [D-OR-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "B001285",
+        "district": 26,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Brownley, Julia [D-CA-26]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001055",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Case, Ed [D-HI-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "C001112",
+        "district": 24,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carbajal, Salud O. [D-CA-24]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001117",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Casten, Sean [D-IL-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "C001080",
+        "district": 28,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Chu, Judy [D-CA-28]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001061",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cleaver, Emanuel [D-MO-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "C001067",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Clarke, Yvette D. [D-NY-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "C001078",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Connolly, Gerald E. [D-VA-11]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "M001232",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McClain Delaney, April [D-MD-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "D000617",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. DelBene, Suzan K. [D-WA-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "D000623",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. DeSaulnier, Mark [D-CA-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "E000297",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Espaillat, Adriano [D-NY-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "F000477",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "G000585",
+        "district": 34,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gomez, Jimmy [D-CA-34]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "H001081",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hayes, Jahana [D-CT-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "H001068",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Huffman, Jared [D-CA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "K000400",
+        "district": 37,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kamlager-Dove, Sydney [D-CA-37]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "K000009",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kaptur, Marcy [D-OH-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "K000391",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Krishnamoorthi, Raja [D-IL-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "L000593",
+        "district": 49,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Levin, Mike [D-CA-49]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001143",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCollum, Betty [D-MN-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M000312",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McGovern, James P. [D-MA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "M001241",
+        "district": 47,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Min, Dave [D-CA-47]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001225",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Mullin, Kevin [D-CA-15]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "O000176",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Olszewski, Johnny [D-MD-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "P000613",
+        "district": 19,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Panetta, Jimmy [D-CA-19]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "P000608",
+        "district": 50,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Peters, Scott H. [D-CA-50]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "P000597",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pingree, Chellie [D-ME-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "Q000023",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Quigley, Mike [D-IL-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "S001226",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Salinas, Andrea [D-OR-6]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "S001205",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Scanlon, Mary Gay [D-PA-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S001145",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schakowsky, Janice D. [D-IL-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "S001190",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schneider, Bradley Scott [D-IL-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "S001218",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Stansbury, Melanie A. [D-NM-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "S001215",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Stevens, Haley M. [D-MI-11]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "T000468",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Titus, Dina [D-NV-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "T000481",
+        "district": 12,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tlaib, Rashida [D-MI-12]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "T000487",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tokuda, Jill N. [D-HI-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "T000469",
+        "district": 20,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tonko, Paul [D-NY-20]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "V000081",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Vel\u00e1zquez, Nydia M. [D-NY-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "W000788",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Williams, Nikema [D-GA-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "W000808",
+        "district": 24,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wilson, Frederica S. [D-FL-24]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-21",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "F000483",
+        "district": 30,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Friedman, Laura [D-CA-30]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-24",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "C001072",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Carson, Andr\u00e9 [D-IN-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-04-24",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "J000298",
+        "district": 7,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Jayapal, Pramila [D-WA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2025-05-05",
+        "state": "WA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill detail",
+      "text": "Expressing support for honoring Earth Day, and for other purposes.",
+      "updated_at": "2026-04-27T20:29:54Z"
+    },
+    "detailPath": "119/hres/341",
+    "identifier": "HRES 341",
+    "introducedDate": "2025-04-21",
+    "latestAction": {
+      "date": "2025-04-21",
+      "text": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on Foreign Affairs, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+    },
+    "number": "341",
+    "originChamber": "House",
+    "policyArea": "Environmental Protection",
+    "sponsors": [
+      {
+        "bioguideId": "M001163",
+        "district": 7,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Matsui, Doris O. [D-CA-7]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Expressing support for honoring Earth Day, and for other purposes.",
+    "type": "HRES",
+    "updatedAt": "2026-04-27T20:29:54Z",
+    "url": "https://www.congress.gov/bill/119th-congress/house-resolution/341",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:41.755872+00:00",
+  "source": "congress_api"
+}

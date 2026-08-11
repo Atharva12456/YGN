@@ -277,7 +277,7 @@
           "stateName": "Indiana"
         }
       ],
-      "updateDate": "2026-08-09T07:40:22Z"
+      "updateDate": "2026-08-10T07:40:21Z"
     },
     "request": {
       "bioguideId": "b001307",
@@ -298,18 +298,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 58.3,
-        "value": 0.3527,
+        "score": 64.1,
+        "value": 0.4138,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.5,
-        "value": 0.6807,
+        "score": 96.8,
+        "value": 0.7195,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 56.6,
-        "value": 0.4217,
+        "score": 57.8,
+        "value": 0.4465,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -318,8 +318,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 96.5,
-        "value": 0.4534,
+        "score": 96.3,
+        "value": 0.4307,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -330,24 +330,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 78.8,
+    "financeScore": 80.2,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 53946.53,
+          "amount": 68518.17,
           "label": "Small individual (unitemized)",
-          "share": 0.1911743292104708
+          "share": 0.19230482307315355
         },
         {
-          "amount": 65038.48,
+          "amount": 90581.63,
           "label": "Large individual (itemized)",
-          "share": 0.23048169709652544
+          "share": 0.2542286860671828
         },
         {
-          "amount": 163200.0,
+          "amount": 197200.0,
           "label": "PAC / other committees",
-          "share": 0.5783439736930037
+          "share": 0.5534664908596637
         },
         {
           "amount": 0.0,
@@ -370,44 +370,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 183389.74,
-        "debts": 210000.0,
-        "disbursements": 314704.19,
-        "individualContributions": 118985.01,
-        "receipts": 283484.2
+        "cashOnHand": 91560.58,
+        "debts": 383899.36,
+        "disbursements": 481341.66,
+        "individualContributions": 159099.8,
+        "receipts": 358292.51
       }
     },
-    "generated_at": "2026-07-14T22:13:53.911703+00:00",
-    "grade": "C+",
+    "generated_at": "2026-08-11T04:40:53.535637+00:00",
+    "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.8,
+    "score": 80.2,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T22:16:25.858719+00:00"
+    "updated_at": "2026-08-11T04:41:01.427770+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "B001307",
     "breakdown": [
       {
-        "amount": 53946.53,
+        "amount": 68518.17,
         "label": "Small individual (unitemized)",
-        "share": 0.1911743292104708
+        "share": 0.19230482307315355
       },
       {
-        "amount": 65038.48,
+        "amount": 90581.63,
         "label": "Large individual (itemized)",
-        "share": 0.23048169709652544
+        "share": 0.2542286860671828
       },
       {
-        "amount": 163200.0,
+        "amount": 197200.0,
         "label": "PAC / other committees",
-        "share": 0.5783439736930037
+        "share": 0.5534664908596637
       },
       {
         "amount": 0.0,
@@ -441,18 +441,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 58.3,
-          "value": 0.3527,
+          "score": 64.1,
+          "value": 0.4138,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.5,
-          "value": 0.6807,
+          "score": 96.8,
+          "value": 0.7195,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 56.6,
-          "value": 0.4217,
+          "score": 57.8,
+          "value": 0.4465,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -461,8 +461,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 96.5,
-          "value": 0.4534,
+          "score": 96.3,
+          "value": 0.4307,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -473,31 +473,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 78.8,
-      "generated_at": "2026-07-14T22:13:53.911703+00:00",
-      "grade": "C+",
+      "financeScore": 80.2,
+      "generated_at": "2026-08-11T04:40:53.535637+00:00",
+      "grade": "B-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.8,
+      "score": 80.2,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T22:16:25.858719+00:00"
+      "updated_at": "2026-08-11T04:41:01.427770+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 183389.74,
-      "debts": 210000.0,
-      "disbursements": 314704.19,
-      "individualContributions": 118985.01,
-      "receipts": 283484.2
+      "cashOnHand": 91560.58,
+      "debts": 383899.36,
+      "disbursements": 481341.66,
+      "individualContributions": 159099.8,
+      "receipts": 358292.51
     }
   },
-  "generated_at": "2026-08-10T05:09:53.650191+00:00",
+  "generated_at": "2026-08-11T04:53:31.565696+00:00",
   "history": {
     "bioguideId": "B001307",
     "birthYear": "1945",
@@ -680,7 +680,7 @@
         "stateName": "Indiana"
       }
     ],
-    "updateDate": "2026-08-09T07:40:22Z"
+    "updateDate": "2026-08-10T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.446,
@@ -694,12 +694,13 @@
     "trades": []
   },
   "wiki": {
-    "extract": "James Richard Baird is an American businessman and politician serving as the U.S. representative for Indiana's 4th congressional district since 2019. Previously, he served on the Indiana House of Representatives from 2010 to 2018 and on the Putnam County commissioner from 2006 to 2010.",
-    "generated_at": "2026-07-04T17:32:47.857966+00:00",
+    "extract": "James Richard Baird is an American businessman and politician serving as the U.S. representative for Indiana's 4th congressional district since 2019. A Republican, he previously served as a member of the Indiana House of Representatives from 2010 to 2018 and as a Putnam County commissioner from 2006 to 2010.",
     "source": "wikipedia",
-    "summary": "James Richard Baird is an American businessman and politician serving as the U.S. representative for Indiana's 4th congressional district since 2019. Previously, he served on the Indiana House of Representatives from 2010 to 2018 and on the Putnam County commissioner from 2006 to 2010.",
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Rep._Jim_Baird_official_photo%2C_116th_congress.jpg/330px-Rep._Jim_Baird_official_photo%2C_116th_congress.jpg",
+    "summary": "James Richard Baird is an American businessman and politician serving as the U.S. representative for Indiana's 4th congressional district since 2019. A Republican, he previously served as a member of the Indiana House of Representatives from 2010 to 2018 and as a Putnam County commissioner from 2006 to 2010.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Rep._Jim_Baird_official_photo%2C_116th_congress.jpg/330px-Rep._Jim_Baird_official_photo%2C_116th_congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "title": "Jim Baird (politician)",
+    "type": "standard",
+    "wiki_page_id": 56236364,
     "wiki_url": "https://en.wikipedia.org/wiki/Jim_Baird_(politician)"
   }
 }

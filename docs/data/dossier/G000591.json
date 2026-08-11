@@ -225,7 +225,7 @@
           "stateName": "Mississippi"
         }
       ],
-      "updateDate": "2026-08-09T07:40:22Z"
+      "updateDate": "2026-08-10T07:40:21Z"
     },
     "request": {
       "bioguideId": "g000591",
@@ -246,18 +246,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 67.7,
-        "value": 0.4515,
+        "score": 66.3,
+        "value": 0.4368,
         "weight": 0.2
       },
       "in_state_support": {
         "score": 96.3,
-        "value": 0.6404,
+        "value": 0.6393,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 70.4,
-        "value": 0.5531,
+        "score": 70.0,
+        "value": 0.5498,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -266,8 +266,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 40.3,
-        "value": 0.0115,
+        "score": 40.5,
+        "value": 0.012,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -278,24 +278,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 67.3,
+    "financeScore": 66.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 4856.45,
+          "amount": 5409.58,
           "label": "Small individual (unitemized)",
-          "share": 0.006374704513028795
+          "share": 0.0065825096222224665
         },
         {
-          "amount": 416474.94,
+          "amount": 446401.6,
           "label": "Large individual (itemized)",
-          "share": 0.5466760039908568
+          "share": 0.5431924155619299
         },
         {
-          "amount": 340500.0,
+          "amount": 370000.0,
           "label": "PAC / other committees",
-          "share": 0.4469492914961144
+          "share": 0.45022507481584756
         },
         {
           "amount": 0.0,
@@ -318,14 +318,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 941929.6,
+        "cashOnHand": 962515.1,
         "debts": 0.0,
-        "disbursements": 332196.9,
-        "individualContributions": 421331.39,
-        "receipts": 762781.06
+        "disbursements": 371591.19,
+        "individualContributions": 451811.18,
+        "receipts": 822760.85
       }
     },
-    "generated_at": "2026-07-14T22:13:53.911703+00:00",
+    "generated_at": "2026-08-11T02:28:35.994307+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -333,30 +333,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 57.3,
+    "score": 56.9,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-07-14T22:16:08.415521+00:00"
+    "updated_at": "2026-08-11T02:28:43.795394+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000591",
     "breakdown": [
       {
-        "amount": 4856.45,
+        "amount": 5409.58,
         "label": "Small individual (unitemized)",
-        "share": 0.006374704513028795
+        "share": 0.0065825096222224665
       },
       {
-        "amount": 416474.94,
+        "amount": 446401.6,
         "label": "Large individual (itemized)",
-        "share": 0.5466760039908568
+        "share": 0.5431924155619299
       },
       {
-        "amount": 340500.0,
+        "amount": 370000.0,
         "label": "PAC / other committees",
-        "share": 0.4469492914961144
+        "share": 0.45022507481584756
       },
       {
         "amount": 0.0,
@@ -390,18 +390,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 67.7,
-          "value": 0.4515,
+          "score": 66.3,
+          "value": 0.4368,
           "weight": 0.2
         },
         "in_state_support": {
           "score": 96.3,
-          "value": 0.6404,
+          "value": 0.6393,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 70.4,
-          "value": 0.5531,
+          "score": 70.0,
+          "value": 0.5498,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -410,8 +410,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 40.3,
-          "value": 0.0115,
+          "score": 40.5,
+          "value": 0.012,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -422,8 +422,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 67.3,
-      "generated_at": "2026-07-14T22:13:53.911703+00:00",
+      "financeScore": 66.9,
+      "generated_at": "2026-08-11T02:28:35.994307+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -431,23 +431,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 57.3,
+      "score": 56.9,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 2,
-      "updated_at": "2026-07-14T22:16:08.415521+00:00"
+      "updated_at": "2026-08-11T02:28:43.795394+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 941929.6,
+      "cashOnHand": 962515.1,
       "debts": 0.0,
-      "disbursements": 332196.9,
-      "individualContributions": 421331.39,
-      "receipts": 762781.06
+      "disbursements": 371591.19,
+      "individualContributions": 451811.18,
+      "receipts": 822760.85
     }
   },
-  "generated_at": "2026-08-10T05:09:53.650191+00:00",
+  "generated_at": "2026-08-11T04:53:31.565696+00:00",
   "history": {
     "bioguideId": "G000591",
     "birthYear": "1970",
@@ -626,7 +626,7 @@
         "stateName": "Mississippi"
       }
     ],
-    "updateDate": "2026-08-09T07:40:22Z"
+    "updateDate": "2026-08-10T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.53,
@@ -641,10 +641,9 @@
   },
   "wiki": {
     "extract": "Michael Patrick Guest is an American attorney and Republican politician. He has represented Mississippi's 3rd congressional district in the United States House of Representatives since 2019.",
-    "generated_at": "2026-07-06T23:50:23.695788+00:00",
     "source": "wikipedia",
     "summary": "Michael Patrick Guest is an American attorney and Republican politician. He has represented Mississippi's 3rd congressional district in the United States House of Representatives since 2019.",
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Michael_Guest_portrait_116th_congress2.jpg/330px-Michael_Guest_portrait_116th_congress2.jpg",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Michael_Guest_portrait_116th_congress2.jpg/330px-Michael_Guest_portrait_116th_congress2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "title": "Michael Guest (politician)",
     "type": "standard",
     "wiki_page_id": 58726349,

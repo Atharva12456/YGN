@@ -201,7 +201,7 @@
           "stateName": "Oklahoma"
         }
       ],
-      "updateDate": "2026-08-09T07:40:22Z"
+      "updateDate": "2026-08-10T07:40:21Z"
     },
     "request": {
       "bioguideId": "h001082",
@@ -227,8 +227,8 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 72.7,
-        "value": 0.2227,
+        "score": 69.9,
+        "value": 0.1988,
         "weight": 0.1
       },
       "pac_independence": {
@@ -248,13 +248,13 @@
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
         "penalty": 42,
-        "ptr_filings": 12
+        "ptr_filings": 13
       }
     },
     "cycle": 2026,
-    "financeScore": 58.4,
+    "financeScore": 58.1,
     "funding": {
       "available": true,
       "breakdown": [
@@ -294,14 +294,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 206987.05,
+        "cashOnHand": 0.0,
         "debts": 0.0,
-        "disbursements": 3454363.12,
+        "disbursements": 3661378.27,
         "individualContributions": 514460.04,
-        "receipts": 2512684.19
+        "receipts": 2512712.29
       }
     },
-    "generated_at": "2026-07-14T23:11:41.322189+00:00",
+    "generated_at": "2026-08-11T04:40:53.535637+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -309,11 +309,11 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 16.4,
+    "score": 16.1,
     "source": "fec_live",
     "stockPenalty": 42,
-    "stockPtrCount": 12,
-    "updated_at": "2026-07-14T23:12:19.130299+00:00"
+    "stockPtrCount": 13,
+    "updated_at": "2026-08-11T04:41:17.138698+00:00"
   },
   "funding": {
     "available": true,
@@ -371,8 +371,8 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 72.7,
-          "value": 0.2227,
+          "score": 69.9,
+          "value": 0.1988,
           "weight": 0.1
         },
         "pac_independence": {
@@ -392,14 +392,14 @@
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
           "penalty": 42,
-          "ptr_filings": 12
+          "ptr_filings": 13
         }
       },
       "cycle": 2026,
-      "financeScore": 58.4,
-      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "financeScore": 58.1,
+      "generated_at": "2026-08-11T04:40:53.535637+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -407,23 +407,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 16.4,
+      "score": 16.1,
       "source": "fec_live",
       "stockPenalty": 42,
-      "stockPtrCount": 12,
-      "updated_at": "2026-07-14T23:12:19.130299+00:00"
+      "stockPtrCount": 13,
+      "updated_at": "2026-08-11T04:41:17.138698+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 206987.05,
+      "cashOnHand": 0.0,
       "debts": 0.0,
-      "disbursements": 3454363.12,
+      "disbursements": 3661378.27,
       "individualContributions": 514460.04,
-      "receipts": 2512684.19
+      "receipts": 2512712.29
     }
   },
-  "generated_at": "2026-08-10T05:09:53.650191+00:00",
+  "generated_at": "2026-08-11T04:53:31.565696+00:00",
   "history": {
     "bioguideId": "H001082",
     "birthYear": "1961",
@@ -632,7 +632,7 @@
         "stateName": "Oklahoma"
       }
     ],
-    "updateDate": "2026-08-09T07:40:22Z"
+    "updateDate": "2026-08-10T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.679,

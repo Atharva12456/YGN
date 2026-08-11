@@ -234,7 +234,7 @@
           "stateName": "South Carolina"
         }
       ],
-      "updateDate": "2026-08-09T07:40:23Z"
+      "updateDate": "2026-08-10T07:40:21Z"
     },
     "request": {
       "bioguideId": "t000480",
@@ -255,8 +255,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 54.1,
-        "value": 0.2913,
+        "score": 67.0,
+        "value": 0.4435,
         "weight": 0.2
       },
       "in_state_support": {
@@ -265,46 +265,46 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 50.4,
-        "value": 0.3004,
+        "score": 51.1,
+        "value": 0.3147,
         "weight": 0.25
       },
       "self_party_independence": {
-        "score": 47.7,
-        "value": 0.3878,
+        "score": 35.5,
+        "value": 0.014,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 40.0,
-        "value": 0.0108,
+        "score": 39.0,
+        "value": 0.0088,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
-        "penalty": 0,
-        "ptr_filings": 0
+        "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+        "penalty": 10,
+        "ptr_filings": 2
       }
     },
     "cycle": 2026,
-    "financeScore": 51.6,
+    "financeScore": 52.2,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 2490.67,
+          "amount": 2566.35,
           "label": "Small individual (unitemized)",
-          "share": 0.0032478887197615693
+          "share": 0.0027587512430021417
         },
         {
-          "amount": 227867.5,
+          "amount": 290191.5,
           "label": "Large individual (itemized)",
-          "share": 0.29714425550163986
+          "share": 0.31194738104064373
         },
         {
-          "amount": 536500.0,
+          "amount": 637500.0,
           "label": "PAC / other committees",
-          "share": 0.6996078557785985
+          "share": 0.6852938677163541
         },
         {
           "amount": 0.0,
@@ -314,7 +314,7 @@
         {
           "amount": 650000.0,
           "label": "Self-funding & candidate loans",
-          "share": 0.8476143639442479
+          "share": 0.6987310023774591
         }
       ],
       "candidate": {
@@ -327,44 +327,45 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 661353.21,
-        "debts": 731250.91,
-        "disbursements": 790310.72,
-        "individualContributions": 230358.17,
-        "receipts": 1431548.91
+        "cashOnHand": 77224.61,
+        "debts": 0.0,
+        "disbursements": 1538615.07,
+        "individualContributions": 292757.85,
+        "receipts": 1595724.66
       }
     },
-    "generated_at": "2026-07-14T22:13:53.911703+00:00",
+    "generated_at": "2026-08-10T21:58:57.538933+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
-      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 51.6,
+    "score": 42.2,
     "source": "fec_live",
-    "stockPenalty": 0,
-    "stockPtrCount": 0,
-    "updated_at": "2026-07-14T22:15:16.631587+00:00"
+    "stockPenalty": 10,
+    "stockPtrCount": 2,
+    "updated_at": "2026-08-10T21:59:14.223648+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000480",
     "breakdown": [
       {
-        "amount": 2490.67,
+        "amount": 2566.35,
         "label": "Small individual (unitemized)",
-        "share": 0.0032478887197615693
+        "share": 0.0027587512430021417
       },
       {
-        "amount": 227867.5,
+        "amount": 290191.5,
         "label": "Large individual (itemized)",
-        "share": 0.29714425550163986
+        "share": 0.31194738104064373
       },
       {
-        "amount": 536500.0,
+        "amount": 637500.0,
         "label": "PAC / other committees",
-        "share": 0.6996078557785985
+        "share": 0.6852938677163541
       },
       {
         "amount": 0.0,
@@ -374,7 +375,7 @@
       {
         "amount": 650000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.8476143639442479
+        "share": 0.6987310023774591
       }
     ],
     "candidate": {
@@ -398,8 +399,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 54.1,
-          "value": 0.2913,
+          "score": 67.0,
+          "value": 0.4435,
           "weight": 0.2
         },
         "in_state_support": {
@@ -408,53 +409,54 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 50.4,
-          "value": 0.3004,
+          "score": 51.1,
+          "value": 0.3147,
           "weight": 0.25
         },
         "self_party_independence": {
-          "score": 47.7,
-          "value": 0.3878,
+          "score": 35.5,
+          "value": 0.014,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 40.0,
-          "value": 0.0108,
+          "score": 39.0,
+          "value": 0.0088,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
-          "penalty": 0,
-          "ptr_filings": 0
+          "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 2
         }
       },
       "cycle": 2026,
-      "financeScore": 51.6,
-      "generated_at": "2026-07-14T22:13:53.911703+00:00",
+      "financeScore": 52.2,
+      "generated_at": "2026-08-10T21:58:57.538933+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
-        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 51.6,
+      "score": 42.2,
       "source": "fec_live",
-      "stockPenalty": 0,
-      "stockPtrCount": 0,
-      "updated_at": "2026-07-14T22:15:16.631587+00:00"
+      "stockPenalty": 10,
+      "stockPtrCount": 2,
+      "updated_at": "2026-08-10T21:59:14.223648+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 661353.21,
-      "debts": 731250.91,
-      "disbursements": 790310.72,
-      "individualContributions": 230358.17,
-      "receipts": 1431548.91
+      "cashOnHand": 77224.61,
+      "debts": 0.0,
+      "disbursements": 1538615.07,
+      "individualContributions": 292757.85,
+      "receipts": 1595724.66
     }
   },
-  "generated_at": "2026-08-10T05:09:53.650191+00:00",
+  "generated_at": "2026-08-11T04:53:31.565696+00:00",
   "history": {
     "bioguideId": "T000480",
     "birthYear": "1984",
@@ -638,7 +640,7 @@
         "stateName": "South Carolina"
       }
     ],
-    "updateDate": "2026-08-09T07:40:23Z"
+    "updateDate": "2026-08-10T07:40:21Z"
   },
   "nominate": {
     "dim1": 0.599,

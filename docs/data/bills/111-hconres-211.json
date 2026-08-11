@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 111,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "L000551",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lee, Barbara [D-CA-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-11-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001166",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McNerney, Jerry [D-CA-11]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-11-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "S000810",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Stark, Fortney Pete [D-CA-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-11-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "G000559",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Garamendi, John [D-CA-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-11-06",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Recognizes the 75th anniversary of the establishment of the East Bay Regional Park District in California. Honors the board members, general managers, and East Bay Regional Park District staff who have dutifully fulfilled the mission of protecting open space and providing outdoor recreation opportunities for generations of families in East Bay.",
+      "updated_at": "2009-12-02T23:21:54Z"
+    },
+    "detailPath": "111/hconres/211",
+    "identifier": "HCONRES 211",
+    "introducedDate": "2009-11-06",
+    "latestAction": {
+      "date": "2010-05-26",
+      "text": "Message on Senate action sent to the House."
+    },
+    "number": "211",
+    "originChamber": "House",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "M000725",
+        "district": 7,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Miller, George [D-CA-7]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Recognizing the 75th anniversary of the establishment of the East Bay Regional Park District in California, and for other purposes.",
+    "type": "HCONRES",
+    "updatedAt": "2026-08-10T11:51:27Z",
+    "url": "https://www.congress.gov/bill/111th-congress/house-concurrent-resolution/211",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:43.877570+00:00",
+  "source": "congress_api"
+}

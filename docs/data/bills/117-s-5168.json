@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 117,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C001056",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Cornyn, John [R-TX]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2022-12-01",
+        "state": "TX"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Energy Security and Lightering Independence Act of 2022 This bill authorizes an alien crewman to obtain a permit to land in the United States for up to 180 days if, during this period, the crewman will perform ship-to-ship liquid cargo transfer operations involving a vessel engaged in foreign trade. Currently, an alien crewman may obtain a permit to land for up to 29 days.",
+      "updated_at": "2022-12-23T16:26:10Z"
+    },
+    "detailPath": "117/s/5168",
+    "identifier": "S 5168",
+    "introducedDate": "2022-12-01",
+    "latestAction": {
+      "date": "2023-01-05",
+      "text": "Became Public Law No: 117-360."
+    },
+    "number": "5168",
+    "originChamber": "Senate",
+    "policyArea": "Immigration",
+    "sponsors": [
+      {
+        "bioguideId": "P000145",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Padilla, Alex [D-CA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Energy Security and Lightering Independence Act of 2022",
+    "type": "S",
+    "updatedAt": "2026-08-10T11:51:27Z",
+    "url": "https://www.congress.gov/bill/117th-congress/senate-bill/5168",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:42.240695+00:00",
+  "source": "congress_api"
+}

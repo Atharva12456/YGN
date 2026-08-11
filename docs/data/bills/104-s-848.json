@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 104,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "H000445",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Heflin, Howell [D-AL]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "1995-05-24",
+        "state": "AL"
+      },
+      {
+        "bioguideId": "C000813",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Coverdell, Paul [R-GA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "1995-05-24",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "N000171",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Nunn, Sam [D-GA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "1995-05-24",
+        "state": "GA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Grants the consent of the Congress to the amendment to articles I, II, and III of the Historic Chattahoochee Compact between Alabama and Georgia which: (1) provide that the purpose of the Compact is to promote the cooperative development of the Chattahoochee valley's full potential for historic preservation and tourism; (2) make such Compact effective immediately as to the States ratifying it whenever Alabama and Georgia have ratified it and the Congress has given its consent; and (3) permit the two States to establish a joint agency to be known as the Historic Chattahoochee Commission.",
+      "updated_at": "2001-05-07T20:44:08Z"
+    },
+    "detailPath": "104/s/848",
+    "identifier": "S 848",
+    "introducedDate": "1995-05-24",
+    "latestAction": {
+      "date": "1996-05-16",
+      "text": "See H.R.2064."
+    },
+    "number": "848",
+    "originChamber": "Senate",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "S000320",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Shelby, Richard C. [R-AL]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AL"
+      }
+    ],
+    "title": "A bill to grant the consent of Congress to an amendment of the Historic Chattahoochee Compact between the States of Alabama and Georgia.",
+    "type": "S",
+    "updatedAt": "2026-08-10T11:51:27Z",
+    "url": "https://www.congress.gov/bill/104th-congress/senate-bill/848",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:51.941228+00:00",
+  "source": "congress_api"
+}

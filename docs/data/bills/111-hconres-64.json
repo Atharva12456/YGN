@@ -1,0 +1,666 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 111,
+    "cosponsorCount": 62,
+    "cosponsors": [
+      {
+        "bioguideId": "M000472",
+        "district": 23,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McHugh, John M. [R-NY-23]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "D000598",
+        "district": 53,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davis, Susan A. [D-CA-53]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "W000795",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wilson, Joe [R-SC-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "M001144",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Miller, Jeff [R-FL-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "B001227",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Brady, Robert A. [D-PA-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C001069",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Courtney, Joe [D-CT-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "A000210",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Andrews, Robert E. [D-NJ-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "O000107",
+        "district": 27,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Ortiz, Solomon P. [D-TX-27]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "B001245",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Del. Bordallo, Madeleine Z. [D-GU-At Large]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "GU"
+      },
+      {
+        "bioguideId": "J000288",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Johnson, Henry C. \"Hank,\" Jr. [D-GA-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "T000074",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Taylor, Gene [D-MS-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MS"
+      },
+      {
+        "bioguideId": "L000565",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Loebsack, David [D-IA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "IA"
+      },
+      {
+        "bioguideId": "R000170",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Reyes, Silvestre [D-TX-16]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "M001146",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Marshall, Jim [D-GA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "M001173",
+        "district": 29,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Massa, Eric J. J. [D-NY-29]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "S000510",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Smith, Adam [D-WA-9]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "S000749",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Spratt, John M., Jr. [D-SC-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "S001169",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sestak, Joe [D-PA-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "B000208",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bartlett, Roscoe G. [R-MD-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "S001170",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Shea-Porter, Carol [D-NH-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NH"
+      },
+      {
+        "bioguideId": "M000508",
+        "district": 25,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McKeon, Howard P. \"Buck\" [R-CA-25]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "S000030",
+        "district": 47,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sanchez, Loretta [D-CA-47]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "A000014",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Abercrombie, Neil [D-HI-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "HI"
+      },
+      {
+        "bioguideId": "J000255",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Jones, Walter B., Jr. [R-NC-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "A000358",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Akin, W. Todd [R-MO-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "M001168",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Murphy, Patrick J. [D-PA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C001062",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Conaway, K. Michael [R-TX-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "L000560",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Larsen, Rick [D-WA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "S000672",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Snyder, Vic [D-AR-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "AR"
+      },
+      {
+        "bioguideId": "G000554",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Giffords, Gabrielle [D-AZ-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "K000369",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kissell, Larry [D-NC-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "L000559",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Langevin, James R. [D-RI-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "RI"
+      },
+      {
+        "bioguideId": "M001148",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Meek, Kendrick B. [D-FL-17]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "P000597",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pingree, Chellie [D-ME-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "ME"
+      },
+      {
+        "bioguideId": "T000057",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tauscher, Ellen O. [D-CA-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "K000371",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kratovil, Frank,  Jr. [D-MD-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "K000363",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kline, John [R-MN-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "M001159",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McMorris Rodgers, Cathy [R-WA-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "WA"
+      },
+      {
+        "bioguideId": "C001077",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Coffman, Mike [R-CO-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "L000564",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lamborn, Doug [R-CO-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CO"
+      },
+      {
+        "bioguideId": "H001048",
+        "district": 52,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hunter, Duncan D. [R-CA-52]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "T000465",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Tsongas, Niki [D-MA-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "MA"
+      },
+      {
+        "bioguideId": "F000453",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fallin, Mary [R-OK-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "F000456",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Fleming, John [R-LA-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "R000583",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Rooney, Thomas J. [R-FL-16]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "M000485",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McIntyre, Mike [D-NC-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "B001251",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Butterfield, G. K. [D-NC-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "D000096",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davis, Danny K. [D-IL-7]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "H000213",
+        "district": 36,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Harman, Jane [D-CA-36]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-02-26",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "W000413",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Whitfield, Ed [R-KY-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "KY"
+      },
+      {
+        "bioguideId": "E000288",
+        "district": 5,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Ellison, Keith [D-MN-5]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "S000583",
+        "district": 21,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Smith, Lamar [R-TX-21]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "R000435",
+        "district": 18,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Ros-Lehtinen, Ileana [R-FL-18]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "W000804",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Wittman, Robert J. [R-VA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "S001176",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Scalise, Steve [R-LA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "C000243",
+        "district": 0,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Castle, Michael N. [R-DE-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "F000445",
+        "district": 4,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Forbes, J. Randy [R-VA-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "M001156",
+        "district": 10,
+        "isOriginalCosponsor": false,
+        "name": "Rep. McHenry, Patrick T. [R-NC-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "H001046",
+        "district": 1,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Heinrich, Martin [D-NM-1]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "G000550",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Gingrey, Phil [R-GA-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-09",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "B000490",
+        "district": 2,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Bishop, Sanford D., Jr. [D-GA-2]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-11",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "P000096",
+        "district": 8,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Pascrell, Bill, Jr. [D-NJ-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2009-03-11",
+        "state": "NJ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Expresses the deepest appreciation to the families of members of the Armed Forces who serve or have served in defense of the United States. Recognizes the contributions that military families make, and encourages the people of the United States to share in appreciation for the sacrifices of military families. Urges the President to designate a \"Year of the Military Family\" and encourage the people of the United States and the Department of Defense (DOD) to observe it.",
+      "updated_at": "2009-03-02T21:48:59Z"
+    },
+    "detailPath": "111/hconres/64",
+    "identifier": "HCONRES 64",
+    "introducedDate": "2009-02-26",
+    "latestAction": {
+      "date": "2009-03-12",
+      "text": "Received in the Senate and referred to the Committee on the Judiciary."
+    },
+    "number": "64",
+    "originChamber": "House",
+    "policyArea": "Armed Forces and National Security",
+    "sponsors": [
+      {
+        "bioguideId": "S000465",
+        "district": 4,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Skelton, Ike [D-MO-4]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MO"
+      }
+    ],
+    "title": "Urging the President to designate 2009 as the \"Year of the Military Family\".",
+    "type": "HCONRES",
+    "updatedAt": "2026-08-10T11:51:27Z",
+    "url": "https://www.congress.gov/bill/111th-congress/house-concurrent-resolution/64",
+    "votes": []
+  },
+  "generated_at": "2026-08-11T04:53:44.187629+00:00",
+  "source": "congress_api"
+}
