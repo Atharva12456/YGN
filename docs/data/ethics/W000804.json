@@ -15,13 +15,13 @@
       "weight": 0.2
     },
     "in_state_support": {
-      "score": 90.5,
-      "value": 0.4821,
+      "score": 90.8,
+      "value": 0.4889,
       "weight": 0.1
     },
     "pac_independence": {
       "score": 70.3,
-      "value": 0.5525,
+      "value": 0.5523,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 52.7,
-      "value": 0.0386,
+      "score": 52.3,
+      "value": 0.0377,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 63.8,
+  "financeScore": 63.7,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 45937.65,
+        "amount": 54323.6,
         "label": "Small individual (unitemized)",
-        "share": 0.021297255982180897
+        "share": 0.020798556430805443
       },
       {
-        "amount": 1145687.41,
+        "amount": 1388219.21,
         "label": "Large individual (itemized)",
-        "share": 0.5311546856735562
+        "share": 0.5314993037558842
       },
       {
-        "amount": 965350.0,
+        "amount": 1169350.0,
         "label": "PAC / other committees",
-        "share": 0.4475480583442629
+        "share": 0.4477021398133103
       },
       {
         "amount": 0.0,
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 3859789.8,
+      "cashOnHand": 4292789.47,
       "debts": 0.0,
-      "disbursements": 914724.08,
-      "individualContributions": 1191625.06,
-      "receipts": 3398633.75
+      "disbursements": 1136232.18,
+      "individualContributions": 1442542.81,
+      "receipts": 4053141.52
     }
   },
-  "generated_at": "2026-07-15T03:33:30.569516+00:00",
+  "generated_at": "2026-08-12T05:04:10.600413+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 53.8,
+  "score": 53.7,
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-07-15T03:33:52.685478+00:00"
+  "updated_at": "2026-08-12T05:04:18.554951+00:00"
 }
