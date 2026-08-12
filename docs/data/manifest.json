@@ -1,93 +1,22 @@
 {
-  "bill_details": 40,
+  "bill_details": 0,
   "congress": 119,
   "current_member": true,
-  "debt_metric": true,
-  "descriptions": 537,
-  "details": 523,
-  "dossiers": 523,
-  "errors": [
-    {
-      "bioguideId": "S001220",
-      "error": "Congress.gov request failed for /member/S001220.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "P000609",
-      "error": "Congress.gov request failed for /member/P000609.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "N000188",
-      "error": "Congress.gov request failed for /member/N000188.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "A000370",
-      "error": "Congress.gov request failed for /member/A000370.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "J000295",
-      "error": "Congress.gov request failed for /member/J000295.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "B001281",
-      "error": "Congress.gov request failed for /member/B001281.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "J000294",
-      "error": "Congress.gov request failed for /member/J000294.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "M001188",
-      "error": "Congress.gov request failed for /member/M001188.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "W000812",
-      "error": "Congress.gov request failed for /member/W000812.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "S001195",
-      "error": "Congress.gov request failed for /member/S001195.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "B001282",
-      "error": "Congress.gov request failed for /member/B001282.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "T000193",
-      "error": "Congress.gov request failed for /member/T000193.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "S000522",
-      "error": "Congress.gov request failed for /member/S000522.",
-      "stage": "detail"
-    },
-    {
-      "bioguideId": "S001184",
-      "error": "Congress.gov request failed for /member/S001184.",
-      "stage": "detail"
-    }
-  ],
+  "debt_metric": false,
+  "descriptions": 0,
+  "details": 0,
+  "dossiers": 0,
+  "errors": [],
   "ethics": 537,
   "ethics_fallback": 49,
-  "ethics_sweep_cursor": "S001176",
-  "fallback_descriptions": 3,
+  "ethics_sweep_cursor": "S000522",
+  "fallback_descriptions": 0,
   "fec_scored_this_run": 10,
-  "generated_at": "2026-08-12T05:18:31.457513+00:00",
+  "generated_at": "2026-08-12T07:53:54.470997+00:00",
   "member_score_index": true,
   "members": 537,
-  "nominate": 535,
-  "recent_bills": true,
+  "nominate": 0,
+  "recent_bills": false,
   "roster_summary": {
     "by_chamber": {
       "House": 437,
@@ -124,6 +53,6 @@
       }
     }
   },
-  "wiki": 534,
-  "wiki_reused": 423
+  "wiki": 0,
+  "wiki_reused": 0
 }
