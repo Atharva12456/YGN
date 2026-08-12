@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 92.3,
-      "value": 0.834,
+      "score": 92.6,
+      "value": 0.8399,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 93.3,
-      "value": 0.3569,
+      "score": 92.7,
+      "value": 0.3476,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 1115308.21,
+        "amount": 1271987.15,
         "label": "Small individual (unitemized)",
-        "share": 0.2976666390059983
+        "share": 0.29192099966951085
       },
       {
-        "amount": 2009712.23,
+        "amount": 2387496.09,
         "label": "Large individual (itemized)",
-        "share": 0.5363757565035319
+        "share": 0.5479302564494055
       },
       {
-        "amount": 621816.0,
+        "amount": 697816.0,
         "label": "PAC / other committees",
-        "share": 0.16595760449046984
+        "share": 0.16014874388108355
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 1424246.37,
+      "cashOnHand": 1567747.13,
       "debts": 0.0,
-      "disbursements": 3395720.23,
-      "individualContributions": 3125020.44,
-      "receipts": 4687829.04
+      "disbursements": 3862682.27,
+      "individualContributions": 3659483.24,
+      "receipts": 5298291.84
     }
   },
-  "generated_at": "2026-07-15T05:58:43.161956+00:00",
+  "generated_at": "2026-08-12T22:03:27.944832+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 94.2,
+  "score": 94.1,
   "source": "fec_live",
-  "updated_at": "2026-07-15T06:10:14.977042+00:00"
+  "updated_at": "2026-08-12T22:03:41.197158+00:00"
 }
