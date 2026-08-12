@@ -278,7 +278,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-08-10T07:40:20Z"
+      "updateDate": "2026-08-11T07:40:23Z"
     },
     "request": {
       "bioguideId": "r000603",
@@ -299,8 +299,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 62.1,
-        "value": 0.3931,
+        "score": 77.7,
+        "value": 0.5555,
         "weight": 0.2
       },
       "in_state_support": {
@@ -309,18 +309,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 54.0,
-        "value": 0.372,
+        "score": 55.0,
+        "value": 0.3922,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 1.0,
+        "value": 0.9999,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 39.5,
-        "value": 0.0097,
+        "score": 39.0,
+        "value": 0.0086,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -331,29 +331,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.4,
+    "financeScore": 64.6,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 5539.78,
+          "amount": 6705.48,
           "label": "Small individual (unitemized)",
-          "share": 0.0036008793488576784
+          "share": 0.0033690611302754233
         },
         {
-          "amount": 566738.21,
+          "amount": 773906.69,
           "label": "Large individual (itemized)",
-          "share": 0.3683821228636455
+          "share": 0.3888370329550027
         },
         {
-          "amount": 966174.0,
+          "amount": 1209449.0,
           "label": "PAC / other committees",
-          "share": 0.6280169977874968
+          "share": 0.6076682974150218
         },
         {
-          "amount": 0.0,
+          "amount": 250.0,
           "label": "Political party committees",
-          "share": 0.0
+          "share": 0.00012560849970007454
         },
         {
           "amount": 0.0,
@@ -371,14 +371,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2005910.45,
+        "cashOnHand": 2301487.27,
         "debts": 0.0,
-        "disbursements": 968178.9,
-        "individualContributions": 572277.99,
-        "receipts": 1538563.64
+        "disbursements": 1124461.26,
+        "individualContributions": 780612.17,
+        "receipts": 1990422.82
       }
     },
-    "generated_at": "2026-07-14T23:11:41.322189+00:00",
+    "generated_at": "2026-08-11T13:43:56.939000+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -386,35 +386,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 51.4,
+    "score": 54.6,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-07-14T23:14:33.644745+00:00"
+    "updated_at": "2026-08-11T13:44:05.327631+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "R000603",
     "breakdown": [
       {
-        "amount": 5539.78,
+        "amount": 6705.48,
         "label": "Small individual (unitemized)",
-        "share": 0.0036008793488576784
+        "share": 0.0033690611302754233
       },
       {
-        "amount": 566738.21,
+        "amount": 773906.69,
         "label": "Large individual (itemized)",
-        "share": 0.3683821228636455
+        "share": 0.3888370329550027
       },
       {
-        "amount": 966174.0,
+        "amount": 1209449.0,
         "label": "PAC / other committees",
-        "share": 0.6280169977874968
+        "share": 0.6076682974150218
       },
       {
-        "amount": 0.0,
+        "amount": 250.0,
         "label": "Political party committees",
-        "share": 0.0
+        "share": 0.00012560849970007454
       },
       {
         "amount": 0.0,
@@ -443,8 +443,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 62.1,
-          "value": 0.3931,
+          "score": 77.7,
+          "value": 0.5555,
           "weight": 0.2
         },
         "in_state_support": {
@@ -453,18 +453,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 54.0,
-          "value": 0.372,
+          "score": 55.0,
+          "value": 0.3922,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 1.0,
+          "value": 0.9999,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 39.5,
-          "value": 0.0097,
+          "score": 39.0,
+          "value": 0.0086,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -475,8 +475,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 61.4,
-      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "financeScore": 64.6,
+      "generated_at": "2026-08-11T13:43:56.939000+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -484,23 +484,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 51.4,
+      "score": 54.6,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 2,
-      "updated_at": "2026-07-14T23:14:33.644745+00:00"
+      "updated_at": "2026-08-11T13:44:05.327631+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2005910.45,
+      "cashOnHand": 2301487.27,
       "debts": 0.0,
-      "disbursements": 968178.9,
-      "individualContributions": 572277.99,
-      "receipts": 1538563.64
+      "disbursements": 1124461.26,
+      "individualContributions": 780612.17,
+      "receipts": 1990422.82
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-12T05:18:31.457513+00:00",
   "history": {
     "bioguideId": "R000603",
     "birthYear": "1972",
@@ -708,7 +708,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-08-10T07:40:20Z"
+    "updateDate": "2026-08-11T07:40:23Z"
   },
   "nominate": {
     "dim1": 0.567,

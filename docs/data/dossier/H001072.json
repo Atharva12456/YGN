@@ -104,7 +104,7 @@
       "birthYear": "1956",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1140,
+        "count": 1143,
         "url": "https://api.congress.gov/v3/member/H001072/cosponsored-legislation"
       },
       "currentMember": true,
@@ -215,7 +215,7 @@
           "stateName": "Arkansas"
         }
       ],
-      "updateDate": "2026-08-10T07:40:20Z"
+      "updateDate": "2026-08-11T07:40:23Z"
     },
     "request": {
       "bioguideId": "h001072",
@@ -241,13 +241,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 69.6,
-        "value": 0.1966,
+        "score": 69.3,
+        "value": 0.1942,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 70.1,
-        "value": 0.551,
+        "score": 70.2,
+        "value": 0.5515,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -256,8 +256,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 42.5,
-        "value": 0.0162,
+        "score": 42.4,
+        "value": 0.016,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -273,19 +273,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 25314.29,
+          "amount": 28686.18,
           "label": "Small individual (unitemized)",
-          "share": 0.008934199607835695
+          "share": 0.008827934906725956
         },
         {
-          "amount": 1535760.31,
+          "amount": 1763424.31,
           "label": "Large individual (itemized)",
-          "share": 0.5420175386839459
+          "share": 0.5426792630325171
         },
         {
-          "amount": 1272339.82,
+          "amount": 1457367.48,
           "label": "PAC / other committees",
-          "share": 0.4490482617082185
+          "share": 0.4484928020607568
         },
         {
           "amount": 0.0,
@@ -308,14 +308,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2662031.09,
+        "cashOnHand": 2967541.43,
         "debts": 0.0,
-        "disbursements": 2504432.62,
-        "individualContributions": 1561074.6,
-        "receipts": 3790111.52
+        "disbursements": 2830320.69,
+        "individualContributions": 1792110.49,
+        "receipts": 4421509.93
       }
     },
-    "generated_at": "2026-07-15T00:05:00.822627+00:00",
+    "generated_at": "2026-08-11T13:43:56.939000+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -327,26 +327,26 @@
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 3,
-    "updated_at": "2026-07-15T00:05:17.904066+00:00"
+    "updated_at": "2026-08-11T13:44:35.441816+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001072",
     "breakdown": [
       {
-        "amount": 25314.29,
+        "amount": 28686.18,
         "label": "Small individual (unitemized)",
-        "share": 0.008934199607835695
+        "share": 0.008827934906725956
       },
       {
-        "amount": 1535760.31,
+        "amount": 1763424.31,
         "label": "Large individual (itemized)",
-        "share": 0.5420175386839459
+        "share": 0.5426792630325171
       },
       {
-        "amount": 1272339.82,
+        "amount": 1457367.48,
         "label": "PAC / other committees",
-        "share": 0.4490482617082185
+        "share": 0.4484928020607568
       },
       {
         "amount": 0.0,
@@ -385,13 +385,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 69.6,
-          "value": 0.1966,
+          "score": 69.3,
+          "value": 0.1942,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 70.1,
-          "value": 0.551,
+          "score": 70.2,
+          "value": 0.5515,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -400,8 +400,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 42.5,
-          "value": 0.0162,
+          "score": 42.4,
+          "value": 0.016,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -413,7 +413,7 @@
       },
       "cycle": 2026,
       "financeScore": 58.6,
-      "generated_at": "2026-07-15T00:05:00.822627+00:00",
+      "generated_at": "2026-08-11T13:43:56.939000+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -425,19 +425,19 @@
       "source": "fec_live",
       "stockPenalty": 22,
       "stockPtrCount": 3,
-      "updated_at": "2026-07-15T00:05:17.904066+00:00"
+      "updated_at": "2026-08-11T13:44:35.441816+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2662031.09,
+      "cashOnHand": 2967541.43,
       "debts": 0.0,
-      "disbursements": 2504432.62,
-      "individualContributions": 1561074.6,
-      "receipts": 3790111.52
+      "disbursements": 2830320.69,
+      "individualContributions": 1792110.49,
+      "receipts": 4421509.93
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-12T05:18:31.457513+00:00",
   "history": {
     "bioguideId": "H001072",
     "birthYear": "1956",
@@ -537,7 +537,7 @@
     "birthYear": "1956",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1140,
+      "count": 1143,
       "url": "https://api.congress.gov/v3/member/H001072/cosponsored-legislation"
     },
     "currentMember": true,
@@ -648,7 +648,7 @@
         "stateName": "Arkansas"
       }
     ],
-    "updateDate": "2026-08-10T07:40:20Z"
+    "updateDate": "2026-08-11T07:40:23Z"
   },
   "nominate": {
     "dim1": 0.435,
@@ -663,6 +663,7 @@
   },
   "wiki": {
     "extract": "J. Hill is an American music arranger who worked extensively in his earlier years as a brass player in big bands, later on taking up music arranging. He has received three Emmy Awards.",
+    "generated_at": "2026-07-06T23:50:23.695788+00:00",
     "source": "wikipedia",
     "summary": "J. Hill is an American music arranger who worked extensively in his earlier years as a brass player in big bands, later on taking up music arranging. He has received three Emmy Awards.",
     "thumbnail": null,
