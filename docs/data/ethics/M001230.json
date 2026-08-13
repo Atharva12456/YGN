@@ -15,23 +15,23 @@
       "weight": 0.2
     },
     "in_state_support": {
-      "score": 73.1,
-      "value": 0.2254,
+      "score": 74.7,
+      "value": 0.2395,
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 74.4,
-      "value": 0.5864,
+      "score": 74.5,
+      "value": 0.5876,
       "weight": 0.25
     },
     "self_party_independence": {
       "score": 96.0,
-      "value": 0.9987,
+      "value": 0.9989,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 95.1,
-      "value": 0.386,
+      "score": 94.2,
+      "value": 0.3711,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -47,24 +47,24 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 506594.97,
+        "amount": 554133.97,
         "label": "Small individual (unitemized)",
-        "share": 0.22634280880042443
+        "share": 0.21806392520619539
       },
       {
-        "amount": 805860.91,
+        "amount": 939107.04,
         "label": "Large individual (itemized)",
-        "share": 0.36005257192321916
+        "share": 0.36955930951349464
       },
       {
-        "amount": 920719.8,
+        "amount": 1042912.78,
         "label": "PAC / other committees",
-        "share": 0.4113706570165216
+        "share": 0.41040915512634124
       },
       {
         "amount": 5000.0,
         "label": "Political party committees",
-        "share": 0.0022339622598347595
+        "share": 0.001967610153968682
       },
       {
         "amount": 0.0,
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 2594247.39,
-      "debts": 39140.69,
-      "disbursements": 1235340.95,
-      "individualContributions": 1312455.88,
-      "receipts": 3726348.43
+      "cashOnHand": 2938717.17,
+      "debts": 22583.23,
+      "disbursements": 1521927.85,
+      "individualContributions": 1493241.01,
+      "receipts": 4357405.11
     }
   },
-  "generated_at": "2026-07-15T09:21:18.795182+00:00",
+  "generated_at": "2026-08-13T16:10:21.555079+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -100,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-15T09:21:45.133919+00:00"
+  "updated_at": "2026-08-13T16:11:02.271725+00:00"
 }

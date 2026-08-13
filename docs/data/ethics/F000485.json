@@ -10,28 +10,28 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 67.3,
-      "value": 0.4469,
+      "score": 67.5,
+      "value": 0.4493,
       "weight": 0.2
     },
     "in_state_support": {
-      "score": 87.6,
-      "value": 0.419,
+      "score": 87.5,
+      "value": 0.4186,
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 92.3,
-      "value": 0.8332,
+      "score": 89.3,
+      "value": 0.7796,
       "weight": 0.25
     },
     "self_party_independence": {
-      "score": 57.8,
-      "value": 0.6946,
+      "score": 60.9,
+      "value": 0.7239,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 77.3,
-      "value": 0.1544,
+      "score": 78.3,
+      "value": 0.1602,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -47,19 +47,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 156932.67,
+        "amount": 173150.9,
         "label": "Small individual (unitemized)",
-        "share": 0.12866578515473476
+        "share": 0.12490390240178821
       },
       {
-        "amount": 859339.46,
+        "amount": 907641.3,
         "label": "Large individual (itemized)",
-        "share": 0.7045542928400171
+        "share": 0.6547349182189187
       },
       {
-        "amount": 203420.19,
+        "amount": 305480.74,
         "label": "PAC / other committees",
-        "share": 0.166779922005248
+        "share": 0.2203611793792931
       },
       {
         "amount": 0.0,
@@ -69,7 +69,7 @@
       {
         "amount": 450000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.36894550586331476
+        "share": 0.32461140011865197
       }
     ],
     "candidate": {
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 77174.07,
-      "debts": 424922.24,
-      "disbursements": 1592518.25,
-      "individualContributions": 1016272.13,
-      "receipts": 1669692.32
+      "cashOnHand": 70518.1,
+      "debts": 411902.13,
+      "disbursements": 1776374.19,
+      "individualContributions": 1080792.2,
+      "receipts": 1846892.29
     }
   },
-  "generated_at": "2026-07-15T09:21:18.795182+00:00",
+  "generated_at": "2026-08-13T16:10:21.555079+00:00",
   "grade": "C+",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -100,5 +100,5 @@
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-07-15T09:21:35.168072+00:00"
+  "updated_at": "2026-08-13T16:10:30.972843+00:00"
 }
