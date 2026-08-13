@@ -21,7 +21,7 @@
     },
     "pac_independence": {
       "score": 96.2,
-      "value": 0.9539,
+      "value": 0.954,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 98.3,
-      "value": 0.6282,
+      "score": 98.2,
+      "value": 0.6233,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 4657258.01,
+        "amount": 5077892.15,
         "label": "Small individual (unitemized)",
-        "share": 0.5992479279985845
+        "share": 0.5946540616752106
       },
       {
-        "amount": 2756077.28,
+        "amount": 3068842.13,
         "label": "Large individual (itemized)",
-        "share": 0.3546235995295383
+        "share": 0.359381291161236
       },
       {
-        "amount": 358503.03,
+        "amount": 392503.03,
         "label": "PAC / other committees",
-        "share": 0.04612847247187716
+        "share": 0.0459646471635533
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 3801810.77,
+      "cashOnHand": 4131816.17,
       "debts": 0.0,
-      "disbursements": 6653277.61,
-      "individualContributions": 7413335.29,
-      "receipts": 8872266.62
+      "disbursements": 7171503.07,
+      "individualContributions": 8146734.28,
+      "receipts": 9720497.48
     }
   },
-  "generated_at": "2026-07-15T06:27:55.682997+00:00",
+  "generated_at": "2026-08-13T07:54:38.968153+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 97.0,
+  "score": 96.9,
   "source": "fec_live",
-  "updated_at": "2026-07-15T06:30:24.668996+00:00"
+  "updated_at": "2026-08-13T07:54:48.987902+00:00"
 }
