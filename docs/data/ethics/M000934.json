@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 51.5,
-      "value": 0.3223,
+      "score": 51.4,
+      "value": 0.3212,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 61.0,
-      "value": 0.0664,
+      "score": 60.5,
+      "value": 0.0635,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 24787.42,
+        "amount": 24804.46,
         "label": "Small individual (unitemized)",
-        "share": 0.0213899029943303
+        "share": 0.02038942621532791
       },
       {
-        "amount": 348750.0,
+        "amount": 365931.0,
         "label": "Large individual (itemized)",
-        "share": 0.30094816924362006
+        "share": 0.30079764382700364
       },
       {
-        "amount": 785300.0,
+        "amount": 825800.0,
         "label": "PAC / other committees",
-        "share": 0.6776619277620497
+        "share": 0.6788129299576685
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 5515291.6,
-      "debts": 61238.33,
-      "disbursements": 659963.55,
-      "individualContributions": 373537.42,
-      "receipts": 2796529.81
+      "cashOnHand": 5757899.7,
+      "debts": 44832.45,
+      "disbursements": 728025.4,
+      "individualContributions": 390735.46,
+      "receipts": 3107199.76
     }
   },
-  "generated_at": "2026-07-15T06:27:55.682997+00:00",
+  "generated_at": "2026-08-13T02:48:35.044650+00:00",
   "grade": "C-",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 72.1,
+  "score": 71.9,
   "source": "fec_live",
-  "updated_at": "2026-07-15T06:28:05.995147+00:00"
+  "updated_at": "2026-08-13T02:49:05.420673+00:00"
 }
