@@ -122,7 +122,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 236,
+        "count": 237,
         "url": "https://api.congress.gov/v3/member/S000510/sponsored-legislation"
       },
       "state": "Washington",
@@ -277,7 +277,7 @@
           "stateName": "Washington"
         }
       ],
-      "updateDate": "2026-08-10T07:40:19Z"
+      "updateDate": "2026-08-12T07:40:19Z"
     },
     "request": {
       "bioguideId": "s000510",
@@ -298,8 +298,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 59.6,
-        "value": 0.3669,
+        "score": 85.8,
+        "value": 0.6679,
         "weight": 0.2
       },
       "in_state_support": {
@@ -308,8 +308,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 79.3,
-        "value": 0.6274,
+        "score": 84.8,
+        "value": 0.7006,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -318,8 +318,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 66.1,
-        "value": 0.0936,
+        "score": 62.1,
+        "value": 0.072,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -330,29 +330,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 75.0,
+    "financeScore": 80.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 66260.89,
+          "amount": 94877.67,
           "label": "Small individual (unitemized)",
-          "share": 0.05873870354483403
+          "share": 0.05044119049662082
         },
         {
-          "amount": 641475.75,
+          "amount": 1222913.09,
           "label": "Large individual (itemized)",
-          "share": 0.5686530004418906
+          "share": 0.650155006267557
         },
         {
-          "amount": 420250.0,
+          "amount": 563000.0,
           "label": "PAC / other committees",
-          "share": 0.3725416330012546
+          "share": 0.2993158479713669
         },
         {
-          "amount": 75.2,
+          "amount": 165.44,
           "label": "Political party committees",
-          "share": 6.66630120206885e-05
+          "share": 8.795526445538711e-05
         },
         {
           "amount": 0.0,
@@ -370,50 +370,50 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 847127.52,
+        "cashOnHand": 869548.73,
         "debts": 0.0,
-        "disbursements": 852274.96,
-        "individualContributions": 707736.64,
-        "receipts": 1128649.66
+        "disbursements": 1583205.56,
+        "individualContributions": 1317790.76,
+        "receipts": 1882001.47
       }
     },
-    "generated_at": "2026-07-15T05:58:43.161956+00:00",
-    "grade": "D",
+    "generated_at": "2026-08-12T07:53:54.470997+00:00",
+    "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 65.0,
+    "score": 70.4,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-15T06:08:17.987250+00:00"
+    "updated_at": "2026-08-12T07:54:02.859346+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S000510",
     "breakdown": [
       {
-        "amount": 66260.89,
+        "amount": 94877.67,
         "label": "Small individual (unitemized)",
-        "share": 0.05873870354483403
+        "share": 0.05044119049662082
       },
       {
-        "amount": 641475.75,
+        "amount": 1222913.09,
         "label": "Large individual (itemized)",
-        "share": 0.5686530004418906
+        "share": 0.650155006267557
       },
       {
-        "amount": 420250.0,
+        "amount": 563000.0,
         "label": "PAC / other committees",
-        "share": 0.3725416330012546
+        "share": 0.2993158479713669
       },
       {
-        "amount": 75.2,
+        "amount": 165.44,
         "label": "Political party committees",
-        "share": 6.66630120206885e-05
+        "share": 8.795526445538711e-05
       },
       {
         "amount": 0.0,
@@ -442,8 +442,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 59.6,
-          "value": 0.3669,
+          "score": 85.8,
+          "value": 0.6679,
           "weight": 0.2
         },
         "in_state_support": {
@@ -452,8 +452,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 79.3,
-          "value": 0.6274,
+          "score": 84.8,
+          "value": 0.7006,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -462,8 +462,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 66.1,
-          "value": 0.0936,
+          "score": 62.1,
+          "value": 0.072,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -474,32 +474,32 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 75.0,
-      "generated_at": "2026-07-15T05:58:43.161956+00:00",
-      "grade": "D",
+      "financeScore": 80.4,
+      "generated_at": "2026-08-12T07:53:54.470997+00:00",
+      "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 65.0,
+      "score": 70.4,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-07-15T06:08:17.987250+00:00"
+      "updated_at": "2026-08-12T07:54:02.859346+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 847127.52,
+      "cashOnHand": 869548.73,
       "debts": 0.0,
-      "disbursements": 852274.96,
-      "individualContributions": 707736.64,
-      "receipts": 1128649.66
+      "disbursements": 1583205.56,
+      "individualContributions": 1317790.76,
+      "receipts": 1882001.47
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-13T05:22:33.705184+00:00",
   "history": {
     "bioguideId": "S000510",
     "birthYear": "1965",
@@ -731,7 +731,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 236,
+      "count": 237,
       "url": "https://api.congress.gov/v3/member/S000510/sponsored-legislation"
     },
     "state": "Washington",
@@ -886,7 +886,7 @@
         "stateName": "Washington"
       }
     ],
-    "updateDate": "2026-08-10T07:40:19Z"
+    "updateDate": "2026-08-12T07:40:19Z"
   },
   "nominate": {
     "dim1": -0.291,

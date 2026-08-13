@@ -205,7 +205,7 @@
           "stateName": "Missouri"
         }
       ],
-      "updateDate": "2026-08-10T07:40:20Z"
+      "updateDate": "2026-08-12T07:40:20Z"
     },
     "request": {
       "bioguideId": "s001195",
@@ -231,13 +231,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 76.3,
-        "value": 0.2525,
+        "score": 74.6,
+        "value": 0.2386,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 53.5,
-        "value": 0.3623,
+        "score": 53.6,
+        "value": 0.3637,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -246,8 +246,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 80.4,
-        "value": 0.1715,
+        "score": 81.1,
+        "value": 0.1752,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -258,24 +258,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 66.5,
+    "financeScore": 66.6,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 222805.6,
+          "amount": 273782.28,
           "label": "Small individual (unitemized)",
-          "share": 0.062119386651826716
+          "share": 0.06370963837611586
         },
         {
-          "amount": 1076601.53,
+          "amount": 1289287.47,
           "label": "Large individual (itemized)",
-          "share": 0.30016223430658034
+          "share": 0.3000195574255475
         },
         {
-          "amount": 2287325.0,
+          "amount": 2734275.0,
           "label": "PAC / other committees",
-          "share": 0.637718379041593
+          "share": 0.6362708041983367
         },
         {
           "amount": 0.0,
@@ -298,44 +298,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 4884151.41,
+        "cashOnHand": 5012102.53,
         "debts": 0.0,
-        "disbursements": 2593542.85,
-        "individualContributions": 1299407.13,
-        "receipts": 4460550.3
+        "disbursements": 3269224.39,
+        "individualContributions": 1563069.75,
+        "receipts": 5264182.96
       }
     },
-    "generated_at": "2026-07-15T14:09:09.363635+00:00",
+    "generated_at": "2026-08-11T19:25:20.417676+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 66.5,
+    "score": 66.6,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-15T14:09:37.445130+00:00"
+    "updated_at": "2026-08-11T19:25:26.273085+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001195",
     "breakdown": [
       {
-        "amount": 222805.6,
+        "amount": 273782.28,
         "label": "Small individual (unitemized)",
-        "share": 0.062119386651826716
+        "share": 0.06370963837611586
       },
       {
-        "amount": 1076601.53,
+        "amount": 1289287.47,
         "label": "Large individual (itemized)",
-        "share": 0.30016223430658034
+        "share": 0.3000195574255475
       },
       {
-        "amount": 2287325.0,
+        "amount": 2734275.0,
         "label": "PAC / other committees",
-        "share": 0.637718379041593
+        "share": 0.6362708041983367
       },
       {
         "amount": 0.0,
@@ -374,13 +374,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 76.3,
-          "value": 0.2525,
+          "score": 74.6,
+          "value": 0.2386,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 53.5,
-          "value": 0.3623,
+          "score": 53.6,
+          "value": 0.3637,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -389,8 +389,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 80.4,
-          "value": 0.1715,
+          "score": 81.1,
+          "value": 0.1752,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -401,31 +401,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 66.5,
-      "generated_at": "2026-07-15T14:09:09.363635+00:00",
+      "financeScore": 66.6,
+      "generated_at": "2026-08-11T19:25:20.417676+00:00",
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 66.5,
+      "score": 66.6,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-15T14:09:37.445130+00:00"
+      "updated_at": "2026-08-11T19:25:26.273085+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 4884151.41,
+      "cashOnHand": 5012102.53,
       "debts": 0.0,
-      "disbursements": 2593542.85,
-      "individualContributions": 1299407.13,
-      "receipts": 4460550.3
+      "disbursements": 3269224.39,
+      "individualContributions": 1563069.75,
+      "receipts": 5264182.96
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-13T05:22:33.705184+00:00",
   "history": {
     "bioguideId": "S001195",
     "birthYear": "1980",
@@ -661,7 +661,7 @@
         "stateName": "Missouri"
       }
     ],
-    "updateDate": "2026-08-10T07:40:20Z"
+    "updateDate": "2026-08-12T07:40:20Z"
   },
   "nominate": {
     "dim1": 0.577,

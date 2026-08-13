@@ -294,23 +294,23 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 86.3,
-        "value": 0.3926,
+        "score": 85.3,
+        "value": 0.3712,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 72.0,
-        "value": 0.5664,
+        "score": 91.3,
+        "value": 0.8155,
         "weight": 0.25
       },
       "self_party_independence": {
-        "score": 94.1,
-        "value": 0.9778,
+        "score": 52.2,
+        "value": 0.523,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 66.1,
-        "value": 0.0939,
+        "score": 68.0,
+        "value": 0.1044,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -323,29 +323,29 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 164568.28,
+          "amount": 232135.79,
           "label": "Small individual (unitemized)",
-          "share": 0.05180083664781205
+          "share": 0.02517214160428568
         },
         {
-          "amount": 1588884.04,
+          "amount": 1992093.99,
           "label": "Large individual (itemized)",
-          "share": 0.5001299315296707
+          "share": 0.21601697870598263
         },
         {
-          "amount": 1315602.65,
+          "amount": 1639815.15,
           "label": "PAC / other committees",
-          "share": 0.4141096811978508
+          "share": 0.17781686813848463
         },
         {
           "amount": 62000.0,
           "label": "Political party committees",
-          "share": 0.019515619122739494
+          "share": 0.006723102798864888
         },
         {
-          "amount": 45887.54,
+          "amount": 5295887.54,
           "label": "Self-funding & candidate loans",
-          "share": 0.014443931501926991
+          "share": 0.5742709087523821
         }
       ],
       "candidate": {
@@ -358,52 +358,52 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1072534.52,
+        "cashOnHand": 6910969.9,
         "debts": 0.0,
-        "disbursements": 4281083.75,
-        "individualContributions": 1753452.32,
-        "receipts": 4866649.16
+        "disbursements": 4809505.91,
+        "individualContributions": 2224229.78,
+        "receipts": 11233506.7
       }
     },
-    "generated_at": "2026-07-15T15:49:46.765621+00:00",
-    "grade": "D+",
+    "generated_at": "2026-08-13T02:48:35.044650+00:00",
+    "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 67.6,
+    "score": 66.6,
     "source": "fec_live",
-    "updated_at": "2026-07-15T15:50:31.990973+00:00"
+    "updated_at": "2026-08-13T02:48:37.423268+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "R000618",
     "breakdown": [
       {
-        "amount": 164568.28,
+        "amount": 232135.79,
         "label": "Small individual (unitemized)",
-        "share": 0.05180083664781205
+        "share": 0.02517214160428568
       },
       {
-        "amount": 1588884.04,
+        "amount": 1992093.99,
         "label": "Large individual (itemized)",
-        "share": 0.5001299315296707
+        "share": 0.21601697870598263
       },
       {
-        "amount": 1315602.65,
+        "amount": 1639815.15,
         "label": "PAC / other committees",
-        "share": 0.4141096811978508
+        "share": 0.17781686813848463
       },
       {
         "amount": 62000.0,
         "label": "Political party committees",
-        "share": 0.019515619122739494
+        "share": 0.006723102798864888
       },
       {
-        "amount": 45887.54,
+        "amount": 5295887.54,
         "label": "Self-funding & candidate loans",
-        "share": 0.014443931501926991
+        "share": 0.5742709087523821
       }
     ],
     "candidate": {
@@ -432,23 +432,23 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 86.3,
-          "value": 0.3926,
+          "score": 85.3,
+          "value": 0.3712,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 72.0,
-          "value": 0.5664,
+          "score": 91.3,
+          "value": 0.8155,
           "weight": 0.25
         },
         "self_party_independence": {
-          "score": 94.1,
-          "value": 0.9778,
+          "score": 52.2,
+          "value": 0.523,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 66.1,
-          "value": 0.0939,
+          "score": 68.0,
+          "value": 0.1044,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -457,28 +457,28 @@
         }
       },
       "cycle": 2026,
-      "generated_at": "2026-07-15T15:49:46.765621+00:00",
-      "grade": "D+",
+      "generated_at": "2026-08-13T02:48:35.044650+00:00",
+      "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 67.6,
+      "score": 66.6,
       "source": "fec_live",
-      "updated_at": "2026-07-15T15:50:31.990973+00:00"
+      "updated_at": "2026-08-13T02:48:37.423268+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1072534.52,
+      "cashOnHand": 6910969.9,
       "debts": 0.0,
-      "disbursements": 4281083.75,
-      "individualContributions": 1753452.32,
-      "receipts": 4866649.16
+      "disbursements": 4809505.91,
+      "individualContributions": 2224229.78,
+      "receipts": 11233506.7
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-13T05:22:33.705184+00:00",
   "history": {
     "bioguideId": "R000618",
     "birthYear": "1964",

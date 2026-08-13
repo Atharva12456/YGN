@@ -300,7 +300,7 @@
           "stateName": "Mississippi"
         }
       ],
-      "updateDate": "2026-08-10T07:40:19Z"
+      "updateDate": "2026-08-12T07:40:19Z"
     },
     "request": {
       "bioguideId": "t000193",
@@ -321,13 +321,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 81.8,
-        "value": 0.5983,
+        "score": 76.5,
+        "value": 0.5428,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 67.7,
-        "value": 0.1811,
+        "score": 64.5,
+        "value": 0.1544,
         "weight": 0.1
       },
       "pac_independence": {
@@ -353,7 +353,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 64.5,
+    "financeScore": 63.1,
     "funding": {
       "available": true,
       "breakdown": [
@@ -400,18 +400,18 @@
         "receipts": 770970.73
       }
     },
-    "generated_at": "2026-07-15T03:33:30.569516+00:00",
+    "generated_at": "2026-08-12T07:53:54.470997+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 64.5,
+    "score": 63.1,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-15T03:35:14.622784+00:00"
+    "updated_at": "2026-08-12T07:54:08.129800+00:00"
   },
   "funding": {
     "available": true,
@@ -464,13 +464,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 81.8,
-          "value": 0.5983,
+          "score": 76.5,
+          "value": 0.5428,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 67.7,
-          "value": 0.1811,
+          "score": 64.5,
+          "value": 0.1544,
           "weight": 0.1
         },
         "pac_independence": {
@@ -496,19 +496,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 64.5,
-      "generated_at": "2026-07-15T03:33:30.569516+00:00",
+      "financeScore": 63.1,
+      "generated_at": "2026-08-12T07:53:54.470997+00:00",
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 64.5,
+      "score": 63.1,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-15T03:35:14.622784+00:00"
+      "updated_at": "2026-08-12T07:54:08.129800+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -520,7 +520,7 @@
       "receipts": 770970.73
     }
   },
-  "generated_at": "2026-08-11T04:53:31.565696+00:00",
+  "generated_at": "2026-08-13T05:22:33.705184+00:00",
   "history": {
     "bioguideId": "T000193",
     "birthYear": "1948",
@@ -948,7 +948,7 @@
         "stateName": "Mississippi"
       }
     ],
-    "updateDate": "2026-08-10T07:40:19Z"
+    "updateDate": "2026-08-12T07:40:19Z"
   },
   "nominate": {
     "dim1": -0.519,
