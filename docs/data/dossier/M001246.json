@@ -118,7 +118,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-08-12T07:40:25Z"
+      "updateDate": "2026-08-13T07:40:46Z"
     },
     "request": {
       "bioguideId": "m001246",
@@ -139,28 +139,28 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 84.6,
-        "value": 0.6469,
+        "score": 85.1,
+        "value": 0.6545,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 88.7,
-        "value": 0.4445,
+        "score": 89.8,
+        "value": 0.4663,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 92.1,
-        "value": 0.8296,
+        "score": 91.1,
+        "value": 0.8127,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9918,
+        "value": 0.9931,
         "weight": 0.15
       },
       "small_donor": {
         "score": 96.4,
-        "value": 0.4393,
+        "value": 0.4361,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -176,29 +176,29 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 552714.5,
+          "amount": 633740.25,
           "label": "Small individual (unitemized)",
-          "share": 0.36242174228432583
+          "share": 0.3527295570888673
         },
         {
-          "amount": 705408.61,
+          "amount": 819428.61,
           "label": "Large individual (itemized)",
-          "share": 0.4625451611248927
+          "share": 0.45608069026899606
         },
         {
-          "amount": 254335.78,
+          "amount": 330905.78,
           "label": "PAC / other committees",
-          "share": 0.16677112055653143
+          "share": 0.18417679675158105
         },
         {
           "amount": 5600.0,
           "label": "Political party committees",
-          "share": 0.003671989348555583
+          "share": 0.003116869284691412
         },
         {
           "amount": 7000.0,
           "label": "Self-funding & candidate loans",
-          "share": 0.0045899866856944785
+          "share": 0.003896086605864265
         }
       ],
       "candidate": {
@@ -211,14 +211,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 134395.13,
-        "debts": 49601.96,
-        "disbursements": 1406663.76,
-        "individualContributions": 1258123.11,
-        "receipts": 1541058.89
+        "cashOnHand": 27475.47,
+        "debts": 111425.91,
+        "disbursements": 1795960.42,
+        "individualContributions": 1453168.86,
+        "receipts": 1823435.89
       }
     },
-    "generated_at": "2026-07-15T09:21:18.795182+00:00",
+    "generated_at": "2026-08-13T16:10:21.555079+00:00",
     "grade": "A-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -229,36 +229,36 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-15T09:21:33.736221+00:00"
+    "updated_at": "2026-08-13T16:10:29.149621+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M001246",
     "breakdown": [
       {
-        "amount": 552714.5,
+        "amount": 633740.25,
         "label": "Small individual (unitemized)",
-        "share": 0.36242174228432583
+        "share": 0.3527295570888673
       },
       {
-        "amount": 705408.61,
+        "amount": 819428.61,
         "label": "Large individual (itemized)",
-        "share": 0.4625451611248927
+        "share": 0.45608069026899606
       },
       {
-        "amount": 254335.78,
+        "amount": 330905.78,
         "label": "PAC / other committees",
-        "share": 0.16677112055653143
+        "share": 0.18417679675158105
       },
       {
         "amount": 5600.0,
         "label": "Political party committees",
-        "share": 0.003671989348555583
+        "share": 0.003116869284691412
       },
       {
         "amount": 7000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.0045899866856944785
+        "share": 0.003896086605864265
       }
     ],
     "candidate": {
@@ -282,28 +282,28 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 84.6,
-          "value": 0.6469,
+          "score": 85.1,
+          "value": 0.6545,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 88.7,
-          "value": 0.4445,
+          "score": 89.8,
+          "value": 0.4663,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 92.1,
-          "value": 0.8296,
+          "score": 91.1,
+          "value": 0.8127,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9918,
+          "value": 0.9931,
           "weight": 0.15
         },
         "small_donor": {
           "score": 96.4,
-          "value": 0.4393,
+          "value": 0.4361,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -315,7 +315,7 @@
       },
       "cycle": 2026,
       "financeScore": 92.1,
-      "generated_at": "2026-07-15T09:21:18.795182+00:00",
+      "generated_at": "2026-08-13T16:10:21.555079+00:00",
       "grade": "A-",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -326,19 +326,19 @@
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-15T09:21:33.736221+00:00"
+      "updated_at": "2026-08-13T16:10:29.149621+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 134395.13,
-      "debts": 49601.96,
-      "disbursements": 1406663.76,
-      "individualContributions": 1258123.11,
-      "receipts": 1541058.89
+      "cashOnHand": 27475.47,
+      "debts": 111425.91,
+      "disbursements": 1795960.42,
+      "individualContributions": 1453168.86,
+      "receipts": 1823435.89
     }
   },
-  "generated_at": "2026-08-13T05:22:33.705184+00:00",
+  "generated_at": "2026-08-14T05:19:42.789657+00:00",
   "history": {
     "bioguideId": "M001246",
     "birthYear": "1977",
@@ -438,7 +438,7 @@
         "stateName": "New Jersey"
       }
     ],
-    "updateDate": "2026-08-12T07:40:25Z"
+    "updateDate": "2026-08-13T07:40:46Z"
   },
   "nominate": {
     "dim1": -0.382,

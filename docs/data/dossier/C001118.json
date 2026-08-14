@@ -257,7 +257,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-08-12T07:40:22Z"
+      "updateDate": "2026-08-13T07:40:43Z"
     },
     "request": {
       "bioguideId": "c001118",
@@ -278,18 +278,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 45.2,
-        "value": 0.1546,
+        "score": 49.7,
+        "value": 0.2238,
         "weight": 0.2
       },
       "in_state_support": {
         "score": 97.1,
-        "value": 0.7596,
+        "value": 0.7672,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 66.8,
-        "value": 0.5236,
+        "score": 69.8,
+        "value": 0.5484,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -298,8 +298,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 52.1,
-        "value": 0.0372,
+        "score": 60.7,
+        "value": 0.0645,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -310,24 +310,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 65.5,
+    "financeScore": 69.7,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 18116.21,
+          "amount": 46823.59,
           "label": "Small individual (unitemized)",
-          "share": 0.019465420381320327
+          "share": 0.035373743752332786
         },
         {
-          "amount": 469175.51,
+          "amount": 679098.79,
           "label": "Large individual (itemized)",
-          "share": 0.504117502213231
+          "share": 0.5130376927522913
         },
         {
-          "amount": 443395.09,
+          "amount": 597759.68,
           "label": "PAC / other committees",
-          "share": 0.4764170774054486
+          "share": 0.45158856349537596
         },
         {
           "amount": 0.0,
@@ -350,44 +350,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 655823.31,
+        "cashOnHand": 711441.57,
         "debts": 0.0,
-        "disbursements": 697896.05,
-        "individualContributions": 487291.72,
-        "receipts": 1025397.33
+        "disbursements": 1058316.84,
+        "individualContributions": 725922.38,
+        "receipts": 1441436.38
       }
     },
-    "generated_at": "2026-07-14T22:13:53.911703+00:00",
-    "grade": "D",
+    "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 65.5,
+    "score": 69.7,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T22:14:39.069422+00:00"
+    "updated_at": "2026-08-14T05:22:58.434611+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "C001118",
     "breakdown": [
       {
-        "amount": 18116.21,
+        "amount": 46823.59,
         "label": "Small individual (unitemized)",
-        "share": 0.019465420381320327
+        "share": 0.035373743752332786
       },
       {
-        "amount": 469175.51,
+        "amount": 679098.79,
         "label": "Large individual (itemized)",
-        "share": 0.504117502213231
+        "share": 0.5130376927522913
       },
       {
-        "amount": 443395.09,
+        "amount": 597759.68,
         "label": "PAC / other committees",
-        "share": 0.4764170774054486
+        "share": 0.45158856349537596
       },
       {
         "amount": 0.0,
@@ -421,18 +420,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 45.2,
-          "value": 0.1546,
+          "score": 49.7,
+          "value": 0.2238,
           "weight": 0.2
         },
         "in_state_support": {
           "score": 97.1,
-          "value": 0.7596,
+          "value": 0.7672,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 66.8,
-          "value": 0.5236,
+          "score": 69.8,
+          "value": 0.5484,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -441,8 +440,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 52.1,
-          "value": 0.0372,
+          "score": 60.7,
+          "value": 0.0645,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -453,31 +452,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 65.5,
-      "generated_at": "2026-07-14T22:13:53.911703+00:00",
-      "grade": "D",
+      "financeScore": 69.7,
+      "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 65.5,
+      "score": 69.7,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T22:14:39.069422+00:00"
+      "updated_at": "2026-08-14T05:22:58.434611+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 655823.31,
+      "cashOnHand": 711441.57,
       "debts": 0.0,
-      "disbursements": 697896.05,
-      "individualContributions": 487291.72,
-      "receipts": 1025397.33
+      "disbursements": 1058316.84,
+      "individualContributions": 725922.38,
+      "receipts": 1441436.38
     }
   },
-  "generated_at": "2026-08-13T05:22:33.705184+00:00",
+  "generated_at": "2026-08-14T05:19:42.789657+00:00",
   "history": {
     "bioguideId": "C001118",
     "birthYear": "1972",
@@ -647,7 +645,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-08-12T07:40:22Z"
+    "updateDate": "2026-08-13T07:40:43Z"
   },
   "nominate": {
     "dim1": 0.714,
