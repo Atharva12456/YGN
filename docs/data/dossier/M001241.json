@@ -108,7 +108,7 @@
       "birthYear": "1976",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 366,
+        "count": 367,
         "url": "https://api.congress.gov/v3/member/M001241/cosponsored-legislation"
       },
       "currentMember": true,
@@ -175,7 +175,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-08-13T07:40:42Z"
+      "updateDate": "2026-08-14T07:40:44Z"
     },
     "request": {
       "bioguideId": "m001241",
@@ -196,28 +196,28 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 68.3,
-        "value": 0.4572,
+        "score": 68.5,
+        "value": 0.4597,
         "weight": 0.2
       },
       "in_state_support": {
         "score": 96.5,
-        "value": 0.6768,
+        "value": 0.6816,
         "weight": 0.1
       },
       "pac_independence": {
         "score": 91.1,
-        "value": 0.8129,
+        "value": 0.8117,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9973,
+        "value": 0.9975,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 73.8,
-        "value": 0.1357,
+        "score": 73.5,
+        "value": 0.1341,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -233,24 +233,24 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 323413.93,
+          "amount": 346682.85,
           "label": "Small individual (unitemized)",
-          "share": 0.11027667174066401
+          "share": 0.10887370562403688
         },
         {
-          "amount": 2060662.68,
+          "amount": 2237941.01,
           "label": "Large individual (itemized)",
-          "share": 0.7026383246095707
+          "share": 0.7028121833159608
         },
         {
-          "amount": 540129.23,
+          "amount": 591029.23,
           "label": "PAC / other committees",
-          "share": 0.18417157787312255
+          "share": 0.18560924603631587
         },
         {
-          "amount": 8544.35,
+          "amount": 8613.01,
           "label": "Political party committees",
-          "share": 0.0029134257766427764
+          "share": 0.0027048650236863054
         },
         {
           "amount": 0.0,
@@ -268,14 +268,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1821700.89,
+        "cashOnHand": 1889359.66,
         "debts": 0.0,
-        "disbursements": 1470265.31,
-        "individualContributions": 2384076.61,
-        "receipts": 3118900.42
+        "disbursements": 1664867.18,
+        "individualContributions": 2584623.86,
+        "receipts": 3381161.06
       }
     },
-    "generated_at": "2026-07-15T00:05:00.822627+00:00",
+    "generated_at": "2026-08-14T10:17:19.198509+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -287,31 +287,31 @@
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-15T00:05:10.206662+00:00"
+    "updated_at": "2026-08-14T10:17:26.956237+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M001241",
     "breakdown": [
       {
-        "amount": 323413.93,
+        "amount": 346682.85,
         "label": "Small individual (unitemized)",
-        "share": 0.11027667174066401
+        "share": 0.10887370562403688
       },
       {
-        "amount": 2060662.68,
+        "amount": 2237941.01,
         "label": "Large individual (itemized)",
-        "share": 0.7026383246095707
+        "share": 0.7028121833159608
       },
       {
-        "amount": 540129.23,
+        "amount": 591029.23,
         "label": "PAC / other committees",
-        "share": 0.18417157787312255
+        "share": 0.18560924603631587
       },
       {
-        "amount": 8544.35,
+        "amount": 8613.01,
         "label": "Political party committees",
-        "share": 0.0029134257766427764
+        "share": 0.0027048650236863054
       },
       {
         "amount": 0.0,
@@ -340,28 +340,28 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 68.3,
-          "value": 0.4572,
+          "score": 68.5,
+          "value": 0.4597,
           "weight": 0.2
         },
         "in_state_support": {
           "score": 96.5,
-          "value": 0.6768,
+          "value": 0.6816,
           "weight": 0.1
         },
         "pac_independence": {
           "score": 91.1,
-          "value": 0.8129,
+          "value": 0.8117,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9973,
+          "value": 0.9975,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 73.8,
-          "value": 0.1357,
+          "score": 73.5,
+          "value": 0.1341,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -373,7 +373,7 @@
       },
       "cycle": 2026,
       "financeScore": 82.6,
-      "generated_at": "2026-07-15T00:05:00.822627+00:00",
+      "generated_at": "2026-08-14T10:17:19.198509+00:00",
       "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -385,19 +385,19 @@
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-07-15T00:05:10.206662+00:00"
+      "updated_at": "2026-08-14T10:17:26.956237+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1821700.89,
+      "cashOnHand": 1889359.66,
       "debts": 0.0,
-      "disbursements": 1470265.31,
-      "individualContributions": 2384076.61,
-      "receipts": 3118900.42
+      "disbursements": 1664867.18,
+      "individualContributions": 2584623.86,
+      "receipts": 3381161.06
     }
   },
-  "generated_at": "2026-08-14T05:19:42.789657+00:00",
+  "generated_at": "2026-08-15T04:13:33.416495+00:00",
   "history": {
     "bioguideId": "M001241",
     "birthYear": "1976",
@@ -452,7 +452,7 @@
     "birthYear": "1976",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 366,
+      "count": 367,
       "url": "https://api.congress.gov/v3/member/M001241/cosponsored-legislation"
     },
     "currentMember": true,
@@ -519,7 +519,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-08-13T07:40:42Z"
+    "updateDate": "2026-08-14T07:40:44Z"
   },
   "nominate": {
     "dim1": -0.204,

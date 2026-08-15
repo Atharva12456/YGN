@@ -221,7 +221,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-08-13T07:40:43Z"
+      "updateDate": "2026-08-14T07:40:45Z"
     },
     "request": {
       "bioguideId": "b001296",
@@ -242,18 +242,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 37.0,
-        "value": 0.0311,
+        "score": 37.7,
+        "value": 0.041,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 64.9,
-        "value": 0.1576,
+        "score": 66.4,
+        "value": 0.1697,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 54.1,
-        "value": 0.374,
+        "score": 52.3,
+        "value": 0.3378,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -262,8 +262,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 51.8,
-        "value": 0.0364,
+        "score": 52.1,
+        "value": 0.0372,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -274,24 +274,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 57.4,
+    "financeScore": 57.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 16778.69,
+          "amount": 18411.34,
           "label": "Small individual (unitemized)",
-          "share": 0.013619076617986786
+          "share": 0.012559736780174639
         },
         {
-          "amount": 443935.4,
+          "amount": 476705.4,
           "label": "Large individual (itemized)",
-          "share": 0.3603374414830128
+          "share": 0.3251960121147002
         },
         {
-          "amount": 771285.0,
+          "amount": 970785.0,
           "label": "PAC / other committees",
-          "share": 0.6260434818990004
+          "share": 0.6622442511051252
         },
         {
           "amount": 0.0,
@@ -314,44 +314,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 5247621.97,
+        "cashOnHand": 5560517.95,
         "debts": 0.0,
-        "disbursements": 688759.9,
-        "individualContributions": 460714.09,
-        "receipts": 2098098.52
+        "disbursements": 729723.16,
+        "individualContributions": 495116.74,
+        "receipts": 2451957.76
       }
     },
-    "generated_at": "2026-07-14T23:11:41.322189+00:00",
+    "generated_at": "2026-08-14T07:52:11.672654+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 57.4,
+    "score": 57.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T23:11:51.736413+00:00"
+    "updated_at": "2026-08-14T07:52:39.181785+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "B001296",
     "breakdown": [
       {
-        "amount": 16778.69,
+        "amount": 18411.34,
         "label": "Small individual (unitemized)",
-        "share": 0.013619076617986786
+        "share": 0.012559736780174639
       },
       {
-        "amount": 443935.4,
+        "amount": 476705.4,
         "label": "Large individual (itemized)",
-        "share": 0.3603374414830128
+        "share": 0.3251960121147002
       },
       {
-        "amount": 771285.0,
+        "amount": 970785.0,
         "label": "PAC / other committees",
-        "share": 0.6260434818990004
+        "share": 0.6622442511051252
       },
       {
         "amount": 0.0,
@@ -385,18 +385,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 37.0,
-          "value": 0.0311,
+          "score": 37.7,
+          "value": 0.041,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 64.9,
-          "value": 0.1576,
+          "score": 66.4,
+          "value": 0.1697,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 54.1,
-          "value": 0.374,
+          "score": 52.3,
+          "value": 0.3378,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -405,8 +405,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 51.8,
-          "value": 0.0364,
+          "score": 52.1,
+          "value": 0.0372,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -417,31 +417,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 57.4,
-      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "financeScore": 57.3,
+      "generated_at": "2026-08-14T07:52:11.672654+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 57.4,
+      "score": 57.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T23:11:51.736413+00:00"
+      "updated_at": "2026-08-14T07:52:39.181785+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 5247621.97,
+      "cashOnHand": 5560517.95,
       "debts": 0.0,
-      "disbursements": 688759.9,
-      "individualContributions": 460714.09,
-      "receipts": 2098098.52
+      "disbursements": 729723.16,
+      "individualContributions": 495116.74,
+      "receipts": 2451957.76
     }
   },
-  "generated_at": "2026-08-14T05:19:42.789657+00:00",
+  "generated_at": "2026-08-15T04:13:33.416495+00:00",
   "history": {
     "bioguideId": "B001296",
     "birthYear": "1977",
@@ -662,7 +662,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-08-13T07:40:43Z"
+    "updateDate": "2026-08-14T07:40:45Z"
   },
   "nominate": {
     "dim1": -0.38,

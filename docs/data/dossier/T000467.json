@@ -242,7 +242,7 @@
           "stateName": "Pennsylvania"
         }
       ],
-      "updateDate": "2026-08-13T07:40:43Z"
+      "updateDate": "2026-08-14T07:40:45Z"
     },
     "request": {
       "bioguideId": "t000467",
@@ -263,18 +263,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 67.3,
-        "value": 0.4464,
+        "score": 67.9,
+        "value": 0.4531,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 93.7,
-        "value": 0.5509,
+        "score": 92.8,
+        "value": 0.5313,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 56.1,
-        "value": 0.4126,
+        "score": 56.2,
+        "value": 0.4155,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -284,7 +284,7 @@
       },
       "small_donor": {
         "score": 58.5,
-        "value": 0.0528,
+        "value": 0.0524,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -295,24 +295,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 68.8,
+    "financeScore": 68.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 34129.48,
+          "amount": 38674.01,
           "label": "Small individual (unitemized)",
-          "share": 0.021767116797686767
+          "share": 0.02178728977705914
         },
         {
-          "amount": 612740.08,
+          "amount": 698830.08,
           "label": "Large individual (itemized)",
-          "share": 0.3907936742072815
+          "share": 0.393691097920423
         },
         {
-          "amount": 921068.0,
+          "amount": 1037568.0,
           "label": "PAC / other committees",
-          "share": 0.5874392089950317
+          "share": 0.5845216123025178
         },
         {
           "amount": 0.0,
@@ -335,44 +335,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 738849.49,
+        "cashOnHand": 829751.79,
         "debts": 0.0,
-        "disbursements": 1685774.76,
-        "individualContributions": 646869.56,
-        "receipts": 1632830.35
+        "disbursements": 1813501.31,
+        "individualContributions": 737504.09,
+        "receipts": 1851459.2
       }
     },
-    "generated_at": "2026-07-14T23:11:41.322189+00:00",
+    "generated_at": "2026-08-14T10:17:19.198509+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 68.8,
+    "score": 68.9,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-14T23:11:59.717393+00:00"
+    "updated_at": "2026-08-14T10:17:22.921361+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000467",
     "breakdown": [
       {
-        "amount": 34129.48,
+        "amount": 38674.01,
         "label": "Small individual (unitemized)",
-        "share": 0.021767116797686767
+        "share": 0.02178728977705914
       },
       {
-        "amount": 612740.08,
+        "amount": 698830.08,
         "label": "Large individual (itemized)",
-        "share": 0.3907936742072815
+        "share": 0.393691097920423
       },
       {
-        "amount": 921068.0,
+        "amount": 1037568.0,
         "label": "PAC / other committees",
-        "share": 0.5874392089950317
+        "share": 0.5845216123025178
       },
       {
         "amount": 0.0,
@@ -406,18 +406,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 67.3,
-          "value": 0.4464,
+          "score": 67.9,
+          "value": 0.4531,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 93.7,
-          "value": 0.5509,
+          "score": 92.8,
+          "value": 0.5313,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 56.1,
-          "value": 0.4126,
+          "score": 56.2,
+          "value": 0.4155,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -427,7 +427,7 @@
         },
         "small_donor": {
           "score": 58.5,
-          "value": 0.0528,
+          "value": 0.0524,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -438,31 +438,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 68.8,
-      "generated_at": "2026-07-14T23:11:41.322189+00:00",
+      "financeScore": 68.9,
+      "generated_at": "2026-08-14T10:17:19.198509+00:00",
       "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 68.8,
+      "score": 68.9,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-14T23:11:59.717393+00:00"
+      "updated_at": "2026-08-14T10:17:22.921361+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 738849.49,
+      "cashOnHand": 829751.79,
       "debts": 0.0,
-      "disbursements": 1685774.76,
-      "individualContributions": 646869.56,
-      "receipts": 1632830.35
+      "disbursements": 1813501.31,
+      "individualContributions": 737504.09,
+      "receipts": 1851459.2
     }
   },
-  "generated_at": "2026-08-14T05:19:42.789657+00:00",
+  "generated_at": "2026-08-15T04:13:33.416495+00:00",
   "history": {
     "bioguideId": "T000467",
     "birthYear": "1959",
@@ -727,7 +727,7 @@
         "stateName": "Pennsylvania"
       }
     ],
-    "updateDate": "2026-08-13T07:40:43Z"
+    "updateDate": "2026-08-14T07:40:45Z"
   },
   "nominate": {
     "dim1": 0.335,
@@ -741,11 +741,10 @@
     "trades": []
   },
   "wiki": {
-    "extract": "Glenn William \"GT\" Thompson Jr. is an American politician serving in the U.S. House of Representatives since 2008, representing Pennslvania's 5th congressional district until 2019 and Pennslvania's 15th congressional since then. He is a member of the Republican Party.",
-    "generated_at": "2026-07-07T00:06:33.957844+00:00",
+    "extract": "Glenn William \"GT\" Thompson Jr. is an American politician serving in the U.S. House of Representatives since 2008, representing Pennsylvania's 5th congressional district until 2019 and Pennsylvania's 15th congressional since then. He is a member of the Republican Party.",
     "source": "wikipedia",
-    "summary": "Glenn William \"GT\" Thompson Jr. is an American politician serving in the U.S. House of Representatives since 2008, representing Pennslvania's 5th congressional district until 2019 and Pennslvania's 15th congressional since then. He is a member of the Republican Party.",
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Glenn_Thompson_portrait_%28118th_Congress%29.jpg/330px-Glenn_Thompson_portrait_%28118th_Congress%29.jpg",
+    "summary": "Glenn William \"GT\" Thompson Jr. is an American politician serving in the U.S. House of Representatives since 2008, representing Pennsylvania's 5th congressional district until 2019 and Pennsylvania's 15th congressional since then. He is a member of the Republican Party.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Glenn_Thompson_portrait_%28118th_Congress%29.jpg/330px-Glenn_Thompson_portrait_%28118th_Congress%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "title": "Glenn Thompson (politician)",
     "type": "standard",
     "wiki_page_id": 16879645,
