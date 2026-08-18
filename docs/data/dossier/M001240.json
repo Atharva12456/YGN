@@ -224,7 +224,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-08-16T07:40:45Z"
+      "updateDate": "2026-08-17T07:40:45Z"
     },
     "request": {
       "bioguideId": "m001240",
@@ -245,13 +245,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 52.0,
-        "value": 0.259,
+        "score": 45.1,
+        "value": 0.1536,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 97.3,
-        "value": 0.7985,
+        "score": 97.2,
+        "value": 0.7864,
         "weight": 0.1
       },
       "pac_independence": {
@@ -277,7 +277,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 65.9,
+    "financeScore": 64.5,
     "funding": {
       "available": true,
       "breakdown": [
@@ -324,18 +324,18 @@
         "receipts": 1226407.96
       }
     },
-    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "generated_at": "2026-08-18T03:58:55.491635+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 65.9,
+    "score": 64.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-23T22:15:11.820750+00:00"
+    "updated_at": "2026-08-18T03:59:17.665438+00:00"
   },
   "funding": {
     "available": true,
@@ -388,13 +388,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 52.0,
-          "value": 0.259,
+          "score": 45.1,
+          "value": 0.1536,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 97.3,
-          "value": 0.7985,
+          "score": 97.2,
+          "value": 0.7864,
           "weight": 0.1
         },
         "pac_independence": {
@@ -420,19 +420,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 65.9,
-      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "financeScore": 64.5,
+      "generated_at": "2026-08-18T03:58:55.491635+00:00",
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 65.9,
+      "score": 64.5,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-23T22:15:11.820750+00:00"
+      "updated_at": "2026-08-18T03:59:17.665438+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -444,7 +444,7 @@
       "receipts": 1226407.96
     }
   },
-  "generated_at": "2026-08-17T04:24:58.552496+00:00",
+  "generated_at": "2026-08-18T04:20:25.349686+00:00",
   "history": {
     "bioguideId": "M001240",
     "birthYear": "1994",
@@ -580,7 +580,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-08-16T07:40:45Z"
+    "updateDate": "2026-08-17T07:40:45Z"
   },
   "nominate": {
     "dim1": 0.538,

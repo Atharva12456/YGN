@@ -113,7 +113,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-08-16T07:40:46Z"
+      "updateDate": "2026-08-17T07:40:45Z"
     },
     "request": {
       "bioguideId": "m001245",
@@ -134,13 +134,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 73.3,
-        "value": 0.5095,
+        "score": 71.0,
+        "value": 0.4855,
         "weight": 0.2
       },
       "in_state_support": {
         "score": 97.6,
-        "value": 0.8395,
+        "value": 0.8338,
         "weight": 0.1
       },
       "pac_independence": {
@@ -160,13 +160,13 @@
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+        "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
         "penalty": 10,
-        "ptr_filings": 1
+        "ptr_filings": 2
       }
     },
     "cycle": 2026,
-    "financeScore": 88.0,
+    "financeScore": 87.5,
     "funding": {
       "available": true,
       "breakdown": [
@@ -213,7 +213,7 @@
         "receipts": 3637578.6
       }
     },
-    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "generated_at": "2026-08-18T03:58:55.491635+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -221,11 +221,11 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.0,
+    "score": 77.5,
     "source": "fec_live",
     "stockPenalty": 10,
-    "stockPtrCount": 1,
-    "updated_at": "2026-07-23T22:14:14.547808+00:00"
+    "stockPtrCount": 2,
+    "updated_at": "2026-08-18T03:59:05.668361+00:00"
   },
   "funding": {
     "available": true,
@@ -278,13 +278,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 73.3,
-          "value": 0.5095,
+          "score": 71.0,
+          "value": 0.4855,
           "weight": 0.2
         },
         "in_state_support": {
           "score": 97.6,
-          "value": 0.8395,
+          "value": 0.8338,
           "weight": 0.1
         },
         "pac_independence": {
@@ -304,14 +304,14 @@
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
           "penalty": 10,
-          "ptr_filings": 1
+          "ptr_filings": 2
         }
       },
       "cycle": 2026,
-      "financeScore": 88.0,
-      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "financeScore": 87.5,
+      "generated_at": "2026-08-18T03:58:55.491635+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -319,11 +319,11 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.0,
+      "score": 77.5,
       "source": "fec_live",
       "stockPenalty": 10,
-      "stockPtrCount": 1,
-      "updated_at": "2026-07-23T22:14:14.547808+00:00"
+      "stockPtrCount": 2,
+      "updated_at": "2026-08-18T03:59:05.668361+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -335,7 +335,7 @@
       "receipts": 3637578.6
     }
   },
-  "generated_at": "2026-08-17T04:24:58.552496+00:00",
+  "generated_at": "2026-08-18T04:20:25.349686+00:00",
   "history": {
     "bioguideId": "M001245",
     "birthYear": "1988",
@@ -441,7 +441,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-08-16T07:40:46Z"
+    "updateDate": "2026-08-17T07:40:45Z"
   },
   "nominate": {
     "dim1": -0.58,
