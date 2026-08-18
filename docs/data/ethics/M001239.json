@@ -3,25 +3,25 @@
   "candidate": {
     "candidate_id": "H0VA07133",
     "district": "05",
-    "name": "MCGUIRE, JOHN",
+    "name": "MCGUIRE, JOHN J. MR. III",
     "office": "H",
     "party": "REP",
     "state": "VA"
   },
   "components": {
     "donor_diversity": {
-      "score": 44.3,
-      "value": 0.1413,
+      "score": 39.4,
+      "value": 0.0674,
       "weight": 0.2
     },
     "in_state_support": {
-      "score": 90.1,
-      "value": 0.4727,
+      "score": 89.9,
+      "value": 0.4686,
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 86.2,
-      "value": 0.7258,
+      "score": 86.4,
+      "value": 0.7288,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -31,35 +31,35 @@
     },
     "small_donor": {
       "score": 96.0,
-      "value": 0.4026,
+      "value": 0.4018,
       "weight": 0.3
     },
     "stock_conflict": {
       "measurable": true,
-      "note": "7 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+      "note": "8 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
       "penalty": 32,
-      "ptr_filings": 7
+      "ptr_filings": 8
     }
   },
   "cycle": 2026,
-  "financeScore": 82.6,
+  "financeScore": 81.7,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 437911.06,
+        "amount": 449072.94,
         "label": "Small individual (unitemized)",
-        "share": 0.29222722962076525
+        "share": 0.29286127485636215
       },
       {
-        "amount": 649730.96,
+        "amount": 668524.67,
         "label": "Large individual (itemized)",
-        "share": 0.4335790889584753
+        "share": 0.43597591769641886
       },
       {
-        "amount": 410887.26,
+        "amount": 415800.55,
         "label": "PAC / other committees",
-        "share": 0.27419368142075945
+        "share": 0.27116280744721905
       },
       {
         "amount": 0.0,
@@ -75,21 +75,21 @@
     "candidate": {
       "candidateId": "H0VA07133",
       "district": "05",
-      "name": "MCGUIRE, JOHN",
+      "name": "MCGUIRE, JOHN J. MR. III",
       "office": "H",
       "party": "REP",
       "state": "VA"
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 565242.48,
+      "cashOnHand": 524345.91,
       "debts": 41487.84,
-      "disbursements": 1215947.49,
-      "individualContributions": 1087642.02,
-      "receipts": 1746971.46
+      "disbursements": 1291712.94,
+      "individualContributions": 1117597.61,
+      "receipts": 1781840.34
     }
   },
-  "generated_at": "2026-07-24T00:10:20.738488+00:00",
+  "generated_at": "2026-08-18T03:58:55.491635+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 50.6,
+  "score": 49.7,
   "source": "fec_live",
   "stockPenalty": 32,
-  "stockPtrCount": 7,
-  "updated_at": "2026-07-24T00:10:26.194602+00:00"
+  "stockPtrCount": 8,
+  "updated_at": "2026-08-18T03:59:19.794114+00:00"
 }
