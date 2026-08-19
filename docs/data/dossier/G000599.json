@@ -110,7 +110,7 @@
       "birthYear": "1976",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1376,
+        "count": 1377,
         "url": "https://api.congress.gov/v3/member/G000599/cosponsored-legislation"
       },
       "currentMember": true,
@@ -190,7 +190,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-08-17T07:40:44Z"
+      "updateDate": "2026-08-18T07:40:44Z"
     },
     "request": {
       "bioguideId": "g000599",
@@ -211,13 +211,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 46.4,
-        "value": 0.1728,
+        "score": 43.0,
+        "value": 0.1216,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 95.3,
-        "value": 0.5844,
+        "score": 95.4,
+        "value": 0.5867,
         "weight": 0.1
       },
       "pac_independence": {
@@ -227,12 +227,12 @@
       },
       "self_party_independence": {
         "score": 63.5,
-        "value": 0.7458,
+        "value": 0.7459,
         "weight": 0.15
       },
       "small_donor": {
         "score": 63.2,
-        "value": 0.078,
+        "value": 0.0779,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -243,34 +243,34 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 71.3,
+    "financeScore": 70.7,
     "funding": {
       "available": true,
       "breakdown": [
         {
           "amount": 389483.95,
           "label": "Small individual (unitemized)",
-          "share": 0.07106389488539917
+          "share": 0.07104445109802994
         },
         {
-          "amount": 4606909.2,
+          "amount": 4608409.2,
           "label": "Large individual (itemized)",
-          "share": 0.840560724351744
+          "share": 0.8406043485209372
         },
         {
           "amount": 483751.0,
           "label": "PAC / other committees",
-          "share": 0.08826353490228991
+          "share": 0.0882393851226041
         },
         {
           "amount": 613.0,
           "label": "Political party committees",
-          "share": 0.0001118458605669109
+          "share": 0.00011181525842872948
         },
         {
           "amount": 2125000.0,
           "label": "Self-funding & candidate loans",
-          "share": 0.3877201528624562
+          "share": 0.3876140687782221
         }
       ],
       "candidate": {
@@ -285,12 +285,12 @@
       "totals": {
         "cashOnHand": 1158530.28,
         "debts": 7518995.32,
-        "disbursements": 8137328.03,
-        "individualContributions": 4996393.15,
-        "receipts": 8363609.43
+        "disbursements": 8138828.03,
+        "individualContributions": 4997893.15,
+        "receipts": 8365109.43
       }
     },
-    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "generated_at": "2026-08-18T09:48:58.896240+00:00",
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -298,11 +298,11 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 61.3,
+    "score": 60.7,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-07-23T22:17:06.244026+00:00"
+    "updated_at": "2026-08-18T09:49:16.952277+00:00"
   },
   "funding": {
     "available": true,
@@ -311,27 +311,27 @@
       {
         "amount": 389483.95,
         "label": "Small individual (unitemized)",
-        "share": 0.07106389488539917
+        "share": 0.07104445109802994
       },
       {
-        "amount": 4606909.2,
+        "amount": 4608409.2,
         "label": "Large individual (itemized)",
-        "share": 0.840560724351744
+        "share": 0.8406043485209372
       },
       {
         "amount": 483751.0,
         "label": "PAC / other committees",
-        "share": 0.08826353490228991
+        "share": 0.0882393851226041
       },
       {
         "amount": 613.0,
         "label": "Political party committees",
-        "share": 0.0001118458605669109
+        "share": 0.00011181525842872948
       },
       {
         "amount": 2125000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.3877201528624562
+        "share": 0.3876140687782221
       }
     ],
     "candidate": {
@@ -355,13 +355,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 46.4,
-          "value": 0.1728,
+          "score": 43.0,
+          "value": 0.1216,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 95.3,
-          "value": 0.5844,
+          "score": 95.4,
+          "value": 0.5867,
           "weight": 0.1
         },
         "pac_independence": {
@@ -371,12 +371,12 @@
         },
         "self_party_independence": {
           "score": 63.5,
-          "value": 0.7458,
+          "value": 0.7459,
           "weight": 0.15
         },
         "small_donor": {
           "score": 63.2,
-          "value": 0.078,
+          "value": 0.0779,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -387,8 +387,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 71.3,
-      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "financeScore": 70.7,
+      "generated_at": "2026-08-18T09:48:58.896240+00:00",
       "grade": "D-",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -396,23 +396,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 61.3,
+      "score": 60.7,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-07-23T22:17:06.244026+00:00"
+      "updated_at": "2026-08-18T09:49:16.952277+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
       "cashOnHand": 1158530.28,
       "debts": 7518995.32,
-      "disbursements": 8137328.03,
-      "individualContributions": 4996393.15,
-      "receipts": 8363609.43
+      "disbursements": 8138828.03,
+      "individualContributions": 4997893.15,
+      "receipts": 8365109.43
     }
   },
-  "generated_at": "2026-08-18T04:20:25.349686+00:00",
+  "generated_at": "2026-08-19T04:21:31.872285+00:00",
   "history": {
     "bioguideId": "G000599",
     "birthYear": "1976",
@@ -476,7 +476,7 @@
     "birthYear": "1976",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1376,
+      "count": 1377,
       "url": "https://api.congress.gov/v3/member/G000599/cosponsored-legislation"
     },
     "currentMember": true,
@@ -556,7 +556,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-08-17T07:40:44Z"
+    "updateDate": "2026-08-18T07:40:44Z"
   },
   "nominate": {
     "dim1": -0.445,

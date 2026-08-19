@@ -132,7 +132,7 @@
       "birthYear": "1954",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 764,
+        "count": 765,
         "url": "https://api.congress.gov/v3/member/G000593/cosponsored-legislation"
       },
       "currentMember": true,
@@ -223,7 +223,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-08-17T07:40:44Z"
+      "updateDate": "2026-08-18T07:40:44Z"
     },
     "request": {
       "bioguideId": "g000593",
@@ -249,13 +249,13 @@
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.8,
-        "value": 0.713,
+        "score": 97.0,
+        "value": 0.7478,
         "weight": 0.1
       },
       "pac_independence": {
         "score": 56.7,
-        "value": 0.4255,
+        "value": 0.4253,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -264,8 +264,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 39.6,
-        "value": 0.0099,
+        "score": 39.5,
+        "value": 0.0098,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -281,19 +281,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 1884.8,
+          "amount": 2016.38,
           "label": "Small individual (unitemized)",
-          "share": 0.004209070761875752
+          "share": 0.00418712784725545
         },
         {
-          "amount": 188660.0,
+          "amount": 202800.0,
           "label": "Large individual (itemized)",
-          "share": 0.4213090460183995
+          "share": 0.42112574386941215
         },
         {
-          "amount": 257250.0,
+          "amount": 276750.0,
           "label": "PAC / other committees",
-          "share": 0.5744818832197247
+          "share": 0.5746871282833323
         },
         {
           "amount": 0.0,
@@ -316,14 +316,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 699516.7,
+        "cashOnHand": 692872.93,
         "debts": 0.0,
-        "disbursements": 443993.45,
-        "individualContributions": 190544.8,
-        "receipts": 567482.18
+        "disbursements": 484408.8,
+        "individualContributions": 204816.38,
+        "receipts": 601253.76
       }
     },
-    "generated_at": "2026-07-23T22:14:10.066640+00:00",
+    "generated_at": "2026-08-18T13:09:21.334753+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -334,26 +334,26 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-07-23T22:17:44.968814+00:00"
+    "updated_at": "2026-08-18T13:09:24.513173+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000593",
     "breakdown": [
       {
-        "amount": 1884.8,
+        "amount": 2016.38,
         "label": "Small individual (unitemized)",
-        "share": 0.004209070761875752
+        "share": 0.00418712784725545
       },
       {
-        "amount": 188660.0,
+        "amount": 202800.0,
         "label": "Large individual (itemized)",
-        "share": 0.4213090460183995
+        "share": 0.42112574386941215
       },
       {
-        "amount": 257250.0,
+        "amount": 276750.0,
         "label": "PAC / other committees",
-        "share": 0.5744818832197247
+        "share": 0.5746871282833323
       },
       {
         "amount": 0.0,
@@ -392,13 +392,13 @@
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.8,
-          "value": 0.713,
+          "score": 97.0,
+          "value": 0.7478,
           "weight": 0.1
         },
         "pac_independence": {
           "score": 56.7,
-          "value": 0.4255,
+          "value": 0.4253,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -407,8 +407,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 39.6,
-          "value": 0.0099,
+          "score": 39.5,
+          "value": 0.0098,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -420,7 +420,7 @@
       },
       "cycle": 2026,
       "financeScore": 57.1,
-      "generated_at": "2026-07-23T22:14:10.066640+00:00",
+      "generated_at": "2026-08-18T13:09:21.334753+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -431,19 +431,19 @@
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-07-23T22:17:44.968814+00:00"
+      "updated_at": "2026-08-18T13:09:24.513173+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 699516.7,
+      "cashOnHand": 692872.93,
       "debts": 0.0,
-      "disbursements": 443993.45,
-      "individualContributions": 190544.8,
-      "receipts": 567482.18
+      "disbursements": 484408.8,
+      "individualContributions": 204816.38,
+      "receipts": 601253.76
     }
   },
-  "generated_at": "2026-08-18T04:20:25.349686+00:00",
+  "generated_at": "2026-08-19T04:21:31.872285+00:00",
   "history": {
     "bioguideId": "G000593",
     "birthYear": "1954",
@@ -516,7 +516,7 @@
     "birthYear": "1954",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 764,
+      "count": 765,
       "url": "https://api.congress.gov/v3/member/G000593/cosponsored-legislation"
     },
     "currentMember": true,
@@ -607,7 +607,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-08-17T07:40:44Z"
+    "updateDate": "2026-08-18T07:40:44Z"
   },
   "nominate": {
     "dim1": 0.328,
