@@ -82,22 +82,6 @@
         "url": "https://api.congress.gov/v3/bill/119/hres/342?format=json"
       },
       {
-        "congress": 119,
-        "introducedDate": "2025-04-21",
-        "latestAction": {
-          "actionDate": "2025-04-21",
-          "text": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on Foreign Affairs, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-        },
-        "number": "341",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Expressing support for honoring Earth Day, and for other purposes.",
-        "type": "HRES",
-        "updateDate": "2026-04-27",
-        "updateDateIncludingText": "2026-04-27",
-        "url": "https://api.congress.gov/v3/bill/119/hres/341?format=json"
-      },
-      {
         "congress": 117,
         "introducedDate": "2022-12-01",
         "latestAction": {
@@ -1174,6 +1158,22 @@
         "congress": 102,
         "introducedDate": "1991-01-14",
         "latestAction": {
+          "actionDate": "1991-01-24",
+          "text": "Referred to Subcommittee on Courts and Administrative Practice."
+        },
+        "number": "135",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "A bill to provide that a justice or judge convicted of a felony shall be suspended from office without pay.",
+        "type": "S",
+        "updateDate": "2026-08-10",
+        "updateDateIncludingText": "2026-08-10",
+        "url": "https://api.congress.gov/v3/bill/102/s/135?format=json"
+      },
+      {
+        "congress": 102,
+        "introducedDate": "1991-01-14",
+        "latestAction": {
           "actionDate": "1991-01-14",
           "text": "Read twice and referred to the Committee on Judiciary."
         },
@@ -1284,13 +1284,13 @@
       }
     ],
     "pagination": {
-      "count": 36518,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-27T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 36528,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-04-28T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-08-25T04:22:59.734620+00:00"
+  "generated_at": "2026-08-26T04:23:53.900053+00:00"
 }

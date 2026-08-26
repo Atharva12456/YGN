@@ -1,46 +1,6 @@
 {
   "bioguideId": "G000607",
-  "committees": {
-    "assignments": [
-      {
-        "chamber": "house",
-        "code": "HSSY",
-        "committee": "House Committee on Science, Space, and Technology",
-        "committeeUrl": "https://science.house.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 22,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "house",
-        "code": "HSFA",
-        "committee": "House Committee on Foreign Affairs",
-        "committeeUrl": "https://foreignaffairs.house.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 28,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "house",
-        "code": "HSPW",
-        "committee": "House Committee on Transportation and Infrastructure",
-        "committeeUrl": "https://transportation.house.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 36,
-        "role": null,
-        "subcommittee": null
-      }
-    ],
-    "bioguideId": "G000607",
-    "count": 3,
-    "leadershipCount": 0,
-    "source": "unitedstates/congress-legislators"
-  },
+  "committees": null,
   "contact": {
     "bioguideId": "G000607",
     "official": {
@@ -119,7 +79,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-08-24T07:40:47Z"
+      "updateDate": "2026-08-25T07:40:46Z"
     },
     "request": {
       "bioguideId": "g000607",
@@ -127,7 +87,12 @@
       "format": "json"
     }
   },
-  "errors": [],
+  "errors": [
+    {
+      "error": "congress-legislators dataset request failed for committees-current.yaml.",
+      "stage": "committees"
+    }
+  ],
   "ethics": {
     "bioguideId": "G000607",
     "candidate": {
@@ -339,7 +304,7 @@
       "receipts": 1488905.68
     }
   },
-  "generated_at": "2026-08-25T04:22:59.734620+00:00",
+  "generated_at": "2026-08-26T04:23:53.900053+00:00",
   "history": {
     "bioguideId": "G000607",
     "birthYear": "1981",
@@ -442,7 +407,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-08-24T07:40:47Z"
+    "updateDate": "2026-08-25T07:40:46Z"
   },
   "nominate": null,
   "stocks": {

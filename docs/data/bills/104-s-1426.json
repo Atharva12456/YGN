@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 104,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "C000858",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Craig, Larry E. [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "1995-11-27",
+        "state": "ID"
+      },
+      {
+        "bioguideId": "S000429",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Simpson, Alan K. [R-WY]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "1995-12-21",
+        "state": "WY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Amends Rule 31 of the Federal Rules of Criminal Procedure and Rule 48 of the Federal Rules of Civil Procedure to replace the requirement for a unanimous verdict in Federal court with a requirement for a verdict by five-sixths of the jury.",
+      "updated_at": "2001-05-07T20:52:51Z"
+    },
+    "detailPath": "104/s/1426",
+    "identifier": "S 1426",
+    "introducedDate": "1995-11-27",
+    "latestAction": {
+      "date": "1995-11-27",
+      "text": "Read twice and referred to the Committee on Judiciary."
+    },
+    "number": "1426",
+    "originChamber": "Senate",
+    "policyArea": "Law",
+    "sponsors": [
+      {
+        "bioguideId": "T000254",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Thurmond, Strom [R-SC]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "SC"
+      }
+    ],
+    "title": "A bill to eliminate the requirement for unanimous verdicts in Federal court.",
+    "type": "S",
+    "updatedAt": "2026-08-10T11:51:27Z",
+    "url": "https://www.congress.gov/bill/104th-congress/senate-bill/1426",
+    "votes": []
+  },
+  "generated_at": "2026-08-26T04:24:31.503001+00:00",
+  "source": "congress_api"
+}

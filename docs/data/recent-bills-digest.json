@@ -300,65 +300,6 @@
     },
     {
       "aiDescription": null,
-      "apiUrl": "https://api.congress.gov/v3/bill/119/hres/341?format=json",
-      "committees": [],
-      "congress": 119,
-      "cosponsorCount": 51,
-      "description": {
-        "source": "Congress.gov bill detail",
-        "text": "Expressing support for honoring Earth Day, and for other purposes.",
-        "updated_at": "2026-04-27T20:29:54Z"
-      },
-      "detailPath": "119/hres/341",
-      "identifier": "HRES 341",
-      "impact": {
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/119th-congress/house-resolution/341"
-          }
-        ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
-      },
-      "latestAction": {
-        "date": "2025-04-21",
-        "text": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on Foreign Affairs, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
-      },
-      "members": [
-        {
-          "bioguideId": "M001163",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Matsui, Doris O. [D-CA-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CA"
-        }
-      ],
-      "number": "341",
-      "originChamber": "House",
-      "policyArea": "Environmental Protection",
-      "sponsors": [
-        {
-          "bioguideId": "M001163",
-          "district": 7,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Matsui, Doris O. [D-CA-7]",
-          "party": "D",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "CA"
-        }
-      ],
-      "title": "Expressing support for honoring Earth Day, and for other purposes.",
-      "type": "HRES",
-      "updatedAt": "2026-04-27T20:29:54Z",
-      "url": "https://www.congress.gov/bill/119th-congress/house-resolution/341"
-    },
-    {
-      "aiDescription": null,
       "apiUrl": "https://api.congress.gov/v3/bill/117/s/5168?format=json",
       "committees": [],
       "congress": 117,
@@ -2362,10 +2303,69 @@
       "type": "S",
       "updatedAt": "2026-08-10T11:51:27Z",
       "url": "https://www.congress.gov/bill/104th-congress/senate-bill/1427"
+    },
+    {
+      "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/104/s/1426?format=json",
+      "committees": [],
+      "congress": 104,
+      "cosponsorCount": 1,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "Amends Rule 31 of the Federal Rules of Criminal Procedure and Rule 48 of the Federal Rules of Civil Procedure to replace the requirement for a unanimous verdict in Federal court with a requirement for a verdict by five-sixths of the jury.",
+        "updated_at": "2001-05-07T20:52:51Z"
+      },
+      "detailPath": "104/s/1426",
+      "identifier": "S 1426",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/104th-congress/senate-bill/1426"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "1995-11-27",
+        "text": "Read twice and referred to the Committee on Judiciary."
+      },
+      "members": [
+        {
+          "bioguideId": "T000254",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Thurmond, Strom [R-SC]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "SC"
+        }
+      ],
+      "number": "1426",
+      "originChamber": "Senate",
+      "policyArea": "Law",
+      "sponsors": [
+        {
+          "bioguideId": "T000254",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Thurmond, Strom [R-SC]",
+          "party": "R",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "SC"
+        }
+      ],
+      "title": "A bill to eliminate the requirement for unanimous verdicts in Federal court.",
+      "type": "S",
+      "updatedAt": "2026-08-10T11:51:27Z",
+      "url": "https://www.congress.gov/bill/104th-congress/senate-bill/1426"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-08-20T04:21:06.743437+00:00",
+  "generated_at": "2026-08-26T04:24:04.608510+00:00",
   "impact_status": "queued_for_refresh",
   "source": "congress_api"
 }
