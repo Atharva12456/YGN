@@ -1,30 +1,41 @@
 {
-  "bill_details": 0,
+  "bill_details": 40,
   "congress": 119,
   "current_member": true,
-  "debt_metric": false,
-  "descriptions": 0,
-  "details": 0,
-  "dossiers": 0,
-  "errors": [],
-  "ethics": 538,
-  "ethics_fallback": 48,
-  "ethics_sweep_cursor": "K000376",
-  "fallback_descriptions": 0,
+  "debt_metric": true,
+  "descriptions": 539,
+  "details": 537,
+  "dossiers": 537,
+  "errors": [
+    {
+      "bioguideId": "S001225",
+      "error": "Congress.gov request failed for /member/S001225.",
+      "stage": "detail"
+    },
+    {
+      "bioguideId": "S001224",
+      "error": "Congress.gov request failed for /member/S001224.",
+      "stage": "detail"
+    }
+  ],
+  "ethics": 539,
+  "ethics_fallback": 49,
+  "ethics_sweep_cursor": "C001069",
+  "fallback_descriptions": 3,
   "fec_scored_this_run": 10,
-  "generated_at": "2026-09-03T04:35:20.615215+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "member_score_index": true,
-  "members": 538,
-  "nominate": 0,
-  "recent_bills": false,
+  "members": 539,
+  "nominate": 535,
+  "recent_bills": true,
   "roster_summary": {
     "by_chamber": {
-      "House": 438,
+      "House": 439,
       "Senate": 100
     },
     "by_chamber_party": {
       "House": {
-        "DEM": 216,
+        "DEM": 217,
         "IND": 1,
         "REP": 221
       },
@@ -35,14 +46,14 @@
       }
     },
     "by_party": {
-      "DEM": 261,
+      "DEM": 262,
       "IND": 3,
       "REP": 274
     },
-    "total": 538,
+    "total": 539,
     "voting_by_chamber_party": {
       "House": {
-        "DEM": 213,
+        "DEM": 214,
         "IND": 1,
         "REP": 218
       },
@@ -53,6 +64,6 @@
       }
     }
   },
-  "wiki": 0,
-  "wiki_reused": 0
+  "wiki": 536,
+  "wiki_reused": 420
 }
