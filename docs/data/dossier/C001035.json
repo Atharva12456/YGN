@@ -37,6 +37,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSAP20",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": "State, Foreign Operations, and Related Programs"
+      },
+      {
+        "chamber": "senate",
         "code": "SSAP02",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
@@ -81,17 +92,6 @@
       },
       {
         "chamber": "senate",
-        "code": "SSAP23",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 3,
-        "role": null,
-        "subcommittee": "Financial Services and General Government"
-      },
-      {
-        "chamber": "senate",
         "code": "SSHR12",
         "committee": "Senate Committee on Health, Education, Labor, and Pensions",
         "committeeUrl": "http://www.help.senate.gov/",
@@ -114,6 +114,17 @@
       },
       {
         "chamber": "senate",
+        "code": "SSAP23",
+        "committee": "Senate Committee on Appropriations",
+        "committeeUrl": "http://www.appropriations.senate.gov/",
+        "isSubcommittee": true,
+        "party": "majority",
+        "rank": 5,
+        "role": "Ex Officio",
+        "subcommittee": "Financial Services and General Government"
+      },
+      {
+        "chamber": "senate",
         "code": "SSAP19",
         "committee": "Senate Committee on Appropriations",
         "committeeUrl": "http://www.appropriations.senate.gov/",
@@ -133,17 +144,6 @@
         "rank": 7,
         "role": "Ex Officio",
         "subcommittee": "Department of Homeland Security"
-      },
-      {
-        "chamber": "senate",
-        "code": "SSAP20",
-        "committee": "Senate Committee on Appropriations",
-        "committeeUrl": "http://www.appropriations.senate.gov/",
-        "isSubcommittee": true,
-        "party": "majority",
-        "rank": 7,
-        "role": "Ex Officio",
-        "subcommittee": "State, Foreign Operations, and Related Programs"
       },
       {
         "chamber": "senate",
@@ -181,7 +181,7 @@
     ],
     "bioguideId": "C001035",
     "count": 16,
-    "leadershipCount": 7,
+    "leadershipCount": 8,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -621,7 +621,7 @@
       "receipts": 18930077.99
     }
   },
-  "generated_at": "2026-08-14T05:19:42.789657+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "history": {
     "bioguideId": "C001035",
     "birthYear": "1952",

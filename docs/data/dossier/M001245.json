@@ -23,10 +23,32 @@
         "rank": 19,
         "role": null,
         "subcommittee": null
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO33",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 5,
+        "role": null,
+        "subcommittee": "Federal Law Enforcement"
+      },
+      {
+        "chamber": "house",
+        "code": "HSGO16",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 8,
+        "role": null,
+        "subcommittee": "Delivering on Government Efficiency"
       }
     ],
     "bioguideId": "M001245",
-    "count": 2,
+    "count": 4,
     "leadershipCount": 0,
     "source": "unitedstates/congress-legislators"
   },
@@ -62,7 +84,7 @@
       "birthYear": "1988",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 95,
+        "count": 96,
         "url": "https://api.congress.gov/v3/member/M001245/cosponsored-legislation"
       },
       "currentMember": true,
@@ -113,7 +135,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-09-02T07:40:25Z"
+      "updateDate": "2026-09-03T07:40:29Z"
     },
     "request": {
       "bioguideId": "m001245",
@@ -335,7 +357,7 @@
       "receipts": 3637578.6
     }
   },
-  "generated_at": "2026-09-02T08:08:09.047065+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "history": {
     "bioguideId": "M001245",
     "birthYear": "1988",
@@ -390,7 +412,7 @@
     "birthYear": "1988",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 95,
+      "count": 96,
       "url": "https://api.congress.gov/v3/member/M001245/cosponsored-legislation"
     },
     "currentMember": true,
@@ -441,7 +463,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-09-02T07:40:25Z"
+    "updateDate": "2026-09-03T07:40:29Z"
   },
   "nominate": {
     "dim1": -0.58,
@@ -455,10 +477,10 @@
     "trades": []
   },
   "wiki": {
-    "extract": "Christian Dashaun Menefee is an American politician and attorney serving as the U.S. representative for Texas's 18th congressional district since February 2026. A member of the Democratic Party, Menefee previously served as County Attorney for Harris County, Texas, from 2021 to 2026.",
+    "extract": "Christian Dashaun Menefee is an American politician and attorney who has been serving as the U.S. representative for Texas's 18th congressional district since February 2026. A member of the Democratic Party, Menefee previously served as County Attorney for Harris County, Texas, from 2021 to 2026.",
     "source": "wikipedia",
-    "summary": "Christian Dashaun Menefee is an American politician and attorney serving as the U.S. representative for Texas's 18th congressional district since February 2026. A member of the Democratic Party, Menefee previously served as County Attorney for Harris County, Texas, from 2021 to 2026.",
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Christian_Menefee%2C_official_portrait_%28119th_Congress%29_%282%29.jpg/330px-Christian_Menefee%2C_official_portrait_%28119th_Congress%29_%282%29.jpg",
+    "summary": "Christian Dashaun Menefee is an American politician and attorney who has been serving as the U.S. representative for Texas's 18th congressional district since February 2026. A member of the Democratic Party, Menefee previously served as County Attorney for Harris County, Texas, from 2021 to 2026.",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Christian_Menefee%2C_official_portrait_%28119th_Congress%29_%282%29.jpg/330px-Christian_Menefee%2C_official_portrait_%28119th_Congress%29_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "title": "Christian Menefee",
     "type": "standard",
     "wiki_page_id": 71797746,

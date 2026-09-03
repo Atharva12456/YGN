@@ -4,23 +4,23 @@
     "assignments": [
       {
         "chamber": "senate",
+        "code": "SSBU",
+        "committee": "Senate Committee on the Budget",
+        "committeeUrl": "http://www.budget.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 1,
+        "role": "Chairman",
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
         "code": "SSGA",
         "committee": "Senate Committee on Homeland Security and Governmental Affairs",
         "committeeUrl": "http://www.hsgac.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 2,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "senate",
-        "code": "SSBU",
-        "committee": "Senate Committee on the Budget",
-        "committeeUrl": "http://www.budget.senate.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 3,
         "role": null,
         "subcommittee": null
       },
@@ -104,7 +104,7 @@
     ],
     "bioguideId": "J000293",
     "count": 9,
-    "leadershipCount": 2,
+    "leadershipCount": 3,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -479,7 +479,7 @@
       "receipts": 6461952.63
     }
   },
-  "generated_at": "2026-08-14T05:19:42.789657+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "history": {
     "bioguideId": "J000293",
     "birthYear": "1955",

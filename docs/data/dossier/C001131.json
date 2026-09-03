@@ -26,6 +26,17 @@
       },
       {
         "chamber": "house",
+        "code": "HSGO33",
+        "committee": "House Committee on Oversight and Government Reform",
+        "committeeUrl": "https://oversight.house.gov/",
+        "isSubcommittee": true,
+        "party": "minority",
+        "rank": 1,
+        "role": "Ranking Member",
+        "subcommittee": "Federal Law Enforcement"
+      },
+      {
+        "chamber": "house",
         "code": "HSED10",
         "committee": "House Committee on Education and Workforce",
         "committeeUrl": "https://edlabor.house.gov/",
@@ -53,7 +64,7 @@
         "committeeUrl": "https://oversight.house.gov/",
         "isSubcommittee": true,
         "party": "minority",
-        "rank": 5,
+        "rank": 4,
         "role": null,
         "subcommittee": "Delivering on Government Efficiency"
       },
@@ -70,8 +81,8 @@
       }
     ],
     "bioguideId": "C001131",
-    "count": 6,
-    "leadershipCount": 0,
+    "count": 7,
+    "leadershipCount": 1,
     "source": "unitedstates/congress-legislators"
   },
   "contact": {
@@ -120,7 +131,7 @@
       "birthYear": "1989",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 704,
+        "count": 706,
         "url": "https://api.congress.gov/v3/member/C001131/cosponsored-legislation"
       },
       "currentMember": true,
@@ -197,7 +208,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-09-02T07:40:24Z"
+      "updateDate": "2026-09-03T07:40:28Z"
     },
     "request": {
       "bioguideId": "c001131",
@@ -417,7 +428,7 @@
       "receipts": 1172880.52
     }
   },
-  "generated_at": "2026-09-02T08:08:09.047065+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "history": {
     "bioguideId": "C001131",
     "birthYear": "1989",
@@ -481,7 +492,7 @@
     "birthYear": "1989",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 704,
+      "count": 706,
       "url": "https://api.congress.gov/v3/member/C001131/cosponsored-legislation"
     },
     "currentMember": true,
@@ -558,7 +569,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-09-02T07:40:24Z"
+    "updateDate": "2026-09-03T07:40:28Z"
   },
   "nominate": {
     "dim1": -0.426,

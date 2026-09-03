@@ -4,17 +4,6 @@
     "assignments": [
       {
         "chamber": "senate",
-        "code": "SSBU",
-        "committee": "Senate Committee on the Budget",
-        "committeeUrl": "http://www.budget.senate.gov/",
-        "isSubcommittee": false,
-        "party": "majority",
-        "rank": 1,
-        "role": null,
-        "subcommittee": null
-      },
-      {
-        "chamber": "senate",
         "code": "SSJU",
         "committee": "Senate Committee on the Judiciary",
         "committeeUrl": "http://www.judiciary.senate.gov/",
@@ -29,6 +18,17 @@
         "code": "SSFI",
         "committee": "Senate Committee on Finance",
         "committeeUrl": "http://www.finance.senate.gov/",
+        "isSubcommittee": false,
+        "party": "majority",
+        "rank": 2,
+        "role": null,
+        "subcommittee": null
+      },
+      {
+        "chamber": "senate",
+        "code": "SSBU",
+        "committee": "Senate Committee on the Budget",
+        "committeeUrl": "http://www.budget.senate.gov/",
         "isSubcommittee": false,
         "party": "majority",
         "rank": 2,
@@ -706,7 +706,7 @@
       "receipts": 1098150.95
     }
   },
-  "generated_at": "2026-08-20T04:20:48.315641+00:00",
+  "generated_at": "2026-09-03T08:18:50.645537+00:00",
   "history": {
     "bioguideId": "G000386",
     "birthYear": "1933",
@@ -1324,6 +1324,7 @@
   },
   "wiki": {
     "extract": "Charles Ernest Grassley is an American politician serving as the senior U.S. senator from Iowa, a seat he has held since 1981. Since 2025, he has been the president pro tempore of the United States Senate, a position he also held from 2019 to 2021.",
+    "generated_at": "2026-08-04T06:15:19.973402+00:00",
     "source": "wikipedia",
     "summary": "Charles Ernest Grassley is an American politician serving as the senior U.S. senator from Iowa, a seat he has held since 1981. Since 2025, he has been the president pro tempore of the United States Senate, a position he also held from 2019 to 2021.",
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Chuck_Grassley_official_photo_2017.jpg/330px-Chuck_Grassley_official_photo_2017.jpg",
