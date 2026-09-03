@@ -30,31 +30,31 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 64.6,
-      "value": 0.086,
+      "score": 49.0,
+      "value": 0.0305,
       "weight": 0.3
     },
     "stock_conflict": {
       "measurable": true,
-      "note": "6 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+      "note": "7 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
       "penalty": 32,
-      "ptr_filings": 6
+      "ptr_filings": 7
     }
   },
   "cycle": 2026,
-  "financeScore": 62.4,
+  "financeScore": 57.7,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 32850.92,
+        "amount": 11662.39,
         "label": "Small individual (unitemized)",
-        "share": 0.04017979889185628
+        "share": 0.014264211924609591
       },
       {
-        "amount": 349247.0,
+        "amount": 370435.53,
         "label": "Large individual (itemized)",
-        "share": 0.4271622902367462
+        "share": 0.4530778772039929
       },
       {
         "amount": 435500.0,
@@ -89,7 +89,7 @@
       "receipts": 1642412.73
     }
   },
-  "generated_at": "2026-08-09T09:57:32.729782+00:00",
+  "generated_at": "2026-09-03T23:17:48.328338+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 30.4,
+  "score": 25.7,
   "source": "fec_live",
   "stockPenalty": 32,
-  "stockPtrCount": 6,
-  "updated_at": "2026-08-09T09:57:42.106242+00:00"
+  "stockPtrCount": 7,
+  "updated_at": "2026-09-03T23:17:58.055377+00:00"
 }
