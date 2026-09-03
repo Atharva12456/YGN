@@ -1,17 +1,104 @@
 {
-  "available": false,
   "bioguideId": "W000832",
-  "candidate": null,
-  "components": {},
-  "cycle": null,
-  "generated_at": "2026-09-03T08:18:50.645537+00:00",
-  "grade": "N/A",
+  "candidate": {
+    "candidate_id": "H0CA15213",
+    "district": "14",
+    "name": "WAHAB, AISHA",
+    "office": "H",
+    "party": "DEM",
+    "state": "CA"
+  },
+  "components": {
+    "donor_diversity": {
+      "score": 62.5,
+      "value": 0.397,
+      "weight": 0.2
+    },
+    "in_state_support": {
+      "score": 97.9,
+      "value": 0.8894,
+      "weight": 0.1
+    },
+    "pac_independence": {
+      "score": 87.0,
+      "value": 0.7386,
+      "weight": 0.25
+    },
+    "self_party_independence": {
+      "score": 88.1,
+      "value": 0.9391,
+      "weight": 0.15
+    },
+    "small_donor": {
+      "score": 60.1,
+      "value": 0.0613,
+      "weight": 0.3
+    },
+    "stock_conflict": {
+      "measurable": true,
+      "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
+      "penalty": 0,
+      "ptr_filings": 0
+    }
+  },
+  "cycle": 2026,
+  "financeScore": 75.3,
+  "funding": {
+    "available": true,
+    "breakdown": [
+      {
+        "amount": 26790.81,
+        "label": "Small individual (unitemized)",
+        "share": 0.04489784139414593
+      },
+      {
+        "amount": 410432.13,
+        "label": "Large individual (itemized)",
+        "share": 0.6878297698278434
+      },
+      {
+        "amount": 155983.03,
+        "label": "PAC / other committees",
+        "share": 0.26140685336196656
+      },
+      {
+        "amount": 0.0,
+        "label": "Political party committees",
+        "share": 0.0
+      },
+      {
+        "amount": 38500.0,
+        "label": "Self-funding & candidate loans",
+        "share": 0.06452088957648605
+      }
+    ],
+    "candidate": {
+      "candidateId": "H0CA15213",
+      "district": "14",
+      "name": "WAHAB, AISHA",
+      "office": "H",
+      "party": "DEM",
+      "state": "CA"
+    },
+    "cycle": 2026,
+    "totals": {
+      "cashOnHand": 146906.09,
+      "debts": 43900.11,
+      "disbursements": 484842.55,
+      "individualContributions": 437222.94,
+      "receipts": 631748.64
+    }
+  },
+  "generated_at": "2026-09-03T11:17:03.941994+00:00",
+  "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
-    "No current evidence-backed FEC grade is available for this member.",
-    "YGN does not substitute synthetic or randomized values for missing public data."
+    "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
-  "score": null,
-  "source": "unavailable",
-  "updated_at": null
+  "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
+  "score": 75.3,
+  "source": "fec_live",
+  "stockPenalty": 0,
+  "stockPtrCount": 0,
+  "updated_at": "2026-09-03T11:17:10.783037+00:00"
 }
