@@ -221,7 +221,7 @@
           "stateName": "Georgia"
         }
       ],
-      "updateDate": "2026-09-03T07:40:29Z"
+      "updateDate": "2026-09-04T07:40:23Z"
     },
     "request": {
       "bioguideId": "j000311",
@@ -242,8 +242,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 44.6,
-        "value": 0.1468,
+        "score": 44.8,
+        "value": 0.1487,
         "weight": 0.2
       },
       "in_state_support": {
@@ -262,8 +262,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 86.0,
-        "value": 0.2429,
+        "score": 85.9,
+        "value": 0.2413,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -279,14 +279,14 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 213654.41,
+          "amount": 212179.43,
           "label": "Small individual (unitemized)",
-          "share": 0.1244988362439801
+          "share": 0.12363934874974515
         },
         {
-          "amount": 665821.78,
+          "amount": 667296.76,
           "label": "Large individual (itemized)",
-          "share": 0.38798186639768095
+          "share": 0.3888413538919159
         },
         {
           "amount": 836639.53,
@@ -314,14 +314,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1076948.14,
+        "cashOnHand": 1142624.92,
         "debts": 8769.71,
-        "disbursements": 1172991.33,
+        "disbursements": 1143464.28,
         "individualContributions": 879476.19,
-        "receipts": 2009763.14
+        "receipts": 2045912.87
       }
     },
-    "generated_at": "2026-08-09T04:49:57.077207+00:00",
+    "generated_at": "2026-09-03T21:03:35.457556+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -332,21 +332,21 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-09T04:50:57.418225+00:00"
+    "updated_at": "2026-09-03T21:03:47.467757+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "J000311",
     "breakdown": [
       {
-        "amount": 213654.41,
+        "amount": 212179.43,
         "label": "Small individual (unitemized)",
-        "share": 0.1244988362439801
+        "share": 0.12363934874974515
       },
       {
-        "amount": 665821.78,
+        "amount": 667296.76,
         "label": "Large individual (itemized)",
-        "share": 0.38798186639768095
+        "share": 0.3888413538919159
       },
       {
         "amount": 836639.53,
@@ -385,8 +385,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 44.6,
-          "value": 0.1468,
+          "score": 44.8,
+          "value": 0.1487,
           "weight": 0.2
         },
         "in_state_support": {
@@ -405,8 +405,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 86.0,
-          "value": 0.2429,
+          "score": 85.9,
+          "value": 0.2413,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -418,7 +418,7 @@
       },
       "cycle": 2026,
       "financeScore": 73.1,
-      "generated_at": "2026-08-09T04:49:57.077207+00:00",
+      "generated_at": "2026-09-03T21:03:35.457556+00:00",
       "grade": "C",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -429,19 +429,19 @@
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-09T04:50:57.418225+00:00"
+      "updated_at": "2026-09-03T21:03:47.467757+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1076948.14,
+      "cashOnHand": 1142624.92,
       "debts": 8769.71,
-      "disbursements": 1172991.33,
+      "disbursements": 1143464.28,
       "individualContributions": 879476.19,
-      "receipts": 2009763.14
+      "receipts": 2045912.87
     }
   },
-  "generated_at": "2026-09-03T08:18:50.645537+00:00",
+  "generated_at": "2026-09-04T08:13:33.017432+00:00",
   "history": {
     "bioguideId": "J000311",
     "birthYear": "1988",
@@ -563,7 +563,7 @@
         "stateName": "Georgia"
       }
     ],
-    "updateDate": "2026-09-03T07:40:29Z"
+    "updateDate": "2026-09-04T07:40:23Z"
   },
   "nominate": {
     "dim1": 0.543,
@@ -578,6 +578,7 @@
   },
   "wiki": {
     "extract": "Brian Timothy Jack is an American politician and political advisor serving as the U.S. representative from Georgia's 3rd congressional district since 2025.",
+    "generated_at": "2026-08-05T06:11:52.809314+00:00",
     "source": "wikipedia",
     "summary": "Brian Timothy Jack is an American politician and political advisor serving as the U.S. representative from Georgia's 3rd congressional district since 2025.",
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jack_Brian_119th_Congress_%28cropped%29.jpg/330px-Jack_Brian_119th_Congress_%28cropped%29.jpg",

@@ -1,8 +1,17 @@
 {
-  "generated_at": "2026-09-03T08:24:32.610244+00:00",
+  "generated_at": "2026-09-04T08:22:10.007731+00:00",
   "congress": 119,
-  "totalLawsThisCongress": 104,
+  "totalLawsThisCongress": 105,
   "laws": [
+    {
+      "lawNumber": "119-103",
+      "identifier": "HR 6500",
+      "title": "Continuing Appropriations and Extensions Act, 2027",
+      "actionDate": "2026-09-02",
+      "actionText": "Became Public Law No: 119-103.",
+      "detailPath": "119/hr/6500",
+      "url": "https://api.congress.gov/v3/bill/119/hr/6500?format=json"
+    },
     {
       "lawNumber": "119-102",
       "identifier": "S 629",
@@ -101,15 +110,6 @@
       "actionText": "Became Public Law No: 119-92.",
       "detailPath": "119/hr/2066",
       "url": "https://api.congress.gov/v3/bill/119/hr/2066?format=json"
-    },
-    {
-      "lawNumber": "119-91",
-      "identifier": "HR 972",
-      "title": "Sloan Canyon Conservation and Lateral Pipeline Act",
-      "actionDate": "2026-05-19",
-      "actionText": "Became Public Law No: 119-91.",
-      "detailPath": "119/hr/972",
-      "url": "https://api.congress.gov/v3/bill/119/hr/972?format=json"
     }
   ]
 }
