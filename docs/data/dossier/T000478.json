@@ -140,7 +140,7 @@
       "birthYear": "1961",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1861,
+        "count": 1862,
         "url": "https://api.congress.gov/v3/member/T000478/cosponsored-legislation"
       },
       "currentMember": true,
@@ -246,7 +246,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-09-04T07:40:23Z"
+      "updateDate": "2026-09-05T07:40:25Z"
     },
     "request": {
       "bioguideId": "t000478",
@@ -267,13 +267,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 41.2,
-        "value": 0.0936,
+        "score": 35.0,
+        "value": 0.0,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 86.3,
-        "value": 0.3916,
+        "score": 86.0,
+        "value": 0.3848,
         "weight": 0.1
       },
       "pac_independence": {
@@ -299,7 +299,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 72.7,
+    "financeScore": 71.4,
     "funding": {
       "available": true,
       "breakdown": [
@@ -346,18 +346,18 @@
         "receipts": 2763138.81
       }
     },
-    "generated_at": "2026-08-10T05:09:53.650191+00:00",
+    "generated_at": "2026-09-04T20:46:47.950750+00:00",
     "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 72.7,
+    "score": 71.4,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-10T05:12:56.448326+00:00"
+    "updated_at": "2026-09-04T20:46:59.834893+00:00"
   },
   "funding": {
     "available": true,
@@ -410,13 +410,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 41.2,
-          "value": 0.0936,
+          "score": 35.0,
+          "value": 0.0,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 86.3,
-          "value": 0.3916,
+          "score": 86.0,
+          "value": 0.3848,
           "weight": 0.1
         },
         "pac_independence": {
@@ -442,19 +442,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 72.7,
-      "generated_at": "2026-08-10T05:09:53.650191+00:00",
+      "financeScore": 71.4,
+      "generated_at": "2026-09-04T20:46:47.950750+00:00",
       "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 72.7,
+      "score": 71.4,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-10T05:12:56.448326+00:00"
+      "updated_at": "2026-09-04T20:46:59.834893+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -466,7 +466,7 @@
       "receipts": 2763138.81
     }
   },
-  "generated_at": "2026-09-04T08:13:33.017432+00:00",
+  "generated_at": "2026-09-05T07:51:34.556082+00:00",
   "history": {
     "bioguideId": "T000478",
     "birthYear": "1961",
@@ -548,7 +548,7 @@
     "birthYear": "1961",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1861,
+      "count": 1862,
       "url": "https://api.congress.gov/v3/member/T000478/cosponsored-legislation"
     },
     "currentMember": true,
@@ -654,7 +654,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-09-04T07:40:23Z"
+    "updateDate": "2026-09-05T07:40:25Z"
   },
   "nominate": {
     "dim1": 0.466,
