@@ -143,7 +143,7 @@
       "birthYear": "1963",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 865,
+        "count": 866,
         "url": "https://api.congress.gov/v3/member/M001210/cosponsored-legislation"
       },
       "currentMember": true,
@@ -251,7 +251,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-09-05T07:40:23Z"
+      "updateDate": "2026-09-06T07:40:24Z"
     },
     "request": {
       "bioguideId": "m001210",
@@ -272,18 +272,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.3,
-        "value": 0.3843,
+        "score": 49.8,
+        "value": 0.2245,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 93.4,
-        "value": 0.5448,
+        "score": 93.3,
+        "value": 0.5415,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 63.3,
-        "value": 0.4943,
+        "score": 63.2,
+        "value": 0.4936,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -292,8 +292,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 48.0,
-        "value": 0.0283,
+        "score": 48.1,
+        "value": 0.0284,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -304,7 +304,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 66.2,
+    "financeScore": 63.9,
     "funding": {
       "available": true,
       "breakdown": [
@@ -314,14 +314,14 @@
           "share": 0.01401427124919509
         },
         {
-          "amount": 984416.21,
+          "amount": 982916.21,
           "label": "Large individual (itemized)",
-          "share": 0.48033504642693087
+          "share": 0.47960313794927545
         },
         {
-          "amount": 1036299.0,
+          "amount": 1037799.0,
           "label": "PAC / other committees",
-          "share": 0.505650682323874
+          "share": 0.5063825908015294
         },
         {
           "amount": 0.0,
@@ -347,22 +347,22 @@
         "cashOnHand": 2697820.12,
         "debts": 0.0,
         "disbursements": 1243598.59,
-        "individualContributions": 1013137.57,
+        "individualContributions": 1011637.57,
         "receipts": 2357956.42
       }
     },
-    "generated_at": "2026-08-10T19:17:55.632493+00:00",
+    "generated_at": "2026-09-05T22:55:41.590637+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 66.2,
+    "score": 63.9,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-10T19:18:01.890125+00:00"
+    "updated_at": "2026-09-05T22:55:46.720821+00:00"
   },
   "funding": {
     "available": true,
@@ -374,14 +374,14 @@
         "share": 0.01401427124919509
       },
       {
-        "amount": 984416.21,
+        "amount": 982916.21,
         "label": "Large individual (itemized)",
-        "share": 0.48033504642693087
+        "share": 0.47960313794927545
       },
       {
-        "amount": 1036299.0,
+        "amount": 1037799.0,
         "label": "PAC / other committees",
-        "share": 0.505650682323874
+        "share": 0.5063825908015294
       },
       {
         "amount": 0.0,
@@ -415,18 +415,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.3,
-          "value": 0.3843,
+          "score": 49.8,
+          "value": 0.2245,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 93.4,
-          "value": 0.5448,
+          "score": 93.3,
+          "value": 0.5415,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 63.3,
-          "value": 0.4943,
+          "score": 63.2,
+          "value": 0.4936,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -435,8 +435,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 48.0,
-          "value": 0.0283,
+          "score": 48.1,
+          "value": 0.0284,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -447,19 +447,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 66.2,
-      "generated_at": "2026-08-10T19:17:55.632493+00:00",
+      "financeScore": 63.9,
+      "generated_at": "2026-09-05T22:55:41.590637+00:00",
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 66.2,
+      "score": 63.9,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-10T19:18:01.890125+00:00"
+      "updated_at": "2026-09-05T22:55:46.720821+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -467,11 +467,11 @@
       "cashOnHand": 2697820.12,
       "debts": 0.0,
       "disbursements": 1243598.59,
-      "individualContributions": 1013137.57,
+      "individualContributions": 1011637.57,
       "receipts": 2357956.42
     }
   },
-  "generated_at": "2026-09-05T07:51:34.556082+00:00",
+  "generated_at": "2026-09-06T08:07:08.825770+00:00",
   "history": {
     "bioguideId": "M001210",
     "birthYear": "1963",
@@ -553,7 +553,7 @@
     "birthYear": "1963",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 865,
+      "count": 866,
       "url": "https://api.congress.gov/v3/member/M001210/cosponsored-legislation"
     },
     "currentMember": true,
@@ -661,7 +661,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-09-05T07:40:23Z"
+    "updateDate": "2026-09-06T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.484,

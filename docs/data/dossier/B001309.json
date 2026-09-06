@@ -245,7 +245,7 @@
           "stateName": "Tennessee"
         }
       ],
-      "updateDate": "2026-09-05T07:40:23Z"
+      "updateDate": "2026-09-06T07:40:24Z"
     },
     "request": {
       "bioguideId": "b001309",
@@ -266,13 +266,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 93.0,
-        "value": 0.7966,
+        "score": 88.7,
+        "value": 0.7198,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.9,
-        "value": 0.7341,
+        "score": 96.4,
+        "value": 0.6673,
         "weight": 0.1
       },
       "pac_independence": {
@@ -298,7 +298,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 96.2,
+    "financeScore": 95.3,
     "funding": {
       "available": true,
       "breakdown": [
@@ -345,18 +345,18 @@
         "receipts": 2428734.15
       }
     },
-    "generated_at": "2026-08-10T21:58:57.538933+00:00",
+    "generated_at": "2026-09-06T04:41:47.252061+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 96.2,
+    "score": 95.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-10T21:59:03.677378+00:00"
+    "updated_at": "2026-09-06T04:41:55.183384+00:00"
   },
   "funding": {
     "available": true,
@@ -409,13 +409,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 93.0,
-          "value": 0.7966,
+          "score": 88.7,
+          "value": 0.7198,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.9,
-          "value": 0.7341,
+          "score": 96.4,
+          "value": 0.6673,
           "weight": 0.1
         },
         "pac_independence": {
@@ -441,19 +441,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 96.2,
-      "generated_at": "2026-08-10T21:58:57.538933+00:00",
+      "financeScore": 95.3,
+      "generated_at": "2026-09-06T04:41:47.252061+00:00",
       "grade": "A",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 96.2,
+      "score": 95.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-10T21:59:03.677378+00:00"
+      "updated_at": "2026-09-06T04:41:55.183384+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -465,7 +465,7 @@
       "receipts": 2428734.15
     }
   },
-  "generated_at": "2026-09-05T07:51:34.556082+00:00",
+  "generated_at": "2026-09-06T08:07:08.825770+00:00",
   "history": {
     "bioguideId": "B001309",
     "birthYear": "1964",
@@ -635,7 +635,7 @@
         "stateName": "Tennessee"
       }
     ],
-    "updateDate": "2026-09-05T07:40:23Z"
+    "updateDate": "2026-09-06T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.664,

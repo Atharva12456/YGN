@@ -210,7 +210,7 @@
           "stateName": "Minnesota"
         }
       ],
-      "updateDate": "2026-09-05T07:40:23Z"
+      "updateDate": "2026-09-06T07:40:24Z"
     },
     "request": {
       "bioguideId": "f000470",
@@ -231,13 +231,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 52.5,
-        "value": 0.2662,
+        "score": 44.2,
+        "value": 0.1403,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.3,
-        "value": 0.6451,
+        "score": 96.2,
+        "value": 0.6296,
         "weight": 0.1
       },
       "pac_independence": {
@@ -263,7 +263,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 75.6,
+    "financeScore": 73.9,
     "funding": {
       "available": true,
       "breakdown": [
@@ -310,18 +310,18 @@
         "receipts": 1286028.1
       }
     },
-    "generated_at": "2026-08-10T16:09:47.719336+00:00",
+    "generated_at": "2026-09-05T20:22:33.343497+00:00",
     "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 75.6,
+    "score": 73.9,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-10T16:09:59.897215+00:00"
+    "updated_at": "2026-09-05T20:22:46.218294+00:00"
   },
   "funding": {
     "available": true,
@@ -374,13 +374,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 52.5,
-          "value": 0.2662,
+          "score": 44.2,
+          "value": 0.1403,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.3,
-          "value": 0.6451,
+          "score": 96.2,
+          "value": 0.6296,
           "weight": 0.1
         },
         "pac_independence": {
@@ -406,19 +406,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 75.6,
-      "generated_at": "2026-08-10T16:09:47.719336+00:00",
+      "financeScore": 73.9,
+      "generated_at": "2026-09-05T20:22:33.343497+00:00",
       "grade": "C",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 75.6,
+      "score": 73.9,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-10T16:09:59.897215+00:00"
+      "updated_at": "2026-09-05T20:22:46.218294+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -430,7 +430,7 @@
       "receipts": 1286028.1
     }
   },
-  "generated_at": "2026-09-05T07:51:34.556082+00:00",
+  "generated_at": "2026-09-06T08:07:08.825770+00:00",
   "history": {
     "bioguideId": "F000470",
     "birthYear": "1965",
@@ -599,7 +599,7 @@
         "stateName": "Minnesota"
       }
     ],
-    "updateDate": "2026-09-05T07:40:23Z"
+    "updateDate": "2026-09-06T07:40:24Z"
   },
   "nominate": {
     "dim1": 0.542,

@@ -128,7 +128,7 @@
       "birthYear": "1970",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1153,
+        "count": 1154,
         "url": "https://api.congress.gov/v3/member/G000591/cosponsored-legislation"
       },
       "currentMember": true,
@@ -225,7 +225,7 @@
           "stateName": "Mississippi"
         }
       ],
-      "updateDate": "2026-09-05T07:40:23Z"
+      "updateDate": "2026-09-06T07:40:23Z"
     },
     "request": {
       "bioguideId": "g000591",
@@ -272,9 +272,9 @@
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
-        "penalty": 10,
-        "ptr_filings": 2
+        "note": "3 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+        "penalty": 22,
+        "ptr_filings": 3
       }
     },
     "cycle": 2026,
@@ -325,7 +325,6 @@
         "receipts": 822760.85
       }
     },
-    "generated_at": "2026-08-11T02:28:35.994307+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -333,11 +332,11 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 56.9,
+    "score": 44.9,
     "source": "fec_live",
-    "stockPenalty": 10,
-    "stockPtrCount": 2,
-    "updated_at": "2026-08-11T02:28:43.795394+00:00"
+    "stockPenalty": 22,
+    "stockPtrCount": 3,
+    "updated_at": "2026-09-06T08:11:37.451384+00:00"
   },
   "funding": {
     "available": true,
@@ -416,14 +415,13 @@
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "2 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
-          "penalty": 10,
-          "ptr_filings": 2
+          "note": "3 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
+          "penalty": 22,
+          "ptr_filings": 3
         }
       },
       "cycle": 2026,
       "financeScore": 66.9,
-      "generated_at": "2026-08-11T02:28:35.994307+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -431,11 +429,11 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 56.9,
+      "score": 44.9,
       "source": "fec_live",
-      "stockPenalty": 10,
-      "stockPtrCount": 2,
-      "updated_at": "2026-08-11T02:28:43.795394+00:00"
+      "stockPenalty": 22,
+      "stockPtrCount": 3,
+      "updated_at": "2026-09-06T08:11:37.451384+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -447,7 +445,7 @@
       "receipts": 822760.85
     }
   },
-  "generated_at": "2026-09-05T07:51:34.556082+00:00",
+  "generated_at": "2026-09-06T08:07:08.825770+00:00",
   "history": {
     "bioguideId": "G000591",
     "birthYear": "1970",
@@ -529,7 +527,7 @@
     "birthYear": "1970",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1153,
+      "count": 1154,
       "url": "https://api.congress.gov/v3/member/G000591/cosponsored-legislation"
     },
     "currentMember": true,
@@ -626,7 +624,7 @@
         "stateName": "Mississippi"
       }
     ],
-    "updateDate": "2026-09-05T07:40:23Z"
+    "updateDate": "2026-09-06T07:40:23Z"
   },
   "nominate": {
     "dim1": 0.53,
