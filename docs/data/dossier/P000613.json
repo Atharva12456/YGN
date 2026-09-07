@@ -93,7 +93,7 @@
       "birthYear": "1969",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 3072,
+        "count": 3073,
         "url": "https://api.congress.gov/v3/member/P000613/cosponsored-legislation"
       },
       "currentMember": true,
@@ -200,7 +200,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-09-05T07:40:24Z"
+      "updateDate": "2026-09-07T07:40:21Z"
     },
     "request": {
       "bioguideId": "p000613",
@@ -221,13 +221,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 84.7,
-        "value": 0.6486,
+        "score": 78.3,
+        "value": 0.5618,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 92.7,
-        "value": 0.5297,
+        "score": 92.8,
+        "value": 0.5317,
         "weight": 0.1
       },
       "pac_independence": {
@@ -253,7 +253,7 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 73.7,
+    "financeScore": 72.4,
     "funding": {
       "available": true,
       "breakdown": [
@@ -300,18 +300,18 @@
         "receipts": 2887609.62
       }
     },
-    "generated_at": "2026-08-10T05:09:53.650191+00:00",
-    "grade": "C",
+    "generated_at": "2026-09-05T10:37:26.525293+00:00",
+    "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 73.7,
+    "score": 72.4,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-10T05:13:02.678297+00:00"
+    "updated_at": "2026-09-05T10:37:31.759773+00:00"
   },
   "funding": {
     "available": true,
@@ -364,13 +364,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 84.7,
-          "value": 0.6486,
+          "score": 78.3,
+          "value": 0.5618,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 92.7,
-          "value": 0.5297,
+          "score": 92.8,
+          "value": 0.5317,
           "weight": 0.1
         },
         "pac_independence": {
@@ -396,19 +396,19 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 73.7,
-      "generated_at": "2026-08-10T05:09:53.650191+00:00",
-      "grade": "C",
+      "financeScore": 72.4,
+      "generated_at": "2026-09-05T10:37:26.525293+00:00",
+      "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 73.7,
+      "score": 72.4,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-10T05:13:02.678297+00:00"
+      "updated_at": "2026-09-05T10:37:31.759773+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -420,7 +420,7 @@
       "receipts": 2887609.62
     }
   },
-  "generated_at": "2026-09-05T07:51:34.556082+00:00",
+  "generated_at": "2026-09-07T08:38:03.554646+00:00",
   "history": {
     "bioguideId": "P000613",
     "birthYear": "1969",
@@ -511,7 +511,7 @@
     "birthYear": "1969",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 3072,
+      "count": 3073,
       "url": "https://api.congress.gov/v3/member/P000613/cosponsored-legislation"
     },
     "currentMember": true,
@@ -618,7 +618,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-09-05T07:40:24Z"
+    "updateDate": "2026-09-07T07:40:21Z"
   },
   "nominate": {
     "dim1": -0.283,
