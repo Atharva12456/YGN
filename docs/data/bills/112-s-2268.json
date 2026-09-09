@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 112,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "S000148",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Schumer, Charles E. [D-NY]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-07-26",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "T000464",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Tester, Jon [D-MT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-07-31",
+        "state": "MT"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "American Parks American Products Act - Instructs the Secretary of the Interior or the Archivist of the United States to ensure that the items offered for sale in gift shops or visitor centers in units of the National Park System or of the National Archives and Records Administration, respectively, are U.S.- produced.",
+      "updated_at": "2012-05-21T21:24:33Z"
+    },
+    "detailPath": "112/s/2268",
+    "identifier": "S 2268",
+    "introducedDate": "2012-03-29",
+    "latestAction": {
+      "date": "2012-03-29",
+      "text": "Read twice and referred to the Committee on Energy and Natural Resources."
+    },
+    "number": "2268",
+    "originChamber": "Senate",
+    "policyArea": "Government Operations and Politics",
+    "sponsors": [
+      {
+        "bioguideId": "G000555",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Gillibrand, Kirsten E. [D-NY]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NY"
+      }
+    ],
+    "title": "American Parks American Products Act",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:09:59Z",
+    "url": "https://www.congress.gov/bill/112th-congress/senate-bill/2268",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:29.795831+00:00",
+  "source": "congress_api"
+}

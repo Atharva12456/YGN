@@ -328,7 +328,7 @@
           "stateName": "Massachusetts"
         }
       ],
-      "updateDate": "2026-09-08T07:40:18Z"
+      "updateDate": "2026-09-09T07:40:28Z"
     },
     "request": {
       "bioguideId": "n000015",
@@ -349,18 +349,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 64.4,
-        "value": 0.4162,
+        "score": 56.7,
+        "value": 0.3301,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 82.2,
-        "value": 0.3039,
+        "score": 78.2,
+        "value": 0.2687,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 49.5,
-        "value": 0.2833,
+        "score": 49.1,
+        "value": 0.2759,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -369,8 +369,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 42.1,
-        "value": 0.0154,
+        "score": 42.2,
+        "value": 0.0157,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -381,24 +381,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 60.5,
+    "financeScore": 58.5,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 8786.15,
+          "amount": 9311.15,
           "label": "Small individual (unitemized)",
-          "share": 0.004357915014816831
+          "share": 0.0043289328803749055
         },
         {
-          "amount": 562350.0,
+          "amount": 584100.0,
           "label": "Large individual (itemized)",
-          "share": 0.2789246152845382
+          "share": 0.2715593342849146
         },
         {
-          "amount": 1445000.0,
+          "amount": 1557500.0,
           "label": "PAC / other committees",
-          "share": 0.716717469700645
+          "share": 0.7241117328347105
         },
         {
           "amount": 0.0,
@@ -421,44 +421,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 4052062.59,
+        "cashOnHand": 3276320.6,
         "debts": 0.0,
-        "disbursements": 2123903.62,
-        "individualContributions": 571136.15,
-        "receipts": 2288096.26
+        "disbursements": 3074234.36,
+        "individualContributions": 593411.15,
+        "receipts": 2462685.01
       }
     },
-    "generated_at": "2026-08-12T02:45:59.050257+00:00",
-    "grade": "D-",
+    "generated_at": "2026-09-08T11:21:28.861833+00:00",
+    "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 60.5,
+    "score": 58.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-12T02:46:07.068809+00:00"
+    "updated_at": "2026-09-08T11:21:47.571966+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "N000015",
     "breakdown": [
       {
-        "amount": 8786.15,
+        "amount": 9311.15,
         "label": "Small individual (unitemized)",
-        "share": 0.004357915014816831
+        "share": 0.0043289328803749055
       },
       {
-        "amount": 562350.0,
+        "amount": 584100.0,
         "label": "Large individual (itemized)",
-        "share": 0.2789246152845382
+        "share": 0.2715593342849146
       },
       {
-        "amount": 1445000.0,
+        "amount": 1557500.0,
         "label": "PAC / other committees",
-        "share": 0.716717469700645
+        "share": 0.7241117328347105
       },
       {
         "amount": 0.0,
@@ -492,18 +492,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 64.4,
-          "value": 0.4162,
+          "score": 56.7,
+          "value": 0.3301,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 82.2,
-          "value": 0.3039,
+          "score": 78.2,
+          "value": 0.2687,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 49.5,
-          "value": 0.2833,
+          "score": 49.1,
+          "value": 0.2759,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -512,8 +512,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 42.1,
-          "value": 0.0154,
+          "score": 42.2,
+          "value": 0.0157,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -524,31 +524,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 60.5,
-      "generated_at": "2026-08-12T02:45:59.050257+00:00",
-      "grade": "D-",
+      "financeScore": 58.5,
+      "generated_at": "2026-09-08T11:21:28.861833+00:00",
+      "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 60.5,
+      "score": 58.5,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-12T02:46:07.068809+00:00"
+      "updated_at": "2026-09-08T11:21:47.571966+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 4052062.59,
+      "cashOnHand": 3276320.6,
       "debts": 0.0,
-      "disbursements": 2123903.62,
-      "individualContributions": 571136.15,
-      "receipts": 2288096.26
+      "disbursements": 3074234.36,
+      "individualContributions": 593411.15,
+      "receipts": 2462685.01
     }
   },
-  "generated_at": "2026-09-08T08:19:54.799633+00:00",
+  "generated_at": "2026-09-09T08:23:14.771066+00:00",
   "history": {
     "bioguideId": "N000015",
     "birthYear": "1949",
@@ -1015,7 +1015,7 @@
         "stateName": "Massachusetts"
       }
     ],
-    "updateDate": "2026-09-08T07:40:18Z"
+    "updateDate": "2026-09-09T07:40:28Z"
   },
   "nominate": {
     "dim1": -0.417,
@@ -1030,6 +1030,7 @@
   },
   "wiki": {
     "extract": "Richard Edmund Neal is an American politician serving as the U.S. representative for Massachusetts's 1st congressional district since 1989. The district, numbered as the 2nd district from 1989 to 2013, includes Springfield, West Springfield, Pittsfield, Holyoke, Agawam, Chicopee, and Westfield.",
+    "generated_at": "2026-08-10T05:09:53.650191+00:00",
     "source": "wikipedia",
     "summary": "Richard Edmund Neal is an American politician serving as the U.S. representative for Massachusetts's 1st congressional district since 1989. The district, numbered as the 2nd district from 1989 to 2013, includes Springfield, West Springfield, Pittsfield, Holyoke, Agawam, Chicopee, and Westfield.",
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Richard_Neal_official_photo_%28cropped%29.jpg/330px-Richard_Neal_official_photo_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

@@ -314,7 +314,7 @@
           "stateName": "Massachusetts"
         }
       ],
-      "updateDate": "2026-09-08T07:40:18Z"
+      "updateDate": "2026-09-09T07:40:28Z"
     },
     "request": {
       "bioguideId": "m000312",
@@ -335,18 +335,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 78.4,
-        "value": 0.5622,
+        "score": 77.9,
+        "value": 0.5569,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 94.6,
-        "value": 0.571,
+        "score": 93.7,
+        "value": 0.5501,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 86.9,
-        "value": 0.7374,
+        "score": 86.4,
+        "value": 0.7294,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -356,7 +356,7 @@
       },
       "small_donor": {
         "score": 87.3,
-        "value": 0.264,
+        "value": 0.2637,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -367,24 +367,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 87.5,
+    "financeScore": 87.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 147188.47,
+          "amount": 165653.11,
           "label": "Small individual (unitemized)",
-          "share": 0.194651751647915
+          "share": 0.19233033531981547
         },
         {
-          "amount": 410374.62,
+          "amount": 462541.65,
           "label": "Large individual (itemized)",
-          "share": 0.5427064947060561
+          "share": 0.5370306095906122
         },
         {
-          "amount": 198600.0,
+          "amount": 233100.0,
           "label": "PAC / other committees",
-          "share": 0.26264175364602893
+          "share": 0.27063905508957237
         },
         {
           "amount": 0.0,
@@ -407,44 +407,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 332099.81,
+        "cashOnHand": 348735.78,
         "debts": 0.0,
-        "disbursements": 821499.26,
-        "individualContributions": 557563.09,
-        "receipts": 759434.72
+        "disbursements": 910104.97,
+        "individualContributions": 628194.76,
+        "receipts": 864676.4
       }
     },
-    "generated_at": "2026-08-12T02:45:59.050257+00:00",
+    "generated_at": "2026-09-08T11:21:28.861833+00:00",
     "grade": "B+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 87.5,
+    "score": 87.1,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-12T02:46:01.905642+00:00"
+    "updated_at": "2026-09-08T11:21:32.512086+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M000312",
     "breakdown": [
       {
-        "amount": 147188.47,
+        "amount": 165653.11,
         "label": "Small individual (unitemized)",
-        "share": 0.194651751647915
+        "share": 0.19233033531981547
       },
       {
-        "amount": 410374.62,
+        "amount": 462541.65,
         "label": "Large individual (itemized)",
-        "share": 0.5427064947060561
+        "share": 0.5370306095906122
       },
       {
-        "amount": 198600.0,
+        "amount": 233100.0,
         "label": "PAC / other committees",
-        "share": 0.26264175364602893
+        "share": 0.27063905508957237
       },
       {
         "amount": 0.0,
@@ -478,18 +478,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 78.4,
-          "value": 0.5622,
+          "score": 77.9,
+          "value": 0.5569,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 94.6,
-          "value": 0.571,
+          "score": 93.7,
+          "value": 0.5501,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 86.9,
-          "value": 0.7374,
+          "score": 86.4,
+          "value": 0.7294,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -499,7 +499,7 @@
         },
         "small_donor": {
           "score": 87.3,
-          "value": 0.264,
+          "value": 0.2637,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -510,31 +510,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 87.5,
-      "generated_at": "2026-08-12T02:45:59.050257+00:00",
+      "financeScore": 87.1,
+      "generated_at": "2026-09-08T11:21:28.861833+00:00",
       "grade": "B+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 87.5,
+      "score": 87.1,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-12T02:46:01.905642+00:00"
+      "updated_at": "2026-09-08T11:21:32.512086+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 332099.81,
+      "cashOnHand": 348735.78,
       "debts": 0.0,
-      "disbursements": 821499.26,
-      "individualContributions": 557563.09,
-      "receipts": 759434.72
+      "disbursements": 910104.97,
+      "individualContributions": 628194.76,
+      "receipts": 864676.4
     }
   },
-  "generated_at": "2026-09-08T08:19:54.799633+00:00",
+  "generated_at": "2026-09-09T08:23:14.771066+00:00",
   "history": {
     "bioguideId": "M000312",
     "birthYear": "1959",
@@ -925,7 +925,7 @@
         "stateName": "Massachusetts"
       }
     ],
-    "updateDate": "2026-09-08T07:40:18Z"
+    "updateDate": "2026-09-09T07:40:28Z"
   },
   "nominate": {
     "dim1": -0.538,

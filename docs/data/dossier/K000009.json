@@ -400,7 +400,7 @@
           "stateName": "Ohio"
         }
       ],
-      "updateDate": "2026-09-08T07:40:17Z"
+      "updateDate": "2026-09-09T07:40:27Z"
     },
     "request": {
       "bioguideId": "k000009",
@@ -421,18 +421,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 72.6,
-        "value": 0.5023,
+        "score": 35.0,
+        "value": 0.0,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 94.6,
-        "value": 0.5695,
+        "score": 71.9,
+        "value": 0.2157,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 49.4,
-        "value": 0.281,
+        "score": 83.2,
+        "value": 0.6715,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -441,8 +441,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 60.3,
-        "value": 0.0625,
+        "score": 82.9,
+        "value": 0.1947,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -452,25 +452,25 @@
         "ptr_filings": 0
       }
     },
-    "cycle": 2020,
-    "financeScore": 68.8,
+    "cycle": 2026,
+    "financeScore": 74.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 19241.5,
+          "amount": 448412.99,
           "label": "Small individual (unitemized)",
-          "share": 0.01755780323744667
+          "share": 0.1307276832560694
         },
         {
-          "amount": 288708.0,
+          "amount": 1854992.53,
           "label": "Large individual (itemized)",
-          "share": 0.26344506702059367
+          "share": 0.5407936016844981
         },
         {
-          "amount": 787945.0,
+          "amount": 1126724.8,
           "label": "PAC / other committees",
-          "share": 0.7189971297419596
+          "share": 0.32847871505943255
         },
         {
           "amount": 0.0,
@@ -491,46 +491,46 @@
         "party": "DEM",
         "state": "OH"
       },
-      "cycle": 2020,
+      "cycle": 2026,
       "totals": {
-        "cashOnHand": 772395.92,
+        "cashOnHand": 3491668.0,
         "debts": 0.0,
-        "disbursements": 987297.77,
-        "individualContributions": 307949.5,
-        "receipts": 1097894.5
+        "disbursements": 1260674.13,
+        "individualContributions": 2303405.52,
+        "receipts": 4303415.64
       }
     },
-    "generated_at": "2026-08-12T13:48:54.586296+00:00",
-    "grade": "D+",
+    "generated_at": "2026-09-08T21:10:57.651185+00:00",
+    "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 68.8,
+    "score": 74.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-12T13:49:00.878257+00:00"
+    "updated_at": "2026-09-08T21:11:05.731129+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "K000009",
     "breakdown": [
       {
-        "amount": 19241.5,
+        "amount": 448412.99,
         "label": "Small individual (unitemized)",
-        "share": 0.01755780323744667
+        "share": 0.1307276832560694
       },
       {
-        "amount": 288708.0,
+        "amount": 1854992.53,
         "label": "Large individual (itemized)",
-        "share": 0.26344506702059367
+        "share": 0.5407936016844981
       },
       {
-        "amount": 787945.0,
+        "amount": 1126724.8,
         "label": "PAC / other committees",
-        "share": 0.7189971297419596
+        "share": 0.32847871505943255
       },
       {
         "amount": 0.0,
@@ -551,7 +551,7 @@
       "party": "DEM",
       "state": "OH"
     },
-    "cycle": 2020,
+    "cycle": 2026,
     "grade": {
       "bioguideId": "K000009",
       "candidate": {
@@ -564,18 +564,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 72.6,
-          "value": 0.5023,
+          "score": 35.0,
+          "value": 0.0,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 94.6,
-          "value": 0.5695,
+          "score": 71.9,
+          "value": 0.2157,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 49.4,
-          "value": 0.281,
+          "score": 83.2,
+          "value": 0.6715,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -584,8 +584,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 60.3,
-          "value": 0.0625,
+          "score": 82.9,
+          "value": 0.1947,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -595,32 +595,32 @@
           "ptr_filings": 0
         }
       },
-      "cycle": 2020,
-      "financeScore": 68.8,
-      "generated_at": "2026-08-12T13:48:54.586296+00:00",
-      "grade": "D+",
+      "cycle": 2026,
+      "financeScore": 74.3,
+      "generated_at": "2026-09-08T21:10:57.651185+00:00",
+      "grade": "C",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 68.8,
+      "score": 74.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-12T13:49:00.878257+00:00"
+      "updated_at": "2026-09-08T21:11:05.731129+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 772395.92,
+      "cashOnHand": 3491668.0,
       "debts": 0.0,
-      "disbursements": 987297.77,
-      "individualContributions": 307949.5,
-      "receipts": 1097894.5
+      "disbursements": 1260674.13,
+      "individualContributions": 2303405.52,
+      "receipts": 4303415.64
     }
   },
-  "generated_at": "2026-09-08T08:19:54.799633+00:00",
+  "generated_at": "2026-09-09T08:23:14.771066+00:00",
   "history": {
     "bioguideId": "K000009",
     "birthYear": "1946",
@@ -1149,7 +1149,7 @@
         "stateName": "Ohio"
       }
     ],
-    "updateDate": "2026-09-08T07:40:17Z"
+    "updateDate": "2026-09-09T07:40:27Z"
   },
   "nominate": {
     "dim1": -0.341,
@@ -1164,6 +1164,7 @@
   },
   "wiki": {
     "extract": "Marcia Carolyn Kaptur is an American politician serving as the U.S. representative for Ohio's 9th congressional district since 1983. Her district stretches across northwestern Ohio along the southern shore of Lake Erie and includes parts of Toledo and surrounding communities.",
+    "generated_at": "2026-08-04T06:15:19.973402+00:00",
     "source": "wikipedia",
     "summary": "Marcia Carolyn Kaptur is an American politician serving as the U.S. representative for Ohio's 9th congressional district since 1983. Her district stretches across northwestern Ohio along the southern shore of Lake Erie and includes parts of Toledo and surrounding communities.",
     "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Marcy_Kaptur_Wikipedia.jpg/330px-Marcy_Kaptur_Wikipedia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

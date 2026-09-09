@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 113,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "C000174",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Carper, Thomas R. [D-DE]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2013-02-27",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "C001070",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Casey, Robert P., Jr. [D-PA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2013-04-09",
+        "state": "PA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "White Clay Creek Wild and Scenic River Expansion Act of 2013 - Amends the Wild and Scenic Rivers Act to designate additional segments and tributaries of the White Clay Creek in Delaware and Pennsylvania as components of the National Wild and Scenic Rivers System.",
+      "updated_at": "2013-03-15T18:44:17Z"
+    },
+    "detailPath": "113/s/393",
+    "identifier": "S 393",
+    "introducedDate": "2013-02-27",
+    "latestAction": {
+      "date": "2013-06-21",
+      "text": "Referred to the Subcommittee on Public Lands and Environmental Regulation."
+    },
+    "number": "393",
+    "originChamber": "Senate",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "C001088",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Coons, Christopher A. [D-DE]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "DE"
+      }
+    ],
+    "title": "White Clay Creek Wild and Scenic River Expansion Act of 2013",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:09:59Z",
+    "url": "https://www.congress.gov/bill/113th-congress/senate-bill/393",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:22.611346+00:00",
+  "source": "congress_api"
+}

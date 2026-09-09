@@ -1,0 +1,56 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 112,
+    "cosponsorCount": 1,
+    "cosponsors": [
+      {
+        "bioguideId": "B001268",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Brown, Scott P. [R-MA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-04-19",
+        "state": "MA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Designates the Salt Pond Visitor Center at Cape Cod National Seashore in Eastham, Massachusetts, as the \"Thomas P. O'Neill, Jr. Salt Pond Visitor Center\".",
+      "updated_at": "2012-06-04T16:21:11Z"
+    },
+    "detailPath": "112/s/2316",
+    "identifier": "S 2316",
+    "introducedDate": "2012-04-19",
+    "latestAction": {
+      "date": "2012-06-27",
+      "text": "Committee on Energy and Natural Resources Subcommittee on National Parks. Hearings held. With printed Hearing: S.Hrg. 112-578."
+    },
+    "number": "2316",
+    "originChamber": "Senate",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "K000148",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Kerry, John F. [D-MA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "MA"
+      }
+    ],
+    "title": "A bill to designate the Salt Pond Visitor Center at the Cape Cod National Seashore as the \"Thomas P. O'Neill, Jr. Salt Pond Visitor Center\", and for other purposes.",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:09:59Z",
+    "url": "https://www.congress.gov/bill/112th-congress/senate-bill/2316",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:29.299106+00:00",
+  "source": "congress_api"
+}

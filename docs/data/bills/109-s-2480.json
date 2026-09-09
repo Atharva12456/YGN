@@ -1,0 +1,76 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 109,
+    "cosponsorCount": 3,
+    "cosponsors": [
+      {
+        "bioguideId": "L000174",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Leahy, Patrick J. [D-VT]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2006-03-29",
+        "state": "VT"
+      },
+      {
+        "bioguideId": "B001135",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Burr, Richard [R-NC]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2006-05-03",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "S000148",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Schumer, Charles E. [D-NY]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2006-05-16",
+        "state": "NY"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Contact Lens Consumer Protection Act - Amends the Fairness to Contact Lens Consumers Act to require contact lens manufacturers to make the lenses available in a commercially reasonable and nondiscriminatory manner to: (1) prescribers and associated entities; and (2) alternative channels of distribution. (Excludes specified types of lenses, including lenses that are custom designed and manufactured for an individual patient and are not mass produced or marketed.) Requires the Federal Trade Commission (FTC) to prescribe rules to carry out this Act. Treats violations of this Act as unfair or deceptive acts or practices.",
+      "updated_at": "2006-05-23T14:19:04Z"
+    },
+    "detailPath": "109/s/2480",
+    "identifier": "S 2480",
+    "introducedDate": "2006-03-29",
+    "latestAction": {
+      "date": "2006-03-29",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "2480",
+    "originChamber": "Senate",
+    "policyArea": "Commerce",
+    "sponsors": [
+      {
+        "bioguideId": "B000382",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Bennett, Robert F. [R-UT]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "UT"
+      }
+    ],
+    "title": "Contact Lens Consumer Protection Act",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:03:40Z",
+    "url": "https://www.congress.gov/bill/109th-congress/senate-bill/2480",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:41.482863+00:00",
+  "source": "congress_api"
+}

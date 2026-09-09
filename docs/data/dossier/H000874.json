@@ -420,7 +420,7 @@
           "stateName": "Maryland"
         }
       ],
-      "updateDate": "2026-09-08T07:40:17Z"
+      "updateDate": "2026-09-09T07:40:27Z"
     },
     "request": {
       "bioguideId": "h000874",
@@ -441,18 +441,18 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 52.0,
-        "value": 0.258,
+        "score": 59.2,
+        "value": 0.3629,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.5,
-        "value": 0.6722,
+        "score": 82.9,
+        "value": 0.3197,
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 51.9,
-        "value": 0.3307,
+        "score": 50.4,
+        "value": 0.3012,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -461,8 +461,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 77.0,
-        "value": 0.153,
+        "score": 47.0,
+        "value": 0.0261,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -472,30 +472,30 @@
         "ptr_filings": 0
       }
     },
-    "cycle": 2026,
-    "financeScore": 70.5,
+    "cycle": 2020,
+    "financeScore": 61.2,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 19578.51,
+          "amount": 31587.8,
           "label": "Small individual (unitemized)",
-          "share": 0.050594898379855445
+          "share": 0.007871957871989273
         },
         {
-          "amount": 108387.58,
+          "amount": 1177019.66,
           "label": "Large individual (itemized)",
-          "share": 0.2800958089118351
+          "share": 0.2933236622374188
         },
         {
-          "amount": 259000.0,
+          "amount": 2804040.0,
           "label": "PAC / other committees",
-          "share": 0.6693092927083094
+          "share": 0.6987914559219952
         },
         {
-          "amount": 0.0,
+          "amount": 51.86,
           "label": "Political party committees",
-          "share": 0.0
+          "share": 1.2923968596779886e-05
         },
         {
           "amount": 0.0,
@@ -511,51 +511,51 @@
         "party": "DEM",
         "state": "MD"
       },
-      "cycle": 2026,
+      "cycle": 2020,
       "totals": {
-        "cashOnHand": 322867.2,
+        "cashOnHand": 879066.75,
         "debts": 0.0,
-        "disbursements": 703137.88,
-        "individualContributions": 127966.09,
-        "receipts": 402330.17
+        "disbursements": 4363890.74,
+        "individualContributions": 1208607.46,
+        "receipts": 4608825.11
       }
     },
-    "generated_at": "2026-08-12T13:48:54.586296+00:00",
-    "grade": "C-",
+    "generated_at": "2026-09-08T21:10:57.651185+00:00",
+    "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 70.5,
+    "score": 61.2,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-08-12T13:49:02.179857+00:00"
+    "updated_at": "2026-09-08T21:11:07.127649+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H000874",
     "breakdown": [
       {
-        "amount": 19578.51,
+        "amount": 31587.8,
         "label": "Small individual (unitemized)",
-        "share": 0.050594898379855445
+        "share": 0.007871957871989273
       },
       {
-        "amount": 108387.58,
+        "amount": 1177019.66,
         "label": "Large individual (itemized)",
-        "share": 0.2800958089118351
+        "share": 0.2933236622374188
       },
       {
-        "amount": 259000.0,
+        "amount": 2804040.0,
         "label": "PAC / other committees",
-        "share": 0.6693092927083094
+        "share": 0.6987914559219952
       },
       {
-        "amount": 0.0,
+        "amount": 51.86,
         "label": "Political party committees",
-        "share": 0.0
+        "share": 1.2923968596779886e-05
       },
       {
         "amount": 0.0,
@@ -571,7 +571,7 @@
       "party": "DEM",
       "state": "MD"
     },
-    "cycle": 2026,
+    "cycle": 2020,
     "grade": {
       "bioguideId": "H000874",
       "candidate": {
@@ -584,18 +584,18 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 52.0,
-          "value": 0.258,
+          "score": 59.2,
+          "value": 0.3629,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.5,
-          "value": 0.6722,
+          "score": 82.9,
+          "value": 0.3197,
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 51.9,
-          "value": 0.3307,
+          "score": 50.4,
+          "value": 0.3012,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -604,8 +604,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 77.0,
-          "value": 0.153,
+          "score": 47.0,
+          "value": 0.0261,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -615,32 +615,32 @@
           "ptr_filings": 0
         }
       },
-      "cycle": 2026,
-      "financeScore": 70.5,
-      "generated_at": "2026-08-12T13:48:54.586296+00:00",
-      "grade": "C-",
+      "cycle": 2020,
+      "financeScore": 61.2,
+      "generated_at": "2026-09-08T21:10:57.651185+00:00",
+      "grade": "D-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 70.5,
+      "score": 61.2,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-08-12T13:49:02.179857+00:00"
+      "updated_at": "2026-09-08T21:11:07.127649+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 322867.2,
+      "cashOnHand": 879066.75,
       "debts": 0.0,
-      "disbursements": 703137.88,
-      "individualContributions": 127966.09,
-      "receipts": 402330.17
+      "disbursements": 4363890.74,
+      "individualContributions": 1208607.46,
+      "receipts": 4608825.11
     }
   },
-  "generated_at": "2026-09-08T08:19:54.799633+00:00",
+  "generated_at": "2026-09-09T08:23:14.771066+00:00",
   "history": {
     "bioguideId": "H000874",
     "birthYear": "1939",
@@ -1234,7 +1234,7 @@
         "stateName": "Maryland"
       }
     ],
-    "updateDate": "2026-09-08T07:40:17Z"
+    "updateDate": "2026-09-09T07:40:27Z"
   },
   "nominate": {
     "dim1": -0.381,

@@ -1,0 +1,96 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 110,
+    "cosponsorCount": 5,
+    "cosponsors": [
+      {
+        "bioguideId": "B000711",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Boxer, Barbara [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2008-03-13",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M000303",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. McCain, John [R-AZ]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2008-03-13",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "K000352",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Kyl, Jon [R-AZ]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2008-03-31",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "S000709",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Specter, Arlen [R-PA]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2008-04-22",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C000560",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Coburn, Tom [R-OK]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2008-05-02",
+        "state": "OK"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Amends federal transportation law to allow certain air carriers that hold or operate air carrier slots at Ronald Reagan Washington National Airport, which are used for scheduled air service between that airport and a large hub airport, to use such slots also to provide nonstop air transportation service between Reagan National Airport and another airport more than 1,250 statute miles away (perimeter rule limit).",
+      "updated_at": "2008-05-08T16:37:01Z"
+    },
+    "detailPath": "110/s/2783",
+    "identifier": "S 2783",
+    "introducedDate": "2008-03-13",
+    "latestAction": {
+      "date": "2008-03-13",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "2783",
+    "originChamber": "Senate",
+    "policyArea": "Transportation and Public Works",
+    "sponsors": [
+      {
+        "bioguideId": "E000194",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Ensign, John [R-NV]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "NV"
+      }
+    ],
+    "title": "A bill to allow for additional flights beyond the perimeter restriction applicable to Ronald Reagan Washington National Airport.",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:03:40Z",
+    "url": "https://www.congress.gov/bill/110th-congress/senate-bill/2783",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:37.564944+00:00",
+  "source": "congress_api"
+}

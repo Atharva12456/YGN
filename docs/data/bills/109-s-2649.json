@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 109,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "W000779",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Wyden, Ron [D-OR]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2006-04-25",
+        "state": "OR"
+      },
+      {
+        "bioguideId": "F000062",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Feinstein, Dianne [D-CA]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2006-04-25",
+        "state": "CA"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Salmon Assistance and Recovery Act of 2006 - Directs the Secretary of Commerce to develop and implement a coordinated, comprehensive research and recovery program for Klamath River Fall Chinook salmon and Klamath River Fall Coho salmon. Provides emergency disaster assistance to fishing communities, Indian tribes, businesses, holders of community development quotas, individuals, and other entities to mitigate economic losses caused by declining Klamath River Fall Chinook salmon.",
+      "updated_at": "2006-06-05T21:29:03Z"
+    },
+    "detailPath": "109/s/2649",
+    "identifier": "S 2649",
+    "introducedDate": "2006-04-25",
+    "latestAction": {
+      "date": "2006-04-25",
+      "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "2649",
+    "originChamber": "Senate",
+    "policyArea": "Water Resources Development",
+    "sponsors": [
+      {
+        "bioguideId": "B000711",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Boxer, Barbara [D-CA]",
+        "party": "D",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "CA"
+      }
+    ],
+    "title": "Salmon Assistance and Recovery Act of 2006",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:03:40Z",
+    "url": "https://www.congress.gov/bill/109th-congress/senate-bill/2649",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:40.943023+00:00",
+  "source": "congress_api"
+}

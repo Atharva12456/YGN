@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 112,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "H001061",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Hoeven, John [R-ND]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-02-13",
+        "state": "ND"
+      },
+      {
+        "bioguideId": "L000504",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Lugar, Richard G. [R-IN]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-02-13",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "C000880",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Crapo, Mike [R-ID]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-02-15",
+        "state": "ID"
+      },
+      {
+        "bioguideId": "T000250",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Thune, John [R-SD]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2012-03-01",
+        "state": "SD"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Strategic Petroleum Supplies Act - Prohibits the Administration from authorizing sales of petroleum products from the Strategic Petroleum Reserve (SPR) until the date all requisite permits under Executive Order 13337 for the Keystone XL pipeline project application filed on September 19, 2008, have been issued. Excepts from such prohibition U.S. obligations under the international energy program.",
+      "updated_at": "2012-04-11T19:43:50Z"
+    },
+    "detailPath": "112/s/2100",
+    "identifier": "S 2100",
+    "introducedDate": "2012-02-13",
+    "latestAction": {
+      "date": "2012-02-13",
+      "text": "Read twice and referred to the Committee on Energy and Natural Resources."
+    },
+    "number": "2100",
+    "originChamber": "Senate",
+    "policyArea": "Energy",
+    "sponsors": [
+      {
+        "bioguideId": "V000127",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Vitter, David [R-LA]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "LA"
+      }
+    ],
+    "title": "Strategic Petroleum Supplies Act",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:09:59Z",
+    "url": "https://www.congress.gov/bill/112th-congress/senate-bill/2100",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:32.592766+00:00",
+  "source": "congress_api"
+}

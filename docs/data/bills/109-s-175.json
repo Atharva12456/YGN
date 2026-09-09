@@ -1,0 +1,66 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 109,
+    "cosponsorCount": 2,
+    "cosponsors": [
+      {
+        "bioguideId": "R000307",
+        "district": null,
+        "isOriginalCosponsor": true,
+        "name": "Sen. Roberts, Pat [R-KS]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2005-01-26",
+        "state": "KS"
+      },
+      {
+        "bioguideId": "T000024",
+        "district": null,
+        "isOriginalCosponsor": false,
+        "name": "Sen. Talent, Jim [R-MO]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2005-06-30",
+        "state": "MO"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Bleeding Kansas National Heritage Area Act - Establishes the Bleeding Kansas and the Enduring Struggle for Freedom National Heritage Area in Kansas. Designates the Territorial Kansas Heritage Alliance as the management entity for the Area. Prohibits the Alliance from using Federal funds received under this Act to acquire real property or an interest in real property. Requires the Alliance to prepare and submit a management plan for the Area, which shall contain a comprehensive program for the conservation, interpretation, funding, management, and development of such Area. Authorizes the Secretary of the Interior to provide technical and financial assistance for the development and implementation of the management plan. Requires the Alliance to: (1) provide assistance and encouragement to State and local governments, private organizations, and persons to protect and promote the resources and values of the Area; and (2) be an advocate for land management practices consistent with the purposes of such Area.",
+      "updated_at": "2005-02-16T17:07:18Z"
+    },
+    "detailPath": "109/s/175",
+    "identifier": "S 175",
+    "introducedDate": "2005-01-26",
+    "latestAction": {
+      "date": "2005-03-15",
+      "text": "Committee on Energy and Natural Resources Subcommittee on National Parks. Hearings held. With printed Hearing: S.Hrg. 109-28."
+    },
+    "number": "175",
+    "originChamber": "Senate",
+    "policyArea": "Public Lands and Natural Resources",
+    "sponsors": [
+      {
+        "bioguideId": "B000953",
+        "district": null,
+        "isOriginalCosponsor": null,
+        "name": "Sen. Brownback, Sam [R-KS]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "KS"
+      }
+    ],
+    "title": "Bleeding Kansas National Heritage Area Act",
+    "type": "S",
+    "updatedAt": "2026-09-08T18:09:59Z",
+    "url": "https://www.congress.gov/bill/109th-congress/senate-bill/175",
+    "votes": []
+  },
+  "generated_at": "2026-09-09T08:23:44.633169+00:00",
+  "source": "congress_api"
+}
