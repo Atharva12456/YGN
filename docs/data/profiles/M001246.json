@@ -12,7 +12,7 @@
       "birthYear": "1977",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 120,
+        "count": 130,
         "url": "https://api.congress.gov/v3/member/M001246/cosponsored-legislation"
       },
       "currentMember": true,
@@ -45,6 +45,10 @@
           "startDate": "2026-04-20T04:00:00Z"
         }
       ],
+      "sponsoredLegislation": {
+        "count": 2,
+        "url": "https://api.congress.gov/v3/member/M001246/sponsored-legislation"
+      },
       "state": "New Jersey",
       "terms": [
         {
@@ -57,7 +61,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-09-10T07:40:35Z"
+      "updateDate": "2026-09-11T07:40:33Z"
     },
     "request": {
       "bioguideId": "m001246",
@@ -65,5 +69,5 @@
       "format": "json"
     }
   },
-  "generated_at": "2026-09-10T08:23:54.587442+00:00"
+  "generated_at": "2026-09-11T08:18:09.052377+00:00"
 }
