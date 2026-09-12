@@ -36,9 +36,9 @@
     },
     "stock_conflict": {
       "measurable": true,
-      "note": "18 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
-      "penalty": 42,
-      "ptr_filings": 18
+      "note": "20 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+      "penalty": 50,
+      "ptr_filings": 20
     }
   },
   "cycle": 2026,
@@ -89,7 +89,7 @@
       "receipts": 705263.13
     }
   },
-  "generated_at": "2026-08-18T13:09:21.334753+00:00",
+  "generated_at": "2026-09-12T20:34:43.773643+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 30.2,
+  "score": 22.2,
   "source": "fec_live",
-  "stockPenalty": 42,
-  "stockPtrCount": 18,
-  "updated_at": "2026-08-18T13:09:25.585921+00:00"
+  "stockPenalty": 50,
+  "stockPtrCount": 20,
+  "updated_at": "2026-09-12T20:34:57.960349+00:00"
 }
