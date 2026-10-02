@@ -1,0 +1,606 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 110,
+    "cosponsorCount": 56,
+    "cosponsors": [
+      {
+        "bioguideId": "A000362",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Altmire, Jason [D-PA-4]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "B001239",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Barrett, J. Gresham [R-SC-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "SC"
+      },
+      {
+        "bioguideId": "B001228",
+        "district": 45,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Bono, Mary [R-CA-45]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "B001255",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Boustany, Charles W., Jr. [R-LA-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "LA"
+      },
+      {
+        "bioguideId": "C000071",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Camp, Dave [R-MI-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "C001046",
+        "district": 7,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cantor, Eric [R-VA-7]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "C001065",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carney, Christopher P. [D-PA-10]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "C001051",
+        "district": 31,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Carter, John R. [R-TX-31]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "C000243",
+        "district": 0,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Castle, Michael N. [R-DE-At Large]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "DE"
+      },
+      {
+        "bioguideId": "C000556",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Coble, Howard [R-NC-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "C001053",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cole, Tom [R-OK-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "D000136",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Davis, Tom [R-VA-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "D000605",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Drake, Thelma D. [R-VA-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "VA"
+      },
+      {
+        "bioguideId": "D000533",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Duncan, John J., Jr. [R-TN-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "TN"
+      },
+      {
+        "bioguideId": "E000187",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. English, Phil [R-PA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "F000450",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Foxx, Virginia [R-NC-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "G000549",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gerlach, Jim [R-PA-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "G000180",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gilchrest, Wayne T. [R-MD-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MD"
+      },
+      {
+        "bioguideId": "G000552",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gohmert, Louie [R-TX-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "G000546",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Graves, Sam [R-MO-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "H000323",
+        "district": 14,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hastert, J. Dennis [R-IL-14]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "H001041",
+        "district": 2,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Heller, Dean [R-NV-2]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NV"
+      },
+      {
+        "bioguideId": "H000712",
+        "district": 17,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Holden, Tim [D-PA-17]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "H000948",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Hulshof, Kenny C. [R-MO-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MO"
+      },
+      {
+        "bioguideId": "K000361",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Keller, Ric [R-FL-8]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "FL"
+      },
+      {
+        "bioguideId": "K000220",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kingston, Jack [R-GA-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "K000360",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kirk, Mark Steven [R-IL-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "K000364",
+        "district": 29,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Kuhl, John R. \"Randy\", Jr. [R-NY-29]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "L000552",
+        "district": 18,
+        "isOriginalCosponsor": true,
+        "name": "Rep. LaHood, Ray [R-IL-18]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "L000553",
+        "district": 14,
+        "isOriginalCosponsor": true,
+        "name": "Rep. LaTourette, Steven C. [R-OH-14]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "L000517",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Lungren, Daniel E. [R-CA-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001165",
+        "district": 22,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCarthy, Kevin [R-CA-22]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "CA"
+      },
+      {
+        "bioguideId": "M001157",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCaul, Michael T. [R-TX-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "TX"
+      },
+      {
+        "bioguideId": "M001147",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McCotter, Thaddeus G. [R-MI-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "M001156",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. McHenry, Patrick T. [R-NC-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "M001150",
+        "district": 10,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Miller, Candice S. [R-MI-10]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "M001168",
+        "district": 8,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Murphy, Patrick J. [D-PA-8]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "M001151",
+        "district": 18,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Murphy, Tim [R-PA-18]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "P000265",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Petri, Thomas E. [R-WI-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "WI"
+      },
+      {
+        "bioguideId": "P000585",
+        "district": 19,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Platts, Todd Russell [R-PA-19]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "P000591",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Price, Tom [R-GA-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "GA"
+      },
+      {
+        "bioguideId": "P000555",
+        "district": 15,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Pryce, Deborah [R-OH-15]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "R000033",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Ramstad, Jim [R-MN-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MN"
+      },
+      {
+        "bioguideId": "R000141",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Regula, Ralph [R-OH-16]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "OH"
+      },
+      {
+        "bioguideId": "R000580",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Roskam, Peter J. [R-IL-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "IL"
+      },
+      {
+        "bioguideId": "S000097",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Saxton, Jim [R-NJ-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "S001162",
+        "district": 13,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schwartz, Allyson Y. [D-PA-13]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S000248",
+        "district": 16,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Serrano, Jose E. [D-NY-16]",
+        "party": "D",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NY"
+      },
+      {
+        "bioguideId": "S001144",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Shays, Christopher [R-CT-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "CT"
+      },
+      {
+        "bioguideId": "S001154",
+        "district": 9,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Shuster, Bill [R-PA-9]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "PA"
+      },
+      {
+        "bioguideId": "S000522",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Smith, Christopher H. [R-NJ-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NJ"
+      },
+      {
+        "bioguideId": "S001143",
+        "district": 3,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Souder, Mark E. [R-IN-3]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "IN"
+      },
+      {
+        "bioguideId": "S001155",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Sullivan, John [R-OK-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "OK"
+      },
+      {
+        "bioguideId": "U000031",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Upton, Fred [R-MI-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "MI"
+      },
+      {
+        "bioguideId": "W000789",
+        "district": 1,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Wilson, Heather [R-NM-1]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-06-06",
+        "state": "NM"
+      },
+      {
+        "bioguideId": "W000273",
+        "district": 11,
+        "isOriginalCosponsor": false,
+        "name": "Rep. Weller, Jerry [R-IL-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2007-09-04",
+        "state": "IL"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Supports the goals and ideals of National Teen Driver Safety Week. Encourages the people of the United States to observe the week with activities that promote licensed teenage drivers to drive safely.",
+      "updated_at": "2007-08-07T19:33:34Z"
+    },
+    "detailPath": "110/hconres/165",
+    "identifier": "HCONRES 165",
+    "introducedDate": "2007-06-06",
+    "latestAction": {
+      "date": "2007-09-06",
+      "text": "Received in the Senate and referred to the Committee on Commerce, Science, and Transportation."
+    },
+    "number": "165",
+    "originChamber": "House",
+    "policyArea": "Commemorations",
+    "sponsors": [
+      {
+        "bioguideId": "D000604",
+        "district": 15,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Dent, Charles W. [R-PA-15]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "PA"
+      }
+    ],
+    "title": "Supporting the goals and ideals of National Teen Driver Safety Week.",
+    "type": "HCONRES",
+    "updatedAt": "2026-09-08T18:03:40Z",
+    "url": "https://www.congress.gov/bill/110th-congress/house-concurrent-resolution/165",
+    "votes": []
+  },
+  "generated_at": "2026-10-02T10:03:51.342774+00:00",
+  "source": "congress_api"
+}

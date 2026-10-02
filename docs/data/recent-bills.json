@@ -451,6 +451,22 @@
       },
       {
         "congress": 110,
+        "introducedDate": "2007-06-06",
+        "latestAction": {
+          "actionDate": "2007-09-06",
+          "text": "Received in the Senate and referred to the Committee on Commerce, Science, and Transportation."
+        },
+        "number": "165",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "Supporting the goals and ideals of National Teen Driver Safety Week.",
+        "type": "HCONRES",
+        "updateDate": "2026-09-08",
+        "updateDateIncludingText": "2026-09-08",
+        "url": "https://api.congress.gov/v3/bill/110/hconres/165?format=json"
+      },
+      {
+        "congress": 110,
         "introducedDate": "2007-01-17",
         "latestAction": {
           "actionDate": "2007-02-15",
@@ -771,6 +787,38 @@
       },
       {
         "congress": 107,
+        "introducedDate": "2001-05-24",
+        "latestAction": {
+          "actionDate": "2001-10-31",
+          "text": "Placed on Senate Legislative Calendar under General Orders. Calendar No. 209."
+        },
+        "number": "951",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "Coast Guard Authorization Act of 2001",
+        "type": "S",
+        "updateDate": "2026-09-08",
+        "updateDateIncludingText": "2026-09-08",
+        "url": "https://api.congress.gov/v3/bill/107/s/951?format=json"
+      },
+      {
+        "congress": 107,
+        "introducedDate": "2001-10-09",
+        "latestAction": {
+          "actionDate": "2001-10-09",
+          "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+        },
+        "number": "1512",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "A bill to report on any air space restrictions put in place as a result of September 11, 2001, terrorist attacks that remain in place.",
+        "type": "S",
+        "updateDate": "2026-09-08",
+        "updateDateIncludingText": "2026-09-08",
+        "url": "https://api.congress.gov/v3/bill/107/s/1512?format=json"
+      },
+      {
+        "congress": 107,
         "introducedDate": "2001-09-24",
         "latestAction": {
           "actionDate": "2001-09-24",
@@ -784,22 +832,6 @@
         "updateDate": "2026-09-08",
         "updateDateIncludingText": "2026-09-08",
         "url": "https://api.congress.gov/v3/bill/107/s/1458?format=json"
-      },
-      {
-        "congress": 105,
-        "introducedDate": "1998-03-05",
-        "latestAction": {
-          "actionDate": "1998-03-23",
-          "text": "Referred to the Subcommittee on Health and Environment, for a period to be subsequently determined by the Chairman."
-        },
-        "number": "3379",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Food Stamp Benefits for Aliens Restoration Act of 1998",
-        "type": "HR",
-        "updateDate": "2026-06-03",
-        "updateDateIncludingText": "2026-06-03",
-        "url": "https://api.congress.gov/v3/bill/105/hr/3379?format=json"
       },
       {
         "congress": 105,
@@ -832,6 +864,22 @@
         "updateDate": "2026-08-10",
         "updateDateIncludingText": "2026-08-10",
         "url": "https://api.congress.gov/v3/bill/104/hr/1833?format=json"
+      },
+      {
+        "congress": 104,
+        "introducedDate": "1996-03-12",
+        "latestAction": {
+          "actionDate": "1996-03-12",
+          "text": "Read twice and referred to the Committee on Judiciary."
+        },
+        "number": "1606",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "Biological Agents Enhanced Penalties and Control Act",
+        "type": "S",
+        "updateDate": "2026-08-10",
+        "updateDateIncludingText": "2026-08-10",
+        "url": "https://api.congress.gov/v3/bill/104/s/1606?format=json"
       },
       {
         "congress": 104,
@@ -1090,54 +1138,6 @@
         "url": "https://api.congress.gov/v3/bill/104/sres/180?format=json"
       },
       {
-        "congress": 104,
-        "introducedDate": "1995-01-04",
-        "latestAction": {
-          "actionDate": "1995-02-06",
-          "text": "Referred to the Subcommittee on Health and Environment."
-        },
-        "number": "25",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "To amend part B of title XVIII of the Social Security Act to make technical corrections relating to the enactment of the Social Security Act Amendments of 1994, and for other purposes.",
-        "type": "HR",
-        "updateDate": "2026-06-03",
-        "updateDateIncludingText": "2026-06-03",
-        "url": "https://api.congress.gov/v3/bill/104/hr/25?format=json"
-      },
-      {
-        "congress": 104,
-        "introducedDate": "1995-01-04",
-        "latestAction": {
-          "actionDate": "1995-01-27",
-          "text": "Referred to the Subcommittee on Health and Environment."
-        },
-        "number": "168",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Hospital Closings Community Relief Act of 1995",
-        "type": "HR",
-        "updateDate": "2026-06-03",
-        "updateDateIncludingText": "2026-06-03",
-        "url": "https://api.congress.gov/v3/bill/104/hr/168?format=json"
-      },
-      {
-        "congress": 103,
-        "introducedDate": "1994-09-26",
-        "latestAction": {
-          "actionDate": "1994-10-24",
-          "text": "Referred to the Subcommittee on Health and the Environment."
-        },
-        "number": "297",
-        "originChamber": "House",
-        "originChamberCode": "H",
-        "title": "Expressing the sense of the Congress that President Clinton should ask for the resignation of Joycelyn Elders as Surgeon General of the Public Health Service.",
-        "type": "HCONRES",
-        "updateDate": "2026-06-03",
-        "updateDateIncludingText": "2026-06-03",
-        "url": "https://api.congress.gov/v3/bill/103/hconres/297?format=json"
-      },
-      {
         "congress": 101,
         "introducedDate": "1989-05-17",
         "latestAction": {
@@ -1283,13 +1283,13 @@
       }
     ],
     "pagination": {
-      "count": 65697,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-06-03T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 60762,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-06-04T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-10-01T10:27:29.316564+00:00"
+  "generated_at": "2026-10-02T10:03:14.165564+00:00"
 }
