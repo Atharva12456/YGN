@@ -5,6 +5,65 @@
   "bills": [
     {
       "aiDescription": null,
+      "apiUrl": "https://api.congress.gov/v3/bill/119/s/5533?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 7,
+      "description": {
+        "source": "Congress.gov bill detail",
+        "text": "Segal AmeriCorps Education Award Tax Relief Act of 2026",
+        "updated_at": "2026-10-14T18:04:50Z"
+      },
+      "detailPath": "119/s/5533",
+      "identifier": "S 5533",
+      "impact": {
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5533"
+          }
+        ],
+        "status": "Pending AI impact analysis",
+        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
+      },
+      "latestAction": {
+        "date": "2026-09-24",
+        "text": "Read twice and referred to the Committee on Finance."
+      },
+      "members": [
+        {
+          "bioguideId": "B001267",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CO"
+        }
+      ],
+      "number": "5533",
+      "originChamber": "Senate",
+      "policyArea": "Taxation",
+      "sponsors": [
+        {
+          "bioguideId": "B001267",
+          "district": null,
+          "isOriginalCosponsor": null,
+          "name": "Sen. Bennet, Michael F. [D-CO]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "CO"
+        }
+      ],
+      "title": "Segal AmeriCorps Education Award Tax Relief Act of 2026",
+      "type": "S",
+      "updatedAt": "2026-10-14T18:04:50Z",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5533"
+    },
+    {
+      "aiDescription": null,
       "apiUrl": "https://api.congress.gov/v3/bill/119/s/3018?format=json",
       "committees": [],
       "congress": 119,
@@ -2303,69 +2362,10 @@
       "type": "S",
       "updatedAt": "2026-09-08T18:09:59Z",
       "url": "https://www.congress.gov/bill/109th-congress/senate-bill/336"
-    },
-    {
-      "aiDescription": null,
-      "apiUrl": "https://api.congress.gov/v3/bill/109/s/175?format=json",
-      "committees": [],
-      "congress": 109,
-      "cosponsorCount": 2,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Bleeding Kansas National Heritage Area Act - Establishes the Bleeding Kansas and the Enduring Struggle for Freedom National Heritage Area in Kansas. Designates the Territorial Kansas Heritage Alliance as the management entity for the Area. Prohibits the Alliance from using Federal funds received under this Act to acquire real property or an interest in real property. Requires the Alliance to prepare and submit a management plan for the Area, which shall contain a comprehensive program for the conservation, interpretation, funding, management, and development of such Area. Authorizes the Secretary of the Interior to provide technical and financial assistance for the development and implementation of the management plan. Requires the Alliance to: (1) provide assistance and encouragement to State and local governments, private organizations, and persons to protect and promote the resources and values of the Area; and (2) be an advocate for land management practices consistent with the purposes of such Area.",
-        "updated_at": "2005-02-16T17:07:18Z"
-      },
-      "detailPath": "109/s/175",
-      "identifier": "S 175",
-      "impact": {
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/109th-congress/senate-bill/175"
-          }
-        ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
-      },
-      "latestAction": {
-        "date": "2005-03-15",
-        "text": "Committee on Energy and Natural Resources Subcommittee on National Parks. Hearings held. With printed Hearing: S.Hrg. 109-28."
-      },
-      "members": [
-        {
-          "bioguideId": "B000953",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Brownback, Sam [R-KS]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "KS"
-        }
-      ],
-      "number": "175",
-      "originChamber": "Senate",
-      "policyArea": "Public Lands and Natural Resources",
-      "sponsors": [
-        {
-          "bioguideId": "B000953",
-          "district": null,
-          "isOriginalCosponsor": null,
-          "name": "Sen. Brownback, Sam [R-KS]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "KS"
-        }
-      ],
-      "title": "Bleeding Kansas National Heritage Area Act",
-      "type": "S",
-      "updatedAt": "2026-09-08T18:09:59Z",
-      "url": "https://www.congress.gov/bill/109th-congress/senate-bill/175"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-10-02T10:03:31.325871+00:00",
+  "generated_at": "2026-10-15T08:35:34.891886+00:00",
   "impact_status": "queued_for_refresh",
   "source": "congress_api"
 }
