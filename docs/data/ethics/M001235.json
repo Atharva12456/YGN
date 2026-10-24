@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 60.4,
-      "value": 0.4701,
+      "score": 58.0,
+      "value": 0.4502,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 96.4,
-      "value": 0.4409,
+      "score": 96.2,
+      "value": 0.4177,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 74.3,
+  "financeScore": 73.6,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 204309.38,
+        "amount": 231788.43,
         "label": "Small individual (unitemized)",
-        "share": 0.20723619543944893
+        "share": 0.18806187862699958
       },
       {
-        "amount": 259117.53,
+        "amount": 323073.08,
         "label": "Large individual (itemized)",
-        "share": 0.262829494606989
+        "share": 0.2621258117094582
       },
       {
-        "amount": 522450.0,
+        "amount": 677650.0,
         "label": "PAC / other committees",
-        "share": 0.529934309953562
+        "share": 0.5498123096635422
       },
       {
         "amount": 0.0,
@@ -82,23 +82,23 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 751072.41,
+      "cashOnHand": 580624.92,
       "debts": 60882.19,
-      "disbursements": 697052.71,
-      "individualContributions": 463426.91,
-      "receipts": 1325162.29
+      "disbursements": 1160065.38,
+      "individualContributions": 554861.51,
+      "receipts": 1617727.47
     }
   },
-  "generated_at": "2026-09-29T18:05:58.604974+00:00",
+  "generated_at": "2026-10-24T20:52:06.756046+00:00",
   "grade": "C",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 74.3,
+  "score": 73.6,
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-09-29T18:06:34.804969+00:00"
+  "updated_at": "2026-10-24T20:52:40.489884+00:00"
 }
