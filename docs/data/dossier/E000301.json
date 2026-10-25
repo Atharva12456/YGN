@@ -188,7 +188,7 @@
           "stateName": "Maryland"
         }
       ],
-      "updateDate": "2026-10-24T07:40:45Z"
+      "updateDate": "2026-10-25T07:40:40Z"
     },
     "request": {
       "bioguideId": "e000301",
@@ -209,8 +209,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 77.2,
-        "value": 0.5499,
+        "score": 83.3,
+        "value": 0.6235,
         "weight": 0.2
       },
       "in_state_support": {
@@ -219,18 +219,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 77.3,
-        "value": 0.6108,
+        "score": 74.0,
+        "value": 0.5834,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9994,
+        "value": 0.9995,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 65.9,
-        "value": 0.0928,
+        "score": 66.2,
+        "value": 0.0947,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -241,24 +241,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 78.6,
+    "financeScore": 79.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 64296.91,
+          "amount": 78568.49,
           "label": "Small individual (unitemized)",
-          "share": 0.05663045460939007
+          "share": 0.055180180235543205
         },
         {
-          "amount": 628549.82,
+          "amount": 751413.12,
           "label": "Large individual (itemized)",
-          "share": 0.5536045519333712
+          "share": 0.5277320639985807
         },
         {
-          "amount": 441881.45,
+          "amount": 593223.12,
           "label": "PAC / other committees",
-          "share": 0.3891936237208984
+          "share": 0.41663214707946244
         },
         {
           "amount": 0.0,
@@ -268,7 +268,7 @@
         {
           "amount": 648.72,
           "label": "Self-funding & candidate loans",
-          "share": 0.0005713697363404171
+          "share": 0.00045560868641361934
         }
       ],
       "candidate": {
@@ -281,44 +281,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 335825.84,
+        "cashOnHand": 240886.52,
         "debts": 0.0,
-        "disbursements": 836429.76,
-        "individualContributions": 692846.73,
-        "receipts": 1141516.05
+        "disbursements": 1219845.63,
+        "individualContributions": 829981.61,
+        "receipts": 1429992.6
       }
     },
-    "generated_at": "2026-09-29T22:16:54.802754+00:00",
+    "generated_at": "2026-10-24T23:17:03.470987+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.6,
+    "score": 79.1,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-09-29T22:17:52.956545+00:00"
+    "updated_at": "2026-10-24T23:17:42.783618+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "E000301",
     "breakdown": [
       {
-        "amount": 64296.91,
+        "amount": 78568.49,
         "label": "Small individual (unitemized)",
-        "share": 0.05663045460939007
+        "share": 0.055180180235543205
       },
       {
-        "amount": 628549.82,
+        "amount": 751413.12,
         "label": "Large individual (itemized)",
-        "share": 0.5536045519333712
+        "share": 0.5277320639985807
       },
       {
-        "amount": 441881.45,
+        "amount": 593223.12,
         "label": "PAC / other committees",
-        "share": 0.3891936237208984
+        "share": 0.41663214707946244
       },
       {
         "amount": 0.0,
@@ -328,7 +328,7 @@
       {
         "amount": 648.72,
         "label": "Self-funding & candidate loans",
-        "share": 0.0005713697363404171
+        "share": 0.00045560868641361934
       }
     ],
     "candidate": {
@@ -352,8 +352,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 77.2,
-          "value": 0.5499,
+          "score": 83.3,
+          "value": 0.6235,
           "weight": 0.2
         },
         "in_state_support": {
@@ -362,18 +362,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 77.3,
-          "value": 0.6108,
+          "score": 74.0,
+          "value": 0.5834,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9994,
+          "value": 0.9995,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 65.9,
-          "value": 0.0928,
+          "score": 66.2,
+          "value": 0.0947,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -384,31 +384,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 78.6,
-      "generated_at": "2026-09-29T22:16:54.802754+00:00",
+      "financeScore": 79.1,
+      "generated_at": "2026-10-24T23:17:03.470987+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.6,
+      "score": 79.1,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-09-29T22:17:52.956545+00:00"
+      "updated_at": "2026-10-24T23:17:42.783618+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 335825.84,
+      "cashOnHand": 240886.52,
       "debts": 0.0,
-      "disbursements": 836429.76,
-      "individualContributions": 692846.73,
-      "receipts": 1141516.05
+      "disbursements": 1219845.63,
+      "individualContributions": 829981.61,
+      "receipts": 1429992.6
     }
   },
-  "generated_at": "2026-10-24T08:24:10.512822+00:00",
+  "generated_at": "2026-10-25T08:43:38.679880+00:00",
   "history": {
     "bioguideId": "E000301",
     "birthYear": "1988",
@@ -530,7 +530,7 @@
         "stateName": "Maryland"
       }
     ],
-    "updateDate": "2026-10-24T07:40:45Z"
+    "updateDate": "2026-10-25T07:40:40Z"
   },
   "nominate": {
     "dim1": -0.379,
@@ -545,7 +545,6 @@
   },
   "wiki": {
     "extract": "Sarah Kelly Elfreth is an American politician who is serving as the U.S. representative for Maryland's 3rd congressional district since 2025. A member of the Democratic Party, she represented the 30th district in the Maryland Senate from 2019 to 2025.",
-    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Sarah Kelly Elfreth is an American politician who is serving as the U.S. representative for Maryland's 3rd congressional district since 2025. A member of the Democratic Party, she represented the 30th district in the Maryland Senate from 2019 to 2025.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Representative_Sarah_Elfreth_Official_Portrait.jpg/330px-Representative_Sarah_Elfreth_Official_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

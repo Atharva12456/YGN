@@ -180,7 +180,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-10-24T07:40:45Z"
+      "updateDate": "2026-10-25T07:40:40Z"
     },
     "request": {
       "bioguideId": "h001099",
@@ -201,8 +201,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 42.8,
-        "value": 0.118,
+        "score": 46.0,
+        "value": 0.1677,
         "weight": 0.2
       },
       "in_state_support": {
@@ -211,8 +211,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 71.1,
-        "value": 0.5588,
+        "score": 67.4,
+        "value": 0.5281,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -221,8 +221,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 54.5,
-        "value": 0.0423,
+        "score": 55.7,
+        "value": 0.045,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -238,19 +238,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 37549.64,
+          "amount": 42398.07,
           "label": "Small individual (unitemized)",
-          "share": 0.023641912719215362
+          "share": 0.023741373978429788
         },
         {
-          "amount": 849966.1,
+          "amount": 900682.44,
           "label": "Large individual (itemized)",
-          "share": 0.5351535820447779
+          "share": 0.5043493405205626
         },
         {
-          "amount": 700750.0,
+          "amount": 842750.0,
           "label": "PAC / other committees",
-          "share": 0.4412045052360067
+          "share": 0.4719092855010076
         },
         {
           "amount": 0.0,
@@ -273,14 +273,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1197776.93,
-        "debts": 10138.16,
-        "disbursements": 885223.57,
-        "individualContributions": 887515.74,
-        "receipts": 1824837.67
+        "cashOnHand": 482350.21,
+        "debts": 0.0,
+        "disbursements": 1825049.83,
+        "individualContributions": 943080.51,
+        "receipts": 2049237.21
       }
     },
-    "generated_at": "2026-09-29T22:16:54.802754+00:00",
+    "generated_at": "2026-10-24T23:17:03.470987+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -291,26 +291,26 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-09-29T22:17:36.669732+00:00"
+    "updated_at": "2026-10-24T23:17:18.939341+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001099",
     "breakdown": [
       {
-        "amount": 37549.64,
+        "amount": 42398.07,
         "label": "Small individual (unitemized)",
-        "share": 0.023641912719215362
+        "share": 0.023741373978429788
       },
       {
-        "amount": 849966.1,
+        "amount": 900682.44,
         "label": "Large individual (itemized)",
-        "share": 0.5351535820447779
+        "share": 0.5043493405205626
       },
       {
-        "amount": 700750.0,
+        "amount": 842750.0,
         "label": "PAC / other committees",
-        "share": 0.4412045052360067
+        "share": 0.4719092855010076
       },
       {
         "amount": 0.0,
@@ -344,8 +344,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 42.8,
-          "value": 0.118,
+          "score": 46.0,
+          "value": 0.1677,
           "weight": 0.2
         },
         "in_state_support": {
@@ -354,8 +354,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 71.1,
-          "value": 0.5588,
+          "score": 67.4,
+          "value": 0.5281,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -364,8 +364,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 54.5,
-          "value": 0.0423,
+          "score": 55.7,
+          "value": 0.045,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -377,7 +377,7 @@
       },
       "cycle": 2026,
       "financeScore": 66.8,
-      "generated_at": "2026-09-29T22:16:54.802754+00:00",
+      "generated_at": "2026-10-24T23:17:03.470987+00:00",
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -388,19 +388,19 @@
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-09-29T22:17:36.669732+00:00"
+      "updated_at": "2026-10-24T23:17:18.939341+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1197776.93,
-      "debts": 10138.16,
-      "disbursements": 885223.57,
-      "individualContributions": 887515.74,
-      "receipts": 1824837.67
+      "cashOnHand": 482350.21,
+      "debts": 0.0,
+      "disbursements": 1825049.83,
+      "individualContributions": 943080.51,
+      "receipts": 2049237.21
     }
   },
-  "generated_at": "2026-10-24T08:24:10.512822+00:00",
+  "generated_at": "2026-10-25T08:43:38.679880+00:00",
   "history": {
     "bioguideId": "H001099",
     "birthYear": "1970",
@@ -522,7 +522,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-10-24T07:40:45Z"
+    "updateDate": "2026-10-25T07:40:40Z"
   },
   "nominate": {
     "dim1": 0.438,
@@ -537,7 +537,6 @@
   },
   "wiki": {
     "extract": "Michael John Haridopolos is an American politician, lobbyist and former educator serving as the U.S. representative from Florida's 8th congressional district since 2025. He is a member of the Republican Party.",
-    "generated_at": "2026-09-15T08:58:13.730717+00:00",
     "source": "wikipedia",
     "summary": "Michael John Haridopolos is an American politician, lobbyist and former educator serving as the U.S. representative from Florida's 8th congressional district since 2025. He is a member of the Republican Party.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Haridopolos_Mike_119th_Congress_%28crop2%29.jpg/330px-Haridopolos_Mike_119th_Congress_%28crop2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

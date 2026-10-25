@@ -234,7 +234,7 @@
           "stateName": "Northern Mariana Islands"
         }
       ],
-      "updateDate": "2026-10-24T07:40:44Z"
+      "updateDate": "2026-10-25T07:40:40Z"
     },
     "request": {
       "bioguideId": "k000404",
@@ -255,8 +255,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 56.6,
-        "value": 0.3291,
+        "score": 82.7,
+        "value": 0.6121,
         "weight": 0.2
       },
       "in_state_support": {
@@ -265,8 +265,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 54.7,
-        "value": 0.385,
+        "score": 55.3,
+        "value": 0.3975,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -275,8 +275,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 53.8,
-        "value": 0.0408,
+        "score": 46.0,
+        "value": 0.024,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -287,24 +287,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 65.3,
+    "financeScore": 68.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
           "amount": 875.0,
           "label": "Small individual (unitemized)",
-          "share": 0.015709184397099455
+          "share": 0.009540928675833591
         },
         {
-          "amount": 20570.15,
+          "amount": 35580.4,
           "label": "Large individual (itemized)",
-          "share": 0.3693031764868519
+          "share": 0.3879657813230052
         },
         {
-          "amount": 34254.75,
+          "amount": 55254.75,
           "label": "PAC / other committees",
-          "share": 0.6149876391160487
+          "share": 0.6024932900011613
         },
         {
           "amount": 0.0,
@@ -327,25 +327,25 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 12152.66,
+        "cashOnHand": 16214.04,
         "debts": 0.0,
-        "disbursements": 59438.34,
-        "individualContributions": 21445.15,
-        "receipts": 64121.9
+        "disbursements": 95596.09,
+        "individualContributions": 36455.4,
+        "receipts": 103385.97
       }
     },
-    "generated_at": "2026-09-29T22:16:54.802754+00:00",
-    "grade": "D",
+    "generated_at": "2026-10-25T04:43:56.462460+00:00",
+    "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 65.3,
+    "score": 68.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-09-29T22:17:07.059689+00:00"
+    "updated_at": "2026-10-25T04:44:17.624778+00:00"
   },
   "funding": {
     "available": true,
@@ -354,17 +354,17 @@
       {
         "amount": 875.0,
         "label": "Small individual (unitemized)",
-        "share": 0.015709184397099455
+        "share": 0.009540928675833591
       },
       {
-        "amount": 20570.15,
+        "amount": 35580.4,
         "label": "Large individual (itemized)",
-        "share": 0.3693031764868519
+        "share": 0.3879657813230052
       },
       {
-        "amount": 34254.75,
+        "amount": 55254.75,
         "label": "PAC / other committees",
-        "share": 0.6149876391160487
+        "share": 0.6024932900011613
       },
       {
         "amount": 0.0,
@@ -398,8 +398,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 56.6,
-          "value": 0.3291,
+          "score": 82.7,
+          "value": 0.6121,
           "weight": 0.2
         },
         "in_state_support": {
@@ -408,8 +408,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 54.7,
-          "value": 0.385,
+          "score": 55.3,
+          "value": 0.3975,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -418,8 +418,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 53.8,
-          "value": 0.0408,
+          "score": 46.0,
+          "value": 0.024,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -430,31 +430,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 65.3,
-      "generated_at": "2026-09-29T22:16:54.802754+00:00",
-      "grade": "D",
+      "financeScore": 68.3,
+      "generated_at": "2026-10-25T04:43:56.462460+00:00",
+      "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 65.3,
+      "score": 68.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-09-29T22:17:07.059689+00:00"
+      "updated_at": "2026-10-25T04:44:17.624778+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 12152.66,
+      "cashOnHand": 16214.04,
       "debts": 0.0,
-      "disbursements": 59438.34,
-      "individualContributions": 21445.15,
-      "receipts": 64121.9
+      "disbursements": 95596.09,
+      "individualContributions": 36455.4,
+      "receipts": 103385.97
     }
   },
-  "generated_at": "2026-10-24T08:24:10.512822+00:00",
+  "generated_at": "2026-10-25T08:43:38.679880+00:00",
   "history": {
     "bioguideId": "K000404",
     "birthYear": null,
@@ -581,7 +581,7 @@
         "stateName": "Northern Mariana Islands"
       }
     ],
-    "updateDate": "2026-10-24T07:40:44Z"
+    "updateDate": "2026-10-25T07:40:40Z"
   },
   "nominate": {
     "dim1": 0.159,

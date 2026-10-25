@@ -188,7 +188,7 @@
           "stateName": "Minnesota"
         }
       ],
-      "updateDate": "2026-10-24T07:40:44Z"
+      "updateDate": "2026-10-25T07:40:40Z"
     },
     "request": {
       "bioguideId": "m001234",
@@ -209,8 +209,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 64.2,
-        "value": 0.4149,
+        "score": 78.6,
+        "value": 0.5645,
         "weight": 0.2
       },
       "in_state_support": {
@@ -219,18 +219,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 93.0,
-        "value": 0.8462,
+        "score": 92.2,
+        "value": 0.8326,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9948,
+        "value": 0.9962,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 64.2,
-        "value": 0.0836,
+        "score": 65.4,
+        "value": 0.0899,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -241,34 +241,34 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 79.5,
+    "financeScore": 82.5,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 95446.44,
+          "amount": 138845.88,
           "label": "Small individual (unitemized)",
-          "share": 0.0703247355650794
+          "share": 0.07452414612116959
         },
         {
-          "amount": 1045994.64,
+          "amount": 1405370.14,
           "label": "Large individual (itemized)",
-          "share": 0.7706866433204888
+          "share": 0.7543184548773687
         },
         {
-          "amount": 208750.0,
+          "amount": 311850.0,
           "label": "PAC / other committees",
-          "share": 0.1538065594611001
+          "share": 0.16738238806860337
         },
         {
           "amount": 33.22,
           "label": "Political party committees",
-          "share": 2.4476425893641897e-05
+          "share": 1.7830504831293902e-05
         },
         {
           "amount": 7000.0,
           "label": "Self-funding & candidate loans",
-          "share": 0.005157585227438088
+          "share": 0.0037571804280270116
         }
       ],
       "candidate": {
@@ -281,14 +281,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 413941.85,
+        "cashOnHand": 507864.91,
         "debts": 0.0,
-        "disbursements": 973379.51,
-        "individualContributions": 1141441.08,
-        "receipts": 1361932.81
+        "disbursements": 1385435.88,
+        "individualContributions": 1544216.02,
+        "receipts": 1867912.24
       }
     },
-    "generated_at": "2026-09-29T18:05:58.604974+00:00",
+    "generated_at": "2026-10-25T04:43:56.462460+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -296,40 +296,40 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 29.5,
+    "score": 32.5,
     "source": "fec_live",
     "stockPenalty": 50,
     "stockPtrCount": 28,
-    "updated_at": "2026-09-29T18:06:37.189548+00:00"
+    "updated_at": "2026-10-25T04:44:15.066442+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M001234",
     "breakdown": [
       {
-        "amount": 95446.44,
+        "amount": 138845.88,
         "label": "Small individual (unitemized)",
-        "share": 0.0703247355650794
+        "share": 0.07452414612116959
       },
       {
-        "amount": 1045994.64,
+        "amount": 1405370.14,
         "label": "Large individual (itemized)",
-        "share": 0.7706866433204888
+        "share": 0.7543184548773687
       },
       {
-        "amount": 208750.0,
+        "amount": 311850.0,
         "label": "PAC / other committees",
-        "share": 0.1538065594611001
+        "share": 0.16738238806860337
       },
       {
         "amount": 33.22,
         "label": "Political party committees",
-        "share": 2.4476425893641897e-05
+        "share": 1.7830504831293902e-05
       },
       {
         "amount": 7000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.005157585227438088
+        "share": 0.0037571804280270116
       }
     ],
     "candidate": {
@@ -353,8 +353,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 64.2,
-          "value": 0.4149,
+          "score": 78.6,
+          "value": 0.5645,
           "weight": 0.2
         },
         "in_state_support": {
@@ -363,18 +363,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 93.0,
-          "value": 0.8462,
+          "score": 92.2,
+          "value": 0.8326,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9948,
+          "value": 0.9962,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 64.2,
-          "value": 0.0836,
+          "score": 65.4,
+          "value": 0.0899,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -385,8 +385,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 79.5,
-      "generated_at": "2026-09-29T18:05:58.604974+00:00",
+      "financeScore": 82.5,
+      "generated_at": "2026-10-25T04:43:56.462460+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -394,23 +394,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 29.5,
+      "score": 32.5,
       "source": "fec_live",
       "stockPenalty": 50,
       "stockPtrCount": 28,
-      "updated_at": "2026-09-29T18:06:37.189548+00:00"
+      "updated_at": "2026-10-25T04:44:15.066442+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 413941.85,
+      "cashOnHand": 507864.91,
       "debts": 0.0,
-      "disbursements": 973379.51,
-      "individualContributions": 1141441.08,
-      "receipts": 1361932.81
+      "disbursements": 1385435.88,
+      "individualContributions": 1544216.02,
+      "receipts": 1867912.24
     }
   },
-  "generated_at": "2026-10-24T08:24:10.512822+00:00",
+  "generated_at": "2026-10-25T08:43:38.679880+00:00",
   "history": {
     "bioguideId": "M001234",
     "birthYear": "1969",
@@ -532,7 +532,7 @@
         "stateName": "Minnesota"
       }
     ],
-    "updateDate": "2026-10-24T07:40:44Z"
+    "updateDate": "2026-10-25T07:40:40Z"
   },
   "nominate": {
     "dim1": -0.343,
