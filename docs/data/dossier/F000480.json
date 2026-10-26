@@ -225,7 +225,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-10-25T07:40:40Z"
+      "updateDate": "2026-10-26T07:40:40Z"
     },
     "request": {
       "bioguideId": "f000480",
@@ -246,8 +246,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 50.9,
-        "value": 0.2418,
+        "score": 64.9,
+        "value": 0.4222,
         "weight": 0.2
       },
       "in_state_support": {
@@ -256,8 +256,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 60.1,
-        "value": 0.4673,
+        "score": 59.4,
+        "value": 0.4617,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -266,36 +266,36 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 45.0,
-        "value": 0.0218,
+        "score": 44.6,
+        "value": 0.0209,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
-        "penalty": 0,
-        "ptr_filings": 0
+        "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+        "penalty": 10,
+        "ptr_filings": 1
       }
     },
     "cycle": 2026,
-    "financeScore": 62.8,
+    "financeScore": 65.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 17073.65,
+          "amount": 21462.91,
           "label": "Small individual (unitemized)",
-          "share": 0.010168351364680105
+          "share": 0.009634536781487592
         },
         {
-          "amount": 767526.32,
+          "amount": 1007125.32,
           "label": "Large individual (itemized)",
-          "share": 0.45710655327946265
+          "share": 0.4520908832542959
         },
         {
-          "amount": 894497.2,
+          "amount": 1199117.21,
           "label": "PAC / other committees",
-          "share": 0.5327250953558572
+          "share": 0.5382745799642165
         },
         {
           "amount": 0.0,
@@ -318,44 +318,45 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 453749.65,
+        "cashOnHand": 667339.4,
         "debts": 0.0,
-        "disbursements": 1434838.05,
-        "individualContributions": 784599.97,
-        "receipts": 1849356.3
+        "disbursements": 1779225.59,
+        "individualContributions": 1028588.23,
+        "receipts": 2407333.59
       }
     },
-    "generated_at": "2026-09-30T05:34:51.850099+00:00",
-    "grade": "D-",
+    "generated_at": "2026-10-26T04:49:47.503794+00:00",
+    "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
-      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+      "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+      "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 62.8,
+    "score": 55.3,
     "source": "fec_live",
-    "stockPenalty": 0,
-    "stockPtrCount": 0,
-    "updated_at": "2026-09-30T05:35:06.695855+00:00"
+    "stockPenalty": 10,
+    "stockPtrCount": 1,
+    "updated_at": "2026-10-26T04:49:50.361865+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "F000480",
     "breakdown": [
       {
-        "amount": 17073.65,
+        "amount": 21462.91,
         "label": "Small individual (unitemized)",
-        "share": 0.010168351364680105
+        "share": 0.009634536781487592
       },
       {
-        "amount": 767526.32,
+        "amount": 1007125.32,
         "label": "Large individual (itemized)",
-        "share": 0.45710655327946265
+        "share": 0.4520908832542959
       },
       {
-        "amount": 894497.2,
+        "amount": 1199117.21,
         "label": "PAC / other committees",
-        "share": 0.5327250953558572
+        "share": 0.5382745799642165
       },
       {
         "amount": 0.0,
@@ -389,8 +390,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 50.9,
-          "value": 0.2418,
+          "score": 64.9,
+          "value": 0.4222,
           "weight": 0.2
         },
         "in_state_support": {
@@ -399,8 +400,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 60.1,
-          "value": 0.4673,
+          "score": 59.4,
+          "value": 0.4617,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -409,43 +410,44 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 45.0,
-          "value": 0.0218,
+          "score": 44.6,
+          "value": 0.0209,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "0 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -0 conflict-of-interest deduction.",
-          "penalty": 0,
-          "ptr_filings": 0
+          "note": "1 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -10 conflict-of-interest deduction.",
+          "penalty": 10,
+          "ptr_filings": 1
         }
       },
       "cycle": 2026,
-      "financeScore": 62.8,
-      "generated_at": "2026-09-30T05:34:51.850099+00:00",
-      "grade": "D-",
+      "financeScore": 65.3,
+      "generated_at": "2026-10-26T04:49:47.503794+00:00",
+      "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
-        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
+        "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
+        "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 62.8,
+      "score": 55.3,
       "source": "fec_live",
-      "stockPenalty": 0,
-      "stockPtrCount": 0,
-      "updated_at": "2026-09-30T05:35:06.695855+00:00"
+      "stockPenalty": 10,
+      "stockPtrCount": 1,
+      "updated_at": "2026-10-26T04:49:50.361865+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 453749.65,
+      "cashOnHand": 667339.4,
       "debts": 0.0,
-      "disbursements": 1434838.05,
-      "individualContributions": 784599.97,
-      "receipts": 1849356.3
+      "disbursements": 1779225.59,
+      "individualContributions": 1028588.23,
+      "receipts": 2407333.59
     }
   },
-  "generated_at": "2026-10-25T08:43:38.679880+00:00",
+  "generated_at": "2026-10-26T09:21:41.526637+00:00",
   "history": {
     "bioguideId": "F000480",
     "birthYear": "1979",
@@ -584,7 +586,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-10-25T07:40:40Z"
+    "updateDate": "2026-10-26T07:40:40Z"
   },
   "nominate": {
     "dim1": 0.446,
