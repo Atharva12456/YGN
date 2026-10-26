@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 51.8,
-      "value": 0.255,
+      "score": 60.3,
+      "value": 0.3741,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,18 +20,18 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 63.1,
-      "value": 0.4926,
+      "score": 61.1,
+      "value": 0.4761,
       "weight": 0.25
     },
     "self_party_independence": {
-      "score": 81.1,
-      "value": 0.8924,
+      "score": 83.7,
+      "value": 0.9109,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 38.1,
-      "value": 0.0068,
+      "score": 38.5,
+      "value": 0.0076,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 59.4,
+  "financeScore": 61.1,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 2509.02,
+        "amount": 3304.58,
         "label": "Small individual (unitemized)",
-        "share": 0.0033721346592710207
+        "share": 0.0036033300004019234
       },
       {
-        "amount": 364036.0,
+        "amount": 433286.0,
         "label": "Large individual (itemized)",
-        "share": 0.489266093065175
+        "share": 0.47245714812597905
       },
       {
-        "amount": 377500.0,
+        "amount": 480500.0,
         "label": "PAC / other committees",
-        "share": 0.507361772275554
+        "share": 0.5239395218736191
       },
       {
         "amount": 0.0,
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 960763.64,
+      "cashOnHand": 883230.77,
       "debts": 298500.0,
-      "disbursements": 371131.43,
-      "individualContributions": 366545.02,
-      "receipts": 849999.59
+      "disbursements": 625068.7,
+      "individualContributions": 436590.58,
+      "receipts": 1026403.99
     }
   },
-  "generated_at": "2026-09-30T20:03:03.541992+00:00",
+  "generated_at": "2026-10-26T13:06:45.727158+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 17.4,
+  "score": 19.1,
   "source": "fec_live",
   "stockPenalty": 42,
   "stockPtrCount": 12,
-  "updated_at": "2026-09-30T20:03:45.135191+00:00"
+  "updated_at": "2026-10-26T13:06:57.225732+00:00"
 }
