@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 41.6,
-      "value": 0.1006,
+      "score": 45.2,
+      "value": 0.1545,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,18 +20,18 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 88.0,
-      "value": 0.7574,
+      "score": 86.4,
+      "value": 0.7287,
       "weight": 0.25
     },
     "self_party_independence": {
       "score": 96.0,
-      "value": 0.9994,
+      "value": 0.9995,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 41.9,
-      "value": 0.015,
+      "score": 41.8,
+      "value": 0.0148,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,29 +42,29 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 66.3,
+  "financeScore": 66.6,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 34036.36,
+        "amount": 35685.86,
         "label": "Small individual (unitemized)",
-        "share": 0.01135383522649706
+        "share": 0.010767743257033398
       },
       {
-        "amount": 2236498.91,
+        "amount": 2379208.91,
         "label": "Large individual (itemized)",
-        "share": 0.7460504034033099
+        "share": 0.7178952867529683
       },
       {
-        "amount": 725250.0,
+        "amount": 897250.0,
         "label": "PAC / other committees",
-        "share": 0.24192860217770035
+        "share": 0.27073349605062663
       },
       {
         "amount": 2000.0,
         "label": "Political party committees",
-        "share": 0.0006671591924927965
+        "share": 0.000603473939371695
       },
       {
         "amount": 0.0,
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 7341766.02,
+      "cashOnHand": 7476829.34,
       "debts": 0.0,
-      "disbursements": 1271790.13,
-      "individualContributions": 2270535.27,
-      "receipts": 3630329.38
+      "disbursements": 1441803.79,
+      "individualContributions": 2414894.77,
+      "receipts": 3935406.36
     }
   },
-  "generated_at": "2026-10-02T09:48:18.408355+00:00",
+  "generated_at": "2026-10-27T22:15:48.536173+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 34.3,
+  "score": 34.6,
   "source": "fec_live",
   "stockPenalty": 32,
   "stockPtrCount": 6,
-  "updated_at": "2026-10-02T09:48:26.976897+00:00"
+  "updated_at": "2026-10-27T22:16:19.783315+00:00"
 }
