@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 88.6,
-      "value": 0.7673,
+      "score": 86.4,
+      "value": 0.7283,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 59.1,
-      "value": 0.0561,
+      "score": 59.3,
+      "value": 0.0571,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 70.6,
+  "financeScore": 70.1,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 129722.22,
+        "amount": 139131.21,
         "label": "Small individual (unitemized)",
-        "share": 0.04308370950089768
+        "share": 0.04161517034774916
       },
       {
-        "amount": 2180662.11,
+        "amount": 2295799.83,
         "label": "Large individual (itemized)",
-        "share": 0.7242476490677895
+        "share": 0.6866906498533548
       },
       {
-        "amount": 700550.0,
+        "amount": 908350.0,
         "label": "PAC / other committees",
-        "share": 0.23266864143131277
+        "share": 0.271694179798896
       },
       {
         "amount": 0.0,
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 13986720.96,
+      "cashOnHand": 13835641.98,
       "debts": 0.0,
-      "disbursements": 4345915.84,
-      "individualContributions": 2310384.33,
-      "receipts": 6908654.83
+      "disbursements": 4760732.63,
+      "individualContributions": 2434931.04,
+      "receipts": 7172392.64
     }
   },
-  "generated_at": "2026-10-02T00:48:29.937267+00:00",
+  "generated_at": "2026-10-27T15:22:21.798008+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 60.6,
+  "score": 60.1,
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 2,
-  "updated_at": "2026-10-02T00:48:36.005708+00:00"
+  "updated_at": "2026-10-27T15:22:34.204956+00:00"
 }
