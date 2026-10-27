@@ -93,7 +93,7 @@
       "birthYear": "1967",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1619,
+        "count": 1622,
         "url": "https://api.congress.gov/v3/member/G000581/cosponsored-legislation"
       },
       "currentMember": true,
@@ -200,7 +200,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-10-26T07:40:40Z"
+      "updateDate": "2026-10-27T07:40:38Z"
     },
     "request": {
       "bioguideId": "g000581",
@@ -221,8 +221,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 37.4,
-        "value": 0.0365,
+        "score": 56.8,
+        "value": 0.3312,
         "weight": 0.2
       },
       "in_state_support": {
@@ -231,18 +231,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 75.0,
-        "value": 0.5919,
+        "score": 77.5,
+        "value": 0.6126,
         "weight": 0.25
       },
       "self_party_independence": {
-        "score": 84.0,
-        "value": 0.9126,
+        "score": 82.5,
+        "value": 0.9031,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 66.2,
-        "value": 0.0942,
+        "score": 67.7,
+        "value": 0.1024,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -253,29 +253,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 66.2,
+    "financeScore": 70.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 179283.93,
+          "amount": 283122.06,
           "label": "Small individual (unitemized)",
-          "share": 0.05576882987913435
+          "share": 0.06270651865797491
         },
         {
-          "amount": 1723635.93,
+          "amount": 2483012.3,
           "label": "Large individual (itemized)",
-          "share": 0.5361616010633721
+          "share": 0.5499432192529653
         },
         {
-          "amount": 1307061.11,
+          "amount": 1744111.11,
           "label": "PAC / other committees",
-          "share": 0.40658004699708733
+          "share": 0.38628970084774156
         },
         {
           "amount": 4788.47,
           "label": "Political party committees",
-          "share": 0.0014895220604062979
+          "share": 0.001060561241318155
         },
         {
           "amount": 0.0,
@@ -293,14 +293,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2532412.14,
-        "debts": 425000.0,
-        "disbursements": 1523562.69,
-        "individualContributions": 1902919.86,
-        "receipts": 3773915.07
+        "cashOnHand": 1396949.28,
+        "debts": 250000.0,
+        "disbursements": 4096454.52,
+        "individualContributions": 2766134.36,
+        "receipts": 5211344.04
       }
     },
-    "generated_at": "2026-10-01T00:34:16.599686+00:00",
+    "generated_at": "2026-10-26T13:06:45.727158+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -308,35 +308,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 44.2,
+    "score": 48.9,
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 3,
-    "updated_at": "2026-10-01T00:34:21.925309+00:00"
+    "updated_at": "2026-10-26T13:07:00.734511+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000581",
     "breakdown": [
       {
-        "amount": 179283.93,
+        "amount": 283122.06,
         "label": "Small individual (unitemized)",
-        "share": 0.05576882987913435
+        "share": 0.06270651865797491
       },
       {
-        "amount": 1723635.93,
+        "amount": 2483012.3,
         "label": "Large individual (itemized)",
-        "share": 0.5361616010633721
+        "share": 0.5499432192529653
       },
       {
-        "amount": 1307061.11,
+        "amount": 1744111.11,
         "label": "PAC / other committees",
-        "share": 0.40658004699708733
+        "share": 0.38628970084774156
       },
       {
         "amount": 4788.47,
         "label": "Political party committees",
-        "share": 0.0014895220604062979
+        "share": 0.001060561241318155
       },
       {
         "amount": 0.0,
@@ -365,8 +365,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 37.4,
-          "value": 0.0365,
+          "score": 56.8,
+          "value": 0.3312,
           "weight": 0.2
         },
         "in_state_support": {
@@ -375,18 +375,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 75.0,
-          "value": 0.5919,
+          "score": 77.5,
+          "value": 0.6126,
           "weight": 0.25
         },
         "self_party_independence": {
-          "score": 84.0,
-          "value": 0.9126,
+          "score": 82.5,
+          "value": 0.9031,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 66.2,
-          "value": 0.0942,
+          "score": 67.7,
+          "value": 0.1024,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -397,8 +397,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 66.2,
-      "generated_at": "2026-10-01T00:34:16.599686+00:00",
+      "financeScore": 70.9,
+      "generated_at": "2026-10-26T13:06:45.727158+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -406,23 +406,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 44.2,
+      "score": 48.9,
       "source": "fec_live",
       "stockPenalty": 22,
       "stockPtrCount": 3,
-      "updated_at": "2026-10-01T00:34:21.925309+00:00"
+      "updated_at": "2026-10-26T13:07:00.734511+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2532412.14,
-      "debts": 425000.0,
-      "disbursements": 1523562.69,
-      "individualContributions": 1902919.86,
-      "receipts": 3773915.07
+      "cashOnHand": 1396949.28,
+      "debts": 250000.0,
+      "disbursements": 4096454.52,
+      "individualContributions": 2766134.36,
+      "receipts": 5211344.04
     }
   },
-  "generated_at": "2026-10-26T09:21:41.526637+00:00",
+  "generated_at": "2026-10-27T09:20:29.954638+00:00",
   "history": {
     "bioguideId": "G000581",
     "birthYear": "1967",
@@ -513,7 +513,7 @@
     "birthYear": "1967",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1619,
+      "count": 1622,
       "url": "https://api.congress.gov/v3/member/G000581/cosponsored-legislation"
     },
     "currentMember": true,
@@ -620,7 +620,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-10-26T07:40:40Z"
+    "updateDate": "2026-10-27T07:40:38Z"
   },
   "nominate": {
     "dim1": -0.387,
@@ -635,7 +635,6 @@
   },
   "wiki": {
     "extract": "Vicente Gonzalez Jr. is an American lawyer and politician who has served as the U.S. representative for Texas's 34th congressional district since 2023. A member of the Democratic Party, he previously represented Texas's 15th congressional district from 2017 to 2023.",
-    "generated_at": "2026-09-12T08:08:07.415853+00:00",
     "source": "wikipedia",
     "summary": "Vicente Gonzalez Jr. is an American lawyer and politician who has served as the U.S. representative for Texas's 34th congressional district since 2023. A member of the Democratic Party, he previously represented Texas's 15th congressional district from 2017 to 2023.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Rep._Vicente_Gonzalez%2C_118th_Congress.jpg/330px-Rep._Vicente_Gonzalez%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

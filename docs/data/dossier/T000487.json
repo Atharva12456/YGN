@@ -136,7 +136,7 @@
       "birthYear": "1976",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1748,
+        "count": 1749,
         "url": "https://api.congress.gov/v3/member/T000487/cosponsored-legislation"
       },
       "currentMember": true,
@@ -226,7 +226,7 @@
           "stateName": "Hawaii"
         }
       ],
-      "updateDate": "2026-10-26T07:40:39Z"
+      "updateDate": "2026-10-27T07:40:38Z"
     },
     "request": {
       "bioguideId": "t000487",
@@ -247,8 +247,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 85.3,
-        "value": 0.6598,
+        "score": 88.0,
+        "value": 0.7068,
         "weight": 0.2
       },
       "in_state_support": {
@@ -257,8 +257,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 89.0,
-        "value": 0.7759,
+        "score": 87.6,
+        "value": 0.7502,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -267,8 +267,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 72.5,
-        "value": 0.1285,
+        "score": 71.9,
+        "value": 0.1255,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -284,19 +284,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 81576.1,
+          "amount": 92083.1,
           "label": "Small individual (unitemized)",
-          "share": 0.09971767108378721
+          "share": 0.09412450521262831
         },
         {
-          "amount": 553145.55,
+          "amount": 641879.55,
           "label": "Large individual (itemized)",
-          "share": 0.6761586545122967
+          "share": 0.6561094820857954
         },
         {
-          "amount": 183349.0,
+          "amount": 244349.0,
           "label": "PAC / other committees",
-          "share": 0.2241236744039161
+          "share": 0.24976601270157622
         },
         {
           "amount": 0.0,
@@ -319,14 +319,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 570354.51,
+        "cashOnHand": 486974.66,
         "debts": 0.0,
-        "disbursements": 733764.35,
-        "individualContributions": 634721.65,
-        "receipts": 820678.15
+        "disbursements": 982396.38,
+        "individualContributions": 733962.65,
+        "receipts": 985930.33
       }
     },
-    "generated_at": "2026-10-01T00:34:16.599686+00:00",
+    "generated_at": "2026-10-26T13:06:45.727158+00:00",
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -337,26 +337,26 @@
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-01T00:34:30.870235+00:00"
+    "updated_at": "2026-10-26T13:07:22.053595+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000487",
     "breakdown": [
       {
-        "amount": 81576.1,
+        "amount": 92083.1,
         "label": "Small individual (unitemized)",
-        "share": 0.09971767108378721
+        "share": 0.09412450521262831
       },
       {
-        "amount": 553145.55,
+        "amount": 641879.55,
         "label": "Large individual (itemized)",
-        "share": 0.6761586545122967
+        "share": 0.6561094820857954
       },
       {
-        "amount": 183349.0,
+        "amount": 244349.0,
         "label": "PAC / other committees",
-        "share": 0.2241236744039161
+        "share": 0.24976601270157622
       },
       {
         "amount": 0.0,
@@ -390,8 +390,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 85.3,
-          "value": 0.6598,
+          "score": 88.0,
+          "value": 0.7068,
           "weight": 0.2
         },
         "in_state_support": {
@@ -400,8 +400,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 89.0,
-          "value": 0.7759,
+          "score": 87.6,
+          "value": 0.7502,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -410,8 +410,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 72.5,
-          "value": 0.1285,
+          "score": 71.9,
+          "value": 0.1255,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -423,7 +423,7 @@
       },
       "cycle": 2026,
       "financeScore": 85.1,
-      "generated_at": "2026-10-01T00:34:16.599686+00:00",
+      "generated_at": "2026-10-26T13:06:45.727158+00:00",
       "grade": "B",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -434,19 +434,19 @@
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-01T00:34:30.870235+00:00"
+      "updated_at": "2026-10-26T13:07:22.053595+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 570354.51,
+      "cashOnHand": 486974.66,
       "debts": 0.0,
-      "disbursements": 733764.35,
-      "individualContributions": 634721.65,
-      "receipts": 820678.15
+      "disbursements": 982396.38,
+      "individualContributions": 733962.65,
+      "receipts": 985930.33
     }
   },
-  "generated_at": "2026-10-26T09:21:41.526637+00:00",
+  "generated_at": "2026-10-27T09:20:29.954638+00:00",
   "history": {
     "bioguideId": "T000487",
     "birthYear": "1976",
@@ -510,7 +510,7 @@
     "birthYear": "1976",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1748,
+      "count": 1749,
       "url": "https://api.congress.gov/v3/member/T000487/cosponsored-legislation"
     },
     "currentMember": true,
@@ -600,7 +600,7 @@
         "stateName": "Hawaii"
       }
     ],
-    "updateDate": "2026-10-26T07:40:39Z"
+    "updateDate": "2026-10-27T07:40:38Z"
   },
   "nominate": {
     "dim1": -0.462,

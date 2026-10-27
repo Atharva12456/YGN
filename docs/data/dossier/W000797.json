@@ -115,7 +115,7 @@
       "birthYear": "1966",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 4532,
+        "count": 4533,
         "url": "https://api.congress.gov/v3/member/W000797/cosponsored-legislation"
       },
       "currentMember": true,
@@ -282,7 +282,7 @@
           "stateName": "Florida"
         }
       ],
-      "updateDate": "2026-10-26T07:40:39Z"
+      "updateDate": "2026-10-27T07:40:38Z"
     },
     "request": {
       "bioguideId": "w000797",
@@ -303,8 +303,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.8,
-        "value": 0.3897,
+        "score": 66.3,
+        "value": 0.437,
         "weight": 0.2
       },
       "in_state_support": {
@@ -313,8 +313,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 89.1,
-        "value": 0.776,
+        "score": 87.7,
+        "value": 0.7524,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -323,8 +323,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 52.5,
-        "value": 0.0379,
+        "score": 54.1,
+        "value": 0.0415,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -335,24 +335,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 74.1,
+    "financeScore": 75.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 95738.59,
+          "amount": 114007.4,
           "label": "Small individual (unitemized)",
-          "share": 0.029438693173856455
+          "share": 0.03124120096622653
         },
         {
-          "amount": 2427895.92,
+          "amount": 2631724.92,
           "label": "Large individual (itemized)",
-          "share": 0.7465545820858437
+          "share": 0.7211658814563479
         },
         {
-          "amount": 728500.0,
+          "amount": 903532.0,
           "label": "PAC / other committees",
-          "share": 0.2240067247402999
+          "share": 0.2475929175774256
         },
         {
           "amount": 0.0,
@@ -375,14 +375,13 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1861373.49,
+        "cashOnHand": 784570.39,
         "debts": 0.0,
-        "disbursements": 2496042.8,
-        "individualContributions": 2523634.51,
-        "receipts": 3300107.37
+        "disbursements": 3980663.58,
+        "individualContributions": 2745732.32,
+        "receipts": 3707925.05
       }
     },
-    "generated_at": "2026-10-01T18:26:09.817976+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -390,30 +389,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 32.1,
+    "score": 33.1,
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 10,
-    "updated_at": "2026-10-01T18:26:11.988643+00:00"
+    "updated_at": "2026-10-27T09:23:24.572565+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "W000797",
     "breakdown": [
       {
-        "amount": 95738.59,
+        "amount": 114007.4,
         "label": "Small individual (unitemized)",
-        "share": 0.029438693173856455
+        "share": 0.03124120096622653
       },
       {
-        "amount": 2427895.92,
+        "amount": 2631724.92,
         "label": "Large individual (itemized)",
-        "share": 0.7465545820858437
+        "share": 0.7211658814563479
       },
       {
-        "amount": 728500.0,
+        "amount": 903532.0,
         "label": "PAC / other committees",
-        "share": 0.2240067247402999
+        "share": 0.2475929175774256
       },
       {
         "amount": 0.0,
@@ -447,8 +446,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.8,
-          "value": 0.3897,
+          "score": 66.3,
+          "value": 0.437,
           "weight": 0.2
         },
         "in_state_support": {
@@ -457,8 +456,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 89.1,
-          "value": 0.776,
+          "score": 87.7,
+          "value": 0.7524,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -467,8 +466,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 52.5,
-          "value": 0.0379,
+          "score": 54.1,
+          "value": 0.0415,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -479,8 +478,7 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 74.1,
-      "generated_at": "2026-10-01T18:26:09.817976+00:00",
+      "financeScore": 75.1,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -488,23 +486,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 32.1,
+      "score": 33.1,
       "source": "fec_live",
       "stockPenalty": 42,
       "stockPtrCount": 10,
-      "updated_at": "2026-10-01T18:26:11.988643+00:00"
+      "updated_at": "2026-10-27T09:23:24.572565+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1861373.49,
+      "cashOnHand": 784570.39,
       "debts": 0.0,
-      "disbursements": 2496042.8,
-      "individualContributions": 2523634.51,
-      "receipts": 3300107.37
+      "disbursements": 3980663.58,
+      "individualContributions": 2745732.32,
+      "receipts": 3707925.05
     }
   },
-  "generated_at": "2026-10-26T09:21:41.526637+00:00",
+  "generated_at": "2026-10-27T09:20:29.954638+00:00",
   "history": {
     "bioguideId": "W000797",
     "birthYear": "1966",
@@ -649,7 +647,7 @@
     "birthYear": "1966",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 4532,
+      "count": 4533,
       "url": "https://api.congress.gov/v3/member/W000797/cosponsored-legislation"
     },
     "currentMember": true,
@@ -816,7 +814,7 @@
         "stateName": "Florida"
       }
     ],
-    "updateDate": "2026-10-26T07:40:39Z"
+    "updateDate": "2026-10-27T07:40:38Z"
   },
   "nominate": {
     "dim1": -0.413,
@@ -831,6 +829,7 @@
   },
   "wiki": {
     "extract": "Deborah Wasserman Schultz is an American politician serving as the U.S. representative for Florida's 25th congressional district, first elected to Congress in 2004. A member of the Democratic Party, she was the chair of the Democratic National Committee (DNC) from 2011 until her resignation in 2016.",
+    "generated_at": "2026-09-08T08:19:54.799633+00:00",
     "source": "wikipedia",
     "summary": "Deborah Wasserman Schultz is an American politician serving as the U.S. representative for Florida's 25th congressional district, first elected to Congress in 2004. A member of the Democratic Party, she was the chair of the Democratic National Committee (DNC) from 2011 until her resignation in 2016.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Debbie_Wasserman_Schultz_official_photo.jpg/330px-Debbie_Wasserman_Schultz_official_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

@@ -99,7 +99,7 @@
       "birthYear": "1955",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1649,
+        "count": 1657,
         "url": "https://api.congress.gov/v3/member/T000488/cosponsored-legislation"
       },
       "currentMember": true,
@@ -176,7 +176,7 @@
           "stateName": "Michigan"
         }
       ],
-      "updateDate": "2026-10-26T07:40:39Z"
+      "updateDate": "2026-10-27T07:40:38Z"
     },
     "request": {
       "bioguideId": "t000488",
@@ -197,8 +197,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 62.1,
-        "value": 0.3922,
+        "score": 80.9,
+        "value": 0.5884,
         "weight": 0.2
       },
       "in_state_support": {
@@ -207,18 +207,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 94.8,
-        "value": 0.8787,
+        "score": 96.0,
+        "value": 0.9089,
         "weight": 0.25
       },
       "self_party_independence": {
-        "score": 35.0,
-        "value": 0.0,
+        "score": 37.3,
+        "value": 0.0701,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 49.1,
-        "value": 0.0307,
+        "score": 45.7,
+        "value": 0.0232,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -229,24 +229,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 63.5,
+    "financeScore": 66.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 18989.23,
+          "amount": 21013.23,
           "label": "Small individual (unitemized)",
-          "share": 0.026935339344285266
+          "share": 0.021042695455165003
         },
         {
-          "amount": 600203.93,
+          "amount": 886286.5,
           "label": "Large individual (itemized)",
-          "share": 0.8513613522151052
+          "share": 0.8875292806257818
         },
         {
-          "amount": 85500.0,
+          "amount": 91000.0,
           "label": "PAC / other committees",
-          "share": 0.1212777723971109
+          "share": 0.09112760324900149
         },
         {
           "amount": 0.0,
@@ -254,7 +254,7 @@
           "share": 0.0
         },
         {
-          "amount": 2150300.0,
+          "amount": 2970300.0,
           "label": "Self-funding & candidate loans",
           "share": 1.0
         }
@@ -269,14 +269,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 5029239.22,
-        "debts": 13620000.0,
-        "disbursements": 2265604.56,
-        "individualContributions": 619193.16,
-        "receipts": 390276.08
+        "cashOnHand": 5935390.4,
+        "debts": 14440000.0,
+        "disbursements": 4163399.35,
+        "individualContributions": 907299.73,
+        "receipts": 3194222.05
       }
     },
-    "generated_at": "2026-09-30T10:00:04.150812+00:00",
+    "generated_at": "2026-10-26T20:29:52.470746+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -284,30 +284,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 53.5,
+    "score": 56.9,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-09-30T10:02:15.985045+00:00"
+    "updated_at": "2026-10-26T20:29:55.776948+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000488",
     "breakdown": [
       {
-        "amount": 18989.23,
+        "amount": 21013.23,
         "label": "Small individual (unitemized)",
-        "share": 0.026935339344285266
+        "share": 0.021042695455165003
       },
       {
-        "amount": 600203.93,
+        "amount": 886286.5,
         "label": "Large individual (itemized)",
-        "share": 0.8513613522151052
+        "share": 0.8875292806257818
       },
       {
-        "amount": 85500.0,
+        "amount": 91000.0,
         "label": "PAC / other committees",
-        "share": 0.1212777723971109
+        "share": 0.09112760324900149
       },
       {
         "amount": 0.0,
@@ -315,7 +315,7 @@
         "share": 0.0
       },
       {
-        "amount": 2150300.0,
+        "amount": 2970300.0,
         "label": "Self-funding & candidate loans",
         "share": 1.0
       }
@@ -341,8 +341,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 62.1,
-          "value": 0.3922,
+          "score": 80.9,
+          "value": 0.5884,
           "weight": 0.2
         },
         "in_state_support": {
@@ -351,18 +351,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 94.8,
-          "value": 0.8787,
+          "score": 96.0,
+          "value": 0.9089,
           "weight": 0.25
         },
         "self_party_independence": {
-          "score": 35.0,
-          "value": 0.0,
+          "score": 37.3,
+          "value": 0.0701,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 49.1,
-          "value": 0.0307,
+          "score": 45.7,
+          "value": 0.0232,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -373,8 +373,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 63.5,
-      "generated_at": "2026-09-30T10:00:04.150812+00:00",
+      "financeScore": 66.9,
+      "generated_at": "2026-10-26T20:29:52.470746+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -382,23 +382,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 53.5,
+      "score": 56.9,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 2,
-      "updated_at": "2026-09-30T10:02:15.985045+00:00"
+      "updated_at": "2026-10-26T20:29:55.776948+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 5029239.22,
-      "debts": 13620000.0,
-      "disbursements": 2265604.56,
-      "individualContributions": 619193.16,
-      "receipts": 390276.08
+      "cashOnHand": 5935390.4,
+      "debts": 14440000.0,
+      "disbursements": 4163399.35,
+      "individualContributions": 907299.73,
+      "receipts": 3194222.05
     }
   },
-  "generated_at": "2026-10-26T09:21:41.526637+00:00",
+  "generated_at": "2026-10-27T09:20:29.954638+00:00",
   "history": {
     "bioguideId": "T000488",
     "birthYear": "1955",
@@ -462,7 +462,7 @@
     "birthYear": "1955",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1649,
+      "count": 1657,
       "url": "https://api.congress.gov/v3/member/T000488/cosponsored-legislation"
     },
     "currentMember": true,
@@ -539,7 +539,7 @@
         "stateName": "Michigan"
       }
     ],
-    "updateDate": "2026-10-26T07:40:39Z"
+    "updateDate": "2026-10-27T07:40:38Z"
   },
   "nominate": {
     "dim1": -0.351,
@@ -554,6 +554,7 @@
   },
   "wiki": {
     "extract": "Shrinivas Prasad Thanedar is an American businessman, author, and politician serving as the U.S. representative from Michigan's 13th congressional district since 2023. A member of the Democratic Party, Thanedar served as a member of the Michigan House of Representatives from 2021 to 2023.",
+    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Shrinivas Prasad Thanedar is an American businessman, author, and politician serving as the U.S. representative from Michigan's 13th congressional district since 2023. A member of the Democratic Party, Thanedar served as a member of the Michigan House of Representatives from 2021 to 2023.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Shri_Thanedar%2C_official_portrait_%28119th_Congress%29.jpg/330px-Shri_Thanedar%2C_official_portrait_%28119th_Congress%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
