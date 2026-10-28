@@ -263,8 +263,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 59.4,
-        "value": 0.3646,
+        "score": 75.1,
+        "value": 0.528,
         "weight": 0.2
       },
       "in_state_support": {
@@ -273,8 +273,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 69.0,
-        "value": 0.5415,
+        "score": 71.3,
+        "value": 0.561,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -283,8 +283,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 84.8,
-        "value": 0.2242,
+        "score": 83.2,
+        "value": 0.1984,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -295,24 +295,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 78.6,
+    "financeScore": 81.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 107175.71,
+          "amount": 123527.87,
           "label": "Small individual (unitemized)",
-          "share": 0.12140569177150581
+          "share": 0.11128692881176827
         },
         {
-          "amount": 370814.12,
+          "amount": 499166.55,
           "label": "Large individual (itemized)",
-          "share": 0.42004801981010587
+          "share": 0.4497018552579751
         },
         {
-          "amount": 404800.0,
+          "amount": 487300.0,
           "label": "PAC / other committees",
-          "share": 0.45854628841838835
+          "share": 0.4390112159302567
         },
         {
           "amount": 0.0,
@@ -335,44 +335,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 186223.88,
+        "cashOnHand": 231215.39,
         "debts": 0.0,
-        "disbursements": 976794.27,
-        "individualContributions": 477989.83,
-        "receipts": 893848.27
+        "disbursements": 1171938.27,
+        "individualContributions": 622694.42,
+        "receipts": 1133983.78
       }
     },
-    "generated_at": "2026-10-02T10:03:14.165564+00:00",
-    "grade": "C+",
+    "generated_at": "2026-10-28T05:45:00.613776+00:00",
+    "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.6,
+    "score": 81.9,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-02T10:06:14.354613+00:00"
+    "updated_at": "2026-10-28T05:45:20.200360+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000472",
     "breakdown": [
       {
-        "amount": 107175.71,
+        "amount": 123527.87,
         "label": "Small individual (unitemized)",
-        "share": 0.12140569177150581
+        "share": 0.11128692881176827
       },
       {
-        "amount": 370814.12,
+        "amount": 499166.55,
         "label": "Large individual (itemized)",
-        "share": 0.42004801981010587
+        "share": 0.4497018552579751
       },
       {
-        "amount": 404800.0,
+        "amount": 487300.0,
         "label": "PAC / other committees",
-        "share": 0.45854628841838835
+        "share": 0.4390112159302567
       },
       {
         "amount": 0.0,
@@ -406,8 +406,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 59.4,
-          "value": 0.3646,
+          "score": 75.1,
+          "value": 0.528,
           "weight": 0.2
         },
         "in_state_support": {
@@ -416,8 +416,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 69.0,
-          "value": 0.5415,
+          "score": 71.3,
+          "value": 0.561,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -426,8 +426,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 84.8,
-          "value": 0.2242,
+          "score": 83.2,
+          "value": 0.1984,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -438,31 +438,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 78.6,
-      "generated_at": "2026-10-02T10:03:14.165564+00:00",
-      "grade": "C+",
+      "financeScore": 81.9,
+      "generated_at": "2026-10-28T05:45:00.613776+00:00",
+      "grade": "B-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.6,
+      "score": 81.9,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-02T10:06:14.354613+00:00"
+      "updated_at": "2026-10-28T05:45:20.200360+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 186223.88,
+      "cashOnHand": 231215.39,
       "debts": 0.0,
-      "disbursements": 976794.27,
-      "individualContributions": 477989.83,
-      "receipts": 893848.27
+      "disbursements": 1171938.27,
+      "individualContributions": 622694.42,
+      "receipts": 1133983.78
     }
   },
-  "generated_at": "2026-10-27T09:20:29.954638+00:00",
+  "generated_at": "2026-10-28T10:01:14.212590+00:00",
   "history": {
     "bioguideId": "T000472",
     "birthYear": "1960",
@@ -713,7 +713,6 @@
   },
   "wiki": {
     "extract": "Mark Allan Takano is an American politician and academic who has served in the United States House of Representatives since 2013, representing California's 41st congressional district from 2013 to 2023 and the 39th congressional district since 2023. A member of the Democratic Party, Takano became the first gay person of Asian descent in Congress upon taking office.",
-    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Mark Allan Takano is an American politician and academic who has served in the United States House of Representatives since 2013, representing California's 41st congressional district from 2013 to 2023 and the 39th congressional district since 2023. A member of the Democratic Party, Takano became the first gay person of Asian descent in Congress upon taking office.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Mark_Takano_118th_Congress.jpeg/330px-Mark_Takano_118th_Congress.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
