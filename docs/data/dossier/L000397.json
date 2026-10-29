@@ -327,7 +327,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-10-27T07:40:37Z"
+      "updateDate": "2026-10-29T07:40:48Z"
     },
     "request": {
       "bioguideId": "l000397",
@@ -348,8 +348,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 66.0,
-        "value": 0.4334,
+        "score": 72.0,
+        "value": 0.4961,
         "weight": 0.2
       },
       "in_state_support": {
@@ -358,18 +358,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 85.7,
-        "value": 0.7158,
+        "score": 84.9,
+        "value": 0.7015,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9996,
+        "value": 0.9997,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 95.7,
-        "value": 0.3951,
+        "score": 95.6,
+        "value": 0.3931,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -380,29 +380,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 87.4,
+    "financeScore": 88.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 436598.16,
+          "amount": 486759.05,
           "label": "Small individual (unitemized)",
-          "share": 0.28279258975880134
+          "share": 0.275759955237924
         },
         {
-          "amount": 668470.04,
+          "amount": 751582.91,
           "label": "Large individual (itemized)",
-          "share": 0.43298023470316394
+          "share": 0.42578863119070653
         },
         {
-          "amount": 438200.0,
+          "amount": 526200.0,
           "label": "PAC / other committees",
-          "share": 0.2838301307369384
+          "share": 0.29810414094241416
         },
         {
           "amount": 612.99,
           "label": "Political party committees",
-          "share": 0.0003970448010963849
+          "share": 0.00034727262895532205
         },
         {
           "amount": 0.0,
@@ -420,14 +420,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 643340.91,
+        "cashOnHand": 602360.54,
         "debts": 0.0,
-        "disbursements": 1318327.45,
-        "individualContributions": 1105068.2,
-        "receipts": 1721916.01
+        "disbursements": 1620786.13,
+        "individualContributions": 1238341.96,
+        "receipts": 1983394.32
       }
     },
-    "generated_at": "2026-10-02T17:53:01.008719+00:00",
+    "generated_at": "2026-10-28T12:58:13.615677+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -435,35 +435,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 77.4,
+    "score": 78.4,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-10-02T17:53:21.000146+00:00"
+    "updated_at": "2026-10-28T12:58:19.700447+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "L000397",
     "breakdown": [
       {
-        "amount": 436598.16,
+        "amount": 486759.05,
         "label": "Small individual (unitemized)",
-        "share": 0.28279258975880134
+        "share": 0.275759955237924
       },
       {
-        "amount": 668470.04,
+        "amount": 751582.91,
         "label": "Large individual (itemized)",
-        "share": 0.43298023470316394
+        "share": 0.42578863119070653
       },
       {
-        "amount": 438200.0,
+        "amount": 526200.0,
         "label": "PAC / other committees",
-        "share": 0.2838301307369384
+        "share": 0.29810414094241416
       },
       {
         "amount": 612.99,
         "label": "Political party committees",
-        "share": 0.0003970448010963849
+        "share": 0.00034727262895532205
       },
       {
         "amount": 0.0,
@@ -492,8 +492,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 66.0,
-          "value": 0.4334,
+          "score": 72.0,
+          "value": 0.4961,
           "weight": 0.2
         },
         "in_state_support": {
@@ -502,18 +502,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 85.7,
-          "value": 0.7158,
+          "score": 84.9,
+          "value": 0.7015,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9996,
+          "value": 0.9997,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 95.7,
-          "value": 0.3951,
+          "score": 95.6,
+          "value": 0.3931,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -524,8 +524,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 87.4,
-      "generated_at": "2026-10-02T17:53:01.008719+00:00",
+      "financeScore": 88.4,
+      "generated_at": "2026-10-28T12:58:13.615677+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -533,23 +533,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 77.4,
+      "score": 78.4,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-10-02T17:53:21.000146+00:00"
+      "updated_at": "2026-10-28T12:58:19.700447+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 643340.91,
+      "cashOnHand": 602360.54,
       "debts": 0.0,
-      "disbursements": 1318327.45,
-      "individualContributions": 1105068.2,
-      "receipts": 1721916.01
+      "disbursements": 1620786.13,
+      "individualContributions": 1238341.96,
+      "receipts": 1983394.32
     }
   },
-  "generated_at": "2026-10-27T09:20:29.954638+00:00",
+  "generated_at": "2026-10-29T10:24:55.592090+00:00",
   "history": {
     "bioguideId": "L000397",
     "birthYear": "1947",
@@ -955,7 +955,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-10-27T07:40:37Z"
+    "updateDate": "2026-10-29T07:40:48Z"
   },
   "nominate": {
     "dim1": -0.396,
@@ -970,7 +970,6 @@
   },
   "wiki": {
     "extract": "Susan Ellen \"Zoe\" Lofgren is an American politician and lawyer serving as a U.S. representative from California. A member of the Democratic Party, Lofgren is in her 16th term in Congress, having been first elected in 1994.",
-    "generated_at": "2026-09-13T08:32:40.192022+00:00",
     "source": "wikipedia",
     "summary": "Susan Ellen \"Zoe\" Lofgren is an American politician and lawyer serving as a U.S. representative from California. A member of the Democratic Party, Lofgren is in her 16th term in Congress, having been first elected in 1994.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Zoe_Lofgren_Official_Portrait_2024.jpeg/330px-Zoe_Lofgren_Official_Portrait_2024.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

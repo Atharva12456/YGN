@@ -233,7 +233,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-10-27T07:40:36Z"
+      "updateDate": "2026-10-29T07:40:47Z"
     },
     "request": {
       "bioguideId": "g000585",
@@ -254,8 +254,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 64.9,
-        "value": 0.4216,
+        "score": 73.4,
+        "value": 0.5104,
         "weight": 0.2
       },
       "in_state_support": {
@@ -264,8 +264,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 70.6,
-        "value": 0.5552,
+        "score": 73.1,
+        "value": 0.5756,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -274,8 +274,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 43.5,
-        "value": 0.0185,
+        "score": 42.7,
+        "value": 0.0167,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -286,29 +286,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 67.7,
+    "financeScore": 69.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 12049.85,
+          "amount": 12816.06,
           "label": "Small individual (unitemized)",
-          "share": 0.010283977611783684
+          "share": 0.00961579641065369
         },
         {
-          "amount": 638516.9,
+          "amount": 754352.82,
           "label": "Large individual (itemized)",
-          "share": 0.5449440038129538
+          "share": 0.5659854228930332
         },
         {
-          "amount": 521111.6,
+          "amount": 565611.6,
           "label": "PAC / other committees",
-          "share": 0.4447441277394137
+          "share": 0.42437426113049487
         },
         {
           "amount": 32.68,
           "label": "Political party committees",
-          "share": 2.7890835848835528e-05
+          "share": 2.451956581821266e-05
         },
         {
           "amount": 0.0,
@@ -326,49 +326,48 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 781725.64,
-        "debts": 76783.52,
-        "disbursements": 482161.47,
-        "individualContributions": 650566.75,
-        "receipts": 1175128.2
+        "cashOnHand": 628394.77,
+        "debts": 73783.52,
+        "disbursements": 796599.28,
+        "individualContributions": 767168.88,
+        "receipts": 1336235.14
       }
     },
-    "generated_at": "2026-10-03T16:19:20.431841+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 67.7,
+    "score": 69.8,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-03T16:19:27.620977+00:00"
+    "updated_at": "2026-10-29T10:29:08.885708+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000585",
     "breakdown": [
       {
-        "amount": 12049.85,
+        "amount": 12816.06,
         "label": "Small individual (unitemized)",
-        "share": 0.010283977611783684
+        "share": 0.00961579641065369
       },
       {
-        "amount": 638516.9,
+        "amount": 754352.82,
         "label": "Large individual (itemized)",
-        "share": 0.5449440038129538
+        "share": 0.5659854228930332
       },
       {
-        "amount": 521111.6,
+        "amount": 565611.6,
         "label": "PAC / other committees",
-        "share": 0.4447441277394137
+        "share": 0.42437426113049487
       },
       {
         "amount": 32.68,
         "label": "Political party committees",
-        "share": 2.7890835848835528e-05
+        "share": 2.451956581821266e-05
       },
       {
         "amount": 0.0,
@@ -397,8 +396,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 64.9,
-          "value": 0.4216,
+          "score": 73.4,
+          "value": 0.5104,
           "weight": 0.2
         },
         "in_state_support": {
@@ -407,8 +406,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 70.6,
-          "value": 0.5552,
+          "score": 73.1,
+          "value": 0.5756,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -417,8 +416,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 43.5,
-          "value": 0.0185,
+          "score": 42.7,
+          "value": 0.0167,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -429,31 +428,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 67.7,
-      "generated_at": "2026-10-03T16:19:20.431841+00:00",
+      "financeScore": 69.8,
       "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 67.7,
+      "score": 69.8,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-03T16:19:27.620977+00:00"
+      "updated_at": "2026-10-29T10:29:08.885708+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 781725.64,
-      "debts": 76783.52,
-      "disbursements": 482161.47,
-      "individualContributions": 650566.75,
-      "receipts": 1175128.2
+      "cashOnHand": 628394.77,
+      "debts": 73783.52,
+      "disbursements": 796599.28,
+      "individualContributions": 767168.88,
+      "receipts": 1336235.14
     }
   },
-  "generated_at": "2026-10-28T10:01:14.212590+00:00",
+  "generated_at": "2026-10-29T10:24:55.592090+00:00",
   "history": {
     "bioguideId": "G000585",
     "birthYear": "1974",
@@ -651,7 +649,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-10-27T07:40:36Z"
+    "updateDate": "2026-10-29T07:40:47Z"
   },
   "nominate": {
     "dim1": -0.53,
@@ -666,7 +664,6 @@
   },
   "wiki": {
     "extract": "Jimmy Gomez is an American politician serving as the U.S. representative for California's 34th congressional district since 2017. His district includes the Los Angeles neighborhoods of Eagle Rock, Boyle Heights, Downtown Los Angeles, Koreatown, and other communities.",
-    "generated_at": "2026-09-08T08:19:54.799633+00:00",
     "source": "wikipedia",
     "summary": "Jimmy Gomez is an American politician serving as the U.S. representative for California's 34th congressional district since 2017. His district includes the Los Angeles neighborhoods of Eagle Rock, Boyle Heights, Downtown Los Angeles, Koreatown, and other communities.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Jimmy_Gomez_official_portrait_%28light_crop%29.jpg/330px-Jimmy_Gomez_official_portrait_%28light_crop%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

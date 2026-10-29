@@ -231,7 +231,7 @@
           "stateName": "Connecticut"
         }
       ],
-      "updateDate": "2026-10-27T07:40:36Z"
+      "updateDate": "2026-10-29T07:40:47Z"
     },
     "request": {
       "bioguideId": "h001081",
@@ -252,8 +252,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.6,
-        "value": 0.3875,
+        "score": 77.7,
+        "value": 0.5555,
         "weight": 0.2
       },
       "in_state_support": {
@@ -262,18 +262,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 65.6,
-        "value": 0.5135,
+        "score": 65.4,
+        "value": 0.5118,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9969,
+        "value": 0.9955,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 86.3,
-        "value": 0.248,
+        "score": 85.4,
+        "value": 0.2339,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -284,29 +284,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 76.4,
+    "financeScore": 79.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 151427.65,
+          "amount": 193192.61,
           "label": "Small individual (unitemized)",
-          "share": 0.12737235748830328
+          "share": 0.11972307192498613
         },
         {
-          "amount": 459075.28,
+          "amount": 632608.19,
           "label": "Large individual (itemized)",
-          "share": 0.38614810887049317
+          "share": 0.3920325722174636
         },
         {
-          "amount": 574370.0,
+          "amount": 780120.0,
           "label": "PAC / other committees",
-          "share": 0.4831274933643675
+          "share": 0.48344687133798847
         },
         {
-          "amount": 3985.1,
+          "amount": 7741.52,
           "label": "Political party committees",
-          "share": 0.0033520402768360824
+          "share": 0.004797484519561689
         },
         {
           "amount": 0.0,
@@ -324,49 +324,49 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1084158.01,
+        "cashOnHand": 1136297.07,
         "debts": 0.0,
-        "disbursements": 728471.0,
-        "individualContributions": 610502.93,
-        "receipts": 1290077.99
+        "disbursements": 1102716.07,
+        "individualContributions": 825800.8,
+        "receipts": 1716462.12
       }
     },
-    "generated_at": "2026-10-03T11:41:29.096377+00:00",
-    "grade": "C",
+    "generated_at": "2026-10-29T10:00:06.976132+00:00",
+    "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 76.4,
+    "score": 79.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-03T11:41:49.549646+00:00"
+    "updated_at": "2026-10-29T10:00:30.665095+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001081",
     "breakdown": [
       {
-        "amount": 151427.65,
+        "amount": 193192.61,
         "label": "Small individual (unitemized)",
-        "share": 0.12737235748830328
+        "share": 0.11972307192498613
       },
       {
-        "amount": 459075.28,
+        "amount": 632608.19,
         "label": "Large individual (itemized)",
-        "share": 0.38614810887049317
+        "share": 0.3920325722174636
       },
       {
-        "amount": 574370.0,
+        "amount": 780120.0,
         "label": "PAC / other committees",
-        "share": 0.4831274933643675
+        "share": 0.48344687133798847
       },
       {
-        "amount": 3985.1,
+        "amount": 7741.52,
         "label": "Political party committees",
-        "share": 0.0033520402768360824
+        "share": 0.004797484519561689
       },
       {
         "amount": 0.0,
@@ -395,8 +395,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.6,
-          "value": 0.3875,
+          "score": 77.7,
+          "value": 0.5555,
           "weight": 0.2
         },
         "in_state_support": {
@@ -405,18 +405,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 65.6,
-          "value": 0.5135,
+          "score": 65.4,
+          "value": 0.5118,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9969,
+          "value": 0.9955,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 86.3,
-          "value": 0.248,
+          "score": 85.4,
+          "value": 0.2339,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -427,31 +427,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 76.4,
-      "generated_at": "2026-10-03T11:41:29.096377+00:00",
-      "grade": "C",
+      "financeScore": 79.3,
+      "generated_at": "2026-10-29T10:00:06.976132+00:00",
+      "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 76.4,
+      "score": 79.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-03T11:41:49.549646+00:00"
+      "updated_at": "2026-10-29T10:00:30.665095+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1084158.01,
+      "cashOnHand": 1136297.07,
       "debts": 0.0,
-      "disbursements": 728471.0,
-      "individualContributions": 610502.93,
-      "receipts": 1290077.99
+      "disbursements": 1102716.07,
+      "individualContributions": 825800.8,
+      "receipts": 1716462.12
     }
   },
-  "generated_at": "2026-10-27T09:20:29.954638+00:00",
+  "generated_at": "2026-10-29T10:24:55.592090+00:00",
   "history": {
     "bioguideId": "H001081",
     "birthYear": "1973",
@@ -639,7 +639,7 @@
         "stateName": "Connecticut"
       }
     ],
-    "updateDate": "2026-10-27T07:40:36Z"
+    "updateDate": "2026-10-29T07:40:47Z"
   },
   "nominate": {
     "dim1": -0.34,
@@ -654,7 +654,6 @@
   },
   "wiki": {
     "extract": "Jahana Hayes is an American politician serving as the U.S. representative for Connecticut's 5th congressional district since 2019. The district, once represented by U.S. Senator Chris Murphy, comprises much of the state's northwestern portion, including New Britain, Danbury, and Waterbury.",
-    "generated_at": "2026-09-15T08:58:13.730717+00:00",
     "source": "wikipedia",
     "summary": "Jahana Hayes is an American politician serving as the U.S. representative for Connecticut's 5th congressional district since 2019. The district, once represented by U.S. Senator Chris Murphy, comprises much of the state's northwestern portion, including New Britain, Danbury, and Waterbury.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Jahana_Hayes%2C_official_portrait%2C_116th_Congress.jpg/330px-Jahana_Hayes%2C_official_portrait%2C_116th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
