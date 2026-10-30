@@ -216,7 +216,7 @@
           "stateName": "New York"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "m001188",
@@ -237,8 +237,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 57.6,
-        "value": 0.3442,
+        "score": 59.0,
+        "value": 0.3606,
         "weight": 0.2
       },
       "in_state_support": {
@@ -247,8 +247,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 84.8,
-        "value": 0.7,
+        "score": 82.7,
+        "value": 0.6627,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -257,8 +257,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 42.5,
-        "value": 0.0164,
+        "score": 42.7,
+        "value": 0.0168,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -269,24 +269,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 69.5,
+    "financeScore": 69.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 22019.63,
+          "amount": 23175.83,
           "label": "Small individual (unitemized)",
-          "share": 0.01147144116417767
+          "share": 0.011138913634201431
         },
         {
-          "amount": 1321697.69,
+          "amount": 1355642.69,
           "label": "Large individual (itemized)",
-          "share": 0.6885573139814127
+          "share": 0.6515575426099735
         },
         {
-          "amount": 575800.0,
+          "amount": 701800.0,
           "label": "PAC / other committees",
-          "share": 0.2999712448544095
+          "share": 0.33730354375582505
         },
         {
           "amount": 0.0,
@@ -309,44 +309,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1030068.45,
+        "cashOnHand": 765124.94,
         "debts": 0.0,
-        "disbursements": 1972862.0,
-        "individualContributions": 1343717.32,
-        "receipts": 2034044.64
+        "disbursements": 2402835.03,
+        "individualContributions": 1378818.52,
+        "receipts": 2199074.16
       }
     },
-    "generated_at": "2026-10-04T12:24:07.437072+00:00",
     "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 69.5,
+    "score": 69.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T12:24:12.569380+00:00"
+    "updated_at": "2026-10-30T10:32:50.049490+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "M001188",
     "breakdown": [
       {
-        "amount": 22019.63,
+        "amount": 23175.83,
         "label": "Small individual (unitemized)",
-        "share": 0.01147144116417767
+        "share": 0.011138913634201431
       },
       {
-        "amount": 1321697.69,
+        "amount": 1355642.69,
         "label": "Large individual (itemized)",
-        "share": 0.6885573139814127
+        "share": 0.6515575426099735
       },
       {
-        "amount": 575800.0,
+        "amount": 701800.0,
         "label": "PAC / other committees",
-        "share": 0.2999712448544095
+        "share": 0.33730354375582505
       },
       {
         "amount": 0.0,
@@ -380,8 +379,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 57.6,
-          "value": 0.3442,
+          "score": 59.0,
+          "value": 0.3606,
           "weight": 0.2
         },
         "in_state_support": {
@@ -390,8 +389,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 84.8,
-          "value": 0.7,
+          "score": 82.7,
+          "value": 0.6627,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -400,8 +399,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 42.5,
-          "value": 0.0164,
+          "score": 42.7,
+          "value": 0.0168,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -412,31 +411,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 69.5,
-      "generated_at": "2026-10-04T12:24:07.437072+00:00",
+      "financeScore": 69.3,
       "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 69.5,
+      "score": 69.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T12:24:12.569380+00:00"
+      "updated_at": "2026-10-30T10:32:50.049490+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1030068.45,
+      "cashOnHand": 765124.94,
       "debts": 0.0,
-      "disbursements": 1972862.0,
-      "individualContributions": 1343717.32,
-      "receipts": 2034044.64
+      "disbursements": 2402835.03,
+      "individualContributions": 1378818.52,
+      "receipts": 2199074.16
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "M001188",
     "birthYear": "1975",
@@ -672,7 +670,7 @@
         "stateName": "New York"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": -0.371,
@@ -687,6 +685,7 @@
   },
   "wiki": {
     "extract": "Grace Meng is an American lawyer and politician serving as the U.S. representative for New York's 6th congressional district since 2013. Her district is situated within the New York City borough of Queens; it includes Bayside, East Elmhurst, Elmhurst, Flushing, Forest Hills, Fresh Meadows, Glendale, Jackson Heights, Kew Gardens, Maspeth, Middle Village, Woodside and Rego Park.",
+    "generated_at": "2026-09-14T09:15:41.044301+00:00",
     "source": "wikipedia",
     "summary": "Grace Meng is an American lawyer and politician serving as the U.S. representative for New York's 6th congressional district since 2013. Her district is situated within the New York City borough of Queens; it includes Bayside, East Elmhurst, Elmhurst, Flushing, Forest Hills, Fresh Meadows, Glendale, Jackson Heights, Kew Gardens, Maspeth, Middle Village, Woodside and Rego Park.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Grace_Meng_Official_Congressional_Photo.jpg/330px-Grace_Meng_Official_Congressional_Photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

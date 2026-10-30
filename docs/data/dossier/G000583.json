@@ -133,7 +133,7 @@
       "birthYear": "1975",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 3370,
+        "count": 3377,
         "url": "https://api.congress.gov/v3/member/G000583/cosponsored-legislation"
       },
       "currentMember": true,
@@ -185,7 +185,7 @@
         }
       ],
       "sponsoredLegislation": {
-        "count": 226,
+        "count": 229,
         "url": "https://api.congress.gov/v3/member/G000583/sponsored-legislation"
       },
       "state": "New Jersey",
@@ -240,7 +240,7 @@
           "stateName": "New Jersey"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:09Z"
     },
     "request": {
       "bioguideId": "g000583",
@@ -261,8 +261,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 48.0,
-        "value": 0.1982,
+        "score": 51.9,
+        "value": 0.257,
         "weight": 0.2
       },
       "in_state_support": {
@@ -271,8 +271,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 89.6,
-        "value": 0.7864,
+        "score": 86.9,
+        "value": 0.7381,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -281,36 +281,36 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 37.9,
-        "value": 0.0064,
+        "score": 38.6,
+        "value": 0.0077,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "21 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+        "note": "22 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
         "penalty": 50,
-        "ptr_filings": 21
+        "ptr_filings": 22
       }
     },
     "cycle": 2026,
-    "financeScore": 64.6,
+    "financeScore": 64.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 20738.7,
+          "amount": 27155.6,
           "label": "Small individual (unitemized)",
-          "share": 0.005021591339091896
+          "share": 0.005710892200072787
         },
         {
-          "amount": 3227117.25,
+          "amount": 3482598.25,
           "label": "Large individual (itemized)",
-          "share": 0.7814021145411263
+          "share": 0.7323993276492561
         },
         {
-          "amount": 882050.01,
+          "amount": 1245300.01,
           "label": "PAC / other committees",
-          "share": 0.21357629411978185
+          "share": 0.2618897801506711
         },
         {
           "amount": 0.0,
@@ -333,14 +333,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 12773074.82,
+        "cashOnHand": 13531046.78,
         "debts": 0.0,
-        "disbursements": 12704563.59,
-        "individualContributions": 3247855.95,
-        "receipts": 4765145.35
+        "disbursements": 12970258.43,
+        "individualContributions": 3509753.85,
+        "receipts": 5788812.15
       }
     },
-    "generated_at": "2026-10-03T16:19:20.431841+00:00",
+    "generated_at": "2026-10-29T18:29:04.856745+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -348,30 +348,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 14.6,
+    "score": 14.9,
     "source": "fec_live",
     "stockPenalty": 50,
-    "stockPtrCount": 21,
-    "updated_at": "2026-10-03T16:19:40.112255+00:00"
+    "stockPtrCount": 22,
+    "updated_at": "2026-10-29T18:29:07.023914+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000583",
     "breakdown": [
       {
-        "amount": 20738.7,
+        "amount": 27155.6,
         "label": "Small individual (unitemized)",
-        "share": 0.005021591339091896
+        "share": 0.005710892200072787
       },
       {
-        "amount": 3227117.25,
+        "amount": 3482598.25,
         "label": "Large individual (itemized)",
-        "share": 0.7814021145411263
+        "share": 0.7323993276492561
       },
       {
-        "amount": 882050.01,
+        "amount": 1245300.01,
         "label": "PAC / other committees",
-        "share": 0.21357629411978185
+        "share": 0.2618897801506711
       },
       {
         "amount": 0.0,
@@ -405,8 +405,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 48.0,
-          "value": 0.1982,
+          "score": 51.9,
+          "value": 0.257,
           "weight": 0.2
         },
         "in_state_support": {
@@ -415,8 +415,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 89.6,
-          "value": 0.7864,
+          "score": 86.9,
+          "value": 0.7381,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -425,20 +425,20 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 37.9,
-          "value": 0.0064,
+          "score": 38.6,
+          "value": 0.0077,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "21 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
+          "note": "22 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -50 conflict-of-interest deduction.",
           "penalty": 50,
-          "ptr_filings": 21
+          "ptr_filings": 22
         }
       },
       "cycle": 2026,
-      "financeScore": 64.6,
-      "generated_at": "2026-10-03T16:19:20.431841+00:00",
+      "financeScore": 64.9,
+      "generated_at": "2026-10-29T18:29:04.856745+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -446,23 +446,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 14.6,
+      "score": 14.9,
       "source": "fec_live",
       "stockPenalty": 50,
-      "stockPtrCount": 21,
-      "updated_at": "2026-10-03T16:19:40.112255+00:00"
+      "stockPtrCount": 22,
+      "updated_at": "2026-10-29T18:29:07.023914+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 12773074.82,
+      "cashOnHand": 13531046.78,
       "debts": 0.0,
-      "disbursements": 12704563.59,
-      "individualContributions": 3247855.95,
-      "receipts": 4765145.35
+      "disbursements": 12970258.43,
+      "individualContributions": 3509753.85,
+      "receipts": 5788812.15
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "G000583",
     "birthYear": "1975",
@@ -553,7 +553,7 @@
     "birthYear": "1975",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 3370,
+      "count": 3377,
       "url": "https://api.congress.gov/v3/member/G000583/cosponsored-legislation"
     },
     "currentMember": true,
@@ -605,7 +605,7 @@
       }
     ],
     "sponsoredLegislation": {
-      "count": 226,
+      "count": 229,
       "url": "https://api.congress.gov/v3/member/G000583/sponsored-legislation"
     },
     "state": "New Jersey",
@@ -660,7 +660,7 @@
         "stateName": "New Jersey"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:09Z"
   },
   "nominate": {
     "dim1": -0.165,

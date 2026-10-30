@@ -104,7 +104,7 @@
       "birthYear": "1950",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 2566,
+        "count": 2567,
         "url": "https://api.congress.gov/v3/member/B001292/cosponsored-legislation"
       },
       "currentMember": true,
@@ -237,7 +237,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "b001292",
@@ -258,8 +258,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 57.1,
-        "value": 0.3361,
+        "score": 63.2,
+        "value": 0.4041,
         "weight": 0.2
       },
       "in_state_support": {
@@ -268,8 +268,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 86.5,
-        "value": 0.7295,
+        "score": 84.0,
+        "value": 0.6862,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -278,8 +278,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 60.7,
-        "value": 0.0648,
+        "score": 61.6,
+        "value": 0.0695,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -290,24 +290,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 75.3,
+    "financeScore": 76.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 100224.66,
+          "amount": 120365.86,
           "label": "Small individual (unitemized)",
-          "share": 0.04729418581120726
+          "share": 0.0477122822753961
         },
         {
-          "amount": 1445700.42,
+          "amount": 1610627.85,
           "label": "Large individual (itemized)",
-          "share": 0.6821996132570604
+          "share": 0.638442915788699
         },
         {
-          "amount": 573250.0,
+          "amount": 791750.0,
           "label": "PAC / other committees",
-          "share": 0.27050620093173233
+          "share": 0.3138448019359049
         },
         {
           "amount": 0.0,
@@ -330,14 +330,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 838934.44,
+        "cashOnHand": 848726.77,
         "debts": 0.0,
-        "disbursements": 1843889.56,
-        "individualContributions": 1545925.08,
-        "receipts": 2125761.32
+        "disbursements": 2237816.32,
+        "individualContributions": 1730993.71,
+        "receipts": 2529480.41
       }
     },
-    "generated_at": "2026-10-04T05:56:11.901969+00:00",
+    "generated_at": "2026-10-30T01:01:34.498098+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -345,30 +345,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 33.3,
+    "score": 34.1,
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 13,
-    "updated_at": "2026-10-04T05:56:21.367674+00:00"
+    "updated_at": "2026-10-30T01:01:49.934469+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "B001292",
     "breakdown": [
       {
-        "amount": 100224.66,
+        "amount": 120365.86,
         "label": "Small individual (unitemized)",
-        "share": 0.04729418581120726
+        "share": 0.0477122822753961
       },
       {
-        "amount": 1445700.42,
+        "amount": 1610627.85,
         "label": "Large individual (itemized)",
-        "share": 0.6821996132570604
+        "share": 0.638442915788699
       },
       {
-        "amount": 573250.0,
+        "amount": 791750.0,
         "label": "PAC / other committees",
-        "share": 0.27050620093173233
+        "share": 0.3138448019359049
       },
       {
         "amount": 0.0,
@@ -402,8 +402,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 57.1,
-          "value": 0.3361,
+          "score": 63.2,
+          "value": 0.4041,
           "weight": 0.2
         },
         "in_state_support": {
@@ -412,8 +412,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 86.5,
-          "value": 0.7295,
+          "score": 84.0,
+          "value": 0.6862,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -422,8 +422,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 60.7,
-          "value": 0.0648,
+          "score": 61.6,
+          "value": 0.0695,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -434,8 +434,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 75.3,
-      "generated_at": "2026-10-04T05:56:11.901969+00:00",
+      "financeScore": 76.1,
+      "generated_at": "2026-10-30T01:01:34.498098+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -443,23 +443,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 33.3,
+      "score": 34.1,
       "source": "fec_live",
       "stockPenalty": 42,
       "stockPtrCount": 13,
-      "updated_at": "2026-10-04T05:56:21.367674+00:00"
+      "updated_at": "2026-10-30T01:01:49.934469+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 838934.44,
+      "cashOnHand": 848726.77,
       "debts": 0.0,
-      "disbursements": 1843889.56,
-      "individualContributions": 1545925.08,
-      "receipts": 2125761.32
+      "disbursements": 2237816.32,
+      "individualContributions": 1730993.71,
+      "receipts": 2529480.41
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "B001292",
     "birthYear": "1950",
@@ -559,7 +559,7 @@
     "birthYear": "1950",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 2566,
+      "count": 2567,
       "url": "https://api.congress.gov/v3/member/B001292/cosponsored-legislation"
     },
     "currentMember": true,
@@ -692,7 +692,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": -0.394,

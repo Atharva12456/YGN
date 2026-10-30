@@ -278,7 +278,7 @@
           "stateName": "North Carolina"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "r000603",
@@ -299,8 +299,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.7,
-        "value": 0.3888,
+        "score": 72.5,
+        "value": 0.5015,
         "weight": 0.2
       },
       "in_state_support": {
@@ -309,8 +309,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 55.0,
-        "value": 0.3922,
+        "score": 54.4,
+        "value": 0.3801,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -319,8 +319,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 39.0,
-        "value": 0.0086,
+        "score": 39.4,
+        "value": 0.0095,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -331,29 +331,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.7,
+    "financeScore": 63.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 6705.48,
+          "amount": 9075.81,
           "label": "Small individual (unitemized)",
-          "share": 0.0033690611302754233
+          "share": 0.0036007384747107235
         },
         {
-          "amount": 773906.69,
+          "amount": 948891.48,
           "label": "Large individual (itemized)",
-          "share": 0.3888370329550027
+          "share": 0.3764633746587028
         },
         {
-          "amount": 1209449.0,
+          "amount": 1562324.0,
           "label": "PAC / other committees",
-          "share": 0.6076682974150218
+          "share": 0.6198367018220915
         },
         {
           "amount": 250.0,
           "label": "Political party committees",
-          "share": 0.00012560849970007454
+          "share": 9.918504449494655e-05
         },
         {
           "amount": 0.0,
@@ -371,14 +371,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2301487.27,
+        "cashOnHand": 1699752.56,
         "debts": 0.0,
-        "disbursements": 1124461.26,
-        "individualContributions": 780612.17,
-        "receipts": 1990422.82
+        "disbursements": 2269811.29,
+        "individualContributions": 957967.29,
+        "receipts": 2534038.14
       }
     },
-    "generated_at": "2026-10-04T10:05:11.598931+00:00",
+    "generated_at": "2026-10-30T10:03:29.781248+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -386,35 +386,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 51.7,
+    "score": 53.8,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-10-04T10:08:52.254559+00:00"
+    "updated_at": "2026-10-30T10:03:36.148997+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "R000603",
     "breakdown": [
       {
-        "amount": 6705.48,
+        "amount": 9075.81,
         "label": "Small individual (unitemized)",
-        "share": 0.0033690611302754233
+        "share": 0.0036007384747107235
       },
       {
-        "amount": 773906.69,
+        "amount": 948891.48,
         "label": "Large individual (itemized)",
-        "share": 0.3888370329550027
+        "share": 0.3764633746587028
       },
       {
-        "amount": 1209449.0,
+        "amount": 1562324.0,
         "label": "PAC / other committees",
-        "share": 0.6076682974150218
+        "share": 0.6198367018220915
       },
       {
         "amount": 250.0,
         "label": "Political party committees",
-        "share": 0.00012560849970007454
+        "share": 9.918504449494655e-05
       },
       {
         "amount": 0.0,
@@ -443,8 +443,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.7,
-          "value": 0.3888,
+          "score": 72.5,
+          "value": 0.5015,
           "weight": 0.2
         },
         "in_state_support": {
@@ -453,8 +453,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 55.0,
-          "value": 0.3922,
+          "score": 54.4,
+          "value": 0.3801,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -463,8 +463,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 39.0,
-          "value": 0.0086,
+          "score": 39.4,
+          "value": 0.0095,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -475,8 +475,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 61.7,
-      "generated_at": "2026-10-04T10:05:11.598931+00:00",
+      "financeScore": 63.8,
+      "generated_at": "2026-10-30T10:03:29.781248+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -484,23 +484,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 51.7,
+      "score": 53.8,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 2,
-      "updated_at": "2026-10-04T10:08:52.254559+00:00"
+      "updated_at": "2026-10-30T10:03:36.148997+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2301487.27,
+      "cashOnHand": 1699752.56,
       "debts": 0.0,
-      "disbursements": 1124461.26,
-      "individualContributions": 780612.17,
-      "receipts": 1990422.82
+      "disbursements": 2269811.29,
+      "individualContributions": 957967.29,
+      "receipts": 2534038.14
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "R000603",
     "birthYear": "1972",
@@ -708,7 +708,7 @@
         "stateName": "North Carolina"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": 0.567,
@@ -723,7 +723,6 @@
   },
   "wiki": {
     "extract": "David Cheston Rouzer is an American politician who is the U.S. representative for North Carolina's 7th congressional district. Previously he was a Republican member of the North Carolina General Assembly, representing Johnston County and Wayne County in the 12th district of the North Carolina Senate.",
-    "generated_at": "2026-09-14T09:15:41.044301+00:00",
     "source": "wikipedia",
     "summary": "David Cheston Rouzer is an American politician who is the U.S. representative for North Carolina's 7th congressional district. Previously he was a Republican member of the North Carolina General Assembly, representing Johnston County and Wayne County in the 12th district of the North Carolina Senate.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/David_Rouzer_official_photo.jpg/330px-David_Rouzer_official_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

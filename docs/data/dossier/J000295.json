@@ -258,7 +258,7 @@
           "stateName": "Ohio"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "j000295",
@@ -279,8 +279,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 56.1,
-        "value": 0.3213,
+        "score": 72.1,
+        "value": 0.4965,
         "weight": 0.2
       },
       "in_state_support": {
@@ -289,8 +289,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 49.5,
-        "value": 0.2841,
+        "score": 50.6,
+        "value": 0.3048,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -299,8 +299,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 58.5,
-        "value": 0.0529,
+        "score": 56.1,
+        "value": 0.0458,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -311,24 +311,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 64.3,
+    "financeScore": 67.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 20291.12,
+          "amount": 23501.38,
           "label": "Small individual (unitemized)",
-          "share": 0.01502036646309185
+          "share": 0.013950565979515397
         },
         {
-          "amount": 363515.0,
+          "amount": 490015.0,
           "label": "Large individual (itemized)",
-          "share": 0.2690895581333526
+          "share": 0.29087596509023034
         },
         {
-          "amount": 967101.0,
+          "amount": 1171102.01,
           "label": "PAC / other committees",
-          "share": 0.7158900754035554
+          "share": 0.6951734689302543
         },
         {
           "amount": 0.0,
@@ -351,14 +351,13 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 3121594.77,
+        "cashOnHand": 2201695.66,
         "debts": 0.0,
-        "disbursements": 1031923.74,
-        "individualContributions": 383806.12,
-        "receipts": 1410643.06
+        "disbursements": 2304353.5,
+        "individualContributions": 513516.38,
+        "receipts": 1763173.71
       }
     },
-    "generated_at": "2026-10-04T12:24:07.437072+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -366,30 +365,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 54.3,
+    "score": 57.1,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-10-04T12:24:11.024658+00:00"
+    "updated_at": "2026-10-30T10:32:47.462529+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "J000295",
     "breakdown": [
       {
-        "amount": 20291.12,
+        "amount": 23501.38,
         "label": "Small individual (unitemized)",
-        "share": 0.01502036646309185
+        "share": 0.013950565979515397
       },
       {
-        "amount": 363515.0,
+        "amount": 490015.0,
         "label": "Large individual (itemized)",
-        "share": 0.2690895581333526
+        "share": 0.29087596509023034
       },
       {
-        "amount": 967101.0,
+        "amount": 1171102.01,
         "label": "PAC / other committees",
-        "share": 0.7158900754035554
+        "share": 0.6951734689302543
       },
       {
         "amount": 0.0,
@@ -423,8 +422,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 56.1,
-          "value": 0.3213,
+          "score": 72.1,
+          "value": 0.4965,
           "weight": 0.2
         },
         "in_state_support": {
@@ -433,8 +432,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 49.5,
-          "value": 0.2841,
+          "score": 50.6,
+          "value": 0.3048,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -443,8 +442,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 58.5,
-          "value": 0.0529,
+          "score": 56.1,
+          "value": 0.0458,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -455,8 +454,7 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 64.3,
-      "generated_at": "2026-10-04T12:24:07.437072+00:00",
+      "financeScore": 67.1,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -464,23 +462,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 54.3,
+      "score": 57.1,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-10-04T12:24:11.024658+00:00"
+      "updated_at": "2026-10-30T10:32:47.462529+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 3121594.77,
+      "cashOnHand": 2201695.66,
       "debts": 0.0,
-      "disbursements": 1031923.74,
-      "individualContributions": 383806.12,
-      "receipts": 1410643.06
+      "disbursements": 2304353.5,
+      "individualContributions": 513516.38,
+      "receipts": 1763173.71
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "J000295",
     "birthYear": "1957",
@@ -710,7 +708,7 @@
         "stateName": "Ohio"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": 0.25,

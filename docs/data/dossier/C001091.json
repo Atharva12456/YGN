@@ -137,7 +137,7 @@
       "birthYear": "1974",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 1699,
+        "count": 1701,
         "url": "https://api.congress.gov/v3/member/C001091/cosponsored-legislation"
       },
       "currentMember": true,
@@ -255,7 +255,7 @@
           "stateName": "Texas"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "c001091",
@@ -276,8 +276,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 71.0,
-        "value": 0.4853,
+        "score": 76.7,
+        "value": 0.5452,
         "weight": 0.2
       },
       "in_state_support": {
@@ -286,8 +286,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 86.3,
-        "value": 0.7261,
+        "score": 85.7,
+        "value": 0.7164,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -296,8 +296,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 68.7,
-        "value": 0.1079,
+        "score": 69.2,
+        "value": 0.1109,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -308,24 +308,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 80.5,
+    "financeScore": 81.7,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 40346.82,
+          "amount": 47070.84,
           "label": "Small individual (unitemized)",
-          "share": 0.07837788390696933
+          "share": 0.07945615754313454
         },
         {
-          "amount": 333426.2,
+          "amount": 377341.9,
           "label": "Large individual (itemized)",
-          "share": 0.6477149870830449
+          "share": 0.6369577737305245
         },
         {
-          "amount": 141000.0,
+          "amount": 168000.0,
           "label": "PAC / other committees",
-          "share": 0.2739071290099858
+          "share": 0.283586068726341
         },
         {
           "amount": 0.0,
@@ -348,44 +348,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 154379.66,
+        "cashOnHand": 129316.59,
         "debts": 0.0,
-        "disbursements": 499053.88,
-        "individualContributions": 373773.02,
-        "receipts": 514776.02
+        "disbursements": 601756.67,
+        "individualContributions": 424412.74,
+        "receipts": 592415.74
       }
     },
-    "generated_at": "2026-10-04T12:24:07.437072+00:00",
     "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 80.5,
+    "score": 81.7,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T12:24:10.193903+00:00"
+    "updated_at": "2026-10-30T10:32:45.437144+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "C001091",
     "breakdown": [
       {
-        "amount": 40346.82,
+        "amount": 47070.84,
         "label": "Small individual (unitemized)",
-        "share": 0.07837788390696933
+        "share": 0.07945615754313454
       },
       {
-        "amount": 333426.2,
+        "amount": 377341.9,
         "label": "Large individual (itemized)",
-        "share": 0.6477149870830449
+        "share": 0.6369577737305245
       },
       {
-        "amount": 141000.0,
+        "amount": 168000.0,
         "label": "PAC / other committees",
-        "share": 0.2739071290099858
+        "share": 0.283586068726341
       },
       {
         "amount": 0.0,
@@ -419,8 +418,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 71.0,
-          "value": 0.4853,
+          "score": 76.7,
+          "value": 0.5452,
           "weight": 0.2
         },
         "in_state_support": {
@@ -429,8 +428,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 86.3,
-          "value": 0.7261,
+          "score": 85.7,
+          "value": 0.7164,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -439,8 +438,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 68.7,
-          "value": 0.1079,
+          "score": 69.2,
+          "value": 0.1109,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -451,31 +450,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 80.5,
-      "generated_at": "2026-10-04T12:24:07.437072+00:00",
+      "financeScore": 81.7,
       "grade": "B-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 80.5,
+      "score": 81.7,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T12:24:10.193903+00:00"
+      "updated_at": "2026-10-30T10:32:45.437144+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 154379.66,
+      "cashOnHand": 129316.59,
       "debts": 0.0,
-      "disbursements": 499053.88,
-      "individualContributions": 373773.02,
-      "receipts": 514776.02
+      "disbursements": 601756.67,
+      "individualContributions": 424412.74,
+      "receipts": 592415.74
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "C001091",
     "birthYear": "1974",
@@ -584,7 +582,7 @@
     "birthYear": "1974",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 1699,
+      "count": 1701,
       "url": "https://api.congress.gov/v3/member/C001091/cosponsored-legislation"
     },
     "currentMember": true,
@@ -702,7 +700,7 @@
         "stateName": "Texas"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": -0.402,
@@ -717,6 +715,7 @@
   },
   "wiki": {
     "extract": "Joaquin Castro is an American lawyer and Democratic politician who has represented Texas's 20th congressional district in the United States House of Representatives since 2013. The district includes just over half of his native San Antonio.",
+    "generated_at": "2026-09-14T09:15:41.044301+00:00",
     "source": "wikipedia",
     "summary": "Joaquin Castro is an American lawyer and Democratic politician who has represented Texas's 20th congressional district in the United States House of Representatives since 2013. The district includes just over half of his native San Antonio.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Joaquin_Castro%2C_official_portrait%2C_118th_Congress.jpg/330px-Joaquin_Castro%2C_official_portrait%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

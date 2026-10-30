@@ -205,7 +205,7 @@
           "stateName": "Missouri"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "s001195",
@@ -236,8 +236,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 53.6,
-        "value": 0.3637,
+        "score": 53.2,
+        "value": 0.3564,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -246,8 +246,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 81.1,
-        "value": 0.1752,
+        "score": 78.0,
+        "value": 0.1583,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -258,24 +258,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 66.5,
+    "financeScore": 65.5,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 273782.28,
+          "amount": 292919.87,
           "label": "Small individual (unitemized)",
-          "share": 0.06370963837611586
+          "share": 0.056406424079112824
         },
         {
-          "amount": 1289287.47,
+          "amount": 1557828.35,
           "label": "Large individual (itemized)",
-          "share": 0.3000195574255475
+          "share": 0.29998486122694445
         },
         {
-          "amount": 2734275.0,
+          "amount": 3342275.0,
           "label": "PAC / other committees",
-          "share": 0.6362708041983367
+          "share": 0.6436087146939428
         },
         {
           "amount": 0.0,
@@ -298,44 +298,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 5012102.53,
+        "cashOnHand": 5415076.95,
         "debts": 0.0,
-        "disbursements": 3269224.39,
-        "individualContributions": 1563069.75,
-        "receipts": 5264182.96
+        "disbursements": 3901238.09,
+        "individualContributions": 1850748.22,
+        "receipts": 6299171.08
       }
     },
-    "generated_at": "2026-10-04T12:24:07.437072+00:00",
     "grade": "D",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 66.5,
+    "score": 65.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T12:24:13.353548+00:00"
+    "updated_at": "2026-10-30T10:32:51.523926+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001195",
     "breakdown": [
       {
-        "amount": 273782.28,
+        "amount": 292919.87,
         "label": "Small individual (unitemized)",
-        "share": 0.06370963837611586
+        "share": 0.056406424079112824
       },
       {
-        "amount": 1289287.47,
+        "amount": 1557828.35,
         "label": "Large individual (itemized)",
-        "share": 0.3000195574255475
+        "share": 0.29998486122694445
       },
       {
-        "amount": 2734275.0,
+        "amount": 3342275.0,
         "label": "PAC / other committees",
-        "share": 0.6362708041983367
+        "share": 0.6436087146939428
       },
       {
         "amount": 0.0,
@@ -379,8 +378,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 53.6,
-          "value": 0.3637,
+          "score": 53.2,
+          "value": 0.3564,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -389,8 +388,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 81.1,
-          "value": 0.1752,
+          "score": 78.0,
+          "value": 0.1583,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -401,31 +400,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 66.5,
-      "generated_at": "2026-10-04T12:24:07.437072+00:00",
+      "financeScore": 65.5,
       "grade": "D",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 66.5,
+      "score": 65.5,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T12:24:13.353548+00:00"
+      "updated_at": "2026-10-30T10:32:51.523926+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 5012102.53,
+      "cashOnHand": 5415076.95,
       "debts": 0.0,
-      "disbursements": 3269224.39,
-      "individualContributions": 1563069.75,
-      "receipts": 5264182.96
+      "disbursements": 3901238.09,
+      "individualContributions": 1850748.22,
+      "receipts": 6299171.08
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "S001195",
     "birthYear": "1980",
@@ -661,7 +659,7 @@
         "stateName": "Missouri"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": 0.577,
@@ -676,6 +674,7 @@
   },
   "wiki": {
     "extract": "Jason Thomas Smith is an American businessman and politician who has been the U.S. representative for Missouri's 8th congressional district since 2013. The district comprises 30 counties, covering just under 20,000 square miles of southeastern and southern Missouri.",
+    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Jason Thomas Smith is an American businessman and politician who has been the U.S. representative for Missouri's 8th congressional district since 2013. The district comprises 30 counties, covering just under 20,000 square miles of southeastern and southern Missouri.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Rep_Jason_Smith_-_2024.jpeg/330px-Rep_Jason_Smith_-_2024.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

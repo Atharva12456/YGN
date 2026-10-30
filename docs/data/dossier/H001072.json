@@ -215,7 +215,7 @@
           "stateName": "Arkansas"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "h001072",
@@ -246,18 +246,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 70.2,
-        "value": 0.5515,
+        "score": 70.1,
+        "value": 0.5508,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 1.0,
+        "value": 0.999,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 42.4,
-        "value": 0.016,
+        "score": 42.7,
+        "value": 0.0167,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -268,29 +268,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 58.6,
+    "financeScore": 58.7,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 28686.18,
+          "amount": 36760.01,
           "label": "Small individual (unitemized)",
-          "share": 0.008827934906725956
+          "share": 0.00917672652972944
         },
         {
-          "amount": 1763424.31,
+          "amount": 2169659.31,
           "label": "Large individual (itemized)",
-          "share": 0.5426792630325171
+          "share": 0.5416312495712453
         },
         {
-          "amount": 1457367.48,
+          "amount": 1793867.48,
           "label": "PAC / other committees",
-          "share": 0.4484928020607568
+          "share": 0.44781901023788884
         },
         {
-          "amount": 0.0,
+          "amount": 5500.0,
           "label": "Political party committees",
-          "share": 0.0
+          "share": 0.001373013661136434
         },
         {
           "amount": 0.0,
@@ -308,14 +308,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2967541.43,
+        "cashOnHand": 1488431.2,
         "debts": 0.0,
-        "disbursements": 2830320.69,
-        "individualContributions": 1792110.49,
-        "receipts": 4421509.93
+        "disbursements": 5151945.46,
+        "individualContributions": 2206419.32,
+        "receipts": 5264024.47
       }
     },
-    "generated_at": "2026-10-04T10:05:11.598931+00:00",
+    "generated_at": "2026-10-30T10:03:29.781248+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -323,35 +323,35 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 36.6,
+    "score": 36.7,
     "source": "fec_live",
     "stockPenalty": 22,
     "stockPtrCount": 3,
-    "updated_at": "2026-10-04T10:09:11.921768+00:00"
+    "updated_at": "2026-10-30T10:03:48.068036+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001072",
     "breakdown": [
       {
-        "amount": 28686.18,
+        "amount": 36760.01,
         "label": "Small individual (unitemized)",
-        "share": 0.008827934906725956
+        "share": 0.00917672652972944
       },
       {
-        "amount": 1763424.31,
+        "amount": 2169659.31,
         "label": "Large individual (itemized)",
-        "share": 0.5426792630325171
+        "share": 0.5416312495712453
       },
       {
-        "amount": 1457367.48,
+        "amount": 1793867.48,
         "label": "PAC / other committees",
-        "share": 0.4484928020607568
+        "share": 0.44781901023788884
       },
       {
-        "amount": 0.0,
+        "amount": 5500.0,
         "label": "Political party committees",
-        "share": 0.0
+        "share": 0.001373013661136434
       },
       {
         "amount": 0.0,
@@ -390,18 +390,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 70.2,
-          "value": 0.5515,
+          "score": 70.1,
+          "value": 0.5508,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 1.0,
+          "value": 0.999,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 42.4,
-          "value": 0.016,
+          "score": 42.7,
+          "value": 0.0167,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -412,8 +412,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 58.6,
-      "generated_at": "2026-10-04T10:05:11.598931+00:00",
+      "financeScore": 58.7,
+      "generated_at": "2026-10-30T10:03:29.781248+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -421,23 +421,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 36.6,
+      "score": 36.7,
       "source": "fec_live",
       "stockPenalty": 22,
       "stockPtrCount": 3,
-      "updated_at": "2026-10-04T10:09:11.921768+00:00"
+      "updated_at": "2026-10-30T10:03:48.068036+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2967541.43,
+      "cashOnHand": 1488431.2,
       "debts": 0.0,
-      "disbursements": 2830320.69,
-      "individualContributions": 1792110.49,
-      "receipts": 4421509.93
+      "disbursements": 5151945.46,
+      "individualContributions": 2206419.32,
+      "receipts": 5264024.47
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "H001072",
     "birthYear": "1956",
@@ -648,7 +648,7 @@
         "stateName": "Arkansas"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": 0.435,

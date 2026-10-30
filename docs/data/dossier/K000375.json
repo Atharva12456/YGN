@@ -122,7 +122,7 @@
       "birthYear": "1952",
       "chamber": "House of Representatives",
       "cosponsoredLegislation": {
-        "count": 2950,
+        "count": 2952,
         "url": "https://api.congress.gov/v3/member/K000375/cosponsored-legislation"
       },
       "currentMember": true,
@@ -263,7 +263,7 @@
           "stateName": "Massachusetts"
         }
       ],
-      "updateDate": "2026-10-29T07:40:46Z"
+      "updateDate": "2026-10-30T07:41:08Z"
     },
     "request": {
       "bioguideId": "k000375",
@@ -284,8 +284,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 88.6,
-        "value": 0.7185,
+        "score": 91.8,
+        "value": 0.7741,
         "weight": 0.2
       },
       "in_state_support": {
@@ -294,8 +294,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 75.7,
-        "value": 0.5974,
+        "score": 70.7,
+        "value": 0.5562,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -304,8 +304,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 82.9,
-        "value": 0.1948,
+        "score": 81.6,
+        "value": 0.1776,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -316,24 +316,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 85.7,
+    "financeScore": 84.7,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 49161.67,
+          "amount": 54699.67,
           "label": "Small individual (unitemized)",
-          "share": 0.11636953675893161
+          "share": 0.09879120376597951
         },
         {
-          "amount": 203200.01,
+          "amount": 253240.01,
           "label": "Large individual (itemized)",
-          "share": 0.4809903942056946
+          "share": 0.45736812360309836
         },
         {
-          "amount": 170100.0,
+          "amount": 245750.0,
           "label": "PAC / other committees",
-          "share": 0.4026400690353738
+          "share": 0.44384067263092203
         },
         {
           "amount": 0.0,
@@ -356,14 +356,13 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 495522.09,
+        "cashOnHand": 460620.04,
         "debts": 0.0,
-        "disbursements": 592807.09,
-        "individualContributions": 252361.68,
-        "receipts": 422461.68
+        "disbursements": 758937.14,
+        "individualContributions": 307939.68,
+        "receipts": 553689.68
       }
     },
-    "generated_at": "2026-10-04T12:24:07.437072+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -371,30 +370,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 43.7,
+    "score": 42.7,
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 13,
-    "updated_at": "2026-10-04T12:24:14.943331+00:00"
+    "updated_at": "2026-10-30T10:33:00.698814+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "K000375",
     "breakdown": [
       {
-        "amount": 49161.67,
+        "amount": 54699.67,
         "label": "Small individual (unitemized)",
-        "share": 0.11636953675893161
+        "share": 0.09879120376597951
       },
       {
-        "amount": 203200.01,
+        "amount": 253240.01,
         "label": "Large individual (itemized)",
-        "share": 0.4809903942056946
+        "share": 0.45736812360309836
       },
       {
-        "amount": 170100.0,
+        "amount": 245750.0,
         "label": "PAC / other committees",
-        "share": 0.4026400690353738
+        "share": 0.44384067263092203
       },
       {
         "amount": 0.0,
@@ -428,8 +427,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 88.6,
-          "value": 0.7185,
+          "score": 91.8,
+          "value": 0.7741,
           "weight": 0.2
         },
         "in_state_support": {
@@ -438,8 +437,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 75.7,
-          "value": 0.5974,
+          "score": 70.7,
+          "value": 0.5562,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -448,8 +447,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 82.9,
-          "value": 0.1948,
+          "score": 81.6,
+          "value": 0.1776,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -460,8 +459,7 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 85.7,
-      "generated_at": "2026-10-04T12:24:07.437072+00:00",
+      "financeScore": 84.7,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -469,23 +467,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 43.7,
+      "score": 42.7,
       "source": "fec_live",
       "stockPenalty": 42,
       "stockPtrCount": 13,
-      "updated_at": "2026-10-04T12:24:14.943331+00:00"
+      "updated_at": "2026-10-30T10:33:00.698814+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 495522.09,
+      "cashOnHand": 460620.04,
       "debts": 0.0,
-      "disbursements": 592807.09,
-      "individualContributions": 252361.68,
-      "receipts": 422461.68
+      "disbursements": 758937.14,
+      "individualContributions": 307939.68,
+      "receipts": 553689.68
     }
   },
-  "generated_at": "2026-10-29T10:24:55.592090+00:00",
+  "generated_at": "2026-10-30T10:27:36.599362+00:00",
   "history": {
     "bioguideId": "K000375",
     "birthYear": "1952",
@@ -603,7 +601,7 @@
     "birthYear": "1952",
     "chamber": "House of Representatives",
     "cosponsoredLegislation": {
-      "count": 2950,
+      "count": 2952,
       "url": "https://api.congress.gov/v3/member/K000375/cosponsored-legislation"
     },
     "currentMember": true,
@@ -744,7 +742,7 @@
         "stateName": "Massachusetts"
       }
     ],
-    "updateDate": "2026-10-29T07:40:46Z"
+    "updateDate": "2026-10-30T07:41:08Z"
   },
   "nominate": {
     "dim1": -0.329,
