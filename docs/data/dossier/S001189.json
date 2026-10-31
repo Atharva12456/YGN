@@ -336,7 +336,7 @@
           "stateName": "Georgia"
         }
       ],
-      "updateDate": "2026-10-30T07:41:07Z"
+      "updateDate": "2026-10-31T07:41:04Z"
     },
     "request": {
       "bioguideId": "s001189",
@@ -357,8 +357,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 70.4,
-        "value": 0.4789,
+        "score": 81.1,
+        "value": 0.5907,
         "weight": 0.2
       },
       "in_state_support": {
@@ -367,8 +367,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 53.1,
-        "value": 0.3549,
+        "score": 53.3,
+        "value": 0.3583,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -377,8 +377,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 36.6,
-        "value": 0.0035,
+        "score": 37.2,
+        "value": 0.0048,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -389,24 +389,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 62.4,
+    "financeScore": 64.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 1338.26,
+          "amount": 2358.53,
           "label": "Small individual (unitemized)",
-          "share": 0.0012275913507582275
+          "share": 0.001713504189044891
         },
         {
-          "amount": 385562.79,
+          "amount": 490828.14,
           "label": "Large individual (itemized)",
-          "share": 0.3536783182477327
+          "share": 0.3565933331317016
         },
         {
-          "amount": 703250.0,
+          "amount": 883250.0,
           "label": "PAC / other committees",
-          "share": 0.645094090401509
+          "share": 0.6416931626792536
         },
         {
           "amount": 0.0,
@@ -429,14 +429,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1349452.16,
+        "cashOnHand": 1316055.88,
         "debts": 0.0,
-        "disbursements": 755665.34,
-        "individualContributions": 386901.05,
-        "receipts": 1124951.95
+        "disbursements": 1080760.65,
+        "individualContributions": 493186.67,
+        "receipts": 1416650.98
       }
     },
-    "generated_at": "2026-10-05T05:44:08.161342+00:00",
+    "generated_at": "2026-10-31T05:44:53.826825+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -444,30 +444,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 52.4,
+    "score": 54.8,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 2,
-    "updated_at": "2026-10-05T05:44:14.310956+00:00"
+    "updated_at": "2026-10-31T05:45:10.508271+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001189",
     "breakdown": [
       {
-        "amount": 1338.26,
+        "amount": 2358.53,
         "label": "Small individual (unitemized)",
-        "share": 0.0012275913507582275
+        "share": 0.001713504189044891
       },
       {
-        "amount": 385562.79,
+        "amount": 490828.14,
         "label": "Large individual (itemized)",
-        "share": 0.3536783182477327
+        "share": 0.3565933331317016
       },
       {
-        "amount": 703250.0,
+        "amount": 883250.0,
         "label": "PAC / other committees",
-        "share": 0.645094090401509
+        "share": 0.6416931626792536
       },
       {
         "amount": 0.0,
@@ -501,8 +501,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 70.4,
-          "value": 0.4789,
+          "score": 81.1,
+          "value": 0.5907,
           "weight": 0.2
         },
         "in_state_support": {
@@ -511,8 +511,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 53.1,
-          "value": 0.3549,
+          "score": 53.3,
+          "value": 0.3583,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -521,8 +521,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 36.6,
-          "value": 0.0035,
+          "score": 37.2,
+          "value": 0.0048,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -533,8 +533,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 62.4,
-      "generated_at": "2026-10-05T05:44:08.161342+00:00",
+      "financeScore": 64.8,
+      "generated_at": "2026-10-31T05:44:53.826825+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -542,23 +542,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 52.4,
+      "score": 54.8,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 2,
-      "updated_at": "2026-10-05T05:44:14.310956+00:00"
+      "updated_at": "2026-10-31T05:45:10.508271+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1349452.16,
+      "cashOnHand": 1316055.88,
       "debts": 0.0,
-      "disbursements": 755665.34,
-      "individualContributions": 386901.05,
-      "receipts": 1124951.95
+      "disbursements": 1080760.65,
+      "individualContributions": 493186.67,
+      "receipts": 1416650.98
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "S001189",
     "birthYear": "1969",
@@ -813,7 +813,7 @@
         "stateName": "Georgia"
       }
     ],
-    "updateDate": "2026-10-30T07:41:07Z"
+    "updateDate": "2026-10-31T07:41:04Z"
   },
   "nominate": {
     "dim1": 0.538,
@@ -828,7 +828,6 @@
   },
   "wiki": {
     "extract": "James Austin Scott is an American politician who is the U.S. representative for Georgia's 8th congressional district, serving since 2011. Scott served as a Republican member of the Georgia House of Representatives before being elected to the U.S. House.",
-    "generated_at": "2026-09-23T08:50:06.163313+00:00",
     "source": "wikipedia",
     "summary": "James Austin Scott is an American politician who is the U.S. representative for Georgia's 8th congressional district, serving since 2011. Scott served as a Republican member of the Georgia House of Representatives before being elected to the U.S. House.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Austin_Scott_2021-22.jpg/330px-Austin_Scott_2021-22.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

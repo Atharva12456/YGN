@@ -270,8 +270,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 77.1,
-        "value": 0.5491,
+        "score": 84.2,
+        "value": 0.6387,
         "weight": 0.2
       },
       "in_state_support": {
@@ -280,8 +280,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 74.8,
-        "value": 0.5898,
+        "score": 75.9,
+        "value": 0.5995,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -290,8 +290,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 69.0,
-        "value": 0.1095,
+        "score": 67.7,
+        "value": 0.1023,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -302,24 +302,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 78.0,
+    "financeScore": 79.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 131181.52,
+          "amount": 151738.92,
           "label": "Small individual (unitemized)",
-          "share": 0.06459435429726738
+          "share": 0.06134981022905839
         },
         {
-          "amount": 1066669.65,
+          "amount": 1331100.76,
           "label": "Large individual (itemized)",
-          "share": 0.5252328017714858
+          "share": 0.5381795192805866
         },
         {
-          "amount": 833000.0,
+          "amount": 990500.0,
           "label": "PAC / other committees",
-          "share": 0.4101728439312468
+          "share": 0.40047067049035495
         },
         {
           "amount": 0.0,
@@ -342,44 +342,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2505288.27,
+        "cashOnHand": 2629689.37,
         "debts": 1017994.89,
-        "disbursements": 1226213.8,
-        "individualContributions": 1197851.17,
-        "receipts": 2180937.41
+        "disbursements": 1508902.74,
+        "individualContributions": 1482839.68,
+        "receipts": 2588027.45
       }
     },
-    "generated_at": "2026-10-04T18:38:46.553235+00:00",
+    "generated_at": "2026-10-30T18:01:31.382850+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.0,
+    "score": 79.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T18:39:01.072980+00:00"
+    "updated_at": "2026-10-30T18:01:39.605396+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "F000454",
     "breakdown": [
       {
-        "amount": 131181.52,
+        "amount": 151738.92,
         "label": "Small individual (unitemized)",
-        "share": 0.06459435429726738
+        "share": 0.06134981022905839
       },
       {
-        "amount": 1066669.65,
+        "amount": 1331100.76,
         "label": "Large individual (itemized)",
-        "share": 0.5252328017714858
+        "share": 0.5381795192805866
       },
       {
-        "amount": 833000.0,
+        "amount": 990500.0,
         "label": "PAC / other committees",
-        "share": 0.4101728439312468
+        "share": 0.40047067049035495
       },
       {
         "amount": 0.0,
@@ -413,8 +413,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 77.1,
-          "value": 0.5491,
+          "score": 84.2,
+          "value": 0.6387,
           "weight": 0.2
         },
         "in_state_support": {
@@ -423,8 +423,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 74.8,
-          "value": 0.5898,
+          "score": 75.9,
+          "value": 0.5995,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -433,8 +433,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 69.0,
-          "value": 0.1095,
+          "score": 67.7,
+          "value": 0.1023,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -445,31 +445,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 78.0,
-      "generated_at": "2026-10-04T18:38:46.553235+00:00",
+      "financeScore": 79.3,
+      "generated_at": "2026-10-30T18:01:31.382850+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.0,
+      "score": 79.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T18:39:01.072980+00:00"
+      "updated_at": "2026-10-30T18:01:39.605396+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2505288.27,
+      "cashOnHand": 2629689.37,
       "debts": 1017994.89,
-      "disbursements": 1226213.8,
-      "individualContributions": 1197851.17,
-      "receipts": 2180937.41
+      "disbursements": 1508902.74,
+      "individualContributions": 1482839.68,
+      "receipts": 2588027.45
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "F000454",
     "birthYear": "1955",
@@ -749,6 +749,7 @@
   },
   "wiki": {
     "extract": "George William Foster is an American businessman, physicist, and politician serving as the U.S. representative for Illinois's 11th congressional district since 2013. He was the U.S. representative for Illinois's 14th congressional district from 2008 to 2011.",
+    "generated_at": "2026-09-16T08:50:42.713597+00:00",
     "source": "wikipedia",
     "summary": "George William Foster is an American businessman, physicist, and politician serving as the U.S. representative for Illinois's 11th congressional district since 2013. He was the U.S. representative for Illinois's 14th congressional district from 2008 to 2011.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Bill_Foster_119th_Congress.jpg/330px-Bill_Foster_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

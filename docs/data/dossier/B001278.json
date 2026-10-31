@@ -275,8 +275,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 74.7,
-        "value": 0.5241,
+        "score": 83.2,
+        "value": 0.6216,
         "weight": 0.2
       },
       "in_state_support": {
@@ -286,7 +286,7 @@
       },
       "pac_independence": {
         "score": 61.7,
-        "value": 0.4806,
+        "value": 0.4809,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -295,8 +295,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 76.3,
-        "value": 0.1494,
+        "score": 76.0,
+        "value": 0.1476,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -307,24 +307,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 77.4,
+    "financeScore": 79.0,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 58563.59,
+          "amount": 72627.09,
           "label": "Small individual (unitemized)",
-          "share": 0.0718028870666345
+          "share": 0.0709893937908955
         },
         {
-          "amount": 333452.5,
+          "amount": 419342.5,
           "label": "Large individual (itemized)",
-          "share": 0.40883511751221097
+          "share": 0.40988658454797783
         },
         {
-          "amount": 423600.0,
+          "amount": 531100.0,
           "label": "PAC / other committees",
-          "share": 0.5193619954211546
+          "share": 0.5191240216611267
         },
         {
           "amount": 0.0,
@@ -347,44 +347,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 572435.26,
+        "cashOnHand": 518633.9,
         "debts": 0.0,
-        "disbursements": 790299.1,
-        "individualContributions": 392016.09,
-        "receipts": 816770.24
+        "disbursements": 1052468.66,
+        "individualContributions": 491969.59,
+        "receipts": 1025138.44
       }
     },
-    "generated_at": "2026-10-04T23:57:35.799523+00:00",
+    "generated_at": "2026-10-30T22:22:19.698595+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 77.4,
+    "score": 79.0,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T23:58:02.172167+00:00"
+    "updated_at": "2026-10-30T22:22:47.701146+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "B001278",
     "breakdown": [
       {
-        "amount": 58563.59,
+        "amount": 72627.09,
         "label": "Small individual (unitemized)",
-        "share": 0.0718028870666345
+        "share": 0.0709893937908955
       },
       {
-        "amount": 333452.5,
+        "amount": 419342.5,
         "label": "Large individual (itemized)",
-        "share": 0.40883511751221097
+        "share": 0.40988658454797783
       },
       {
-        "amount": 423600.0,
+        "amount": 531100.0,
         "label": "PAC / other committees",
-        "share": 0.5193619954211546
+        "share": 0.5191240216611267
       },
       {
         "amount": 0.0,
@@ -418,8 +418,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 74.7,
-          "value": 0.5241,
+          "score": 83.2,
+          "value": 0.6216,
           "weight": 0.2
         },
         "in_state_support": {
@@ -429,7 +429,7 @@
         },
         "pac_independence": {
           "score": 61.7,
-          "value": 0.4806,
+          "value": 0.4809,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -438,8 +438,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 76.3,
-          "value": 0.1494,
+          "score": 76.0,
+          "value": 0.1476,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -450,31 +450,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 77.4,
-      "generated_at": "2026-10-04T23:57:35.799523+00:00",
+      "financeScore": 79.0,
+      "generated_at": "2026-10-30T22:22:19.698595+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 77.4,
+      "score": 79.0,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T23:58:02.172167+00:00"
+      "updated_at": "2026-10-30T22:22:47.701146+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 572435.26,
+      "cashOnHand": 518633.9,
       "debts": 0.0,
-      "disbursements": 790299.1,
-      "individualContributions": 392016.09,
-      "receipts": 816770.24
+      "disbursements": 1052468.66,
+      "individualContributions": 491969.59,
+      "receipts": 1025138.44
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "B001278",
     "birthYear": "1954",
@@ -735,7 +735,6 @@
   },
   "wiki": {
     "extract": "Suzanne Marie Bonamici is an American lawyer and politician serving as the U.S. representative for Oregon's 1st congressional district, a seat she was first elected to in a 2012 special election. The district includes most of Portland west of the Willamette River, along with most of Portland's western suburbs such as Beaverton, Hillsboro, Tigard, and Lake Oswego.",
-    "generated_at": "2026-09-09T08:23:14.771066+00:00",
     "source": "wikipedia",
     "summary": "Suzanne Marie Bonamici is an American lawyer and politician serving as the U.S. representative for Oregon's 1st congressional district, a seat she was first elected to in a 2012 special election. The district includes most of Portland west of the Willamette River, along with most of Portland's western suburbs such as Beaverton, Hillsboro, Tigard, and Lake Oswego.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Suzanne_Bonamici.jpg/330px-Suzanne_Bonamici.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

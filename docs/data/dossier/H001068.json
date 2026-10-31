@@ -242,7 +242,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-10-30T07:41:07Z"
+      "updateDate": "2026-10-31T07:41:04Z"
     },
     "request": {
       "bioguideId": "h001068",
@@ -263,8 +263,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 67.8,
-        "value": 0.4517,
+        "score": 74.5,
+        "value": 0.5222,
         "weight": 0.2
       },
       "in_state_support": {
@@ -273,18 +273,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 82.4,
-        "value": 0.6577,
+        "score": 77.7,
+        "value": 0.614,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 1.0,
+        "value": 0.9979,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 65.6,
-        "value": 0.0913,
+        "score": 66.5,
+        "value": 0.0961,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -295,29 +295,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 77.9,
+    "financeScore": 78.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 55443.81,
+          "amount": 67332.4,
           "label": "Small individual (unitemized)",
-          "share": 0.060015380157505516
+          "share": 0.05897580657423756
         },
         {
-          "amount": 552138.01,
+          "amount": 633618.01,
           "label": "Large individual (itemized)",
-          "share": 0.5976640596950062
+          "share": 0.5549799680349033
         },
         {
-          "amount": 316244.87,
+          "amount": 438244.87,
           "label": "PAC / other committees",
-          "share": 0.3423205601474883
+          "share": 0.3838544992495721
         },
         {
-          "amount": 0.0,
+          "amount": 2500.0,
           "label": "Political party committees",
-          "share": 0.0
+          "share": 0.0021897261412870167
         },
         {
           "amount": 0.0,
@@ -335,49 +335,49 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1076703.24,
-        "debts": 2131.08,
-        "disbursements": 886216.68,
-        "individualContributions": 607581.82,
-        "receipts": 978276.98
+        "cashOnHand": 1151201.29,
+        "debts": 6174.7,
+        "disbursements": 1041581.47,
+        "individualContributions": 700950.41,
+        "receipts": 1205633.57
       }
     },
-    "generated_at": "2026-10-04T23:57:35.799523+00:00",
+    "generated_at": "2026-10-30T22:22:19.698595+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 77.9,
+    "score": 78.4,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-04T23:57:55.087086+00:00"
+    "updated_at": "2026-10-30T22:22:37.701572+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H001068",
     "breakdown": [
       {
-        "amount": 55443.81,
+        "amount": 67332.4,
         "label": "Small individual (unitemized)",
-        "share": 0.060015380157505516
+        "share": 0.05897580657423756
       },
       {
-        "amount": 552138.01,
+        "amount": 633618.01,
         "label": "Large individual (itemized)",
-        "share": 0.5976640596950062
+        "share": 0.5549799680349033
       },
       {
-        "amount": 316244.87,
+        "amount": 438244.87,
         "label": "PAC / other committees",
-        "share": 0.3423205601474883
+        "share": 0.3838544992495721
       },
       {
-        "amount": 0.0,
+        "amount": 2500.0,
         "label": "Political party committees",
-        "share": 0.0
+        "share": 0.0021897261412870167
       },
       {
         "amount": 0.0,
@@ -406,8 +406,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 67.8,
-          "value": 0.4517,
+          "score": 74.5,
+          "value": 0.5222,
           "weight": 0.2
         },
         "in_state_support": {
@@ -416,18 +416,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 82.4,
-          "value": 0.6577,
+          "score": 77.7,
+          "value": 0.614,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 1.0,
+          "value": 0.9979,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 65.6,
-          "value": 0.0913,
+          "score": 66.5,
+          "value": 0.0961,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -438,31 +438,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 77.9,
-      "generated_at": "2026-10-04T23:57:35.799523+00:00",
+      "financeScore": 78.4,
+      "generated_at": "2026-10-30T22:22:19.698595+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 77.9,
+      "score": 78.4,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-04T23:57:55.087086+00:00"
+      "updated_at": "2026-10-30T22:22:37.701572+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1076703.24,
-      "debts": 2131.08,
-      "disbursements": 886216.68,
-      "individualContributions": 607581.82,
-      "receipts": 978276.98
+      "cashOnHand": 1151201.29,
+      "debts": 6174.7,
+      "disbursements": 1041581.47,
+      "individualContributions": 700950.41,
+      "receipts": 1205633.57
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "H001068",
     "birthYear": "1964",
@@ -698,7 +698,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-10-30T07:41:07Z"
+    "updateDate": "2026-10-31T07:41:04Z"
   },
   "nominate": {
     "dim1": -0.432,
@@ -713,7 +713,6 @@
   },
   "wiki": {
     "extract": "Jared William Huffman is an American lawyer and politician serving as the U.S. representative for California's 2nd congressional district since 2013. A member of the Democratic Party, Huffman represented the 6th district in the California State Assembly from 2006 to 2012.",
-    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Jared William Huffman is an American lawyer and politician serving as the U.S. representative for California's 2nd congressional district since 2013. A member of the Democratic Party, Huffman represented the 6th district in the California State Assembly from 2006 to 2012.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jared_Huffman_Portrait_118.jpg/330px-Jared_Huffman_Portrait_118.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

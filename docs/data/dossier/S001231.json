@@ -199,7 +199,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-10-30T07:41:07Z"
+      "updateDate": "2026-10-31T07:41:04Z"
     },
     "request": {
       "bioguideId": "s001231",
@@ -220,8 +220,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.4,
-        "value": 0.3855,
+        "score": 69.3,
+        "value": 0.468,
         "weight": 0.2
       },
       "in_state_support": {
@@ -230,8 +230,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 91.1,
-        "value": 0.8118,
+        "score": 90.3,
+        "value": 0.7977,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -240,8 +240,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 62.7,
-        "value": 0.0756,
+        "score": 63.0,
+        "value": 0.0773,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -252,24 +252,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 78.0,
+    "financeScore": 79.5,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 85221.32,
+          "amount": 100921.76,
           "label": "Small individual (unitemized)",
-          "share": 0.06134979465414435
+          "share": 0.06169058724539399
         },
         {
-          "amount": 1042462.97,
+          "amount": 1204091.81,
           "label": "Large individual (itemized)",
-          "share": 0.7504564485043113
+          "share": 0.7360269069452353
         },
         {
-          "amount": 261420.93,
+          "amount": 330920.93,
           "label": "PAC / other committees",
-          "share": 0.18819375684154438
+          "share": 0.20228250580937074
         },
         {
           "amount": 0.0,
@@ -292,44 +292,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 777589.88,
+        "cashOnHand": 725756.55,
         "debts": 0.0,
-        "disbursements": 957256.32,
-        "individualContributions": 1127684.29,
-        "receipts": 1449191.49
+        "disbursements": 1263803.98,
+        "individualContributions": 1305013.57,
+        "receipts": 1703905.82
       }
     },
-    "generated_at": "2026-10-05T10:51:18.060891+00:00",
+    "generated_at": "2026-10-30T22:22:19.698595+00:00",
     "grade": "C+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 78.0,
+    "score": 79.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-05T10:55:04.626008+00:00"
+    "updated_at": "2026-10-30T22:22:22.994524+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001231",
     "breakdown": [
       {
-        "amount": 85221.32,
+        "amount": 100921.76,
         "label": "Small individual (unitemized)",
-        "share": 0.06134979465414435
+        "share": 0.06169058724539399
       },
       {
-        "amount": 1042462.97,
+        "amount": 1204091.81,
         "label": "Large individual (itemized)",
-        "share": 0.7504564485043113
+        "share": 0.7360269069452353
       },
       {
-        "amount": 261420.93,
+        "amount": 330920.93,
         "label": "PAC / other committees",
-        "share": 0.18819375684154438
+        "share": 0.20228250580937074
       },
       {
         "amount": 0.0,
@@ -363,8 +363,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.4,
-          "value": 0.3855,
+          "score": 69.3,
+          "value": 0.468,
           "weight": 0.2
         },
         "in_state_support": {
@@ -373,8 +373,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 91.1,
-          "value": 0.8118,
+          "score": 90.3,
+          "value": 0.7977,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -383,8 +383,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 62.7,
-          "value": 0.0756,
+          "score": 63.0,
+          "value": 0.0773,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -395,31 +395,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 78.0,
-      "generated_at": "2026-10-05T10:51:18.060891+00:00",
+      "financeScore": 79.5,
+      "generated_at": "2026-10-30T22:22:19.698595+00:00",
       "grade": "C+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 78.0,
+      "score": 79.5,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-05T10:55:04.626008+00:00"
+      "updated_at": "2026-10-30T22:22:22.994524+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 777589.88,
+      "cashOnHand": 725756.55,
       "debts": 0.0,
-      "disbursements": 957256.32,
-      "individualContributions": 1127684.29,
-      "receipts": 1449191.49
+      "disbursements": 1263803.98,
+      "individualContributions": 1305013.57,
+      "receipts": 1703905.82
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "S001231",
     "birthYear": "1977",
@@ -541,7 +541,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-10-30T07:41:07Z"
+    "updateDate": "2026-10-31T07:41:04Z"
   },
   "nominate": {
     "dim1": -0.56,
@@ -556,6 +556,7 @@
   },
   "wiki": {
     "extract": "Lateefah Aaliyah Simon is an American politician who is the U.S. representative for California's 12th congressional district since January 2025. A member of the Democratic Party, she is the first member of Congress known to be born legally blind in both eyes, and the first Muslim member from California and outside of the Midwestern United States.",
+    "generated_at": "2026-09-19T08:17:29.073238+00:00",
     "source": "wikipedia",
     "summary": "Lateefah Aaliyah Simon is an American politician who is the U.S. representative for California's 12th congressional district since January 2025. A member of the Democratic Party, she is the first member of Congress known to be born legally blind in both eyes, and the first Muslim member from California and outside of the Midwestern United States.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Rep._Lateefah_Simon_Official_Portrait.jpg/330px-Rep._Lateefah_Simon_Official_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

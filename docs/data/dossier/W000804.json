@@ -288,7 +288,7 @@
           "stateName": "Virginia"
         }
       ],
-      "updateDate": "2026-10-30T07:41:07Z"
+      "updateDate": "2026-10-31T07:41:04Z"
     },
     "request": {
       "bioguideId": "w000804",
@@ -319,8 +319,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 70.3,
-        "value": 0.5523,
+        "score": 71.7,
+        "value": 0.5638,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -329,8 +329,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 52.3,
-        "value": 0.0377,
+        "score": 54.6,
+        "value": 0.0425,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -341,24 +341,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 63.7,
+    "financeScore": 64.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 54323.6,
+          "amount": 82980.81,
           "label": "Small individual (unitemized)",
-          "share": 0.020798556430805443
+          "share": 0.023963271576675178
         },
         {
-          "amount": 1388219.21,
+          "amount": 1869396.09,
           "label": "Large individual (itemized)",
-          "share": 0.5314993037558842
+          "share": 0.539845853385195
         },
         {
-          "amount": 1169350.0,
+          "amount": 1510456.2,
           "label": "PAC / other committees",
-          "share": 0.4477021398133103
+          "share": 0.43619087503812987
         },
         {
           "amount": 0.0,
@@ -381,14 +381,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 4292789.47,
+        "cashOnHand": 797346.03,
         "debts": 0.0,
-        "disbursements": 1136232.18,
-        "individualContributions": 1442542.81,
-        "receipts": 4053141.52
+        "disbursements": 6011223.42,
+        "individualContributions": 1952376.9,
+        "receipts": 5432689.32
       }
     },
-    "generated_at": "2026-10-04T23:57:35.799523+00:00",
+    "generated_at": "2026-10-31T05:44:53.826825+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -396,30 +396,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 53.7,
+    "score": 54.8,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-10-04T23:58:07.946251+00:00"
+    "updated_at": "2026-10-31T05:45:00.115057+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "W000804",
     "breakdown": [
       {
-        "amount": 54323.6,
+        "amount": 82980.81,
         "label": "Small individual (unitemized)",
-        "share": 0.020798556430805443
+        "share": 0.023963271576675178
       },
       {
-        "amount": 1388219.21,
+        "amount": 1869396.09,
         "label": "Large individual (itemized)",
-        "share": 0.5314993037558842
+        "share": 0.539845853385195
       },
       {
-        "amount": 1169350.0,
+        "amount": 1510456.2,
         "label": "PAC / other committees",
-        "share": 0.4477021398133103
+        "share": 0.43619087503812987
       },
       {
         "amount": 0.0,
@@ -463,8 +463,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 70.3,
-          "value": 0.5523,
+          "score": 71.7,
+          "value": 0.5638,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -473,8 +473,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 52.3,
-          "value": 0.0377,
+          "score": 54.6,
+          "value": 0.0425,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -485,8 +485,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 63.7,
-      "generated_at": "2026-10-04T23:57:35.799523+00:00",
+      "financeScore": 64.8,
+      "generated_at": "2026-10-31T05:44:53.826825+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -494,23 +494,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 53.7,
+      "score": 54.8,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-10-04T23:58:07.946251+00:00"
+      "updated_at": "2026-10-31T05:45:00.115057+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 4292789.47,
+      "cashOnHand": 797346.03,
       "debts": 0.0,
-      "disbursements": 1136232.18,
-      "individualContributions": 1442542.81,
-      "receipts": 4053141.52
+      "disbursements": 6011223.42,
+      "individualContributions": 1952376.9,
+      "receipts": 5432689.32
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
   "history": {
     "bioguideId": "W000804",
     "birthYear": "1959",
@@ -797,7 +797,7 @@
         "stateName": "Virginia"
       }
     ],
-    "updateDate": "2026-10-30T07:41:07Z"
+    "updateDate": "2026-10-31T07:41:04Z"
   },
   "nominate": {
     "dim1": 0.447,
