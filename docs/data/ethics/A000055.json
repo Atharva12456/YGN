@@ -10,8 +10,8 @@
   },
   "components": {
     "donor_diversity": {
-      "score": 60.1,
-      "value": 0.3714,
+      "score": 69.4,
+      "value": 0.4685,
       "weight": 0.2
     },
     "in_state_support": {
@@ -20,18 +20,18 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 70.4,
-      "value": 0.5537,
+      "score": 72.8,
+      "value": 0.573,
       "weight": 0.25
     },
     "self_party_independence": {
       "score": 96.0,
-      "value": 1.0,
+      "value": 0.9995,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 43.0,
-      "value": 0.0174,
+      "score": 47.3,
+      "value": 0.0267,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,29 +42,29 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 66.6,
+  "financeScore": 70.3,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 9102.01,
+        "amount": 16678.87,
         "label": "Small individual (unitemized)",
-        "share": 0.00962054577649256
+        "share": 0.015280532152550682
       },
       {
-        "amount": 514721.0,
+        "amount": 608724.0,
         "label": "Large individual (itemized)",
-        "share": 0.5440443311556488
+        "share": 0.5576892591661943
       },
       {
-        "amount": 422278.2,
+        "amount": 465498.2,
         "label": "PAC / other committees",
-        "share": 0.4463351230678587
+        "share": 0.4264713504005049
       },
       {
-        "amount": 0.0,
+        "amount": 610.0,
         "label": "Political party committees",
-        "share": 0.0
+        "share": 0.0005588582807501897
       },
       {
         "amount": 0.0,
@@ -82,24 +82,24 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 749659.68,
+      "cashOnHand": 719711.9,
       "debts": 0.0,
-      "disbursements": 1239900.72,
-      "individualContributions": 523823.01,
-      "receipts": 1022664.06
+      "disbursements": 1485770.63,
+      "individualContributions": 625402.87,
+      "receipts": 1238586.19
     }
   },
-  "generated_at": "2026-10-05T14:43:26.170495+00:00",
-  "grade": "F",
+  "generated_at": "2026-10-31T09:57:18.750735+00:00",
+  "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 56.6,
+  "score": 60.3,
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-10-05T14:44:07.348787+00:00"
+  "updated_at": "2026-10-31T09:59:56.722792+00:00"
 }
