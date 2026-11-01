@@ -239,8 +239,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 63.3,
-        "value": 0.4054,
+        "score": 67.3,
+        "value": 0.4469,
         "weight": 0.2
       },
       "in_state_support": {
@@ -249,8 +249,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 53.2,
-        "value": 0.3558,
+        "score": 52.7,
+        "value": 0.3469,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -259,8 +259,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 37.4,
-        "value": 0.0052,
+        "score": 37.5,
+        "value": 0.0053,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -271,24 +271,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 58.1,
+    "financeScore": 58.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 8726.89,
+          "amount": 9569.99,
           "label": "Small individual (unitemized)",
-          "share": 0.0018582557853638155
+          "share": 0.0018479509576861367
         },
         {
-          "amount": 1662073.39,
+          "amount": 1786878.46,
           "label": "Large individual (itemized)",
-          "share": 0.3539127332493877
+          "share": 0.3450435958058189
         },
         {
-          "amount": 3025480.0,
+          "amount": 3382255.0,
           "label": "PAC / other committees",
-          "share": 0.6442290109652484
+          "share": 0.6531084532364949
         },
         {
           "amount": 0.0,
@@ -311,44 +311,44 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1718271.11,
-        "debts": 2295.44,
-        "disbursements": 3355565.93,
-        "individualContributions": 1670800.28,
-        "receipts": 4707592.6
+        "cashOnHand": 1447295.54,
+        "debts": 13072.88,
+        "disbursements": 4905596.15,
+        "individualContributions": 1796448.45,
+        "receipts": 5986647.25
       }
     },
-    "generated_at": "2026-10-05T10:51:18.060891+00:00",
+    "generated_at": "2026-11-01T06:08:32.390363+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 58.1,
+    "score": 58.8,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-05T10:54:48.223817+00:00"
+    "updated_at": "2026-11-01T06:09:16.839420+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000558",
     "breakdown": [
       {
-        "amount": 8726.89,
+        "amount": 9569.99,
         "label": "Small individual (unitemized)",
-        "share": 0.0018582557853638155
+        "share": 0.0018479509576861367
       },
       {
-        "amount": 1662073.39,
+        "amount": 1786878.46,
         "label": "Large individual (itemized)",
-        "share": 0.3539127332493877
+        "share": 0.3450435958058189
       },
       {
-        "amount": 3025480.0,
+        "amount": 3382255.0,
         "label": "PAC / other committees",
-        "share": 0.6442290109652484
+        "share": 0.6531084532364949
       },
       {
         "amount": 0.0,
@@ -382,8 +382,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 63.3,
-          "value": 0.4054,
+          "score": 67.3,
+          "value": 0.4469,
           "weight": 0.2
         },
         "in_state_support": {
@@ -392,8 +392,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 53.2,
-          "value": 0.3558,
+          "score": 52.7,
+          "value": 0.3469,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -402,8 +402,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 37.4,
-          "value": 0.0052,
+          "score": 37.5,
+          "value": 0.0053,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -414,31 +414,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 58.1,
-      "generated_at": "2026-10-05T10:51:18.060891+00:00",
+      "financeScore": 58.8,
+      "generated_at": "2026-11-01T06:08:32.390363+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 58.1,
+      "score": 58.8,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-05T10:54:48.223817+00:00"
+      "updated_at": "2026-11-01T06:09:16.839420+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1718271.11,
-      "debts": 2295.44,
-      "disbursements": 3355565.93,
-      "individualContributions": 1670800.28,
-      "receipts": 4707592.6
+      "cashOnHand": 1447295.54,
+      "debts": 13072.88,
+      "disbursements": 4905596.15,
+      "individualContributions": 1796448.45,
+      "receipts": 5986647.25
     }
   },
-  "generated_at": "2026-10-30T10:27:36.599362+00:00",
+  "generated_at": "2026-11-01T10:48:22.227338+00:00",
   "history": {
     "bioguideId": "G000558",
     "birthYear": "1964",
@@ -727,7 +727,6 @@
   },
   "wiki": {
     "extract": "Steven Brett Guthrie is an American businessman and politician serving as the U.S. representative for Kentucky's 2nd congressional district since 2009. The district is in central Kentucky and includes Fort Knox, Owensboro, Bowling Green, and a portion of eastern Louisville.",
-    "generated_at": "2026-09-08T08:19:54.799633+00:00",
     "source": "wikipedia",
     "summary": "Steven Brett Guthrie is an American businessman and politician serving as the U.S. representative for Kentucky's 2nd congressional district since 2009. The district is in central Kentucky and includes Fort Knox, Owensboro, Bowling Green, and a portion of eastern Louisville.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Brett_Guthrie%2C_Official_Photo.jpg/330px-Brett_Guthrie%2C_Official_Photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

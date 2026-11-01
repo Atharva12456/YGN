@@ -298,8 +298,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 64.4,
-        "value": 0.4166,
+        "score": 70.7,
+        "value": 0.4823,
         "weight": 0.2
       },
       "in_state_support": {
@@ -308,8 +308,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 84.8,
-        "value": 0.7006,
+        "score": 83.6,
+        "value": 0.6787,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -318,8 +318,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 62.1,
-        "value": 0.072,
+        "score": 63.1,
+        "value": 0.0774,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -330,29 +330,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 75.9,
+    "financeScore": 77.2,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 94877.67,
+          "amount": 115560.24,
           "label": "Small individual (unitemized)",
-          "share": 0.05044119049662082
+          "share": 0.052509584649184704
         },
         {
-          "amount": 1222913.09,
+          "amount": 1378019.97,
           "label": "Large individual (itemized)",
-          "share": 0.650155006267557
+          "share": 0.626160487923718
         },
         {
-          "amount": 563000.0,
+          "amount": 707000.0,
           "label": "PAC / other committees",
-          "share": 0.2993158479713669
+          "share": 0.32125475290613437
         },
         {
           "amount": 165.44,
           "label": "Political party committees",
-          "share": 8.795526445538711e-05
+          "share": 7.51745209629291e-05
         },
         {
           "amount": 0.0,
@@ -370,50 +370,49 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 869548.73,
+        "cashOnHand": 627352.11,
         "debts": 0.0,
-        "disbursements": 1583205.56,
-        "individualContributions": 1317790.76,
-        "receipts": 1882001.47
+        "disbursements": 2145451.5,
+        "individualContributions": 1493580.21,
+        "receipts": 2202050.79
       }
     },
-    "generated_at": "2026-10-05T14:43:26.170495+00:00",
-    "grade": "D",
+    "grade": "D+",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 65.9,
+    "score": 67.2,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-10-05T14:43:47.801207+00:00"
+    "updated_at": "2026-11-01T10:55:14.113728+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S000510",
     "breakdown": [
       {
-        "amount": 94877.67,
+        "amount": 115560.24,
         "label": "Small individual (unitemized)",
-        "share": 0.05044119049662082
+        "share": 0.052509584649184704
       },
       {
-        "amount": 1222913.09,
+        "amount": 1378019.97,
         "label": "Large individual (itemized)",
-        "share": 0.650155006267557
+        "share": 0.626160487923718
       },
       {
-        "amount": 563000.0,
+        "amount": 707000.0,
         "label": "PAC / other committees",
-        "share": 0.2993158479713669
+        "share": 0.32125475290613437
       },
       {
         "amount": 165.44,
         "label": "Political party committees",
-        "share": 8.795526445538711e-05
+        "share": 7.51745209629291e-05
       },
       {
         "amount": 0.0,
@@ -442,8 +441,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 64.4,
-          "value": 0.4166,
+          "score": 70.7,
+          "value": 0.4823,
           "weight": 0.2
         },
         "in_state_support": {
@@ -452,8 +451,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 84.8,
-          "value": 0.7006,
+          "score": 83.6,
+          "value": 0.6787,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -462,8 +461,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 62.1,
-          "value": 0.072,
+          "score": 63.1,
+          "value": 0.0774,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -474,32 +473,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 75.9,
-      "generated_at": "2026-10-05T14:43:26.170495+00:00",
-      "grade": "D",
+      "financeScore": 77.2,
+      "grade": "D+",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling.",
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 65.9,
+      "score": 67.2,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-10-05T14:43:47.801207+00:00"
+      "updated_at": "2026-11-01T10:55:14.113728+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 869548.73,
+      "cashOnHand": 627352.11,
       "debts": 0.0,
-      "disbursements": 1583205.56,
-      "individualContributions": 1317790.76,
-      "receipts": 1882001.47
+      "disbursements": 2145451.5,
+      "individualContributions": 1493580.21,
+      "receipts": 2202050.79
     }
   },
-  "generated_at": "2026-10-31T09:57:18.750735+00:00",
+  "generated_at": "2026-11-01T10:48:22.227338+00:00",
   "history": {
     "bioguideId": "S000510",
     "birthYear": "1965",
@@ -901,7 +899,6 @@
   },
   "wiki": {
     "extract": "Adam Smith was a Scottish economist and philosopher who was a pioneer in the field of political economy and key figure during the Scottish Enlightenment. Seen by many as the \"father of economics\", or the \"father of capitalism\", he is primarily known for two classic works: The Theory of Moral Sentiments (1759) and An Inquiry into the Nature and Causes of the Wealth of Nations (1776).",
-    "generated_at": "2026-09-08T08:19:54.799633+00:00",
     "source": "wikipedia",
     "summary": "Adam Smith was a Scottish economist and philosopher who was a pioneer in the field of political economy and key figure during the Scottish Enlightenment. Seen by many as the \"father of economics\", or the \"father of capitalism\", he is primarily known for two classic works: The Theory of Moral Sentiments (1759) and An Inquiry into the Nature and Causes of the Wealth of Nations (1776).",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Adam_Smith_The_Muir_portrait.jpg/330px-Adam_Smith_The_Muir_portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
