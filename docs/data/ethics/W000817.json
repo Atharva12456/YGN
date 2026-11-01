@@ -21,7 +21,7 @@
     },
     "pac_independence": {
       "score": 96.4,
-      "value": 0.9953,
+      "value": 0.9948,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 98.8,
-      "value": 0.6757,
+      "score": 98.5,
+      "value": 0.648,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 2861352.85,
+        "amount": 3091486.58,
         "label": "Small individual (unitemized)",
-        "share": 0.6725306765795006
+        "share": 0.6446274154446847
       },
       {
-        "amount": 1373252.85,
+        "amount": 1679286.15,
         "label": "Large individual (itemized)",
-        "share": 0.32276853528401
+        "share": 0.3501596602973302
       },
       {
-        "amount": 20000.0,
+        "amount": 25000.0,
         "label": "PAC / other committees",
-        "share": 0.004700788136489358
+        "share": 0.005212924257985011
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 3754333.02,
+      "cashOnHand": 3028669.03,
       "debts": 0.0,
-      "disbursements": 4109645.05,
-      "individualContributions": 4234605.7,
-      "receipts": 4413931.4
+      "disbursements": 5387108.74,
+      "individualContributions": 4770772.73,
+      "receipts": 4965731.1
     }
   },
-  "generated_at": "2026-10-06T15:58:15.925964+00:00",
+  "generated_at": "2026-11-01T19:42:22.355897+00:00",
   "grade": "A",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 97.2,
+  "score": 97.1,
   "source": "fec_live",
-  "updated_at": "2026-10-06T15:58:21.105124+00:00"
+  "updated_at": "2026-11-01T19:42:25.392205+00:00"
 }
