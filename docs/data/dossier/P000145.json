@@ -316,7 +316,7 @@
           "stateName": "California"
         }
       ],
-      "updateDate": "2026-03-08T10:32:16Z"
+      "updateDate": "2026-11-01T11:31:16Z"
     },
     "request": {
       "bioguideId": "p000145",
@@ -347,18 +347,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 88.9,
-        "value": 0.7736,
+        "score": 88.2,
+        "value": 0.7601,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9984,
+        "value": 0.9985,
         "weight": 0.15
       },
       "small_donor": {
         "score": 97.3,
-        "value": 0.5334,
+        "value": 0.5322,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -371,24 +371,24 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 673406.79,
+          "amount": 709252.0,
           "label": "Small individual (unitemized)",
-          "share": 0.4125958306037072
+          "share": 0.40452129250636304
         },
         {
-          "amount": 589160.35,
+          "amount": 623504.91,
           "label": "Large individual (itemized)",
-          "share": 0.36097810057279167
+          "share": 0.3556155105340042
         },
         {
-          "amount": 366055.0,
+          "amount": 417055.0,
           "label": "PAC / other committees",
-          "share": 0.22428162147227537
+          "share": 0.23786697484989994
         },
         {
           "amount": 3500.0,
           "label": "Political party committees",
-          "share": 0.0021444473512258096
+          "share": 0.0019962221097328883
         },
         {
           "amount": 0.0,
@@ -406,47 +406,47 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 7290814.38,
-        "debts": 7.78,
-        "disbursements": 2419263.54,
-        "individualContributions": 1262567.14,
-        "receipts": 2256851.26
+        "cashOnHand": 7312467.54,
+        "debts": 547.57,
+        "disbursements": 2518900.15,
+        "individualContributions": 1332756.91,
+        "receipts": 2378141.03
       }
     },
-    "generated_at": "2026-10-07T06:02:55.382695+00:00",
+    "generated_at": "2026-11-02T11:12:11.268869+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 94.6,
+    "score": 94.4,
     "source": "fec_live",
-    "updated_at": "2026-10-07T06:03:31.586178+00:00"
+    "updated_at": "2026-11-02T11:12:34.030721+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "P000145",
     "breakdown": [
       {
-        "amount": 673406.79,
+        "amount": 709252.0,
         "label": "Small individual (unitemized)",
-        "share": 0.4125958306037072
+        "share": 0.40452129250636304
       },
       {
-        "amount": 589160.35,
+        "amount": 623504.91,
         "label": "Large individual (itemized)",
-        "share": 0.36097810057279167
+        "share": 0.3556155105340042
       },
       {
-        "amount": 366055.0,
+        "amount": 417055.0,
         "label": "PAC / other committees",
-        "share": 0.22428162147227537
+        "share": 0.23786697484989994
       },
       {
         "amount": 3500.0,
         "label": "Political party committees",
-        "share": 0.0021444473512258096
+        "share": 0.0019962221097328883
       },
       {
         "amount": 0.0,
@@ -485,18 +485,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 88.9,
-          "value": 0.7736,
+          "score": 88.2,
+          "value": 0.7601,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9984,
+          "value": 0.9985,
           "weight": 0.15
         },
         "small_donor": {
           "score": 97.3,
-          "value": 0.5334,
+          "value": 0.5322,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -505,28 +505,28 @@
         }
       },
       "cycle": 2026,
-      "generated_at": "2026-10-07T06:02:55.382695+00:00",
+      "generated_at": "2026-11-02T11:12:11.268869+00:00",
       "grade": "A",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 94.6,
+      "score": 94.4,
       "source": "fec_live",
-      "updated_at": "2026-10-07T06:03:31.586178+00:00"
+      "updated_at": "2026-11-02T11:12:34.030721+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 7290814.38,
-      "debts": 7.78,
-      "disbursements": 2419263.54,
-      "individualContributions": 1262567.14,
-      "receipts": 2256851.26
+      "cashOnHand": 7312467.54,
+      "debts": 547.57,
+      "disbursements": 2518900.15,
+      "individualContributions": 1332756.91,
+      "receipts": 2378141.03
     }
   },
-  "generated_at": "2026-10-28T10:01:14.212590+00:00",
+  "generated_at": "2026-11-02T11:41:08.421212+00:00",
   "history": {
     "bioguideId": "P000145",
     "birthYear": "1973",
@@ -673,7 +673,7 @@
         "stateName": "California"
       }
     ],
-    "updateDate": "2026-03-08T10:32:16Z"
+    "updateDate": "2026-11-01T11:31:16Z"
   },
   "nominate": {
     "dim1": -0.444,
@@ -688,7 +688,6 @@
   },
   "wiki": {
     "extract": "Alejandro Padilla is an American politician and engineer serving as the senior United States senator from California, a seat he has held since 2021. A member of the Democratic Party, Padilla served as the 29th secretary of state of California from 2015 to 2021 and was a member of the California State Senate and the Los Angeles City Council.",
-    "generated_at": "2026-09-08T08:19:54.799633+00:00",
     "source": "wikipedia",
     "summary": "Alejandro Padilla is an American politician and engineer serving as the senior United States senator from California, a seat he has held since 2021. A member of the Democratic Party, Padilla served as the 29th secretary of state of California from 2015 to 2021 and was a member of the California State Senate and the Los Angeles City Council.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Alex_Padilla_117th_Congress_portrait.jpg/330px-Alex_Padilla_117th_Congress_portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
