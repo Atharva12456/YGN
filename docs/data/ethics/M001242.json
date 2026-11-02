@@ -20,18 +20,18 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 86.2,
-      "value": 0.725,
+      "score": 87.0,
+      "value": 0.7402,
       "weight": 0.25
     },
     "self_party_independence": {
-      "score": 51.0,
-      "value": 0.488,
+      "score": 51.1,
+      "value": 0.4914,
       "weight": 0.15
     },
     "small_donor": {
-      "score": 97.0,
-      "value": 0.5016,
+      "score": 96.6,
+      "value": 0.4638,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 364177.73,
+        "amount": 406743.71,
         "label": "Small individual (unitemized)",
-        "share": 0.36366561244789475
+        "share": 0.34328430111168534
       },
       {
-        "amount": 361859.16,
+        "amount": 470244.6,
         "label": "Large individual (itemized)",
-        "share": 0.36135030288996733
+        "share": 0.3968778985237264
       },
       {
-        "amount": 275371.32,
+        "amount": 307871.32,
         "label": "PAC / other committees",
-        "share": 0.274984084662138
+        "share": 0.25983780036458837
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 639132.67,
-      "debts": 7039894.14,
-      "disbursements": 2473567.62,
-      "individualContributions": 726036.89,
-      "receipts": 2734380.58
+      "cashOnHand": 783771.74,
+      "debts": 6789894.14,
+      "disbursements": 2838847.24,
+      "individualContributions": 876988.31,
+      "receipts": 3244299.27
     }
   },
-  "generated_at": "2026-10-07T06:02:55.382695+00:00",
+  "generated_at": "2026-11-02T11:41:08.421212+00:00",
   "grade": "B",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 86.3,
+  "score": 86.4,
   "source": "fec_live",
-  "updated_at": "2026-10-07T06:03:49.832898+00:00"
+  "updated_at": "2026-11-02T11:42:25.335070+00:00"
 }
