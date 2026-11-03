@@ -299,8 +299,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 52.2,
-        "value": 0.2615,
+        "score": 56.3,
+        "value": 0.3243,
         "weight": 0.2
       },
       "in_state_support": {
@@ -309,18 +309,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 94.3,
-        "value": 0.8692,
+        "score": 94.1,
+        "value": 0.8654,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.994,
+        "value": 0.9947,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 86.8,
-        "value": 0.2552,
+        "score": 87.7,
+        "value": 0.2689,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -333,24 +333,24 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 1934881.6,
+          "amount": 2269148.85,
           "label": "Small individual (unitemized)",
-          "share": 0.22184220461007345
+          "share": 0.2326670684949916
         },
         {
-          "amount": 5645918.44,
+          "amount": 6170617.79,
           "label": "Large individual (itemized)",
-          "share": 0.6473279779901089
+          "share": 0.6327039991238758
         },
         {
-          "amount": 1079082.27,
+          "amount": 1251005.27,
           "label": "PAC / other committees",
-          "share": 0.12372126011867729
+          "share": 0.12827176535496357
         },
         {
           "amount": 62000.0,
           "label": "Political party committees",
-          "share": 0.007108557281140382
+          "share": 0.006357167026169076
         },
         {
           "amount": 0.0,
@@ -368,47 +368,47 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 2083870.46,
+        "cashOnHand": 1558827.9,
         "debts": 0.0,
-        "disbursements": 9843588.87,
-        "individualContributions": 7580800.04,
-        "receipts": 10285376.31
+        "disbursements": 11778528.18,
+        "individualContributions": 8439766.64,
+        "receipts": 11695273.06
       }
     },
-    "generated_at": "2026-10-07T13:27:05.865702+00:00",
-    "grade": "B-",
+    "generated_at": "2026-11-03T06:50:19.958415+00:00",
+    "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 82.9,
+    "score": 83.9,
     "source": "fec_live",
-    "updated_at": "2026-10-07T13:27:36.120121+00:00"
+    "updated_at": "2026-11-03T06:50:30.645500+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "H000273",
     "breakdown": [
       {
-        "amount": 1934881.6,
+        "amount": 2269148.85,
         "label": "Small individual (unitemized)",
-        "share": 0.22184220461007345
+        "share": 0.2326670684949916
       },
       {
-        "amount": 5645918.44,
+        "amount": 6170617.79,
         "label": "Large individual (itemized)",
-        "share": 0.6473279779901089
+        "share": 0.6327039991238758
       },
       {
-        "amount": 1079082.27,
+        "amount": 1251005.27,
         "label": "PAC / other committees",
-        "share": 0.12372126011867729
+        "share": 0.12827176535496357
       },
       {
         "amount": 62000.0,
         "label": "Political party committees",
-        "share": 0.007108557281140382
+        "share": 0.006357167026169076
       },
       {
         "amount": 0.0,
@@ -437,8 +437,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 52.2,
-          "value": 0.2615,
+          "score": 56.3,
+          "value": 0.3243,
           "weight": 0.2
         },
         "in_state_support": {
@@ -447,18 +447,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 94.3,
-          "value": 0.8692,
+          "score": 94.1,
+          "value": 0.8654,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.994,
+          "value": 0.9947,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 86.8,
-          "value": 0.2552,
+          "score": 87.7,
+          "value": 0.2689,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -467,28 +467,28 @@
         }
       },
       "cycle": 2026,
-      "generated_at": "2026-10-07T13:27:05.865702+00:00",
-      "grade": "B-",
+      "generated_at": "2026-11-03T06:50:19.958415+00:00",
+      "grade": "B",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 82.9,
+      "score": 83.9,
       "source": "fec_live",
-      "updated_at": "2026-10-07T13:27:36.120121+00:00"
+      "updated_at": "2026-11-03T06:50:30.645500+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 2083870.46,
+      "cashOnHand": 1558827.9,
       "debts": 0.0,
-      "disbursements": 9843588.87,
-      "individualContributions": 7580800.04,
-      "receipts": 10285376.31
+      "disbursements": 11778528.18,
+      "individualContributions": 8439766.64,
+      "receipts": 11695273.06
     }
   },
-  "generated_at": "2026-11-02T11:41:08.421212+00:00",
+  "generated_at": "2026-11-03T11:20:36.430481+00:00",
   "history": {
     "bioguideId": "H000273",
     "birthYear": "1952",
@@ -653,7 +653,6 @@
   },
   "wiki": {
     "extract": "John Wright Hickenlooper Jr. is an American politician, geologist, and businessman serving as the junior United States senator from Colorado since 2021. A member of the Democratic Party, he served as the 42nd governor of Colorado from 2011 to 2019 and as the 43rd mayor of Denver from 2003 to 2011.",
-    "generated_at": "2026-09-14T09:15:41.044301+00:00",
     "source": "wikipedia",
     "summary": "John Wright Hickenlooper Jr. is an American politician, geologist, and businessman serving as the junior United States senator from Colorado since 2021. A member of the Democratic Party, he served as the 42nd governor of Colorado from 2011 to 2019 and as the 43rd mayor of Denver from 2003 to 2011.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/John_Hickenlooper%2C_official_portrait%2C_117th_Congress.jpeg/330px-John_Hickenlooper%2C_official_portrait%2C_117th_Congress.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
