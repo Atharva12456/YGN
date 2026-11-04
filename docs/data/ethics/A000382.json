@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 82.7,
-      "value": 0.6621,
+      "score": 81.3,
+      "value": 0.6438,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -31,7 +31,7 @@
     },
     "small_donor": {
       "score": 96.1,
-      "value": 0.408,
+      "value": 0.4109,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -44,19 +44,19 @@
     "available": true,
     "breakdown": [
       {
-        "amount": 346335.16,
+        "amount": 385948.14,
         "label": "Small individual (unitemized)",
-        "share": 0.27012433560000776
+        "share": 0.26453410278777584
       },
       {
-        "amount": 502547.23,
+        "amount": 553274.96,
         "label": "Large individual (itemized)",
-        "share": 0.39196204223496767
+        "share": 0.3792221803129886
       },
       {
-        "amount": 433250.0,
+        "amount": 519750.0,
         "label": "PAC / other committees",
-        "share": 0.33791362216502463
+        "share": 0.35624371689923545
       },
       {
         "amount": 0.0,
@@ -79,21 +79,21 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 686548.88,
-      "debts": 29625.33,
-      "disbursements": 1131757.7,
-      "individualContributions": 848882.39,
-      "receipts": 1768461.2
+      "cashOnHand": 800210.62,
+      "debts": 19268.92,
+      "disbursements": 1295629.09,
+      "individualContributions": 939223.1,
+      "receipts": 2045994.33
     }
   },
-  "generated_at": "2026-10-08T10:55:57.662616+00:00",
+  "generated_at": "2026-11-04T06:25:43.454688+00:00",
   "grade": "A-",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 92.5,
+  "score": 92.1,
   "source": "fec_live",
-  "updated_at": "2026-10-08T11:02:56.009539+00:00"
+  "updated_at": "2026-11-04T06:25:49.414918+00:00"
 }
