@@ -226,8 +226,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 52.0,
-        "value": 0.2579,
+        "score": 56.5,
+        "value": 0.3277,
         "weight": 0.2
       },
       "in_state_support": {
@@ -236,18 +236,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 92.6,
-        "value": 0.8398,
+        "score": 92.8,
+        "value": 0.8424,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9923,
+        "value": 0.9935,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 84.9,
-        "value": 0.2263,
+        "score": 87.8,
+        "value": 0.2716,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -258,34 +258,34 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 83.2,
+    "financeScore": 85.0,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 698131.66,
+          "amount": 981965.85,
           "label": "Small individual (unitemized)",
-          "share": 0.19007579531004004
+          "share": 0.22877535304642774
         },
         {
-          "amount": 2386480.29,
+          "amount": 2634005.31,
           "label": "Large individual (itemized)",
-          "share": 0.6497515656480684
+          "share": 0.6136623740239189
         },
         {
-          "amount": 583300.0,
+          "amount": 671300.0,
           "label": "PAC / other committees",
-          "share": 0.15881132135498102
+          "share": 0.15639738846322093
         },
         {
           "amount": 5000.0,
           "label": "Political party committees",
-          "share": 0.001361317686910518
+          "share": 0.0011648844664324516
         },
         {
           "amount": 12000.0,
           "label": "Self-funding & candidate loans",
-          "share": 0.003267162448585243
+          "share": 0.002795722719437884
         }
       ],
       "candidate": {
@@ -298,54 +298,53 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 935301.85,
-        "debts": 29943.42,
-        "disbursements": 2854436.51,
-        "individualContributions": 3084611.95,
-        "receipts": 3789738.36
+        "cashOnHand": 939474.31,
+        "debts": 0.0,
+        "disbursements": 3527838.22,
+        "individualContributions": 3615971.16,
+        "receipts": 4467312.53
       }
     },
-    "generated_at": "2026-10-08T18:51:53.194764+00:00",
     "grade": "B",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 83.2,
+    "score": 85.0,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-08T18:52:03.585376+00:00"
+    "updated_at": "2026-11-04T11:36:16.805580+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "P000622",
     "breakdown": [
       {
-        "amount": 698131.66,
+        "amount": 981965.85,
         "label": "Small individual (unitemized)",
-        "share": 0.19007579531004004
+        "share": 0.22877535304642774
       },
       {
-        "amount": 2386480.29,
+        "amount": 2634005.31,
         "label": "Large individual (itemized)",
-        "share": 0.6497515656480684
+        "share": 0.6136623740239189
       },
       {
-        "amount": 583300.0,
+        "amount": 671300.0,
         "label": "PAC / other committees",
-        "share": 0.15881132135498102
+        "share": 0.15639738846322093
       },
       {
         "amount": 5000.0,
         "label": "Political party committees",
-        "share": 0.001361317686910518
+        "share": 0.0011648844664324516
       },
       {
         "amount": 12000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.003267162448585243
+        "share": 0.002795722719437884
       }
     ],
     "candidate": {
@@ -369,8 +368,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 52.0,
-          "value": 0.2579,
+          "score": 56.5,
+          "value": 0.3277,
           "weight": 0.2
         },
         "in_state_support": {
@@ -379,18 +378,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 92.6,
-          "value": 0.8398,
+          "score": 92.8,
+          "value": 0.8424,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9923,
+          "value": 0.9935,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 84.9,
-          "value": 0.2263,
+          "score": 87.8,
+          "value": 0.2716,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -401,31 +400,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 83.2,
-      "generated_at": "2026-10-08T18:51:53.194764+00:00",
+      "financeScore": 85.0,
       "grade": "B",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 83.2,
+      "score": 85.0,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-08T18:52:03.585376+00:00"
+      "updated_at": "2026-11-04T11:36:16.805580+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 935301.85,
-      "debts": 29943.42,
-      "disbursements": 2854436.51,
-      "individualContributions": 3084611.95,
-      "receipts": 3789738.36
+      "cashOnHand": 939474.31,
+      "debts": 0.0,
+      "disbursements": 3527838.22,
+      "individualContributions": 3615971.16,
+      "receipts": 4467312.53
     }
   },
-  "generated_at": "2026-11-03T11:20:36.430481+00:00",
+  "generated_at": "2026-11-04T11:34:28.788118+00:00",
   "history": {
     "bioguideId": "P000622",
     "birthYear": "1972",
@@ -570,6 +568,7 @@
   },
   "wiki": {
     "extract": "Jimmy Theo Patronis Jr. is an American politician serving as the U.S. representative for Florida's 1st congressional district since April 2025. A member of the Republican Party, he previously served as the fourth chief financial officer of Florida from 2017 to 2025.",
+    "generated_at": "2026-10-03T09:25:52.528111+00:00",
     "source": "wikipedia",
     "summary": "Jimmy Theo Patronis Jr. is an American politician serving as the U.S. representative for Florida's 1st congressional district since April 2025. A member of the Republican Party, he previously served as the fourth chief financial officer of Florida from 2017 to 2025.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Jimmy_Patronis%2C_official_portrait_%28119th_Congress%29.jpg/330px-Jimmy_Patronis%2C_official_portrait_%28119th_Congress%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

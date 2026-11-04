@@ -252,8 +252,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 50.4,
-        "value": 0.2349,
+        "score": 58.4,
+        "value": 0.3544,
         "weight": 0.2
       },
       "in_state_support": {
@@ -262,8 +262,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 59.9,
-        "value": 0.4657,
+        "score": 57.6,
+        "value": 0.4425,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -272,8 +272,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 39.2,
-        "value": 0.0091,
+        "score": 40.3,
+        "value": 0.0114,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -284,24 +284,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 60.9,
+    "financeScore": 62.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 3919.0,
+          "amount": 5840.17,
           "label": "Small individual (unitemized)",
-          "share": 0.004239059597240663
+          "share": 0.005053415338301037
         },
         {
-          "amount": 426578.5,
+          "amount": 505597.54,
           "label": "Large individual (itemized)",
-          "share": 0.4614166074002363
+          "share": 0.43748629982402426
         },
         {
-          "amount": 494000.0,
+          "amount": 644250.0,
           "label": "PAC / other committees",
-          "share": 0.534344333002523
+          "share": 0.5574602848376747
         },
         {
           "amount": 0.0,
@@ -324,14 +324,13 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 386556.75,
+        "cashOnHand": 448818.25,
         "debts": 225000.0,
-        "disbursements": 710037.56,
-        "individualContributions": 430497.5,
-        "receipts": 971392.5
+        "disbursements": 885761.61,
+        "individualContributions": 511437.71,
+        "receipts": 1209378.05
       }
     },
-    "generated_at": "2026-10-08T18:51:53.194764+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -339,30 +338,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 50.9,
+    "score": 52.3,
     "source": "fec_live",
     "stockPenalty": 10,
     "stockPtrCount": 1,
-    "updated_at": "2026-10-08T18:52:27.668873+00:00"
+    "updated_at": "2026-11-04T11:36:49.436497+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "K000403",
     "breakdown": [
       {
-        "amount": 3919.0,
+        "amount": 5840.17,
         "label": "Small individual (unitemized)",
-        "share": 0.004239059597240663
+        "share": 0.005053415338301037
       },
       {
-        "amount": 426578.5,
+        "amount": 505597.54,
         "label": "Large individual (itemized)",
-        "share": 0.4614166074002363
+        "share": 0.43748629982402426
       },
       {
-        "amount": 494000.0,
+        "amount": 644250.0,
         "label": "PAC / other committees",
-        "share": 0.534344333002523
+        "share": 0.5574602848376747
       },
       {
         "amount": 0.0,
@@ -396,8 +395,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 50.4,
-          "value": 0.2349,
+          "score": 58.4,
+          "value": 0.3544,
           "weight": 0.2
         },
         "in_state_support": {
@@ -406,8 +405,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 59.9,
-          "value": 0.4657,
+          "score": 57.6,
+          "value": 0.4425,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -416,8 +415,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 39.2,
-          "value": 0.0091,
+          "score": 40.3,
+          "value": 0.0114,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -428,8 +427,7 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 60.9,
-      "generated_at": "2026-10-08T18:51:53.194764+00:00",
+      "financeScore": 62.3,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -437,23 +435,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 50.9,
+      "score": 52.3,
       "source": "fec_live",
       "stockPenalty": 10,
       "stockPtrCount": 1,
-      "updated_at": "2026-10-08T18:52:27.668873+00:00"
+      "updated_at": "2026-11-04T11:36:49.436497+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 386556.75,
+      "cashOnHand": 448818.25,
       "debts": 225000.0,
-      "disbursements": 710037.56,
-      "individualContributions": 430497.5,
-      "receipts": 971392.5
+      "disbursements": 885761.61,
+      "individualContributions": 511437.71,
+      "receipts": 1209378.05
     }
   },
-  "generated_at": "2026-10-31T09:57:18.750735+00:00",
+  "generated_at": "2026-11-04T11:34:28.788118+00:00",
   "history": {
     "bioguideId": "K000403",
     "birthYear": "1969",
@@ -590,6 +588,7 @@
   },
   "wiki": {
     "extract": "Michael Stephen Kennedy is an American politician, attorney, and physician serving as the U.S. representative from Utah\u2019s 3rd congressional district since 2025. He previously served as a Republican member of the Utah Senate from 2021 to 2025 and as a member of the Utah House of Representatives from 2013 to 2019.",
+    "generated_at": "2026-10-04T10:05:11.598931+00:00",
     "source": "wikipedia",
     "summary": "Michael Stephen Kennedy is an American politician, attorney, and physician serving as the U.S. representative from Utah\u2019s 3rd congressional district since 2025. He previously served as a Republican member of the Utah Senate from 2021 to 2025 and as a member of the Utah House of Representatives from 2013 to 2019.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kennedy_Mike_119th_Congress_2.jpg/330px-Kennedy_Mike_119th_Congress_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

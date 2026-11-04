@@ -231,8 +231,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 57.8,
-        "value": 0.3472,
+        "score": 79.4,
+        "value": 0.5725,
         "weight": 0.2
       },
       "in_state_support": {
@@ -241,18 +241,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 85.4,
-        "value": 0.7104,
+        "score": 86.3,
+        "value": 0.7271,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9981,
+        "value": 0.9987,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 69.1,
-        "value": 0.1102,
+        "score": 67.9,
+        "value": 0.1034,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -263,24 +263,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 77.6,
+    "financeScore": 81.8,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 86553.03,
+          "amount": 123103.1,
           "label": "Small individual (unitemized)",
-          "share": 0.07807945693601859
+          "share": 0.07507095337563562
         },
         {
-          "amount": 698816.41,
+          "amount": 1067063.66,
           "label": "Large individual (itemized)",
-          "share": 0.630402029724183
+          "share": 0.6507186762047023
         },
         {
-          "amount": 320985.0,
+          "amount": 447486.0,
           "label": "PAC / other committees",
-          "share": 0.2895604519519181
+          "share": 0.27288671562494915
         },
         {
           "amount": 0.0,
@@ -290,7 +290,7 @@
         {
           "amount": 2170.56,
           "label": "Self-funding & candidate loans",
-          "share": 0.0019580613878802913
+          "share": 0.0013236547947128839
         }
       ],
       "candidate": {
@@ -303,44 +303,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 582811.94,
+        "cashOnHand": 746033.06,
         "debts": 0.0,
-        "disbursements": 678467.24,
-        "individualContributions": 785369.44,
-        "receipts": 1170445.74
+        "disbursements": 1052604.44,
+        "individualContributions": 1190166.76,
+        "receipts": 1707804.06
       }
     },
-    "generated_at": "2026-10-08T18:51:53.194764+00:00",
-    "grade": "C+",
+    "grade": "B-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 77.6,
+    "score": 81.8,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-08T18:52:09.228465+00:00"
+    "updated_at": "2026-11-04T11:36:36.006016+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001230",
     "breakdown": [
       {
-        "amount": 86553.03,
+        "amount": 123103.1,
         "label": "Small individual (unitemized)",
-        "share": 0.07807945693601859
+        "share": 0.07507095337563562
       },
       {
-        "amount": 698816.41,
+        "amount": 1067063.66,
         "label": "Large individual (itemized)",
-        "share": 0.630402029724183
+        "share": 0.6507186762047023
       },
       {
-        "amount": 320985.0,
+        "amount": 447486.0,
         "label": "PAC / other committees",
-        "share": 0.2895604519519181
+        "share": 0.27288671562494915
       },
       {
         "amount": 0.0,
@@ -350,7 +349,7 @@
       {
         "amount": 2170.56,
         "label": "Self-funding & candidate loans",
-        "share": 0.0019580613878802913
+        "share": 0.0013236547947128839
       }
     ],
     "candidate": {
@@ -374,8 +373,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 57.8,
-          "value": 0.3472,
+          "score": 79.4,
+          "value": 0.5725,
           "weight": 0.2
         },
         "in_state_support": {
@@ -384,18 +383,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 85.4,
-          "value": 0.7104,
+          "score": 86.3,
+          "value": 0.7271,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9981,
+          "value": 0.9987,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 69.1,
-          "value": 0.1102,
+          "score": 67.9,
+          "value": 0.1034,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -406,31 +405,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 77.6,
-      "generated_at": "2026-10-08T18:51:53.194764+00:00",
-      "grade": "C+",
+      "financeScore": 81.8,
+      "grade": "B-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 77.6,
+      "score": 81.8,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-08T18:52:09.228465+00:00"
+      "updated_at": "2026-11-04T11:36:36.006016+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 582811.94,
+      "cashOnHand": 746033.06,
       "debts": 0.0,
-      "disbursements": 678467.24,
-      "individualContributions": 785369.44,
-      "receipts": 1170445.74
+      "disbursements": 1052604.44,
+      "individualContributions": 1190166.76,
+      "receipts": 1707804.06
     }
   },
-  "generated_at": "2026-11-03T11:20:36.430481+00:00",
+  "generated_at": "2026-11-04T11:34:28.788118+00:00",
   "history": {
     "bioguideId": "S001230",
     "birthYear": "1986",
@@ -567,6 +565,7 @@
   },
   "wiki": {
     "extract": "Suhas Subramanyam is an American politician and attorney serving as the U.S. representative for Virginia's 10th congressional district since 2025. A member of the Democratic Party, he previously served in the Virginia Senate from 2024 to 2025 and in the Virginia House of Delegates from 2020 to 2024.",
+    "generated_at": "2026-10-04T10:05:11.598931+00:00",
     "source": "wikipedia",
     "summary": "Suhas Subramanyam is an American politician and attorney serving as the U.S. representative for Virginia's 10th congressional district since 2025. A member of the Democratic Party, he previously served in the Virginia Senate from 2024 to 2025 and in the Virginia House of Delegates from 2020 to 2024.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Subramayam_Suhas_119th_Congress_2.jpg/330px-Subramayam_Suhas_119th_Congress_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
