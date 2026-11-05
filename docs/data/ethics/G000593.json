@@ -20,8 +20,8 @@
       "weight": 0.1
     },
     "pac_independence": {
-      "score": 56.7,
-      "value": 0.4253,
+      "score": 54.7,
+      "value": 0.3851,
       "weight": 0.25
     },
     "self_party_independence": {
@@ -30,8 +30,8 @@
       "weight": 0.15
     },
     "small_donor": {
-      "score": 39.5,
-      "value": 0.0098,
+      "score": 40.3,
+      "value": 0.0116,
       "weight": 0.3
     },
     "stock_conflict": {
@@ -42,24 +42,24 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 57.1,
+  "financeScore": 56.9,
   "funding": {
     "available": true,
     "breakdown": [
       {
-        "amount": 2016.38,
+        "amount": 2663.89,
         "label": "Small individual (unitemized)",
-        "share": 0.00418712784725545
+        "share": 0.004448388043167644
       },
       {
-        "amount": 202800.0,
+        "amount": 227930.0,
         "label": "Large individual (itemized)",
-        "share": 0.42112574386941215
+        "share": 0.3806167246692623
       },
       {
-        "amount": 276750.0,
+        "amount": 368250.0,
         "label": "PAC / other committees",
-        "share": 0.5746871282833323
+        "share": 0.6149348872875701
       },
       {
         "amount": 0.0,
@@ -82,23 +82,23 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 692872.93,
+      "cashOnHand": 540783.2,
       "debts": 0.0,
-      "disbursements": 484408.8,
-      "individualContributions": 204816.38,
-      "receipts": 601253.76
+      "disbursements": 757535.32,
+      "individualContributions": 230593.89,
+      "receipts": 722290.55
     }
   },
-  "generated_at": "2026-10-10T09:52:34.592399+00:00",
+  "generated_at": "2026-11-05T23:39:06.405869+00:00",
   "grade": "F",
   "method": "campaign_finance_stock_v4",
   "notes": [
     "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 57.1,
+  "score": 56.9,
   "source": "fec_live",
   "stockPenalty": 0,
   "stockPtrCount": 0,
-  "updated_at": "2026-10-10T09:52:51.145071+00:00"
+  "updated_at": "2026-11-05T23:39:17.156398+00:00"
 }
