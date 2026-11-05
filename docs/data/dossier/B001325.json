@@ -221,7 +221,7 @@
           "stateName": "South Carolina"
         }
       ],
-      "updateDate": "2026-10-31T07:41:08Z"
+      "updateDate": "2026-11-05T08:36:09Z"
     },
     "request": {
       "bioguideId": "b001325",
@@ -252,8 +252,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 47.0,
-        "value": 0.235,
+        "score": 47.6,
+        "value": 0.2459,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -262,36 +262,36 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 62.0,
-        "value": 0.0715,
+        "score": 61.6,
+        "value": 0.0698,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
         "penalty": 42,
-        "ptr_filings": 12
+        "ptr_filings": 13
       }
     },
     "cycle": 2026,
-    "financeScore": 61.3,
+    "financeScore": 61.4,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 6400.16,
+          "amount": 8191.1,
           "label": "Small individual (unitemized)",
-          "share": 0.016797135152249624
+          "share": 0.01715857327880307
         },
         {
-          "amount": 83151.22,
+          "amount": 109209.92,
           "label": "Large individual (itemized)",
-          "share": 0.218229275582867
+          "share": 0.22877103381624214
         },
         {
-          "amount": 291475.5,
+          "amount": 359975.5,
           "label": "PAC / other committees",
-          "share": 0.7649735892648833
+          "share": 0.7540703929049547
         },
         {
           "amount": 0.0,
@@ -314,14 +314,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 218741.08,
+        "cashOnHand": 201218.0,
         "debts": 395000.0,
-        "disbursements": 390677.28,
-        "individualContributions": 89551.38,
-        "receipts": 505333.1
+        "disbursements": 609645.98,
+        "individualContributions": 117401.02,
+        "receipts": 706778.72
       }
     },
-    "generated_at": "2026-10-09T01:14:04.096557+00:00",
+    "generated_at": "2026-11-04T17:16:10.434767+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -329,30 +329,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 19.3,
+    "score": 19.4,
     "source": "fec_live",
     "stockPenalty": 42,
-    "stockPtrCount": 12,
-    "updated_at": "2026-10-09T01:14:13.639094+00:00"
+    "stockPtrCount": 13,
+    "updated_at": "2026-11-04T17:16:17.886745+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "B001325",
     "breakdown": [
       {
-        "amount": 6400.16,
+        "amount": 8191.1,
         "label": "Small individual (unitemized)",
-        "share": 0.016797135152249624
+        "share": 0.01715857327880307
       },
       {
-        "amount": 83151.22,
+        "amount": 109209.92,
         "label": "Large individual (itemized)",
-        "share": 0.218229275582867
+        "share": 0.22877103381624214
       },
       {
-        "amount": 291475.5,
+        "amount": 359975.5,
         "label": "PAC / other committees",
-        "share": 0.7649735892648833
+        "share": 0.7540703929049547
       },
       {
         "amount": 0.0,
@@ -396,8 +396,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 47.0,
-          "value": 0.235,
+          "score": 47.6,
+          "value": 0.2459,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -406,20 +406,20 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 62.0,
-          "value": 0.0715,
+          "score": 61.6,
+          "value": 0.0698,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "12 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "note": "13 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
           "penalty": 42,
-          "ptr_filings": 12
+          "ptr_filings": 13
         }
       },
       "cycle": 2026,
-      "financeScore": 61.3,
-      "generated_at": "2026-10-09T01:14:04.096557+00:00",
+      "financeScore": 61.4,
+      "generated_at": "2026-11-04T17:16:10.434767+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -427,23 +427,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 19.3,
+      "score": 19.4,
       "source": "fec_live",
       "stockPenalty": 42,
-      "stockPtrCount": 12,
-      "updated_at": "2026-10-09T01:14:13.639094+00:00"
+      "stockPtrCount": 13,
+      "updated_at": "2026-11-04T17:16:17.886745+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 218741.08,
+      "cashOnHand": 201218.0,
       "debts": 395000.0,
-      "disbursements": 390677.28,
-      "individualContributions": 89551.38,
-      "receipts": 505333.1
+      "disbursements": 609645.98,
+      "individualContributions": 117401.02,
+      "receipts": 706778.72
     }
   },
-  "generated_at": "2026-11-04T11:34:28.788118+00:00",
+  "generated_at": "2026-11-05T11:29:58.474111+00:00",
   "history": {
     "bioguideId": "B001325",
     "birthYear": "1970",
@@ -565,7 +565,7 @@
         "stateName": "South Carolina"
       }
     ],
-    "updateDate": "2026-10-31T07:41:08Z"
+    "updateDate": "2026-11-05T08:36:09Z"
   },
   "nominate": {
     "dim1": 0.818,

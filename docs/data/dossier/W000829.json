@@ -255,7 +255,7 @@
           "stateName": "Wisconsin"
         }
       ],
-      "updateDate": "2026-10-31T07:41:07Z"
+      "updateDate": "2026-11-05T08:36:10Z"
     },
     "request": {
       "bioguideId": "w000829",
@@ -276,8 +276,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 61.0,
-        "value": 0.3813,
+        "score": 72.4,
+        "value": 0.4996,
         "weight": 0.2
       },
       "in_state_support": {
@@ -286,8 +286,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 57.7,
-        "value": 0.4438,
+        "score": 58.0,
+        "value": 0.4501,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -297,7 +297,7 @@
       },
       "small_donor": {
         "score": 83.5,
-        "value": 0.2032,
+        "value": 0.2031,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -308,24 +308,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 75.7,
+    "financeScore": 78.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 96765.99,
+          "amount": 119624.03,
           "label": "Small individual (unitemized)",
-          "share": 0.09017015917579588
+          "share": 0.09143140217537954
         },
         {
-          "amount": 379482.72,
+          "amount": 469223.29,
           "label": "Large individual (itemized)",
-          "share": 0.3536161544656751
+          "share": 0.35863817109359003
         },
         {
-          "amount": 596900.0,
+          "amount": 719500.0,
           "label": "PAC / other committees",
-          "share": 0.5562136863585291
+          "share": 0.5499304267310304
         },
         {
           "amount": 0.0,
@@ -348,14 +348,14 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 515561.16,
-        "debts": 634225.01,
-        "disbursements": 619885.49,
-        "individualContributions": 476248.71,
-        "receipts": 1090216.15
+        "cashOnHand": 242365.75,
+        "debts": 635171.68,
+        "disbursements": 1157189.07,
+        "individualContributions": 588847.32,
+        "receipts": 1354324.32
       }
     },
-    "generated_at": "2026-10-09T10:54:40.189170+00:00",
+    "generated_at": "2026-11-04T17:16:10.434767+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -363,30 +363,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 33.7,
+    "score": 36.1,
     "source": "fec_live",
     "stockPenalty": 42,
     "stockPtrCount": 14,
-    "updated_at": "2026-10-09T10:55:58.966427+00:00"
+    "updated_at": "2026-11-04T17:16:21.968305+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "W000829",
     "breakdown": [
       {
-        "amount": 96765.99,
+        "amount": 119624.03,
         "label": "Small individual (unitemized)",
-        "share": 0.09017015917579588
+        "share": 0.09143140217537954
       },
       {
-        "amount": 379482.72,
+        "amount": 469223.29,
         "label": "Large individual (itemized)",
-        "share": 0.3536161544656751
+        "share": 0.35863817109359003
       },
       {
-        "amount": 596900.0,
+        "amount": 719500.0,
         "label": "PAC / other committees",
-        "share": 0.5562136863585291
+        "share": 0.5499304267310304
       },
       {
         "amount": 0.0,
@@ -420,8 +420,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 61.0,
-          "value": 0.3813,
+          "score": 72.4,
+          "value": 0.4996,
           "weight": 0.2
         },
         "in_state_support": {
@@ -430,8 +430,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 57.7,
-          "value": 0.4438,
+          "score": 58.0,
+          "value": 0.4501,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -441,7 +441,7 @@
         },
         "small_donor": {
           "score": 83.5,
-          "value": 0.2032,
+          "value": 0.2031,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -452,8 +452,8 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 75.7,
-      "generated_at": "2026-10-09T10:54:40.189170+00:00",
+      "financeScore": 78.1,
+      "generated_at": "2026-11-04T17:16:10.434767+00:00",
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -461,23 +461,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 33.7,
+      "score": 36.1,
       "source": "fec_live",
       "stockPenalty": 42,
       "stockPtrCount": 14,
-      "updated_at": "2026-10-09T10:55:58.966427+00:00"
+      "updated_at": "2026-11-04T17:16:21.968305+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 515561.16,
-      "debts": 634225.01,
-      "disbursements": 619885.49,
-      "individualContributions": 476248.71,
-      "receipts": 1090216.15
+      "cashOnHand": 242365.75,
+      "debts": 635171.68,
+      "disbursements": 1157189.07,
+      "individualContributions": 588847.32,
+      "receipts": 1354324.32
     }
   },
-  "generated_at": "2026-11-02T11:41:08.421212+00:00",
+  "generated_at": "2026-11-05T11:29:58.474111+00:00",
   "history": {
     "bioguideId": "W000829",
     "birthYear": "1976",
@@ -609,7 +609,7 @@
         "stateName": "Wisconsin"
       }
     ],
-    "updateDate": "2026-10-31T07:41:07Z"
+    "updateDate": "2026-11-05T08:36:10Z"
   },
   "nominate": {
     "dim1": 0.538,
@@ -624,6 +624,7 @@
   },
   "wiki": {
     "extract": "Anthony Christian Wied is an American politician from the Republican Party who is serving as the U.S. representative for Wisconsin's 8th congressional district since November 2024.",
+    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Anthony Christian Wied is an American politician from the Republican Party who is serving as the U.S. representative for Wisconsin's 8th congressional district since November 2024.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Representative_Tony_Wied_Official_Portrait.jpg/330px-Representative_Tony_Wied_Official_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
