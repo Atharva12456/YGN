@@ -275,8 +275,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 52.7,
-        "value": 0.3473,
+        "score": 52.3,
+        "value": 0.3377,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -285,36 +285,36 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 38.3,
-        "value": 0.0073,
+        "score": 39.1,
+        "value": 0.009,
         "weight": 0.3
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "5 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
-        "penalty": 22,
-        "ptr_filings": 5
+        "note": "6 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+        "penalty": 32,
+        "ptr_filings": 6
       }
     },
     "cycle": 2026,
-    "financeScore": 55.7,
+    "financeScore": 55.9,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 3293.17,
+          "amount": 4620.41,
           "label": "Small individual (unitemized)",
-          "share": 0.00252146644501469
+          "share": 0.0030418187419132326
         },
         {
-          "amount": 450260.3,
+          "amount": 508342.55,
           "label": "Large individual (itemized)",
-          "share": 0.3447487490692092
+          "share": 0.33466421722357204
         },
         {
-          "amount": 852500.0,
+          "amount": 1006000.0,
           "label": "PAC / other committees",
-          "share": 0.6527297844857761
+          "share": 0.6622939640345147
         },
         {
           "amount": 0.0,
@@ -337,14 +337,13 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1960681.6,
+        "cashOnHand": 1320456.25,
         "debts": 0.0,
-        "disbursements": 820753.35,
-        "individualContributions": 453553.47,
-        "receipts": 2346664.45
+        "disbursements": 1825503.39,
+        "individualContributions": 512962.96,
+        "receipts": 2711189.14
       }
     },
-    "generated_at": "2026-10-09T18:22:11.134006+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -352,30 +351,30 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 33.7,
+    "score": 23.9,
     "source": "fec_live",
-    "stockPenalty": 22,
-    "stockPtrCount": 5,
-    "updated_at": "2026-10-09T18:22:33.513947+00:00"
+    "stockPenalty": 32,
+    "stockPtrCount": 6,
+    "updated_at": "2026-11-06T11:37:05.636821+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "L000597",
     "breakdown": [
       {
-        "amount": 3293.17,
+        "amount": 4620.41,
         "label": "Small individual (unitemized)",
-        "share": 0.00252146644501469
+        "share": 0.0030418187419132326
       },
       {
-        "amount": 450260.3,
+        "amount": 508342.55,
         "label": "Large individual (itemized)",
-        "share": 0.3447487490692092
+        "share": 0.33466421722357204
       },
       {
-        "amount": 852500.0,
+        "amount": 1006000.0,
         "label": "PAC / other committees",
-        "share": 0.6527297844857761
+        "share": 0.6622939640345147
       },
       {
         "amount": 0.0,
@@ -419,8 +418,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 52.7,
-          "value": 0.3473,
+          "score": 52.3,
+          "value": 0.3377,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -429,20 +428,19 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 38.3,
-          "value": 0.0073,
+          "score": 39.1,
+          "value": 0.009,
           "weight": 0.3
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "5 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -22 conflict-of-interest deduction.",
-          "penalty": 22,
-          "ptr_filings": 5
+          "note": "6 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
+          "penalty": 32,
+          "ptr_filings": 6
         }
       },
       "cycle": 2026,
-      "financeScore": 55.7,
-      "generated_at": "2026-10-09T18:22:11.134006+00:00",
+      "financeScore": 55.9,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -450,23 +448,23 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 33.7,
+      "score": 23.9,
       "source": "fec_live",
-      "stockPenalty": 22,
-      "stockPtrCount": 5,
-      "updated_at": "2026-10-09T18:22:33.513947+00:00"
+      "stockPenalty": 32,
+      "stockPtrCount": 6,
+      "updated_at": "2026-11-06T11:37:05.636821+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1960681.6,
+      "cashOnHand": 1320456.25,
       "debts": 0.0,
-      "disbursements": 820753.35,
-      "individualContributions": 453553.47,
-      "receipts": 2346664.45
+      "disbursements": 1825503.39,
+      "individualContributions": 512962.96,
+      "receipts": 2711189.14
     }
   },
-  "generated_at": "2026-11-05T11:29:58.474111+00:00",
+  "generated_at": "2026-11-06T11:30:12.578538+00:00",
   "history": {
     "bioguideId": "L000597",
     "birthYear": "1974",
@@ -635,7 +633,6 @@
   },
   "wiki": {
     "extract": "Laurel Frances Lee is an American attorney, former judge, and politician serving as the U.S. representative for Florida's 15th congressional district since 2023. A member of the Republican Party, she previously served as Florida's secretary of state from 2019 to 2022 and as a judge on Florida's Thirteenth Judicial Circuit from 2013 to 2019.",
-    "generated_at": "2026-09-10T08:23:54.587442+00:00",
     "source": "wikipedia",
     "summary": "Laurel Frances Lee is an American attorney, former judge, and politician serving as the U.S. representative for Florida's 15th congressional district since 2023. A member of the Republican Party, she previously served as Florida's secretary of state from 2019 to 2022 and as a judge on Florida's Thirteenth Judicial Circuit from 2013 to 2019.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Laurel_Lee_118thCong.jpeg/330px-Laurel_Lee_118thCong.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
