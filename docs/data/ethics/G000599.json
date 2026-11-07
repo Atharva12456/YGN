@@ -21,12 +21,12 @@
     },
     "pac_independence": {
       "score": 96.1,
-      "value": 0.9116,
+      "value": 0.9166,
       "weight": 0.25
     },
     "self_party_independence": {
-      "score": 63.5,
-      "value": 0.7459,
+      "score": 60.2,
+      "value": 0.7183,
       "weight": 0.15
     },
     "small_donor": {
@@ -42,34 +42,34 @@
     }
   },
   "cycle": 2026,
-  "financeScore": 70.7,
+  "financeScore": 70.2,
   "funding": {
     "available": true,
     "breakdown": [
       {
         "amount": 389483.95,
         "label": "Small individual (unitemized)",
-        "share": 0.07104445109802994
+        "share": 0.06706848688455272
       },
       {
         "amount": 4608409.2,
         "label": "Large individual (itemized)",
-        "share": 0.8406043485209372
+        "share": 0.7935603815994269
       },
       {
         "amount": 483751.0,
         "label": "PAC / other committees",
-        "share": 0.0882393851226041
+        "share": 0.08330111574273923
       },
       {
         "amount": 613.0,
         "label": "Political party committees",
-        "share": 0.00011181525842872948
+        "share": 0.00010555757807280843
       },
       {
-        "amount": 2125000.0,
+        "amount": 2450000.0,
         "label": "Self-funding & candidate loans",
-        "share": 0.3876140687782221
+        "share": 0.42188591562541705
       }
     ],
     "candidate": {
@@ -82,14 +82,14 @@
     },
     "cycle": 2026,
     "totals": {
-      "cashOnHand": 1158530.28,
-      "debts": 7518995.32,
-      "disbursements": 8138828.03,
+      "cashOnHand": 12358.21,
+      "debts": 7097702.31,
+      "disbursements": 9619370.69,
       "individualContributions": 4997893.15,
-      "receipts": 8365109.43
+      "receipts": 8699480.02
     }
   },
-  "generated_at": "2026-10-10T00:53:20.465358+00:00",
+  "generated_at": "2026-11-07T13:04:40.535655+00:00",
   "grade": "D-",
   "method": "campaign_finance_stock_v4",
   "notes": [
@@ -97,9 +97,9 @@
     "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
   ],
   "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-  "score": 60.7,
+  "score": 60.2,
   "source": "fec_live",
   "stockPenalty": 10,
   "stockPtrCount": 1,
-  "updated_at": "2026-10-10T00:53:47.726627+00:00"
+  "updated_at": "2026-11-07T13:04:46.897582+00:00"
 }
