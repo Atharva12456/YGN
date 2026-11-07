@@ -224,8 +224,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 75.7,
-        "value": 0.5344,
+        "score": 83.5,
+        "value": 0.627,
         "weight": 0.2
       },
       "in_state_support": {
@@ -235,17 +235,17 @@
       },
       "pac_independence": {
         "score": 53.5,
-        "value": 0.3615,
+        "value": 0.3628,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9996,
+        "value": 0.9997,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 65.3,
-        "value": 0.0893,
+        "score": 66.3,
+        "value": 0.095,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -256,29 +256,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 71.2,
+    "financeScore": 73.1,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 43400.21,
+          "amount": 57990.95,
           "label": "Small individual (unitemized)",
-          "share": 0.03228332644476931
+          "share": 0.034462835706141025
         },
         {
-          "amount": 442603.51,
+          "amount": 552470.81,
           "label": "Large individual (itemized)",
-          "share": 0.32923143917807585
+          "share": 0.32832210469855483
         },
         {
-          "amount": 857850.0,
+          "amount": 1071748.0,
           "label": "PAC / other committees",
-          "share": 0.6381133084527784
+          "share": 0.6369179198199932
         },
         {
           "amount": 500.0,
           "label": "Political party committees",
-          "share": 0.00037192592437651007
+          "share": 0.0002971397753109841
         },
         {
           "amount": 0.0,
@@ -296,49 +296,49 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 1320015.58,
+        "cashOnHand": 1206615.31,
         "debts": 0.0,
-        "disbursements": 886690.69,
-        "individualContributions": 486003.72,
-        "receipts": 1369100.47
+        "disbursements": 1360307.0,
+        "individualContributions": 610461.76,
+        "receipts": 1729316.51
       }
     },
-    "generated_at": "2026-10-10T21:46:04.881837+00:00",
-    "grade": "C-",
+    "generated_at": "2026-11-07T06:00:15.363227+00:00",
+    "grade": "C",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 71.2,
+    "score": 73.1,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-10T21:46:27.050427+00:00"
+    "updated_at": "2026-11-07T06:01:11.167454+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "F000471",
     "breakdown": [
       {
-        "amount": 43400.21,
+        "amount": 57990.95,
         "label": "Small individual (unitemized)",
-        "share": 0.03228332644476931
+        "share": 0.034462835706141025
       },
       {
-        "amount": 442603.51,
+        "amount": 552470.81,
         "label": "Large individual (itemized)",
-        "share": 0.32923143917807585
+        "share": 0.32832210469855483
       },
       {
-        "amount": 857850.0,
+        "amount": 1071748.0,
         "label": "PAC / other committees",
-        "share": 0.6381133084527784
+        "share": 0.6369179198199932
       },
       {
         "amount": 500.0,
         "label": "Political party committees",
-        "share": 0.00037192592437651007
+        "share": 0.0002971397753109841
       },
       {
         "amount": 0.0,
@@ -367,8 +367,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 75.7,
-          "value": 0.5344,
+          "score": 83.5,
+          "value": 0.627,
           "weight": 0.2
         },
         "in_state_support": {
@@ -378,17 +378,17 @@
         },
         "pac_independence": {
           "score": 53.5,
-          "value": 0.3615,
+          "value": 0.3628,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9996,
+          "value": 0.9997,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 65.3,
-          "value": 0.0893,
+          "score": 66.3,
+          "value": 0.095,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -399,31 +399,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 71.2,
-      "generated_at": "2026-10-10T21:46:04.881837+00:00",
-      "grade": "C-",
+      "financeScore": 73.1,
+      "generated_at": "2026-11-07T06:00:15.363227+00:00",
+      "grade": "C",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 71.2,
+      "score": 73.1,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-10T21:46:27.050427+00:00"
+      "updated_at": "2026-11-07T06:01:11.167454+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 1320015.58,
+      "cashOnHand": 1206615.31,
       "debts": 0.0,
-      "disbursements": 886690.69,
-      "individualContributions": 486003.72,
-      "receipts": 1369100.47
+      "disbursements": 1360307.0,
+      "individualContributions": 610461.76,
+      "receipts": 1729316.51
     }
   },
-  "generated_at": "2026-11-06T11:30:12.578538+00:00",
+  "generated_at": "2026-11-07T10:41:18.980979+00:00",
   "history": {
     "bioguideId": "F000471",
     "birthYear": "1963",
