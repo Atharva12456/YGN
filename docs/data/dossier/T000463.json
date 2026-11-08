@@ -317,8 +317,8 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 35.0,
-        "value": 0.0,
+        "score": 56.4,
+        "value": 0.3259,
         "weight": 0.2
       },
       "in_state_support": {
@@ -327,8 +327,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 62.2,
-        "value": 0.4853,
+        "score": 63.2,
+        "value": 0.4935,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -337,8 +337,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 72.7,
-        "value": 0.1297,
+        "score": 67.1,
+        "value": 0.0992,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -349,24 +349,24 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 68.4,
+    "financeScore": 71.3,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 48775.47,
+          "amount": 58378.58,
           "label": "Small individual (unitemized)",
-          "share": 0.06292004287009845
+          "share": 0.04895146850305158
         },
         {
-          "amount": 327422.19,
+          "amount": 530102.19,
           "label": "Large individual (itemized)",
-          "share": 0.4223725210935234
+          "share": 0.4445000316414627
         },
         {
-          "amount": 399000.0,
+          "amount": 604100.0,
           "label": "PAC / other committees",
-          "share": 0.5147074360363781
+          "share": 0.5065484998554857
         },
         {
           "amount": 0.0,
@@ -389,44 +389,43 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 556284.07,
+        "cashOnHand": 325250.06,
         "debts": 0.0,
-        "disbursements": 768735.49,
-        "individualContributions": 376197.66,
-        "receipts": 894594.6
+        "disbursements": 1420268.68,
+        "individualContributions": 588480.77,
+        "receipts": 1315093.78
       }
     },
-    "generated_at": "2026-10-12T11:19:51.363513+00:00",
-    "grade": "D+",
+    "grade": "C-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 68.4,
+    "score": 71.3,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-12T11:27:25.778110+00:00"
+    "updated_at": "2026-11-08T10:50:15.629603+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "T000463",
     "breakdown": [
       {
-        "amount": 48775.47,
+        "amount": 58378.58,
         "label": "Small individual (unitemized)",
-        "share": 0.06292004287009845
+        "share": 0.04895146850305158
       },
       {
-        "amount": 327422.19,
+        "amount": 530102.19,
         "label": "Large individual (itemized)",
-        "share": 0.4223725210935234
+        "share": 0.4445000316414627
       },
       {
-        "amount": 399000.0,
+        "amount": 604100.0,
         "label": "PAC / other committees",
-        "share": 0.5147074360363781
+        "share": 0.5065484998554857
       },
       {
         "amount": 0.0,
@@ -460,8 +459,8 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 35.0,
-          "value": 0.0,
+          "score": 56.4,
+          "value": 0.3259,
           "weight": 0.2
         },
         "in_state_support": {
@@ -470,8 +469,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 62.2,
-          "value": 0.4853,
+          "score": 63.2,
+          "value": 0.4935,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -480,8 +479,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 72.7,
-          "value": 0.1297,
+          "score": 67.1,
+          "value": 0.0992,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -492,31 +491,30 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 68.4,
-      "generated_at": "2026-10-12T11:19:51.363513+00:00",
-      "grade": "D+",
+      "financeScore": 71.3,
+      "grade": "C-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 68.4,
+      "score": 71.3,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-12T11:27:25.778110+00:00"
+      "updated_at": "2026-11-08T10:50:15.629603+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 556284.07,
+      "cashOnHand": 325250.06,
       "debts": 0.0,
-      "disbursements": 768735.49,
-      "individualContributions": 376197.66,
-      "receipts": 894594.6
+      "disbursements": 1420268.68,
+      "individualContributions": 588480.77,
+      "receipts": 1315093.78
     }
   },
-  "generated_at": "2026-11-07T10:41:18.980979+00:00",
+  "generated_at": "2026-11-08T10:46:12.695829+00:00",
   "history": {
     "bioguideId": "T000463",
     "birthYear": "1960",
@@ -866,6 +864,7 @@
   },
   "wiki": {
     "extract": "Michael Ray Turner is an American politician serving in the U.S. House of Representatives since 2003. Since 2013, he has represented Ohio's 10th congressional district.",
+    "generated_at": "2026-09-14T09:15:41.044301+00:00",
     "source": "wikipedia",
     "summary": "Michael Ray Turner is an American politician serving in the U.S. House of Representatives since 2003. Since 2013, he has represented Ohio's 10th congressional district.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Mike_Turner_118th_Congress.jpeg/330px-Mike_Turner_118th_Congress.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

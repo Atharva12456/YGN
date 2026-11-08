@@ -258,18 +258,18 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 56.5,
-        "value": 0.4199,
+        "score": 56.2,
+        "value": 0.4157,
         "weight": 0.25
       },
       "self_party_independence": {
         "score": 96.0,
-        "value": 0.9989,
+        "value": 0.9985,
         "weight": 0.15
       },
       "small_donor": {
-        "score": 62.0,
-        "value": 0.0716,
+        "score": 63.7,
+        "value": 0.081,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -280,29 +280,29 @@
       }
     },
     "cycle": 2026,
-    "financeScore": 61.0,
+    "financeScore": 61.5,
     "funding": {
       "available": true,
       "breakdown": [
         {
-          "amount": 116186.08,
+          "amount": 154837.33,
           "label": "Small individual (unitemized)",
-          "share": 0.030076216880163497
+          "share": 0.033665691376106366
         },
         {
-          "amount": 1506041.52,
+          "amount": 1756862.72,
           "label": "Large individual (itemized)",
-          "share": 0.3898576437560428
+          "share": 0.38198797487470737
         },
         {
-          "amount": 2233727.4,
+          "amount": 2675461.8,
           "label": "PAC / other committees",
-          "share": 0.5782282157515231
+          "share": 0.581715476799826
         },
         {
-          "amount": 7100.0,
+          "amount": 12100.0,
           "label": "Political party committees",
-          "share": 0.0018379236122705992
+          "share": 0.0026308569493602545
         },
         {
           "amount": 0.0,
@@ -320,49 +320,49 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 6355534.34,
+        "cashOnHand": 709096.9,
         "debts": 24750.0,
-        "disbursements": 4801926.75,
-        "individualContributions": 1622227.6,
-        "receipts": 6734931.11
+        "disbursements": 11734808.67,
+        "individualContributions": 1911700.05,
+        "receipts": 8021375.59
       }
     },
-    "generated_at": "2026-10-11T12:52:56.106058+00:00",
+    "generated_at": "2026-11-08T10:25:33.453321+00:00",
     "grade": "D-",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 61.0,
+    "score": 61.5,
     "source": "fec_live",
     "stockPenalty": 0,
     "stockPtrCount": 0,
-    "updated_at": "2026-10-11T12:53:03.962198+00:00"
+    "updated_at": "2026-11-08T10:25:38.079543+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "F000466",
     "breakdown": [
       {
-        "amount": 116186.08,
+        "amount": 154837.33,
         "label": "Small individual (unitemized)",
-        "share": 0.030076216880163497
+        "share": 0.033665691376106366
       },
       {
-        "amount": 1506041.52,
+        "amount": 1756862.72,
         "label": "Large individual (itemized)",
-        "share": 0.3898576437560428
+        "share": 0.38198797487470737
       },
       {
-        "amount": 2233727.4,
+        "amount": 2675461.8,
         "label": "PAC / other committees",
-        "share": 0.5782282157515231
+        "share": 0.581715476799826
       },
       {
-        "amount": 7100.0,
+        "amount": 12100.0,
         "label": "Political party committees",
-        "share": 0.0018379236122705992
+        "share": 0.0026308569493602545
       },
       {
         "amount": 0.0,
@@ -401,18 +401,18 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 56.5,
-          "value": 0.4199,
+          "score": 56.2,
+          "value": 0.4157,
           "weight": 0.25
         },
         "self_party_independence": {
           "score": 96.0,
-          "value": 0.9989,
+          "value": 0.9985,
           "weight": 0.15
         },
         "small_donor": {
-          "score": 62.0,
-          "value": 0.0716,
+          "score": 63.7,
+          "value": 0.081,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -423,31 +423,31 @@
         }
       },
       "cycle": 2026,
-      "financeScore": 61.0,
-      "generated_at": "2026-10-11T12:52:56.106058+00:00",
+      "financeScore": 61.5,
+      "generated_at": "2026-11-08T10:25:33.453321+00:00",
       "grade": "D-",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 61.0,
+      "score": 61.5,
       "source": "fec_live",
       "stockPenalty": 0,
       "stockPtrCount": 0,
-      "updated_at": "2026-10-11T12:53:03.962198+00:00"
+      "updated_at": "2026-11-08T10:25:38.079543+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 6355534.34,
+      "cashOnHand": 709096.9,
       "debts": 24750.0,
-      "disbursements": 4801926.75,
-      "individualContributions": 1622227.6,
-      "receipts": 6734931.11
+      "disbursements": 11734808.67,
+      "individualContributions": 1911700.05,
+      "receipts": 8021375.59
     }
   },
-  "generated_at": "2026-11-07T10:41:18.980979+00:00",
+  "generated_at": "2026-11-08T10:46:12.695829+00:00",
   "history": {
     "bioguideId": "F000466",
     "birthYear": "1973",
@@ -654,6 +654,7 @@
   },
   "wiki": {
     "extract": "Brian Kevin Fitzpatrick is an American politician, attorney, and former FBI agent serving in the U.S. House of Representatives since 2017. His district in Pennsylvania, which was numbered the 8th district during his first term and the 1st district since 2019, includes all of Bucks County, a mostly suburban county north of Philadelphia, as well as a sliver of Montgomery County.",
+    "generated_at": "2026-09-15T08:58:13.730717+00:00",
     "source": "wikipedia",
     "summary": "Brian Kevin Fitzpatrick is an American politician, attorney, and former FBI agent serving in the U.S. House of Representatives since 2017. His district in Pennsylvania, which was numbered the 8th district during his first term and the 1st district since 2019, includes all of Bucks County, a mostly suburban county north of Philadelphia, as well as a sliver of Montgomery County.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Brian_Fitzpatrick_official_congressional_photo.jpg/330px-Brian_Fitzpatrick_official_congressional_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
