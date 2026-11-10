@@ -203,7 +203,7 @@
       "birthYear": "1960",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 6007,
+        "count": 6008,
         "url": "https://api.congress.gov/v3/member/S001150/cosponsored-legislation"
       },
       "currentMember": true,
@@ -442,7 +442,7 @@
       },
       "pac_independence": {
         "score": 96.4,
-        "value": 0.9905,
+        "value": 0.9907,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -451,8 +451,8 @@
         "weight": 0.15
       },
       "small_donor": {
-        "score": 98.1,
-        "value": 0.6077,
+        "score": 97.9,
+        "value": 0.5933,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -465,19 +465,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 4386313.44,
+          "amount": 5016444.47,
           "label": "Small individual (unitemized)",
-          "share": 0.6018927234886338
+          "share": 0.587760908977287
         },
         {
-          "amount": 2831819.15,
+          "amount": 3438993.09,
           "label": "Large individual (itemized)",
-          "share": 0.388584027096059
+          "share": 0.40293592735513906
         },
         {
-          "amount": 69401.0,
+          "amount": 79401.0,
           "label": "PAC / other committees",
-          "share": 0.009523249415307326
+          "share": 0.009303163667573812
         },
         {
           "amount": 0.0,
@@ -500,42 +500,42 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 10252461.04,
+        "cashOnHand": 11127588.76,
         "debts": 0.0,
-        "disbursements": 4960719.67,
-        "individualContributions": 7218132.59,
-        "receipts": 8832154.09
+        "disbursements": 5656909.51,
+        "individualContributions": 8455437.56,
+        "receipts": 10403471.65
       }
     },
-    "generated_at": "2026-10-13T02:37:01.186642+00:00",
+    "generated_at": "2026-11-10T03:35:00.094407+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 97.0,
+    "score": 96.9,
     "source": "fec_live",
-    "updated_at": "2026-10-13T02:37:25.549013+00:00"
+    "updated_at": "2026-11-10T03:35:08.137974+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "S001150",
     "breakdown": [
       {
-        "amount": 4386313.44,
+        "amount": 5016444.47,
         "label": "Small individual (unitemized)",
-        "share": 0.6018927234886338
+        "share": 0.587760908977287
       },
       {
-        "amount": 2831819.15,
+        "amount": 3438993.09,
         "label": "Large individual (itemized)",
-        "share": 0.388584027096059
+        "share": 0.40293592735513906
       },
       {
-        "amount": 69401.0,
+        "amount": 79401.0,
         "label": "PAC / other committees",
-        "share": 0.009523249415307326
+        "share": 0.009303163667573812
       },
       {
         "amount": 0.0,
@@ -580,7 +580,7 @@
         },
         "pac_independence": {
           "score": 96.4,
-          "value": 0.9905,
+          "value": 0.9907,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -589,8 +589,8 @@
           "weight": 0.15
         },
         "small_donor": {
-          "score": 98.1,
-          "value": 0.6077,
+          "score": 97.9,
+          "value": 0.5933,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -599,28 +599,28 @@
         }
       },
       "cycle": 2026,
-      "generated_at": "2026-10-13T02:37:01.186642+00:00",
+      "generated_at": "2026-11-10T03:35:00.094407+00:00",
       "grade": "A",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 97.0,
+      "score": 96.9,
       "source": "fec_live",
-      "updated_at": "2026-10-13T02:37:25.549013+00:00"
+      "updated_at": "2026-11-10T03:35:08.137974+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 10252461.04,
+      "cashOnHand": 11127588.76,
       "debts": 0.0,
-      "disbursements": 4960719.67,
-      "individualContributions": 7218132.59,
-      "receipts": 8832154.09
+      "disbursements": 5656909.51,
+      "individualContributions": 8455437.56,
+      "receipts": 10403471.65
     }
   },
-  "generated_at": "2026-11-05T11:29:58.474111+00:00",
+  "generated_at": "2026-11-10T11:47:13.074969+00:00",
   "history": {
     "bioguideId": "S001150",
     "birthYear": "1960",
@@ -793,7 +793,7 @@
     "birthYear": "1960",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 6007,
+      "count": 6008,
       "url": "https://api.congress.gov/v3/member/S001150/cosponsored-legislation"
     },
     "currentMember": true,
@@ -1015,7 +1015,6 @@
   },
   "wiki": {
     "extract": "Adam Bennett Schiff is an American lawyer and politician serving as the junior United States senator from California, a seat he has held since 2024. A member of the Democratic Party, Schiff served in the United States House of Representatives from 2001 to 2024 and in the California State Senate from 1996 to 2000.",
-    "generated_at": "2026-10-06T10:46:45.165426+00:00",
     "source": "wikipedia",
     "summary": "Adam Bennett Schiff is an American lawyer and politician serving as the junior United States senator from California, a seat he has held since 2024. A member of the Democratic Party, Schiff served in the United States House of Representatives from 2001 to 2024 and in the California State Senate from 1996 to 2000.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Schiff_Adam_119th_Congress.jpg/330px-Schiff_Adam_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

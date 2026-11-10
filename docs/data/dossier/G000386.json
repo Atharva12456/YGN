@@ -192,7 +192,7 @@
       "birthYear": "1933",
       "chamber": "Senate",
       "cosponsoredLegislation": {
-        "count": 7599,
+        "count": 7601,
         "url": "https://api.congress.gov/v3/member/G000386/cosponsored-legislation"
       },
       "currentMember": true,
@@ -527,8 +527,8 @@
         "weight": 0.1
       },
       "pac_independence": {
-        "score": 91.2,
-        "value": 0.8142,
+        "score": 91.0,
+        "value": 0.8109,
         "weight": 0.25
       },
       "self_party_independence": {
@@ -538,7 +538,7 @@
       },
       "small_donor": {
         "score": 97.1,
-        "value": 0.5144,
+        "value": 0.5105,
         "weight": 0.3
       },
       "stock_conflict": {
@@ -551,19 +551,19 @@
       "available": true,
       "breakdown": [
         {
-          "amount": 364065.85,
+          "amount": 395192.16,
           "label": "Small individual (unitemized)",
-          "share": 0.4188266852021474
+          "share": 0.41395532248272615
         },
         {
-          "amount": 343685.95,
+          "amount": 378981.3,
           "label": "Large individual (itemized)",
-          "share": 0.39538134979990835
+          "share": 0.39697479387349893
         },
         {
-          "amount": 161500.0,
+          "amount": 180500.0,
           "label": "PAC / other committees",
-          "share": 0.1857919649979442
+          "share": 0.18906988364377492
         },
         {
           "amount": 0.0,
@@ -586,42 +586,42 @@
       },
       "cycle": 2026,
       "totals": {
-        "cashOnHand": 360213.14,
+        "cashOnHand": 487400.19,
         "debts": 0.0,
-        "disbursements": 1179361.69,
-        "individualContributions": 707751.8,
-        "receipts": 1098150.95
+        "disbursements": 1252122.26,
+        "individualContributions": 774173.46,
+        "receipts": 1298098.57
       }
     },
-    "generated_at": "2026-10-13T02:37:01.186642+00:00",
+    "generated_at": "2026-11-10T03:35:00.094407+00:00",
     "grade": "A",
     "method": "campaign_finance_stock_v4",
     "notes": [
       "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 95.2,
+    "score": 95.1,
     "source": "fec_live",
-    "updated_at": "2026-10-13T02:37:07.100112+00:00"
+    "updated_at": "2026-11-10T03:35:12.054601+00:00"
   },
   "funding": {
     "available": true,
     "bioguideId": "G000386",
     "breakdown": [
       {
-        "amount": 364065.85,
+        "amount": 395192.16,
         "label": "Small individual (unitemized)",
-        "share": 0.4188266852021474
+        "share": 0.41395532248272615
       },
       {
-        "amount": 343685.95,
+        "amount": 378981.3,
         "label": "Large individual (itemized)",
-        "share": 0.39538134979990835
+        "share": 0.39697479387349893
       },
       {
-        "amount": 161500.0,
+        "amount": 180500.0,
         "label": "PAC / other committees",
-        "share": 0.1857919649979442
+        "share": 0.18906988364377492
       },
       {
         "amount": 0.0,
@@ -665,8 +665,8 @@
           "weight": 0.1
         },
         "pac_independence": {
-          "score": 91.2,
-          "value": 0.8142,
+          "score": 91.0,
+          "value": 0.8109,
           "weight": 0.25
         },
         "self_party_independence": {
@@ -676,7 +676,7 @@
         },
         "small_donor": {
           "score": 97.1,
-          "value": 0.5144,
+          "value": 0.5105,
           "weight": 0.3
         },
         "stock_conflict": {
@@ -685,28 +685,28 @@
         }
       },
       "cycle": 2026,
-      "generated_at": "2026-10-13T02:37:01.186642+00:00",
+      "generated_at": "2026-11-10T03:35:00.094407+00:00",
       "grade": "A",
       "method": "campaign_finance_stock_v4",
       "notes": [
         "This grade measures campaign-finance independence (small-donor reliance, PAC/self/party independence, donor diversity) from FEC filings. It is not a finding of personal misconduct or a legal ethics ruling."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 95.2,
+      "score": 95.1,
       "source": "fec_live",
-      "updated_at": "2026-10-13T02:37:07.100112+00:00"
+      "updated_at": "2026-11-10T03:35:12.054601+00:00"
     },
     "note": null,
     "source": "fec_committed",
     "totals": {
-      "cashOnHand": 360213.14,
+      "cashOnHand": 487400.19,
       "debts": 0.0,
-      "disbursements": 1179361.69,
-      "individualContributions": 707751.8,
-      "receipts": 1098150.95
+      "disbursements": 1252122.26,
+      "individualContributions": 774173.46,
+      "receipts": 1298098.57
     }
   },
-  "generated_at": "2026-11-07T10:41:18.980979+00:00",
+  "generated_at": "2026-11-10T11:47:13.074969+00:00",
   "history": {
     "bioguideId": "G000386",
     "birthYear": "1933",
@@ -1005,7 +1005,7 @@
     "birthYear": "1933",
     "chamber": "Senate",
     "cosponsoredLegislation": {
-      "count": 7599,
+      "count": 7601,
       "url": "https://api.congress.gov/v3/member/G000386/cosponsored-legislation"
     },
     "currentMember": true,
