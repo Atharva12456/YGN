@@ -51,22 +51,6 @@
       },
       {
         "congress": 119,
-        "introducedDate": "2025-09-30",
-        "latestAction": {
-          "actionDate": "2025-09-30",
-          "text": "Read twice and referred to the Committee on Veterans' Affairs."
-        },
-        "number": "2943",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "ACE Veterans Act",
-        "type": "S",
-        "updateDate": "2026-07-23",
-        "updateDateIncludingText": "2026-07-23",
-        "url": "https://api.congress.gov/v3/bill/119/s/2943?format=json"
-      },
-      {
-        "congress": 119,
         "introducedDate": "2025-04-21",
         "latestAction": {
           "actionDate": "2025-04-21",
@@ -883,6 +867,22 @@
       },
       {
         "congress": 104,
+        "introducedDate": "1996-03-12",
+        "latestAction": {
+          "actionDate": "1996-03-12",
+          "text": "Read twice and referred to the Committee on Judiciary."
+        },
+        "number": "1606",
+        "originChamber": "Senate",
+        "originChamberCode": "S",
+        "title": "Biological Agents Enhanced Penalties and Control Act",
+        "type": "S",
+        "updateDate": "2026-08-10",
+        "updateDateIncludingText": "2026-08-10",
+        "url": "https://api.congress.gov/v3/bill/104/s/1606?format=json"
+      },
+      {
+        "congress": 104,
         "introducedDate": "1996-03-06",
         "latestAction": {
           "actionDate": "1996-03-06",
@@ -1283,13 +1283,13 @@
       }
     ],
     "pagination": {
-      "count": 60862,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-23T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 61069,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-24T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-11-20T12:11:22.351232+00:00"
+  "generated_at": "2026-11-21T11:47:11.634162+00:00"
 }
