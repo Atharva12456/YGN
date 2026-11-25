@@ -50,6 +50,22 @@
         "url": "https://api.congress.gov/v3/bill/119/sres/542?format=json"
       },
       {
+        "congress": 119,
+        "introducedDate": "2025-09-30",
+        "latestAction": {
+          "actionDate": "2025-09-30",
+          "text": "Referred to the Committee on the Judiciary, and in addition to the Committees on Science, Space, and Technology, and Energy and Commerce, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+        },
+        "number": "5622",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "National Gun Violence Research Act of 2025",
+        "type": "HR",
+        "updateDate": "2026-11-25",
+        "updateDateIncludingText": "2026-11-25",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5622?format=json"
+      },
+      {
         "congress": 117,
         "introducedDate": "2022-12-01",
         "latestAction": {
@@ -771,22 +787,6 @@
       },
       {
         "congress": 107,
-        "introducedDate": "2001-11-08",
-        "latestAction": {
-          "actionDate": "2001-11-08",
-          "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation. (text of measure as introduced: CR S11625-11629)"
-        },
-        "number": "1669",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "Hazardous Material Transportation Safety Reauthorization Act of 2001",
-        "type": "S",
-        "updateDate": "2026-09-08",
-        "updateDateIncludingText": "2026-09-08",
-        "url": "https://api.congress.gov/v3/bill/107/s/1669?format=json"
-      },
-      {
-        "congress": 107,
         "introducedDate": "2001-05-24",
         "latestAction": {
           "actionDate": "2001-10-31",
@@ -1283,13 +1283,13 @@
       }
     ],
     "pagination": {
-      "count": 61114,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-27T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 61123,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-28T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-11-24T14:16:39.023544+00:00"
+  "generated_at": "2026-11-25T13:30:23.112033+00:00"
 }

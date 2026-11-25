@@ -1,7 +1,7 @@
 {
-  "ai_cached": 0,
+  "ai_cached": 1,
   "ai_mode": "cache_refresh_only",
-  "ai_queued": 40,
+  "ai_queued": 39,
   "bills": [
     {
       "aiDescription": null,
@@ -179,6 +179,79 @@
       "type": "SRES",
       "updatedAt": "2026-08-10T11:51:27Z",
       "url": "https://www.congress.gov/bill/119th-congress/senate-resolution/542"
+    },
+    {
+      "aiDescription": {
+        "content_version": "bill-ai-v6",
+        "generated_at": "2026-08-03T05:23:03.502912+00:00",
+        "input_hash": "1c253f84d01c45a3b0111c43",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "source": "committed",
+        "summary": "The bill creates a National Gun Violence Research Program, authorizes competitive grants and HHS funding for gun-violence research, and lifts restrictions on ATF firearms-trace data. It applies to federal agencies, grant recipients, and institutions studying the causes, consequences, and prevention of gun violence, suicide, unintentional firearm injury, and trafficking."
+      },
+      "apiUrl": "https://api.congress.gov/v3/bill/119/hr/5622?format=json",
+      "committees": [],
+      "congress": 119,
+      "cosponsorCount": 14,
+      "description": {
+        "source": "Congress.gov bill summary",
+        "text": "National Gun Violence Research Act of 2025 This bill promotes gun violence research, including by removing limitations on the use of firearms tracing data by the Bureau of Alcohol, Tobacco, Firearms and Explosives; permitting funds made available to the Department of Health and Human Services to be used for gun violence research; establishing the National Gun Violence Research Program to promote gun violence research; and authorizing competitive grants to support research into the nature, causes, consequences, and prevention of gun violence.",
+        "updated_at": "2026-04-06T16:23:20Z"
+      },
+      "detailPath": "119/hr/5622",
+      "identifier": "HR 5622",
+      "impact": {
+        "generated_at": "2026-08-03T05:23:01.848457+00:00",
+        "sources": [
+          {
+            "label": "Congress.gov bill page",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5622"
+          }
+        ],
+        "status": "AI impact analysis",
+        "summary": "The bill removes limits on ATF firearms tracing data and creates a National Gun Violence Research Program at the White House Office of Science and Technology Policy. It allows HHS funds to support gun-violence research and authorizes competitive grants to universities and public health researchers.",
+        "model": "gpt-5-mini",
+        "provider": "azure",
+        "content_version": "bill-ai-v6",
+        "input_hash": "1c253f84d01c45a3b0111c43",
+        "source": "committed"
+      },
+      "latestAction": {
+        "date": "2025-09-30",
+        "text": "Referred to the Committee on the Judiciary, and in addition to the Committees on Science, Space, and Technology, and Energy and Commerce, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned."
+      },
+      "members": [
+        {
+          "bioguideId": "F000477",
+          "district": 4,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NC"
+        }
+      ],
+      "number": "5622",
+      "originChamber": "House",
+      "policyArea": "Crime and Law Enforcement",
+      "sponsors": [
+        {
+          "bioguideId": "F000477",
+          "district": 4,
+          "isOriginalCosponsor": null,
+          "name": "Rep. Foushee, Valerie P. [D-NC-4]",
+          "party": "D",
+          "role": "Sponsor",
+          "sponsorshipDate": null,
+          "state": "NC"
+        }
+      ],
+      "title": "National Gun Violence Research Act of 2025",
+      "type": "HR",
+      "updatedAt": "2026-11-25T09:05:48Z",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5622"
     },
     {
       "aiDescription": null,
@@ -2303,69 +2376,10 @@
       "type": "S",
       "updatedAt": "2026-09-08T18:09:59Z",
       "url": "https://www.congress.gov/bill/109th-congress/senate-bill/175"
-    },
-    {
-      "aiDescription": null,
-      "apiUrl": "https://api.congress.gov/v3/bill/108/hconres/488?format=json",
-      "committees": [],
-      "congress": 108,
-      "cosponsorCount": 23,
-      "description": {
-        "source": "Congress.gov bill summary",
-        "text": "Declares that Congress commends, for their extraordinary dedication and hard work during Hurricanes Charley and Frances, the employees of the National Weather Service, especially the National Oceanic and Atmospheric Administration (NOAA) Tropical Prediction Center/National Hurricane Center, Hydrometeorological Prediction Center, and National Data Buoy Center; the 53rd Weather Reconnaissance Squadron of the 403rd Wing of the Air Force Reserve Command at Keesler Air Force Base, Biloxi, Mississippi; the National Oceanic and Atmospheric Administration Aircraft Operations Center at MacDill Air Force Base, Tampa, Florida; the Hurricane Liaison Team; the National Ocean Service; and the National Environmental Satellite Data and Information Service. Commends also, for their extraordinary dedication and hard work during those hurricanes, the Southern and Eastern Region Weather Forecast Offices of San Juan, Miami, Tampa Bay, Key West, Melbourne, Jacksonville, Tallahassee, Atlanta, Birmingham, Huntsville, Mobile, Morristown, Charleston, Morehead City, Wilmington, Wakefield, and Taunton. Extends the thanks of Congress to the commercial and media meteorologists for their contributions in disseminating the NOAA forecasts and warnings to the public.",
-        "updated_at": "2004-09-21T16:05:02Z"
-      },
-      "detailPath": "108/hconres/488",
-      "identifier": "HCONRES 488",
-      "impact": {
-        "sources": [
-          {
-            "label": "Congress.gov bill page",
-            "url": "https://www.congress.gov/bill/108th-congress/house-concurrent-resolution/488"
-          }
-        ],
-        "status": "Pending AI impact analysis",
-        "summary": "AI impact analysis for this bill is queued and will appear after the next content refresh. The official Congress.gov record is linked below."
-      },
-      "latestAction": {
-        "date": "2004-09-23",
-        "text": "Received in the Senate and referred to the Committee on Commerce, Science, and Transportation."
-      },
-      "members": [
-        {
-          "bioguideId": "E000092",
-          "district": 3,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Ehlers, Vernon J. [R-MI-3]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MI"
-        }
-      ],
-      "number": "488",
-      "originChamber": "House",
-      "policyArea": "Commemorations",
-      "sponsors": [
-        {
-          "bioguideId": "E000092",
-          "district": 3,
-          "isOriginalCosponsor": null,
-          "name": "Rep. Ehlers, Vernon J. [R-MI-3]",
-          "party": "R",
-          "role": "Sponsor",
-          "sponsorshipDate": null,
-          "state": "MI"
-        }
-      ],
-      "title": "Commending the National Oceanic and Atmospheric Administration and its employees for its dedication and hard work during Hurricanes Charley, Frances, and Ivan.",
-      "type": "HCONRES",
-      "updatedAt": "2026-09-08T18:03:40Z",
-      "url": "https://www.congress.gov/bill/108th-congress/house-concurrent-resolution/488"
     }
   ],
   "cache_ttl_seconds": 900,
-  "generated_at": "2026-11-22T11:59:27.955119+00:00",
-  "impact_status": "queued_for_refresh",
+  "generated_at": "2026-11-25T13:30:44.336672+00:00",
+  "impact_status": "cached",
   "source": "congress_api"
 }
