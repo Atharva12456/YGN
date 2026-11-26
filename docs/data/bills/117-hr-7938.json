@@ -1,0 +1,86 @@
+{
+  "ai_enabled": false,
+  "ai_mode": "cache_refresh_only",
+  "bill": {
+    "aiPending": true,
+    "committees": [],
+    "congress": 117,
+    "cosponsorCount": 4,
+    "cosponsors": [
+      {
+        "bioguideId": "G000565",
+        "district": 4,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Gosar, Paul A. [R-AZ-4]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2022-06-03",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "C001104",
+        "district": 11,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Cawthorn, Madison [R-NC-11]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2022-06-03",
+        "state": "NC"
+      },
+      {
+        "bioguideId": "B001302",
+        "district": 5,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Biggs, Andy [R-AZ-5]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2022-06-03",
+        "state": "AZ"
+      },
+      {
+        "bioguideId": "S001183",
+        "district": 6,
+        "isOriginalCosponsor": true,
+        "name": "Rep. Schweikert, David [R-AZ-6]",
+        "party": "R",
+        "role": "Cosponsor",
+        "sponsorshipDate": "2022-06-03",
+        "state": "AZ"
+      }
+    ],
+    "description": {
+      "source": "Congress.gov bill summary",
+      "text": "Domestic Uranium Saves America Act or the Domestic USA Act This bill requires the inclusion of uranium on a list of mineral commodities that are critical to the U.S. economy and national security.",
+      "updated_at": "2023-08-09T18:52:03Z"
+    },
+    "detailPath": "117/hr/7938",
+    "identifier": "HR 7938",
+    "introducedDate": "2022-06-03",
+    "latestAction": {
+      "date": "2022-06-03",
+      "text": "Referred to the House Committee on Natural Resources."
+    },
+    "number": "7938",
+    "originChamber": "House",
+    "policyArea": "Energy",
+    "sponsors": [
+      {
+        "bioguideId": "L000589",
+        "district": 8,
+        "isOriginalCosponsor": null,
+        "name": "Rep. Lesko, Debbie [R-AZ-8]",
+        "party": "R",
+        "role": "Sponsor",
+        "sponsorshipDate": null,
+        "state": "AZ"
+      }
+    ],
+    "title": "Domestic USA Act",
+    "type": "HR",
+    "updatedAt": "2026-11-25T17:09:07Z",
+    "url": "https://www.congress.gov/bill/117th-congress/house-bill/7938",
+    "votes": []
+  },
+  "generated_at": "2026-11-26T13:09:57.300644+00:00",
+  "source": "congress_api"
+}

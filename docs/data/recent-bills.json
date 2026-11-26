@@ -82,6 +82,22 @@
         "url": "https://api.congress.gov/v3/bill/117/s/5165?format=json"
       },
       {
+        "congress": 117,
+        "introducedDate": "2022-06-03",
+        "latestAction": {
+          "actionDate": "2022-06-03",
+          "text": "Referred to the House Committee on Natural Resources."
+        },
+        "number": "7938",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "title": "Domestic USA Act",
+        "type": "HR",
+        "updateDate": "2026-11-25",
+        "updateDateIncludingText": "2026-11-25",
+        "url": "https://api.congress.gov/v3/bill/117/hr/7938?format=json"
+      },
+      {
         "congress": 113,
         "introducedDate": "2013-02-27",
         "latestAction": {
@@ -867,22 +883,6 @@
       },
       {
         "congress": 104,
-        "introducedDate": "1996-03-12",
-        "latestAction": {
-          "actionDate": "1996-03-12",
-          "text": "Read twice and referred to the Committee on Judiciary."
-        },
-        "number": "1606",
-        "originChamber": "Senate",
-        "originChamberCode": "S",
-        "title": "Biological Agents Enhanced Penalties and Control Act",
-        "type": "S",
-        "updateDate": "2026-08-10",
-        "updateDateIncludingText": "2026-08-10",
-        "url": "https://api.congress.gov/v3/bill/104/s/1606?format=json"
-      },
-      {
-        "congress": 104,
         "introducedDate": "1996-03-06",
         "latestAction": {
           "actionDate": "1996-03-06",
@@ -1283,13 +1283,13 @@
       }
     ],
     "pagination": {
-      "count": 61123,
-      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-28T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
+      "count": 61283,
+      "next": "https://api.congress.gov/v3/bill?fromDateTime=2026-07-29T00:00:00Z&sort=updateDate+desc&offset=80&limit=80&format=json"
     },
     "request": {
       "contentType": "application/json",
       "format": "json"
     }
   },
-  "generated_at": "2026-11-25T13:30:23.112033+00:00"
+  "generated_at": "2026-11-26T13:09:33.312331+00:00"
 }
