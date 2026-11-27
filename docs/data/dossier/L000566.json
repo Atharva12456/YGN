@@ -286,13 +286,13 @@
     },
     "components": {
       "donor_diversity": {
-        "score": 77.6,
-        "value": 0.5537,
+        "score": 72.3,
+        "value": 0.499,
         "weight": 0.2
       },
       "in_state_support": {
-        "score": 96.3,
-        "value": 0.6427,
+        "score": 96.4,
+        "value": 0.666,
         "weight": 0.1
       },
       "pac_independence": {
@@ -312,13 +312,13 @@
       },
       "stock_conflict": {
         "measurable": true,
-        "note": "9 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
-        "penalty": 32,
-        "ptr_filings": 9
+        "note": "10 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+        "penalty": 42,
+        "ptr_filings": 10
       }
     },
     "cycle": 2026,
-    "financeScore": 71.2,
+    "financeScore": 70.2,
     "funding": {
       "available": true,
       "breakdown": [
@@ -365,7 +365,6 @@
         "receipts": 1772110.3
       }
     },
-    "generated_at": "2026-10-31T05:44:53.826825+00:00",
     "grade": "F",
     "method": "campaign_finance_stock_v4",
     "notes": [
@@ -373,11 +372,11 @@
       "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
     ],
     "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-    "score": 39.2,
+    "score": 28.2,
     "source": "fec_live",
-    "stockPenalty": 32,
-    "stockPtrCount": 9,
-    "updated_at": "2026-10-31T05:45:02.320117+00:00"
+    "stockPenalty": 42,
+    "stockPtrCount": 10,
+    "updated_at": "2026-11-27T13:10:10.903422+00:00"
   },
   "funding": {
     "available": true,
@@ -430,13 +429,13 @@
       },
       "components": {
         "donor_diversity": {
-          "score": 77.6,
-          "value": 0.5537,
+          "score": 72.3,
+          "value": 0.499,
           "weight": 0.2
         },
         "in_state_support": {
-          "score": 96.3,
-          "value": 0.6427,
+          "score": 96.4,
+          "value": 0.666,
           "weight": 0.1
         },
         "pac_independence": {
@@ -456,14 +455,13 @@
         },
         "stock_conflict": {
           "measurable": true,
-          "note": "9 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -32 conflict-of-interest deduction.",
-          "penalty": 32,
-          "ptr_filings": 9
+          "note": "10 individual-stock trade (PTR) disclosure filing(s) in ~2 years; -42 conflict-of-interest deduction.",
+          "penalty": 42,
+          "ptr_filings": 10
         }
       },
       "cycle": 2026,
-      "financeScore": 71.2,
-      "generated_at": "2026-10-31T05:44:53.826825+00:00",
+      "financeScore": 70.2,
       "grade": "F",
       "method": "campaign_finance_stock_v4",
       "notes": [
@@ -471,11 +469,11 @@
         "Grade lowered for active individual-stock trading disclosed in House Periodic Transaction Reports (a conflict-of-interest signal)."
       ],
       "scale": "Higher = more small-donor/grassroots funded and less reliant on big or self/party money.",
-      "score": 39.2,
+      "score": 28.2,
       "source": "fec_live",
-      "stockPenalty": 32,
-      "stockPtrCount": 9,
-      "updated_at": "2026-10-31T05:45:02.320117+00:00"
+      "stockPenalty": 42,
+      "stockPtrCount": 10,
+      "updated_at": "2026-11-27T13:10:10.903422+00:00"
     },
     "note": null,
     "source": "fec_committed",
@@ -487,7 +485,7 @@
       "receipts": 1772110.3
     }
   },
-  "generated_at": "2026-11-26T13:09:33.312331+00:00",
+  "generated_at": "2026-11-27T13:07:39.411915+00:00",
   "history": {
     "bioguideId": "L000566",
     "birthYear": "1956",
@@ -799,6 +797,7 @@
   },
   "wiki": {
     "extract": "Robert Edward Latta is an American politician who is the United States representative for Ohio's 5th congressional district. Currently in his 10th term, Latta has served in Congress since 2007, and prior to that he served four terms in the Ohio House of Representatives.",
+    "generated_at": "2026-09-20T08:49:23.723024+00:00",
     "source": "wikipedia",
     "summary": "Robert Edward Latta is an American politician who is the United States representative for Ohio's 5th congressional district. Currently in his 10th term, Latta has served in Congress since 2007, and prior to that he served four terms in the Ohio House of Representatives.",
     "thumbnail": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Bob_Latta_portrait_118th_Congress.jpeg/330px-Bob_Latta_portrait_118th_Congress.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
